@@ -1,0 +1,21 @@
+[submodule "vendor/symfony"]
+	path = vendor/symfony
+	url = git://github.com/fabpot/symfony.git
+[submodule "vendor/zend"]
+	path = vendor/zend
+	url = git://github.com/zendframework/zf2.git
+[submodule "vendor/doctrine/common"]
+	path = vendor/doctrine/common
+	url = git://github.com/doctrine/common.git
+[submodule "vendor/twig"]
+	path = vendor/twig
+	url = git://github.com/fabpot/Twig.git
+[submodule "vendor/swiftmailer"]
+	path = vendor/swiftmailer
+	url = git://github.com/swiftmailer/swiftmailer.git
+[submodule "vendor/doctrine-phpcr"]
+	path = vendor/doctrine-phpcr
+	url = git://github.com/Seldaek/phpcr-odm.git
+[submodule "src/Bundle/DoctrinePHPCRBundle"]
+	path = src/Bundle/DoctrinePHPCRBundle
+	url = git://github.com/docteurklein/DoctrinePHPCRBundle.git
