@@ -19,11 +19,11 @@ h3. Install and run Apache JackRabbit
 
 In order to run tests or application, you will need a working Jackrabbit server running and listening by default on localhost port 8080.
 
-* Download the jackrabbit server from the official website: http://jackrabbit.apache.org/downloads.html
+h2. Download the jackrabbit server from the official website: http://jackrabbit.apache.org/downloads.html
+
 ```bash
      mv jackrabbit-standalone-2.x.x.jar jackrabbit-standalone.jar
      java -jar jackrabbit-standalone.jar
-
 ```
 
 h2. Try it
@@ -33,6 +33,8 @@ You should have a default jackrabbit homepage.
 
 h3. Run the test suite
 
+Tests are written with PHPUnit.
+
 ```bash
-   phpunit -c app
+     phpunit -c app
 ```
