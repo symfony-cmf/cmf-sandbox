@@ -1,0 +1,38 @@
+h1. Getting Started
+
+h3. You will need:
+* Git 1.6+
+* PHP 5.3.2+
+* phpUnit 3.5+ (optional)
+
+h3. Get the code
+
+```bash
+     git clone git://github.com/symfony-cmf/cmf-sandbox.git
+     cd cmf-sandbox
+     git submodule update --init --recursive
+```
+
+This will fetch the main project and all it's dependencies ( Zend, Symfony, Doctrine\PHPCR, Jackalope ... )
+
+h3. Install and run Apache JackRabbit
+
+In order to run tests or application, you will need a working Jackrabbit server running and listening by default on localhost port 8080.
+
+* Download the jackrabbit server from the official website: http://jackrabbit.apache.org/downloads.html
+```bash
+     mv jackrabbit-standalone-2.x.x.jar jackrabbit-standalone.jar
+     java -jar jackrabbit-standalone.jar
+
+```
+
+h2. Try it
+
+Open you browser on http://localhost:8080/
+You should have a default jackrabbit homepage.
+
+h3. Run the test suite
+
+```bash
+   phpunit -c app
+```
