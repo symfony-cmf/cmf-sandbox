@@ -40,3 +40,18 @@ You should have a default jackrabbit homepage.
 Tests are written with PHPUnit.
 
     phpunit -c app
+
+## Access by web browser
+
+Create an apache virtual host entry along the lines of
+<Virtualhost *:80>
+    Servername cmf.lo
+    DocumentRoot /path/to/symfony-cmf/cmf-sandbox/web
+    <Directory /path/to/symfony-cmf/cmf-sandox>
+        AllowOverride All
+    </Directory>
+</Virtualhost>
+
+And add an entry to your hosts file for cmf.lo
+
+Now go to http://cmf.lo/app_dev.php
