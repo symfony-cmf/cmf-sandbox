@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             // register your bundles
             new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
             new Bundle\Symfony\CMFCoreBundle\CMFCoreBundle(),
+            new Uwe\PageBundle\PageBundle(),
 
         );
 

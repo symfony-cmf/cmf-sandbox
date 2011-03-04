@@ -2,3 +2,5 @@ homepage:
     pattern:  /
     defaults: { _controller: FrameworkBundle:Default:index }
 
+page:
+    resource: "@PageBundle/Resources/config/routing.yml"
