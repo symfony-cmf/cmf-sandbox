@@ -1,4 +1,4 @@
-app.config:
+framework:
     charset:       UTF-8
     error_handler: null
     csrf_protection:
@@ -13,15 +13,15 @@ app.config:
         auto_start:     true
 
 # Twig Configuration
-twig.config:
+twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 
-phpcr.config:
+doctrine_phpcr:
     backend:
         url: http://localhost:8080/server/
         workspace: foo
-        user:
-        pass:
+        user: admin
+        pass: admin
         transport:
 

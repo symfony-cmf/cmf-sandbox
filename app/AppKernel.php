@@ -1,7 +1,7 @@
 <?php
 
 use Symfony\Component\HttpKernel\Kernel;
-use Symfony\Component\DependencyInjection\Loader\LoaderInterface;
+use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
@@ -13,6 +13,7 @@ class AppKernel extends Kernel
 
             // enable third-party bundles
             new Symfony\Bundle\ZendBundle\ZendBundle(),
+            new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
 
             // register your bundles
             new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
