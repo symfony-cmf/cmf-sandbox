@@ -1,14 +1,22 @@
 imports:
     - { resource: config_dev.yml }
 
-app.config:
+framework:
     error_handler: false
     test: ~
 
-webprofiler.config:
+web_profiler:
     toolbar: false
     intercept_redirects: false
 
-zend.config:
+zend:
     logger:
         priority: debug
+
+doctrine_phpcr:
+    backend:
+        url: http://localhost:8080/server/
+        workspace: tests
+        user: admin
+        pass: admin
+        transport:
