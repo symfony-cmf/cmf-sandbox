@@ -1,9 +1,0 @@
-createpage:
-    pattern:  /cms/page/{path}/{title}
-    defaults: { _controller: PageBundle:Page:create }
-
-showpage:
-    pattern:  /{path}
-    defaults: { _controller: PageBundle:Page:show }
-
-
