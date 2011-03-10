@@ -15,10 +15,13 @@ class AppKernel extends Kernel
             new Symfony\Bundle\ZendBundle\ZendBundle(),
             new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
 
-            // register your bundles
-            new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
-            new Bundle\Symfony\CMFCoreBundle\CMFCoreBundle(),
+            // enable cmf bundles
+            new Symfony\CMF\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
+            new Symfony\CMF\Bundle\CoreBundle\SymfonyCMFCoreBundle(),
+            new Symfony\CMF\Bundle\NavigationBundle\SymfonyCMFNavigationBundle(),
 
+            // and the sandbox bundle
+            new Sandbox\MainBundle\SandboxMainBundle(),
         );
 
         if ($this->isDebug()) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Bundle\Symfony\CMFCoreBundle\Controller;
+namespace Sandbox\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('CMFCoreBundle:Default:index.html.twig');
+        return $this->render('SandboxMainBundle:Default:index.html.twig');
     }
 }

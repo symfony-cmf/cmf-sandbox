@@ -1,5 +1,7 @@
 # Symfony Content Management Framework Sandbox
 
+This sandbox is a testing ground for the cmf bundles being developped.
+
 
 ## Getting started
 
