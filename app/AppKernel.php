@@ -16,9 +16,9 @@ class AppKernel extends Kernel
             new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
 
             // enable cmf bundles
-            new Symfony\CMF\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
-            new Symfony\CMF\Bundle\CoreBundle\SymfonyCMFCoreBundle(),
-            new Symfony\CMF\Bundle\NavigationBundle\SymfonyCMFNavigationBundle(),
+            new Symfony\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
+            new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
+            new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
