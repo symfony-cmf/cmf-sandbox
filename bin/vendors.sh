@@ -76,9 +76,13 @@ cd Liip
 install_git FunctionalTestBundle git://github.com/liip/FunctionalTestBundle.git
 cd ..
 
-mkdir -p Symfony/CMF/Bundle
-cd Symfony/CMF/Bundle
+mkdir -p Symfony/Bundle
+cd Symfony/Bundle
 install_git DoctrinePHPCRBundle git://github.com/symfony-cmf/DoctrinePHPCRBundle.git
+cd ../..
+
+mkdir -p Symfony/Cmf/Bundle
+cd Symfony/Cmf/Bundle
 install_git CoreBundle git://github.com/symfony-cmf/CoreBundle.git
 install_git NavigationBundle git://github.com/symfony-cmf/NavigationBundle.git
 cd ../../..
