@@ -7,8 +7,6 @@ SRC=$DIR/src
 # initialization
 if [ "$1" = "--reinstall" ]; then
     rm -rf $VENDOR
-    rm -rf $SRC/Symfony
-    rm -rf $SRC/Liip
 fi
 
 mkdir -p $VENDOR && cd $VENDOR
@@ -35,7 +33,6 @@ install_git()
     cd $INSTALL_DIR
     git fetch origin
     git reset --hard $REV
-    git submodule update --init --recursive
     cd ..
 }
 
@@ -50,14 +47,11 @@ cd doctrine
 install_git common git://github.com/doctrine/common.git
 cd ..
 
-# Doctrine PHPCR
-install_git phpcr-odm git://github.com/doctrine/phpcr-odm.git
-
 # Twig
 install_git twig git://github.com/fabpot/Twig.git
 
 # Twig Extensions
-# ? install_git twig-extensions git://github.com/fabpot/Twig-extensions.git
+install_git twig-extensions git://github.com/fabpot/Twig-extensions.git
 
 # Zend Framework Log
 mkdir -p zend-log/Zend
@@ -65,21 +59,29 @@ cd zend-log/Zend
 install_git Log git://github.com/symfony/zend-log.git
 cd ../..
 
+# Doctrine PHPCR
+install_git phpcr-odm git://github.com/doctrine/phpcr-odm.git
+cd $VENDOR/phpcr-odm
+git submodule update --init --recursive
+cd $VENDOR
 
-### now install some bundles we use ###
+# Doctrine PHPCR
+mkdir -p bundles/Symfony/Bundle
+cd bundles/Symfony/Bundle
+install_git DoctrinePHPCRBundle git://github.com/symfony-cmf/DoctrinePHPCRBundle.git
+cd ../../..
+
+
+# functional test helpers for the cmf bundles
+mkdir -p bundles/Liip
+cd bundles/Liip
+install_git FunctionalTestBundle git://github.com/liip/FunctionalTestBundle.git
+cd ../..
+
+
+### now install the cmf bundles ###
 
 cd ../src
-
-# 3rd party bundles we depend on
-mkdir -p Liip
-cd Liip
-install_git FunctionalTestBundle git://github.com/liip/FunctionalTestBundle.git
-cd ..
-
-mkdir -p Symfony/Bundle
-cd Symfony/Bundle
-install_git DoctrinePHPCRBundle git://github.com/symfony-cmf/DoctrinePHPCRBundle.git
-cd ../..
 
 mkdir -p Symfony/Cmf/Bundle
 cd Symfony/Cmf/Bundle

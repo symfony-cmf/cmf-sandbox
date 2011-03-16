@@ -31,11 +31,6 @@ class AppKernel extends Kernel
         return $bundles;
     }
 
-    public function registerRootDir()
-    {
-        return __DIR__;
-    }
-
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
         // use YAML for configuration
@@ -47,5 +42,10 @@ class AppKernel extends Kernel
 
         // uncomment to use PHP for configuration
         //$loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.php');
+    }
+
+    public function registerRootDir()
+    {
+        return __DIR__;
     }
 }
