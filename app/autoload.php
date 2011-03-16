@@ -5,8 +5,7 @@ use Symfony\Component\ClassLoader\UniversalClassLoader;
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     'Symfony\\Cmf'                   => __DIR__.'/../src',
-    'Symfony\\Bundle\\DoctrinePHPCRBundle' => __DIR__.'/../vendor/bundles',
-    'Symfony'                        => __DIR__.'/../vendor/symfony/src',
+    'Symfony'                        => array(__DIR__.'/../vendor/symfony/src', __DIR__.'/../vendor/bundles'),
     'Sandbox'                        => __DIR__.'/../src',
     'Liip\\FunctionalTestBundle'     => __DIR__.'/../vendor/bundles',
     'Doctrine\\Common'               => __DIR__.'/../vendor/doctrine/common/lib',
@@ -16,6 +15,7 @@ $loader->registerNamespaces(array(
     'PHPCR'                          => __DIR__.'/../vendor/phpcr-odm/lib/vendor/jackalope/lib/phpcr/src',
 ));
 $loader->registerPrefixes(array(
+    'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
     'Twig_'            => __DIR__.'/../vendor/twig/lib',
 ));
 $loader->register();
