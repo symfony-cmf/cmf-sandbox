@@ -61,7 +61,7 @@ cd ../..
 
 # Doctrine PHPCR
 install_git doctrine-phpcr-odm git://github.com/doctrine/phpcr-odm.git
-cd $VENDOR/phpcr-odm
+cd $VENDOR/doctrine-phpcr-odm
 git submodule update --init --recursive
 cd $VENDOR
 
