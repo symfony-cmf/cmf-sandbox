@@ -60,7 +60,7 @@ install_git Log git://github.com/symfony/zend-log.git
 cd ../..
 
 # Doctrine PHPCR
-install_git phpcr-odm git://github.com/doctrine/phpcr-odm.git
+install_git doctrine-phpcr-odm git://github.com/doctrine/phpcr-odm.git
 cd $VENDOR/phpcr-odm
 git submodule update --init --recursive
 cd $VENDOR
