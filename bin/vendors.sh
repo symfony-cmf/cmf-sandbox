@@ -53,11 +53,8 @@ install_git twig git://github.com/fabpot/Twig.git
 # Twig Extensions
 install_git twig-extensions git://github.com/fabpot/Twig-extensions.git
 
-# Zend Framework Log
-mkdir -p zend-log/Zend
-cd zend-log/Zend
-install_git Log git://github.com/symfony/zend-log.git
-cd ../..
+# Monolog
+install_git monolog git://github.com/Seldaek/monolog.git
 
 # Doctrine PHPCR
 install_git doctrine-phpcr-odm git://github.com/doctrine/phpcr-odm.git

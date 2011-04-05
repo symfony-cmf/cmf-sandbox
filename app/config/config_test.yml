@@ -9,9 +9,13 @@ web_profiler:
     toolbar: false
     intercept_redirects: false
 
-zend:
-    logger:
-        priority: debug
+
+monolog:
+    handlers:
+        main:
+            type:  stream
+            path:  %kernel.logs_dir%/%kernel.environment%.log
+            level: debug
 
 doctrine_phpcr:
     backend:

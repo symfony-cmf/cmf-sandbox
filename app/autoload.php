@@ -10,7 +10,7 @@ $loader->registerNamespaces(array(
     'Liip\\FunctionalTestBundle'     => __DIR__.'/../vendor/bundles',
     'Doctrine\\Common'               => __DIR__.'/../vendor/doctrine/common/lib',
     'Doctrine\\ODM\\PHPCR'           => __DIR__.'/../vendor/doctrine-phpcr-odm/lib',
-    'Zend\\Log'                      => __DIR__.'/../vendor/zend-log',
+    'Monolog'                        => __DIR__.'/../vendor/monolog/src',
     'Jackalope'                      => __DIR__.'/../vendor/doctrine-phpcr-odm/lib/vendor/jackalope/src',
     'PHPCR'                          => __DIR__.'/../vendor/doctrine-phpcr-odm/lib/vendor/jackalope/lib/phpcr/src',
 ));

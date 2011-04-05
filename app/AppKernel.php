@@ -12,7 +12,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
 
             // enable third-party bundles
-            new Symfony\Bundle\ZendBundle\ZendBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
 
             // enable cmf bundles
