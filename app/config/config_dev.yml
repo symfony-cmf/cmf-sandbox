@@ -9,7 +9,9 @@ web_profiler:
     toolbar: true
     intercept_redirects: true
 
-zend:
-    logger:
-        priority: debug
-        path:     %kernel.logs_dir%/%kernel.environment%.log
+monolog:
+    handlers:
+        main:
+            type:  stream
+            path:  %kernel.logs_dir%/%kernel.environment%.log
+            level: debug

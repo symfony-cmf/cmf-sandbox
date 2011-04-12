@@ -12,13 +12,16 @@ class AppKernel extends Kernel
             new Symfony\Bundle\TwigBundle\TwigBundle(),
 
             // enable third-party bundles
-            new Symfony\Bundle\ZendBundle\ZendBundle(),
+            new Symfony\Bundle\MonologBundle\MonologBundle(),
             new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
 
-            // register your bundles
-            new Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
-            new Bundle\Symfony\CMFCoreBundle\CMFCoreBundle(),
+            // enable cmf bundles
+            new Symfony\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
+            new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
+            new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
 
+            // and the sandbox bundle
+            new Sandbox\MainBundle\SandboxMainBundle(),
         );
 
         if ($this->isDebug()) {
@@ -26,11 +29,6 @@ class AppKernel extends Kernel
         }
 
         return $bundles;
-    }
-
-    public function registerRootDir()
-    {
-        return __DIR__;
     }
 
     public function registerContainerConfiguration(LoaderInterface $loader)
@@ -44,5 +42,10 @@ class AppKernel extends Kernel
 
         // uncomment to use PHP for configuration
         //$loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.php');
+    }
+
+    public function registerRootDir()
+    {
+        return __DIR__;
     }
 }

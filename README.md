@@ -1,5 +1,7 @@
 # Symfony Content Management Framework Sandbox
 
+This sandbox is a testing ground for the cmf bundles being developped.
+
 
 ## Getting started
 
@@ -12,7 +14,7 @@
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
-    git submodule update --init --recursive
+    bin/vendors.sh
 
 This will fetch the main project and all it's dependencies ( Zend, Symfony, Doctrine\PHPCR, Jackalope ... )
 
