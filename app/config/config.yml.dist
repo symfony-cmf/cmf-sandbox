@@ -19,7 +19,7 @@ twig:
 doctrine_phpcr:
     backend:
         url: http://localhost:8080/server/
-        workspace: foo
+        workspace: default
         user: admin
         pass: admin
 
