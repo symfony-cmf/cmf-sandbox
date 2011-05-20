@@ -1,9 +1,8 @@
 framework:
     charset:       UTF-8
-    error_handler: null
+    secret: sdv54sdvsdv21s8dv4
     csrf_protection:
         enabled: true
-        secret: sdv54sdvsdv21s8dv4
     router:        { resource: "%kernel.root_dir%/config/routing.yml" }
     validation:    { enabled: true, annotations: true }
     templating:    { engines: ['twig'] } #assets_version: SomeVersionScheme
@@ -23,5 +22,4 @@ doctrine_phpcr:
         workspace: foo
         user: admin
         pass: admin
-        transport:
 
