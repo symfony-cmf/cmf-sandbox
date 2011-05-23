@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}CMF{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/hackday/css/style.css') }}" />
+    </head>
+    <body>
+        <div class="container">
+            {% block content %}{% endblock %}
+            <hr/>
+            {# <p><a href="{{ path('admin') }}">Admin</a></p> #}
+        </div>
+    </body>
+</html>
