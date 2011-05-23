@@ -56,4 +56,11 @@ Create an apache virtual host entry along the lines of
 
 And add an entry to your hosts file for cmf.lo
 
-Now go to http://cmf.lo/app_dev.php
+## Admin interface
+
+There is a proof-of-concept admin interface at http://cmf.lo/app_dev.php/admin
+We intend to replace this either by VIE (http://bergie.github.com/VIE/) or
+something with the AdminBundle.
+
+
+The frontend is at http://cmf.lo/app_dev.php

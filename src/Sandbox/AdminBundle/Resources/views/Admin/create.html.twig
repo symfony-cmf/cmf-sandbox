@@ -1,0 +1,16 @@
+{% extends "SandboxAdminBundle:Admin:layout.html.twig" %}
+
+{% block title %}Create a new page{% endblock %}
+
+{% block content %}
+<h2>Create a new page!</h2>
+
+<form action="" method="post">
+    {{ form_field(form) }}
+
+    <p>
+        <input type="submit" value="Create page" />
+        <a href="{{ path('admin') }}">Cancel</a>
+    </p>
+</form>
+{% endblock %}

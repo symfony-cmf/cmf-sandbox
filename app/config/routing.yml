@@ -1,4 +1,6 @@
-homepage:
-    pattern:  /
-    defaults: { _controller: SandboxMainBundle:Default:index }
+admin:
+    resource: @SandboxAdminBundle/Resources/config/routing.yml
 
+# this must come last, its a catch all route
+cmf:
+    resource: @SandboxMainBundle/Resources/config/routing.yml

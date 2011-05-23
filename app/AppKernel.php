@@ -22,6 +22,7 @@ class AppKernel extends Kernel
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
+            new Sandbox\AdminBundle\SandboxAdminBundle(), //until we have something better
         );
 
         if ($this->isDebug()) {

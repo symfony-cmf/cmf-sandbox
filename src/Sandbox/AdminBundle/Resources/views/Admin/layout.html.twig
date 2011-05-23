@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}Admin{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/hackday/css/style.css') }}" />
+    </head>
+    <body>
+        <div class="container">
+            <p>{{ app.session.flash('notice') }}</p>
+            {% block content %}{% endblock %}
+            <hr/>
+            <p><a href="{{ path('navigation', { 'path': '' }) }}">Frontend</a></p>
+        </div>
+    </body>
+</html>
