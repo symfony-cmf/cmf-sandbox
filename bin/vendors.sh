@@ -84,6 +84,7 @@ mkdir -p Symfony/Cmf/Bundle
 cd Symfony/Cmf/Bundle
 install_git CoreBundle git://github.com/symfony-cmf/CoreBundle.git
 install_git NavigationBundle git://github.com/symfony-cmf/NavigationBundle.git
+install_git PhpcrCommandsBundle git://github.com/sixty-nine/PhpcrCommandsBundle.git
 cd ../../..
 
 
