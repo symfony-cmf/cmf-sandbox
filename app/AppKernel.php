@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
             new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
+            new Symfony\Cmf\Bundle\PhpcrCommandsBundle\PhpcrCommandsBundle(),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
