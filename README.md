@@ -14,14 +14,10 @@ This sandbox is a testing ground for the cmf bundles being developped.
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
+    cp app/config.yml.dist app/config.yml #maybe need to edit if defaults are not ok
     bin/vendors.sh
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-
-### Create your personal config file
-
-You have to copy the default config.yml to fit your needs:
-    cp app/config/config.yml.dist app/config/config.yml
 
 ### Install and run Apache JackRabbit
 
