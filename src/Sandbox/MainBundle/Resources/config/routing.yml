@@ -1,5 +1,0 @@
-navigation:
-    pattern: /{path}
-    defaults: { _controller: cmf_sandbox.default:indexAction }
-    requirements: { path: .* }
-

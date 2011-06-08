@@ -1,0 +1,85 @@
+<?php
+
+namespace Sandbox\MainBundle\Resources\data\fixtures;
+
+use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\Yaml\Parser;
+
+use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+
+class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
+{
+    protected $session;
+
+    protected $container;
+
+    public function setContainer(ContainerInterface $container = null)
+    {
+        $this->container = $container;
+        $this->session = $this->container->get('jackalope.loader')->getSession();
+    }
+
+    public function getOrder() {
+        return 5;
+    }
+
+    public function load($manager)
+    {
+        $contentdocument =  $this->container->getParameter('symfony.cmf.content.document');
+        $basepath = $this->container->getParameter('symfony.cmf.content.static_basepath');
+
+        $this->createPath($basepath);
+
+        $yaml = new Parser();
+        $data = $yaml->parse(file_get_contents(__DIR__ . '/static/page.yml'));
+
+        $overview = $data['static'];
+        foreach($data['static'] as $overview) {
+            $path = $basepath . '/' . $overview['name'];
+            if (!$page = $manager->find($contentdocument, $path)) {
+                $page = new StaticContent();
+                $page->setPath($path);
+                $manager->persist($page);
+                //TODO: document manager should handle this for us
+                $manager->flushNoSave(); //populate node property
+                $page->node->addMixin('mix:referenceable');
+            }
+            $page->name = $overview['name'];
+            $page->title = $overview['title'];
+            $page->content = $overview['content'];
+        }
+
+        $manager->flush(); //to get ref id populated
+        if ($this->session instanceof \Jackalope\Session) {
+            $this->session->clear(); //FIXME: jackalope bug, should refresh data from backend after save to make mixin work
+        }
+    }
+
+    /**
+     * Create a node and it's parents, if necessary.  Like mkdir -p.
+     *
+     * TODO: clean this up once the id generator stuff is done as intended
+     *
+     * @param string $path  full path, like /cms/navigation/main
+     * @return Node the (now for sure existing) node at path
+     */
+    public function createPath($path)
+    {
+        $current = $this->session->getRootNode();
+
+        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
+        foreach ($segments as $segment) {
+            if ($current->hasNode($segment)) {
+                $current = $current->getNode($segment);
+            } else {
+                $current = $current->addNode($segment);
+            }
+        }
+
+        return $current;
+    }
+}

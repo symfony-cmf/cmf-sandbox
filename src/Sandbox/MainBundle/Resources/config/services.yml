@@ -1,8 +1,0 @@
-services:
-    cmf_sandbox.default:
-        class: Sandbox\MainBundle\Controller\DefaultController
-        arguments:
-            container: "@service_container"
-            phpcr: "@jackalope.loader"
-            mapper: "@symfony.cmf.core.pathMapper"
-            dm: "@doctrine.phpcr_odm.document_manager"

@@ -16,7 +16,7 @@ This sandbox is a testing ground for the cmf bundles being developped.
     cd cmf-sandbox
     bin/vendors.sh
 
-This will fetch the main project and all it's dependencies ( Zend, Symfony, Doctrine\PHPCR, Jackalope ... )
+This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 
 ### Create your personal config file
 
@@ -25,23 +25,23 @@ You have to copy the default config.yml to fit your needs:
 
 ### Install and run Apache JackRabbit
 
-In order to run tests or application, you will need a working Jackrabbit server running and listening by default on localhost port 8080.
+Follow the guide at
+https://github.com/symfony-cmf/symfony-cmf/wiki/Running-a-Jackrabbit-server
 
-### Download the jackrabbit server from the official website: http://jackrabbit.apache.org/downloads.html
-
-    mv jackrabbit-standalone-2.x.x.jar jackrabbit-standalone.jar
-    java -jar jackrabbit-standalone.jar
-
-## Try it
-
-Open you browser on http://localhost:8080/
-You should have a default jackrabbit homepage.
 
 ## Run the test suite
 
 Tests are written with PHPUnit.
 
+TESTS ARE CURRENTLY BROKEN
+
     phpunit -c app
+
+
+## Import the fixtures
+
+app/console -v phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
+
 
 ## Access by web browser
 
@@ -56,11 +56,13 @@ Create an apache virtual host entry along the lines of
 
 And add an entry to your hosts file for cmf.lo
 
+Then point your browser to http://cmf.lo/app_dev.php
+
 ## Admin interface
+
+THIS IS CURRENTLY BROKEN as it is based on the old form framework.
 
 There is a proof-of-concept admin interface at http://cmf.lo/app_dev.php/admin
 We intend to replace this either by VIE (http://bergie.github.com/VIE/) or
 something with the AdminBundle.
 
-
-The frontend is at http://cmf.lo/app_dev.php

@@ -1,7 +1,0 @@
-{% extends "SandboxMainBundle:Default:layout.html.twig" %}
-
-{% block content %}
-{% render "symfony.cmf.navigation.controller:breadcrumbAction" with { 'url': url } %}
-{% render "cmf_sandbox.default:contentAction" with { 'url': url } %}
-{% render "symfony.cmf.navigation.controller:childlistAction" with { 'url': url } %}
-{% endblock %}

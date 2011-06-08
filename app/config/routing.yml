@@ -1,6 +1,8 @@
-admin:
-    resource: @SandboxAdminBundle/Resources/config/routing.yml
+#admin:
+#    resource: @SandboxAdminBundle/Resources/config/routing.yml
 
-# this must come last, its a catch all route
 cmf:
     resource: @SandboxMainBundle/Resources/config/routing.yml
+
+    # this must come last, its a catch all route
+    resource: @SymfonyCmfNavigationBundle/Resources/config/routing.yml
