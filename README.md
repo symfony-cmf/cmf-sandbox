@@ -23,7 +23,8 @@ This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfon
 
 Follow the guide at
 https://github.com/symfony-cmf/symfony-cmf/wiki/Running-a-Jackrabbit-server
-
+and then register the node types for phpcr-odm
+https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged
 
 ## Run the test suite
 
