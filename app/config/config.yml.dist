@@ -17,9 +17,9 @@ twig:
     strict_variables: %kernel.debug%
 
 doctrine_phpcr:
-    backend:
-        url: http://localhost:8080/server/
+    session:
+        backend:
+            url: http://localhost:8080/server/
         workspace: default
-        user: admin
-        pass: admin
-
+        username: admin
+        password: admin
