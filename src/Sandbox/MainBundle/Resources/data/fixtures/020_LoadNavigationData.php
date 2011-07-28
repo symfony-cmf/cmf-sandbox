@@ -14,6 +14,8 @@ use Liipch\CoreBundle\Document\Navigation;
 
 class LoadNavigationData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
+    protected $translator;
+
     protected $dm;
 
     protected $navigationdocument;
@@ -22,11 +24,14 @@ class LoadNavigationData implements FixtureInterface, OrderedFixtureInterface, C
 
     protected $container;
 
+    protected $allowed_languages = array('en', 'de');
+
     public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;
         $this->navigationdocument = $this->container->getParameter('symfony_cmf_navigation.document');
         $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
+        $this->translator = $this->container->get($this->container->getParameter('symfony_cmf_multilang_content.translator'));
     }
 
     public function getOrder() {
@@ -42,27 +47,12 @@ class LoadNavigationData implements FixtureInterface, OrderedFixtureInterface, C
 
         $this->createPath(dirname($base_path));
 
-        // TODO: Fix the nodes references
-        $this->createContentNavigationNode($base_path, 'Home', 'static_pages', "$content_path/page");
-        $this->createContentNavigationNode("$base_path/company", 'The Company', "static_pages", "$content_path/page");
-        $this->createContentNavigationNode("$base_path/company/team", "Our Team", "static_pages", "$content_path/other");
-        $this->createContentNavigationNode("$base_path/company/more", "Other information", "static_pages", "$content_path/other");
-        $this->createContentNavigationNode("$base_path/projects", 'Our Projects', "static_pages", "$content_path/page");
-        $this->createContentNavigationNode("$base_path/projects/cmf", "Symfony Cmf", "static_pages", "$content_path/other");
-        /*
-        $this->createNavigationNode("$base_path/das_ist_liip/jobs", array('de' => "Jobs", 'fr' => "Jobs"), "job_list", "$jobs_path/overview");
-        $this->createNavigationNode("$base_path/das_ist_liip/kontakt", array('de' => "Kontakt", 'fr' => "Contact"), "static_pages", "$content_path/staticpage");
-
-        $this->createNavigationNode("$base_path/das_machen_wir", array('de' => "Das machen wir", 'fr' => "Ce que nous faisons"), "static_pages", "$content_path/staticpage");
-        $this->createNavigationNode("$base_path/das_machen_wir/projekte", array('de' => "Projekte", 'fr' => "Projets"), "static_pages", "$content_path/staticpage");
-        $this->createNavigationNode("$base_path/das_machen_wir/events", array('de' => "Events", 'fr' => "Evènements"), "static_pages", "$content_path/staticpage");
-        $this->createNavigationNode("$base_path/das_machen_wir/news", array('de' => "News", 'fr' => "News"), "static_pages", "$content_path/staticpage");
-
-        $this->createNavigationNode("$base_path/so_arbeiten_wir", array('de' => "So arbeiten wir", 'fr' => "Notre façon de travailler"), "static_pages", "$content_path/staticpage");
-        $this->createNavigationNode("$base_path/so_arbeiten_wir/scrum", array('de' => "Scrum", 'fr' => "Scrum"), "static_pages", "$content_path/staticpage");
-        $this->createNavigationNode("$base_path/so_arbeiten_wir/niwea", array('de' => "Niwea", 'fr' => "Niwea"), "static_pages", "$content_path/staticpage");
-        $this->createNavigationNode("$base_path/so_arbeiten_wir/open_source", array('de' => "Open source", 'fr' => "Open source"), "static_pages",  "$content_path/staticpage");
-        */
+        $this->createNavigationItem($base_path, array('de'=>'Start', 'en'=>'Home'), 'static_pages', "$content_path/home");
+        $this->createNavigationItem("$base_path/company", array('en'=>'The Company', 'de'=>'Die Firma'), 'static_pages', "$content_path/company");
+        $this->createNavigationItem("$base_path/company/team", array('en'=>'Our Team', 'de'=>'Unser Team'), 'static_pages', "$content_path/company_team");
+        $this->createNavigationItem("$base_path/company/more", array('en'=>'Other information', 'de'=>'Mehr Informationen'), 'static_pages', "$content_path/company_more");
+        $this->createNavigationItem("$base_path/projects", array('en'=>'Our Projects','de'=>'Unsere Projekte'), 'static_pages', "$content_path/projects");
+        $this->createNavigationItem("$base_path/projects/cmf", array('en'=>'Symfony Cmf'), 'static_pages', "$content_path/projects_cmf");
 
         $this->dm->flush();
     }
@@ -70,33 +60,33 @@ class LoadNavigationData implements FixtureInterface, OrderedFixtureInterface, C
     /**
      * @return a Navigation instance with the specified information
      */
-    protected function createContentNavigationNode($path, $label, $controller, $referenced_path)
+    protected function createNavigationItem($path, $label, $controller, $referenced_path)
     {
+        if (!is_array($label)) {
+            throw new \Exception("Invalid multilingual label for node '$path'");
+        }
+
         // Remove the node if it already exists
         if ($old_node = $this->dm->find($this->navigationdocument, $path)) {
             $this->dm->remove($old_node);
-            /* needed?
-            $this->dm->flush();
-            $this->dm->clear();
-            */
         }
 
         // Get the referenced node
         $ref_node = $this->session->getNode($referenced_path);
+        // TODO: when phpcr-odm supports references, we can assign the document instead of the node
 
         // Create the navigation node
-        $navi = new $this->navigationdocument();
-        $navi->setPath($path);
-        $navi->setLabel($label);
-        $navi->setController($controller);
+        $navigation = new $this->navigationdocument();
+        $navigation->setPath($path);
+        $navigation->setController($controller);
 
-        // The node must be persisted once so that the internal $navi property is populated
-        $this->dm->persist($navi);
+        foreach($label as $lang => $value) {
+            $navigation->setLabel($value);
+            $navigation->lang = $lang;
+            $this->translator->persistTranslation($navigation);
+        }
 
-        // must flush so the internal node property is populated. can go away once the reference annotation is implemented
-        $this->dm->flushNoSave();
-
-        $navi->setReference($ref_node);
+        $navigation->setReference($ref_node);
     }
 
     /**
