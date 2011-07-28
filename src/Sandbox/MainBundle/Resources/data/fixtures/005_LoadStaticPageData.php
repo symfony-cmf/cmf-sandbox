@@ -19,8 +19,11 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
     public function setContainer(ContainerInterface $container = null)
     {
+        if (! $container) {
+            throw new \Exception("This does not work without container");
+        }
         $this->container = $container;
-        $this->session = $this->container->get('jackalope.loader')->getSession();
+        $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
     }
 
     public function getOrder() {
@@ -29,8 +32,8 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
     public function load($manager)
     {
-        $contentdocument =  $this->container->getParameter('symfony.cmf.content.document');
-        $basepath = $this->container->getParameter('symfony.cmf.content.static_basepath');
+        $contentdocument =  $this->container->getParameter('symfony_cmf_content.document');
+        $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         $this->createPath($basepath);
 

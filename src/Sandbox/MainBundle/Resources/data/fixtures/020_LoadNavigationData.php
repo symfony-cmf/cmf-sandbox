@@ -25,10 +25,8 @@ class LoadNavigationData implements FixtureInterface, OrderedFixtureInterface, C
     public function setContainer(ContainerInterface $container = null)
     {
         $this->container = $container;
-
-        $this->navigationdocument = $this->container->getParameter('symfony.cmf.navigation.document');
-
-        $this->session = $this->container->get('jackalope.loader')->getSession();
+        $this->navigationdocument = $this->container->getParameter('symfony_cmf_navigation.document');
+        $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
     }
 
     public function getOrder() {
@@ -39,8 +37,8 @@ class LoadNavigationData implements FixtureInterface, OrderedFixtureInterface, C
     {
         $this->dm = $manager;
 
-        $base_path    = $this->container->getParameter('symfony.cmf.mainmenu_basepath');
-        $content_path = $this->container->getParameter('symfony.cmf.content.static_basepath');
+        $base_path    = $this->container->getParameter('symfony_cmf_core.mainmenu_basepath');
+        $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         $this->createPath(dirname($base_path));
 

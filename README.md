@@ -25,23 +25,19 @@ This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfon
 
 ### Install and run Apache JackRabbit
 
-Follow the guide at
-https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server
-and then register the node types for phpcr-odm
-https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged
+Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server)
+and then [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
 
-## Run the test suite
-
-Tests are written with PHPUnit.
-
-TESTS ARE CURRENTLY BROKEN
-
-    phpunit -c app
-
+    app/console doctrine:phpcr:register-system-node-types
 
 ## Import the fixtures
 
-app/console -v phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
+We currently do not yet have an edit backend. Until somebody builds one, you
+can only programmatically create data. The best way to do that is with the
+doctrine data fixtures. The PhpcrCommandsBundle included in the symfony-cmf
+repository provides a command to load fixtures.
+
+    app/console -v phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
 
 
 ## Access by web browser
@@ -64,6 +60,16 @@ Then point your browser to http://cmf.lo/app_dev.php
 THIS IS CURRENTLY BROKEN as it is based on the old form framework.
 
 There is a proof-of-concept admin interface at http://cmf.lo/app_dev.php/admin
+
 We intend to replace this either by VIE (http://bergie.github.com/VIE/) or
-something with the AdminBundle.
+something with one of the AdminBundle s.
+
+
+## Run the test suite
+
+Tests are written with PHPUnit.
+
+TESTS ARE CURRENTLY BROKEN
+
+    phpunit -c app
 
