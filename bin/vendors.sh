@@ -74,7 +74,7 @@ install_git doctrine-data-fixtures git://github.com/doctrine/data-fixtures.git
 # functional test helpers
 mkdir -p bundles/Liip
 cd bundles/Liip
-install_git FunctionalTestBundle git://github.com/liip/FunctionalTestBundle.git
+install_git FunctionalTestBundle git://github.com/liip/LiipFunctionalTestBundle.git
 cd ../..
 
 
