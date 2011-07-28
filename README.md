@@ -2,6 +2,8 @@
 
 This sandbox is a testing ground for the cmf bundles being developped.
 
+It is based on the [Symfony Standard edition](https://github.com/symfony/symfony-standard) and adds all cmf related bundles on top of the standard edition bundles.
+
 
 ## Getting started
 
@@ -14,8 +16,10 @@ This sandbox is a testing ground for the cmf bundles being developped.
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
-    cp app/config/config.yml.dist app/config/config.yml #maybe need to edit if defaults are not ok
-    bin/vendors.sh
+    # we skipped the web installer for now
+    # copy parameters template and edit as needed
+    cp app/config/parameters.ini.dist app/config/parameters.ini
+    bin/vendors install
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 

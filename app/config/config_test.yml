@@ -3,22 +3,12 @@ imports:
 
 framework:
     test: ~
+    session:
+        storage_id: session.storage.filesystem
 
 web_profiler:
     toolbar: false
     intercept_redirects: false
 
-
-monolog:
-    handlers:
-        main:
-            type:  stream
-            path:  %kernel.logs_dir%/%kernel.environment%.log
-            level: debug
-
-doctrine_phpcr:
-    backend:
-        url: http://localhost:8080/server/
-        workspace: tests
-        user: admin
-        pass: admin
+swiftmailer:
+    disable_delivery: true

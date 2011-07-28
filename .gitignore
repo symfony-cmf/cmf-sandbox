@@ -1,6 +1,7 @@
-app/config/config.yml
+web/bundles/
+app/bootstrap*
 app/cache/*
 app/logs/*
-web/bundles
-vendor
-src/Symfony/Cmf
+build/
+vendor/
+app/config/parameters.ini
