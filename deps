@@ -69,3 +69,10 @@
 
 [doctrine-data-fixtures]
     git=http://github.com/doctrine/data-fixtures.git
+
+[FunctionalTestBundle]
+    git=http://github.com/liip/LiipFunctionalTestBundle.git
+    target=/bundles/Liip/FunctionalTestBundle
+
+[doctrine-phpcr-odm]
+    git=https://github.com/doctrine/phpcr-odm.git
