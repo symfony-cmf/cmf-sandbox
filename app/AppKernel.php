@@ -9,23 +9,36 @@ class AppKernel extends Kernel
     {
         $bundles = array(
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
+            new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
-
-            // enable third-party bundles
             new Symfony\Bundle\MonologBundle\MonologBundle(),
-            new Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
+            new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
+            new Symfony\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
             // enable cmf bundles
             new Symfony\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
+            new Symfony\Cmf\Bundle\MultilangContentBundle\SymfonyCmfMultilangContentBundle(),
             new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
+            new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
+            new Symfony\Cmf\Bundle\PhpcrCommandsBundle\PhpcrCommandsBundle(),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
+// needs update            new Sandbox\AdminBundle\SandboxAdminBundle(), //until we have something better
         );
 
-        if ($this->isDebug()) {
+        if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
+            // only downloaded to build the bootstrap
+            // $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+
+            // additional bundle for tests
+            $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
         }
 
         return $bundles;
@@ -33,19 +46,6 @@ class AppKernel extends Kernel
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        // use YAML for configuration
-        // comment to use another configuration format
         $loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.yml');
-
-        // uncomment to use XML for configuration
-        //$loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.xml');
-
-        // uncomment to use PHP for configuration
-        //$loader->load(__DIR__.'/config/config_'.$this->getEnvironment().'.php');
-    }
-
-    public function registerRootDir()
-    {
-        return __DIR__;
     }
 }

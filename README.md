@@ -2,6 +2,8 @@
 
 This sandbox is a testing ground for the cmf bundles being developped.
 
+It is based on the [Symfony Standard edition](https://github.com/symfony/symfony-standard) and adds all cmf related bundles on top of the standard edition bundles.
+
 
 ## Getting started
 
@@ -14,34 +16,29 @@ This sandbox is a testing ground for the cmf bundles being developped.
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
-    bin/vendors.sh
+    # we skipped the web installer for now
+    # copy parameters template and edit as needed
+    cp app/config/parameters.ini.dist app/config/parameters.ini
+    bin/vendors install
 
-This will fetch the main project and all it's dependencies ( Zend, Symfony, Doctrine\PHPCR, Jackalope ... )
-
-### Create your personal config file
-
-You have to copy the default config.yml to fit your needs:
-    cp app/config/config.yml.dist app/config/config.yml
+This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 
 ### Install and run Apache JackRabbit
 
-In order to run tests or application, you will need a working Jackrabbit server running and listening by default on localhost port 8080.
+Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server)
+and then [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
 
-### Download the jackrabbit server from the official website: http://jackrabbit.apache.org/downloads.html
+    app/console doctrine:phpcr:register-system-node-types
 
-    mv jackrabbit-standalone-2.x.x.jar jackrabbit-standalone.jar
-    java -jar jackrabbit-standalone.jar
+## Import the fixtures
 
-## Try it
+We currently do not yet have an edit backend. Until somebody builds one, you
+can only programmatically create data. The best way to do that is with the
+doctrine data fixtures. The PhpcrCommandsBundle included in the symfony-cmf
+repository provides a command to load fixtures.
 
-Open you browser on http://localhost:8080/
-You should have a default jackrabbit homepage.
+    app/console -v phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
 
-## Run the test suite
-
-Tests are written with PHPUnit.
-
-    phpunit -c app
 
 ## Access by web browser
 
@@ -56,4 +53,23 @@ Create an apache virtual host entry along the lines of
 
 And add an entry to your hosts file for cmf.lo
 
-Now go to http://cmf.lo/app_dev.php
+Then point your browser to http://cmf.lo/app_dev.php
+
+## Admin interface
+
+THIS IS CURRENTLY BROKEN as it is based on the old form framework.
+
+There is a proof-of-concept admin interface at http://cmf.lo/app_dev.php/admin
+
+We intend to replace this either by VIE (http://bergie.github.com/VIE/) or
+something with one of the AdminBundle s.
+
+
+## Run the test suite
+
+Tests are written with PHPUnit.
+
+TESTS ARE CURRENTLY BROKEN
+
+    phpunit -c app
+

@@ -1,0 +1,18 @@
+services:
+    cmf_sandbox.admin:
+        class: Sandbox\AdminBundle\Controller\DefaultController
+        scope: request
+        arguments:
+            - @service_container
+            - @doctrine.phpcr_odm.document_manager
+            - @cmf_sandbox.form
+            - @request
+
+    cmf_sandbox.form:
+        factory_method: create
+        factory_class: %cmf_sandbox.form.page.class%
+        class: %cmf_sandbox.form.page.class%
+        arguments:
+            - @form.context
+            - cmf_sandbox_admin_page_form
+            - { dm: @doctrine.phpcr_odm.document_manager }

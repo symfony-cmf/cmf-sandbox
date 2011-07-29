@@ -1,0 +1,57 @@
+static:
+    -
+        name: "home"
+        title: "Homepage"
+        content: |
+            <h2>Welcome to the symfony cmf Demo</h2>
+            <p>If you see this page, it means that the symfony cmf installation is running successfully!</p>
+            <h2>How to proceed</h2>
+            <p>There is a couple of bundles to look into in the vendor/symfony-cmf/ folder. Look at the main README but also at the individual README files of the bundles.</p>
+    -
+        name: "company"
+        title: "The Company"
+        content: |
+            <h2>Who is behind the Symfony CMF project?</h2>
+            <p>The content management framework is a joint effort by various developpers and companies</p>
+            <h2>dicta facete eu vis</h2>
+            <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea. Prima debet fierent id sed. Usu debet paulo argumentum ex, solum homero in sed, modus laboramus et usu. Brute legendos contentiones ex pri.
+
+            Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+    -
+        name: "company_team"
+        title: "The Team"
+        content: |
+            <h2>Our Team</h2>
+            <p>There are some core developpers and many other contributors. We need more help, so please contribute.</p>
+            <h2>dicta facete eu vis</h2>
+            <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea. Prima debet fierent id sed. Usu debet paulo argumentum ex, solum homero in sed, modus laboramus et usu. Brute legendos contentiones ex pri.
+
+            Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+    -
+        name: "company_more"
+        title: "More Information"
+        content: |
+            <h2>Yet another page</h2>
+            <p>About the companies, though we don't have more to say here. But you want pages to see the navigation in action.</p>
+            <h2>dicta facete eu vis</h2>
+            <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea. Prima debet fierent id sed. Usu debet paulo argumentum ex, solum homero in sed, modus laboramus et usu. Brute legendos contentiones ex pri.
+
+            Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+    -
+        name: "projects"
+        title: "The projects"
+        content: |
+            <h2>We do a lot of projects</h2>
+            <p>Sed sale modus nusquam ne. At omnesque senserit vel, veritus denique epicuri pri eu, nam illud constituam in. Id sit convenire mediocrem. Erant facilisi pri ea, quo ignota graeci dolores in, idque legere commune nam an. Eros fabulas scripserit mea ea. Mei everti hendrerit et, sit in harum vituperata.</p>
+            <h2>dicta facete eu vis</h2>
+            <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea.
+            Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+    -
+        name: "projects_cmf"
+        title: "Content Management Framework"
+        content: |
+            <h2>The CMF is what this is all about</h2>
+            <p>Sed sale modus nusquam ne. At omnesque senserit vel, veritus denique epicuri pri eu, nam illud constituam in. Id sit convenire mediocrem. Erant facilisi pri ea, quo ignota graeci dolores in, idque legere commune nam an. Eros fabulas scripserit mea ea. Mei everti hendrerit et, sit in harum vituperata.</p>
+            <h2>dicta facete eu vis</h2>
+            <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea.
+            Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
