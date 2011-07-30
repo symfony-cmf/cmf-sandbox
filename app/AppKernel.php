@@ -17,17 +17,20 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
 
             // enable cmf bundles
             new Symfony\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
             new Symfony\Cmf\Bundle\MultilangContentBundle\SymfonyCmfMultilangContentBundle(),
+            new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle(),
             new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
             new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
             new Symfony\Cmf\Bundle\PhpcrCommandsBundle\PhpcrCommandsBundle(),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
+            new Sandbox\TestBundle\SandboxTestBundle(),
 // needs update            new Sandbox\AdminBundle\SandboxAdminBundle(), //until we have something better
         );
 
@@ -40,9 +43,6 @@ class AppKernel extends Kernel
             // additional bundle for tests
             $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
 
-            // Menu bundle
-            $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
-            $bundles[] = new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle();
         }
 
         return $bundles;
