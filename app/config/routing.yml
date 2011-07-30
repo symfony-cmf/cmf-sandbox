@@ -6,6 +6,11 @@
 #admin:
 #    resource: @SandboxAdminBundle/Resources/config/routing.yml
 
+test:
+    pattern:  /hello
+    defaults: { _controller: SandboxTestBundle:Test:index }
+    
+
 cmf:
     resource: @SandboxMainBundle/Resources/config/routing.yml
 
