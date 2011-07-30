@@ -71,3 +71,7 @@ doctrine_phpcr:
     # enable the ODM layer
     odm:
         auto_mapping: true
+
+knp_menu:
+    twig: true
+
