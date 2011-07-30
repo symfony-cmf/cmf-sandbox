@@ -42,7 +42,6 @@ class AppKernel extends Kernel
 
             // additional bundle for tests
             $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
-
         }
 
         return $bundles;
