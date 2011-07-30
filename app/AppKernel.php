@@ -39,6 +39,10 @@ class AppKernel extends Kernel
 
             // additional bundle for tests
             $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
+
+            // Menu bundle
+            $bundles[] = new Knp\Bundle\MenuBundle\KnpMenuBundle();
+            $bundles[] = new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle();
         }
 
         return $bundles;
