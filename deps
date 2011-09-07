@@ -75,6 +75,8 @@
     git=http://github.com/liip/LiipFunctionalTestBundle.git
     target=/bundles/Liip/FunctionalTestBundle
 
+[knp-menu]
+    git=https://github.com/knplabs/KnpMenu.git
 [KnpMenuBundle]
     git=http://github.com/knplabs/KnpMenuBundle.git
     target=/bundles/Knp/Bundle/MenuBundle
