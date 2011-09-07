@@ -57,9 +57,6 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         }
 
         $manager->flush(); //to get ref id populated
-        if ($this->session instanceof \Jackalope\Session) {
-            $this->session->clear(); //FIXME: jackalope bug, should refresh data from backend after save to make mixin work
-        }
     }
 
     /**
