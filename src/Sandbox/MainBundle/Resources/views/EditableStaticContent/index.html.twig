@@ -1,6 +1,7 @@
 {% extends "SandboxMainBundle::skeleton.html.twig" %}
 
 {% block content %}
+
 <div xmlns:sioc="http://rdfs.org/sioc/ns#"
      xmlns:dcterms="http://purl.org/dc/terms/"
      typeof="sioc:Post"
@@ -10,6 +11,7 @@
 {{ page.content|raw }}
 </div>
 </div>
+    {{ parent() }}
 {% endblock %}
 
 {% block content_extra %}

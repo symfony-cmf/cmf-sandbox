@@ -5,5 +5,12 @@
     <link href="/bundles/sandboxmain/css/style.css" media="screen" type="text/css" rel="stylesheet" />
 {% endblock %}
 
+{% block content %}
+    {{ parent() }}
+    <div id="saveButton">
+        Save
+    </div>
+{% endblock %}
+
 {% block bottom_scripts %}
 {% endblock %}
