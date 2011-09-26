@@ -1,0 +1,6 @@
+services:
+    sandbox_main.controller:
+        class: Sandbox\MainBundle\Controller\ContentController
+        arguments:
+            container: "@service_container"
+        shared: true
