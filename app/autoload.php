@@ -14,7 +14,7 @@ $loader->registerNamespaces(array(
 
     // additional sandbox things
     'Sandbox'                        => __DIR__.'/../src',
-    'Liip\\FunctionalTestBundle'     => __DIR__.'/../vendor/bundles',
+    'Liip'                           => __DIR__.'/../vendor/bundles',
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
     'Doctrine\\Common'               => __DIR__.'/../vendor/doctrine-common/lib',
 

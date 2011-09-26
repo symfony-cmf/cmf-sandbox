@@ -71,6 +71,10 @@
 [doctrine-data-fixtures]
     git=http://github.com/doctrine/data-fixtures.git
 
+[VieBundle]
+    git=git@github.com:liip/LiipVieBundle.git
+    target=/bundles/Liip/VieBundle
+
 [FunctionalTestBundle]
     git=http://github.com/liip/LiipFunctionalTestBundle.git
     target=/bundles/Liip/FunctionalTestBundle

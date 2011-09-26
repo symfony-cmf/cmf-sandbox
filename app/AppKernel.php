@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
             new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
             new Symfony\Cmf\Bundle\PhpcrCommandsBundle\PhpcrCommandsBundle(),
+            new Liip\VieBundle\LiipVieBundle(),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
