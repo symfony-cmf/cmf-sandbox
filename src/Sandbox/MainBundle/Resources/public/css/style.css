@@ -5,8 +5,7 @@ div.inner > div > h1 {
 
 #saveButton{
     background: #222;
-    display: none;
-    /*display: inline-block;*/
+    display: inline-block;
     padding: 5px 10px 6px;
     color: #fff;
     text-decoration: none;
@@ -19,6 +18,10 @@ div.inner > div > h1 {
     position: relative;
     cursor: pointer;
     margin: 15px 0 0;
+}
+
+#saveButton.hidden{
+    display: none;
 }
 
 #saveButton:hover{
