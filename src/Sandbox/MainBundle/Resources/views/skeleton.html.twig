@@ -13,4 +13,6 @@
 {% endblock %}
 
 {% block bottom_scripts %}
+    {{ parent() }}
+    {% render "LiipVieBundle:Vie:includeJSFiles" %}
 {% endblock %}
