@@ -3,7 +3,7 @@ div.inner > div > h1 {
     font-weight: bold;
 }
 
-#saveButton{
+#savebutton{
     background: #222;
     display: inline-block;
     padding: 5px 10px 6px;
@@ -20,11 +20,7 @@ div.inner > div > h1 {
     margin: 15px 0 0;
 }
 
-#saveButton.hidden{
-    display: none;
-}
-
-#saveButton:hover{
+#savebutton:hover{
     background-color: #111;
     color: #fff;
 }
