@@ -1,7 +1,14 @@
 <?php
 namespace Sandbox\MainBundle\Document;
 
-class EditableStaticContent extends Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent implements FromJsonLdInterface
+use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
+use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+use Liip\VieBundle\FromJsonLdInterface;
+
+/**
+ * @PHPCRODM\Document(alias="editablestatic")
+ */
+class EditableStaticContent extends StaticContent implements FromJsonLdInterface
 {
     public function fromJsonLd($data)
     {
