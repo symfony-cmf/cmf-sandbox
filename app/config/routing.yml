@@ -9,7 +9,10 @@
 test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
-    
+
+
+vie:
+    resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"
 
 cmf:
     resource: @SandboxMainBundle/Resources/config/routing.yml

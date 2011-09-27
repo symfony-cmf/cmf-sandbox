@@ -79,3 +79,8 @@ symfony_cmf_navigation:
 knp_menu:
     twig: true
 
+liip_vie:
+    phpcr_odm: true
+    #orm: doctrine.orm.my_entity_manager
+    map:
+        '<sioc:Post>': 'Sandbox\MainBundle\Document\EditableStaticContent'
