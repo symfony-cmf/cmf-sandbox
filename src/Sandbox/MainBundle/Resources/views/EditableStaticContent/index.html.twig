@@ -1,17 +1,16 @@
 {% extends "SandboxMainBundle::skeleton.html.twig" %}
 
 {% block content %}
-
 <div xmlns:sioc="http://rdfs.org/sioc/ns#"
      xmlns:dcterms="http://purl.org/dc/terms/"
      typeof="sioc:Post"
      about="{{ page.path }}">
-<h1 property="dcterms:title">{{ page.title }}</h1>
-<div property="sioc:content">
-{{ page.content|raw }}
+    <h1 property="dcterms:title">{{ page.title }}</h1>
+    <div property="sioc:content">
+        {{ page.content|raw }}
+    </div>
 </div>
-</div>
-    {{ parent() }}
+{{ parent() }}
 {% endblock %}
 
 {% block content_extra %}
