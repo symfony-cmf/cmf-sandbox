@@ -28,6 +28,10 @@ assetic:
     use_controller: false
     filters:
         cssrewrite: ~
+        coffee:
+           bin: %coffee.bin%
+           node: %coffee.node%
+           apply_to: "\.coffee$"
         # closure:
         #     jar: %kernel.root_dir%/java/compiler.jar
         # yui_css:
