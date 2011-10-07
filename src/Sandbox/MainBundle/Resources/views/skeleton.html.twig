@@ -3,7 +3,8 @@
 {% block includes %}
     {{ parent() }}
     {% stylesheets  '@SandboxMainBundle/Resources/public/css/style.css'
-                    '@LiipVieBundle/Resources/public/hallo/Aristo/jquery-ui-1.8.7.custom.css' %}
+                    '@LiipVieBundle/Resources/public/hallo/Aristo/jquery-ui-1.8.7.custom.css'
+                    '@LiipVieBundle/Resources/public/css/hallo.css' %}
         <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
     {% endstylesheets %}
 {% endblock %}
