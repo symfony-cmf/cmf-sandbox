@@ -9,7 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\Yaml\Parser;
 
-use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+use Sandbox\MainBundle\Document\EditableStaticContent;
 
 class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
@@ -44,7 +44,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             if (!$page = $manager->find($contentdocument, $path)) {
-                $page = new StaticContent();
+                $page = new EditableStaticContent();
                 $page->setPath($path);
                 $manager->persist($page);
                 //TODO: document manager should handle this for us
