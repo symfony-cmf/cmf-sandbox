@@ -4,37 +4,34 @@
 
 [twig]
     git=http://github.com/fabpot/Twig.git
-    version=v1.1.1
+    version=v1.2.0
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
-    version=1.0.0
-
-[doctrine-common]
-    git=http://github.com/doctrine/common.git
-    version=2.1.0
+    version=1.0.1
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
-    version=2.1.0
+    version=origin/2.1.x
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=2.1.0
+    version=origin/2.1.x
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
-    version=v4.1.0
+    version=v4.1.2
 
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
-    version=v1.0.1
+    version=v1.0.2
 
 [twig-extensions]
     git=http://github.com/fabpot/Twig-extensions.git
 
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
+    version=1.1.0
 
 [SensioFrameworkExtraBundle]
     git=http://github.com/sensio/SensioFrameworkExtraBundle.git
@@ -43,6 +40,7 @@
 [JMSSecurityExtraBundle]
     git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
     target=/bundles/JMS/SecurityExtraBundle
+    version=origin/1.0.x
 
 [SensioDistributionBundle]
     git=http://github.com/sensio/SensioDistributionBundle.git
@@ -55,7 +53,7 @@
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
-    version=v1.0.0RC2
+    version=v1.0.1
 
 ### CMF specific bundles and additional requirements
 

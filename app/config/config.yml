@@ -79,6 +79,7 @@ doctrine_phpcr:
 symfony_cmf_navigation:
     controllers_by_alias:
         static_pages: sandbox_main.controller:indexAction
+        editablestatic: sandbox_main.controller:indexAction
 
 knp_menu:
     twig: true
