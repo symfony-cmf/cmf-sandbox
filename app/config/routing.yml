@@ -18,4 +18,4 @@ cmf:
     resource: @SandboxMainBundle/Resources/config/routing.yml
 
     # this must come last, its a catch all route
-    resource: @SymfonyCmfNavigationBundle/Resources/config/routing.yml
+    resource: @SymfonyCmfNavigationBundle/Resources/config/routing.xml
