@@ -1,10 +1,8 @@
 [symfony]
     git=http://github.com/symfony/symfony.git
-    version=v2.0.4
 
 [twig]
     git=http://github.com/fabpot/Twig.git
-    version=v1.2.0
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
@@ -12,11 +10,9 @@
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
-    version=origin/2.1.x
 
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
-    version=origin/2.1.x
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
@@ -55,7 +51,7 @@
     target=/bundles/Symfony/Bundle/AsseticBundle
     version=v1.0.1
 
-### CMF specific bundles and additional requirements
+;### CMF specific bundles and additional requirements
 
 [symfony-cmf]
     git=http://github.com/symfony-cmf/symfony-cmf.git
