@@ -47,9 +47,6 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
                 $page = new EditableStaticContent();
                 $page->setPath($path);
                 $manager->persist($page);
-                //TODO: document manager should handle this for us
-                $manager->flushNoSave(); //populate node property
-                $page->node->addMixin('mix:referenceable');
             }
             $page->name = $overview['name'];
             $page->title = $overview['title'];
