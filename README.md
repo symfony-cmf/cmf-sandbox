@@ -18,7 +18,7 @@ It is based on the [Symfony Standard edition](https://github.com/symfony/symfony
     cd cmf-sandbox
     # we skipped the web installer for now
     # copy parameters template and edit as needed
-    cp app/config/parameters.ini.dist app/config/parameters.ini
+    cp app/config/parameters.yml.dist app/config/parameters.yml
     bin/vendors install
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
@@ -34,10 +34,10 @@ and then [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Cu
 
 We currently do not yet have an edit backend. Until somebody builds one, you
 can only programmatically create data. The best way to do that is with the
-doctrine data fixtures. The PhpcrCommandsBundle included in the symfony-cmf
+doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
 repository provides a command to load fixtures.
 
-    app/console -v phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
+    app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
 
 
 ## Access by web browser
