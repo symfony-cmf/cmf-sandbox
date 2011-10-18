@@ -14,6 +14,9 @@ test:
 vie:
     resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"
 
+vie_asset_management:
+    resource: "@LiipVieBundle/Resources/config/routing/asset_search.xml"
+
 cmf:
     resource: @SandboxMainBundle/Resources/config/routing.yml
 
