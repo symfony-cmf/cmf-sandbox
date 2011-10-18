@@ -21,4 +21,12 @@
 {% block bottom_scripts %}
     {{ parent() }}
     {% render "liip_vie.controller.vie:includeJSFilesAction" %}
+
+    {# Don't include this if no permission to edit #}
+    {% javascripts output="/js/hiddenfields.js"
+                '@SandboxMainBundle/Resources/public/js/hiddenfields.js'
+    %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {# End don't include this if no permission to edit #}
 {% endblock %}

@@ -2,3 +2,58 @@ div.inner > div h1 {
     font-size: 1.55em;
     font-weight: bold;
 }
+
+.articleContainer {
+    position: relative;
+}
+
+.hiddenfieldsToggle {
+    background-image: url('/bundles/sandboxmain/images/cornersettings_small.png');
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 106px;
+    height: 92px;
+    cursor: pointer;
+}
+
+.hiddenfieldsToggle:hover {
+    background-image: url('/bundles/sandboxmain/images/cornersettings_large.png');
+    width: 157px;
+    height: 136px;
+}
+
+.hiddenfields {
+    background-color: black;
+    width: 100%;
+    display: none;
+    height: 100px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.hiddenfields h2 {
+    background: url('/bundles/sandboxmain/images/settingsh2icon.png') no-repeat left center;
+    padding-left: 22px;
+    padding-bottom: 0;
+    color: #A0A0A0;
+    font-family: Helvetica, Arial;
+    font-size: 15px;
+}
+
+.hiddenfieldsContainer {
+    z-index: 100;
+    padding: 25px 18px 20px 20px;
+    position: relative;
+}
+
+.hiddenfieldsClose {
+    background: url('/bundles/sandboxmain/images/cornerclose.png') no-repeat left bottom;
+    width: 106px;
+    height: 92px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+    cursor: pointer;
+}

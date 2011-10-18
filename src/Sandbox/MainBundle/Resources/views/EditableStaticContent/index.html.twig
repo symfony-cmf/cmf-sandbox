@@ -4,7 +4,17 @@
 <div xmlns:sioc="http://rdfs.org/sioc/ns#"
      xmlns:dcterms="http://purl.org/dc/terms/"
      typeof="sioc:Post"
-     about="{{ page.path }}">
+     about="{{ page.path }}"
+     class="articleContainer">
+     {# hide this if no permission to edit #}
+     <div class="hiddenfieldsContainer">
+         <div class="hiddenfieldsToggle"></div>
+         <div class="hiddenfields">
+            <h2>Article settings</h2>
+         </div>
+         <div class="hiddenfieldsClose"></div>
+     </div>
+    {# end hide this if no permission to edit #}
     <h1 property="dcterms:title">{{ page.title }}</h1>
     <div property="sioc:content">
         {{ page.content|raw }}
