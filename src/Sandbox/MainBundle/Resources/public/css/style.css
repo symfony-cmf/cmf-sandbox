@@ -3,6 +3,19 @@ div.inner > div h1 {
     font-weight: bold;
 }
 
+#userBar {
+    position: fixed;
+    width: 100%;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    background-color: #515151;
+    color: #FFFFFF;
+    font-family: Helvetica;
+    font-size: 14px;
+    z-index: 500;
+}
+
 .articleContainer {
     position: relative;
 }

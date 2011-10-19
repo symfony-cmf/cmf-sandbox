@@ -12,6 +12,12 @@
     {% endstylesheets %}
 {% endblock %}
 
+{% block header %}
+    <div id="userBar"><div id="saveStatus">Nothing to Save</div>
+    </div>
+    {{ parent() }}
+{% endblock %}
+
 {% block content %}
     {{ parent() }}
     <button id="savebutton">Save</button>
@@ -23,8 +29,9 @@
     {% render "liip_vie.controller.vie:includeJSFilesAction" %}
 
     {# Don't include this if no permission to edit #}
-    {% javascripts output="/js/hiddenfields.js"
+    {% javascripts
                 '@SandboxMainBundle/Resources/public/js/hiddenfields.js'
+                '@SandboxMainBundle/Resources/public/js/savebutton.js'
     %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
