@@ -16,6 +16,11 @@ div.inner > div h1 {
     z-index: 500;
 }
 
+.saveButton {
+    padding: 2px;
+    margin-left: 2px;
+}
+
 .articleContainer {
     position: relative;
 }
