@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
         var secondsAgo = Math.round((new Date().getTime() - saveTimestamp) / 1000);
 
         var dateObject = new Date(saveTimestamp);
-        updateTimeText("Last save was <time datetime=\"" + convertTimestampToHTML5(saveTimestamp) + "\">" + secondsAgo + "</span> seconds ago <button class=\"saveButton\">Save Now</button>"); // Text should not be in JS!
+        updateTimeText("Last saved <time datetime=\"" + convertTimestampToHTML5(saveTimestamp) + "\">a few seconds ago</time> <button class=\"saveButton\">Save Now</button>"); // Text should not be in JS!
 
         if (!saveTimeoutSet) {
             setTimeout(function() {

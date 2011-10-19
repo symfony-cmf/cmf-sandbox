@@ -14,6 +14,8 @@ div.inner > div h1 {
     font-family: Helvetica;
     font-size: 14px;
     z-index: 500;
+    height: 20px;
+    line-height: 20px;
 }
 
 .saveButton {
