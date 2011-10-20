@@ -3,13 +3,15 @@ jQuery(document).ready(function($) {
         var context = $(this).closest('.hiddenfieldsContainer');
         $('.hiddenfields', context).show();
         $('.hiddenfieldsToggle', context).hide();
-        $('.hiddenfieldsClose', context).show();
+        $('.hiddenfieldsCloseCorner', context).show();
+        $('.hiddenfieldsCloseButton', context).show();
     });
 
-    $('.hiddenfieldsClose').click(function(event) {
+    $('.hiddenfieldsCloseCorner, .hiddenfieldsCloseButton').click(function(event) {
         var context = $(this).closest('.hiddenfieldsContainer');
         $('.hiddenfields', context).hide();
         $('.hiddenfieldsToggle', context).show();
-        $('.hiddenfieldsClose', context).hide();
+        $('.hiddenfieldsCloseCorner', context).hide();
+        $('.hiddenfieldsCloseButton', context).hide();
     });
 });

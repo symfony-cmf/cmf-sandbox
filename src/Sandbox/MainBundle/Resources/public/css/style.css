@@ -65,9 +65,10 @@ div.inner > div h1 {
     z-index: 100;
     padding: 25px 38px 20px 20px;
     position: relative;
+    min-height: 30px;
 }
 
-.hiddenfieldsClose {
+.hiddenfieldsCloseCorner {
     background: url('/bundles/sandboxmain/images/cornerclose.png') no-repeat left bottom;
     width: 106px;
     height: 92px;
@@ -75,5 +76,16 @@ div.inner > div h1 {
     bottom: 0;
     left: 0;
     display: none;
+    cursor: pointer;
+}
+
+.hiddenfieldsCloseButton {
+    background: url('/bundles/liipvie/img/close_button.png');
+    display: none;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 15px;
+    right: 6px;
     cursor: pointer;
 }
