@@ -19,9 +19,36 @@ div.inner > div h1 {
 }
 
 .saveButton {
-    padding: 2px;
+    padding: 2px 4px;
     margin-left: 2px;
+    border-radius: 3px;
+    border: none;
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#888888),
+        to(#4d4d4d));
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 2px rgba(255,255,255,0.3);
 }
+
+.saveButtonActive {
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(rgb(054,184,214)),
+        to(#32ADD1));
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 2px rgba(54,184,214,0.3);}
+
+.saveButtonActive:hover {
+    background: -webkit-gradient(
+        linear, left top, left bottom,
+        from(#257c8f),
+        to(#32ADD1));
+    -webkit-box-shadow:
+        0px 1px 3px rgba(000,000,000,0.5),
+        inset 0px 0px 2px rgba(54,184,214,0.3);}}
 
 .articleContainer {
     position: relative;
