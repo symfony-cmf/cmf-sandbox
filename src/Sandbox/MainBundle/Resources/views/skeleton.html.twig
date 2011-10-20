@@ -19,12 +19,6 @@
     {{ parent() }}
 {% endblock %}
 
-{% block content %}
-    {{ parent() }}
-    <button id="savebutton">Save</button>
-
-{% endblock %}
-
 {% block bottom_scripts %}
     {{ parent() }}
     {% render "liip_vie.controller.vie:includeJSFilesAction" %}
