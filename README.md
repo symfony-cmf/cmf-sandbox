@@ -39,6 +39,8 @@ repository provides a command to load fixtures.
 
     app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
 
+If you're using the lastest version of the Jackrabbit server (2.3.x) and are getting an error when loading the fixtures
+try removing: ``--purge=true``
 
 ## Access by web browser
 
