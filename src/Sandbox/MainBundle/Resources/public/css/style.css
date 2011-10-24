@@ -3,6 +3,10 @@ div.inner > div h1 {
     font-weight: bold;
 }
 
+[contenteditable] a {
+    color: #00add2;
+}
+
 #userBar {
     position: fixed;
     width: 100%;
