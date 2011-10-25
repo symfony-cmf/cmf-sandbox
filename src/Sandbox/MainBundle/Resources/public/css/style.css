@@ -20,6 +20,7 @@ div.inner > div h1 {
     height: 22px;
     line-height: 22px;
     border-bottom: 1px solid #333;
+    display: none;
 
     background: #969696; /* Old browsers */
     background: -moz-linear-gradient(top, #969696 0%, #515151 100%); /* FF3.6+ */
