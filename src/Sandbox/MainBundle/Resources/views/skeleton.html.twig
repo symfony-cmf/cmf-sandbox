@@ -2,34 +2,41 @@
 
 {% block includes %}
     {{ parent() }}
-    {% stylesheets  '@SandboxMainBundle/Resources/public/css/style.css'
-                    '@LiipVieBundle/Resources/public/hallo/Aristo/jquery-ui-1.8.7.custom.css'
+    {% stylesheets '@SandboxMainBundle/Resources/public/css/style.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+    {% endstylesheets %}
+
+    {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+        {% stylesheets '@LiipVieBundle/vendor/hallo/examples/Aristo/jquery-ui-1.8.7.custom.css'
                     '@LiipVieBundle/Resources/public/css/halloLiipStyle.css'
                     '@LiipVieBundle/vendor/hallo/examples/overlay.css'
                     '@LiipVieBundle/vendor/hallo/examples/image.css'
-    %}
-        <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
-    {% endstylesheets %}
+        %}
+            <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+        {% endstylesheets %}
+    {% endif %}
 {% endblock %}
 
 {% block header %}
-        <div class="inner"><button class="saveButton">Saved</button></div>
-    </div>
+    {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
         <div id="userBar">
+            <div class="inner"><button class="saveButton">Saved</button></div>
+        </div>
+    {% endif %}
     {{ parent() }}
 {% endblock %}
 
 {% block bottom_scripts %}
     {{ parent() }}
-    {% render "liip_vie.controller.vie:includeJSFilesAction" %}
+    {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+        {% render "liip_vie.controller.vie:includeJSFilesAction" %}
 
-    {# Don't include this if no permission to edit #}
-    {% javascripts
-                '@SandboxMainBundle/Resources/public/js/hiddenfields.js'
-                '@SandboxMainBundle/Resources/public/js/savebutton.js'
-                '@SandboxMainBundle/Resources/public/js/userbar.js'
-    %}
-        <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {# End don't include this if no permission to edit #}
+        {% javascripts
+                    '@SandboxMainBundle/Resources/public/js/hiddenfields.js'
+                    '@SandboxMainBundle/Resources/public/js/savebutton.js'
+                    '@SandboxMainBundle/Resources/public/js/userbar.js'
+        %}
+            <script src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    {% endif %}
 {% endblock %}
