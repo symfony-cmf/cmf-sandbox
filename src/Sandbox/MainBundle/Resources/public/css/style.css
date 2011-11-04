@@ -3,6 +3,16 @@ div.inner > div h1 {
     font-weight: bold;
 }
 
+.articleContainer {
+    float: left;
+    width: 710px;
+}
+
+.sidebar {
+    float: right;
+    width: 250px;
+}
+
 [contenteditable] a {
     color: #00add2;
 }
