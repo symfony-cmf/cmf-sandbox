@@ -22,7 +22,13 @@
         {{ page.content|raw }}
     </div>
 </div>
-<div class="sidebar">Static Sidebar Content <img src="http://2.bp.blogspot.com/_M9KExL3ZWRM/SuIcfXUATHI/AAAAAAAAAHc/AeFJzszOnTw/s400/Totemcolorfulfaac4.jpg" /></div>
+<div class="sidebar">
+    {% image output="/images/test.png"
+        '@SandboxMainBundle/Resources/public/images/sidebar.png'
+    %}
+        <img src="{{ asset_url }}" alt="The alt text" />
+    {% endimage %}
+</div>
 {{ parent() }}
 {% endblock %}
 
