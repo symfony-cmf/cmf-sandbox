@@ -17,6 +17,11 @@ div.inner > div h1 {
     color: #00add2;
 }
 
+[contenteditable] li {
+    list-style-type: disc;
+    margin: 0 0 0 22px;
+}
+
 #userBar {
     position: fixed;
     width: 100%;
