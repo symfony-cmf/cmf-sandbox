@@ -6,7 +6,6 @@
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
-    version=1.0.1
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
@@ -86,3 +85,7 @@
 [JMSSerializerBundle]
     git=https://github.com/schmittjoh/JMSSerializerBundle.git
     target=/bundles/JMS/SerializerBundle
+
+[ChainRoutingBundle]
+    git=git://github.com/symfony-cmf/ChainRoutingBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle

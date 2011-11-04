@@ -6,7 +6,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     // cmf stuff
-    'Symfony\\Cmf'                          => __DIR__.'/../vendor/symfony-cmf/src',
+    'Symfony\\Cmf'                          => array(__DIR__.'/../vendor/symfony-cmf/src', __DIR__.'/../vendor/bundles'),
     'Symfony\\Bundle\\DoctrinePHPCRBundle'  => __DIR__.'/../vendor/symfony-cmf/src',
     'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib',
     'Doctrine\\Common'                      => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/doctrine-common/lib',
