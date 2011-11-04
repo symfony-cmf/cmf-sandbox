@@ -1,3 +1,6 @@
+html {
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
 div.inner > div h1 {
     font-size: 1.55em;
     font-weight: bold;
@@ -141,4 +144,50 @@ div.inner > div h1 {
     top: 15px;
     right: 6px;
     cursor: pointer;
+}
+
+.articleContainer {
+    margin-bottom: 20px;
+    clear: both;
+}
+
+#content a, a {
+    color: #8AB84B;
+    text-decoration: none;
+}
+
+#language_selector {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    color: #ED671E;
+}
+
+#language_selector li.selected a {
+    color: #000;
+}
+
+#language_selector li.selected span {
+    visibility: hidden;
+}
+
+#navigation > ul {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+}
+
+#navigation > ul > li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+#navigation > ul > li > ul > li {
+    margin-left: 20px;
+}
+
+#main_title {
+    font-size: 30px;
+    color: #ED671E;
+    padding-bottom: 15px;
 }
