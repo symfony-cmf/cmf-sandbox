@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+    <entity name="Acme\StoreBundle\Entity\Comment" table="store__comment">
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="name"              type="string"       column="name"          />
+        <field name="url"               type="string"       column="url"           />
+        <field name="email"             type="string"       column="email"           />
+        <field name="message"           type="text"         column="message"       />
+        <field name="status"            type="integer"      column="status"        default="false" />
+        <field name="createdAt"         type="datetime"     column="created_at" />
+        <field name="updatedAt"         type="datetime"     column="updated_at" />
+
+        <lifecycle-callbacks>
+          <lifecycle-callback type="prePersist" method="prePersist"/>
+          <lifecycle-callback type="preUpdate" method="preUpdate"/>
+        </lifecycle-callbacks>
+
+        <many-to-one field="post" target-entity="Acme\StoreBundle\Entity\Post">
+           <join-column name="post_id" referenced-column-name="id" />
+        </many-to-one>
+    </entity>
+</doctrine-mapping>
+

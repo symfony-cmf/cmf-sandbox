@@ -33,7 +33,18 @@ class AppKernel extends Kernel
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
             new Sandbox\TestBundle\SandboxTestBundle(),
-// needs update            new Sandbox\AdminBundle\SandboxAdminBundle(), //until we have something better
+            new Sandbox\AdminBundle\SandboxAdminBundle(),
+
+            // admin bundle
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\BluePrintBundle\SonataBluePrintBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+
+            // some data for admin bundle
+            new Acme\StoreBundle\AcmeStoreBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

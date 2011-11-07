@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xsi="http://www.w3.org/2001/XMLSchema-instance" schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="Acme\StoreBundle\Entity\Tag" table="store__tag">
+
+        <id name="id" type="integer" column="id">
+            <generator strategy="AUTO"/>
+        </id>
+
+        <field name="name"          type="string"       column="title"           />
+        <field name="enabled"       type="boolean"      column="enabled"        default="false" />
+        <field name="slug"          type="string"      column="slug"    />
+        <field name="createdAt"     type="datetime"   column="created_at" />
+        <field name="updatedAt"     type="datetime"   column="updated_at" />
+
+        <lifecycle-callbacks>
+            <lifecycle-callback type="prePersist" method="prePersist"/>
+            <lifecycle-callback type="preUpdate" method="preUpdate"/>
+        </lifecycle-callbacks>
+
+        <many-to-many field="posts" target-entity="Acme\StoreBundle\Entity\Post" mapped-by="tags" >
+        </many-to-many>
+
+    </entity>
+
+</doctrine-mapping>

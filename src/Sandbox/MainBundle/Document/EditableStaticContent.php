@@ -15,4 +15,34 @@ class EditableStaticContent extends StaticContent implements FromJsonLdInterface
         $this->title = $data['dcterms:title'];
         $this->content = $data['sioc:content'];
     }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
 }

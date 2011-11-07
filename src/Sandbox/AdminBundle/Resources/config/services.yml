@@ -1,18 +1,23 @@
 services:
-    cmf_sandbox.admin:
-        class: Sandbox\AdminBundle\Controller\DefaultController
-        scope: request
+    sandbox_admin.controller:
+        class: Sandbox\AdminBundle\Controller\ContentController
         arguments:
-            - @service_container
-            - @doctrine.phpcr_odm.document_manager
-            - @cmf_sandbox.form
-            - @request
+            container: "@service_container"
+        shared: true
+    sandbox.admin.admin.static_editable_content:
+        class: Sandbox\AdminBundle\Admin\ContentAdmin
+        tags:
+            - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: content}
+        arguments: ["",Sandbox\MainBundle\Document\EditableStaticContent, "SandboxAdminBundle:ContentAdmin"]
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+    sandbox.admin.admin.navigation:
+        class: Sandbox\AdminBundle\Admin\NavigationAdmin
+        tags:
+            - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: navigation}
+        arguments: ["",Symfony\Cmf\Bundle\NavigationBundle\Document\Navigation, "SandboxAdminBundle:NavigationAdmin"]
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
 
-    cmf_sandbox.form:
-        factory_method: create
-        factory_class: %cmf_sandbox.form.page.class%
-        class: %cmf_sandbox.form.page.class%
-        arguments:
-            - @form.context
-            - cmf_sandbox_admin_page_form
-            - { dm: @doctrine.phpcr_odm.document_manager }
+
+
