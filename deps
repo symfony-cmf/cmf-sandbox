@@ -115,6 +115,10 @@
     git=https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git
     target=/bundles/Sonata/DoctrineORMAdminBundle
 
+[SonataDoctrinePHPCRAdminBundle]
+    git=https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git
+    target=/bundles/Sonata/DoctrinePHPCRAdminBundle
+
 [ChainRoutingBundle]
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
     target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
