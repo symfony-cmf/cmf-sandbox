@@ -10,12 +10,13 @@ jQuery(document).ready(function($) {
 
             case 'saved':
                 $('.saveButton').html("Saved");
-                $('.saveButton').removeClass('saveButtonActive');
+                $('.saveButton').removeClass('saveButtonActive saveButtonSaving');
             break;
 
             case 'saving':
                 $('.saveButton').html("Saving...");
                 $('.saveButton').removeClass('saveButtonActive');
+                $('.saveButton').addClass('saveButtonSaving');
             break;
         }
     }

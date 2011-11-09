@@ -1,10 +1,29 @@
+html {
+    font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
+}
 div.inner > div h1 {
     font-size: 1.55em;
     font-weight: bold;
 }
 
+.articleContainer {
+    float: left;
+    width: 700px;
+}
+
+.sidebar {
+    float: right;
+    width: 250px;
+    margin-left: 10px;
+}
+
 [contenteditable] a {
     color: #00add2;
+}
+
+[contenteditable] li {
+    list-style-type: disc;
+    margin: 0 0 0 22px;
 }
 
 #userBar {
@@ -17,7 +36,7 @@ div.inner > div h1 {
     font-family: Helvetica;
     font-size: 14px;
     z-index: 550;
-    height: 22px;
+    height: 25px;
     line-height: 22px;
     border-bottom: 1px solid #333;
     display: none;
@@ -38,37 +57,26 @@ div.inner > div h1 {
     margin-left: 2px;
     border-radius: 3px;
     border: none;
-
-    background: #c6c6c6; /* Old browsers */
-    background: -moz-linear-gradient(top, #c6c6c6 2%, #f7f7f7 50%, #e0e0e0 51%, #999999 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,#c6c6c6), color-stop(50%,#f7f7f7), color-stop(51%,#e0e0e0), color-stop(100%,#999999)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #c6c6c6 2%,#f7f7f7 50%,#e0e0e0 51%,#999999 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #c6c6c6 2%,#f7f7f7 50%,#e0e0e0 51%,#999999 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #c6c6c6 2%,#f7f7f7 50%,#e0e0e0 51%,#999999 100%); /* IE10+ */
-    background: linear-gradient(top, #c6c6c6 2%,#f7f7f7 50%,#e0e0e0 51%,#999999 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6c6c6', endColorstr='#999999',GradientType=0 ); /* IE6-9 */
+    text-indent: 1000px;
+    overflow: hidden;
+    width: 70px;
+    height: 25px;
+    background: transparent url("/bundles/liipvie/img/saveButton.png") no-repeat 0 0;
 }
 
-#userBar .saveButton:hover {
-    background: #999999; /* Old browsers */
-    background: -moz-linear-gradient(top, #999999 0%, #e0e0e0 49%, #f7f7f7 50%, #c6c6c6 98%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999999), color-stop(49%,#e0e0e0), color-stop(50%,#f7f7f7), color-stop(98%,#c6c6c6)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #999999 0%,#e0e0e0 49%,#f7f7f7 50%,#c6c6c6 98%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top, #999999 0%,#e0e0e0 49%,#f7f7f7 50%,#c6c6c6 98%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top, #999999 0%,#e0e0e0 49%,#f7f7f7 50%,#c6c6c6 98%); /* IE10+ */
-    background: linear-gradient(top, #999999 0%,#e0e0e0 49%,#f7f7f7 50%,#c6c6c6 98%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#999999', endColorstr='#c6c6c6',GradientType=0 ); /* IE6-9 */
+#userBar .saveButtonSaving {
+    width: 100px;
+    background: transparent url("/bundles/liipvie/img/saveButton.png") no-repeat 0 -25px;
 }
 
 #userBar .saveButtonActive {
-    background: -webkit-gradient(
-        linear, left top, left bottom,
-        from(rgb(054,184,214)),
-        to(#32ADD1));
+    width: 95px;
+    line-height: 30px;
+    background: transparent url("/bundles/liipvie/img/saveButton.png") no-repeat 0 -50px;
 }
 
 #userBar .saveButtonActive:hover {
-    background: -webkit-gradient(linear, left top, left bottom, from(#257c8f), to(#32ADD1));
+    background-position: 0 -75px;
 }
 
 .articleContainer {
@@ -136,4 +144,50 @@ div.inner > div h1 {
     top: 15px;
     right: 6px;
     cursor: pointer;
+}
+
+.articleContainer {
+    margin-bottom: 20px;
+    clear: both;
+}
+
+#content a, a {
+    color: #8AB84B;
+    text-decoration: none;
+}
+
+#language_selector {
+    position: absolute;
+    top: 10px;
+    right: 40px;
+    color: #ED671E;
+}
+
+#language_selector li.selected a {
+    color: #000;
+}
+
+#language_selector li.selected span {
+    visibility: hidden;
+}
+
+#navigation > ul {
+    position: absolute;
+    left: 20px;
+    top: 60px;
+}
+
+#navigation > ul > li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+#navigation > ul > li > ul > li {
+    margin-left: 20px;
+}
+
+#main_title {
+    font-size: 30px;
+    color: #ED671E;
+    padding-bottom: 15px;
 }

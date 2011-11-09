@@ -6,7 +6,6 @@
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
-    version=1.0.1
 
 [doctrine-dbal]
     git=http://github.com/doctrine/dbal.git
@@ -115,3 +114,7 @@
 [SonataDoctrineORMAdminBundle]
     git=https://github.com/sonata-project/SonataDoctrineORMAdminBundle.git
     target=/bundles/Sonata/DoctrineORMAdminBundle
+
+[ChainRoutingBundle]
+    git=git://github.com/symfony-cmf/ChainRoutingBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
