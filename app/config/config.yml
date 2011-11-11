@@ -103,3 +103,8 @@ sonata_admin:
         # default global templates
         layout:  SonataAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
+
+fos_user:
+    db_driver:      orm
+    firewall_name:  main
+    user_class:     Sonata\UserBundle\Entity\BaseUser

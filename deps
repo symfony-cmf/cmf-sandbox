@@ -122,3 +122,8 @@
 [ChainRoutingBundle]
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
     target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
+
+[FOSUserBundle]
+    git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
+    target=bundles/FOS/UserBundle
+
