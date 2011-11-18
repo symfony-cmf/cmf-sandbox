@@ -27,6 +27,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle(),
             new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
             new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
+            new Symfony\Cmf\Bundle\TreeBundle\SymfonyCmfTreeBundle(),
             new Liip\VieBundle\LiipVieBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
