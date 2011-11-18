@@ -15,10 +15,10 @@
     <script type="text/javascript">
         function initTrees() {
             $("#tree").treeview({
-                url:    "/children.php",
+                url:    "{{ path('symfony_cmf_phpcr_browser_children') }}",
                 toggle: function() {
                     $.ajax({
-                        url: "properties.php",
+                        url: "{{ path('symfony_cmf_phpcr_browser_properties') }}",
                         dataType: "json",
                         data: {
                             root: this.id

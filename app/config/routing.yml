@@ -15,6 +15,9 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
+phpcrbrowser:
+    resource: @SymfonyCmfPHPCRBrowserBundle/Resources/config/routing.xml
+    prefix: /admin/browser
 
 test:
     pattern:  /hello
