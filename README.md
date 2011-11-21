@@ -37,10 +37,10 @@ can only programmatically create data. The best way to do that is with the
 doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
 repository provides a command to load fixtures.
 
-    app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
+__If you're using the lastest version of the Jackrabbit server (2.3.x) and are getting an error when loading the fixtures
+try removing: ``--purge=true``__
 
-If you're using the lastest version of the Jackrabbit server (2.3.x) and are getting an error when loading the fixtures
-try removing: ``--purge=true``
+    app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
 
 ## Access by web browser
 
