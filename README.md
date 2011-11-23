@@ -37,9 +37,6 @@ can only programmatically create data. The best way to do that is with the
 doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
 repository provides a command to load fixtures.
 
-__If you're using the lastest version of the Jackrabbit server (2.3.x) and are getting an error when loading the fixtures
-try removing: ``--purge=true``__
-
     app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
 
 ## Access by web browser
@@ -56,6 +53,13 @@ Create an apache virtual host entry along the lines of
 And add an entry to your hosts file for cmf.lo
 
 Then point your browser to http://cmf.lo/app_dev.php
+
+# Usage
+
+## Console
+
+The PHPCR ODM Bundle provides a couple of useful commands in the doctrine:phpcr namespace.
+Type app/console to see them all.
 
 ## Admin interface
 
