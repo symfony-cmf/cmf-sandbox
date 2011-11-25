@@ -98,5 +98,5 @@ liip_vie:
     phpcr_odm: true
     #orm: doctrine.orm.my_entity_manager
     map:
-        '<sioc:Post>': 'Sandbox\MainBundle\Document\EditableStaticContent'
+        'sioc:Post': 'Sandbox\MainBundle\Document\EditableStaticContent'
     use_coffee: %liip_vie.use_coffee%
