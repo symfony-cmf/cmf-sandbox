@@ -56,6 +56,10 @@
     git=http://github.com/symfony-cmf/symfony-cmf.git
     git_command=submodule update --init --recursive
 
+[DoctrinePHPCRBundle]
+    git=http://github.com/doctrine/DoctrinePHPCRBundle.git
+    target=/bundles/Doctrine/Bundle/PHPCRBundle
+
 [DoctrineFixturesBundle]
     git=http://github.com/symfony/DoctrineFixturesBundle.git
     target=/bundles/Symfony/Bundle/DoctrineFixturesBundle

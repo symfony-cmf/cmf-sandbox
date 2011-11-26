@@ -4,7 +4,7 @@ namespace Symfony\Cmf\Bundle\MenuBundle\Resources\data\fixtures;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Symfony\Bundle\DoctrinePHPCRBundle\JackalopeLoader;
+use Doctrine\Bundle\PHPCRBundle\JackalopeLoader;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
