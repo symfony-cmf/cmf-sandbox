@@ -1,7 +1,17 @@
 class sandbox {
 	package {
-		["php5-cli", "php5-xdebug", "php5-sqlite", "php5-intl", "php5-curl", "apache2", "libapache2-mod-php5", "openjdk-6-jre"]:
+		["php5-cli", "php5-xdebug", "php5-sqlite", "php5-intl", "php5-curl", "apache2", "libapache2-mod-php5"]:
 			ensure => latest;
+	}
+
+	package {
+		"git-core":
+			ensure => latest;
+	}
+
+	file {
+		"/home/vagrant/.bash_aliases":
+			content => "cd /app",
 	}
 
 	file {
@@ -39,6 +49,11 @@ short_open_tag = Off',
 			hasrestart => true,
 			hasstatus => true,
 			require => Package["apache2"],
+	}
+
+	package {
+		"openjdk-6-jre":
+			ensure => latest;
 	}
 
 	class {
