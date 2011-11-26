@@ -7,6 +7,9 @@ It is based on the [Symfony Standard edition](https://github.com/symfony/symfony
 
 ## Getting started
 
+You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For the latter, see
+"Getting started using Vagrant"
+
 ### You will need:
   * Git 1.6+
   * PHP 5.3.2+
@@ -53,6 +56,48 @@ Create an apache virtual host entry along the lines of
 And add an entry to your hosts file for cmf.lo
 
 Then point your browser to http://cmf.lo/app_dev.php
+
+
+## Getting started using Vagrant
+
+### You will need:
+  * Git 1.6+
+  * Nfs (MacOS works OOB, on Debian based linux distributions install nfs-kernel-server package)
+  * [Vagrant](http://vagrantup.com)
+
+## Get the code
+
+    git clone git://github.com/symfony-cmf/cmf-sandbox.git
+    cd cmf-sandbox
+    # we skipped the web installer for now
+    # copy parameters template and edit as needed
+    cp app/config/parameters.yml.dist app/config/parameters.yml
+    cd vagrant
+    vagrant up
+    vagrant ssh
+    bin/vendors install
+
+This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
+
+### Preparing Apache JackRabbit
+
+[Register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
+
+    app/console doctrine:phpcr:register-system-node-types
+
+## Import the fixtures
+
+We currently do not yet have an edit backend. Until somebody builds one, you
+can only programmatically create data. The best way to do that is with the
+doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
+repository provides a command to load fixtures.
+
+    app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
+
+## Access by web browser
+
+Optionally add an entry to your hosts file for cmf.lo pointing to 33.33.33.10, then point your browser to http://cmf.lo/app_dev.php
+Or go straight to http://33.33.33.10/app_dev.php
 
 # Usage
 
