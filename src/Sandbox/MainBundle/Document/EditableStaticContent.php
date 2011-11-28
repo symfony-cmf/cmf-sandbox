@@ -10,9 +10,15 @@ use Liip\VieBundle\FromJsonLdInterface;
  */
 class EditableStaticContent extends StaticContent implements FromJsonLdInterface
 {
+    /**
+     * @PHPCRODM\String(multivalue=true)
+     */
+    public $subjects;
+
     public function fromJsonLd($data)
     {
-        $this->title = $data['<http://purl.org/dc/terms/title>'];
+        $this->title = $data['<dcterms:title>'];
         $this->content = $data['<http://rdfs.org/sioc/ns#content>'];
+        $this->subjects = $data['<http://purl.org/dc/elements/1.1/subject>'];
     }
 }
