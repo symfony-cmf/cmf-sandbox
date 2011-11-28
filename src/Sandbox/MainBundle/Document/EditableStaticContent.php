@@ -13,12 +13,12 @@ class EditableStaticContent extends StaticContent implements FromJsonLdInterface
     /**
      * @PHPCRODM\String(multivalue=true)
      */
-    public $subjects;
+    public $tags;
 
     public function fromJsonLd($data)
     {
         $this->title = $data['<dcterms:title>'];
         $this->content = $data['<http://rdfs.org/sioc/ns#content>'];
-        $this->subjects = $data['<http://purl.org/dc/elements/1.1/subject>'];
+        $this->tags = $data['<http://purl.org/dc/elements/1.1/subject>'];
     }
 }

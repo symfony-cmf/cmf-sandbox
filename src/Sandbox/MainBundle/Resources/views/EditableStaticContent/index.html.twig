@@ -17,7 +17,7 @@
          </div>
     {% endif %}
     <ul rel="dc:subject">
-        {% for subject in page.subjects %}
+        {% for subject in page.tags %}
         <li about="{{ subject|replace({'<': '', '>': ''}) }}">{{ subject }}</li>
         {% endfor %}
     </ul>
