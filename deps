@@ -70,6 +70,7 @@
 [VieBundle]
     git=http://github.com/liip/LiipVieBundle.git
     target=/bundles/Liip/VieBundle
+    version=origin/iks
     git_command=submodule update --init --recursive
 
 [FunctionalTestBundle]
