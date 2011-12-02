@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
         if (!saveTimeoutSet) {
             setTimeout(function() {
-                vieSaveContent();
+                //vieSaveContent();
                 saveTimeoutSet = false;
             }, 5000);
             saveTimeoutSet = true;
@@ -52,5 +52,5 @@ jQuery(document).ready(function($) {
 
     // This doesn't catch NEW fields
     $('[contenteditable]').bind("halloactivated", addHandlers);
-    $('.saveButton').live('click', vieSaveContent);
+    //$('.saveButton').live('click', vieSaveContent);
 });

@@ -85,6 +85,17 @@ symfony_cmf_navigation:
         static_pages: sandbox_main.controller:indexAction
         editablestatic: sandbox_main.controller:indexAction
 
+symfony_cmf_chain_routing:
+    chain:
+        routers_by_id:
+            # TODO: enable doctrine router once its working
+            #symfony_cmf_chain_routing.doctrine_router: 200
+            router.default: 100
+    doctrine:
+        controllers_by_alias:
+            static_pages: sandbox_main.controller:indexAction
+            editablestatic: sandbox_main.controller:indexAction
+
 knp_menu:
     twig: true
 
@@ -92,7 +103,7 @@ liip_vie:
     phpcr_odm: true
     #orm: doctrine.orm.my_entity_manager
     map:
-        '<sioc:Post>': 'Sandbox\MainBundle\Document\EditableStaticContent'
+        'sioc:Post': 'Sandbox\MainBundle\Document\EditableStaticContent'
     use_coffee: %liip_vie.use_coffee%
 
 #sonata_admin:

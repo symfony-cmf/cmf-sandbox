@@ -43,7 +43,8 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $overview = $data['static'];
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
-            if (!$page = $manager->find($contentdocument, $path)) {
+            $page = $manager->find($contentdocument, $path);
+            if (! $page) {
                 $page = new EditableStaticContent();
                 $page->setPath($path);
                 $manager->persist($page);

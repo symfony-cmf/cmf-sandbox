@@ -10,6 +10,8 @@
  * file that was distributed with this source code.
  */
 
+set_time_limit(0);
+
 $rootDir = dirname(__DIR__);
 $vendorDir = $rootDir.'/vendor';
 
@@ -22,13 +24,13 @@ Specify a command to run:
 
  install: install vendors as specified in deps or deps.lock (recommended)
  update:  update vendors to their latest versions (as specified in deps)
-
+ lock:  lock vendors to their current versions
 
 EOF
     );
 }
 
-if (!in_array($command = array_shift($argv), array('install', 'update'))) {
+if (!in_array($command = array_shift($argv), array('install', 'update', 'lock'))) {
     exit(sprintf("Command \"%s\" does not exist.\n", $command));
 }
 
@@ -71,45 +73,47 @@ if (false === $deps) {
 foreach ($deps as $name => $dep) {
     $dep = array_map('trim', $dep);
 
-    // revision
-    if (isset($versions[$name])) {
-        $rev = $versions[$name];
-    } else {
-        $rev = isset($dep['version']) ? $dep['version'] : 'origin/HEAD';
-    }
-
     // install dir
     $installDir = isset($dep['target']) ? $vendorDir.'/'.$dep['target'] : $vendorDir.'/'.$name;
     if (in_array('--reinstall', $argv)) {
-        if (PHP_OS == 'WINNT') {
+        if (defined('PHP_WINDOWS_VERSION_BUILD')) {
             system(sprintf('rmdir /S /Q %s', escapeshellarg(realpath($installDir))));
         } else {
             system(sprintf('rm -rf %s', escapeshellarg($installDir)));
         }
     }
 
-    echo "> Installing/Updating $name\n";
+    if ('install' === $command || 'update' === $command) {
+        echo "> Installing/Updating $name\n";
 
-    // url
-    if (!isset($dep['git'])) {
-        exit(sprintf('The "git" value for the "%s" dependency must be set.', $name));
+        // url
+        if (!isset($dep['git'])) {
+            exit(sprintf('The "git" value for the "%s" dependency must be set.', $name));
+        }
+        $url = $dep['git'];
+
+        if (!is_dir($installDir)) {
+            system(sprintf('git clone %s %s', escapeshellarg($url), escapeshellarg($installDir)));
+        }
+
+        // revision
+        if (isset($versions[$name])) {
+            $rev = $versions[$name];
+        } else {
+            $rev = isset($dep['version']) ? $dep['version'] : 'origin/HEAD';
+        }
+
+        // patch to enable submodules with the vendors script
+        if (isset($dep['git_command'])) {
+            $git_command = ' && git ' . $dep['git_command'] . ' ';
+        } else {
+            $git_command = '';
+        }
+
+        system(sprintf('cd %s && git fetch origin && git reset --hard %s' . $git_command, escapeshellarg($installDir), escapeshellarg($rev)));
     }
-    $url = $dep['git'];
 
-    if (!is_dir($installDir)) {
-        system(sprintf('git clone %s %s', escapeshellarg($url), escapeshellarg($installDir)));
-    }
-
-    // patch to enable submodules with the vendors script
-    if (isset($dep['git_command'])) {
-        $git_command = ' && git ' . $dep['git_command'] . ' ';
-    } else {
-        $git_command = '';
-    }
-
-    system(sprintf('cd %s && git fetch origin && git reset --hard %s' . $git_command, escapeshellarg($installDir), escapeshellarg($rev)));
-
-    if ('update' === $command) {
+    if ('update' === $command || 'lock' === $command) {
         ob_start();
         system(sprintf('cd %s && git log -n 1 --format=%%H', escapeshellarg($installDir)));
         $newversions[] = trim($name.' '.ob_get_clean());
@@ -117,18 +121,19 @@ foreach ($deps as $name => $dep) {
 }
 
 // update?
-if ('update' === $command) {
+if ('update' === $command || 'lock' === $command) {
+    echo "> Updating deps.lock\n";
+
     file_put_contents($rootDir.'/deps.lock', implode("\n", $newversions));
 }
 
 // php on windows can't use the shebang line from system()
-$interpreter = PHP_OS == 'WINNT' ? 'php.exe' : '';
+$interpreter = defined('PHP_WINDOWS_VERSION_BUILD') ? 'php.exe' : '';
 
 // Update the bootstrap files
 system(sprintf('%s %s', $interpreter, escapeshellarg($rootDir.'/vendor/bundles/Sensio/Bundle/DistributionBundle/Resources/bin/build_bootstrap.php')));
-
 // Update assets
-system(sprintf('%s %s assets:install %s', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
+system(sprintf('%s %s assets:install %s --symlink', $interpreter, escapeshellarg($rootDir.'/app/console'), escapeshellarg($rootDir.'/web/')));
 
 // Remove the cache
 system(sprintf('%s %s cache:clear --no-warmup', $interpreter, escapeshellarg($rootDir.'/app/console')));

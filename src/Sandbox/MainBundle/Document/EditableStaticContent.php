@@ -6,14 +6,14 @@ use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
 use Liip\VieBundle\FromJsonLdInterface;
 
 /**
- * @PHPCRODM\Document(alias="editablestatic")
+ * @PHPCRODM\Document(alias="editablestatic", referenceable=true)
  */
 class EditableStaticContent extends StaticContent implements FromJsonLdInterface
 {
     public function fromJsonLd($data)
     {
-        $this->title = $data['dcterms:title'];
-        $this->content = $data['sioc:content'];
+        $this->title = $data['<http://purl.org/dc/terms/title>'];
+        $this->content = $data['<http://rdfs.org/sioc/ns#content>'];
     }
 
     public function getName()

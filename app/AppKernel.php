@@ -18,10 +18,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
 
             // enable cmf bundles
-            //new Symfony\Cmf\Bundle\ChainRoutingBundle\ChainRoutingBundle(),
-            new Symfony\Bundle\DoctrinePHPCRBundle\DoctrinePHPCRBundle(),
+            new Symfony\Cmf\Bundle\ChainRoutingBundle\SymfonyCmfChainRoutingBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
             new Symfony\Cmf\Bundle\MultilangContentBundle\SymfonyCmfMultilangContentBundle(),
             new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle(),

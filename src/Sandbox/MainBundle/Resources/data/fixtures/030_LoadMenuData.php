@@ -4,7 +4,7 @@ namespace Symfony\Cmf\Bundle\MenuBundle\Resources\data\fixtures;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Symfony\Bundle\DoctrinePHPCRBundle\JackalopeLoader;
+use Doctrine\Bundle\PHPCRBundle\JackalopeLoader;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
@@ -52,6 +52,9 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         // Remove the node if it already exists
         if ($old_node = $this->dm->find(null, $path)) {
             $this->dm->remove($old_node);
+            // FIXME: we need to flush here to avoid error about "node existing".
+            // this is a bug in phpcr-odm http://www.doctrine-project.org/jira/browse/PHPCR-34
+            $this->dm->flush();
         }
 
         $menuitem = new MenuItem();
