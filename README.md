@@ -97,7 +97,8 @@ Type app/console to see them all.
 
 ## Admin interface
 
-There is a proof-of-concept admin interface at http://cmf.lo/app_dev.php/admin
+There is a proof-of-concept admin interface using the SonataPhpcrAdminBundle at
+http://cmf.lo/app_dev.php/admin/dashboard
 
 ## Run the test suite
 
