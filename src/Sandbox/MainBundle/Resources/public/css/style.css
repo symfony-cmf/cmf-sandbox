@@ -129,8 +129,10 @@ div.inner > div h1 {
 .hiddenfieldsContainer {
     z-index: 100;
     padding: 25px 38px 20px 20px;
-    position: relative;
+    position: absolute;
     min-height: 30px;
+    right: 0;
+    margin-top: -15px;
 }
 
 .hiddenfieldsCloseCorner {
