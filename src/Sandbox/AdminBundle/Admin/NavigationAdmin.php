@@ -21,7 +21,7 @@ class NavigationAdmin extends Admin
             ->add('info', 'text')
             ->add('visible')
             ->add('redirect_to_navigation')
-            ->add('reference', 'node')
+//            ->add('reference', 'node')
             ->add('controller')
         ;
     }
