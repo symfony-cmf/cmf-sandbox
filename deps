@@ -131,3 +131,7 @@
     git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
     target=bundles/FOS/UserBundle
 
+[TreeBundle]
+    git=git://github.com/symfony-cmf/TreeBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/TreeBundle
+
