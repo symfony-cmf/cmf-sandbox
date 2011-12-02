@@ -6,33 +6,9 @@
      about="{{ page.path }}"
      class="articleContainer">
 
-     {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-         <div class="hiddenfieldsContainer">
-             <div class="hiddenfieldsToggle"></div>
-             <div class="hiddenfields">
-                <div class="hiddenfieldsCloseButton"></div>
-                <h2>Article settings</h2>
-                
-                <div id="articleTagsWrapper">
-                    <form>
-                        <div class="articleTags">
-                            <h3>Article tags</h3>
-                            <input id="articleTags" type="text" class="tags" value="" />
-                        </div>
-                        <div class="articleSuggestedTags">
-                            <h3>Suggested tags</h3>
-                            <input id="suggestedTags" type="text" class="tags" value="foo,bar,baz,roffle" />
-                        </div>
-                    </form>
-                    
-                </div>
-             </div>
-             <div class="hiddenfieldsCloseCorner"></div>
-         </div>
-    {% endif %}
     <ul rel="dc:subject">
         {% for subject in page.tags %}
-        <li about="{{ subject|replace({'<': '', '>': ''}) }}">{{ subject }}</li>
+        <li about="{{ subject|replace({'<': '', '>': ''}) }}"></li>
         {% endfor %}
     </ul>
     <h1 id="main_title" property="dcterms:title">{{ page.title }}</h1>
