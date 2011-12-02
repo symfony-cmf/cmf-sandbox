@@ -44,10 +44,6 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
-            new Sonata\UserBundle\SonataUserBundle(),
-            new FOS\UserBundle\FOSUserBundle(),
-            
-
             // some data for admin bundle
             new Acme\StoreBundle\AcmeStoreBundle(),
 

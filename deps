@@ -99,10 +99,6 @@
     git=http://github.com/sonata-project/SonataBluePrintBundle.git
     target=/bundles/Sonata/BluePrintBundle
 
-[SonataUserBundle]
-    git=http://github.com/sonata-project/SonataUserBundle.git
-    target=/bundles/Sonata/UserBundle
-
 [MenuBundle]
     git=http://github.com/knplabs/KnpMenuBundle.git
     target=/bundles/Knp/Bundle/MenuBundle
@@ -126,10 +122,6 @@
 [ChainRoutingBundle]
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
     target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
-
-[FOSUserBundle]
-    git=git://github.com/FriendsOfSymfony/FOSUserBundle.git
-    target=bundles/FOS/UserBundle
 
 [TreeBundle]
     git=git://github.com/symfony-cmf/TreeBundle.git
