@@ -44,9 +44,6 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
-            // some data for admin bundle
-            new Acme\StoreBundle\AcmeStoreBundle(),
-
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
