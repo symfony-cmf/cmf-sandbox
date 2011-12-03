@@ -18,15 +18,17 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
 
             // enable cmf bundles
             new Symfony\Cmf\Bundle\ChainRoutingBundle\SymfonyCmfChainRoutingBundle(),
-            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
             new Symfony\Cmf\Bundle\MultilangContentBundle\SymfonyCmfMultilangContentBundle(),
             new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle(),
             new Symfony\Cmf\Bundle\NavigationBundle\SymfonyCmfNavigationBundle(),
             new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
+            new Symfony\Cmf\Bundle\TreeBundle\SymfonyCmfTreeBundle(),
+            new Symfony\Cmf\Bundle\PHPCRBrowserBundle\SymfonyCmfPHPCRBrowserBundle(),
             new Liip\VieBundle\LiipVieBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
@@ -34,7 +36,14 @@ class AppKernel extends Kernel
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
             new Sandbox\TestBundle\SandboxTestBundle(),
-// needs update            new Sandbox\AdminBundle\SandboxAdminBundle(), //until we have something better
+            new Sandbox\AdminBundle\SandboxAdminBundle(),
+
+            // admin bundle
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\BluePrintBundle\SonataBluePrintBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

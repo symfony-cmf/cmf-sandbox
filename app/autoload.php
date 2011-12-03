@@ -33,8 +33,12 @@ $loader->registerNamespaces(array(
     'Metadata'         => __DIR__.'/../vendor/metadata/src',
 
     // menu bundle
-    'Knp\\Menu'         => __DIR__.'/../vendor/knp-menu/src',
+    'Knp\\Menu'        => __DIR__.'/../vendor/knp-menu/src',
     'Knp\\Bundle'      => __DIR__.'/../vendor/bundles',
+
+    'Sonata'           => __DIR__.'/../vendor/bundles',
+    'Acme'             => __DIR__.'/../src',
+
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',

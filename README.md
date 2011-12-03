@@ -97,7 +97,12 @@ Type app/console to see them all.
 
 ## Admin interface
 
-There is a proof-of-concept admin interface at http://cmf.lo/app_dev.php/admin
+There is a proof-of-concept admin interface using the SonataPhpcrAdminBundle at
+http://cmf.lo/app_dev.php/admin/dashboard
+
+Basically you have paginated lists for two types of documents. You create new documents, edit and delete them. Some filtering is available in the list. This bundle is an implementation of [Sonata Admin Bundle](https://github.com/sonata-project/SonataAdminBundle)
+
+At the moment there is no notion of parents and sons in the admin bundle.
 
 ## Run the test suite
 
