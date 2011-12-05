@@ -40,7 +40,6 @@ class AppKernel extends Kernel
 
             // admin bundle
             new Sonata\jQueryBundle\SonatajQueryBundle(),
-            new Sonata\BluePrintBundle\SonataBluePrintBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
         );
