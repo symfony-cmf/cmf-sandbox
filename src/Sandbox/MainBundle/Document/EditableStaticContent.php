@@ -18,7 +18,7 @@ class EditableStaticContent extends StaticContent implements FromJsonLdInterface
     public function fromJsonLd($data)
     {
         $this->title = $data['<dcterms:title>'];
-        $this->content = $data['<http://rdfs.org/sioc/ns#content>'];
+        $this->content = isset($data['<sioc:content>']) ? $data['<sioc:content>'] : $data['<http://rdfs.org/sioc/ns#content>'];
         $this->tags = $data['<http://purl.org/dc/elements/1.1/subject>'];
     }
 }
