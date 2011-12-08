@@ -60,6 +60,18 @@ html {
     width: 700px;
 }
 
+ul[rel="dc:subject"] {
+    display: none;
+}
+
+.cmf-childlist {
+    padding: 10px 0;
+}
+
+.cmf-childlist li{
+    padding-bottom: 5px;
+}
+
 [contenteditable] a {
     color: #00add2;
 }
