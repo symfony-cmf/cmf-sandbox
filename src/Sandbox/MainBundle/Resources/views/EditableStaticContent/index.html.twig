@@ -16,13 +16,6 @@
         {{ page.content|raw }}
     </div>
 </div>
-<div class="sidebar">
-    {% image output="/images/test.png"
-        '@SandboxMainBundle/Resources/public/images/sidebar.png'
-    %}
-        <img src="{{ asset_url }}" alt="The alt text" />
-    {% endimage %}
-</div>
 {{ parent() }}
 {% endblock %}
 
