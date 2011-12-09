@@ -32,15 +32,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    margin-top: 20px;
-    margin-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 25px;
     line-height: 1.1;
     color: #8AB84B;
     font-size: 2.3em;
 }
 
 h2 {
-    margin-top: 15px;
+    margin-top: 30px;
     margin-bottom: 10px;
     line-height: 1.05;
     line-height: 1.2;
@@ -141,11 +141,13 @@ input, button, textarea, select {
     height: 130px;
 }
 
+#header h1#logo-text {
+    margin-bottom: 0;
+}
+
 #header h1#logo-text a {
     color: #8AB84B;
     left: 55px;
-    margin: 0;
-    padding: 0;
     text-decoration: none;
     top: 20px;
     font-size: 2.1em;
@@ -161,19 +163,26 @@ input, button, textarea, select {
     position: absolute;
     top: 10px;
     right: 40px;
-    color: #8AB84B;
+    color: #1A1A1A;
 }
 
 #language_selector li.selected a {
-    color: #000;
+    color: #1A1A1A;
 }
 
 #language_selector li.selected span {
     visibility: hidden;
 }
 
+#navigation {
+}
+
 #navigation > ul {
-    margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    top: 240px;
+    margin-bottom: 5px;
 }
 
 #navigation > ul > li {
@@ -186,7 +195,12 @@ input, button, textarea, select {
 }
 
 #navigation a {
-    color: #2a7aa8;
+    color: #1A1A1A;
+    text-decoration: none;
+}
+
+#navigation a:hover {
+    text-decoration: underline;
 }
 
 #navigation .cmf-breadcrumb a {
@@ -194,13 +208,9 @@ input, button, textarea, select {
     text-decoration: none;
 }
 
-#navigation {
-    margin-bottom: 5px;
-}
-
 #content {
     overflow: hidden;
-    padding: 10px 0;
+    padding: 10px 0 30px 0;
     border-bottom: 1px solid #e3e4e4;
 }
 
@@ -218,6 +228,10 @@ input, button, textarea, select {
 
 #content h1 a:hover,
 #content h2 a:hover {color:#5e6984}
+
+#content_extra .cmf-childlist a {
+    text-decoration: none;
+}
 
 #footer {
     background-color:#24272d;
