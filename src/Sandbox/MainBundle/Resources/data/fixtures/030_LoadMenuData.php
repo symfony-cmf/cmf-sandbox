@@ -36,10 +36,12 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
 
         $this->createMenuItem("/menus", 'Main menu', '', '');
         $this->createMenuItem("/menus/main", 'Main menu', 'Home', '/app_dev.php');
-        $this->createMenuItem("/menus/main/first-item", 'Firstitem', 'First (Projects)', '/app_dev.php/projects');
-        $this->createMenuItem("/menus/main/first-item/test-item", 'Testitem', 'Hello World!', null, 'test');
-        $this->createMenuItem("/menus/main/second-item", 'Seconditem', 'Second (Company)', '/app_dev.php/company');
-        $this->createMenuItem("/menus/main/second-item/child-item", 'Seconditemchild', 'Second Child (Company)', '/app_dev.php/company/more');
+        $this->createMenuItem("/menus/main/home-item", 'Home', 'Home', '/app_dev.php');
+        $this->createMenuItem("/menus/main/company-item", 'Company', 'Company', '/app_dev.php/company');
+        $this->createMenuItem("/menus/main/company-item/team-item", 'Team', 'Team', '/app_dev.php/company/team');
+        $this->createMenuItem("/menus/main/company-item/more-item", 'More', 'More', '/app_dev.php/company/more');
+        $this->createMenuItem("/menus/main/projects-item", 'Projects', 'Projects', '/app_dev.php/projects');
+        $this->createMenuItem("/menus/main/projects-item/cmf-item", 'CMF', 'CMF', '/app_dev.php/projects/cmf');
 
         $this->dm->flush();
     }
