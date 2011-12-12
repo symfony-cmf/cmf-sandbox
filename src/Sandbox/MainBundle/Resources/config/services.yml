@@ -4,3 +4,8 @@ services:
         arguments:
             container: "@service_container"
         shared: true
+
+    sandbox_main.image_controller:
+        class: Sandbox\MainBundle\Controller\ImageController
+        arguments:
+            container: "@service_container"

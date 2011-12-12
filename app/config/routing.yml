@@ -10,6 +10,9 @@ test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
 
+main:
+    pattern: /image/upload
+    defaults: { _controller: sandbox_main.image_controller:uploadAction }
 
 vie:
     resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"
