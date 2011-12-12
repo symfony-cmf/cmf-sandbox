@@ -49,10 +49,10 @@ class LoadNavigationData implements FixtureInterface, OrderedFixtureInterface, C
 
         $this->createNavigationItem($base_path, array('de'=>'Start', 'en'=>'Home'), 'static_pages', "$content_path/home");
         $this->createNavigationItem("$base_path/company", array('en'=>'The Company', 'de'=>'Die Firma'), 'static_pages', "$content_path/company");
-        $this->createNavigationItem("$base_path/company/team", array('en'=>'Our Team', 'de'=>'Unser Team'), 'static_pages', "$content_path/company_team");
-        $this->createNavigationItem("$base_path/company/more", array('en'=>'Other information', 'de'=>'Mehr Informationen'), 'static_pages', "$content_path/company_more");
+        $this->createNavigationItem("$base_path/company/team", array('en'=>'Our Team', 'de'=>'Unser Team'), 'static_pages', "$content_path/team");
+        $this->createNavigationItem("$base_path/company/more", array('en'=>'Other information', 'de'=>'Mehr Informationen'), 'static_pages', "$content_path/more");
         $this->createNavigationItem("$base_path/projects", array('en'=>'Our Projects','de'=>'Unsere Projekte'), 'static_pages', "$content_path/projects");
-        $this->createNavigationItem("$base_path/projects/cmf", array('en'=>'Symfony Cmf'), 'static_pages', "$content_path/projects_cmf");
+        $this->createNavigationItem("$base_path/projects/cmf", array('en'=>'Symfony Cmf'), 'static_pages', "$content_path/cmf");
 
         $this->dm->flush();
     }

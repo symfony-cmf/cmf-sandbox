@@ -50,13 +50,13 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
 
         $team = new Route;
         $team->setPosition($company, 'team');
-        $team->setReference($dm->find(null, "$content_path/company_team"));
+        $team->setReference($dm->find(null, "$content_path/team"));
         $team->setControllerAlias('static_pages');
         $dm->persist($team);
 
         $more = new Route;
         $more->setPosition($company, 'more');
-        $more->setReference($dm->find(null, "$content_path/company_more"));
+        $more->setReference($dm->find(null, "$content_path/more"));
         $more->setControllerAlias('static_pages');
         $dm->persist($more);
 
@@ -68,7 +68,7 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
 
         $cmf = new Route;
         $cmf->setPosition($projects, 'cmf');
-        $cmf->setReference($dm->find(null, "$content_path/projects_cmf"));
+        $cmf->setReference($dm->find(null, "$content_path/cmf"));
         $cmf->setControllerAlias('static_pages');
         $dm->persist($cmf);
 
