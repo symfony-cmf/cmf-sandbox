@@ -2,19 +2,70 @@
 
 namespace Sandbox\MainBundle\Controller;
 
+use Sandbox\MainBundle\Document\Image;
+
+use Doctrine\ODM\PHPCR\DocumentManager;
+
+use FOS\RestBundle\View\ViewHandlerInterface;
+use FOS\RestBundle\View\View;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class ImageController extends Controller
 {
-    public function __construct(ContainerInterface $container)
+    protected $dm;
+
+    /**
+     * @var FOS\RestBundle\View\ViewHandlerInterface
+     */
+    private $viewHandler;
+
+    protected $images_mime = array(
+            'image/png',
+            'image/jpeg',
+            'image/gif',
+            'image/bmp',
+            'image/vnd.microsoft.icon',
+            'image/tiff',
+            'image/svg+xml');
+
+    public function __construct(DocumentManager $dm, ViewHandlerInterface $viewHandler)
     {
         $this->container = $container;
+        $this->dm = $dm;
+        $this->viewHandler = $viewHandler;
     }
 
-    public function uploadAction()
+    public function uploadAction(Request $request)
     {
-        return $this->render('SandboxMainBundle:Image:upload.html.twig', array());
+        $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
+
+        $files = $request->files;
+
+        foreach ($files->all() as $file ) {
+            if (in_array($file->getClientMimeType(), $this->images_mime)) {
+                $name = $file->getClientOriginalName();
+                $jcrPath = $basepath.'/'.md5($name);
+                if (!$this->dm->find(null, $jcrPath)) {
+                    $image = new Image();
+                    $image->setPath($jcrPath);
+                    $image->setContent(file_get_contents($file->getPathname()));
+                } else {
+                    $view = View::create(array("path" => $file->getPathname(), "error" => 'This file already exists in your backend.'));
+                    return $this->viewHandler->handle($view);
+                }
+
+                $this->dm->persist($image);
+            }
+        }
+
+        $this->dm->flush();
+
+        $view = View::create(array("path" => $file->getPathname(), "error" => ''));
+        return $this->viewHandler->handle($view);
     }
 }

@@ -13,6 +13,8 @@ test:
 main:
     pattern: /image/upload
     defaults: { _controller: sandbox_main.image_controller:uploadAction }
+    requirements:
+        _format:  json
 
 vie:
     resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"

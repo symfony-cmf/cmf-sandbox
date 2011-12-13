@@ -2,14 +2,17 @@
 namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
 use Symfony\Component\Validator\Constraints as Assert;
+
 use Liip\VieBundle\FromJsonLdInterface;
 
 /**
  * @PHPCRODM\Document(alias="image", referenceable=true)
  */
-class Image implements FromJsonLdInterface
+class Image
 {
     /**
      * to create the document at the specified location. read only for existing documents.
@@ -37,16 +40,21 @@ class Image implements FromJsonLdInterface
      */
     public $content;
 
+    public function setContent($value)
+    {
+        $this->content = $value;
+    }
+
     /**
      * Set repository path of this navigation item for creation
      */
     public function setPath($path)
     {
-      $this->path = $path;
+        $this->path = $path;
     }
 
     public function getPath()
     {
-      return $this->path;
+        return $this->path;
     }
 }
