@@ -3,6 +3,7 @@ namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+use Symfony\Component\Validator\Constraints as Assert;
 use Liip\VieBundle\FromJsonLdInterface;
 
 /**
@@ -32,7 +33,7 @@ class Image implements FromJsonLdInterface
     /**
      * @Assert\NotBlank()
      * @var binary
-     * @PHPCR\Binary(name="content")
+     * @PHPCRODM\Binary(name="content")
      */
     public $content;
 
