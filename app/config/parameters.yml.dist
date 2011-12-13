@@ -16,10 +16,3 @@ parameters:
     liip_vie.use_coffee: false
     coffee.bin: ''
     coffee.node: ''
-
-    database_driver: pdo_mysql
-    database_host: localhost
-    database_port:
-    database_name: admincmf
-    database_user: admincmf
-    database_password: patata
