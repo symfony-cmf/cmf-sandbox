@@ -9,7 +9,7 @@
             {% stylesheets '@SandboxMainBundle/Resources/public/css/style.css' %}
                 <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
             {% endstylesheets %}
-        
+
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
                 {% stylesheets '@LiipVieBundle/vendor/hallo/examples/Aristo/jquery-ui-1.8.7.custom.css'
                             '@LiipVieBundle/Resources/public/css/halloLiipStyle.css'
@@ -37,7 +37,7 @@
                     <li><a href="#main">Go to main content</a></li>
                     <li><a href="#navigation">Go to main navigation</a></li>
                 </ul>
-                
+
                 <h1 id="logo-text"><a href="/">CMF Sandbox</a></h1>
                 <p id="slogan">Symfony2 Content Management Framework</p>
             {% endblock %}
@@ -80,7 +80,7 @@
         {% block bottom_scripts %}
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
                 {% render "liip_vie.controller.vie:includeJSFilesAction" %}
-        
+
                 {% javascripts
                             '@SandboxMainBundle/Resources/public/js/savebutton.js'
                             '@SandboxMainBundle/Resources/public/js/userbar.js'
