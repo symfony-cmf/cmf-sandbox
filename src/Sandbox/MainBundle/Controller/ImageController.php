@@ -43,6 +43,7 @@ class ImageController extends Controller
     public function uploadAction(Request $request)
     {
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
+        $error = '';
 
         $files = $request->files;
 
@@ -55,17 +56,20 @@ class ImageController extends Controller
                     $image->setPath($jcrPath);
                     $image->setContent(file_get_contents($file->getPathname()));
                 } else {
-                    $view = View::create(array("path" => $file->getPathname(), "error" => 'This file already exists in your backend.'));
-                    return $this->viewHandler->handle($view);
+                    $error = 'This file already exists in your backend.';
                 }
 
                 $this->dm->persist($image);
+            } else {
+                $error = "What you're trying to upload is not an image.";
             }
         }
 
         $this->dm->flush();
 
-        $view = View::create(array("path" => $file->getPathname(), "error" => ''));
+        $data = array("path" => $file->getPathname(), "error" => $error);
+
+        $view = View::create($data);
         return $this->viewHandler->handle($view);
     }
 }
