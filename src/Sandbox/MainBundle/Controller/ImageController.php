@@ -33,7 +33,7 @@ class ImageController extends Controller
             'image/tiff',
             'image/svg+xml');
 
-    public function __construct(DocumentManager $dm, ViewHandlerInterface $viewHandler)
+    public function __construct(ContainerInterface $container, DocumentManager $dm, ViewHandlerInterface $viewHandler)
     {
         $this->container = $container;
         $this->dm = $dm;
