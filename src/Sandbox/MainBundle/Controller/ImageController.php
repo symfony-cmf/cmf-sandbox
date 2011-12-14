@@ -44,17 +44,19 @@ class ImageController extends Controller
     {
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
         $error = '';
+        $path = '';
 
         $files = $request->files;
 
         foreach ($files->all() as $file ) {
             if (in_array($file->getClientMimeType(), $this->images_mime)) {
                 $name = $file->getClientOriginalName();
+                $path = $file->getPathname();
                 $jcrPath = $basepath.'/'.md5($name);
                 if (!$this->dm->find(null, $jcrPath)) {
                     $image = new Image();
                     $image->setPath($jcrPath);
-                    $image->setContent(file_get_contents($file->getPathname()));
+                    $image->setContent(file_get_contents($path));
                 } else {
                     $error = 'This file already exists in your backend.';
                 }
@@ -67,7 +69,7 @@ class ImageController extends Controller
 
         $this->dm->flush();
 
-        $data = array("path" => $file->getPathname(), "error" => $error);
+        $data = array("path" => $path, "error" => $error);
 
         $view = View::create($data);
         return $this->viewHandler->handle($view);
