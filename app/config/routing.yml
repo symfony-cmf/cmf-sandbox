@@ -10,11 +10,17 @@ test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
 
-main:
+image_upload:
     pattern: /image/upload/
     defaults: { _controller: sandbox_main.image_controller:uploadAction, _format: json }
     requirements:
         _format: json
+
+image_display:
+    pattern: /image/{id}
+    defaults: { _controller: sandbox_main.image_controller:displayAction }
+    requirements:
+        id: '[A-Za-z0-9\.]+'
 
 vie:
     resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"
