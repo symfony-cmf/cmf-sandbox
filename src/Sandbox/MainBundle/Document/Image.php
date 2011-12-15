@@ -40,10 +40,10 @@ class Image
      */
     public $content;
 
-    public function setContent($value)
-    {
-        $this->content = $value;
-    }
+    /**
+     * @PHPCRODM\String(multivalue=true)
+     */
+    public $tags;
 
     /**
      * Set repository path of this navigation item for creation
