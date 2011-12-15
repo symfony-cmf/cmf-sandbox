@@ -79,6 +79,7 @@ class ImageController extends Controller
                 if (!$this->dm->find(null, $jcrPath)) {
                     $image = new Image();
                     $image->setPath($jcrPath);
+                    $image->name = $id;
                     $image->content = file_get_contents($path);
                     $image->tags = explode(',', $request->get('tags'));
                 } else {

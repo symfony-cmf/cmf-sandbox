@@ -161,17 +161,26 @@ input, button, textarea, select {
 
 #language_selector {
     position: absolute;
-    top: 10px;
+    top: 25px;
     right: 40px;
     color: #1A1A1A;
 }
 
-#language_selector li.selected a {
-    color: #1A1A1A;
+#language_selector li {
+    list-style-type: none;
+    float: left;
 }
 
-#language_selector li.selected span {
-    visibility: hidden;
+#language_selector li a {
+    color: #888;
+}
+
+#language_selector li.selected a {
+    color: #666;
+}
+
+#language_selector li span {
+    display: none;
 }
 
 #navigation {

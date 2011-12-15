@@ -41,11 +41,11 @@
                 <h1 id="logo-text"><a href="/">CMF Sandbox</a></h1>
                 <p id="slogan">Symfony2 Content Management Framework</p>
             {% endblock %}
-        </div>
-        <div id="language_selector">
-            {% block language_selector %}
-                {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"url" : url, "languageUrls": languageUrls|default(false) } %}
-            {% endblock %}
+            <div id="language_selector">
+                {% block language_selector %}
+                    {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"url" : url, "languageUrls": languageUrls|default(false) } %}
+                {% endblock %}
+            </div>
         </div>
         <div id="navigation">
             {% block navigation %}
