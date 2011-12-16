@@ -84,7 +84,7 @@ div.inner > div h1 {
 }
 
 .hiddenfieldsToggle {
-    background-image: url('/bundles/sandboxmain/images/cornersettings_small.png');
+    background-image: url('../../bundles/sandboxmain/images/cornersettings_small.png');
     position: absolute;
     top: 0;
     right: 0;
@@ -94,7 +94,7 @@ div.inner > div h1 {
 }
 
 .hiddenfieldsToggle:hover {
-    background-image: url('/bundles/sandboxmain/images/cornersettings_large.png');
+    background-image: url('../../bundles/sandboxmain/images/cornersettings_large.png');
     width: 157px;
     height: 136px;
 }
@@ -109,7 +109,7 @@ div.inner > div h1 {
 }
 
 .hiddenfields h2 {
-    background: url('/bundles/sandboxmain/images/settingsh2icon.png') no-repeat left center;
+    background: url('../../bundles/sandboxmain/images/settingsh2icon.png') no-repeat left center;
     padding-left: 22px;
     padding-bottom: 0;
     color: #A0A0A0;
@@ -125,7 +125,7 @@ div.inner > div h1 {
 }
 
 .hiddenfieldsCloseCorner {
-    background: url('/bundles/sandboxmain/images/cornerclose.png') no-repeat left bottom;
+    background: url('../../bundles/sandboxmain/images/cornerclose.png') no-repeat left bottom;
     width: 106px;
     height: 92px;
     position: absolute;
@@ -136,7 +136,7 @@ div.inner > div h1 {
 }
 
 .hiddenfieldsCloseButton {
-    background: url('/bundles/liipvie/img/close_button.png');
+    background: url('../../bundles/liipvie/img/close_button.png');
     display: none;
     width: 25px;
     height: 25px;
