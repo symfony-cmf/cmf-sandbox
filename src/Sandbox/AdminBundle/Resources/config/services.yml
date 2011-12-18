@@ -4,18 +4,30 @@ services:
         arguments:
             container: "@service_container"
         shared: true
+    sandbox_admin.content_admin:
+        class: Sandbox\AdminBundle\Controller\ContentAdminController
+        arguments:
+            - "%symfony_cmf_content.static_basepath%"
+        calls:
+            - [ setContainer, [@service_container] ]
+    sandbox_admin.navigation_admin:
+        class: Sandbox\AdminBundle\Controller\NavigationAdminController
+        arguments:
+            - "%symfony_cmf_core.mainmenu_basepath%"
+        calls:
+            - [ setContainer, [@service_container] ]
     sandbox.admin.admin.static_editable_content:
         class: Sandbox\AdminBundle\Admin\ContentAdmin
         tags:
             - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: content}
-        arguments: ["",Sandbox\MainBundle\Document\EditableStaticContent, "SandboxAdminBundle:ContentAdmin"]
+        arguments: ["",Sandbox\MainBundle\Document\EditableStaticContent, "sandbox_admin.content_admin"]
         calls:
             - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
     sandbox.admin.admin.navigation:
         class: Sandbox\AdminBundle\Admin\NavigationAdmin
         tags:
             - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: navigation}
-        arguments: ["",Symfony\Cmf\Bundle\NavigationBundle\Document\Navigation, "SandboxAdminBundle:NavigationAdmin"]
+        arguments: ["",Symfony\Cmf\Bundle\NavigationBundle\Document\Navigation, "sandbox_admin.navigation_admin"]
         calls:
             - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
 

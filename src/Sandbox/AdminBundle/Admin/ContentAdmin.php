@@ -34,7 +34,7 @@ class ContentAdmin extends Admin
                 ->add('content')
             ->end();
     }
-    
+
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
@@ -42,9 +42,14 @@ class ContentAdmin extends Admin
             ->add('name',  'doctrine_phpcr_string')
             ;
     }
-    
+
     public function getListTemplate()
     {
         return 'SandboxAdminBundle:CRUD:list.html.twig';
+    }
+
+    public function getEditTemplate()
+    {
+        return 'SandboxAdminBundle:CRUD:edit.html.twig';
     }
 }
