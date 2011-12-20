@@ -73,8 +73,7 @@ symfony_cmf_navigation:
 symfony_cmf_chain_routing:
     chain:
         routers_by_id:
-            # TODO: enable doctrine router once its working
-            #symfony_cmf_chain_routing.doctrine_router: 200
+            symfony_cmf_chain_routing.doctrine_router: 200
             router.default: 100
     doctrine:
         controllers_by_alias:

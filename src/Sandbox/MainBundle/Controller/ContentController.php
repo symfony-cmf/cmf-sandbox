@@ -6,6 +6,11 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+/**
+ * replacement for Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController
+ * to use a different template.
+ * TODO: make ContentController more flexible and this class obsolete
+ */
 class ContentController extends Controller
 {
     public function __construct(ContainerInterface $container)

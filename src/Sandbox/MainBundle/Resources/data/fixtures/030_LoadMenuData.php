@@ -34,12 +34,17 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
     {
         $this->dm = $manager;
 
-        $this->createMenuItem("/menus", 'Main menu', '', '');
-        $this->createMenuItem("/menus/main", 'Main menu', 'Home', '/app_dev.php');
-        $this->createMenuItem("/menus/main/first-item", 'Firstitem', 'First (Projects)', '/app_dev.php/projects');
-        $this->createMenuItem("/menus/main/first-item/test-item", 'Testitem', 'Hello World!', null, 'test');
-        $this->createMenuItem("/menus/main/second-item", 'Seconditem', 'Second (Company)', '/app_dev.php/company');
-        $this->createMenuItem("/menus/main/second-item/child-item", 'Seconditemchild', 'Second Child (Company)', '/app_dev.php/company/more');
+        $base_path = $this->container->getParameter('symfony_cmf_menu.menu_basepath');
+        $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
+
+        $this->createPath($base_path);
+
+        $this->createMenuItem("$base_path/main", 'Main menu', 'Home', $this->dm->find(null, "$content_path/home"));
+        $this->createMenuItem("$base_path/main/first-item", 'Firstitem', 'First (Projects)', $this->dm->find(null, "$content_path/projects"));
+        $this->createMenuItem("$base_path/main/first-item/test-item", 'Testitem', 'Hello World!', null, null, 'test');
+        $this->createMenuItem("$base_path/main/second-item", 'Seconditem', 'Second (Company)', $this->dm->find(null, "$content_path/company"));
+        $this->createMenuItem("$base_path/main/second-item/child-item", 'Seconditemchild', 'Second Child (Company)', $this->dm->find(null, "$content_path/company/more"));
+        $this->createMenuItem("$base_path/main/second-item/external", 'External Link', 'External Link', null, 'http://cmf.symfony.com/');
 
         $this->dm->flush();
     }
@@ -47,7 +52,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
     /**
      * @return a Navigation instance with the specified information
      */
-    protected function createMenuItem($path, $name, $label, $uri, $route = null)
+    protected function createMenuItem($path, $name, $label, $content, $uri = null, $route = null)
     {
         // Remove the node if it already exists
         if ($old_node = $this->dm->find(null, $path)) {
@@ -59,15 +64,40 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
 
         $menuitem = new MenuItem();
         $menuitem->setPath($path);
-        $menuitem->setName($label);
+        $menuitem->setName($name);
         $menuitem->setLabel($label);
-        if ($uri !== null) {
+        if (null !== $content) {
+            $menuitem->setContent($content);
+        } elseif (null !== $uri) {
             $menuitem->setUri($uri);
-        } else if ($route !== null) {
+        } else if (null !== $route) {
             $menuitem->setRoute($route);
         }
 
         $this->dm->persist($menuitem);
     }
 
+    /**
+     * Create a node and it's parents, if necessary.  Like mkdir -p.
+     *
+     * TODO: clean this up once the id generator stuff is done as intended
+     *
+     * @param string $path  full path, like /cms/navigation/main
+     * @return Node the (now for sure existing) node at path
+     */
+    public function createPath($path)
+    {
+        $current = $this->session->getRootNode();
+
+        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
+        foreach ($segments as $segment) {
+            if ($current->hasNode($segment)) {
+                $current = $current->getNode($segment);
+            } else {
+                $current = $current->addNode($segment);
+            }
+        }
+
+        return $current;
+    }
 }

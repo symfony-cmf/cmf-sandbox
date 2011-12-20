@@ -32,7 +32,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
     public function load($manager)
     {
-        $contentdocument =  $this->container->getParameter('symfony_cmf_content.document');
+        $contentdocument =  $this->container->getParameter('symfony_cmf_content.document_class');
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         $this->createPath($basepath);
@@ -51,7 +51,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
             }
             $page->name = $overview['name'];
             $page->title = $overview['title'];
-            $page->content = $overview['content'];
+            $page->body = $overview['content'];
         }
 
         $manager->flush(); //to get ref id populated

@@ -38,37 +38,37 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
 
         $home = new Route;
         $home->setPosition($parent, basename($base_path));
-        $home->setReference($dm->find(null, "$content_path/home"));
+        $home->setRouteContent($dm->find(null, "$content_path/home"));
         $home->setControllerAlias('static_pages');
         $dm->persist($home);
 
         $company = new Route;
         $company->setPosition($home, 'company');
-        $company->setReference($dm->find(null, "$content_path/company"));
+        $company->setRouteContent($dm->find(null, "$content_path/company"));
         $company->setControllerAlias('static_pages');
         $dm->persist($company);
 
         $team = new Route;
         $team->setPosition($company, 'team');
-        $team->setReference($dm->find(null, "$content_path/company_team"));
+        $team->setRouteContent($dm->find(null, "$content_path/company_team"));
         $team->setControllerAlias('static_pages');
         $dm->persist($team);
 
         $more = new Route;
         $more->setPosition($company, 'more');
-        $more->setReference($dm->find(null, "$content_path/company_more"));
+        $more->setRouteContent($dm->find(null, "$content_path/company_more"));
         $more->setControllerAlias('static_pages');
         $dm->persist($more);
 
         $projects = new Route;
         $projects->setPosition($home, 'projects');
-        $projects->setReference($dm->find(null, "$content_path/projects"));
+        $projects->setRouteContent($dm->find(null, "$content_path/projects"));
         $projects->setControllerAlias('static_pages');
         $dm->persist($projects);
 
         $cmf = new Route;
         $cmf->setPosition($projects, 'cmf');
-        $cmf->setReference($dm->find(null, "$content_path/projects_cmf"));
+        $cmf->setRouteContent($dm->find(null, "$content_path/projects_cmf"));
         $cmf->setControllerAlias('static_pages');
         $dm->persist($cmf);
 

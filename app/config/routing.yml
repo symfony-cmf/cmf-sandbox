@@ -30,8 +30,6 @@ vie:
 vie_asset_management:
     resource: "@LiipVieBundle/Resources/config/routing/asset_search.xml"
 
-cmf:
-    resource: @SandboxMainBundle/Resources/config/routing.yml
-
+#cmf:
     # this must come last, its a catch all route
-    resource: @SymfonyCmfNavigationBundle/Resources/config/routing.xml
+#    resource: @SymfonyCmfNavigationBundle/Resources/config/routing.xml
