@@ -15,6 +15,9 @@ _sonata_admin:
     type: sonata_admin
     prefix: /admin
 
+sandbox:
+    resource: @SandboxMainBundle/Resources/config/routing.yml
+
 phpcrbrowser:
     resource: @SymfonyCmfPHPCRBrowserBundle/Resources/config/routing.xml
     prefix: /admin/browser
