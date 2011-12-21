@@ -47,4 +47,9 @@ class ContentAdmin extends Admin
     {
         return 'SandboxAdminBundle:CRUD:list.html.twig';
     }
+
+    public function getEditTemplate()
+    {
+        return 'SandboxAdminBundle:CRUD:edit.html.twig';
+    }
 }
