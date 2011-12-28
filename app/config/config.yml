@@ -64,7 +64,7 @@ doctrine_phpcr:
     # enable the ODM layer
     odm:
         auto_mapping: true
-        auto_generate_proxy_classes: true
+        auto_generate_proxy_classes: %kernel.debug%
 
 symfony_cmf_navigation:
     controllers_by_alias:
