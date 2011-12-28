@@ -13,7 +13,7 @@
         function initTrees() {
             
             jQuery("#tree").jstree({ 
-                "plugins" :     [ "themes", "types", "json_data" ],
+                "plugins" :     [ "themes", "types", "ui", "json_data" ],
                 "json_data": {
                     "ajax": {
                         url:    "{{ path('symfony_cmf_phpcr_browser_children') }}",
@@ -41,8 +41,14 @@
                         }
                     }
                 }
-            });
-            
+            })
+            .bind("select_node.jstree", function (event, data) {
+                {% set token = '@@ID@@' %}
+                var base_edit_url = "{{ path('admin_sandbox_main_editablestaticcontent_edit', { 'id': token }) }}";
+                var edit_url = base_edit_url.replace("{{ token | url_encode }}", data.rslt.obj.attr("id"));
+                window.location = edit_url;
+	        })
+            .delegate("a", "click", function (event, data) { event.preventDefault(); });
         }
         $(document).ready(function(){
             initTrees();
