@@ -13,6 +13,7 @@
         function initTrees() {
             
             jQuery("#tree").jstree({ 
+                "plugins" :     [ "themes", "types", "json_data" ],
                 "json_data": {
                     "ajax": {
                         url:    "{{ path('symfony_cmf_phpcr_browser_children') }}",
@@ -21,7 +22,25 @@
     	                }
                     }
                 },
-                "plugins" :     [ "themes", "json_data" ] 
+                "types": {
+                    "max_depth":        -2,
+                    "max_children":     -2,
+                    "valid_children":  [ "folder" ],
+                    "types": {
+                        "default": {
+                            "valid_children": "none",
+                            "icon": {
+                                "image": "{{ asset('bundles/symfonycmftree/images/document.png') }}"
+                            }
+                        },
+                        "folder": {
+                            "valid_children": [ "default", "folder" ],
+                            "icon": {
+                                "image": "{{ asset('bundles/symfonycmftree/images/folder.png') }}"
+                            }
+                        }
+                    }
+                }
             });
             
         }
