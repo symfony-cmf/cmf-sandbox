@@ -40,7 +40,8 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         $this->createPath($base_path);
 
         // REMEMBER: all menu items must be named -item !
-        $this->createMenuItem("$base_path/main", 'Main menu', 'Home', $this->dm->find(null, "$content_path/home"));
+        $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', 'Home', $this->dm->find(null, "$content_path/home"));
+        $menuitem->setAttributes(array("class" => "menu_main"));
         $this->createMenuItem("$base_path/main/first-item", 'Firstitem', 'First (Projects)', $this->dm->find(null, "$content_path/projects"));
         $this->createMenuItem("$base_path/main/first-item/test-item", 'Testitem', 'Hello World!', null, null, 'test');
         $this->createMenuItem("$base_path/main/second-item", 'Seconditem', 'Second (Company)', $this->dm->find(null, "$content_path/company"));
@@ -76,6 +77,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         }
 
         $this->dm->persist($menuitem);
+        return $menuitem;
     }
 
     /**

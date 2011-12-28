@@ -1,6 +1,9 @@
 html {
     font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
 }
+#header {
+    margin-bottom: 0;
+}
 div.inner > div h1 {
     font-size: 1.55em;
     font-weight: bold;
@@ -171,20 +174,66 @@ div.inner > div h1 {
     visibility: hidden;
 }
 
-#navigation > ul {
-    position: absolute;
-    left: 20px;
-    top: 60px;
+/** navigation menu **/
+
+ul.menu_main {
+    overflow: auto;
+    width: 100%;
+    padding-bottom: 4px;
 }
 
-#navigation > ul > li {
+ul.menu_main ul {
+    margin-left: 12px;
+}
+
+ul.menu_main a {
+    text-decoration: none;
+}
+
+ul.menu_main li {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+/*
+ * have top level points in one row
+ */
+ul.menu_main > li {
+    border: solid #8AB84B 1px;
+    border-top: none;
+    float: left;
+    padding: 8px 4px;
+    margin-right: 8px;
+    font-size: 1.2em;
     list-style: none;
-    margin-bottom: 10px;
+}
+ul.menu_main > li.last {
+    margin-right: 0px;
+    font-size: 1.2em;
+}
+ul.menu_main > li ul {
+    font-size: 0.8em;
+}
+/* hide unselected menu entries */
+ul.menu_main li {
+    display: none;
+}
+/* except for root nodes and siblings of selected nodes */
+ul.menu_main > li,
+ul.menu_main li.current,
+ul.menu_main li.current > ul > li,
+ul.menu_main li.current_ancestor,
+ul.menu_main li.current_ancestor > ul > li {
+    display: block;
+}
+/* make selected menu entries bold */
+ul.menu_main li.current {
+    font-weight: bold;
 }
 
-#navigation > ul > li > ul > li {
-    margin-left: 20px;
-}
+
+
+/** content **/
 
 #main_title {
     font-size: 30px;
