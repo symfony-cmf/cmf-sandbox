@@ -7,55 +7,7 @@
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('bundles/symfonycmftree/js/jstree/jquery.jstree.js') }}" type="text/javascript"></script>
-
-    <script type="text/javascript">
-        function initTrees() {
-            
-            jQuery("#tree").jstree({ 
-                "plugins" :     [ "themes", "types", "ui", "json_data" ],
-                "json_data": {
-                    "ajax": {
-                        url:    "{{ path('symfony_cmf_phpcr_browser_children') }}",
-                        data:   function (node) {
-    	                    return { 'root' : jQuery(node).attr('id') };
-    	                }
-                    }
-                },
-                "types": {
-                    "max_depth":        -2,
-                    "max_children":     -2,
-                    "valid_children":  [ "folder" ],
-                    "types": {
-                        "default": {
-                            "valid_children": "none",
-                            "icon": {
-                                "image": "{{ asset('bundles/symfonycmftree/images/document.png') }}"
-                            }
-                        },
-                        "folder": {
-                            "valid_children": [ "default", "folder" ],
-                            "icon": {
-                                "image": "{{ asset('bundles/symfonycmftree/images/folder.png') }}"
-                            }
-                        }
-                    }
-                }
-            })
-            .bind("select_node.jstree", function (event, data) {
-                {% set token = '@@ID@@' %}
-                var base_edit_url = "{{ path('admin_sandbox_main_editablestaticcontent_edit', { 'id': token }) }}";
-                var edit_url = base_edit_url.replace("{{ token | url_encode }}", data.rslt.obj.attr("id"));
-                window.location = edit_url;
-	        })
-            .delegate("a", "click", function (event, data) { event.preventDefault(); });
-        }
-        $(document).ready(function(){
-            initTrees();
-
-        });
-    </script>
-
+    {% include 'SymfonyCmfPHPCRBrowserBundle:Base:tree.html.twig' %}
 {% endblock %}
 
 {% block side_menu %}
