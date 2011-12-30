@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\PHPCRBrowserBundle\SymfonyCmfPHPCRBrowserBundle(),
             new Liip\VieBundle\LiipVieBundle(),
             new FOS\RestBundle\FOSRestBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
 
             // and the sandbox bundle

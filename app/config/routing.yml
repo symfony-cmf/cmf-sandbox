@@ -18,6 +18,9 @@ _sonata_admin:
 sandbox:
     resource: @SandboxMainBundle/Resources/config/routing.yml
 
+fos_js_routing:
+    resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
+
 phpcrbrowser:
     resource: @SymfonyCmfPHPCRBrowserBundle/Resources/config/routing.xml
     prefix: /admin/browser

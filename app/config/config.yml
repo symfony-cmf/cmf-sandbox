@@ -97,3 +97,9 @@ sonata_admin:
         layout:  SonataAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
 
+fos_js_routing:
+    routes_to_expose:
+        - admin_sandbox_main_editablestaticcontent_create
+        - admin_sandbox_main_editablestaticcontent_delete
+        - admin_sandbox_main_editablestaticcontent_edit
+        - symfony_cmf_phpcr_browser_children

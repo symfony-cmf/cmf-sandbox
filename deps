@@ -112,3 +112,6 @@
     git=git://github.com/symfony-cmf/TreeBundle.git
     target=/bundles/Symfony/Cmf/Bundle/TreeBundle
 
+[FOSRestBundle]
+    git=git://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git
+    target=/bundles/FOS/JsRoutingBundle
