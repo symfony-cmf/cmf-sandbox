@@ -7,7 +7,7 @@
 
 {% block javascripts %}
     {{ parent() }}
-    {% include 'SandboxAdminBundle:CRUD:phpcrbrowser.html.twig' %}
+    {% include 'SymfonyCmfPHPCRBrowserBundle:Base:tree.html.twig' with { 'selector': '#tree' } %}
 {% endblock %}
 
 {% block side_menu %}
