@@ -42,10 +42,11 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         // REMEMBER: all menu items must be named -item !
         $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', 'Home', $this->dm->find(null, "$content_path/home"));
         $menuitem->setAttributes(array("class" => "menu_main"));
-        $this->createMenuItem("$base_path/main/first-item", 'Firstitem', 'First (Projects)', $this->dm->find(null, "$content_path/projects"));
+        $this->createMenuItem("$base_path/main/first-item", 'Firstitem', 'Projects', $this->dm->find(null, "$content_path/projects"));
         $this->createMenuItem("$base_path/main/first-item/test-item", 'Testitem', 'Hello World!', null, null, 'test');
-        $this->createMenuItem("$base_path/main/second-item", 'Seconditem', 'Second (Company)', $this->dm->find(null, "$content_path/company"));
-        $this->createMenuItem("$base_path/main/second-item/child-item", 'Seconditemchild', 'Second Child (Company)', $this->dm->find(null, "$content_path/company_more"));
+        $this->createMenuItem("$base_path/main/second-item", 'Seconditem', 'Company', $this->dm->find(null, "$content_path/company"));
+        $this->createMenuItem("$base_path/main/second-item/child1-item", 'Seconditemchild1', 'Team', $this->dm->find(null, "$content_path/company_team"));
+        $this->createMenuItem("$base_path/main/second-item/child2-item", 'Seconditemchild2', 'More', $this->dm->find(null, "$content_path/company_more"));
         $this->createMenuItem("$base_path/main/second-item/external-item", 'External Link', 'External Link', null, 'http://cmf.symfony.com/');
 
         $this->dm->flush();

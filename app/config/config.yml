@@ -80,6 +80,10 @@ symfony_cmf_chain_routing:
         controllers_by_alias:
             static_pages: sandbox_main.controller:indexAction
             editablestatic: sandbox_main.controller:indexAction
+        controllers_by_class:
+            Sandbox\MainBundle\Document\EditableStaticContent: sandbox_main.controller:indexAction
+        generic_controller:
+            sandbox_main.controller:indexAction
 
 knp_menu:
     twig: true

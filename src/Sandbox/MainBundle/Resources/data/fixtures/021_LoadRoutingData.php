@@ -25,6 +25,15 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         return 21;
     }
 
+    /**
+     * Load routing data into the document manager.
+     *
+     * NOTE: We demo all possibilities. Of course, you should try to be
+     * consistent in what you use and only use different things for special
+     * cases.
+     *
+     * @param $dm
+     */
     public function load($dm)
     {
         $base_path    = $this->container->getParameter('symfony_cmf_core.routing_basepath');
@@ -36,28 +45,31 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         $this->createPath(dirname($base_path));
         $parent = $dm->find(null, dirname($base_path));
 
+        // explicit controller
         $home = new Route;
         $home->setPosition($parent, basename($base_path));
         $home->setRouteContent($dm->find(null, "$content_path/home"));
-        $home->setControllerAlias('static_pages');
+        $home->setController('sandbox_main.controller:homepageAction');
         $dm->persist($home);
 
+        // alias to controller mapping
         $company = new Route;
         $company->setPosition($home, 'company');
         $company->setRouteContent($dm->find(null, "$content_path/company"));
         $company->setControllerAlias('static_pages');
         $dm->persist($company);
 
+        // class to controller mapping
         $team = new Route;
         $team->setPosition($company, 'team');
         $team->setRouteContent($dm->find(null, "$content_path/company_team"));
-        $team->setControllerAlias('static_pages');
         $dm->persist($team);
 
+        // explicit template
         $more = new Route;
         $more->setPosition($company, 'more');
         $more->setRouteContent($dm->find(null, "$content_path/company_more"));
-        $more->setControllerAlias('static_pages');
+        $more->setTemplate('SandboxMainBundle:EditableStaticContent:nosidebar.html.twig');
         $dm->persist($more);
 
         $projects = new Route;

@@ -1,0 +1,36 @@
+{# special template without the sidebar #}
+{% extends "SandboxMainBundle::skeleton.html.twig" %}
+
+{% block content %}
+<div xmlns:sioc="http://rdfs.org/sioc/ns#"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     typeof="sioc:Post"
+     about="{{ page.path }}"
+     class="articleContainer">
+
+     {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+         <div class="hiddenfieldsContainer">
+             <div class="hiddenfieldsToggle"></div>
+             <div class="hiddenfields">
+                <div class="hiddenfieldsCloseButton"></div>
+                <h2>Article settings</h2>
+             </div>
+             <div class="hiddenfieldsCloseCorner"></div>
+         </div>
+    {% endif %}
+    <h1 id="main_title" property="dcterms:title">{{ page.title }}</h1>
+    <div property="sioc:content">
+        {{ page.content|raw }}
+    </div>
+</div>
+{{ parent() }}
+{% endblock %}
+
+{% block content_extra %}
+<h3 class="offset">Child pages</h3>
+{#
+TODO: provide knp menu bundle child list renderer as twig extension
+https://github.com/KnpLabs/KnpMenu/blob/master/src/Knp/Menu/Renderer/ListRenderer.php#L48
+{% render "symfony_cmf_navigation.renderer:childlistAction" with { 'url': url } %}
+#}
+{% endblock %}
