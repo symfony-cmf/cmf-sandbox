@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        initTree({
+            "selector": "#tree",
+            "path": {
+                "expanded":     [ "/cms" ],
+                "preloaded":    [ "/cms" ],
+            },
+            "icon": {
+                "document": "{{ asset('bundles/symfonycmftree/images/document.png') }}",
+                "folder":   "{{ asset('bundles/symfonycmftree/images/folder.png') }}"
+            },
+            "route": {
+                "create":   'admin_sandbox_main_editablestaticcontent_create',
+                "edit":     'admin_sandbox_main_editablestaticcontent_edit',
+                "erase":    'admin_sandbox_main_editablestaticcontent_delete'
+            }
+        });
+    });
+</script>

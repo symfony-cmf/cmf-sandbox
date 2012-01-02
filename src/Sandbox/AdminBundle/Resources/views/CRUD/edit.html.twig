@@ -7,7 +7,8 @@
 
 {% block javascripts %}
     {{ parent() }}
-    {% include 'SymfonyCmfPHPCRBrowserBundle:Base:tree.html.twig' with { 'selector': '#tree' } %}
+    {% include 'SymfonyCmfPHPCRBrowserBundle:Base:tree.html.twig' %}
+    {% include 'SandboxAdminBundle:CRUD:tree.html.twig' %}
 {% endblock %}
 
 {% block side_menu %}
