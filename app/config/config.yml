@@ -74,6 +74,7 @@ symfony_cmf_chain_routing:
             symfony_cmf_chain_routing.doctrine_router: 200
             router.default: 100
     doctrine:
+        enabled: true
         controllers_by_alias:
             demo_alias: sandbox_main.controller:aliasAction
         controllers_by_class:
