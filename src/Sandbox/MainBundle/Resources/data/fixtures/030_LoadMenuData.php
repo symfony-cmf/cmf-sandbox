@@ -42,11 +42,22 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         // REMEMBER: all menu items must be named -item !
         $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', 'Home', $this->dm->find(null, "$content_path/home"));
         $menuitem->setAttributes(array("class" => "menu_main"));
-        $this->createMenuItem("$base_path/main/first-item", 'Firstitem', 'First (Projects)', $this->dm->find(null, "$content_path/projects"));
-        $this->createMenuItem("$base_path/main/first-item/test-item", 'Testitem', 'Hello World!', null, null, 'test');
-        $this->createMenuItem("$base_path/main/second-item", 'Seconditem', 'Second (Company)', $this->dm->find(null, "$content_path/company"));
-        $this->createMenuItem("$base_path/main/second-item/child-item", 'Seconditemchild', 'Second Child (Company)', $this->dm->find(null, "$content_path/company_more"));
-        $this->createMenuItem("$base_path/main/second-item/external-item", 'External Link', 'External Link', null, 'http://cmf.symfony.com/');
+
+        $this->createMenuItem("$base_path/main/projects-item", 'Projectsitem', 'Projects', $this->dm->find(null, "$content_path/projects"));
+        $this->createMenuItem("$base_path/main/projects-item/cmf-item", 'Cmfitem', 'Symfony CMF', $this->dm->find(null, "$content_path/projects_cmf"));
+
+        $this->createMenuItem("$base_path/main/company-item", 'Companyitem', 'Company', $this->dm->find(null, "$content_path/company"));
+        $this->createMenuItem("$base_path/main/company-item/team-item", 'Teamitem', 'Team', $this->dm->find(null, "$content_path/company_team"));
+        $this->createMenuItem("$base_path/main/company-item/more-item", 'Moreitem', 'More', $this->dm->find(null, "$content_path/company_more"));
+
+        $this->createMenuItem("$base_path/main/demo-item", 'Demoitem', 'Demo', $this->dm->find(null, "$content_path/demo"));
+        //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?
+        $this->createMenuItem("$base_path/main/demo-item/controller-item", 'Controlleritem', 'Explicit controller', $this->dm->find(null, "$content_path/demo_controller"));
+        $this->createMenuItem("$base_path/main/demo-item/template-item", 'Templateitem', 'Explicit template', $this->dm->find(null, "$content_path/demo_template"));
+        $this->createMenuItem("$base_path/main/demo-item/alias-item", 'Aliasitem', 'Route alias to controller', $this->dm->find(null, "$content_path/demo_alias"));
+        $this->createMenuItem("$base_path/main/demo-item/class-item", 'Classitem', 'Class to controller', $this->dm->find(null, "$content_path/demo_class"));
+        $this->createMenuItem("$base_path/main/demo-item/test-item", 'Testitem', 'Normal Symfony Route', null, null, 'test');
+        $this->createMenuItem("$base_path/main/demo-item/external-item", 'ExternalLinkItem', 'External Link', null, 'http://cmf.symfony.com/');
 
         $this->dm->flush();
     }

@@ -7,9 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
- * replacement for Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController
- * to use a different template.
- * TODO: make ContentController more flexible and this class obsolete
+ * Special routes to demo the features of the Doctrine Router in the ChainRoutingBundle
  */
 class ContentController extends Controller
 {
@@ -17,25 +15,73 @@ class ContentController extends Controller
     {
         $this->container = $container;
     }
-    /**
-     * @param StaticContent $page
-     * @param string $path the url path for the current navigation item
-     * @param array $translationUrls urls to all language versions to pass on to twig
-     * @return Symfony\Component\HttpFoundation\Response
-     */
-    public function indexAction($page, $path, $translationUrls = array())
-    {
-        if (!$page) {
-            throw new NotFoundHttpException('Content not found: ' . $path);
-        }
 
+    /**
+     * Action that is mapped in the controller_by_alias map
+     *
+     * This can inject something else for the template for content with this alias
+     *
+     * @param object $contentDocument
+     *
+     * @return \Symfony\Component\HttpFoundation\Response the response
+     */
+    public function aliasAction($contentDocument)
+    {
+        if (!$contentDocument) {
+            throw new NotFoundHttpException('Content not found');
+        }
         $params = array(
-            'title' => $page->title,
-            'page' => $page,
-            'url' => $path,
-//            'translationUrls' => $translationUrls,
+            'title' => $contentDocument->title,
+            'page' => $contentDocument,
+            'example' => 'Additional value injected by the controller for this alias (this could work without content if we want)',
         );
 
-        return $this->render('SandboxMainBundle:EditableStaticContent:index.html.twig', $params);
+        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+    }
+
+    /**
+     * Action that is mapped in the controller_by_class map
+     *
+     * This can inject something else for the template for this type of content.
+     *
+     * @param object $contentDocument
+     *
+     * @return \Symfony\Component\HttpFoundation\Response the response
+     */
+    public function classAction($contentDocument)
+    {
+        if (!$contentDocument) {
+            throw new NotFoundHttpException('Content not found');
+        }
+        $params = array(
+            'title' => $contentDocument->title,
+            'page' => $contentDocument,
+            'example' => 'Additional value injected by the controller for all content mapped to classAction',
+        );
+
+        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+    }
+
+    /**
+     * Action that is explicitly referenced in the _controller field of a content
+     *
+     * This can inject something else for the template
+     *
+     * @param object $contentDocument
+     *
+     * @return \Symfony\Component\HttpFoundation\Response the response
+     */
+    public function specialAction($contentDocument)
+    {
+        if (!$contentDocument) {
+            throw new NotFoundHttpException('Content not found');
+        }
+        $params = array(
+            'title' => $contentDocument->title,
+            'page' => $contentDocument,
+            'example' => 'Additional value injected by the controller when explicitly referenced',
+        );
+
+        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
     }
 }
