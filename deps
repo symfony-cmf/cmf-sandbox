@@ -13,6 +13,10 @@
 [doctrine]
     git=http://github.com/doctrine/doctrine2.git
 
+[DoctrineBundle]
+    git=http://github.com/doctrine/DoctrineBundle.git
+    target=/bundles/Doctrine/Bundle/DoctrineBundle
+
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
     version=v4.1.2
