@@ -55,3 +55,24 @@ static:
             <h2>dicta facete eu vis</h2>
             <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea.
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+    -
+        name: "demo"
+        title: "Routing demo"
+        content: "<p>The Children of this page show the various use cases of the cmf menu and the cmf content routing.</p>"
+    -
+        name: "demo_controller"
+        title: "Explicit Controller"
+        content: "<p>This content is routed through an explicit controller that can do additional things.</p>"
+    -
+        name: "demo_template"
+        title: "Explicit template"
+        content: "<p>This content is rendered through the generic content controller with an explicitly specified template.</p>"
+    -
+        name: "demo_alias"
+        title: "Controller by alias"
+        content: "<p>This content is routed through a controller found by the route controller alias.</p>"
+    -
+        name: "demo_class"
+        title: "Controller by class"
+        content: "<p>This content is routed through a controller found by the content class.</p>"
+        class: "Sandbox\MainBundle\Document\DemoClassContent"

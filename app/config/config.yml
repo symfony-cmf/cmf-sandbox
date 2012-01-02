@@ -66,10 +66,7 @@ doctrine_phpcr:
         auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
 
-symfony_cmf_navigation:
-    controllers_by_alias:
-        static_pages: sandbox_main.controller:indexAction
-        editablestatic: sandbox_main.controller:indexAction
+symfony_cmf_content: ~
 
 symfony_cmf_chain_routing:
     chain:
@@ -78,12 +75,11 @@ symfony_cmf_chain_routing:
             router.default: 100
     doctrine:
         controllers_by_alias:
-            static_pages: sandbox_main.controller:indexAction
-            editablestatic: sandbox_main.controller:indexAction
+            demo_alias: sandbox_main.controller:aliasAction
         controllers_by_class:
-            Sandbox\MainBundle\Document\EditableStaticContent: sandbox_main.controller:indexAction
-        generic_controller:
-            sandbox_main.controller:indexAction
+            Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
+        templates_by_class:
+            Sandbox\MainBundle\Document\EditableStaticContent: SandboxMainBundle:EditableStaticContent:index.html.twig
 
 knp_menu:
     twig: true

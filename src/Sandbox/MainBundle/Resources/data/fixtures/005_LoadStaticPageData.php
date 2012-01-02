@@ -32,7 +32,6 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
     public function load($manager)
     {
-        $contentdocument =  $this->container->getParameter('symfony_cmf_content.document_class');
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         $this->createPath($basepath);
@@ -43,9 +42,10 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $overview = $data['static'];
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
-            $page = $manager->find($contentdocument, $path);
+            $page = $manager->find(null, $path);
             if (! $page) {
-                $page = new EditableStaticContent();
+                $class = isset($overview['class']) ? $overview['class'] : 'Sandbox\\MainBundle\\Document\\EditableStaticContent';
+                $page = new $class();
                 $page->setPath($path);
                 $manager->persist($page);
             }

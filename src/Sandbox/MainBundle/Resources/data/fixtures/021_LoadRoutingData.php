@@ -45,44 +45,72 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         $this->createPath(dirname($base_path));
         $parent = $dm->find(null, dirname($base_path));
 
-        // explicit controller
         $home = new Route;
         $home->setPosition($parent, basename($base_path));
         $home->setRouteContent($dm->find(null, "$content_path/home"));
-        $home->setController('sandbox_main.controller:homepageAction');
         $dm->persist($home);
 
-        // alias to controller mapping
         $company = new Route;
         $company->setPosition($home, 'company');
         $company->setRouteContent($dm->find(null, "$content_path/company"));
-        $company->setControllerAlias('static_pages');
         $dm->persist($company);
 
-        // class to controller mapping
         $team = new Route;
         $team->setPosition($company, 'team');
         $team->setRouteContent($dm->find(null, "$content_path/company_team"));
         $dm->persist($team);
 
-        // explicit template
         $more = new Route;
         $more->setPosition($company, 'more');
         $more->setRouteContent($dm->find(null, "$content_path/company_more"));
-        $more->setTemplate('SandboxMainBundle:EditableStaticContent:nosidebar.html.twig');
         $dm->persist($more);
 
         $projects = new Route;
         $projects->setPosition($home, 'projects');
         $projects->setRouteContent($dm->find(null, "$content_path/projects"));
-        $projects->setControllerAlias('static_pages');
         $dm->persist($projects);
 
         $cmf = new Route;
         $cmf->setPosition($projects, 'cmf');
         $cmf->setRouteContent($dm->find(null, "$content_path/projects_cmf"));
-        $cmf->setControllerAlias('static_pages');
         $dm->persist($cmf);
+
+
+        // demo features of routing
+
+        $demo = new Route;
+        $demo->setPosition($home, 'demo');
+        $demo->setRouteContent($dm->find(null, "$content_path/demo"));
+        $dm->persist($demo);
+
+        // explicit template
+        $template = new Route;
+        $template->setPosition($demo, 'template');
+        $template->setRouteContent($dm->find(null, "$content_path/demo_template"));
+        $template->setTemplate('SandboxMainBundle:Demo:template_explicit.html.twig');
+        $dm->persist($template);
+
+        // explicit controller
+        $controller = new Route;
+        $controller->setPosition($demo, 'controller');
+        $controller->setRouteContent($dm->find(null, "$content_path/demo_controller"));
+        $controller->setController('sandbox_main.controller:specialAction');
+        $dm->persist($controller);
+
+        // alias to controller mapping
+        $alias = new Route;
+        $alias->setPosition($demo, 'alias');
+        $alias->setRouteContent($dm->find(null, "$content_path/demo_alias"));
+        $alias->setControllerAlias('demo_alias');
+        $dm->persist($alias);
+
+        // class to controller mapping
+        $class = new Route;
+        $class->setPosition($demo, 'class');
+        $class->setRouteContent($dm->find(null, "$content_path/demo_class"));
+        $dm->persist($class);
+
+        // class to template mapping is used for all the rest
 
         $dm->flush();
     }
