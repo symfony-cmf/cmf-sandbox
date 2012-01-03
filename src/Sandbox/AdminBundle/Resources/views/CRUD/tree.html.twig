@@ -18,13 +18,19 @@
                 "blogpost": { 
                     "label": 'BlogPost', 
                     "action": function (node) {
-                        window.location = Routing.generate('admin_sandbox_main_editablestaticcontent_create', { "type": "blogpost" })
+                        window.location = Routing.generate(
+                            'admin_sandbox_main_editablestaticcontent_create', 
+                            { "type": "blogpost", "father": node.attr("id") }
+                        )
                     }
                 },
                 "static": { 
                     "label": 'StaticContent', 
                     "action": function (node) {
-                        window.location = Routing.generate('admin_sandbox_main_editablestaticcontent_create', { "type": "static" })
+                        window.location = Routing.generate(
+                            'admin_sandbox_main_editablestaticcontent_create', 
+                            { "type": "static", "father": node.attr("id") }
+                        )
                     }
                 }
             }
