@@ -77,6 +77,7 @@ class DemoTemplateContent implements RouteAwareInterface
      */
     public function getRoutes()
     {
-        return $this->routes;
+        return array($this->routes->first());
+        // FIXME: this should work: return $this->routes->toArray();
     }
 }
