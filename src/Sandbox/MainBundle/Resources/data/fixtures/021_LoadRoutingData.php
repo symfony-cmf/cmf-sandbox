@@ -8,6 +8,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
 use Symfony\Cmf\Bundle\ChainRoutingBundle\Document\Route;
+use Symfony\Cmf\Bundle\ChainRoutingBundle\Document\RedirectRoute;
 
 class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
@@ -81,11 +82,12 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         $demo = new Route;
         $demo->setPosition($home, 'demo');
         $demo->setRouteContent($dm->find(null, "$content_path/demo"));
+        $demo->setTemplate('SandboxMainBundle:Demo:template_explicit.html.twig');
         $dm->persist($demo);
 
         // explicit template
         $template = new Route;
-        $template->setPosition($demo, 'template');
+        $template->setPosition($demo, 'atemplate');
         $template->setRouteContent($dm->find(null, "$content_path/demo_template"));
         $template->setTemplate('SandboxMainBundle:Demo:template_explicit.html.twig');
         $dm->persist($template);
@@ -109,6 +111,26 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         $class->setPosition($demo, 'class');
         $class->setRouteContent($dm->find(null, "$content_path/demo_class"));
         $dm->persist($class);
+
+        // redirections
+
+        // redirect to uri
+        $redirect = new RedirectRoute();
+        $redirect->setPosition($home, 'external');
+        $redirect->setUri('http://cmf.symfony.com');
+        $dm->persist($redirect);
+
+        // redirect to other doctrine route
+        $redirectRoute = new RedirectRoute();
+        $redirectRoute->setPosition($home, 'short');
+        $redirectRoute->setRouteTarget($cmf);
+        $dm->persist($redirectRoute);
+
+        // redirect to Symfony route
+        $redirectS = new RedirectRoute();
+        $redirectS->setPosition($home, 'short1');
+        $redirectS->setRouteName('test');
+        $dm->persist($redirectS);
 
         // class to template mapping is used for all the rest
 

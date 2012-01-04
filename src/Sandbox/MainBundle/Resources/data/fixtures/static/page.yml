@@ -58,7 +58,14 @@ static:
     -
         name: "demo"
         title: "Routing demo"
-        content: "<p>The Children of this page show the various use cases of the cmf menu and the cmf content routing.</p>"
+        content: |
+            <p>The Children of this page show the various use cases of the cmf menu and the cmf content routing.</p>
+            <p>There are also some routes that have no menu entry:</p>
+            <ul>
+                <li><a href="/app_dev.php/short">A short url that redirects to another doctrine route</a></li>
+                <li><a href="/app_dev.php/short1">A short url that redirects to a standard Symfony route</a></li>
+                <li><a href="/app_dev.php/external">A short url that redirects to an external URL</a></li>
+            </ul>
     -
         name: "demo_controller"
         title: "Explicit Controller"
