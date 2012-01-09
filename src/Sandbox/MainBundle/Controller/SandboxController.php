@@ -4,7 +4,11 @@ namespace Sandbox\MainBundle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * TODO this should be moved to an exception controller
+ */
 class SandboxController extends Controller
 {
     public function indexAction()
@@ -25,7 +29,7 @@ class SandboxController extends Controller
                     "<br/>\n<em>Make sure you have a phpcr backend properly set up and running.</em>";
             }
         }
-        return new \Symfony\Component\HttpFoundation\Response("<h2>Sandbox</h2>
+        return new Response("<h2>Sandbox</h2>
             <p>If you see this page, it means your sandbox is not correctly set up.
                Please see the README file in the sandbox root folder and if you can't figure out
                what is wrong, ask us on freenode irc #symfony-cmf or the mailinglist symfony-cmf-users@groups.google.com.

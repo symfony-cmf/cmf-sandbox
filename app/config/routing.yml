@@ -3,9 +3,6 @@
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
-#admin:
-#    resource: @SandboxAdminBundle/Resources/config/routing.yml
-
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin
@@ -14,9 +11,6 @@ _sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /admin
-
-sandbox:
-    resource: @SandboxMainBundle/Resources/config/routing.yml
 
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
@@ -29,13 +23,8 @@ test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
 
-
 vie:
     resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"
 
 vie_asset_management:
     resource: "@LiipVieBundle/Resources/config/routing/asset_search.xml"
-
-#cmf:
-    # this must come last, its a catch all route
-#    resource: @SymfonyCmfNavigationBundle/Resources/config/routing.xml
