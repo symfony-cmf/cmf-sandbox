@@ -63,7 +63,6 @@ AnnotationRegistry::registerLoader(function($class) use ($loader) {
 });
 AnnotationRegistry::registerFile(__DIR__.'/../vendor/doctrine/lib/Doctrine/ORM/Mapping/Driver/DoctrineAnnotations.php');
 AnnotationRegistry::registerFile(__DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/Doctrine/ODM/PHPCR/Mapping/Annotations/DoctrineAnnotations.php');
-AnnotationRegistry::registerFile(__DIR__.'/../vendor/symfony-cmf/src/Symfony/Cmf/Bundle/MultilangContentBundle/Annotation/TranslationAnnotations.php');
 
 // Swiftmailer needs a special autoloader to allow
 // the lazy loading of the init file (which is expensive)

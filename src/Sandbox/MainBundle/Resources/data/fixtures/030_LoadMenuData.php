@@ -8,7 +8,7 @@ use Doctrine\Bundle\PHPCRBundle\JackalopeLoader;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
-use Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem;
+use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem;
 
 class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
@@ -75,7 +75,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
             $this->dm->flush();
         }
 
-        $menuitem = new MenuItem();
+        $menuitem = new MultilangMenuItem();
         $menuitem->setPath($path);
         $menuitem->setName($name);
         $menuitem->setLabel($label);

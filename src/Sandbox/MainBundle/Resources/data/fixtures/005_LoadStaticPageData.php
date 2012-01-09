@@ -32,6 +32,9 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
     public function load($manager)
     {
+        if (! $this->container) {
+            throw new \Exception("This does not work without container");
+        }
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         $this->createPath($basepath);

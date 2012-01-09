@@ -65,6 +65,20 @@ doctrine_phpcr:
     odm:
         auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
+#        locales:
+#            en:
+#                - en
+#                - de
+#                - fr
+#            de:
+#                - de
+#                - en
+#                - fr
+#            fr:
+#                - fr
+#                - en
+#                - de
+
 
 symfony_cmf_content: ~
 
