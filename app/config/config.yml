@@ -43,10 +43,6 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
-jms_security_extra:
-    secure_controllers:  true
-    secure_all_services: false
-
 # cmf configuration
 doctrine_phpcr:
     # configure the PHPCR session
@@ -119,3 +115,9 @@ fos_js_routing:
         - admin_sandbox_main_editablestaticcontent_delete
         - admin_sandbox_main_editablestaticcontent_edit
         - symfony_cmf_phpcr_browser_children
+
+fos_rest:
+    view:
+        view_response_listener: false
+    body_listener: false
+    format_listener: false

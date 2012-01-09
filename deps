@@ -6,20 +6,22 @@
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
+    version=1.0.2
 
-[doctrine-dbal]
-    git=http://github.com/doctrine/dbal.git
+[DoctrinePHPCRBundle]
+    git=http://github.com/doctrine/DoctrinePHPCRBundle.git
+    target=/bundles/Doctrine/Bundle/PHPCRBundle
 
-[doctrine]
-    git=http://github.com/doctrine/doctrine2.git
+[DoctrineFixturesBundle]
+    git=http://github.com/doctrine/DoctrineFixturesBundle.git
+    target=/bundles/Doctrine/Bundle/FixturesBundle
 
-[DoctrineBundle]
-    git=http://github.com/doctrine/DoctrineBundle.git
-    target=/bundles/Doctrine/Bundle/DoctrineBundle
+[doctrine-data-fixtures]
+    git=http://github.com/doctrine/data-fixtures.git
 
 [swiftmailer]
     git=http://github.com/swiftmailer/swiftmailer.git
-    version=v4.1.2
+    version=v4.1.5
 
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
@@ -32,23 +34,6 @@
     git=http://github.com/schmittjoh/metadata.git
     version=1.1.0
 
-[SensioFrameworkExtraBundle]
-    git=http://github.com/sensio/SensioFrameworkExtraBundle.git
-    target=/bundles/Sensio/Bundle/FrameworkExtraBundle
-
-[JMSSecurityExtraBundle]
-    git=http://github.com/schmittjoh/JMSSecurityExtraBundle.git
-    target=/bundles/JMS/SecurityExtraBundle
-    version=origin/1.0.x
-
-[SensioDistributionBundle]
-    git=http://github.com/sensio/SensioDistributionBundle.git
-    target=/bundles/Sensio/Bundle/DistributionBundle
-
-[SensioGeneratorBundle]
-    git=http://github.com/sensio/SensioGeneratorBundle.git
-    target=/bundles/Sensio/Bundle/GeneratorBundle
-
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
@@ -58,23 +43,6 @@
     git=http://github.com/liip/LiipFunctionalTestBundle.git
     target=/bundles/Liip/FunctionalTestBundle
 
-;### CMF specific bundles and additional requirements
-
-[symfony-cmf]
-    git=http://github.com/symfony-cmf/symfony-cmf.git
-    git_command=submodule update --init --recursive
-
-[DoctrinePHPCRBundle]
-    git=http://github.com/doctrine/DoctrinePHPCRBundle.git
-    target=/bundles/Doctrine/Bundle/PHPCRBundle
-
-[DoctrineFixturesBundle]
-    git=http://github.com/symfony/DoctrineFixturesBundle.git
-    target=/bundles/Symfony/Bundle/DoctrineFixturesBundle
-
-[doctrine-data-fixtures]
-    git=http://github.com/doctrine/data-fixtures.git
-
 [VieBundle]
     git=http://github.com/liip/LiipVieBundle.git
     target=/bundles/Liip/VieBundle
@@ -83,6 +51,10 @@
 [FOSRestBundle]
     git=git://github.com/FriendsOfSymfony/FOSRestBundle.git
     target=/bundles/FOS/RestBundle
+
+[FOSJsRoutingBundle]
+    git=git://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git
+    target=/bundles/FOS/JsRoutingBundle
 
 [JMSSerializerBundle]
     git=https://github.com/schmittjoh/JMSSerializerBundle.git
@@ -94,6 +66,12 @@
 [KnpMenuBundle]
     git=http://github.com/KnpLabs/KnpMenuBundle.git
     target=/bundles/Knp/Bundle/MenuBundle
+
+;### CMF specific bundles and additional requirements
+
+[symfony-cmf]
+    git=http://github.com/symfony-cmf/symfony-cmf.git
+    git_command=submodule update --init --recursive
 
 [ChainRoutingBundle]
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
@@ -115,7 +93,3 @@
 [TreeBundle]
     git=git://github.com/symfony-cmf/TreeBundle.git
     target=/bundles/Symfony/Cmf/Bundle/TreeBundle
-
-[FOSJsRoutingBundle]
-    git=git://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git
-    target=/bundles/FOS/JsRoutingBundle
