@@ -3,6 +3,7 @@
 namespace Sandbox\AdminBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController as Controller;
+use Symfony\Component\HttpFoundation\Response;
 
 class ContentAdminController extends Controller
 {
@@ -38,6 +39,7 @@ class ContentAdminController extends Controller
 
         $id = $this->get('request')->get($this->admin->getIdParameter());
 
+        $id= urldecode($id);
         $object = $this->admin->getNewInstance();
         $idField = $this->admin->getModelManager()->getModelIdentifier($this->admin->getClass());
         $object->{'set'.$idField}($id);
@@ -77,6 +79,24 @@ class ContentAdminController extends Controller
             'form'   => $view,
             'object' => $object,
         ));
+    }
+
+    public function treeAction()
+    {
+         $pool = $this->get('sonata.admin.pool');
+         $classes = $pool->getAdminClasses();
+         $adminClasses = array();
+         foreach ($classes as $class) {
+             $instance = $this->get($class);
+             $routeCollection = array();
+             foreach ($instance->getRoutes()->getElements() as $route) {
+                 array_push($routeCollection, $route->getPattern());
+             }
+             array_push($adminClasses, array(
+                 'label' => $instance->getLabel(),
+                 'route' => $routeCollection));
+         }
+         return $this->renderJson($adminClasses);
     }
 
 }

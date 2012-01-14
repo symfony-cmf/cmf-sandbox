@@ -119,3 +119,7 @@ fos_js_routing:
 fos_rest:
     view:
         view_response_listener: false
+
+jms_google_closure:
+    plovr:
+        jar_path: %kernel.root_dir%/vendor/plovr/plovr.jar
