@@ -47,14 +47,4 @@ class NavigationAdmin extends Admin
                 ->add('visible')
             ;
     }
-
-    public function getListTemplate()
-    {
-        return 'SandboxAdminBundle:CRUD:list.html.twig';
-    }
-
-    public function getEditTemplate()
-    {
-        return 'SandboxAdminBundle:CRUD:edit.html.twig';
-    }
 }

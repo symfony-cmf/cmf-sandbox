@@ -106,7 +106,7 @@ liip_vie:
 sonata_admin:
     templates:
         # default global templates
-        layout:  SonataAdminBundle::standard_layout.html.twig
+        layout:  SandboxAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
 
 fos_js_routing:
