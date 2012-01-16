@@ -10,7 +10,7 @@ use Symfony\Cmf\Bundle\ChainRoutingBundle\Routing\RouteAwareInterface;
  * A document that we map to a template to be used with the generic content
  * controller
  *
- * @PHPCRODM\Document(alias="demo_template",referenceable=true)
+ * @PHPCRODM\Document(referenceable=true)
  */
 class DemoTemplateContent implements RouteAwareInterface
 {

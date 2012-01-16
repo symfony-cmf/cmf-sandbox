@@ -57,6 +57,13 @@ And add an entry to your hosts file for cmf.lo
 
 Then point your browser to http://cmf.lo/app_dev.php
 
+## Production environment
+
+In order to run the sandbox in production mode at http://cmf.lo/
+you need to generate the doctrine proxies:
+
+    app/console cache:warmup --env=prod --no-debug
+
 
 # Getting started using Vagrant
 

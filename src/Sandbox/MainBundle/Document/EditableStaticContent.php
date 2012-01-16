@@ -6,7 +6,7 @@ use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
 use Liip\VieBundle\FromJsonLdInterface;
 
 /**
- * @PHPCRODM\Document(alias="editablestatic", referenceable=true)
+ * @PHPCRODM\Document(referenceable=true)
  */
 class EditableStaticContent extends StaticContent implements FromJsonLdInterface
 {
