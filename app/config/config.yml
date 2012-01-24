@@ -106,7 +106,7 @@ liip_vie:
 sonata_admin:
     templates:
         # default global templates
-        layout:  SandboxAdminBundle::standard_layout.html.twig
+        layout:  SonataAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
 
 fos_js_routing:
@@ -114,12 +114,20 @@ fos_js_routing:
         - admin_sandbox_main_editablestaticcontent_create
         - admin_sandbox_main_editablestaticcontent_delete
         - admin_sandbox_main_editablestaticcontent_edit
+        - admin_bundle_menu_menuitem_create
+        - admin_bundle_menu_menuitem_delete
+        - admin_bundle_menu_menuitem_edit
+        - admin_bundle_multilangcontent_multilangmenuitem_create
+        - admin_bundle_multilangcontent_multilangmenuitem_delete
+        - admin_bundle_multilangcontent_multilangmenuitem_edit
+        - admin_bundle_multilangcontent_multilangstaticcontent_create
+        - admin_bundle_multilangcontent_multilangstaticcontent_delete
+        - admin_bundle_multilangcontent_multilangstaticcontent_edit
+        - admin_bundle_multilangcontent_multilanglanguageselectroute_create
+        - admin_bundle_multilangcontent_multilanglanguageselectroute_delete
+        - admin_bundle_multilangcontent_multilanglanguageselectroute_edit
         - symfony_cmf_phpcr_browser_children
 
 fos_rest:
     view:
         view_response_listener: false
-
-jms_google_closure:
-    plovr:
-        jar_path: %kernel.root_dir%/vendor/plovr/plovr.jar

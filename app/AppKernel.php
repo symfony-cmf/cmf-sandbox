@@ -40,8 +40,6 @@ class AppKernel extends Kernel
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
-            //only for debug
-            new JMS\GoogleClosureBundle\JMSGoogleClosureBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
