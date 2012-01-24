@@ -32,6 +32,7 @@ class MenuItemAdmin extends Admin
                 ->add('label', 'text')
                 ->add('uri', 'text')
                 ->add('route', 'text')
+                ->add('weak', 'choice', array('choices'   => array('m' => 'Male', 'f' => 'Female'),'required' => false))
             ->end();
     }
     protected function configureShowField(ShowMapper $showMapper)
