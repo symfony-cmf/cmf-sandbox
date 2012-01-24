@@ -1,12 +1,26 @@
 static:
     -
         name: "home"
-        title: "Homepage"
-        content: |
-            <h2>Welcome to the symfony cmf Demo</h2>
-            <p>If you see this page, it means that the symfony cmf installation is running successfully!</p>
-            <h2>How to proceed</h2>
-            <p>There is a couple of bundles to look into in the vendor/symfony-cmf/ folder. Look at the main README but also at the individual README files of the bundles.</p>
+        title:
+            en: "Homepage"
+            fr: "Page principal"
+            de: "Startseite"
+        content:
+            en: |
+                <h2>Welcome to the symfony cmf Demo</h2>
+                <p>If you see this page, it means that the symfony cmf installation is running successfully!</p>
+                <h2>How to proceed</h2>
+                <p>There is a couple of bundles to look into in the vendor/symfony-cmf/ folder. Look at the main README but also at the individual README files of the bundles.</p>
+            fr: |
+                <h2>Bonjour pour le demo symfony cmf</h2>
+                <p>Si tu vois cette page, ça veux dire que l'installation du symfony cmf a fonctionné!</p>
+                <h2>Quoi faire maitenant?</h2>
+                <p>Il y a plusieurs bundles dans le directoire vendor/symfony-cmf/. Lis le README principal mais aussi les README individuel de chaque bundle.</p>
+            de: |
+                <h2>Willkommen zur symfony cmf Demo</h2>
+                <p>Wenn du diese Seite siehst, bedeutet das dass die installation des symfony cmf erfolgreich war!</p>
+                <h2>Was nun?</h2>
+                <p>Es gibt einige bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen bundles.</p>
     -
         name: "company"
         title: "The Company"

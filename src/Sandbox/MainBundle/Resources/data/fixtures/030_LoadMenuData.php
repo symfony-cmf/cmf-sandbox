@@ -8,6 +8,7 @@ use Doctrine\Bundle\PHPCRBundle\JackalopeLoader;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
+use Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem;
 use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem;
 
 class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
@@ -40,15 +41,15 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         $this->createPath($base_path);
 
         // REMEMBER: all menu items must be named -item !
-        $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', 'Home', $this->dm->find(null, "$content_path/home"));
+        $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Acceuil'), $this->dm->find(null, "$content_path/home"));
         $menuitem->setAttributes(array("class" => "menu_main"));
 
-        $this->createMenuItem("$base_path/main/projects-item", 'Projectsitem', 'Projects', $this->dm->find(null, "$content_path/projects"));
+        $this->createMenuItem("$base_path/main/projects-item", 'Projectsitem', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $this->dm->find(null, "$content_path/projects"));
         $this->createMenuItem("$base_path/main/projects-item/cmf-item", 'Cmfitem', 'Symfony CMF', $this->dm->find(null, "$content_path/projects_cmf"));
 
-        $this->createMenuItem("$base_path/main/company-item", 'Companyitem', 'Company', $this->dm->find(null, "$content_path/company"));
-        $this->createMenuItem("$base_path/main/company-item/team-item", 'Teamitem', 'Team', $this->dm->find(null, "$content_path/company_team"));
-        $this->createMenuItem("$base_path/main/company-item/more-item", 'Moreitem', 'More', $this->dm->find(null, "$content_path/company_more"));
+        $this->createMenuItem("$base_path/main/company-item", 'Companyitem', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $this->dm->find(null, "$content_path/company"));
+        $this->createMenuItem("$base_path/main/company-item/team-item", 'Teamitem', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $this->dm->find(null, "$content_path/company_team"));
+        $this->createMenuItem("$base_path/main/company-item/more-item", 'Moreitem', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $this->dm->find(null, "$content_path/company_more"));
 
         $this->createMenuItem("$base_path/main/demo-item", 'Demoitem', 'Demo', $this->dm->find(null, "$content_path/demo"));
         //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?
@@ -75,10 +76,9 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
             $this->dm->flush();
         }
 
-        $menuitem = new MultilangMenuItem();
+        $menuitem = is_array($label) ? new MultilangMenuItem() : new MenuItem();
         $menuitem->setPath($path);
         $menuitem->setName($name);
-        $menuitem->setLabel($label);
         if (null !== $content) {
             $menuitem->setContent($content);
         } elseif (null !== $uri) {
@@ -87,7 +87,16 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
             $menuitem->setRoute($route);
         }
 
-        $this->dm->persist($menuitem);
+        if (is_array($label)) {
+            foreach($label as $locale => $l) {
+                $menuitem->setLabel($l);
+                $this->dm->persistTranslation($menuitem, $locale);
+            }
+        } else {
+            $menuitem->setLabel($label);
+            $this->dm->persist($menuitem);
+        }
+
         return $menuitem;
     }
 
