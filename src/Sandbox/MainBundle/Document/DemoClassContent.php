@@ -9,7 +9,7 @@ use Symfony\Cmf\Bundle\ChainRoutingBundle\Routing\RouteAwareInterface;
 /**
  * A document that we map to a controller
  *
- * @PHPCRODM\Document(alias="demo_template",referenceable=true)
+ * @PHPCRODM\Document(referenceable=true)
  */
 class DemoClassContent implements RouteAwareInterface
 {

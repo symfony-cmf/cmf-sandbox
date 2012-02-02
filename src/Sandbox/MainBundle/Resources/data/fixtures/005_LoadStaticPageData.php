@@ -53,8 +53,17 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
                 $manager->persist($page);
             }
             $page->name = $overview['name'];
-            $page->title = $overview['title'];
-            $page->body = $overview['content'];
+
+            if (is_array($overview['title'])) {
+                foreach($overview['title'] as $locale => $title) {
+                    $page->title = $title;
+                    $page->body = $overview['content'][$locale];
+                    $manager->persistTranslation($page, $locale);
+                }
+            } else {
+                $page->title = $overview['title'];
+                $page->body = $overview['content'];
+            }
         }
 
         $manager->flush(); //to get ref id populated

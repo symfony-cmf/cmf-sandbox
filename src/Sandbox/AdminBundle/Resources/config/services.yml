@@ -10,8 +10,26 @@ services:
             - "%symfony_cmf_content.static_basepath%"
         calls:
             - [ setContainer, [@service_container] ]
-    sandbox_admin.navigation_admin:
-        class: Sandbox\AdminBundle\Controller\NavigationAdminController
+    sandbox_admin.menu_item_admin:
+        class: Sandbox\AdminBundle\Controller\MenuItemAdminController
+        arguments:
+            - "%symfony_cmf_core.mainmenu_basepath%"
+        calls:
+            - [ setContainer, [@service_container] ]
+    sandbox_admin.multilang_menu_item_admin:
+        class: Sandbox\AdminBundle\Controller\MultilangMenuItemAdminController
+        arguments:
+            - "%symfony_cmf_core.mainmenu_basepath%"
+        calls:
+            - [ setContainer, [@service_container] ]
+    sandbox_admin.multilang_language_select_route_admin:
+        class: Sandbox\AdminBundle\Controller\MultilangLanguageSelectRouteAdminController
+        arguments:
+            - "%symfony_cmf_core.mainmenu_basepath%"
+        calls:
+            - [ setContainer, [@service_container] ]
+    sandbox_admin.multilang_static_content_admin:
+        class: Sandbox\AdminBundle\Controller\MultilangStaticContentAdminController
         arguments:
             - "%symfony_cmf_core.mainmenu_basepath%"
         calls:
@@ -23,13 +41,31 @@ services:
         arguments: ["",Sandbox\MainBundle\Document\EditableStaticContent, "sandbox_admin.content_admin"]
         calls:
             - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
-    sandbox.admin.admin.navigation:
-        class: Sandbox\AdminBundle\Admin\NavigationAdmin
+    sandbox.admin.admin.menu_item:
+        class: Sandbox\AdminBundle\Admin\MenuItemAdmin
         tags:
-            - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: navigation}
-        arguments: ["",Symfony\Cmf\Bundle\NavigationBundle\Document\Navigation, "sandbox_admin.navigation_admin"]
+            - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: menu item}
+        arguments: ["",Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem, "sandbox_admin.menu_item_admin"]
         calls:
             - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
-
-
-
+    sandbox.admin.admin.multilang_menu_item:
+        class: Sandbox\AdminBundle\Admin\MultilangMenuItemAdmin
+        tags:
+            - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: multilang menu item}
+        arguments: ["",Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem, "sandbox_admin.multilang_menu_item_admin"]
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+    sandbox.admin.admin.multilang_language_select_route:
+        class: Sandbox\AdminBundle\Admin\MultilangLanguageSelectRouteAdmin
+        tags:
+            - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: multilang language select route}
+        arguments: ["",Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangLanguageSelectRoute, "sandbox_admin.multilang_language_select_route_admin"]
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+    sandbox.admin.admin.multilang_static_content:
+        class: Sandbox\AdminBundle\Admin\MultilangStaticContentAdmin
+        tags:
+            - {name: sonata.admin, manager_type: phpcr, group: phpcr, label: multilang static content}
+        arguments: ["",Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent, "sandbox_admin.multilang_static_content_admin"]
+        calls:
+            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]

@@ -2,13 +2,13 @@
 namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
+use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent;
 use Liip\VieBundle\FromJsonLdInterface;
 
 /**
- * @PHPCRODM\Document(alias="editablestatic", referenceable=true)
+ * @PHPCRODM\Document(referenceable=true,translator="child")
  */
-class EditableStaticContent extends StaticContent implements FromJsonLdInterface
+class EditableStaticContent extends MultilangStaticContent implements FromJsonLdInterface
 {
     public function fromJsonLd($data)
     {
