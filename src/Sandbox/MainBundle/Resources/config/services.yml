@@ -4,3 +4,10 @@ services:
         arguments:
             container: "@service_container"
         shared: true
+    sandbox_main.debugListener:
+        class: Sandbox\MainBundle\Listener\SandboxExceptionListener
+        calls:
+            - [ setContainer, [@service_container] ]
+        shared: true
+        tags:
+            - {name: "kernel.event_subscriber"}

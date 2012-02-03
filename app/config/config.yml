@@ -81,7 +81,7 @@ symfony_cmf_content: ~
 symfony_cmf_chain_routing:
     chain:
         routers_by_id:
-            symfony_cmf_chain_routing.doctrine_router: 200
+            symfony_cmf_chain_routing.doctrine_router: 20
             router.default: 100
     doctrine:
         enabled: true
@@ -98,7 +98,6 @@ knp_menu:
 
 liip_vie:
     phpcr_odm: true
-    #orm: doctrine.orm.my_entity_manager
     map:
         'sioc:Post': 'Sandbox\MainBundle\Document\EditableStaticContent'
     use_coffee: %liip_vie.use_coffee%
