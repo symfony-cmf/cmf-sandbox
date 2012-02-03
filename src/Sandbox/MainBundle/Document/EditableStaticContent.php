@@ -45,4 +45,9 @@ class EditableStaticContent extends MultilangStaticContent implements FromJsonLd
     {
         $this->body = $content;
     }
+
+    public function __toString()
+    {
+        return $this->title;
+    }
 }

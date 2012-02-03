@@ -126,6 +126,9 @@ fos_js_routing:
         - admin_bundle_multilangcontent_multilanglanguageselectroute_create
         - admin_bundle_multilangcontent_multilanglanguageselectroute_delete
         - admin_bundle_multilangcontent_multilanglanguageselectroute_edit
+        - admin_bundle_chainrouting_route_create
+        - admin_bundle_chainrouting_route_delete
+        - admin_bundle_chainrouting_route_edit
         - symfony_cmf_phpcr_browser_children
 
 fos_rest:

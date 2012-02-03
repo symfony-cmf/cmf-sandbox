@@ -30,9 +30,9 @@ class MenuItemAdmin extends Admin
                 ->add('path', 'text')
                 ->add('name', 'text')
                 ->add('label', 'text')
-                ->add('uri', 'text')
-                ->add('route', 'text')
-                ->add('weak', 'choice', array('choices'   => array('m' => 'Male', 'f' => 'Female'),'required' => false))
+                ->add('uri', 'text', array('required' => false))
+                ->add('route', 'text', array('required' => false))
+                ->add('content', 'sonata_type_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false))
             ->end();
     }
     protected function configureShowField(ShowMapper $showMapper)
