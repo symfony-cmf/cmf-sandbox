@@ -86,22 +86,6 @@ del, ins {
     text-decoration: none;
 }
 
-.hiddenfieldsToggle {
-    background-image: url('../../bundles/sandboxmain/images/cornersettings_small.png');
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 106px;
-    height: 92px;
-    cursor: pointer;
-}
-
-.hiddenfieldsToggle:hover {
-    background-image: url('../../bundles/sandboxmain/images/cornersettings_large.png');
-    width: 157px;
-    height: 136px;
-}
-
 li {
     list-style-type: square;
     margin-left: 16px;
@@ -109,16 +93,6 @@ li {
 
 caption, th {
     text-align: left;
-}
-
-
-.hiddenfields h2 {
-    background: url('../../bundles/sandboxmain/images/settingsh2icon.png') no-repeat left center;
-    padding-left: 22px;
-    padding-bottom: 0;
-    color: #A0A0A0;
-    font-family: Helvetica, Arial;
-    font-size: 15px;
 }
 
 dt {
@@ -154,26 +128,6 @@ input, button, textarea, select {
 }
 
 .offset, #skiplinks {
-    position: absolute;
-    left: -9000px;
-}
-
-.hiddenfieldsCloseCorner {
-    background: url('../../bundles/sandboxmain/images/cornerclose.png') no-repeat left bottom;
-    width: 106px;
-    height: 92px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: none;
-    cursor: pointer;
-}
-
-.hiddenfieldsCloseButton {
-    background: url('../../bundles/liipvie/img/close_button.png');
-    display: none;
-    width: 25px;
-    height: 25px;
     position: absolute;
     left: -9000px;
 }
@@ -278,7 +232,7 @@ input, button, textarea, select {
     float: left;
     list-style-type: none;
     margin: 0 11px 0 0;
-    background: url('/bundles/sandboxmain/images/pager-next.png') no-repeat 0 center;
+    background: url('../bundles/sandboxmain/images/pager-next.png') no-repeat 0 center;
     padding: 0 0 0 14px;
 }
 
@@ -308,10 +262,6 @@ input, button, textarea, select {
 
 #content h1 a:hover,
 #content h2 a:hover {color:#5e6984}
-
-#content_extra .cmf-childlist a {
-    text-decoration: none;
-}
 
 #footer {
     background-color:#24272d;
@@ -364,6 +314,10 @@ input, button, textarea, select {
 
 ul[rel="dc:subject"] {
     display: none;
+}
+
+#content_extra .cmf-childlist a {
+    text-decoration: none;
 }
 
 .cmf-childlist {
