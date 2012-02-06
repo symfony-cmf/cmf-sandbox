@@ -6,7 +6,7 @@
      about="{{ page.path }}"
      class="articleContainer">
 
-    <ul rel="dc:subject">
+    <ul rel="dc:subject" property="dc:subject">
         {% for subject in page.tags %}
         <li about="{{ subject|replace({'<': '', '>': ''}) }}"></li>
         {% endfor %}
