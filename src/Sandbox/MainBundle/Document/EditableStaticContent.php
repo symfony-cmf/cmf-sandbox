@@ -18,7 +18,7 @@ class EditableStaticContent extends MultilangStaticContent implements FromJsonLd
     public function fromJsonLd($data)
     {
         $this->title = isset($data['<dcterms:title>']) ? $data['<dcterms:title>'] : $data['<http://purl.org/dc/terms/title>'];
-        $this->content = isset($data['<sioc:content>']) ? $data['<sioc:content>'] : $data['<http://rdfs.org/sioc/ns#content>'];
+        $this->body = isset($data['<sioc:content>']) ? $data['<sioc:content>'] : $data['<http://rdfs.org/sioc/ns#content>'];
         $this->tags = $data['<http://purl.org/dc/elements/1.1/subject>'];
     }
 
