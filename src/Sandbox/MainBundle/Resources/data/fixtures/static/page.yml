@@ -1,12 +1,26 @@
 static:
     -
         name: "home"
-        title: "Homepage"
-        content: |
-            <h2>Welcome to the symfony cmf Demo</h2>
-            <p>If you see this page, it means that the symfony cmf installation is running successfully!</p>
-            <h2>How to proceed</h2>
-            <p>There is a couple of bundles to look into in the vendor/symfony-cmf/ folder. Look at the main README but also at the individual README files of the bundles.</p>
+        title:
+            en: "Homepage"
+            fr: "Page principal"
+            de: "Startseite"
+        content:
+            en: |
+                <h2>Welcome to the symfony cmf Demo</h2>
+                <p>If you see this page, it means that the symfony cmf installation is running successfully!</p>
+                <h2>How to proceed</h2>
+                <p>There is a couple of bundles to look into in the vendor/symfony-cmf/ folder. Look at the main README but also at the individual README files of the bundles.</p>
+            fr: |
+                <h2>Bonjour pour le demo symfony cmf</h2>
+                <p>Si tu vois cette page, ça veux dire que l'installation du symfony cmf a fonctionné!</p>
+                <h2>Quoi faire maitenant?</h2>
+                <p>Il y a plusieurs bundles dans le directoire vendor/symfony-cmf/. Lis le README principal mais aussi les README individuel de chaque bundle.</p>
+            de: |
+                <h2>Willkommen zur symfony cmf Demo</h2>
+                <p>Wenn du diese Seite siehst, bedeutet das dass die installation des symfony cmf erfolgreich war!</p>
+                <h2>Was nun?</h2>
+                <p>Es gibt einige bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen bundles.</p>
     -
         name: "company"
         title: "The Company"
@@ -55,3 +69,31 @@ static:
             <h2>dicta facete eu vis</h2>
             <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea.
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+    -
+        name: "demo"
+        title: "Routing demo"
+        content: |
+            <p>The Children of this page show the various use cases of the cmf menu and the cmf content routing.</p>
+            <p>There are also some routes that have no menu entry:</p>
+            <ul>
+                <li><a href="/app_dev.php/short">A short url that redirects to another doctrine route</a></li>
+                <li><a href="/app_dev.php/short1">A short url that redirects to a standard Symfony route</a></li>
+                <li><a href="/app_dev.php/external">A short url that redirects to an external URL</a></li>
+            </ul>
+    -
+        name: "demo_controller"
+        title: "Explicit Controller"
+        content: "<p>This content is routed through an explicit controller that can do additional things.</p>"
+    -
+        name: "demo_template"
+        title: "Explicit template"
+        content: "<p>This content is rendered through the generic content controller with an explicitly specified template.</p>"
+    -
+        name: "demo_alias"
+        title: "Controller by alias"
+        content: "<p>This content is routed through a controller found by the route controller alias.</p>"
+    -
+        name: "demo_class"
+        title: "Controller by class"
+        content: "<p>This content is routed through a controller found by the content class.</p>"
+        class: "Sandbox\MainBundle\Document\DemoClassContent"

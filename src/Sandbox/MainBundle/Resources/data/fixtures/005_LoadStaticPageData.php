@@ -32,7 +32,9 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
     public function load($manager)
     {
-        $contentdocument =  $this->container->getParameter('symfony_cmf_content.document');
+        if (! $this->container) {
+            throw new \Exception("This does not work without container");
+        }
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         $this->createPath($basepath);
@@ -43,15 +45,25 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $overview = $data['static'];
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
-            $page = $manager->find($contentdocument, $path);
+            $page = $manager->find(null, $path);
             if (! $page) {
-                $page = new EditableStaticContent();
+                $class = isset($overview['class']) ? $overview['class'] : 'Sandbox\\MainBundle\\Document\\EditableStaticContent';
+                $page = new $class();
                 $page->setPath($path);
                 $manager->persist($page);
             }
             $page->name = $overview['name'];
-            $page->title = $overview['title'];
-            $page->content = $overview['content'];
+
+            if (is_array($overview['title'])) {
+                foreach($overview['title'] as $locale => $title) {
+                    $page->title = $title;
+                    $page->body = $overview['content'][$locale];
+                    $manager->persistTranslation($page, $locale);
+                }
+            } else {
+                $page->title = $overview['title'];
+                $page->body = $overview['content'];
+            }
         }
 
         $manager->flush(); //to get ref id populated

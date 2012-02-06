@@ -8,7 +8,7 @@ class TestController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('SandboxTestBundle:Test:index.html.twig');
+        return $this->render('SandboxTestBundle:Test:index.html.twig', array('title'=>'Normal Symfony Route'));
     }
 
 }

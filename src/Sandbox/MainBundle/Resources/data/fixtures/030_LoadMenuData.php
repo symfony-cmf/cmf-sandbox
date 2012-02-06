@@ -9,6 +9,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem;
+use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem;
 
 class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
@@ -34,14 +35,32 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
     {
         $this->dm = $manager;
 
-        $this->createMenuItem("/menus", 'Main menu', '', '');
-        $this->createMenuItem("/menus/main", 'Main menu', 'Home', '/app_dev.php');
-        $this->createMenuItem("/menus/main/home-item", 'Home', 'Home', '/app_dev.php');
-        $this->createMenuItem("/menus/main/company-item", 'Company', 'Company', '/app_dev.php/company');
-        $this->createMenuItem("/menus/main/company-item/team-item", 'Team', 'Team', '/app_dev.php/company/team');
-        $this->createMenuItem("/menus/main/company-item/more-item", 'More', 'More', '/app_dev.php/company/more');
-        $this->createMenuItem("/menus/main/projects-item", 'Projects', 'Projects', '/app_dev.php/projects');
-        $this->createMenuItem("/menus/main/projects-item/cmf-item", 'CMF', 'CMF', '/app_dev.php/projects/cmf');
+        $base_path = $this->container->getParameter('symfony_cmf_menu.menu_basepath');
+        $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
+
+        $this->createPath($base_path);
+
+        // REMEMBER: all menu items must be named -item !
+        $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Acceuil'), $this->dm->find(null, "$content_path/home"));
+        $menuitem->setAttributes(array("class" => "menu_main"));
+
+        $this->createMenuItem("$base_path/main/admin-item", 'Adminitem', 'Admin', null, null, 'sonata_admin_dashboard');
+
+        $this->createMenuItem("$base_path/main/projects-item", 'Projectsitem', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $this->dm->find(null, "$content_path/projects"));
+        $this->createMenuItem("$base_path/main/projects-item/cmf-item", 'Cmfitem', 'Symfony CMF', $this->dm->find(null, "$content_path/projects_cmf"));
+
+        $this->createMenuItem("$base_path/main/company-item", 'Companyitem', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $this->dm->find(null, "$content_path/company"));
+        $this->createMenuItem("$base_path/main/company-item/team-item", 'Teamitem', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $this->dm->find(null, "$content_path/company_team"));
+        $this->createMenuItem("$base_path/main/company-item/more-item", 'Moreitem', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $this->dm->find(null, "$content_path/company_more"));
+
+        $this->createMenuItem("$base_path/main/demo-item", 'Demoitem', 'Demo', $this->dm->find(null, "$content_path/demo"));
+        //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?
+        $this->createMenuItem("$base_path/main/demo-item/controller-item", 'Controlleritem', 'Explicit controller', $this->dm->find(null, "$content_path/demo_controller"));
+        $this->createMenuItem("$base_path/main/demo-item/template-item", 'Templateitem', 'Explicit template', $this->dm->find(null, "$content_path/demo_template"));
+        $this->createMenuItem("$base_path/main/demo-item/alias-item", 'Aliasitem', 'Route alias to controller', $this->dm->find(null, "$content_path/demo_alias"));
+        $this->createMenuItem("$base_path/main/demo-item/class-item", 'Classitem', 'Class to controller', $this->dm->find(null, "$content_path/demo_class"));
+        $this->createMenuItem("$base_path/main/demo-item/test-item", 'Testitem', 'Normal Symfony Route', null, null, 'test');
+        $this->createMenuItem("$base_path/main/demo-item/external-item", 'ExternalLinkItem', 'External Link', null, 'http://cmf.symfony.com/');
 
         $this->dm->flush();
     }
@@ -49,7 +68,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
     /**
      * @return a Navigation instance with the specified information
      */
-    protected function createMenuItem($path, $name, $label, $uri, $route = null)
+    protected function createMenuItem($path, $name, $label, $content, $uri = null, $route = null)
     {
         // Remove the node if it already exists
         if ($old_node = $this->dm->find(null, $path)) {
@@ -59,17 +78,51 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
             $this->dm->flush();
         }
 
-        $menuitem = new MenuItem();
+        $menuitem = is_array($label) ? new MultilangMenuItem() : new MenuItem();
         $menuitem->setPath($path);
-        $menuitem->setName($label);
-        $menuitem->setLabel($label);
-        if ($uri !== null) {
+        $menuitem->setName($name);
+        if (null !== $content) {
+            $menuitem->setContent($content);
+        } elseif (null !== $uri) {
             $menuitem->setUri($uri);
-        } else if ($route !== null) {
+        } else if (null !== $route) {
             $menuitem->setRoute($route);
         }
 
-        $this->dm->persist($menuitem);
+        if (is_array($label)) {
+            foreach($label as $locale => $l) {
+                $menuitem->setLabel($l);
+                $this->dm->persistTranslation($menuitem, $locale);
+            }
+        } else {
+            $menuitem->setLabel($label);
+            $this->dm->persist($menuitem);
+        }
+
+        return $menuitem;
     }
 
+    /**
+     * Create a node and it's parents, if necessary.  Like mkdir -p.
+     *
+     * TODO: clean this up once the id generator stuff is done as intended
+     *
+     * @param string $path  full path, like /cms/navigation/main
+     * @return Node the (now for sure existing) node at path
+     */
+    public function createPath($path)
+    {
+        $current = $this->session->getRootNode();
+
+        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
+        foreach ($segments as $segment) {
+            if ($current->hasNode($segment)) {
+                $current = $current->getNode($segment);
+            } else {
+                $current = $current->addNode($segment);
+            }
+        }
+
+        return $current;
+    }
 }

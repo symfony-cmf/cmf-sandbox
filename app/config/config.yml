@@ -43,10 +43,6 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
-jms_security_extra:
-    secure_controllers:  true
-    secure_all_services: false
-
 # cmf configuration
 doctrine_phpcr:
     # configure the PHPCR session
@@ -64,29 +60,44 @@ doctrine_phpcr:
     # enable the ODM layer
     odm:
         auto_mapping: true
+        auto_generate_proxy_classes: %kernel.debug%
+        locales:
+            en:
+                - en
+                - de
+                - fr
+            de:
+                - de
+                - en
+                - fr
+            fr:
+                - fr
+                - en
+                - de
 
-symfony_cmf_navigation:
-    controllers_by_alias:
-        static_pages: sandbox_main.controller:indexAction
-        editablestatic: sandbox_main.controller:indexAction
+
+symfony_cmf_content: ~
 
 symfony_cmf_chain_routing:
     chain:
         routers_by_id:
-            # TODO: enable doctrine router once its working
-            #symfony_cmf_chain_routing.doctrine_router: 200
+            symfony_cmf_chain_routing.doctrine_router: 20
             router.default: 100
     doctrine:
+        enabled: true
         controllers_by_alias:
-            static_pages: sandbox_main.controller:indexAction
-            editablestatic: sandbox_main.controller:indexAction
+            demo_alias: sandbox_main.controller:aliasAction
+        controllers_by_class:
+            Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
+            Symfony\Cmf\Bundle\ChainRoutingBundle\Document\RedirectRoute:  symfony_cmf_chain_routing.redirect_controller:redirectAction
+        templates_by_class:
+            Sandbox\MainBundle\Document\EditableStaticContent: SandboxMainBundle:EditableStaticContent:index.html.twig
 
 knp_menu:
     twig: true
 
 liip_vie:
     phpcr_odm: true
-    #orm: doctrine.orm.my_entity_manager
     map:
         '<http://rdfs.org/sioc/ns#Post>': 'Sandbox\MainBundle\Document\EditableStaticContent'
     use_coffee: %liip_vie.use_coffee%
@@ -96,4 +107,30 @@ sonata_admin:
         # default global templates
         layout:  SonataAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
+        dashboard: SandboxAdminBundle::dashboard.html.twig
 
+fos_js_routing:
+    routes_to_expose:
+        - admin_sandbox_main_editablestaticcontent_create
+        - admin_sandbox_main_editablestaticcontent_delete
+        - admin_sandbox_main_editablestaticcontent_edit
+        - admin_bundle_menu_menuitem_create
+        - admin_bundle_menu_menuitem_delete
+        - admin_bundle_menu_menuitem_edit
+        - admin_bundle_multilangcontent_multilangmenuitem_create
+        - admin_bundle_multilangcontent_multilangmenuitem_delete
+        - admin_bundle_multilangcontent_multilangmenuitem_edit
+        - admin_bundle_multilangcontent_multilangstaticcontent_create
+        - admin_bundle_multilangcontent_multilangstaticcontent_delete
+        - admin_bundle_multilangcontent_multilangstaticcontent_edit
+        - admin_bundle_multilangcontent_multilanglanguageselectroute_create
+        - admin_bundle_multilangcontent_multilanglanguageselectroute_delete
+        - admin_bundle_multilangcontent_multilanglanguageselectroute_edit
+        - admin_bundle_chainrouting_route_create
+        - admin_bundle_chainrouting_route_delete
+        - admin_bundle_chainrouting_route_edit
+        - symfony_cmf_phpcr_browser_children
+
+fos_rest:
+    view:
+        view_response_listener: false

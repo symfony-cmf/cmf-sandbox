@@ -8,19 +8,17 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-use Knp\Menu\ItemInterface as MenuItemInterface;
-
-use Sandbox\AdminBundle\Document\EditableStaticContent;
-
-class ContentAdmin extends Admin
+class MultilangMenuItemAdmin extends Admin
 {
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
             ->addIdentifier('path', 'text')
-            ->add('title')
-            ->add('name')
-            ->add('content')
+            ->add('locale', 'text')
+            ->add('name', 'text')
+            ->add('label', 'text')
+            ->add('uri', 'text')
+            ->add('route', 'text')
         ;
     }
 
@@ -29,17 +27,12 @@ class ContentAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('path', 'text')
-                ->add('title')
-                ->add('name')
-                ->add('content', 'text')
+                ->add('locale', 'text')
+                ->add('name', 'text')
+                ->add('label', 'text')
+                ->add('uri', 'text')
+                ->add('route', 'text')
             ->end();
     }
 
-    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
-    {
-        $datagridMapper
-            ->add('title', 'doctrine_phpcr_string')
-            ->add('name',  'doctrine_phpcr_string')
-            ;
-    }
 }

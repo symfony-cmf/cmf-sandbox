@@ -40,7 +40,7 @@ can only programmatically create data. The best way to do that is with the
 doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
 repository provides a command to load fixtures.
 
-    app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
+    app/console -v doctrine:phpcr:fixtures:load --fixtures=src/Sandbox/MainBundle/Resources/data/fixtures/
 
 ## Access by web browser
 
@@ -56,6 +56,13 @@ Create an apache virtual host entry along the lines of
 And add an entry to your hosts file for cmf.lo
 
 Then point your browser to http://cmf.lo/app_dev.php
+
+## Production environment
+
+In order to run the sandbox in production mode at http://cmf.lo/
+you need to generate the doctrine proxies:
+
+    app/console cache:warmup --env=prod --no-debug
 
 
 # Getting started using Vagrant

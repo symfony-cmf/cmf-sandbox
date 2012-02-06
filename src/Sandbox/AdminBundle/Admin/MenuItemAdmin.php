@@ -10,19 +10,16 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 use Knp\Menu\ItemInterface as MenuItemInterface;
 
-class NavigationAdmin extends Admin
+class MenuItemAdmin extends Admin
 {
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
             ->addIdentifier('path', 'text')
-            ->add('lang', 'text')
+            ->add('name', 'text')
             ->add('label', 'text')
-            ->add('info', 'text')
-            ->add('visible')
-            ->add('redirect_to_navigation')
-//            ->add('reference', 'node')
-            ->add('controller')
+            ->add('uri', 'text')
+            ->add('route', 'text')
         ;
     }
 
@@ -31,20 +28,21 @@ class NavigationAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('path', 'text')
-                ->add('lang', 'text')
+                ->add('name', 'text')
                 ->add('label', 'text')
-                ->add('info', 'text')
-                ->add('visible')
+                ->add('uri', 'text', array('required' => false))
+                ->add('route', 'text', array('required' => false))
+                ->add('content', 'sonata_type_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false))
             ->end();
     }
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
                 ->add('path', 'text')
-                ->add('lang', 'text')
+                ->add('name', 'text')
                 ->add('label', 'text')
-                ->add('info', 'text')
-                ->add('visible')
+                ->add('uri', 'text')
+                ->add('route', 'text')
             ;
     }
 }

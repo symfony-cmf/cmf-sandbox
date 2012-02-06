@@ -8,6 +8,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
 use Symfony\Cmf\Bundle\ChainRoutingBundle\Document\Route;
+use Symfony\Cmf\Bundle\ChainRoutingBundle\Document\RedirectRoute;
+use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangLanguageSelectRoute;
 
 class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
@@ -25,6 +27,15 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         return 21;
     }
 
+    /**
+     * Load routing data into the document manager.
+     *
+     * NOTE: We demo all possibilities. Of course, you should try to be
+     * consistent in what you use and only use different things for special
+     * cases.
+     *
+     * @param $dm
+     */
     public function load($dm)
     {
         $base_path    = $this->container->getParameter('symfony_cmf_core.routing_basepath');
@@ -34,43 +45,109 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
             $this->session->removeItem($base_path);
         }
         $this->createPath(dirname($base_path));
-        $parent = $dm->find(null, dirname($base_path));
+        $root = $dm->find(null, dirname($base_path));
+        $locales = array('en', 'fr', 'de'); //TODO: can we get this from phpcr-odm in a sane way?
 
-        $home = new Route;
-        $home->setPosition($parent, basename($base_path));
-        $home->setReference($dm->find(null, "$content_path/home"));
-        $home->setControllerAlias('static_pages');
-        $dm->persist($home);
+        $parent = new MultilangLanguageSelectRoute();
+        $parent->setPosition($root, basename($base_path));
+        $dm->persist($parent);
 
-        $company = new Route;
-        $company->setPosition($home, 'company');
-        $company->setReference($dm->find(null, "$content_path/company"));
-        $company->setControllerAlias('static_pages');
-        $dm->persist($company);
+        foreach($locales as $locale) {
+            $home = new Route;
+            $home->setPosition($parent, $locale);
+            $home->setLocale($locale);
+            $home->setRouteContent($dm->find(null, "$content_path/home"));
+            $dm->persist($home);
 
-        $team = new Route;
-        $team->setPosition($company, 'team');
-        $team->setReference($dm->find(null, "$content_path/team"));
-        $team->setControllerAlias('static_pages');
-        $dm->persist($team);
+            $company = new Route;
+            $company->setPosition($home, 'company');
+            $company->setLocale($locale);
+            $company->setRouteContent($dm->find(null, "$content_path/company"));
+            $dm->persist($company);
 
-        $more = new Route;
-        $more->setPosition($company, 'more');
-        $more->setReference($dm->find(null, "$content_path/more"));
-        $more->setControllerAlias('static_pages');
-        $dm->persist($more);
+            $team = new Route;
+            $team->setPosition($company, 'team');
+            $team->setLocale($locale);
+            $team->setRouteContent($dm->find(null, "$content_path/company_team"));
+            $dm->persist($team);
 
-        $projects = new Route;
-        $projects->setPosition($home, 'projects');
-        $projects->setReference($dm->find(null, "$content_path/projects"));
-        $projects->setControllerAlias('static_pages');
-        $dm->persist($projects);
+            $more = new Route;
+            $more->setPosition($company, 'more');
+            $more->setLocale($locale);
+            $more->setRouteContent($dm->find(null, "$content_path/company_more"));
+            $dm->persist($more);
 
-        $cmf = new Route;
-        $cmf->setPosition($projects, 'cmf');
-        $cmf->setReference($dm->find(null, "$content_path/cmf"));
-        $cmf->setControllerAlias('static_pages');
-        $dm->persist($cmf);
+            $projects = new Route;
+            $projects->setPosition($home, 'projects');
+            $projects->setLocale($locale);
+            $projects->setRouteContent($dm->find(null, "$content_path/projects"));
+            $dm->persist($projects);
+
+            $cmf = new Route;
+            $cmf->setPosition($projects, 'cmf');
+            $cmf->setLocale($locale);
+            $cmf->setRouteContent($dm->find(null, "$content_path/projects_cmf"));
+            $dm->persist($cmf);
+        }
+
+        // demo features of routing
+
+        // we can create routes without locales, but will lose the language context of course
+
+        $demo = new Route;
+        $demo->setPosition($parent, 'demo');
+        $demo->setRouteContent($dm->find(null, "$content_path/demo"));
+        $demo->setTemplate('SandboxMainBundle:Demo:template_explicit.html.twig');
+        $dm->persist($demo);
+
+        // explicit template
+        $template = new Route;
+        $template->setPosition($demo, 'atemplate');
+        $template->setRouteContent($dm->find(null, "$content_path/demo_template"));
+        $template->setTemplate('SandboxMainBundle:Demo:template_explicit.html.twig');
+        $dm->persist($template);
+
+        // explicit controller
+        $controller = new Route;
+        $controller->setPosition($demo, 'controller');
+        $controller->setRouteContent($dm->find(null, "$content_path/demo_controller"));
+        $controller->setController('sandbox_main.controller:specialAction');
+        $dm->persist($controller);
+
+        // alias to controller mapping
+        $alias = new Route;
+        $alias->setPosition($demo, 'alias');
+        $alias->setRouteContent($dm->find(null, "$content_path/demo_alias"));
+        $alias->setControllerAlias('demo_alias');
+        $dm->persist($alias);
+
+        // class to controller mapping
+        $class = new Route;
+        $class->setPosition($demo, 'class');
+        $class->setRouteContent($dm->find(null, "$content_path/demo_class"));
+        $dm->persist($class);
+
+        // redirections
+
+        // redirect to uri
+        $redirect = new RedirectRoute();
+        $redirect->setPosition($parent, 'external');
+        $redirect->setUri('http://cmf.symfony.com');
+        $dm->persist($redirect);
+
+        // redirect to other doctrine route
+        $redirectRoute = new RedirectRoute();
+        $redirectRoute->setPosition($parent, 'short');
+        $redirectRoute->setRouteTarget($cmf);
+        $dm->persist($redirectRoute);
+
+        // redirect to Symfony route
+        $redirectS = new RedirectRoute();
+        $redirectS->setPosition($parent, 'short1');
+        $redirectS->setRouteName('test');
+        $dm->persist($redirectS);
+
+        // class to template mapping is used for all the rest
 
         $dm->flush();
     }

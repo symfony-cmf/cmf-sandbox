@@ -12,3 +12,11 @@ services:
             container: "@service_container"
             - @doctrine_phpcr.odm.document_manager
             - @fos_rest.view_handler
+
+    sandbox_main.debugListener:
+        class: Sandbox\MainBundle\Listener\SandboxExceptionListener
+        calls:
+            - [ setContainer, [@service_container] ]
+        shared: true
+        tags:
+            - {name: "kernel.event_subscriber"}
