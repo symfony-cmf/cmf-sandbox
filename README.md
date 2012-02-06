@@ -58,9 +58,9 @@ And add an entry to your hosts file for cmf.lo
 Then point your browser to http://cmf.lo/app_dev.php
 
 
-## Getting started using Vagrant
+# Getting started using Vagrant
 
-### You will need:
+## You will need:
   * Git 1.6+
   * Nfs (MacOS works OOB, on Debian based linux distributions install nfs-kernel-server package)
   * [Vagrant](http://vagrantup.com)
@@ -79,27 +79,16 @@ Then point your browser to http://cmf.lo/app_dev.php
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 
-### Preparing Apache JackRabbit
+## Jackrabbit
 
-[Register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
-
-    app/console doctrine:phpcr:register-system-node-types
-
-## Import the fixtures
-
-We currently do not yet have an edit backend. Until somebody builds one, you
-can only programmatically create data. The best way to do that is with the
-doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
-repository provides a command to load fixtures.
-
-    app/console -v doctrine:phpcr:fixtures:load --path=src/Sandbox/MainBundle/Resources/data/fixtures/ --purge=true
+Afterwards you will need to manually register the system node types and import the fixtures as explained above.
 
 ## Access by web browser
 
 Optionally add an entry to your hosts file for cmf.lo pointing to 33.33.33.10, then point your browser to http://cmf.lo/app_dev.php
 Or go straight to http://33.33.33.10/app_dev.php
 
-# Usage
+# Other hints
 
 ## Console
 
@@ -108,13 +97,12 @@ Type app/console to see them all.
 
 ## Admin interface
 
-THIS IS CURRENTLY BROKEN as it is based on the old form framework.
+There is a proof-of-concept admin interface using the SonataPhpcrAdminBundle at
+http://cmf.lo/app_dev.php/admin/dashboard
 
-There is a proof-of-concept admin interface at http://cmf.lo/app_dev.php/admin
+Basically you have paginated lists for two types of documents. You create new documents, edit and delete them. Some filtering is available in the list. This bundle is an implementation of [Sonata Admin Bundle](https://github.com/sonata-project/SonataAdminBundle)
 
-We intend to replace this either by VIE (http://bergie.github.com/VIE/) or
-something with one of the AdminBundle s.
-
+At the moment there is no notion of parents and sons in the admin bundle.
 
 ## Run the test suite
 
