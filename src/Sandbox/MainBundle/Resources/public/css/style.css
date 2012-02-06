@@ -279,6 +279,7 @@ input, button, textarea, select {
     overflow: hidden;
     padding: 10px 0 30px 0;
     border-bottom: 1px solid #e3e4e4;
+    min-height: 300px;
 }
 
 #content h1 a,
