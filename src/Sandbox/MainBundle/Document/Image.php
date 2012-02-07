@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Liip\VieBundle\FromJsonLdInterface;
 
 /**
- * @PHPCRODM\Document(alias="image", referenceable=true)
+ * @PHPCRODM\Document(referenceable=true)
  */
 class Image
 {
