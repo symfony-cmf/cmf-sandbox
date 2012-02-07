@@ -308,6 +308,14 @@ input, button, textarea, select {
     position: relative;
 }
 
+.articleContainer p:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
 .article_info {
     margin: -5px 0 10px;
 }
