@@ -3,10 +3,11 @@
 cd $(dirname $0)
 
 # use * for newest available locally
-RABBITVERSION="2.3.1-jackalope-SNAPSHOT"
+RABBITVERSION="2.3.7"
 
 # one per line
-MIRRORS="https://s3-eu-west-1.amazonaws.com/patched-jackrabbit/"
+MIRRORS="https://s3-eu-west-1.amazonaws.com/patched-jackrabbit/
+http://mirror.switch.ch/mirror/apache/dist//jackrabbit/$RABBITVERSION"
 
 action="$1"; shift
 args="$*"
