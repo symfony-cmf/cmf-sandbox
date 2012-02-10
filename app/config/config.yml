@@ -107,7 +107,6 @@ sonata_admin:
         # default global templates
         layout:  SandboxAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
-        dashboard: SandboxAdminBundle::dashboard.html.twig
 
 fos_js_routing:
     routes_to_expose:
