@@ -38,7 +38,7 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
      */
     public function load($dm)
     {
-        $base_path    = $this->container->getParameter('symfony_cmf_core.routing_basepath');
+        $base_path    = $this->container->getParameter('symfony_cmf_chain_routing.routing_repositoryroot');
         $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         if ($this->session->itemExists($base_path)) {
