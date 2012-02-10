@@ -53,46 +53,6 @@ file that was distributed with this source code.
             <script src="{{ asset('bundles/sonataadmin/jquery/jquery.form.js') }}" type="text/javascript"></script>
             <script src="{{ asset('bundles/sonataadmin/base.js') }}" type="text/javascript"></script>
             
-            {% include 'SymfonyCmfPHPCRBrowserBundle:Base:tree.html.twig' %}
-            <script type="text/javascript">
-                $(document).ready(function() {
-                    initTree({
-                        "selector": "#tree",
-                        "path": {
-                            "expanded":     [ "/cms" ],
-                            "preloaded":    [ "/cms" ],
-                        },
-                        "icon": {
-                            "document": "{{ asset('bundles/symfonycmftree/images/document.png') }}",
-                            "folder":   "{{ asset('bundles/symfonycmftree/images/folder.png') }}"
-                        },
-                        "route": {
-                            "edit":     'admin_sandbox_main_editablestaticcontent_edit',
-                            "erase":    'admin_sandbox_main_editablestaticcontent_delete'
-                        },
-                        "doctypes": {
-                            "blogpost": { 
-                                "label": 'BlogPost', 
-                                "action": function (node) {
-                                    window.location = Routing.generate(
-                                        'admin_sandbox_main_editablestaticcontent_create', 
-                                        { "type": "blogpost", "father": node.attr("id") }
-                                    )
-                                }
-                            },
-                            "static": { 
-                                "label": 'StaticContent', 
-                                "action": function (node) {
-                                    window.location = Routing.generate(
-                                        'admin_sandbox_main_editablestaticcontent_create', 
-                                        { "type": "static", "father": node.attr("id") }
-                                    )
-                                }
-                            }
-                        }
-                    });
-                });
-            </script>
         {% endblock %}
 
         <title>
@@ -207,9 +167,8 @@ file that was distributed with this source code.
             {% endif %}
 
             <div class="sidebar">
-                <div id="tree"></div>
+                {% render 'SonataDoctrinePHPCRAdminBundle:Tree:tree' with { 'id': app.request.get('id') } %}
             </div>
-
                 
             <div class="content">
 
