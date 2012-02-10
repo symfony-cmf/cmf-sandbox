@@ -30,6 +30,7 @@ file that was distributed with this source code.
 
             <!-- base application asset -->
             <link rel="stylesheet" href="{{ asset('bundles/sonataadmin/css/layout.css') }}" type="text/css" media="all">
+            <link rel="stylesheet" href="{{ asset('bundles/sonatadoctrinephpcradmin/css/layout.css') }}" type="text/css" media="all">
             <link rel="stylesheet" href="{{ asset('bundles/sonataadmin/css/colors.css') }}" type="text/css" media="all">
             
             <!-- Tree menu --> 
@@ -170,7 +171,7 @@ file that was distributed with this source code.
                 {% render 'SonataDoctrinePHPCRAdminBundle:Tree:tree' with { 'id': app.request.get('id') } %}
             </div>
                 
-            <div class="content">
+            <div id="phpcr_sab_content" class="content">
 
                 {% if _preview is not empty %}
                     <div class="sonata-ba-preview">{{ _preview|raw }}</div>
