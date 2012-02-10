@@ -129,6 +129,7 @@ fos_js_routing:
         - admin_bundle_chainrouting_route_delete
         - admin_bundle_chainrouting_route_edit
         - symfony_cmf_phpcr_browser_children
+        - symfony_cmf_phpcr_browser_move
 
 fos_rest:
     view:
