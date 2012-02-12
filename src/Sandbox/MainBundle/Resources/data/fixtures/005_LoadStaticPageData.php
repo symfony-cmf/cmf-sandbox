@@ -42,7 +42,6 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/static/page.yml'));
 
-        $overview = $data['static'];
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
@@ -63,6 +62,11 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
             } else {
                 $page->title = $overview['title'];
                 $page->body = $overview['content'];
+            }
+            if (isset($overview['blocks'])) {
+                foreach($overview['blocks'] as $name => $block) {
+                    $this->loadBlock($manager, $page, $name, $block);
+                }
             }
         }
 
@@ -92,4 +96,49 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
         return $current;
     }
+
+    /**
+     * Load a block from the fixtures and create / update the node. Recurse if there are children.
+     *
+     * @param $manager the document manager
+     * @param string $parentPath the parent of the block
+     * @param string $name the name of the block
+     * @param array block the block definition
+     */
+    private function loadBlock($manager, $parent, $name, $block) {
+        $className = $block['class'];
+        $document = $manager->find(null, $this->getIdentifier($manager, $parent) . '/' . $name);
+        $class = $manager->getClassMetadata($className);
+        if ($document && get_class($document) != $className) {
+            $manager->remove($document);
+            $document = null;
+        }
+        if (!$document) {
+            $document = $class->newInstance();
+
+            // $document needs to be an instance of BaseBlock ...
+            $document->setParentDocument($parent);
+            $document->setName($name);
+            $manager->persist($document);
+        }
+
+        // set properties
+        if (isset($block['properties'])) {
+            foreach ($block['properties'] as $propName => $prop) {
+                $class->reflFields[$propName]->setValue($document, $prop);
+            }
+        }
+        // create children
+        if (isset($block['children'])) {
+            foreach($block['children'] as $childName => $child) {
+                $this->loadBlock($manager, $document, $childName, $child);
+            }
+        }
+    }
+
+    private function getIdentifier($manager, $document) {
+        $class = $manager->getClassMetadata(get_class($document));
+        return $class->getIdentifierValue($document);
+    }
+
 }

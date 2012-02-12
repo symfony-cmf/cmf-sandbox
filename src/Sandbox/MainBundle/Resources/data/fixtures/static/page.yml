@@ -21,6 +21,22 @@ static:
                 <p>Wenn du diese Seite siehst, bedeutet das dass die installation des symfony cmf erfolgreich war!</p>
                 <h2>Was nun?</h2>
                 <p>Es gibt einige bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen bundles.</p>
+        blocks:
+            content:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                properties:
+                    title: Container with simple blocks
+                children:
+                    child1: 
+                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
+                        properties:
+                            title: SimpleBlock
+                            content: This is a simple block.
+                    child2:
+                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
+                        properties:
+                            title: Another SimpleBlock
+                            content: This is another simple block.
     -
         name: "company"
         title: "The Company"
