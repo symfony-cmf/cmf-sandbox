@@ -58,7 +58,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
                 foreach($overview['title'] as $locale => $title) {
                     $page->title = $title;
                     $page->body = $overview['content'][$locale];
-                    $manager->persistTranslation($page, $locale);
+                    $manager->bindTranslation($page, $locale);
                 }
             } else {
                 $page->title = $overview['title'];
