@@ -1,12 +1,14 @@
 {% extends "SandboxMainBundle::skeleton.html.twig" %}
 
 {% block content %}
+
+{{ symfony_cmf_block('additionalInfoBlock') }}
+
 <div xmlns:sioc="http://rdfs.org/sioc/ns#"
      xmlns:dcterms="http://purl.org/dc/terms/"
      typeof="sioc:Post"
      about="{{ page.path }}"
      class="articleContainer">
-
      {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
          <div class="hiddenfieldsContainer">
              <div class="hiddenfieldsToggle"></div>
@@ -22,6 +24,7 @@
         {{ page.content|raw }}
     </div>
 </div>
+
 <div class="sidebar">
     {% image output="/images/test.png"
         '@SandboxMainBundle/Resources/public/images/sidebar.png'
