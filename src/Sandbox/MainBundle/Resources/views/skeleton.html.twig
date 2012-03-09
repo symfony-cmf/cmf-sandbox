@@ -74,9 +74,6 @@
             </div>
         </div>
 
-        <script type="text/javascript">
-            var vie_plugins_link_related_path = '{{ path('liip_vie_assets_related') }}';
-        </script>
         {% block bottom_scripts %}
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
                 {% render "liip_vie.controller.vie:includeJSFilesAction" %}
