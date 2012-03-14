@@ -101,6 +101,8 @@ liip_vie:
     map:
         '<http://rdfs.org/sioc/ns#Post>': 'Sandbox\MainBundle\Document\EditableStaticContent'
     use_coffee: %liip_vie.use_coffee%
+    base_path: /cms/routes
+    cms_path: /cms/content/static
 
 sonata_admin:
     templates:
