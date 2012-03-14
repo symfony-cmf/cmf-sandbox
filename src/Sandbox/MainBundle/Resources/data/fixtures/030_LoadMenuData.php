@@ -4,7 +4,8 @@ namespace Symfony\Cmf\Bundle\MenuBundle\Resources\data\fixtures;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Doctrine\Bundle\PHPCRBundle\JackalopeLoader;
+use Doctrine\Common\Persistence\ObjectManager;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
@@ -29,7 +30,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         return 10;
     }
 
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         $this->dm = $manager;
 

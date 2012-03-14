@@ -12,16 +12,19 @@ $loader->registerNamespaces(array(
     'Doctrine\\Bundle'                      => __DIR__.'/../vendor/bundles',
     'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib',
     'Doctrine\\Common'                      => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/doctrine-common/lib',
-    'Jackalope'                             => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/jackalope/src',
+    'Jackalope'                             => array(
+                                                 __DIR__.'/../vendor/jackalope-jackrabbit/src',
+                                                 __DIR__.'/../vendor/jackalope-jackrabbit/lib/jackalope/src'
+                                               ),
     'PHPCR'                                 => array(
-                                                 __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/jackalope/lib/phpcr/src',
-                                                 __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/jackalope/lib/phpcr-utils/src'
+                                                 __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/phpcr/src',
+                                                 __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/phpcr-utils/src'
                                                ),
 
     // additional sandbox things
     'Sandbox'                        => __DIR__.'/../src',
     'Liip'                           => __DIR__.'/../vendor/bundles',
-    'FOS'                            => __DIR__.'/../vendor/bundles',
+    'FOS'                            => array(__DIR__.'/../vendor/bundles', __DIR__.'/../vendor/fos'),
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
 
     // standard stuff

@@ -3,10 +3,19 @@
 
 [twig]
     git=http://github.com/fabpot/Twig.git
+    version=v1.6.1
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
     version=1.0.2
+
+[MonologBundle]
+    git=http://github.com/symfony/MonologBundle.git
+    target=/bundles/Symfony/Bundle/MonologBundle
+
+[jackalope-jackrabbit]
+    git=git://github.com/jackalope/jackalope-jackrabbit.git
+    git_command=submodule update --init --recursive
 
 [DoctrinePHPCRBundle]
     git=http://github.com/doctrine/DoctrinePHPCRBundle.git
@@ -23,21 +32,23 @@
     git=http://github.com/swiftmailer/swiftmailer.git
     version=v4.1.5
 
+[SwiftMailerBundle]
+    git=http://github.com/symfony/SwiftmailerBundle.git
+    target=/bundles/Symfony/Bundle/SwiftmailerBundle
+
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
-    version=v1.0.2
 
 [twig-extensions]
     git=http://github.com/fabpot/Twig-extensions.git
 
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
-    version=1.1.0
+    version=1.1.1
 
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
-    version=v1.0.1
 
 [FunctionalTestBundle]
     git=http://github.com/liip/LiipFunctionalTestBundle.git
@@ -47,6 +58,10 @@
     git=http://github.com/liip/LiipVieBundle.git
     target=/bundles/Liip/VieBundle
     git_command=submodule update --init --recursive
+
+[FOSRest]
+    git=http://github.com/FriendsOfSymfony/FOSRest.git
+    target=fos/FOS/Rest
 
 [FOSRestBundle]
     git=git://github.com/FriendsOfSymfony/FOSRestBundle.git
@@ -78,6 +93,14 @@
     target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
 
 ;### Admin bundle stuff
+[SonataCacheBundle]
+    git=https://github.com/sonata-project/SonataCacheBundle.git
+    target=/bundles/Sonata/CacheBundle
+
+[SonataBlockBundle]
+    git=https://github.com/sonata-project/SonataBlockBundle.git
+    target=/bundles/Sonata/BlockBundle
+
 [SonatajQueryBundle]
     git=http://github.com/sonata-project/SonatajQueryBundle.git
     target=/bundles/Sonata/jQueryBundle
@@ -93,3 +116,4 @@
 [TreeBundle]
     git=git://github.com/symfony-cmf/TreeBundle.git
     target=/bundles/Symfony/Cmf/Bundle/TreeBundle
+
