@@ -17,6 +17,10 @@
     git=git://github.com/jackalope/jackalope-jackrabbit.git
     git_command=submodule update --init --recursive
 
+[doctrine-phpcr-odm]
+    git=git://github.com/doctrine/phpcr-odm.git
+    git_command=submodule update --init --recursive
+
 [DoctrinePHPCRBundle]
     git=http://github.com/doctrine/DoctrinePHPCRBundle.git
     target=/bundles/Doctrine/Bundle/PHPCRBundle
@@ -86,7 +90,6 @@
 
 [symfony-cmf]
     git=http://github.com/symfony-cmf/symfony-cmf.git
-    git_command=submodule update --init --recursive
 
 [ChainRoutingBundle]
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
