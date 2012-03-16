@@ -17,6 +17,20 @@
     git=git://github.com/jackalope/jackalope-jackrabbit.git
     git_command=submodule update --init --recursive
 
+[jackalope-doctrine-dbal]
+    git=git://github.com/jackalope/jackalope-doctrine-dbal.git
+    git_command=submodule update --init --recursive
+
+
+# needed for dbal only
+[DoctrineBundle]
+    git=http://github.com/doctrine/DoctrineBundle.git
+    target=/bundles/Doctrine/Bundle/DoctrineBundle
+
+[doctrine]
+    git=git://github.com/doctrine/doctrine2.git
+
+
 [doctrine-phpcr-odm]
     git=git://github.com/doctrine/phpcr-odm.git
     git_command=submodule update --init --recursive

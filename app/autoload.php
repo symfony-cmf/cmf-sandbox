@@ -12,13 +12,15 @@ $loader->registerNamespaces(array(
     'Doctrine\\Bundle'                      => __DIR__.'/../vendor/bundles',
     'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/doctrine-phpcr-odm/lib',
     'Doctrine\\Common'                      => __DIR__.'/../vendor/doctrine-phpcr-odm/lib/vendor/doctrine-common/lib',
+    'Doctrine\\DBAL'                        => __DIR__.'/../vendor/jackalope-doctrine-dbal/lib/vendor/doctrine-dbal/lib',
+    'Doctrine\\ORM'                         => __DIR__.'/../vendor/doctrine/lib',
     'Jackalope'                             => array(
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/src',
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/lib/jackalope/src'
+                                                 __DIR__.'/../vendor/jackalope-doctrine-dbal/src',
+                                                 __DIR__.'/../vendor/jackalope-doctrine-dbal/lib/jackalope/src'
                                                ),
     'PHPCR'                                 => array(
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/lib/jackalope/lib/phpcr/src',
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/lib/jackalope/lib/phpcr-utils/src'
+                                                 __DIR__.'/../vendor/jackalope-doctrine-dbal/lib/jackalope/lib/phpcr/src',
+                                                 __DIR__.'/../vendor/jackalope-doctrine-dbal/lib/jackalope/lib/phpcr-utils/src'
                                                ),
 
     // additional sandbox things

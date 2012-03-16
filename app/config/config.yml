@@ -43,20 +43,28 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        dbname:   jackalope
+        user:     jackalope
+        password: test1234
+        charset:  UTF8
+
 # cmf configuration
 doctrine_phpcr:
     # configure the PHPCR session
-    #session:
-    #    backend:
-    #        type: doctrinedbal
-    #        connection: doctrine.dbal.default_connection
-    #    workspace: %phpcr_workspace%
     session:
         backend:
-            url: %phpcr_url%
+            type: doctrinedbal
+            connection: doctrine.dbal.default_connection
         workspace: %phpcr_workspace%
-        username: %phpcr_user%
-        password: %phpcr_pass%
+    #session:
+    #    backend:
+    #        url: %phpcr_url%
+    #    workspace: %phpcr_workspace%
+    #    username: %phpcr_user%
+    #    password: %phpcr_pass%
     # enable the ODM layer
     odm:
         auto_mapping: true
