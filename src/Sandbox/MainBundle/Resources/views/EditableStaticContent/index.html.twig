@@ -2,7 +2,9 @@
 
 {% block content %}
 
-{{ sonata_block_render('additionalInfoBlock') }}
+{{ sonata_block_render({
+    'name': 'additionalInfoBlock'
+}) }}
 
 <div xmlns:sioc="http://rdfs.org/sioc/ns#"
      xmlns:dcterms="http://purl.org/dc/terms/"
