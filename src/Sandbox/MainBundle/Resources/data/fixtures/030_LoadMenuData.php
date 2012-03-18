@@ -4,7 +4,8 @@ namespace Symfony\Cmf\Bundle\MenuBundle\Resources\data\fixtures;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
-use Doctrine\Bundle\PHPCRBundle\JackalopeLoader;
+use Doctrine\Common\Persistence\ObjectManager;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
@@ -13,9 +14,7 @@ use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem;
 
 class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
 {
-
     protected $dm;
-
 
     protected $session;
 
@@ -31,7 +30,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         return 10;
     }
 
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         $this->dm = $manager;
 
@@ -42,7 +41,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
 
         // REMEMBER: all menu items must be named -item !
         $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Acceuil'), $this->dm->find(null, "$content_path/home"));
-        $menuitem->setAttributes(array("class" => "menu_main"));
+        $menuitem->setChildrenAttributes(array("class" => "menu_main"));
 
         $this->createMenuItem("$base_path/main/admin-item", 'Adminitem', 'Admin', null, null, 'sonata_admin_dashboard');
 
@@ -80,6 +79,8 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
 
         $menuitem = is_array($label) ? new MultilangMenuItem() : new MenuItem();
         $menuitem->setPath($path);
+        $this->dm->persist($menuitem); // do persist before binding translation
+
         $menuitem->setName($name);
         if (null !== $content) {
             $menuitem->setContent($content);
@@ -92,11 +93,10 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         if (is_array($label)) {
             foreach($label as $locale => $l) {
                 $menuitem->setLabel($l);
-                $this->dm->persistTranslation($menuitem, $locale);
+                $this->dm->bindTranslation($menuitem, $locale);
             }
         } else {
             $menuitem->setLabel($label);
-            $this->dm->persist($menuitem);
         }
 
         return $menuitem;
