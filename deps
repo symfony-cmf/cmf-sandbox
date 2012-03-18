@@ -13,13 +13,23 @@
     git=http://github.com/symfony/MonologBundle.git
     target=/bundles/Symfony/Bundle/MonologBundle
 
-[jackalope-jackrabbit]
-    git=git://github.com/jackalope/jackalope-jackrabbit.git
-    git_command=submodule update --init --recursive
+[doctrine-common]
+    git=http://github.com/doctrine/common.git
 
 [doctrine-phpcr-odm]
-    git=git://github.com/doctrine/phpcr-odm.git
-    git_command=submodule update --init --recursive
+    git=http://github.com/doctrine/phpcr-odm.git
+
+[jackalope]
+    git=http://github.com/jackalope/jackalope.git
+
+[jackalope-jackrabbit]
+    git=git://github.com/jackalope/jackalope-jackrabbit.git
+
+[phpcr]
+    git=http://github.com/phpcr/phpcr.git
+
+[phpcr-utils]
+    git=http://github.com/phpcr/phpcr-utils.git
 
 [DoctrinePHPCRBundle]
     git=http://github.com/doctrine/DoctrinePHPCRBundle.git

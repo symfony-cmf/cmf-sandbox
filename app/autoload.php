@@ -11,15 +11,9 @@ $loader->registerNamespaces(array(
     'Symfony\\Cmf'                          => array(__DIR__.'/../vendor/symfony-cmf/src', __DIR__.'/../vendor/bundles'),
     'Doctrine\\Bundle'                      => __DIR__.'/../vendor/bundles',
     'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/doctrine-phpcr-odm/lib',
-    'Doctrine\\Common'                      => __DIR__.'/../vendor/doctrine-phpcr-odm/lib/vendor/doctrine-common/lib',
-    'Jackalope'                             => array(
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/src',
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/lib/jackalope/src'
-                                               ),
-    'PHPCR'                                 => array(
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/lib/jackalope/lib/phpcr/src',
-                                                 __DIR__.'/../vendor/jackalope-jackrabbit/lib/jackalope/lib/phpcr-utils/src'
-                                               ),
+    'Doctrine\\Common'                      => __DIR__.'/../vendor/doctrine-common/lib',
+    'Jackalope'                             => array(__DIR__.'/../vendor/jackalope/src', __DIR__.'/../vendor/jackalope-jackrabbit/src'),
+    'PHPCR'                                 => array(__DIR__.'/../vendor/phpcr/src', __DIR__.'/../vendor/phpcr-utils/src'),
 
     // additional sandbox things
     'Sandbox'                        => __DIR__.'/../src',
