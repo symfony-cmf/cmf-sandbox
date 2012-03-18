@@ -123,6 +123,12 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
             $manager->persist($document);
         }
 
+
+        if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock') {
+            $referencedBlock = $this->container->get('symfony_cmf.block.service')->findByName($block['referencedBlock']);
+            $document->setReferencedBlock($referencedBlock);
+        }
+
         // set properties
         if (isset($block['properties'])) {
             foreach ($block['properties'] as $propName => $prop) {

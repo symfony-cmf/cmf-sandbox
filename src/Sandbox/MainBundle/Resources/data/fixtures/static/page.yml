@@ -28,8 +28,8 @@ static:
                     child1: 
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
-                            title: SimpleBlock
-                            content: This is a simple block.
+                            title: Homepage Simpleblock
+                            content: This is a simple block on the homepage.
                     child2:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
@@ -47,10 +47,8 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
-                properties:
-                    title: SimpleBlock with company info
-                    content: This is a simple block with info about the company
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
+                referencedBlock: /cms/content/static/home/additionalInfoBlock/child1
     -
         name: "company_team"
         title: "The Team"
