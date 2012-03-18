@@ -24,8 +24,6 @@ static:
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
-                properties:
-                    title: Container with simple blocks
                 children:
                     child1: 
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
@@ -51,8 +49,8 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                 properties:
-                    title: SimpleBlock on the first level
-                    content: This is a simple block.
+                    title: SimpleBlock with company info
+                    content: This is a simple block with info about the company
     -
         name: "company_team"
         title: "The Team"
