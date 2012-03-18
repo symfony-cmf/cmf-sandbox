@@ -31,7 +31,6 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
-            new Sonata\BlockBundle\SonataBlockBundle(),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
