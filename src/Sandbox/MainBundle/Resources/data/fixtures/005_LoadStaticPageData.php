@@ -43,7 +43,6 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/static/page.yml'));
 
-        $overview = $data['static'];
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);

@@ -43,6 +43,14 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
+doctrine:
+    dbal:
+        driver:   pdo_mysql
+        dbname:   jackalope
+        user:     jackalope
+        password: test1234
+        charset:  UTF8
+
 # cmf configuration
 doctrine_phpcr:
     # configure the PHPCR session

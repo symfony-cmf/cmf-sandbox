@@ -16,20 +16,34 @@
 [doctrine-common]
     git=http://github.com/doctrine/common.git
 
-[doctrine-phpcr-odm]
-    git=http://github.com/doctrine/phpcr-odm.git
-
 [jackalope]
     git=http://github.com/jackalope/jackalope.git
 
 [jackalope-jackrabbit]
     git=git://github.com/jackalope/jackalope-jackrabbit.git
 
+[jackalope-doctrine-dbal]
+    git=git://github.com/jackalope/jackalope-doctrine-dbal.git
+
+[DoctrineBundle]
+    git=http://github.com/doctrine/DoctrineBundle.git
+    target=/bundles/Doctrine/Bundle/DoctrineBundle
+
+[doctrine-dbal]
+    git=git://github.com/doctrine/dbal.git
+
+# not needed but for bug in SonataCacheBundle https://github.com/sonata-project/SonataCacheBundle/issues/3
+[doctrine]
+    git=git://github.com/doctrine/doctrine2.git
+
 [phpcr]
     git=http://github.com/phpcr/phpcr.git
 
 [phpcr-utils]
     git=http://github.com/phpcr/phpcr-utils.git
+
+[doctrine-phpcr-odm]
+    git=http://github.com/doctrine/phpcr-odm.git
 
 [DoctrinePHPCRBundle]
     git=http://github.com/doctrine/DoctrinePHPCRBundle.git
