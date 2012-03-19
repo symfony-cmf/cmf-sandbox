@@ -17,6 +17,7 @@ $loader->registerNamespaces(array(
     'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/doctrine-phpcr-odm/lib',
     'Jackalope'                             => array(
                                                  __DIR__.'/../vendor/jackalope-doctrine-dbal/src',
+                                                 __DIR__.'/../vendor/jackalope-jackrabbit/src',
                                                  __DIR__.'/../vendor/jackalope/src',
                                                ),
     'PHPCR'                                 => array(__DIR__.'/../vendor/phpcr/src', __DIR__.'/../vendor/phpcr-utils/src'),

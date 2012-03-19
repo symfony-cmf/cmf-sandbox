@@ -25,8 +25,6 @@
 [jackalope-doctrine-dbal]
     git=git://github.com/jackalope/jackalope-doctrine-dbal.git
 
-
-# needed for dbal only
 [DoctrineBundle]
     git=http://github.com/doctrine/DoctrineBundle.git
     target=/bundles/Doctrine/Bundle/DoctrineBundle
