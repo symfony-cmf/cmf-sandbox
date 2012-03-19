@@ -16,3 +16,10 @@ parameters:
     liip_vie.use_coffee: false
     coffee.bin: ''
     coffee.node: ''
+
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port:
+    database_name: jackalope
+    database_user: jackalope
+    database_password: test1234
