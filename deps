@@ -13,14 +13,20 @@
     git=http://github.com/symfony/MonologBundle.git
     target=/bundles/Symfony/Bundle/MonologBundle
 
+[doctrine-common]
+    git=http://github.com/doctrine/common.git
+
+[doctrine-phpcr-odm]
+    git=http://github.com/doctrine/phpcr-odm.git
+
+[jackalope]
+    git=http://github.com/jackalope/jackalope.git
+
 [jackalope-jackrabbit]
     git=git://github.com/jackalope/jackalope-jackrabbit.git
-    git_command=submodule update --init --recursive
 
 [jackalope-doctrine-dbal]
     git=git://github.com/jackalope/jackalope-doctrine-dbal.git
-    git_command=submodule update --init --recursive
-
 
 # needed for dbal only
 [DoctrineBundle]
@@ -30,10 +36,15 @@
 [doctrine]
     git=git://github.com/doctrine/doctrine2.git
 
-
 [doctrine-phpcr-odm]
     git=git://github.com/doctrine/phpcr-odm.git
     git_command=submodule update --init --recursive
+
+[phpcr]
+    git=http://github.com/phpcr/phpcr.git
+
+[phpcr-utils]
+    git=http://github.com/phpcr/phpcr-utils.git
 
 [DoctrinePHPCRBundle]
     git=http://github.com/doctrine/DoctrinePHPCRBundle.git

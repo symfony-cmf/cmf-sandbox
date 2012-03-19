@@ -8,7 +8,11 @@ parameters:
 
     secret: xxxxxxxxxx
 
-    phpcr_url: http://localhost:8080/server/
+    phpcr_backend:
+        type: jackrabbit
+        url: http://localhost:8080/server/
+        #type: doctrinedbal
+        #connection: doctrine.dbal.default_connection
     phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: admin
@@ -16,3 +20,10 @@ parameters:
     liip_vie.use_coffee: false
     coffee.bin: ''
     coffee.node: ''
+
+    database_driver: pdo_mysql
+    database_host: localhost
+    database_port:
+    database_name: jackalope
+    database_user: jackalope
+    database_password: test1234
