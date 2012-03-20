@@ -3,10 +3,47 @@
 
 [twig]
     git=http://github.com/fabpot/Twig.git
+    version=v1.6.1
 
 [monolog]
     git=http://github.com/Seldaek/monolog.git
     version=1.0.2
+
+[MonologBundle]
+    git=http://github.com/symfony/MonologBundle.git
+    target=/bundles/Symfony/Bundle/MonologBundle
+
+[doctrine-common]
+    git=http://github.com/doctrine/common.git
+
+[jackalope]
+    git=http://github.com/jackalope/jackalope.git
+
+[jackalope-jackrabbit]
+    git=git://github.com/jackalope/jackalope-jackrabbit.git
+
+[jackalope-doctrine-dbal]
+    git=git://github.com/jackalope/jackalope-doctrine-dbal.git
+
+[DoctrineBundle]
+    git=http://github.com/doctrine/DoctrineBundle.git
+    target=/bundles/Doctrine/Bundle/DoctrineBundle
+
+[doctrine-dbal]
+    git=git://github.com/doctrine/dbal.git
+
+# not needed but for bug in SonataCacheBundle https://github.com/sonata-project/SonataCacheBundle/issues/3
+[doctrine]
+    git=git://github.com/doctrine/doctrine2.git
+
+[phpcr]
+    git=http://github.com/phpcr/phpcr.git
+
+[phpcr-utils]
+    git=http://github.com/phpcr/phpcr-utils.git
+
+[doctrine-phpcr-odm]
+    git=http://github.com/doctrine/phpcr-odm.git
 
 [DoctrinePHPCRBundle]
     git=http://github.com/doctrine/DoctrinePHPCRBundle.git
@@ -23,21 +60,23 @@
     git=http://github.com/swiftmailer/swiftmailer.git
     version=v4.1.5
 
+[SwiftMailerBundle]
+    git=http://github.com/symfony/SwiftmailerBundle.git
+    target=/bundles/Symfony/Bundle/SwiftmailerBundle
+
 [assetic]
     git=http://github.com/kriswallsmith/assetic.git
-    version=v1.0.2
 
 [twig-extensions]
     git=http://github.com/fabpot/Twig-extensions.git
 
 [metadata]
     git=http://github.com/schmittjoh/metadata.git
-    version=1.1.0
+    version=1.1.1
 
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
-    version=v1.0.1
 
 [FunctionalTestBundle]
     git=http://github.com/liip/LiipFunctionalTestBundle.git
@@ -46,8 +85,11 @@
 [VieBundle]
     git=http://github.com/liip/LiipVieBundle.git
     target=/bundles/Liip/VieBundle
-    version=origin/iks
     git_command=submodule update --init --recursive
+
+[FOSRest]
+    git=http://github.com/FriendsOfSymfony/FOSRest.git
+    target=fos/FOS/Rest
 
 [FOSRestBundle]
     git=git://github.com/FriendsOfSymfony/FOSRestBundle.git
@@ -72,13 +114,20 @@
 
 [symfony-cmf]
     git=http://github.com/symfony-cmf/symfony-cmf.git
-    git_command=submodule update --init --recursive
 
 [ChainRoutingBundle]
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
     target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
 
 ;### Admin bundle stuff
+[SonataCacheBundle]
+    git=https://github.com/sonata-project/SonataCacheBundle.git
+    target=/bundles/Sonata/CacheBundle
+
+[SonataBlockBundle]
+    git=https://github.com/sonata-project/SonataBlockBundle.git
+    target=/bundles/Sonata/BlockBundle
+
 [SonatajQueryBundle]
     git=http://github.com/sonata-project/SonatajQueryBundle.git
     target=/bundles/Sonata/jQueryBundle
@@ -94,3 +143,4 @@
 [TreeBundle]
     git=git://github.com/symfony-cmf/TreeBundle.git
     target=/bundles/Symfony/Cmf/Bundle/TreeBundle
+

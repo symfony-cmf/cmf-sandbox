@@ -43,17 +43,21 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
+doctrine:
+    dbal:
+        driver:   %database_driver%
+        host:     %database_host%
+        port:     %database_port%
+        dbname:   %database_name%
+        user:     %database_user%
+        password: %database_password%
+        charset:  UTF8
+
 # cmf configuration
 doctrine_phpcr:
     # configure the PHPCR session
-    #session:
-    #    backend:
-    #        type: doctrinedbal
-    #        connection: doctrine.dbal.default_connection
-    #    workspace: %phpcr_workspace%
     session:
-        backend:
-            url: %phpcr_url%
+        backend: %phpcr_backend%
         workspace: %phpcr_workspace%
         username: %phpcr_user%
         password: %phpcr_pass%
@@ -103,6 +107,12 @@ liip_vie:
     use_coffee: %liip_vie.use_coffee%
     base_path: /cms/routes
     cms_path: /cms/content/static
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
 
 sonata_admin:
     templates:

@@ -43,7 +43,9 @@
             {% endblock %}
             <div id="language_selector">
                 {% block language_selector %}
-                    {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"id" : page.path, "languageUrls": languageUrls|default(false) } %}
+                    {% if page is defined %}
+                        {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"id" : page.path, "languageUrls": languageUrls|default(false) } %}
+                    {% endif %}
                 {% endblock %}
             </div>
         </div>

@@ -4,6 +4,7 @@ namespace Sandbox\MainBundle\Resources\data\fixtures;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
@@ -30,7 +31,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         return 5;
     }
 
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         if (! $this->container) {
             throw new \Exception("This does not work without container");
@@ -42,7 +43,6 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/static/page.yml'));
 
-        $overview = $data['static'];
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);

@@ -9,19 +9,23 @@ $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     // cmf stuff
     'Symfony\\Cmf'                          => array(__DIR__.'/../vendor/symfony-cmf/src', __DIR__.'/../vendor/bundles'),
+    'Doctrine\\Common'                      => __DIR__.'/../vendor/doctrine-common/lib',
+    'Doctrine\\DBAL'                        => __DIR__.'/../vendor/doctrine-dbal/lib',
+    // not needed but for bug in SonataCacheBundle https://github.com/sonata-project/SonataCacheBundle/issues/3
+    'Doctrine\\ORM'                         => __DIR__.'/../vendor/doctrine/lib',
     'Doctrine\\Bundle'                      => __DIR__.'/../vendor/bundles',
-    'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib',
-    'Doctrine\\Common'                      => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/doctrine-common/lib',
-    'Jackalope'                             => __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/jackalope/src',
-    'PHPCR'                                 => array(
-                                                 __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/jackalope/lib/phpcr/src',
-                                                 __DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/vendor/jackalope/lib/phpcr-utils/src'
+    'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/doctrine-phpcr-odm/lib',
+    'Jackalope'                             => array(
+                                                 __DIR__.'/../vendor/jackalope-doctrine-dbal/src',
+                                                 __DIR__.'/../vendor/jackalope-jackrabbit/src',
+                                                 __DIR__.'/../vendor/jackalope/src',
                                                ),
+    'PHPCR'                                 => array(__DIR__.'/../vendor/phpcr/src', __DIR__.'/../vendor/phpcr-utils/src'),
 
     // additional sandbox things
     'Sandbox'                        => __DIR__.'/../src',
     'Liip'                           => __DIR__.'/../vendor/bundles',
-    'FOS'                            => __DIR__.'/../vendor/bundles',
+    'FOS'                            => array(__DIR__.'/../vendor/bundles', __DIR__.'/../vendor/fos'),
     'Doctrine\\Common\\DataFixtures' => __DIR__.'/../vendor/doctrine-data-fixtures/lib',
 
     // standard stuff
@@ -61,7 +65,7 @@ AnnotationRegistry::registerLoader(function($class) use ($loader) {
     $loader->loadClass($class);
     return class_exists($class, false);
 });
-AnnotationRegistry::registerFile(__DIR__.'/../vendor/symfony-cmf/vendor/doctrine-phpcr-odm/lib/Doctrine/ODM/PHPCR/Mapping/Annotations/DoctrineAnnotations.php');
+AnnotationRegistry::registerFile(__DIR__.'/../vendor/doctrine-phpcr-odm/lib/Doctrine/ODM/PHPCR/Mapping/Annotations/DoctrineAnnotations.php');
 
 // Swiftmailer needs a special autoloader to allow
 // the lazy loading of the init file (which is expensive)

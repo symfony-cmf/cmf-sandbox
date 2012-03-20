@@ -4,6 +4,8 @@ namespace Sandbox\MainBundle\Resources\data\fixtures;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
+
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 
@@ -36,7 +38,7 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
      *
      * @param $dm
      */
-    public function load($dm)
+    public function load(ObjectManager $dm)
     {
         $base_path    = $this->container->getParameter('symfony_cmf_chain_routing.routing_repositoryroot');
         $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
