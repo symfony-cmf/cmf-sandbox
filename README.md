@@ -4,6 +4,7 @@ This sandbox is a testing ground for the cmf bundles being developped.
 
 It is based on the [Symfony Standard edition](https://github.com/symfony/symfony-standard) and adds all cmf related bundles on top of the standard edition bundles.
 
+Link to the [live demo](http://cmf.liip.ch)
 
 ## Getting started
 
