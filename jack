@@ -3,7 +3,7 @@
 cd $(dirname $0)
 
 # use * for newest available locally
-RABBITVERSION="2.3.7"
+RABBITVERSION="2.4.0"
 
 # one per line
 MIRRORS="https://s3-eu-west-1.amazonaws.com/patched-jackrabbit/
