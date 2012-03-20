@@ -45,10 +45,12 @@ swiftmailer:
 
 doctrine:
     dbal:
-        driver:   pdo_mysql
-        dbname:   jackalope
-        user:     jackalope
-        password: test1234
+        driver:   %database_driver%
+        host:     %database_host%
+        port:     %database_port%
+        dbname:   %database_name%
+        user:     %database_user%
+        password: %database_password%
         charset:  UTF8
 
 # cmf configuration
