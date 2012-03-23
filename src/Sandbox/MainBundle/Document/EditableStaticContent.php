@@ -17,6 +17,7 @@ class EditableStaticContent extends MultilangStaticContent implements FromJsonLd
 
     public function fromJsonLd($data)
     {
+        // TODO: hack to ensure we find the data. maybe its inconsistent because of different vie.js versions? figure out which one is correct
         $this->title = isset($data['<dcterms:title>']) ? $data['<dcterms:title>'] : $data['<http://purl.org/dc/terms/title>'];
         $this->body = isset($data['<sioc:content>']) ? $data['<sioc:content>'] : $data['<http://rdfs.org/sioc/ns#content>'];
         $this->tags = $data['<http://purl.org/dc/elements/1.1/subject>'];
