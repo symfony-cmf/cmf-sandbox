@@ -111,12 +111,20 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts:   [admin]
+        symfony_cmf_phpcr_browser.tree_block:
+            contexts:   [admin]
 
 sonata_admin:
     templates:
         # default global templates
-        layout:  SandboxAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
+    dashboard:
+        blocks:
+            # display a dashboard block
+            - { position: right, type: sonata.admin.block.admin_list }
+            - { position: left, type: symfony_cmf_phpcr_browser.tree_block }
+
+
 
 fos_js_routing:
     routes_to_expose:
