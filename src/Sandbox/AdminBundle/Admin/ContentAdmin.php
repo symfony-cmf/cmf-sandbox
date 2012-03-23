@@ -42,4 +42,10 @@ class ContentAdmin extends Admin
             ->add('name',  'doctrine_phpcr_string')
             ;
     }
+
+    public function getExportFormats()
+    {
+        return array();
+    }
+
 }

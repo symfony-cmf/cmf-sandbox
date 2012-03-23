@@ -35,4 +35,8 @@ class MultilangMenuItemAdmin extends Admin
             ->end();
     }
 
+    public function getExportFormats()
+    {
+        return array();
+    }
 }
