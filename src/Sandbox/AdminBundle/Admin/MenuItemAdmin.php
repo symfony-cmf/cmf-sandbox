@@ -45,4 +45,9 @@ class MenuItemAdmin extends Admin
                 ->add('route', 'text')
             ;
     }
+
+    public function getExportFormats()
+    {
+        return array();
+    }
 }
