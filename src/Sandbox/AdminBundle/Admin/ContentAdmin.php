@@ -31,7 +31,7 @@ class ContentAdmin extends Admin
                 ->add('path', 'text')
                 ->add('title')
                 ->add('name')
-                ->add('content', 'text')
+                ->add('content', 'textarea')
             ->end();
     }
 
