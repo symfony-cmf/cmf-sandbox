@@ -1,33 +1,20 @@
 {% extends "SandboxMainBundle::skeleton.html.twig" %}
 
 {% block content %}
-<div xmlns:sioc="http://rdfs.org/sioc/ns#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
+<div xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
      typeof="sioc:Post"
      about="{{ page.path }}"
      class="articleContainer">
 
-     {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-         <div class="hiddenfieldsContainer">
-             <div class="hiddenfieldsToggle"></div>
-             <div class="hiddenfields">
-                <div class="hiddenfieldsCloseButton"></div>
-                <h2>Article settings</h2>
-             </div>
-             <div class="hiddenfieldsCloseCorner"></div>
-         </div>
-    {% endif %}
+    <ul rel="dc:subject" property="dc:subject">
+        {% for subject in page.tags %}
+        <li about="{{ subject|replace({'<': '', '>': ''}) }}"></li>
+        {% endfor %}
+    </ul>
     <h1 id="main_title" property="dcterms:title">{{ page.title }}</h1>
     <div property="sioc:content">
         {{ page.content|raw }}
     </div>
-</div>
-<div class="sidebar">
-    {% image output="/images/test.png"
-        '@SandboxMainBundle/Resources/public/images/sidebar.png'
-    %}
-        <img src="{{ asset_url }}" alt="The alt text" />
-    {% endimage %}
 </div>
 {{ parent() }}
 {% endblock %}
