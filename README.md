@@ -25,6 +25,8 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     bin/vendors install
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
+Please also adjust the ``app/config/parameters.yml`` as needed. Specifically pick the PHPCR backend and adjust
+the URL and database configurations accordingly.
 
 ### Install and run Apache JackRabbit
 
