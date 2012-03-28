@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandbox\MainBundle\Resources\data\fixtures;
+namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
@@ -41,7 +41,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $this->createPath($basepath);
 
         $yaml = new Parser();
-        $data = $yaml->parse(file_get_contents(__DIR__ . '/static/page.yml'));
+        $data = $yaml->parse(file_get_contents(__DIR__ . '/../static/page.yml'));
 
         foreach($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];

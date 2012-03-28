@@ -42,7 +42,7 @@ can only programmatically create data. The best way to do that is with the
 doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
 repository provides a command to load fixtures.
 
-    app/console -v doctrine:phpcr:fixtures:load --fixtures=src/Sandbox/MainBundle/Resources/data/fixtures/
+    app/console -v doctrine:phpcr:fixtures:load
 
 ## Access by web browser
 
