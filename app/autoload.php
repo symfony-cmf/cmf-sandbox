@@ -11,8 +11,6 @@ $loader->registerNamespaces(array(
     'Symfony\\Cmf'                          => array(__DIR__.'/../vendor/symfony-cmf/src', __DIR__.'/../vendor/bundles'),
     'Doctrine\\Common'                      => __DIR__.'/../vendor/doctrine-common/lib',
     'Doctrine\\DBAL'                        => __DIR__.'/../vendor/doctrine-dbal/lib',
-    // not needed but for bug in SonataCacheBundle https://github.com/sonata-project/SonataCacheBundle/issues/3
-    'Doctrine\\ORM'                         => __DIR__.'/../vendor/doctrine/lib',
     'Doctrine\\Bundle'                      => __DIR__.'/../vendor/bundles',
     'Doctrine\\ODM\\PHPCR'                  => __DIR__.'/../vendor/doctrine-phpcr-odm/lib',
     'Jackalope'                             => array(
