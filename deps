@@ -32,10 +32,6 @@
 [doctrine-dbal]
     git=git://github.com/doctrine/dbal.git
 
-# not needed but for bug in SonataCacheBundle https://github.com/sonata-project/SonataCacheBundle/issues/3
-[doctrine]
-    git=git://github.com/doctrine/doctrine2.git
-
 [phpcr]
     git=http://github.com/phpcr/phpcr.git
 
