@@ -1,9 +1,8 @@
 services:
     sandbox_main.controller:
         class: Sandbox\MainBundle\Controller\ContentController
-        arguments:
-            container: "@service_container"
-        shared: true
+        calls:
+            - [ setContainer, [@service_container] ]
 
     sandbox_main.image_controller:
         class: Sandbox\MainBundle\Controller\ImageController
@@ -17,6 +16,5 @@ services:
         class: Sandbox\MainBundle\Listener\SandboxExceptionListener
         calls:
             - [ setContainer, [@service_container] ]
-        shared: true
         tags:
             - {name: "kernel.event_subscriber"}
