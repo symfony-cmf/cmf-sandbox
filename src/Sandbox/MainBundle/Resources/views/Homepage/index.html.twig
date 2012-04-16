@@ -18,7 +18,7 @@
          </div>
     {% endif %}
     <p><em>We are on the homepage which uses a special template</em></p>
-    <h1 id="main_title" property="dcterms:title">{{ page.title }}</h1>
+    <h1 id="main_title" property="dcterms:title">{{ page.title|raw }}</h1>
     <div property="sioc:content">
         {{ page.content|raw }}
     </div>
