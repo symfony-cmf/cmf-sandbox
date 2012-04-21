@@ -25,7 +25,7 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
                 children:
-                    child1: 
+                    child1:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
                             title: Homepage Simpleblock
