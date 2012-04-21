@@ -115,10 +115,6 @@
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
     target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
 
-[SonataBlockBundle]
-    git=https://github.com/sonata-project/SonataBlockBundle.git
-    target=/bundles/Sonata/BlockBundle
-
 ;### Admin bundle stuff
 [SonataCacheBundle]
     git=https://github.com/sonata-project/SonataCacheBundle.git
