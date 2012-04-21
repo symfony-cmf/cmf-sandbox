@@ -31,7 +31,7 @@ class ContentAdmin extends Admin
                 ->add('path', 'text')
                 ->add('title')
                 ->add('name')
-                ->add('content', 'text')
+                ->add('content', 'textarea')
             ->end();
     }
 
@@ -42,4 +42,10 @@ class ContentAdmin extends Admin
             ->add('name',  'doctrine_phpcr_string')
             ;
     }
+
+    public function getExportFormats()
+    {
+        return array();
+    }
+
 }

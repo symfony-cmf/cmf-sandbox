@@ -11,11 +11,6 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  */
 class ContentController extends Controller
 {
-    public function __construct(ContainerInterface $container)
-    {
-        $this->container = $container;
-    }
-
     /**
      * Action that is mapped in the controller_by_alias map
      *

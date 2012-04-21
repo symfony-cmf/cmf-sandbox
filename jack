@@ -1,0 +1,197 @@
+#!/bin/bash
+
+cd $(dirname $0)
+
+# use * for newest available locally
+RABBITVERSION="2.4.0"
+
+# one per line
+MIRRORS="https://s3-eu-west-1.amazonaws.com/patched-jackrabbit/
+http://mirror.switch.ch/mirror/apache/dist//jackrabbit/$RABBITVERSION"
+
+action="$1"; shift
+args="$*"
+
+pidfile=${TMPDIR:-/tmp}/jack.pid
+
+JAR=
+
+usage() {
+    echo "usage: $(basename $0) <action> [args]"
+    echo
+    echo    "actions:"
+    echo -e "  start\t\tStarts jackrabbit in the background with the given arguments"
+    echo -e "  stop\t\tStops jackrabbit"
+    echo -e "  restart\tRestarts jackrabbit"
+    echo -e "  status\tPrint current status of jackrabbit (running, stopped)"
+    echo -e "  log\t\tTails the logfile"
+    echo -e "  clear\t\tResets index"
+    echo -e "  flush\t\tWipes the db"
+    echo -e "  flush:article\tRemoves today's articles (alternatively, use 'all' for removing all articles or pass the subpath to delete, e.g., '2011/04/26')"
+
+}
+
+if [ -z "$action" ]; then
+    usage
+    exit 1
+fi
+
+# kills jackrabbit and sleeps till process dies
+# prints the id of the process previously active process (or empty if it wasn't running)
+stop_jackrabbit() {
+    local id=$(cat $pidfile 2>/dev/null)
+
+    if [ -n "$id" ]; then
+        kill $id 2>/dev/null
+
+        # wait till process dies
+        kill -0 $id
+        while [[ $? -eq 0 ]]; do
+            sleep 1
+            kill -0 $id 2>/dev/null
+        done
+    fi
+    rm -f $pidfile
+    echo $id
+}
+
+verify_jackrabbit() {
+    local name="jackrabbit-standalone-$RABBITVERSION.jar"
+    JAR="$(ls -1 $name 2>/dev/null | tail -n 1)"
+
+    if [ -z "$JAR" ]; then
+        if [ "$RABBITVERSION" = "*" ]; then
+            echo "No file found matching $name"
+            echo "Get it at http://mirror.switch.ch/mirror/apache/dist/jackrabbit/"
+            exit 1
+        fi
+
+        read -p "$name not found. Download? [y/N] "
+        echo
+        if [[ ! $REPLY =~ [Yy] ]]; then
+            exit
+        fi
+        JAR="$name"
+
+        echo "Be patient, this might take a minute..."
+        for m in $MIRRORS; do
+            url="${m%/}/$name"
+            echo -n "Downloading from $url"
+            code=$(curl -w %{http_code} -s $url -o jackrabbit.jar.tmp)
+            if [ $code != "200" ]; then
+                echo " [FAILED: $code]"
+                continue
+            fi
+            echo " [OKAY]"
+            mv jackrabbit.jar.tmp $name
+        done
+        rm -f jackrabbit.jar.tmp
+    fi
+}
+
+# starts jackrabbit in the background
+start_jackrabbit() {
+
+    verify_jackrabbit
+
+    if [ -e "$JAR" ]; then
+
+        # already running?
+        if [ -e $pidfile ]; then
+            echo "jackrabbit seems to be running ($pidfile)"
+            echo "Use \`jack restart\` or \`jack stop\`"
+            exit 1
+        fi
+
+        echo "Starting in the background using: $JAR"
+        java -Xmx512m -Xms512m -jar $JAR $args &
+        echo $! > $pidfile
+
+    else
+        echo "File not found: $JAR"
+        exit 1
+    fi
+}
+
+status_jackrabbit() {
+    if [ ! -e $pidfile ]; then
+        echo "Not running ($pidfile not found)"
+    else
+        echo "Running ($pidfile says $(cat $pidfile))"
+    fi
+}
+
+
+case "$action" in
+    clear)
+        wasrunning=$(stop_jackrabbit)
+        rm -rf jackrabbit/repository/index
+        rm -rf jackrabbit/workspaces/nzz/index
+        rm -rf jackrabbit/workspaces/nzz_test/index
+        echo 'Cleared repository and workspace.'
+        [ $wasrunning ] && start_jackrabbit
+        ;;
+    flush:article)
+        [ -z $args ] && args=$(date +%Y/%m/%d)
+        [ $args = "all" ] && args=""
+        # TODO extract port from $args
+        curl -X DELETE http://admin:admin@localhost:8080/server/nzz/jcr:root/article/$args
+        ;;
+
+    flush)
+        read -p "This will truncate the DB. Continue? [y/N]"
+        if [[ ! $REPLY =~ [Yy] ]]; then
+            exit
+        fi
+        wasrunning=$(stop_jackrabbit)
+        rm -rf jackrabbit/repository/datastore
+        rm -rf jackrabbit/repository/index
+        rm -rf jackrabbit/workspaces/nzz/index
+        rm -rf jackrabbit/workspaces/nzz/db
+        rm -rf jackrabbit/version
+        echo 'Flushed repository and workspace.'
+        [ $wasrunning ] && start_jackrabbit
+        ;;
+
+    flush:test)
+        read -p "This will truncate the test DB. Continue? [y/N]"
+        if [[ ! $REPLY =~ [Yy] ]]; then
+            exit
+        fi
+        wasrunning=$(stop_jackrabbit)
+        # rm -rf jackrabbit/repository/datastore
+        # rm -rf jackrabbit/repository/index
+        rm -rf jackrabbit/workspaces/nzz_test/index
+        rm -rf jackrabbit/workspaces/nzz_test/db
+        rm -rf jackrabbit/version
+        echo 'Flushed repository and workspace.'
+        [ $wasrunning ] && start_jackrabbit
+        ;;
+
+    register)
+        app/console doctrine:phpcr:register-system-node-types --allow-update
+        app/console doctrine:phpcr:register-node-types ./script/nzz_unstructure.cnd --allow-update
+        ;;
+    log)
+        tail -f jackrabbit/log/jackrabbit.log
+        ;;
+    stop)
+        stop_jackrabbit >/dev/null
+        ;;
+    restart)
+        stop_jackrabbit >/dev/null
+        start_jackrabbit
+        ;;
+    start)
+        start_jackrabbit
+        ;;
+    status)
+        status_jackrabbit
+        ;;
+
+    *)
+        echo "Unknown action: $action"
+        usage
+        exit 1
+esac
+

@@ -1,42 +1,93 @@
-{% extends "SymfonyCmfCoreBundle::skeleton.html.twig" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}{{ title }} | CMF Sandbox{% endblock %}</title>
 
-{% block includes %}
-    {{ parent() }}
-    {% stylesheets '@SandboxMainBundle/Resources/public/css/style.css' %}
-        <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
-    {% endstylesheets %}
+        {% block includes %}
+            {% stylesheets '@SandboxMainBundle/Resources/public/css/style.css' %}
+                <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+            {% endstylesheets %}
 
-    {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-        {% stylesheets '@LiipVieBundle/Resources/public/vendor/hallo/examples/Aristo/jquery-ui-1.8.7.custom.css'
-                    '@LiipVieBundle/Resources/public/css/halloLiipStyle.css'
-                    '@LiipVieBundle/Resources/public/vendor/hallo/examples/overlay.css'
-                    '@LiipVieBundle/Resources/public/vendor/hallo/examples/image.css'
-        %}
-            <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
-        {% endstylesheets %}
-    {% endif %}
-{% endblock %}
+            {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+                {% stylesheets '@LiipVieBundle/Resources/public/vendor/hallo/examples/Aristo/jquery-ui-1.8.7.custom.css'
+                            '@LiipVieBundle/Resources/public/css/halloLiipStyle.css'
+                            '@LiipVieBundle/Resources/public/vendor/hallo/examples/overlay.css'
+                            '@LiipVieBundle/Resources/halloplugins/image.css'
+                            '@LiipVieBundle/Resources/halloplugins/link.css'
+                %}
+                    <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+                {% endstylesheets %}
+                <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/midgard-tags/tags.css" media="screen" type="text/css"/>
+            {% endif %}
+        {% endblock %}
 
-{% block header %}
-    {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-        <div id="userBar">
-            <div class="inner"><button class="saveButton">Saved</button></div>
+        {% block top_scripts %}
+        {% endblock %}
+    </head>
+    <body>
+        <div id="header">
+            {% block header %}
+                {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+                    <div id="userBar">
+                        <div class="inner"><button class="saveButton">Saved</button></div>
+                    </div>
+                {% endif %}
+                <ul id="skiplinks">
+                    <li><a href="#main">Go to main content</a></li>
+                    <li><a href="#navigation">Go to main navigation</a></li>
+                </ul>
+
+                <h1 id="logo-text"><a href="{{ asset('') }}">CMF Sandbox</a></h1>
+                <p id="slogan">Symfony2 Content Management Framework</p>
+            {% endblock %}
+            <div id="language_selector">
+                {% block language_selector %}
+                    {% if page is defined %}
+                        {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"id" : page.path, "languageUrls": languageUrls|default(false) } %}
+                    {% endif %}
+                {% endblock %}
+            </div>
         </div>
-    {% endif %}
-    {{ parent() }}
-{% endblock %}
+        <div id="navigation">
+            {% block navigation %}
+                {% include "SymfonyCmfCoreBundle:Default:navigation.html.twig" %}
+            {% endblock %}
+        </div>
+        <div id="content">
+            <div class="inner">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
 
-{% block bottom_scripts %}
-    {{ parent() }}
-    {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-        {% render "liip_vie.controller.vie:includeJSFilesAction" %}
+        <div id="content_extra">
+            <div class="inner">
+                {% block content_extra %}
+                {% endblock %}
+            </div>
+        </div>
 
-        {% javascripts
-                    '@SandboxMainBundle/Resources/public/js/hiddenfields.js'
-                    '@SandboxMainBundle/Resources/public/js/savebutton.js'
-                    '@SandboxMainBundle/Resources/public/js/userbar.js'
-        %}
-            <script src="{{ asset_url }}"></script>
-        {% endjavascripts %}
-    {% endif %}
-{% endblock %}
+        <div id="footer">
+            <div class="inner">
+                {% block footer %}
+                    {% include "SymfonyCmfCoreBundle:Default:footer.html.twig" %}
+                {% endblock %}
+            </div>
+        </div>
+
+        {% block bottom_scripts %}
+            {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+                {% render "liip_vie.controller.vie:includeJSFilesAction" %}
+
+                {% javascripts
+                            '@SandboxMainBundle/Resources/public/js/savebutton.js'
+                            '@SandboxMainBundle/Resources/public/js/userbar.js'
+                %}
+                    <script src="{{ asset_url }}"></script>
+                {% endjavascripts %}
+            {% endif %}
+        {% endblock %}
+    </body>
+</html>
+

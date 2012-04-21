@@ -30,7 +30,7 @@ assetic:
         coffee:
            bin: %coffee.bin%
            node: %coffee.node%
-           apply_to: "\.coffee$"
+           apply_to: %coffee.extension%
         # closure:
         #     jar: %kernel.root_dir%/java/compiler.jar
         # yui_css:
@@ -43,17 +43,21 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
 
+doctrine:
+    dbal:
+        driver:   %database_driver%
+        host:     %database_host%
+        port:     %database_port%
+        dbname:   %database_name%
+        user:     %database_user%
+        password: %database_password%
+        charset:  UTF8
+
 # cmf configuration
 doctrine_phpcr:
     # configure the PHPCR session
-    #session:
-    #    backend:
-    #        type: doctrinedbal
-    #        connection: doctrine.dbal.default_connection
-    #    workspace: %phpcr_workspace%
     session:
-        backend:
-            url: %phpcr_url%
+        backend: %phpcr_backend%
         workspace: %phpcr_workspace%
         username: %phpcr_user%
         password: %phpcr_pass%
@@ -99,20 +103,31 @@ knp_menu:
 liip_vie:
     phpcr_odm: true
     map:
-        'sioc:Post': 'Sandbox\MainBundle\Document\EditableStaticContent'
+        '<http://rdfs.org/sioc/ns#Post>': 'Sandbox\MainBundle\Document\EditableStaticContent'
     use_coffee: %liip_vie.use_coffee%
+    # TODO: these settings should come from the corresponding bundles, not be duplicated
+    base_path: /cms/routes
+    cms_path: /cms/content/static
 
 sonata_block:
     default_contexts: [cms]
     blocks:
         sonata.admin.block.admin_list:
             contexts:   [admin]
+        symfony_cmf_phpcr_browser.tree_block:
+            contexts:   [admin]
 
 sonata_admin:
     templates:
         # default global templates
-        layout:  SandboxAdminBundle::standard_layout.html.twig
         ajax:    SonataAdminBundle::ajax_layout.html.twig
+    dashboard:
+        blocks:
+            # display a dashboard block
+            - { position: right, type: sonata.admin.block.admin_list }
+            - { position: left, type: symfony_cmf_phpcr_browser.tree_block }
+
+
 
 fos_js_routing:
     routes_to_expose:

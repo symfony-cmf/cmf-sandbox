@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandbox\MainBundle\Resources\data\fixtures;
+namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;

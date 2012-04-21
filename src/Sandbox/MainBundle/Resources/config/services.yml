@@ -1,13 +1,20 @@
 services:
     sandbox_main.controller:
         class: Sandbox\MainBundle\Controller\ContentController
+        calls:
+            - [ setContainer, [@service_container] ]
+
+    sandbox_main.image_controller:
+        class: Sandbox\MainBundle\Controller\ImageController
+        factory_service: doctrine_phpcr.odm.document_manager
         arguments:
             container: "@service_container"
-        shared: true
+            - @doctrine_phpcr.odm.document_manager
+            - @fos_rest.view_handler
+
     sandbox_main.debugListener:
         class: Sandbox\MainBundle\Listener\SandboxExceptionListener
         calls:
             - [ setContainer, [@service_container] ]
-        shared: true
         tags:
             - {name: "kernel.event_subscriber"}

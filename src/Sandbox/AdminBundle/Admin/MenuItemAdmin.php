@@ -32,7 +32,7 @@ class MenuItemAdmin extends Admin
                 ->add('label', 'text')
                 ->add('uri', 'text', array('required' => false))
                 ->add('route', 'text', array('required' => false))
-                ->add('content', 'sonata_type_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false))
+                ->add('content', 'doctrine_phpcr_type_tree_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false))
             ->end();
     }
     protected function configureShowField(ShowMapper $showMapper)
@@ -44,5 +44,10 @@ class MenuItemAdmin extends Admin
                 ->add('uri', 'text')
                 ->add('route', 'text')
             ;
+    }
+
+    public function getExportFormats()
+    {
+        return array();
     }
 }

@@ -4,6 +4,7 @@ This sandbox is a testing ground for the cmf bundles being developped.
 
 It is based on the [Symfony Standard edition](https://github.com/symfony/symfony-standard) and adds all cmf related bundles on top of the standard edition bundles.
 
+Link to the [live demo](http://cmf.liip.ch)
 
 ## Getting started
 
@@ -13,7 +14,8 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
 ### You will need:
   * Git 1.6+
   * PHP 5.3.2+
-  * phpUnit 3.5+ (optional)
+  * php5-intl
+  * phpunit 3.5+ (optional)
 
 ## Get the code
 
@@ -25,6 +27,8 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     bin/vendors install
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
+Please also adjust the ``app/config/parameters.yml`` as needed. Specifically pick the PHPCR backend and adjust
+the URL and database configurations accordingly.
 
 ### Install and run Apache JackRabbit
 
@@ -40,7 +44,7 @@ can only programmatically create data. The best way to do that is with the
 doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
 repository provides a command to load fixtures.
 
-    app/console -v doctrine:phpcr:fixtures:load --fixtures=src/Sandbox/MainBundle/Resources/data/fixtures/
+    app/console -v doctrine:phpcr:fixtures:load
 
 ## Access by web browser
 
