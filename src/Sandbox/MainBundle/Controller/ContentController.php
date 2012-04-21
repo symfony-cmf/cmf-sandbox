@@ -5,6 +5,7 @@ namespace Sandbox\MainBundle\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Special routes to demo the features of the Doctrine Router in the ChainRoutingBundle
@@ -78,5 +79,19 @@ class ContentController extends Controller
         );
 
         return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+    }
+
+    /**
+     * Action that is referenced in an ActionBlock
+     *
+     * @param \Sonata\BlockBundle\Model\BlockInterface $block
+     *
+     * @return \Symfony\Component\HttpFoundation\Response the response
+     */
+    public function blockAction ($block)
+    {
+        return $this->render('SandboxMainBundle:Block:demo_block.html.twig', array(
+            'block' => $block
+        ));
     }
 }
