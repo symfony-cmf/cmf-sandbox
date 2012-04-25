@@ -111,6 +111,10 @@
 [symfony-cmf]
     git=http://github.com/symfony-cmf/symfony-cmf.git
 
+[SymfonyCmfBlockBundle]
+    git=http://github.com/symfony-cmf/SymfonyCmfBlockBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/BlockBundle
+
 [ChainRoutingBundle]
     git=git://github.com/symfony-cmf/ChainRoutingBundle.git
     target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
