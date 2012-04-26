@@ -32,19 +32,34 @@ the URL and database configurations accordingly.
 
 ### Install and run Apache JackRabbit
 
-Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server)
-and then [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
+Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
+You can also use a different PHPCR implementation but this is what is most tested.
+
+
+## Prepare the phpcr repository
+
+Once your repository is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
 
     app/console doctrine:phpcr:register-system-node-types
 
+Next you need to create a workspace that will hold the data for the sandbox.
+The default parameters.yml defines the workspace to be 'sandbox'. You can
+change this of course. If you do, also adjust the following command.
+
+    app/console doctrine:phpcr:workspace:create sandbox
+
+
 ## Import the fixtures
 
-We currently do not yet have an edit backend. Until somebody builds one, you
-can only programmatically create data. The best way to do that is with the
-doctrine data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf
-repository provides a command to load fixtures.
+The admin backend is still in an early stage. Until it improves, the easiest is
+to programmatically create data. The best way to do that is with the doctrine
+data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf repository
+provides a command to load fixtures.
 
     app/console -v doctrine:phpcr:fixtures:load
+
+Run this to load the fixtures from the Sandbox MainBundle.
+
 
 ## Access by web browser
 
@@ -60,6 +75,7 @@ Create an apache virtual host entry along the lines of
 And add an entry to your hosts file for cmf.lo
 
 Then point your browser to http://cmf.lo/app_dev.php
+
 
 ## Production environment
 
