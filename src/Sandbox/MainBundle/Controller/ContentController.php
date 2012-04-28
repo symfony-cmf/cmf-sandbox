@@ -5,6 +5,7 @@ namespace Sandbox\MainBundle\Controller;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Special routes to demo the features of the Doctrine Router in the ChainRoutingBundle
