@@ -37,7 +37,7 @@ static:
                             content: This is another simple block.
                     child3:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
-                        actionName: SandboxMainBundle:Content:block
+                        actionName: SandboxBlockBundle:Default:block
     -
         name: "company"
         title: "The Company"
