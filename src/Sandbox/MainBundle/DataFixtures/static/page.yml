@@ -21,6 +21,23 @@ static:
                 <p>Wenn du diese Seite siehst, bedeutet das dass die installation des symfony cmf erfolgreich war!</p>
                 <h2>Was nun?</h2>
                 <p>Es gibt einige bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen bundles.</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                children:
+                    child1:
+                        class: Sandbox\BlockBundle\Document\EditableSimpleBlock
+                        properties:
+                            title: Editable Simpleblock
+                            content: This is a simple block. It is stored on the homepage, but also referenced from the company page.
+                    child2:
+                        class: Sandbox\BlockBundle\Document\EditableSimpleBlock
+                        properties:
+                            title: Another editable SimpleBlock
+                            content: Both title and content of this block are editable.
+                    child3:
+                        class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
+                        actionName: SandboxBlockBundle:Default:block
     -
         name: "company"
         title: "The Company"
@@ -31,6 +48,10 @@ static:
             <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea. Prima debet fierent id sed. Usu debet paulo argumentum ex, solum homero in sed, modus laboramus et usu. Brute legendos contentiones ex pri.
 
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
+                referencedBlock: /cms/content/static/home/additionalInfoBlock/child1
     -
         name: "team"
         title: "The Team"

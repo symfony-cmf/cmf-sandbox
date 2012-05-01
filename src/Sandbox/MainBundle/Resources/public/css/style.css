@@ -304,8 +304,23 @@ input, button, textarea, select {
     background-position: 0 -15px;
 }
 
+.symfony_cmf-block {
+    background-color: #ECFFB8;
+    min-height: 140px;
+    padding: 6px;
+    float: left;
+    width: 216px;
+    margin-right: 5px;
+    margin-bottom: 40px;
+}
+
+.symfony_cmf-block h1 {
+    margin-top: 0;
+}
+
 .articleContainer {
     position: relative;
+    float: left;
 }
 
 .articleContainer p:after {

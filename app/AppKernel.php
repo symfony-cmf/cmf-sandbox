@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
             new Symfony\Cmf\Bundle\TreeBundle\SymfonyCmfTreeBundle(),
             new Symfony\Cmf\Bundle\PHPCRBrowserBundle\SymfonyCmfPHPCRBrowserBundle(),
+            new Symfony\Cmf\Bundle\BlockBundle\SymfonyCmfBlockBundle(),
 
             new Liip\VieBundle\LiipVieBundle(),
             new FOS\RestBundle\FOSRestBundle(),
@@ -36,6 +37,7 @@ class AppKernel extends Kernel
             new Sandbox\MainBundle\SandboxMainBundle(),
             new Sandbox\TestBundle\SandboxTestBundle(),
             new Sandbox\AdminBundle\SandboxAdminBundle(),
+            new Sandbox\BlockBundle\SandboxBlockBundle(),
 
             // admin bundle
             new Sonata\jQueryBundle\SonatajQueryBundle(),
