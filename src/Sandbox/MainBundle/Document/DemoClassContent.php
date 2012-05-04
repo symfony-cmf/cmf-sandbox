@@ -4,7 +4,7 @@ namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Cmf\Bundle\ChainRoutingBundle\Routing\RouteAwareInterface;
+use Symfony\Cmf\Component\Routing\RouteAwareInterface;
 
 /**
  * A document that we map to a controller

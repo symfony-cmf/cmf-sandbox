@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
 
             // enable cmf bundles
-            new Symfony\Cmf\Bundle\ChainRoutingBundle\SymfonyCmfChainRoutingBundle(),
+            new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
             new Symfony\Cmf\Bundle\MultilangContentBundle\SymfonyCmfMultilangContentBundle(),
             new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle(),

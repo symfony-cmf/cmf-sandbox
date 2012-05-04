@@ -8,7 +8,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 $loader = new UniversalClassLoader();
 $loader->registerNamespaces(array(
     // cmf stuff
-    'Symfony\\Cmf'                          => array(__DIR__.'/../vendor/symfony-cmf/src', __DIR__.'/../vendor/bundles'),
+    'Symfony\\Cmf'                          => array(__DIR__.'/../vendor/symfony-cmf/src', __DIR__.'/../vendor/bundles', __DIR__.'/../vendor/cmf-routing'),
     'Doctrine\\Common'                      => __DIR__.'/../vendor/doctrine-common/lib',
     'Doctrine\\DBAL'                        => __DIR__.'/../vendor/doctrine-dbal/lib',
     'Doctrine\\Bundle'                      => __DIR__.'/../vendor/bundles',

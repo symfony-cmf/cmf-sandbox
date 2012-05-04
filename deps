@@ -115,9 +115,13 @@
     git=http://github.com/symfony-cmf/SymfonyCmfBlockBundle.git
     target=/bundles/Symfony/Cmf/Bundle/BlockBundle
 
-[ChainRoutingBundle]
-    git=git://github.com/symfony-cmf/ChainRoutingBundle.git
-    target=/bundles/Symfony/Cmf/Bundle/ChainRoutingBundle
+[cmf-routing]
+    git=git://github.com/symfony-cmf/Routing.git
+    target=/cmf-routing/Symfony/Cmf/Component/Routing
+
+[RoutingExtraBundle]
+    git=git://github.com/symfony-cmf/RoutingExtraBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/RoutingExtraBundle
 
 ;### Admin bundle stuff
 [SonataCacheBundle]

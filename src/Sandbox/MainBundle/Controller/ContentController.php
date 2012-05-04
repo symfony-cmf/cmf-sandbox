@@ -8,7 +8,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Special routes to demo the features of the Doctrine Router in the ChainRoutingBundle
+ * Special routes to demo the features of the Doctrine Router in the SymfonyCmfRoutingExtraBundle
  */
 class ContentController extends Controller
 {

@@ -66,6 +66,6 @@ services:
         class: Sandbox\AdminBundle\Admin\RouteAdmin
         tags:
             - {name: sonata.admin, manager_type: doctrine_phpcr, group: phpcr, label: route}
-        arguments: ["",Symfony\Cmf\Bundle\ChainRoutingBundle\Document\Route, "sandbox_admin.route_controller"]
+        arguments: ["",Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route, "sandbox_admin.route_controller"]
         calls:
             - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]

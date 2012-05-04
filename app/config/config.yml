@@ -82,10 +82,10 @@ doctrine_phpcr:
 
 symfony_cmf_content: ~
 
-symfony_cmf_chain_routing:
+symfony_cmf_routing_extra:
     chain:
         routers_by_id:
-            symfony_cmf_chain_routing.doctrine_router: 20
+            symfony_cmf_routing_extra.doctrine_router: 20
             router.default: 100
     doctrine:
         enabled: true
@@ -93,7 +93,7 @@ symfony_cmf_chain_routing:
             demo_alias: sandbox_main.controller:aliasAction
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
-            Symfony\Cmf\Bundle\ChainRoutingBundle\Document\RedirectRoute:  symfony_cmf_chain_routing.redirect_controller:redirectAction
+            Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
         templates_by_class:
             Sandbox\MainBundle\Document\EditableStaticContent: SandboxMainBundle:EditableStaticContent:index.html.twig
 
