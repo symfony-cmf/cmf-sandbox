@@ -46,11 +46,11 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         $this->createMenuItem("$base_path/main/admin-item", 'Adminitem', 'Admin', null, null, 'sonata_admin_dashboard');
 
         $this->createMenuItem("$base_path/main/projects-item", 'Projectsitem', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $this->dm->find(null, "$content_path/projects"));
-        $this->createMenuItem("$base_path/main/projects-item/cmf-item", 'Cmfitem', 'Symfony CMF', $this->dm->find(null, "$content_path/projects_cmf"));
+        $this->createMenuItem("$base_path/main/projects-item/cmf-item", 'Cmfitem', 'Symfony CMF', $this->dm->find(null, "$content_path/cmf"));
 
         $this->createMenuItem("$base_path/main/company-item", 'Companyitem', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $this->dm->find(null, "$content_path/company"));
-        $this->createMenuItem("$base_path/main/company-item/team-item", 'Teamitem', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $this->dm->find(null, "$content_path/company_team"));
-        $this->createMenuItem("$base_path/main/company-item/more-item", 'Moreitem', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $this->dm->find(null, "$content_path/company_more"));
+        $this->createMenuItem("$base_path/main/company-item/team-item", 'Teamitem', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $this->dm->find(null, "$content_path/team"));
+        $this->createMenuItem("$base_path/main/company-item/more-item", 'Moreitem', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $this->dm->find(null, "$content_path/more"));
 
         $this->createMenuItem("$base_path/main/demo-item", 'Demoitem', 'Demo', $this->dm->find(null, "$content_path/demo"));
         //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?

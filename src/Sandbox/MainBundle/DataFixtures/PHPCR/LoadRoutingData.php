@@ -71,13 +71,13 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
             $team = new Route;
             $team->setPosition($company, 'team');
             $team->setDefault('_locale', $locale);;
-            $team->setRouteContent($dm->find(null, "$content_path/company_team"));
+            $team->setRouteContent($dm->find(null, "$content_path/team"));
             $dm->persist($team);
 
             $more = new Route;
             $more->setPosition($company, 'more');
             $more->setDefault('_locale', $locale);;
-            $more->setRouteContent($dm->find(null, "$content_path/company_more"));
+            $more->setRouteContent($dm->find(null, "$content_path/more"));
             $dm->persist($more);
 
             $projects = new Route;
@@ -89,7 +89,7 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
             $cmf = new Route;
             $cmf->setPosition($projects, 'cmf');
             $cmf->setDefault('_locale', $locale);;
-            $cmf->setRouteContent($dm->find(null, "$content_path/projects_cmf"));
+            $cmf->setRouteContent($dm->find(null, "$content_path/cmf"));
             $dm->persist($cmf);
         }
 

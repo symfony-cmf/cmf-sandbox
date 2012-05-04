@@ -62,6 +62,9 @@ static:
             <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea. Prima debet fierent id sed. Usu debet paulo argumentum ex, solum homero in sed, modus laboramus et usu. Brute legendos contentiones ex pri.
 
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "more"
         title: "More Information"
@@ -72,6 +75,9 @@ static:
             <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea. Prima debet fierent id sed. Usu debet paulo argumentum ex, solum homero in sed, modus laboramus et usu. Brute legendos contentiones ex pri.
 
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "projects"
         title: "The projects"
@@ -81,6 +87,9 @@ static:
             <h2>dicta facete eu vis</h2>
             <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea.
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "cmf"
         title: "Content Management Framework"
@@ -90,6 +99,9 @@ static:
             <h2>dicta facete eu vis</h2>
             <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea.
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "demo"
         title: "Routing demo"
@@ -101,20 +113,35 @@ static:
                 <li><a href="/app_dev.php/short1">A short url that redirects to a standard Symfony route</a></li>
                 <li><a href="/app_dev.php/external">A short url that redirects to an external URL</a></li>
             </ul>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "demo_controller"
         title: "Explicit Controller"
         content: "<p>This content is routed through an explicit controller that can do additional things.</p>"
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "demo_template"
         title: "Explicit template"
         content: "<p>This content is rendered through the generic content controller with an explicitly specified template.</p>"
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "demo_alias"
         title: "Controller by alias"
         content: "<p>This content is routed through a controller found by the route controller alias.</p>"
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "demo_class"
         title: "Controller by class"
         content: "<p>This content is routed through a controller found by the content class.</p>"
         class: "Sandbox\MainBundle\Document\DemoClassContent"
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
