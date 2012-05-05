@@ -110,18 +110,35 @@
 
 [symfony-cmf]
     git=http://github.com/symfony-cmf/symfony-cmf.git
-
-[SymfonyCmfBlockBundle]
-    git=http://github.com/symfony-cmf/SymfonyCmfBlockBundle.git
-    target=/bundles/Symfony/Cmf/Bundle/BlockBundle
+    version=origin/cleanup
 
 [cmf-routing]
     git=git://github.com/symfony-cmf/Routing.git
     target=/cmf-routing/Symfony/Cmf/Component/Routing
 
+[BlockBundle]
+    git=http://github.com/symfony-cmf/BlockBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/BlockBundle
+
 [RoutingExtraBundle]
     git=git://github.com/symfony-cmf/RoutingExtraBundle.git
     target=/bundles/Symfony/Cmf/Bundle/RoutingExtraBundle
+
+[ContentBundle]
+    git=git://github.com/symfony-cmf/ContentBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/ContentBundle
+
+[CoreBundle]
+    git=git://github.com/symfony-cmf/CoreBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/CoreBundle
+
+[MultilangContentBundle]
+    git=git://github.com/symfony-cmf/MultilangContentBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/MultilangContentBundle
+
+[MenuBundle]
+    git=git://github.com/symfony-cmf/MenuBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/MenuBundle
 
 ;### Admin bundle stuff
 [SonataCacheBundle]
@@ -148,3 +165,6 @@
     git=git://github.com/symfony-cmf/TreeBundle.git
     target=/bundles/Symfony/Cmf/Bundle/TreeBundle
 
+[PHPCRBrowserBundle]
+    git=git://github.com/symfony-cmf/PHPCRBrowserBundle.git
+    target=/bundles/Symfony/Cmf/Bundle/PHPCRBrowserBundle
