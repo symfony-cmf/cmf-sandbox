@@ -127,8 +127,6 @@ sonata_admin:
             - { position: right, type: sonata.admin.block.admin_list }
             - { position: left, type: symfony_cmf_phpcr_browser.tree_block }
 
-
-
 fos_js_routing:
     routes_to_expose:
         - admin_sandbox_main_editablestaticcontent_create
