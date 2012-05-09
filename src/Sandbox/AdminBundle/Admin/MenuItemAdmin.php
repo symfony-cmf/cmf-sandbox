@@ -8,8 +8,6 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
-use Knp\Menu\ItemInterface as MenuItemInterface;
-
 class MenuItemAdmin extends Admin
 {
     protected function configureListFields(ListMapper $listMapper)
@@ -35,6 +33,7 @@ class MenuItemAdmin extends Admin
                 ->add('content', 'doctrine_phpcr_type_tree_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false))
             ->end();
     }
+
     protected function configureShowField(ShowMapper $showMapper)
     {
         $showMapper
