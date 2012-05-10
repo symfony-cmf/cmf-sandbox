@@ -41,13 +41,15 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
             }
         }
         // do not even trust the templating system to work
-        $response = new Response("<h2>Sandbox</h2>
+        $response = new Response("<html><body>
+            <h2>Sandbox</h2>
             <p>If you see this page, it means your sandbox is not correctly set up.
                Please see the README file in the sandbox root folder and if you can't figure out
                what is wrong, ask us on freenode irc #symfony-cmf or the mailinglist symfony-cmf-users@groups.google.com.
             </p><p style='color:red;'>
                <strong>Detected the following problem</strong>: $error
             </p>
+            </body></html>
             ");
 
         $event->setResponse($response);
