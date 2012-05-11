@@ -13,7 +13,7 @@ parameters:
         url: http://localhost:8080/server/
         #type: doctrinedbal
         #connection: doctrine.dbal.default_connection
-    phpcr_workspace: default
+    phpcr_workspace: sandbox
     phpcr_user: admin
     phpcr_pass: admin
 
