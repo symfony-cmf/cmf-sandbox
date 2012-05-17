@@ -2,12 +2,12 @@
 
 cd $(dirname $0)
 
-# use * for newest available locally
-RABBITVERSION="2.4.0"
+VERSION=2.4.1
+JAR=jackrabbit-standalone-$VERSION.jar
 
 # one per line
-MIRRORS="https://s3-eu-west-1.amazonaws.com/patched-jackrabbit/
-http://mirror.switch.ch/mirror/apache/dist//jackrabbit/$RABBITVERSION"
+MIRRORS="http://mirror.switch.ch/mirror/apache/dist/jackrabbit/"
+#MIRRORS="http://patched-jackrabbit.s3-website-eu-west-1.amazonaws.com/"
 
 action="$1"; shift
 args="$*"
@@ -56,11 +56,11 @@ stop_jackrabbit() {
 }
 
 verify_jackrabbit() {
-    local name="jackrabbit-standalone-$RABBITVERSION.jar"
+    local name="jackrabbit-standalone-$VERSION.jar"
     JAR="$(ls -1 $name 2>/dev/null | tail -n 1)"
 
     if [ -z "$JAR" ]; then
-        if [ "$RABBITVERSION" = "*" ]; then
+        if [ "$VERSION" = "*" ]; then
             echo "No file found matching $name"
             echo "Get it at http://mirror.switch.ch/mirror/apache/dist/jackrabbit/"
             exit 1
@@ -75,7 +75,7 @@ verify_jackrabbit() {
 
         echo "Be patient, this might take a minute..."
         for m in $MIRRORS; do
-            url="${m%/}/$name"
+            url="${m%/}/$VERSION/$name"
             echo -n "Downloading from $url"
             code=$(curl -w %{http_code} -s $url -o jackrabbit.jar.tmp)
             if [ $code != "200" ]; then
@@ -104,7 +104,7 @@ start_jackrabbit() {
         fi
 
         echo "Starting in the background using: $JAR"
-        java -Xmx512m -Xms512m -jar $JAR $args &
+        java -Xmx1024m -Xms512m -jar $JAR $args &
         echo $! > $pidfile
 
     else
@@ -169,7 +169,7 @@ case "$action" in
         ;;
 
     register)
-        app/console doctrine:phpcr:register-system-node-types --allow-update
+        app/console doctrine:phpcr:register-system-node-types
         app/console doctrine:phpcr:register-node-types ./script/nzz_unstructure.cnd --allow-update
         ;;
     log)
