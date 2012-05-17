@@ -11,5 +11,9 @@ class HomepageTest extends WebTestCase
 		$client->request('GET', '/');
 
 		$this->assertEquals(301, $client->getResponse()->getStatusCode());
+
+		$client->followRedirect();
+
+		$this->assertEquals('http://localhost/en', $client->getRequest()->getUri());
 	}
 }
