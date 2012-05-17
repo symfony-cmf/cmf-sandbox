@@ -11,11 +11,12 @@
     processIsolation="false"
     stopOnFailure="false"
     syntaxCheck="false"
-    bootstrap="bootstrap.php.cache"
+    bootstrap="autoload.php"
 >
 
     <testsuites>
         <testsuite name="Project Test Suite">
+            <directory>tests</directory>
             <directory>../vendor/symfony-cmf/src</directory>
             <directory>../src/*/*Bundle/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
