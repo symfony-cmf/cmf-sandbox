@@ -16,15 +16,17 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * PHP 5.3.2+
   * php5-intl
   * phpunit 3.5+ (optional)
+  * composer
+
+    curl -s http://getcomposer.org/installer | sudo php --
 
 ## Get the code
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
-    # we skipped the web installer for now
     # copy parameters template and edit as needed
     cp app/config/parameters.yml.dist app/config/parameters.yml
-    bin/vendors install
+    php composer.phar install --dev
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 Please also adjust the ``app/config/parameters.yml`` as needed. Specifically pick the PHPCR backend and adjust
