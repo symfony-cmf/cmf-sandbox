@@ -6,13 +6,13 @@ use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
 
 class HomepageTest extends WebTestCase
 {
-    public static function setUpBeforeClass()
+    public function setUp()
     {
-        static::purgeAndloadFixtures(array(
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
-        ));
+        $this->loadFixtures(array(
+                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
+                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
+                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
+            ), null, 'doctrine_phpcr');
     }
 
     public function testRedirectToDefaultLanguage()
@@ -40,31 +40,5 @@ class HomepageTest extends WebTestCase
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
         $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the symfony cmf Demo")'));
         $this->assertCount(13, $crawler->filter('ul.menu_main li'));
-    }
-
-    protected static function purgeAndloadFixtures(array $fixtures)
-    {
-        static::createClient();
-
-        $fixturesToLoad = array();
-
-        foreach ($fixtures as $fixture) {
-            if (!class_exists($fixture)) {
-                throw new \Exception(sprintf('Class %s not exists.', $fixture));
-            }
-
-            $fixtureToLoad = new $fixture;
-            $fixtureToLoad->setContainer(static::$kernel->getContainer());
-
-            $fixturesToLoad[] = $fixtureToLoad;
-        }
-
-        $registry = static::$kernel->getContainer()->get('doctrine_phpcr');
-        $dm = $registry->getManager(null);
-
-        $purger = new PHPCRPurger($dm);
-
-        $executor = new PHPCRExecutor($dm, $purger);
-        $executor->execute($fixturesToLoad);
     }
 }
