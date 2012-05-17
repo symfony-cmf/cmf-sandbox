@@ -18,7 +18,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * phpunit 3.5+ (optional)
   * composer
 
-    curl -s http://getcomposer.org/installer | sudo php --
+    curl -s http://getcomposer.org/installer | php --
 
 ## Get the code
 
