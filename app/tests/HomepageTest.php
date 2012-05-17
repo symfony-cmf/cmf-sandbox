@@ -28,6 +28,20 @@ class HomepageTest extends WebTestCase
         $this->assertEquals('http://localhost/en', $client->getRequest()->getUri());
     }
 
+    public function testContents()
+    {
+        $client = $this->createClient();
+
+        $crawler = $client->request('GET', '/en');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $this->assertCount(3, $crawler->filter('.symfony_cmf-block'));
+        $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
+        $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the symfony cmf Demo")'));
+        $this->assertCount(13, $crawler->filter('ul.menu_main li'));
+    }
+
     protected static function purgeAndloadFixtures(array $fixtures)
     {
         static::createClient();
