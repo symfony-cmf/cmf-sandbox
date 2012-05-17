@@ -29,8 +29,9 @@ class MultilangMenuItemAdmin extends Admin
                 ->add('locale', 'text')
                 ->add('name', 'text')
                 ->add('label', 'text')
-                ->add('uri', 'text')
-                ->add('route', 'text')
+                ->add('uri', 'text', array('required' => false))
+                ->add('route', 'text', array('required' => false))
+                ->add('content', 'doctrine_phpcr_type_tree_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false))
             ->end();
     }
 
