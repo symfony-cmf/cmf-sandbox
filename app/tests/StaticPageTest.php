@@ -18,7 +18,7 @@ class StaticPageTest extends WebTestCase
      */
     public function testContent($url, $title)
     {
-    	$client = $this->createClient();
+        $client = $this->createClient();
 
         $crawler = $client->request('GET', $url);
 
@@ -29,18 +29,18 @@ class StaticPageTest extends WebTestCase
 
     public function contentDataProvider()
     {
-    	return array(
-    		array('/en/projects', 'The projects'),
-    		array('/en/projects/cmf', 'Content Management Framework'),
-    		array('/en/company', 'The Company'),
-    		array('/en/company/team', 'The Team'),
-    		array('/en/company/more', 'More Information'),
-    		array('/demo', 'Routing demo'),
-    		array('/demo/controller', 'Explicit Controller'),
-    		array('/demo/atemplate', 'Explicit template'),
-    		array('/demo/alias', 'Controller by alias'),
-    		array('/demo/class', 'Controller by class'),
-    		array('/hello', 'Hello World!')
-    	);
+        return array(
+            array('/en/projects', 'The projects'),
+            array('/en/projects/cmf', 'Content Management Framework'),
+            array('/en/company', 'The Company'),
+            array('/en/company/team', 'The Team'),
+            array('/en/company/more', 'More Information'),
+            array('/demo', 'Routing demo'),
+            array('/demo/controller', 'Explicit Controller'),
+            array('/demo/atemplate', 'Explicit template'),
+            array('/demo/alias', 'Controller by alias'),
+            array('/demo/class', 'Controller by class'),
+            array('/hello', 'Hello World!')
+        );
     }
 }
