@@ -40,15 +40,15 @@ You can also use a different PHPCR implementation but this is what is most teste
 
 ## Prepare the phpcr repository
 
-Once your repository is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
-
-    app/console doctrine:phpcr:register-system-node-types
-
-Next you need to create a workspace that will hold the data for the sandbox.
+First you need to create a workspace that will hold the data for the sandbox.
 The default parameters.yml defines the workspace to be 'sandbox'. You can
 change this of course. If you do, also adjust the following command.
 
     app/console doctrine:phpcr:workspace:create sandbox
+
+Once your workspace is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
+
+    app/console doctrine:phpcr:register-system-node-types
 
 
 ## Import the fixtures
