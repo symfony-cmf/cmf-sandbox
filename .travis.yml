@@ -1,0 +1,17 @@
+language: php
+
+php:
+  - 5.3
+  - 5.4
+
+before_script:
+  - cp app/config/parameters.yml.dist app/config/parameters.yml
+  - php bin/vendors install
+  - ./vendor/jackalope-jackrabbit/bin/jackrabbit.sh
+  - php app/console doctrine:phpcr:workspace:create sandbox
+  - app/console doctrine:phpcr:register-system-node-types
+
+after_script:
+  - ./jack stop
+
+script: phpunit -c app
