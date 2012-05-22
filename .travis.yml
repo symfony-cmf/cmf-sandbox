@@ -15,3 +15,7 @@ after_script:
   - ./jack stop
 
 script: phpunit -c app
+
+notifications:
+  irc: "irc.freenode.org#symfony-cmf"
+  email: "symfony-cmf-devs@googlegroups.com"
