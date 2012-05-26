@@ -40,7 +40,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         $this->createPath($base_path);
 
         // REMEMBER: all menu items must be named -item !
-        $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Acceuil'), $this->dm->find(null, "$content_path/home"));
+        $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil'), $this->dm->find(null, "$content_path/home"));
         $menuitem->setChildrenAttributes(array("class" => "menu_main"));
 
         $this->createMenuItem("$base_path/main/admin-item", 'Adminitem', 'Admin', null, null, 'sonata_admin_dashboard');
