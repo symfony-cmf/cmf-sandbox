@@ -1,7 +1,5 @@
 body {
-    background-color: #ccc;
 }
-
 
 .container {
     margin-top: 2em;
@@ -14,11 +12,25 @@ a, a:visited {
     text-decoration:none;
 }
 
+.hero-unit {
+    padding: 0;
+    background: none;
+}
+
+hr {
+    border-color: #aaa;
+}
+
 .boxed {
     border-radius:4px;
 }
 
-#top {
+#top li {
+    display: inline;
+}
+
+#top li.selected a {
+    color: #333;
 }
 
 #banner {
@@ -27,6 +39,7 @@ a, a:visited {
 
 #banner .hero-unit {
     background-color: #a3ca5f;
+    padding: 2em;
     margin-bottom: .5em;
 }
 
@@ -35,12 +48,22 @@ a, a:visited {
     text-decoration: none;
 }
 
+#language_selector {
+    margin-right: 2em;
+    text-align: right;
+}
+
+#language_selector li span {
+    display: none;
+}
+
 #breadcrumb .breadcrumb {
     border: none;
     background-color: #4b4b4b;
     background-image: none;
     box-shadow: none;
     margin-bottom: .5em;
+    padding-left: 2em;
 }
 
 #breadcrumb .breadcrumb li {
@@ -56,19 +79,7 @@ a, a:visited {
     color: #ccc;
 }
 
-#top li {
-    display: inline;
-}
-
-#top li.selected a {
-    color: #333;
-}
-
-#language_selector {
-}
-
-#language_selector li span {
-    display: none;
+#navigation .well {
 }
 
 #content-container {
@@ -85,17 +96,13 @@ a, a:visited {
 }
 
 .articleContainer > * {
-    margin-right: 2em;
-}
-
-.articleContainer p:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
 }
 
 #footer {
     margin-top: 1em;
+}
+
+#footer p {
+    margin-right: 2em;
+    text-align: right;
 }

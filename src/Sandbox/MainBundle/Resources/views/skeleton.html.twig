@@ -87,9 +87,11 @@
                 <div id="content-container" class="span12 boxed">
                     <div  class="row">
                             <div id="navigation" class="span3">
-                                {% block navigation %}
-                                    {{ knp_menu_render('main') }}
-                                {% endblock %}
+                                <div class="well">
+                                    {% block navigation %}
+                                        {{ knp_menu_render('main') }}
+                                    {% endblock %}
+                                </div>
                             </div>
 
                             <div class="span9">
@@ -110,6 +112,8 @@
                         </div>
                     </div>
             </div>
+
+            <hr/>
 
             <div id="footer" class="row">
                 <div class="span12">
