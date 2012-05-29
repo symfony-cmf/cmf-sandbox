@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}{{ title }} | CMF Sandbox{% endblock %}</title>
 
         {% block includes %}
-            {% stylesheets '@SandboxMainBundle/Resources/public/css/style.css' %}
-                <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+            {% stylesheets
+                '@SandboxMainBundle/Resources/public/bootstrap/css/bootstrap.min.css'
+                '@SandboxMainBundle/Resources/public/bootstrap/css/bootstrap-responsive.min.css'
+                '@SandboxMainBundle/Resources/public/css/style.css'
+            %}
+
+            <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+
+            <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
             {% endstylesheets %}
 
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
@@ -26,54 +37,90 @@
         {% endblock %}
     </head>
     <body>
-        <a href="https://github.com/symfony-cmf/cmf-sandbox"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
-        <div id="header">
-            {% block header %}
-                {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-                    <div id="userBar">
-                        <div class="inner"><button class="saveButton">Saved</button></div>
+        {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+            <div id="userBar">
+                <div class="inner"><button class="saveButton">Saved</button></div>
+            </div>
+        {% endif %}
+
+        <div class="container">
+
+            <div id="top" class="row">
+                <div id="banner" class="span12">
+                    <ul id="skiplinks" class="pull-left hidden-desktop">
+                        <li><a href="#content" title="Go to main content">content</a></li>
+                        <li><a href="#navigation" title="go to navigation">navigation</a></li>
+                    </ul>
+                    <div id="language_selector" class="pull-right">
+                        {% block language_selector %}
+                            {% if page is defined %}
+                                {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"id" : page.path, "languageUrls": languageUrls|default(false) } %}
+                            {% endif %}
+                        {% endblock %}
                     </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="banner" class="span12">
+                    <a href="https://github.com/symfony-cmf/cmf-sandbox"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
+                    <div class="hero-unit">
+                        <h1 id="logo-text"><a href="{{ asset('') }}">CMF Sandbox</a></h1>
+                        <p id="slogan">Symfony2 Content Management Framework</p>
+                    </div>
+                </div>
+                {% set currentItem = knp_menu_get('main').currentItem %}
+                {% if currentItem %}
+                <div id="breadcrumb" class="span12">
+                    <ul class="breadcrumb boxed">
+                        {% for title, url in currentItem.breadcrumbsArray %}
+                            <li><a href="{{url}}">{{ title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
                 {% endif %}
-                <ul id="skiplinks">
-                    <li><a href="#main">Go to main content</a></li>
-                    <li><a href="#navigation">Go to main navigation</a></li>
-                </ul>
 
-                <h1 id="logo-text"><a href="{{ asset('') }}">CMF Sandbox</a></h1>
-                <p id="slogan">Symfony2 Content Management Framework</p>
-            {% endblock %}
-            <div id="language_selector">
-                {% block language_selector %}
-                    {% if page is defined %}
-                        {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"id" : page.path, "languageUrls": languageUrls|default(false) } %}
-                    {% endif %}
-                {% endblock %}
             </div>
-        </div>
-        <div id="navigation">
-            {% block navigation %}
-                {% include "SymfonyCmfCoreBundle:Default:navigation.html.twig" %}
-            {% endblock %}
-        </div>
-        <div id="content">
-            <div class="inner">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div>
 
-        <div id="content_extra">
-            <div class="inner">
-                {% block content_extra %}
-                {% endblock %}
-            </div>
-        </div>
 
-        <div id="footer">
-            <div class="inner">
+            <div  class="row">
+                <div id="content-container" class="span12 boxed">
+                    <div  class="row">
+                            <div id="navigation" class="span3">
+                                <div class="well">
+                                    {% block navigation %}
+                                        <h2>Navigation</h2>
+                                        {{ knp_menu_render('main') }}
+                                    {% endblock %}
+                                </div>
+                            </div>
+                            <div class="span9">
+                                <div id="content">
+                                    <div class="inner">
+                                        {% block content %}
+                                        {% endblock %}
+                                    </div>
+                                </div>
+
+                                <div id="content_extra">
+                                    <div class="inner">
+                                        {% block content_extra %}
+                                        {% endblock %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <hr/>
+
+            <div id="footer" class="row">
+                <div class="span12">
                 {% block footer %}
-                    {% include "SymfonyCmfCoreBundle:Default:footer.html.twig" %}
+                    <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a></p>
                 {% endblock %}
+                </div>
             </div>
         </div>
 

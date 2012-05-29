@@ -2,16 +2,12 @@
 
 {% block content %}
 
-{{ sonata_block_render({
-    'name': 'additionalInfoBlock'
-}) }}
-
 <div xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
      typeof="sioc:Post"
      about="{{ page.path }}"
-     class="articleContainer">
+     class="articleContainer hero-unit">
 
-    <ul rel="dc:subject" property="dc:subject">
+    <ul rel="dc:subject" property="dc:subject" class="tags">
         {% for subject in page.tags %}
         <li about="{{ subject|replace({'<': '', '>': ''}) }}"></li>
         {% endfor %}
@@ -21,6 +17,17 @@
         {{ page.content|raw }}
     </div>
 </div>
+
+<hr/>
+
+<div class="row">
+{{ sonata_block_render({
+    'name': 'additionalInfoBlock'
+}) }}
+</div>
+
+<hr/>
+
 {{ parent() }}
 {% endblock %}
 
