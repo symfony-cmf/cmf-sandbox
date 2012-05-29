@@ -1,6 +1,3 @@
-body {
-}
-
 .container {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -10,6 +7,10 @@ a, a:visited {
     background:inherit;
     color:#79A325;
     text-decoration:none;
+}
+
+a:hover {
+    color:#79A325;
 }
 
 .hero-unit {
@@ -25,11 +26,15 @@ hr {
     border-radius:4px;
 }
 
+#skiplinks {
+    margin-left: .5em;
+}
+
 #top li {
     display: inline;
 }
 
-#top li.selected a {
+#top .selected a {
     color: #333;
 }
 
@@ -43,14 +48,18 @@ hr {
     margin-bottom: .5em;
 }
 
-#logo-text a{
+#logo-text a {
     color: #fff;
     text-decoration: none;
 }
 
 #language_selector {
-    margin-right: 2em;
+    margin-right: 1em;
     text-align: right;
+}
+
+#top a {
+    padding: .5em;
 }
 
 #language_selector li span {
@@ -64,6 +73,7 @@ hr {
     box-shadow: none;
     margin-bottom: .5em;
     padding-left: 2em;
+    filter: none;
 }
 
 #breadcrumb .breadcrumb li {
@@ -75,11 +85,38 @@ hr {
 }
 
 #breadcrumb .breadcrumb li:after {
-    content: " :";
+    content: " /";
     color: #ccc;
 }
 
-#navigation .well {
+#breadcrumb .breadcrumb li:last-child:after {
+    content: none;
+}
+
+#navigation ul {
+    padding: .5em 0;
+}
+
+#navigation ul.menu_main {
+    margin: 0;
+}
+
+#navigation li {
+    list-style-type: none;
+    padding: .5em 0;
+}
+
+#navigation li:before {
+    content: "/ ";
+    color: #ccc;
+}
+
+#navigation li a {
+    padding: .5em 0;
+}
+
+#navigation .current a {
+    color: #4b4b4b;
 }
 
 #content-container {
@@ -89,6 +126,14 @@ hr {
 
 #content, #content_extra {
     position: relative;
+}
+
+#content-container h1 {
+    line-height: 1.5em;
+}
+
+#content-container h2 {
+    line-height: 1.3em;
 }
 
 .articleContainer {
@@ -105,4 +150,29 @@ hr {
 #footer p {
     margin-right: 2em;
     text-align: right;
+}
+
+@media (max-width: 767px) {
+
+    #banner .hero-unit h1 {
+        font-size: 48px;
+    }
+
+    #banner img {
+        height: 60%;
+    }
+
+    #content-container {
+        padding: 0;
+    }
+
+    #content {
+        margin-top: 3em;
+    }
+
+    #navigation .well {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}{{ title }} | CMF Sandbox{% endblock %}</title>
 
@@ -48,8 +48,8 @@
             <div id="top" class="row">
                 <div id="banner" class="span12">
                     <ul id="skiplinks" class="pull-left hidden-desktop">
-                        <li><a href="#main">Go to main content</a></li>
-                        <li><a href="#navigation">Go to main navigation</a></li>
+                        <li><a href="#content" title="Go to main content">content</a></li>
+                        <li><a href="#navigation" title="go to navigation">navigation</a></li>
                     </ul>
                     <div id="language_selector" class="pull-right">
                         {% block language_selector %}
@@ -89,11 +89,11 @@
                             <div id="navigation" class="span3">
                                 <div class="well">
                                     {% block navigation %}
+                                        <h2>Navigation</h2>
                                         {{ knp_menu_render('main') }}
                                     {% endblock %}
                                 </div>
                             </div>
-
                             <div class="span9">
                                 <div id="content">
                                     <div class="inner">
