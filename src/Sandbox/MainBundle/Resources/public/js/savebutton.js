@@ -6,19 +6,26 @@ jQuery(document).ready(function($) {
             case 'savenow':
                 $('.saveButton').html("Save now");
                 $('.saveButton').addClass('saveButtonActive');
+                $('.saveButton').bind('click', onClickButton);
             break;
 
             case 'saved':
                 $('.saveButton').html("Saved");
                 $('.saveButton').removeClass('saveButtonActive saveButtonSaving');
+                $('.saveButton').unbind('click', onClickButton);
             break;
 
             case 'saving':
                 $('.saveButton').html("Saving...");
                 $('.saveButton').removeClass('saveButtonActive');
                 $('.saveButton').addClass('saveButtonSaving');
+                $('.saveButton').unbind('click', onClickButton);
             break;
         }
+    }
+
+    function onClickButton(event) {
+        $('#halloOverlay').trigger('click');
     }
 
     function doUpdateButton(event) {
