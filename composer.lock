@@ -1,0 +1,243 @@
+{
+    "hash": "421ced3a5e1862f5523dfb7e95164715",
+    "packages": [
+        {
+            "package": "doctrine/common",
+            "version": "2.2.x-dev",
+            "source-reference": "1e0aa60d109c630d19543d999f12e2852ef8f932"
+        },
+        {
+            "package": "doctrine/data-fixtures",
+            "version": "dev-master",
+            "source-reference": "f201391349f3dc6bd9c9c698927ea7c78104c461"
+        },
+        {
+            "package": "doctrine/dbal",
+            "version": "2.2.0-RC3"
+        },
+        {
+            "package": "doctrine/doctrine-bundle",
+            "version": "dev-master",
+            "source-reference": "eb1f6599fa11feda724f0319cb177b17e876588a"
+        },
+        {
+            "package": "doctrine/phpcr-bundle",
+            "version": "dev-master",
+            "source-reference": "e1880493c87d84459eb1710ee8a7b62e5b54e449"
+        },
+        {
+            "package": "doctrine/phpcr-odm",
+            "version": "dev-master",
+            "source-reference": "ac609c5566c5fd99487f7597e25642aa40f19a0f"
+        },
+        {
+            "package": "friendsofsymfony/jsrouting-bundle",
+            "version": "dev-master",
+            "source-reference": "c2e24804dd47e0473b25e4685c41f28e403c4cc8"
+        },
+        {
+            "package": "friendsofsymfony/rest",
+            "version": "dev-master",
+            "source-reference": "d9f772ddb9bb4fd0d952fa45cf0e5e76510b111c"
+        },
+        {
+            "package": "friendsofsymfony/rest-bundle",
+            "version": "dev-master",
+            "source-reference": "67158a05a76c469eef49f66dd22806465f03629f"
+        },
+        {
+            "package": "jackalope/jackalope",
+            "version": "dev-master",
+            "source-reference": "efe994e0b51bef6c928681a4ef14760c1b74e72f"
+        },
+        {
+            "package": "jackalope/jackalope-doctrine-dbal",
+            "version": "dev-master",
+            "source-reference": "aa179843570a0a7d2f68a1b8a490455d19a9e0c4"
+        },
+        {
+            "package": "jackalope/jackalope-jackrabbit",
+            "version": "dev-master",
+            "source-reference": "c49386cccbe9660f6a894b86ac0cd85821cd3d1c"
+        },
+        {
+            "package": "jms/metadata",
+            "version": "dev-master",
+            "source-reference": "95bfbfbcbe573ff9ed5fd33fa39cdfe0da27220d"
+        },
+        {
+            "package": "jms/serializer-bundle",
+            "version": "dev-master",
+            "source-reference": "4ce47e7ce898d6a431433c33e194d3fed7244bd1"
+        },
+        {
+            "package": "jms/translation-bundle",
+            "version": "dev-master",
+            "source-reference": "a08ff9d59917363d8efc39ba2a21f5bf458b18b3"
+        },
+        {
+            "package": "knplabs/knp-menu",
+            "version": "1.1.x-dev",
+            "source-reference": "v1.1.1"
+        },
+        {
+            "package": "knplabs/knp-menu-bundle",
+            "version": "dev-master",
+            "source-reference": "v1.1.0"
+        },
+        {
+            "package": "kriswallsmith/assetic",
+            "version": "dev-master",
+            "source-reference": "1a1b5f963db158a1065343fab617d25ce351a2dc"
+        },
+        {
+            "package": "liip/functional-test-bundle",
+            "version": "dev-master",
+            "source-reference": "2bbd138750f5b388825354ab101a05c12e3341bb"
+        },
+        {
+            "package": "liip/vie-bundle",
+            "version": "dev-master",
+            "source-reference": "4173c582c135552dafaf44b8ecacd95d8360955c"
+        },
+        {
+            "package": "monolog/monolog",
+            "version": "1.1.0"
+        },
+        {
+            "package": "nikic/php-parser",
+            "version": "v0.9.1"
+        },
+        {
+            "package": "phpcr/phpcr",
+            "version": "dev-master",
+            "source-reference": "6a20a76cfcaefc02acb4cba63bbcf6d10b297b4b"
+        },
+        {
+            "package": "phpcr/phpcr-utils",
+            "version": "dev-master",
+            "source-reference": "fbdf242accfcb91a5ffe001266797cf0a45d44f7"
+        },
+        {
+            "package": "sensio/distribution-bundle",
+            "version": "dev-master",
+            "source-reference": "eb60726639fa65f42dbd08557b727114631a37d0"
+        },
+        {
+            "package": "sensio/framework-extra-bundle",
+            "version": "dev-master",
+            "source-reference": "ab3130462a01437f4f748a778100e010c6d91ed3"
+        },
+        {
+            "package": "sonata-project/admin-bundle",
+            "version": "dev-master",
+            "source-reference": "b89665e25b669164ce9d02b0cf5b3134b2050309"
+        },
+        {
+            "package": "sonata-project/block-bundle",
+            "version": "dev-master",
+            "source-reference": "8609f372f02726460309a69b281152c56e9af8b9"
+        },
+        {
+            "package": "sonata-project/cache-bundle",
+            "version": "dev-master",
+            "source-reference": "5b966e7350636750df7e45920acb30946415ba6d"
+        },
+        {
+            "package": "sonata-project/doctrine-phpcr-admin-bundle",
+            "version": "dev-master",
+            "source-reference": "380aa1bd21ea5bdbb0918138c97acfcac93596cd"
+        },
+        {
+            "package": "sonata-project/exporter",
+            "version": "dev-master",
+            "source-reference": "be2921f67b291a22186164af27a3aab9a577db17"
+        },
+        {
+            "package": "sonata-project/jquery-bundle",
+            "version": "dev-master",
+            "source-reference": "01ffb8d1a7a4bb3971aed003e4f1ef050a0701aa"
+        },
+        {
+            "package": "symfony-cmf/block-bundle",
+            "version": "dev-master",
+            "source-reference": "a296e58cd75dded54b8160a3f58c85bdaaee1f78"
+        },
+        {
+            "package": "symfony-cmf/content-bundle",
+            "version": "dev-master",
+            "source-reference": "5e788000b5579301c5da0ad67f5655b30744088d"
+        },
+        {
+            "package": "symfony-cmf/core-bundle",
+            "version": "dev-master",
+            "source-reference": "29d2cb99fdacb8f75acebba115fb2c16af993b5e"
+        },
+        {
+            "package": "symfony-cmf/menu-bundle",
+            "version": "dev-master",
+            "source-reference": "13f71c8de63f6d34bde6ddc594e4a5050931e8b2"
+        },
+        {
+            "package": "symfony-cmf/multilang-content-bundle",
+            "version": "dev-master",
+            "source-reference": "812c22060c008f3ee438fa17393a7c91800d7915"
+        },
+        {
+            "package": "symfony-cmf/phpcr-browser-bundle",
+            "version": "dev-master",
+            "source-reference": "19864db49e55be5951e1b099821ee1cd9784c500"
+        },
+        {
+            "package": "symfony-cmf/routing",
+            "version": "dev-master",
+            "source-reference": "d03c7937fa717837d791b219d65137be052b407f"
+        },
+        {
+            "package": "symfony-cmf/routing-extra-bundle",
+            "version": "dev-master",
+            "source-reference": "aefae399167dc5bf8c61bf3c35ebca0a56d75911"
+        },
+        {
+            "package": "symfony-cmf/symfony-cmf",
+            "version": "dev-master",
+            "source-reference": "4990452baf780a32e1eccaaef2c4604ebc9ebde8"
+        },
+        {
+            "package": "symfony-cmf/tree-bundle",
+            "version": "dev-master",
+            "source-reference": "8f20037873a625e8deb73e4b4931a4734a854924"
+        },
+        {
+            "package": "symfony/assetic-bundle",
+            "version": "dev-master",
+            "source-reference": "61c9f363e73b4ecbb72f81eb62675260a1132048"
+        },
+        {
+            "package": "symfony/monolog-bundle",
+            "version": "dev-master",
+            "source-reference": "4d5a969dc5b34c8b0cea3521ce7fbb43b965af3f"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "e351c9f0a88c1ffbee3235ee8c132ee043e42984",
+            "alias": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "twig/extensions",
+            "version": "dev-master",
+            "source-reference": "446d870272cd87a720e95242eade38a2acf56eaa"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "875fa010ce597edf97c04ce6490be950068e9372",
+            "alias": "1.8.9999999.9999999-dev"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ]
+}
