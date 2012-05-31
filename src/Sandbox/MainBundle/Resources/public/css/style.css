@@ -152,6 +152,20 @@ hr {
     text-align: right;
 }
 
+#menu-service li {
+    display: inline;
+}
+
+#menu-service li:after {
+    content: " |";
+    color: #ccc;
+}
+
+#menu-service li:last-child:after {
+    content: none;
+}
+
+
 @media (max-width: 767px) {
 
     #banner .hero-unit h1 {

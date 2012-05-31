@@ -26,6 +26,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\TreeBundle\SymfonyCmfTreeBundle(),
             new Symfony\Cmf\Bundle\PHPCRBrowserBundle\SymfonyCmfPHPCRBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\SymfonyCmfBlockBundle(),
+            new Symfony\Cmf\Bundle\SimpleCmsBundle\SymfonyCmfSimpleCmsBundle(),
 
             new Liip\VieBundle\LiipVieBundle(),
             new FOS\RestBundle\FOSRestBundle(),

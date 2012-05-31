@@ -91,6 +91,11 @@ symfony_cmf_routing_extra:
         templates_by_class:
             Sandbox\MainBundle\Document\EditableStaticContent: SandboxMainBundle:EditableStaticContent:index.html.twig
 
+symfony_cmf_simple_cms:
+    routing:
+        templates_by_class:
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  SymfonyCmfSimpleCmsBundle:Page:index.html.twig
+
 knp_menu:
     twig: true
 
