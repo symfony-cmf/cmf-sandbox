@@ -1,0 +1,41 @@
+{
+    "name": "symfony-cmf/sandbox",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/symfony": "2.1.*",
+        "twig/extensions": "dev-master",
+        "symfony/assetic-bundle": "dev-master",
+        "symfony/monolog-bundle": "dev-master",
+        "sensio/distribution-bundle": "dev-master",
+        "symfony-cmf/symfony-cmf": "dev-master",
+        "jackalope/jackalope-jackrabbit": "dev-master",
+        "jackalope/jackalope-doctrine-dbal": "dev-master",
+        "doctrine/doctrine-bundle": "dev-master",
+        "doctrine/data-fixtures": "dev-master",
+        "liip/vie-bundle": "dev-master",
+        "liip/functional-test-bundle": "dev-master",
+        "sonata-project/doctrine-phpcr-admin-bundle": "dev-master"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Liip\\VieBundle\\Composer\\ScriptHandler::initSubmodules",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ],
+        "post-update-cmd": [
+            "Liip\\VieBundle\\Composer\\ScriptHandler::initSubmodules",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web"
+    }
+}
