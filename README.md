@@ -18,14 +18,13 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * phpunit 3.5+ (optional)
   * composer
 
-    curl -s http://getcomposer.org/installer | php --
-
 ## Get the code
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
     # copy parameters template and edit as needed
     cp app/config/parameters.yml.dist app/config/parameters.yml
+    curl -s http://getcomposer.org/installer | php --
     php composer.phar install --dev
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
