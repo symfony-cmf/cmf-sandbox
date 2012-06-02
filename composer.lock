@@ -1,5 +1,5 @@
 {
-    "hash": "874eaeaf53bebbda39bc0e2965f812c9",
+    "hash": "e53ec94c4644cbdc2f44937f0e9f9cb9",
     "packages": [
         {
             "package": "doctrine/common",
@@ -18,7 +18,12 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "source-reference": "eb1f6599fa11feda724f0319cb177b17e876588a"
+            "source-reference": "f100a7727b89ab5519ed68a72d29e75eb2c85d8b"
+        },
+        {
+            "package": "doctrine/doctrine-fixtures-bundle",
+            "version": "dev-master",
+            "source-reference": "33b267d3068d6c2f8daa0b417285cf76e7f82fc4"
         },
         {
             "package": "doctrine/phpcr-bundle",
@@ -48,12 +53,12 @@
         {
             "package": "jackalope/jackalope",
             "version": "dev-master",
-            "source-reference": "efe994e0b51bef6c928681a4ef14760c1b74e72f"
+            "source-reference": "a26d07c7f6e73e5abdf1a7171744713d190808c3"
         },
         {
             "package": "jackalope/jackalope-doctrine-dbal",
             "version": "dev-master",
-            "source-reference": "b32d0fc7d43e4ff4c72288a336e0972367ac86d1"
+            "source-reference": "3f50315a6c6431573450fde434f493bf5a3ee809"
         },
         {
             "package": "jackalope/jackalope-jackrabbit",
@@ -73,7 +78,7 @@
         {
             "package": "jms/translation-bundle",
             "version": "dev-master",
-            "source-reference": "a08ff9d59917363d8efc39ba2a21f5bf458b18b3"
+            "source-reference": "019f1032846abec955ef1d2dc2623ecc30477ae3"
         },
         {
             "package": "knplabs/knp-menu",
@@ -87,13 +92,13 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "alias-pretty-version": "1.1.x-dev",
-            "alias-version": "1.1.9999999.9999999-dev"
+            "source-reference": "8c76115503d23340e19b5cf6aa95f86663f7185f"
         },
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "1a1b5f963db158a1065343fab617d25ce351a2dc"
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "liip/functional-test-bundle",
@@ -151,7 +156,7 @@
         {
             "package": "sonata-project/doctrine-phpcr-admin-bundle",
             "version": "dev-master",
-            "source-reference": "e2fb534c667a58e2647621aadba77c1c0501cab9"
+            "source-reference": "12605cf4fbbf93e915b5012408b9322cb3ba3f83"
         },
         {
             "package": "sonata-project/exporter",
@@ -171,7 +176,7 @@
         {
             "package": "symfony-cmf/content-bundle",
             "version": "dev-master",
-            "source-reference": "13cb0397949e5d8db582b252579dc6738af12a74"
+            "source-reference": "e296fec149de1e928242c131de095343773a2956"
         },
         {
             "package": "symfony-cmf/core-bundle",
@@ -196,7 +201,7 @@
         {
             "package": "symfony-cmf/routing",
             "version": "dev-master",
-            "source-reference": "f3b70f87a15b4012d1f080944854acfd7762bf8c"
+            "source-reference": "41b8bf5be621bb53a3ed45aa4acbed915668f073"
         },
         {
             "package": "symfony-cmf/routing-extra-bundle",
@@ -226,7 +231,7 @@
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "source-reference": "4d5a969dc5b34c8b0cea3521ce7fbb43b965af3f"
+            "source-reference": "1231105826078c117e07e57d7f658141d6147d35"
         },
         {
             "package": "symfony/symfony",
@@ -237,7 +242,7 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e351c9f0a88c1ffbee3235ee8c132ee043e42984"
+            "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
         },
         {
             "package": "twig/extensions",
@@ -247,18 +252,16 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "alias-pretty-version": "1.8.x-dev",
-            "alias-version": "1.8.9999999.9999999-dev"
+            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         }
     ],
-    "packages-dev": [
-
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
@@ -274,6 +277,7 @@
         "jackalope/jackalope-doctrine-dbal": 20,
         "doctrine/doctrine-bundle": 20,
         "doctrine/data-fixtures": 20,
+        "doctrine/doctrine-fixtures-bundle": 20,
         "liip/vie-bundle": 20,
         "liip/functional-test-bundle": 20,
         "sonata-project/doctrine-phpcr-admin-bundle": 20

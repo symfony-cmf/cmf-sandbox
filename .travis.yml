@@ -6,13 +6,11 @@ php:
 
 before_script:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
-  - php bin/vendors install
-  - ./vendor/jackalope-jackrabbit/bin/jackrabbit.sh
-  - php app/console doctrine:phpcr:workspace:create sandbox
-  - app/console doctrine:phpcr:register-system-node-types
-
-after_script:
-  - ./jack stop
+  - curl -s http://getcomposer.org/installer | php --
+  - php composer.phar install --dev
+  - ./vendor/jackalope/jackalope-jackrabbit/bin/jackrabbit.sh
+  - php app/console doctrine:phpcr:workspace:create sandbox_test -e=test
+  - app/console doctrine:phpcr:register-system-node-types -e=test
 
 script: phpunit -c app
 
