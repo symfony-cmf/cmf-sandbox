@@ -9,8 +9,8 @@ before_script:
   - curl -s http://getcomposer.org/installer | php --
   - php composer.phar install --dev
   - ./vendor/jackalope/jackalope-jackrabbit/bin/jackrabbit.sh
-  - php app/console doctrine:phpcr:workspace:create sandbox_test
-  - app/console doctrine:phpcr:register-system-node-types
+  - php app/console doctrine:phpcr:workspace:create sandbox_test -e=test
+  - app/console doctrine:phpcr:register-system-node-types -e=test
 
 script: phpunit -c app
 
