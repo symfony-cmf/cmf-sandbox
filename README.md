@@ -134,9 +134,8 @@ At the moment there is no notion of parents and sons in the admin bundle.
 
 ## Run the test suite
 
-Tests are written with PHPUnit.
+Functional tests are written with PHPUnit. Note that Bundles and Components are tested independently.
 
-TESTS ARE CURRENTLY BROKEN
-
+    app/console doctrine:phpcr:workspace:create sandbox
     phpunit -c app
 
