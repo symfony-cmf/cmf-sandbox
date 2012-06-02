@@ -176,7 +176,7 @@
         {
             "package": "symfony-cmf/content-bundle",
             "version": "dev-master",
-            "source-reference": "13cb0397949e5d8db582b252579dc6738af12a74"
+            "source-reference": "e296fec149de1e928242c131de095343773a2956"
         },
         {
             "package": "symfony-cmf/core-bundle",
@@ -201,7 +201,7 @@
         {
             "package": "symfony-cmf/routing",
             "version": "dev-master",
-            "source-reference": "5e21514cebec8a13311eaebfad189fa40e76267e"
+            "source-reference": "41b8bf5be621bb53a3ed45aa4acbed915668f073"
         },
         {
             "package": "symfony-cmf/routing-extra-bundle",
@@ -236,13 +236,13 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
         },
         {
             "package": "twig/extensions",
@@ -252,13 +252,13 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "alias-pretty-version": "1.8.x-dev",
-            "alias-version": "1.8.9999999.9999999-dev"
+            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         }
     ],
     "packages-dev": null,
