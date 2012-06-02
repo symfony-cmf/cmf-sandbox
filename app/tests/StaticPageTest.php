@@ -7,10 +7,11 @@ class StaticPageTest extends WebTestCase
     public function setUp()
     {
         $this->loadFixtures(array(
-                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
-                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
-                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
-            ), null, 'doctrine_phpcr');
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
+        ), null, 'doctrine_phpcr');
     }
 
     /**

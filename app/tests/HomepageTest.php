@@ -9,10 +9,11 @@ class HomepageTest extends WebTestCase
     public function setUp()
     {
         $this->loadFixtures(array(
-                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
-                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
-                'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
-            ), null, 'doctrine_phpcr');
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
+        ), null, 'doctrine_phpcr');
     }
 
     public function testRedirectToDefaultLanguage()
@@ -38,7 +39,7 @@ class HomepageTest extends WebTestCase
 
         $this->assertCount(3, $crawler->filter('.symfony_cmf-block'));
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
-        $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the symfony cmf Demo")'));
+        $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the Symfony CMF Demo")'));
         $this->assertCount(13, $crawler->filter('ul.menu_main li'));
     }
 }
