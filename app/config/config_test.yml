@@ -1,6 +1,9 @@
 imports:
     - { resource: config_dev.yml }
 
+parameters:
+    phpcr_workspace: sandbox_test
+
 framework:
     test: ~
     session:
