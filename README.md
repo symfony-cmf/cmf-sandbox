@@ -146,3 +146,4 @@ Functional tests are written with PHPUnit. Note that Bundles and Components are 
     app/console doctrine:phpcr:workspace:create sandbox_test
     phpunit -c app
 
+[![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=master)](http://travis-ci.org/symfony-cmf/cmf-sandbox)
