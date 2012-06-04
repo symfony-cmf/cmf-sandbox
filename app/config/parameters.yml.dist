@@ -6,8 +6,10 @@ parameters:
     phpcr_backend:
         type: jackrabbit
         url: http://localhost:8080/server/
+        # Doctrine DBAL configs
         #type: doctrinedbal
         #connection: doctrine.dbal.default_connection
+        # Midgard2 configs
         #type: midgard2
         #dbtype: SQLite
         #dbname: cmf
@@ -15,8 +17,12 @@ parameters:
         #dbinit: true
         #blobdir: /tmp/cmf-blobs
     phpcr_workspace: sandbox
+    # With Midgard2, use
+    # phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: admin
+    # With Midgard2, use
+    # phpcr_pass: password
 
     liip_vie.use_coffee: false
     # a little hack to avoid errors on missing node/coffescript.
