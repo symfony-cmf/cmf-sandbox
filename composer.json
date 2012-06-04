@@ -4,22 +4,22 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "php": ">=5.3.2",
+        "php": ">=5.3.3",
         "symfony/symfony": "2.1.*",
         "twig/extensions": "dev-master",
         "symfony/assetic-bundle": "dev-master",
         "symfony/monolog-bundle": "dev-master",
         "sensio/distribution-bundle": "dev-master",
-        "symfony-cmf/symfony-cmf": "dev-master",
-        "symfony-cmf/simple-cms-bundle": "dev-master",
-        "jackalope/jackalope-jackrabbit": "dev-master",
+        "symfony-cmf/symfony-cmf": "1.0.*",
+        "symfony-cmf/simple-cms-bundle": "1.0.*",
+        "jackalope/jackalope-jackrabbit": "1.0.*",
         "jackalope/jackalope-doctrine-dbal": "dev-master",
         "doctrine/doctrine-bundle": "dev-master",
         "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "liip/vie-bundle": "dev-master",
         "liip/functional-test-bundle": "dev-master",
-        "sonata-project/doctrine-phpcr-admin-bundle": "dev-master"
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
     },
     "suggest": {
         "midgard/phpcr": "dev-master"

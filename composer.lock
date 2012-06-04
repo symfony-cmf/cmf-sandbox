@@ -1,5 +1,5 @@
 {
-    "hash": "e53ec94c4644cbdc2f44937f0e9f9cb9",
+    "hash": "1aa53cb02236081163ed3df86018f235",
     "packages": [
         {
             "package": "doctrine/common",
@@ -28,12 +28,24 @@
         {
             "package": "doctrine/phpcr-bundle",
             "version": "dev-master",
-            "source-reference": "6a4222f9c9a08e271b5629be55b0cd4917d0a6b1"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "doctrine/phpcr-bundle",
+            "version": "dev-master",
+            "source-reference": "1.0.0-alpha2"
         },
         {
             "package": "doctrine/phpcr-odm",
             "version": "dev-master",
-            "source-reference": "c49cb3b0f632fc729a1b2ad842a99759c2669342"
+            "source-reference": "611f90f3b204512336638d436c5a645e74951b3b"
+        },
+        {
+            "package": "doctrine/phpcr-odm",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "friendsofsymfony/jsrouting-bundle",
@@ -53,7 +65,13 @@
         {
             "package": "jackalope/jackalope",
             "version": "dev-master",
-            "source-reference": "a26d07c7f6e73e5abdf1a7171744713d190808c3"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "jackalope/jackalope",
+            "version": "dev-master",
+            "source-reference": "7d2cd7ba0532c60576886d5be543ba31ec8a1ff7"
         },
         {
             "package": "jackalope/jackalope-doctrine-dbal",
@@ -63,7 +81,13 @@
         {
             "package": "jackalope/jackalope-jackrabbit",
             "version": "dev-master",
-            "source-reference": "b6fb429576b930370e0572621a03d0cb462b6840"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "jackalope/jackalope-jackrabbit",
+            "version": "dev-master",
+            "source-reference": "1.0.0-beta1"
         },
         {
             "package": "jms/metadata",
@@ -92,13 +116,13 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "8c76115503d23340e19b5cf6aa95f86663f7185f"
+            "alias-pretty-version": "1.1.x-dev",
+            "alias-version": "1.1.9999999.9999999-dev"
         },
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "alias-pretty-version": "1.1.x-dev",
-            "alias-version": "1.1.9999999.9999999-dev"
+            "source-reference": "8c76115503d23340e19b5cf6aa95f86663f7185f"
         },
         {
             "package": "liip/functional-test-bundle",
@@ -121,12 +145,24 @@
         {
             "package": "phpcr/phpcr",
             "version": "dev-master",
-            "source-reference": "5d87e37b497105249e7fbd2c27ad37856bb379aa"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "phpcr/phpcr",
+            "version": "dev-master",
+            "source-reference": "6dd015560dd19c229261f0ae2267457e525c6380"
         },
         {
             "package": "phpcr/phpcr-utils",
             "version": "dev-master",
-            "source-reference": "d81e729be37baba3ac2c775d595c897b93bc8b96"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "phpcr/phpcr-utils",
+            "version": "dev-master",
+            "source-reference": "e890289326ccbaacd11bb570792c0ac5d25856ff"
         },
         {
             "package": "sensio/distribution-bundle",
@@ -156,7 +192,13 @@
         {
             "package": "sonata-project/doctrine-phpcr-admin-bundle",
             "version": "dev-master",
-            "source-reference": "16fd594fd569f22a2c65ca23fba3152e50ec0a11"
+            "source-reference": "1.0.0-alpha1"
+        },
+        {
+            "package": "sonata-project/doctrine-phpcr-admin-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "sonata-project/exporter",
@@ -171,57 +213,123 @@
         {
             "package": "symfony-cmf/block-bundle",
             "version": "dev-master",
-            "source-reference": "a296e58cd75dded54b8160a3f58c85bdaaee1f78"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony-cmf/block-bundle",
+            "version": "dev-master",
+            "source-reference": "1.0.0-alpha1"
         },
         {
             "package": "symfony-cmf/content-bundle",
             "version": "dev-master",
-            "source-reference": "e296fec149de1e928242c131de095343773a2956"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony-cmf/content-bundle",
+            "version": "dev-master",
+            "source-reference": "1.0.0-alpha1"
         },
         {
             "package": "symfony-cmf/core-bundle",
             "version": "dev-master",
-            "source-reference": "29d2cb99fdacb8f75acebba115fb2c16af993b5e"
+            "source-reference": "213e449e13b589918c418afdeb6c47f99e34141a"
+        },
+        {
+            "package": "symfony-cmf/core-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "symfony-cmf/menu-bundle",
             "version": "dev-master",
-            "source-reference": "590ccea4c24cf4a083f1f9f487545149b024e73c"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony-cmf/menu-bundle",
+            "version": "dev-master",
+            "source-reference": "1.0.0-alpha1"
         },
         {
             "package": "symfony-cmf/multilang-content-bundle",
             "version": "dev-master",
-            "source-reference": "05dfb75234adf3cf7e98628c89c3cbddcfb3131d"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony-cmf/multilang-content-bundle",
+            "version": "dev-master",
+            "source-reference": "1.0.0-alpha1"
         },
         {
             "package": "symfony-cmf/routing",
             "version": "dev-master",
-            "source-reference": "99acca7ac8fb696d16ea307cab32010011920f75"
+            "source-reference": "1.0.0-alpha1"
+        },
+        {
+            "package": "symfony-cmf/routing",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "symfony-cmf/routing-extra-bundle",
             "version": "dev-master",
-            "source-reference": "5ce8864361f142f5555d2d0a0d5c70dff0ae02d4"
+            "source-reference": "1.0.0-alpha1"
+        },
+        {
+            "package": "symfony-cmf/routing-extra-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "symfony-cmf/simple-cms-bundle",
             "version": "dev-master",
-            "source-reference": "1aa9ecd1eeca1c0e318b83a7a75a90caea865be4"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony-cmf/simple-cms-bundle",
+            "version": "dev-master",
+            "source-reference": "1.0.0-alpha1"
         },
         {
             "package": "symfony-cmf/symfony-cmf",
             "version": "dev-master",
-            "source-reference": "856abd312be38a73c3be1936050733f8747215e2"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony-cmf/symfony-cmf",
+            "version": "dev-master",
+            "source-reference": "cc7f6b3b6f16c51e578d3463a0b98a9e8c12d4ef"
         },
         {
             "package": "symfony-cmf/tree-browser-bundle",
             "version": "dev-master",
-            "source-reference": "ecc2651064c98d5f0b8840a5d1fee4c704d89753"
+            "source-reference": "1.0.0-alpha1"
+        },
+        {
+            "package": "symfony-cmf/tree-browser-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "symfony-cmf/tree-bundle",
             "version": "dev-master",
-            "source-reference": "8f20037873a625e8deb73e4b4931a4734a854924"
+            "source-reference": "1.0.0-alpha1"
+        },
+        {
+            "package": "symfony-cmf/tree-bundle",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "symfony/assetic-bundle",
@@ -236,13 +344,13 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
         },
         {
             "package": "twig/extensions",
@@ -252,13 +360,13 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "alias-pretty-version": "1.8.x-dev",
-            "alias-version": "1.8.9999999.9999999-dev"
+            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         }
     ],
     "packages-dev": null,
@@ -271,15 +379,12 @@
         "symfony/assetic-bundle": 20,
         "symfony/monolog-bundle": 20,
         "sensio/distribution-bundle": 20,
-        "symfony-cmf/symfony-cmf": 20,
-        "symfony-cmf/simple-cms-bundle": 20,
-        "jackalope/jackalope-jackrabbit": 20,
         "jackalope/jackalope-doctrine-dbal": 20,
         "doctrine/doctrine-bundle": 20,
         "doctrine/data-fixtures": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "liip/vie-bundle": 20,
         "liip/functional-test-bundle": 20,
-        "sonata-project/doctrine-phpcr-admin-bundle": 20
+        "midgard/phpcr": 20
     }
 }
