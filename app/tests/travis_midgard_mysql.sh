@@ -12,7 +12,7 @@ mysql -e 'create database midgard2_test;'
 ./app/tests/travis_midgard_install.sh
 
 # Install with Composer
-php composer.phar install --dev
+php composer.phar update --dev
 
 # Ensure the database is properly created
 app/console doctrine:phpcr:register-system-node-types
