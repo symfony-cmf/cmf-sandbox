@@ -20,7 +20,7 @@ fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
 
 phpcrbrowser:
-    resource: @SymfonyCmfPHPCRBrowserBundle/Resources/config/routing.xml
+    resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/phpcrbrowser.xml
     prefix: /admin/browser
 
 test:

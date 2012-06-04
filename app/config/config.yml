@@ -113,7 +113,7 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts:   [admin]
-        symfony_cmf_phpcr_browser.tree_block:
+        sonata_admin_doctrine_phpcr.tree_block:
             contexts:   [admin]
 
 sonata_admin:
@@ -124,7 +124,7 @@ sonata_admin:
         blocks:
             # display a dashboard block
             - { position: right, type: sonata.admin.block.admin_list }
-            - { position: left, type: symfony_cmf_phpcr_browser.tree_block }
+            - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
 
 fos_js_routing:
     routes_to_expose:
@@ -143,11 +143,14 @@ fos_js_routing:
         - admin_bundle_multilangcontent_multilanglanguageselectroute_create
         - admin_bundle_multilangcontent_multilanglanguageselectroute_delete
         - admin_bundle_multilangcontent_multilanglanguageselectroute_edit
-        - admin_bundle_chainrouting_route_create
-        - admin_bundle_chainrouting_route_delete
-        - admin_bundle_chainrouting_route_edit
-        - symfony_cmf_phpcr_browser_children
-        - symfony_cmf_phpcr_browser_move
+        - admin_bundle_routingextra_route_create
+        - admin_bundle_routingextra_route_delete
+        - admin_bundle_routingextra_route_edit
+        - admin_bundle_simplecms_page_create
+        - admin_bundle_simplecms_page_delete
+        - admin_bundle_simplecms_page_edit
+        - symfony_cmf_tree_browser.phpcr_children
+        - symfony_cmf_tree_browser.phpcr_move
 
 fos_rest:
     view:

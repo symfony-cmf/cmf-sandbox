@@ -28,7 +28,7 @@
         {
             "package": "doctrine/phpcr-bundle",
             "version": "dev-master",
-            "source-reference": "15dc74fd7bd3e1a4911d0c58747b195f296585c4"
+            "source-reference": "6a4222f9c9a08e271b5629be55b0cd4917d0a6b1"
         },
         {
             "package": "doctrine/phpcr-odm",
@@ -141,7 +141,7 @@
         {
             "package": "sonata-project/admin-bundle",
             "version": "dev-master",
-            "source-reference": "3b6bc0aecd6887fa9a7227357388303cbd427abe"
+            "source-reference": "779d6db64a92618c1a9aeb646842866bb125e7a2"
         },
         {
             "package": "sonata-project/block-bundle",
@@ -156,7 +156,7 @@
         {
             "package": "sonata-project/doctrine-phpcr-admin-bundle",
             "version": "dev-master",
-            "source-reference": "12605cf4fbbf93e915b5012408b9322cb3ba3f83"
+            "source-reference": "16fd594fd569f22a2c65ca23fba3152e50ec0a11"
         },
         {
             "package": "sonata-project/exporter",
@@ -194,19 +194,14 @@
             "source-reference": "05dfb75234adf3cf7e98628c89c3cbddcfb3131d"
         },
         {
-            "package": "symfony-cmf/phpcr-browser-bundle",
-            "version": "dev-master",
-            "source-reference": "cab6143ad9c7ff41b0e80625a828464f1026d75b"
-        },
-        {
             "package": "symfony-cmf/routing",
             "version": "dev-master",
-            "source-reference": "41b8bf5be621bb53a3ed45aa4acbed915668f073"
+            "source-reference": "99acca7ac8fb696d16ea307cab32010011920f75"
         },
         {
             "package": "symfony-cmf/routing-extra-bundle",
             "version": "dev-master",
-            "source-reference": "1b4539abd609e611c2c0178730cb20735649e954"
+            "source-reference": "5ce8864361f142f5555d2d0a0d5c70dff0ae02d4"
         },
         {
             "package": "symfony-cmf/simple-cms-bundle",
@@ -216,7 +211,12 @@
         {
             "package": "symfony-cmf/symfony-cmf",
             "version": "dev-master",
-            "source-reference": "649fd26516b02e978fea334cc04f9cb7f27629a2"
+            "source-reference": "856abd312be38a73c3be1936050733f8747215e2"
+        },
+        {
+            "package": "symfony-cmf/tree-browser-bundle",
+            "version": "dev-master",
+            "source-reference": "ecc2651064c98d5f0b8840a5d1fee4c704d89753"
         },
         {
             "package": "symfony-cmf/tree-bundle",
@@ -236,13 +236,13 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
         },
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "1541fe26e4d78135ab24ae2edfb1dbc2a9b2fa40"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "twig/extensions",
@@ -252,13 +252,13 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
+            "alias-pretty-version": "1.8.x-dev",
+            "alias-version": "1.8.9999999.9999999-dev"
         },
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "alias-pretty-version": "1.8.x-dev",
-            "alias-version": "1.8.9999999.9999999-dev"
+            "source-reference": "6d072640c44f1781049afd2d96060c72da80662a"
         }
     ],
     "packages-dev": null,

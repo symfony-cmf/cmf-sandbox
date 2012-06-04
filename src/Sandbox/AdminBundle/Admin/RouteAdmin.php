@@ -13,10 +13,6 @@ class RouteAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('path', 'text')
-            ->add('controller', 'text')
-            ->add('controller_alias', 'text')
-            ->add('template', 'text')
-            ->add('locale','text')
         ;
     }
 
@@ -25,10 +21,11 @@ class RouteAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('path', 'text')
-                ->add('controller', 'text', array('required' => false))
-                ->add('controller_alias', 'text', array('required' => false))
-                ->add('template', 'text', array('required' => false))
-                ->add('locale','text')
+                //TODO ->add('parent', 'text')
+                //TODO ->add('name', 'text')
+                ->add('variablePattern', 'text', array('required' => false))
+                ->add('routeContent', 'doctrine_phpcr_type_tree_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false))
+                // TODO edit key-value fields for defaults and options
             ->end();
     }
 
