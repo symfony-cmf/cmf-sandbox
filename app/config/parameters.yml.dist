@@ -8,6 +8,12 @@ parameters:
         url: http://localhost:8080/server/
         #type: doctrinedbal
         #connection: doctrine.dbal.default_connection
+        #type: midgard2
+        #dbtype: SQLite
+        #dbname: cmf
+        #dbdir: /tmp
+        #dbinit: true
+        #blobdir: /tmp/cmf-blobs
     phpcr_workspace: sandbox
     phpcr_user: admin
     phpcr_pass: admin
