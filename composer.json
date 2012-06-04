@@ -21,6 +21,12 @@
         "liip/functional-test-bundle": "dev-master",
         "sonata-project/doctrine-phpcr-admin-bundle": "dev-master"
     },
+    "suggest": {
+        "midgard/phpcr": "dev-master"
+    },
+    "require-dev": {
+        "midgard/phpcr": "dev-master"
+    },
     "scripts": {
         "post-install-cmd": [
             "Liip\\VieBundle\\Composer\\ScriptHandler::initSubmodules",
