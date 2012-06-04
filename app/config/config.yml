@@ -79,9 +79,9 @@ symfony_cmf_content: ~
 symfony_cmf_routing_extra:
     chain:
         routers_by_id:
-            symfony_cmf_routing_extra.doctrine_router: 20
+            symfony_cmf_routing_extra.dynamic_router: 20
             router.default: 100
-    doctrine:
+    dynamic:
         enabled: true
         controllers_by_alias:
             demo_alias: sandbox_main.controller:aliasAction
