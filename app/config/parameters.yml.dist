@@ -3,27 +3,6 @@ parameters:
 
     secret: xxxxxxxxxx
 
-    phpcr_backend:
-        type: jackrabbit
-        url: http://localhost:8080/server/
-        # Doctrine DBAL configs
-        #type: doctrinedbal
-        #connection: doctrine.dbal.default_connection
-        # Midgard2 configs
-        #type: midgard2
-        #db_type: SQLite
-        #db_name: cmf
-        #db_dir: /tmp
-        #db_init: true
-        #blobdir: /tmp/cmf-blobs
-    phpcr_workspace: sandbox
-    # With Midgard2, use
-    # phpcr_workspace: default
-    phpcr_user: admin
-    phpcr_pass: admin
-    # With Midgard2, use
-    # phpcr_pass: password
-
     liip_vie.use_coffee: false
     # a little hack to avoid errors on missing node/coffescript.
     # remove -disabled if you want coffee.
@@ -34,6 +13,6 @@ parameters:
     database_driver: pdo_mysql
     database_host: localhost
     database_port:
-    database_name: jackalope
-    database_user: jackalope
-    database_password: test1234
+    database_name: sandbox
+    database_user: root
+    database_password:

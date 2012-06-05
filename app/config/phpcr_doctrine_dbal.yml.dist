@@ -1,0 +1,7 @@
+parameters:
+    phpcr_backend:
+        type: doctrinedbal
+        connection: doctrine.dbal.default_connection
+    phpcr_workspace: sandbox
+    phpcr_user: admin
+    phpcr_pass: admin

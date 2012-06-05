@@ -24,18 +24,25 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     cd cmf-sandbox
     # copy parameters template and edit as needed
     cp app/config/parameters.yml.dist app/config/parameters.yml
+    cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
     # if you run with --dev, will install midgard too
     php composer.phar install
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed. Specifically pick the PHPCR backend and adjust
-the URL and database configurations accordingly.
+Please also adjust the ``app/config/parameters.yml`` as needed. If you want to use a different PHPCR backend
+copy the given ``phpcr_*.yml.dist`` file instead and adjust the URL and database configurations accordingly.
 
 ### Install and run Apache JackRabbit
 
 Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
 You can also use a different PHPCR implementation but this is what is most tested.
+
+### Install the Doctrine DBAL provider
+
+Setup the database configuration in the ``parameters.yml`` as needed and create the database accordingly.
+
+Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
 
 ### Install the Midgard2 PHPCR provider
 
@@ -45,7 +52,7 @@ You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midga
 
 To have the midgard phpcr implementation installed, make sure that you have run ``php composer.phar install --dev`` including the **--dev** option.
 
-Finally, instead of `parameters.yml.dist`, use one of the `parameters_midgard_*.yml.dist` files.
+Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
 
 ## Prepare the phpcr repository
 

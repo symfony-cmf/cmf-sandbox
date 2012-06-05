@@ -1,5 +1,6 @@
 imports:
     - { resource: parameters.yml }
+    - { resource: phpcr.yml }
     - { resource: security.yml }
 
 framework:

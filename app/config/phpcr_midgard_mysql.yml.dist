@@ -14,7 +14,6 @@ parameters:
         db_init: true
         blobdir: /tmp/cmf-blobs
     phpcr_workspace: sandbox
-    phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: password
 
