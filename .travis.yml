@@ -4,12 +4,14 @@ php:
   - 5.3
   - 5.4
 
+env:
+  - TRANSPORT=jackrabbit
+  - TRANSPORT=midgard_sqlite
+  - TRANSPORT=midgard_mysql
+
 before_script:
-  - cp app/config/parameters.yml.dist app/config/parameters.yml
   - curl -s http://getcomposer.org/installer | php --
-  - php composer.phar install --dev
-  - ./vendor/jackalope/jackalope-jackrabbit/bin/jackrabbit.sh
-  - php app/console doctrine:phpcr:workspace:create sandbox_test -e=test
+  - ./app/tests/travis_${TRANSPORT}.sh
   - app/console doctrine:phpcr:register-system-node-types -e=test
 
 script: phpunit -c app
