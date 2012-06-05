@@ -10,4 +10,4 @@ php composer.phar update --dev
 
 # Ensure the database is properly created
 app/console doctrine:phpcr:register-system-node-types
-php app/console doctrine:phpcr:workspace:create sandbox_test
+app/console doctrine:phpcr:workspace:create sandbox_test
