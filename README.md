@@ -25,7 +25,8 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     # copy parameters template and edit as needed
     cp app/config/parameters.yml.dist app/config/parameters.yml
     curl -s http://getcomposer.org/installer | php --
-    php composer.phar install --dev
+    # if you run with --dev, will install midgard too
+    php composer.phar install
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 Please also adjust the ``app/config/parameters.yml`` as needed. Specifically pick the PHPCR backend and adjust
@@ -38,11 +39,13 @@ You can also use a different PHPCR implementation but this is what is most teste
 
 ### Install the Midgard2 PHPCR provider
 
-If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://midgard-project.org/phpcr/) instead of Jackrabbit, you need to install the [`midgard2` PHP extension](http://midgard-project.org/midgard2/#download).
+If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://midgard-project.org/phpcr/) instead of Jackrabbit, you need to install the [`midgard2` PHP extension](http://midgard-project.org/midgard2/#download). On current debian / ubuntu systems, this is simply done with ``sudo apt-get install php5-midgard2``, on OS X ``sudo port install php5-midgard2`` resp. ``brew install midgard2-php``.
 
 You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midgardproject/phpcr-midgard2/master/data/share/schema/midgard_tree_node.xml) and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml) schema files, and place them into `/usr/share/midgard2/schema`.
 
-Finally, edit your `parameters.yml` and replace all the Jackrabbit configuration lines with the commented Midgard2 ones, and ensure that you've run the Composer installation command with the `--dev` option.
+To have the midgard phpcr implementation installed, make sure that you have run ``php composer.phar install --dev`` including the **--dev** option.
+
+Finally, instead of `parameters.yml.dist`, use one of the `parameters_midgard_*.yml.dist` files.
 
 ## Prepare the phpcr repository
 
