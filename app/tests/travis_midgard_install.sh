@@ -1,6 +1,7 @@
 #!/bin/bash
 
-php composer.phar update --dev
+php composer.phar require midgard/phpcr:dev-master
+php composer.phar update
 
 # Download installation script from phpcr-midgard2
 wget https://raw.github.com/midgardproject/phpcr-midgard2/master/tests/travis_midgard.sh

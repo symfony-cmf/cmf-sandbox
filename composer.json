@@ -13,18 +13,15 @@
         "symfony-cmf/symfony-cmf": "1.0.*",
         "symfony-cmf/simple-cms-bundle": "1.0.*",
         "jackalope/jackalope-jackrabbit": "1.0.*",
-        "jackalope/jackalope-doctrine-dbal": "dev-master",
         "doctrine/doctrine-bundle": "dev-master",
         "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "liip/vie-bundle": "dev-master",
         "liip/functional-test-bundle": "dev-master",
-        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
     },
     "suggest": {
-        "midgard/phpcr": "dev-master"
-    },
-    "require-dev": {
+        "jackalope/jackalope-doctrine-dbal": "dev-master",
         "midgard/phpcr": "dev-master"
     },
     "scripts": {

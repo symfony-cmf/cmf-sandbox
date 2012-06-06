@@ -40,9 +40,12 @@ You can also use a different PHPCR implementation but this is what is most teste
 
 ### Install the Doctrine DBAL provider
 
-Setup the database configuration in the ``parameters.yml`` as needed and create the database accordingly.
+Instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files and create the database accordingly
 
-Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
+To have the midgard phpcr implementation installed run the following additional commands
+
+    php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
+    php composer.phar update
 
 ### Install the Midgard2 PHPCR provider
 
@@ -50,7 +53,10 @@ If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://mid
 
 You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midgardproject/phpcr-midgard2/master/data/share/schema/midgard_tree_node.xml) and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml) schema files, and place them into `/usr/share/midgard2/schema`.
 
-To have the midgard phpcr implementation installed, make sure that you have run ``php composer.phar install --dev`` including the **--dev** option.
+To have the midgard phpcr implementation installed run the following additional commands
+
+    php composer.phar require midgard/phpcr:dev-master
+    php composer.phar update
 
 Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
 
