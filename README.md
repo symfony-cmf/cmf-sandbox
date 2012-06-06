@@ -63,8 +63,8 @@ Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*
 ## Prepare the phpcr repository
 
 First you need to create a workspace that will hold the data for the sandbox.
-The default parameters.yml defines the workspace to be 'sandbox'. You can
-change this of course. If you do, also adjust the following command.
+The default parameters.yml defines the workspace to be 'default'. You can
+change this of course. If you do, f.e. to 'sandbox, also run the following command:
 
     app/console doctrine:phpcr:workspace:create sandbox
 
