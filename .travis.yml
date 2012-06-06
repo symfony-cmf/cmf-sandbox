@@ -17,7 +17,7 @@ before_script:
   - php composer.phar install
   - ./app/tests/travis_${TRANSPORT}.sh
   - app/console doctrine:phpcr:workspace:create sandbox_test
-  - app/console doctrine:phpcr:register-system-node-types
+  - app/console doctrine:phpcr:register-system-node-types -e=test
 
 
 script: phpunit -c app
