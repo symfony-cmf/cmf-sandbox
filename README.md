@@ -24,18 +24,28 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     cd cmf-sandbox
     # copy parameters template and edit as needed
     cp app/config/parameters.yml.dist app/config/parameters.yml
+    cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
     # if you run with --dev, will install midgard too
     php composer.phar install
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed. Specifically pick the PHPCR backend and adjust
-the URL and database configurations accordingly.
+Please also adjust the ``app/config/parameters.yml`` as needed. If you want to use a different PHPCR backend
+copy the given ``phpcr_*.yml.dist`` file instead and adjust the URL and database configurations accordingly.
 
 ### Install and run Apache JackRabbit
 
 Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
 You can also use a different PHPCR implementation but this is what is most tested.
+
+### Install the Doctrine DBAL provider
+
+Instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files and create the database accordingly
+
+To have the midgard phpcr implementation installed run the following additional commands
+
+    php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
+    php composer.phar update
 
 ### Install the Midgard2 PHPCR provider
 
@@ -43,15 +53,18 @@ If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://mid
 
 You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midgardproject/phpcr-midgard2/master/data/share/schema/midgard_tree_node.xml) and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml) schema files, and place them into `/usr/share/midgard2/schema`.
 
-To have the midgard phpcr implementation installed, make sure that you have run ``php composer.phar install --dev`` including the **--dev** option.
+To have the midgard phpcr implementation installed run the following additional commands
 
-Finally, instead of `parameters.yml.dist`, use one of the `parameters_midgard_*.yml.dist` files.
+    php composer.phar require midgard/phpcr:dev-master
+    php composer.phar update
+
+Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
 
 ## Prepare the phpcr repository
 
 First you need to create a workspace that will hold the data for the sandbox.
-The default parameters.yml defines the workspace to be 'sandbox'. You can
-change this of course. If you do, also adjust the following command.
+The default parameters.yml defines the workspace to be 'default'. You can
+change this of course. If you do, f.e. to 'sandbox, also run the following command:
 
     app/console doctrine:phpcr:workspace:create sandbox
 

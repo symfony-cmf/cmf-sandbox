@@ -5,15 +5,11 @@ parameters:
 
     phpcr_backend:
         type: midgard2
-        db_type: MySQL
-        db_name: midgard2_test
-        db_host: "0.0.0.0"
-        db_port: 3306
-        db_username: ""
-        db_password: ""
+        db_type: SQLite
+        db_name: cmf
+        db_dir: /tmp
         db_init: true
         blobdir: /tmp/cmf-blobs
-    phpcr_workspace: sandbox
     phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: password
