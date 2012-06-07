@@ -115,6 +115,8 @@ sonata_block:
         sonata.admin.block.admin_list:
             contexts:   [admin]
         sonata_admin_doctrine_phpcr.tree_block:
+            settings:
+                id: '/cms'
             contexts:   [admin]
 
 sonata_admin:
