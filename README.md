@@ -29,7 +29,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     # if you run with --dev, will install midgard too
     php composer.phar install
 
-This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
+This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 Please also adjust the ``app/config/parameters.yml`` as needed. If you want to use a different PHPCR backend
 copy the given ``phpcr_*.yml.dist`` file instead and adjust the URL and database configurations accordingly.
 
@@ -38,16 +38,16 @@ copy the given ``phpcr_*.yml.dist`` file instead and adjust the URL and database
 Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
 You can also use a different PHPCR implementation but this is what is most tested.
 
-### Install the Doctrine DBAL provider
+### Install the Doctrine DBAL provider (optional)
 
-Instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files and create the database accordingly
+Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist` files and create the database accordingly.
 
-To have the midgard phpcr implementation installed run the following additional commands
+To have the Doctrine DBAL implementation installed run the following additional commands
 
     php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
     php composer.phar update
 
-### Install the Midgard2 PHPCR provider
+### Install the Midgard2 PHPCR provider (optional)
 
 If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://midgard-project.org/phpcr/) instead of Jackrabbit, you need to install the [`midgard2` PHP extension](http://midgard-project.org/midgard2/#download). On current debian / ubuntu systems, this is simply done with ``sudo apt-get install php5-midgard2``, on OS X ``sudo port install php5-midgard2`` resp. ``brew install midgard2-php``.
 
