@@ -2,9 +2,6 @@
 
 namespace Sandbox;
 
-use Doctrine\Common\DataFixtures\Executor\PHPCRExecutor;
-use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
-
 class HomepageTest extends WebTestCase
 {
     public function testRedirectToDefaultLanguage()
