@@ -11,8 +11,7 @@
     processIsolation="false"
     stopOnFailure="false"
     syntaxCheck="false"
-    bootstrap="tests/bootstrap.php"
->
+    bootstrap="tests/bootstrap.php" >
 
     <testsuites>
         <testsuite name="Project Test Suite">
@@ -34,7 +33,9 @@
             <directory>../src</directory>
             <exclude>
                 <directory>../src/*/*Bundle/Resources</directory>
+				<directory>../src/*/*Bundle/Tests</directory>
                 <directory>../src/*/Bundle/*Bundle/Resources</directory>
+                <directory>../src/*/Bundle/*Bundle/Tests</directory>
             </exclude>
             <directory>../vendor/symfony-cmf/src</directory>
         </whitelist>
