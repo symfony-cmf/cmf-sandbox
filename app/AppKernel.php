@@ -8,7 +8,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
-			// enable symfony-standard bundles
+            // enable symfony-standard bundles
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -35,7 +35,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\BlockBundle\SymfonyCmfBlockBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\SymfonyCmfSimpleCmsBundle(),
 
-			// create.js editing related
+            // create.js editing related
             new Liip\VieBundle\LiipVieBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
