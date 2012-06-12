@@ -24,7 +24,7 @@ class RouteAdmin extends Admin
                 //TODO ->add('parent', 'text')
                 //TODO ->add('name', 'text')
                 ->add('variablePattern', 'text', array('required' => false))
-                ->add('routeContent', 'doctrine_phpcr_type_tree_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false, 'rootNode' => '/cms/content'))
+                ->add('routeContent', 'doctrine_phpcr_type_tree_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false, 'root_node' => '/cms/content'))
                 // TODO edit key-value fields for defaults and options
             ->end();
     }
