@@ -20,7 +20,7 @@ Vagrant::Config.run do |config|
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
 
-  config.vm.network "33.33.33.10"
+  config.vm.network :hostonly, "33.33.33.10"
 
   config.vm.share_folder "app", "/app", "..", :nfs => true
 
