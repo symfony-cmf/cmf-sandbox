@@ -26,6 +26,8 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
+    # bundles: [ ] # if enabled, every bundle must be added
+    #java: /usr/bin/java
     filters:
         cssrewrite: ~
         coffee:
@@ -36,6 +38,14 @@ assetic:
         #     jar: %kernel.root_dir%/java/compiler.jar
         # yui_css:
         #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: %mailer_transport%
+    host:      %mailer_host%
+    username:  %mailer_user%
+    password:  %mailer_password%
+    spool:     { type: memory }
 
 # for jackalope-doctrine-dbal
 doctrine:

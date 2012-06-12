@@ -7,11 +7,7 @@ app/logs/*
 build/
 vendor/
 app/config/parameters.yml
-nbproject
-.idea
-vagrant/.vagrant
-.DS_Store
-
-jackrabbit/
-
 app/config/phpcr.yml
+jackrabbit/
+vagrant/.vagrant
+app/bootstrap.php.cache
