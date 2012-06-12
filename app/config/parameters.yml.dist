@@ -1,7 +1,7 @@
 parameters:
     locale: en
 
-    secret: xxxxxxxxxx
+    secret: ThisTokenIsNotSoSecretChangeIt
 
     liip_vie.use_coffee: false
     # a little hack to avoid errors on missing node/coffescript.
@@ -16,3 +16,8 @@ parameters:
     database_name: sandbox
     database_user: root
     database_password:
+
+    mailer_transport:  smtp
+    mailer_host:       localhost
+    mailer_user:       ~
+    mailer_password:   ~
