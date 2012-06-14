@@ -20,6 +20,7 @@ class MultilangLanguageSelectRouteAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('path', 'text')
+                // TODO: needs children list
             ->end();
     }
 

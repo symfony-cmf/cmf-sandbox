@@ -13,7 +13,7 @@ class MultilangMenuItemAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('path', 'text')
-            ->add('locale', 'text')
+            ->add('locale', 'text') // TODO: this should rather list all defined locales
             ->add('name', 'text')
             ->add('label', 'text')
             ->add('uri', 'text')
