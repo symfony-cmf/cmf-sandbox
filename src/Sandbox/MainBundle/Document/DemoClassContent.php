@@ -78,4 +78,9 @@ class DemoClassContent implements RouteAwareInterface
     {
         return $this->routes->toArray();
     }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 }
