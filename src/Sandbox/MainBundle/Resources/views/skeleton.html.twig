@@ -21,19 +21,12 @@
             {% endstylesheets %}
 
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-        {# TODO: look into assetic rewriting image paths in css #}
-        <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/midgard-tags/tags.css" media="screen" type="text/css"/>
-        <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/create-ui/css/create-ui.css" media="screen" type="text/css"/>
-        <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/midgard-notifications/midgardnotif.css" media="screen" type="text/css"/>
-        <link rel="stylesheet" href="/bundles/liipvie/vendor/create/examples/font-awesome/css/font-awesome.css" media="screen" type="text/css"/>
-        {% stylesheets
-            '@LiipVieBundle/Resources/public/css/halloLiipStyle.css'
-            '@LiipVieBundle/Resources/public/vendor/hallo/examples/overlay.css'
-        %}
-        <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
-        {% endstylesheets %}
+                {# TODO: look into assetic rewriting image paths in css #}
+                <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/midgard-tags/tags.css" media="screen" type="text/css"/>
+                <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/create-ui/css/create-ui.css" media="screen" type="text/css"/>
+                <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/midgard-notifications/midgardnotif.css" media="screen" type="text/css"/>
+                <link rel="stylesheet" href="/bundles/liipvie/vendor/create/examples/font-awesome/css/font-awesome.css" media="screen" type="text/css"/>
             {% endif %}
-"
         {% endblock %}
 
         {% block top_scripts %}
@@ -43,7 +36,7 @@
         <div class="container">
 
             <div id="top" class="row">
-                <div id="banner" class="span12">
+                <div class="span12">
                     <ul id="skiplinks" class="pull-left hidden-desktop">
                         <li><a href="#content" title="Go to main content">content</a></li>
                         <li><a href="#navigation" title="go to navigation">navigation</a></li>
