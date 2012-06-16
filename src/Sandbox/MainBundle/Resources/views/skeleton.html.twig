@@ -26,6 +26,11 @@
                 <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/create-ui/css/create-ui.css" media="screen" type="text/css"/>
                 <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/midgard-notifications/midgardnotif.css" media="screen" type="text/css"/>
                 <link rel="stylesheet" href="/bundles/liipvie/vendor/create/examples/font-awesome/css/font-awesome.css" media="screen" type="text/css"/>
+                {% stylesheets
+                    '@LiipVieBundle/Resources/public/css/halloLiipStyle.css'
+                %}
+                <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
+                {% endstylesheets %}
             {% endif %}
         {% endblock %}
 
