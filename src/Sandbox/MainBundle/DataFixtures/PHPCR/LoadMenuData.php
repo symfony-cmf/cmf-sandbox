@@ -38,28 +38,30 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         $this->createPath($base_path);
+        $root = $this->dm->find(null, $base_path);
 
-        // REMEMBER: all menu items must be named -item !
-        $menuitem = $this->createMenuItem("$base_path/main", 'Main menu', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil'), $this->dm->find(null, "$content_path/home"));
-        $menuitem->setChildrenAttributes(array("class" => "menu_main"));
 
-        $this->createMenuItem("$base_path/main/admin-item", 'Adminitem', 'Admin', null, null, 'sonata_admin_dashboard');
+        /** @var $menuitem MenuItem */
+        $main = $this->createMenuItem($root, 'main', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil'), $this->dm->find(null, "$content_path/home"));
+        $main->setChildrenAttributes(array("class" => "menu_main"));
 
-        $this->createMenuItem("$base_path/main/projects-item", 'Projectsitem', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $this->dm->find(null, "$content_path/projects"));
-        $this->createMenuItem("$base_path/main/projects-item/cmf-item", 'Cmfitem', 'Symfony CMF', $this->dm->find(null, "$content_path/cmf"));
+        $this->createMenuItem($main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');
 
-        $this->createMenuItem("$base_path/main/company-item", 'Companyitem', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $this->dm->find(null, "$content_path/company"));
-        $this->createMenuItem("$base_path/main/company-item/team-item", 'Teamitem', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $this->dm->find(null, "$content_path/team"));
-        $this->createMenuItem("$base_path/main/company-item/more-item", 'Moreitem', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $this->dm->find(null, "$content_path/more"));
+        $projects = $this->createMenuItem($main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $this->dm->find(null, "$content_path/projects"));
+        $this->createMenuItem($projects, 'cmf-item', 'Symfony CMF', $this->dm->find(null, "$content_path/cmf"));
 
-        $this->createMenuItem("$base_path/main/demo-item", 'Demoitem', 'Demo', $this->dm->find(null, "$content_path/demo"));
+        $company = $this->createMenuItem($main, 'company-item', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $this->dm->find(null, "$content_path/company"));
+        $this->createMenuItem($company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $this->dm->find(null, "$content_path/team"));
+        $this->createMenuItem($company, 'more-item', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $this->dm->find(null, "$content_path/more"));
+
+        $demo = $this->createMenuItem($main, 'demo-item', 'Demo', $this->dm->find(null, "$content_path/demo"));
         //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?
-        $this->createMenuItem("$base_path/main/demo-item/controller-item", 'Controlleritem', 'Explicit controller', $this->dm->find(null, "$content_path/demo_controller"));
-        $this->createMenuItem("$base_path/main/demo-item/template-item", 'Templateitem', 'Explicit template', $this->dm->find(null, "$content_path/demo_template"));
-        $this->createMenuItem("$base_path/main/demo-item/alias-item", 'Aliasitem', 'Route alias to controller', $this->dm->find(null, "$content_path/demo_alias"));
-        $this->createMenuItem("$base_path/main/demo-item/class-item", 'Classitem', 'Class to controller', $this->dm->find(null, "$content_path/demo_class"));
-        $this->createMenuItem("$base_path/main/demo-item/test-item", 'Testitem', 'Normal Symfony Route', null, null, 'test');
-        $this->createMenuItem("$base_path/main/demo-item/external-item", 'ExternalLinkItem', 'External Link', null, 'http://cmf.symfony.com/');
+        $this->createMenuItem($demo, 'controller-item', 'Explicit controller', $this->dm->find(null, "$content_path/demo_controller"));
+        $this->createMenuItem($demo, 'template-item', 'Explicit template', $this->dm->find(null, "$content_path/demo_template"));
+        $this->createMenuItem($demo, 'alias-item', 'Route alias to controller', $this->dm->find(null, "$content_path/demo_alias"));
+        $this->createMenuItem($demo, 'class-item', 'Class to controller', $this->dm->find(null, "$content_path/demo_class"));
+        $this->createMenuItem($demo, 'test-item', 'Normal Symfony Route', null, null, 'test');
+        $this->createMenuItem($demo, 'external-item', 'External Link', null, 'http://cmf.symfony.com/');
 
         $this->dm->flush();
     }
@@ -67,21 +69,14 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
     /**
      * @return a Navigation instance with the specified information
      */
-    protected function createMenuItem($path, $name, $label, $content, $uri = null, $route = null)
+    protected function createMenuItem($parent, $name, $label, $content, $uri = null, $route = null)
     {
-        // Remove the node if it already exists
-        if ($old_node = $this->dm->find(null, $path)) {
-            $this->dm->remove($old_node);
-            // FIXME: we need to flush here to avoid error about "node existing".
-            // this is a bug in phpcr-odm http://www.doctrine-project.org/jira/browse/PHPCR-34
-            $this->dm->flush();
-        }
-
         $menuitem = is_array($label) ? new MultilangMenuItem() : new MenuItem();
-        $menuitem->setPath($path);
+        $menuitem->setParent($parent);
+        $menuitem->setName($name);
+
         $this->dm->persist($menuitem); // do persist before binding translation
 
-        $menuitem->setName($name);
         if (null !== $content) {
             $menuitem->setContent($content);
         } elseif (null !== $uri) {
