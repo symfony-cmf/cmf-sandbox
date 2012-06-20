@@ -139,6 +139,33 @@ sonata_admin:
             - { position: right, type: sonata.admin.block.admin_list }
             - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
 
+sonata_doctrine_phpcr_admin:
+    document_tree:
+        Doctrine\PHPCR\Odm\Document\Generic:
+            valid_children:
+                - all
+        Sandbox\MainBundle\Document\EditableStaticContent: ~
+        Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
+        Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route:
+            valid_children:
+                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
+                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
+        Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:
+            valid_children: []
+        Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangLanguageSelectRoute:
+            valid_children:
+                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
+                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
+        Symfony\Cmf\Bundle\MenuItem\Document\MenuItem:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuItem\Document\MenuItem
+                - Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem
+        Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuItem\Document\MenuItem
+                - Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem
+
+
 fos_js_routing:
     routes_to_expose:
         - admin_sandbox_main_editablestaticcontent_create
@@ -164,6 +191,8 @@ fos_js_routing:
         - admin_bundle_simplecms_page_edit
         - symfony_cmf_tree_browser.phpcr_children
         - symfony_cmf_tree_browser.phpcr_move
+        - sonata.admin.doctrine_phpcr.phpcrodm_children
+        - sonata.admin.doctrine_phpcr.phpcrodm_move
 
 fos_rest:
     view:
