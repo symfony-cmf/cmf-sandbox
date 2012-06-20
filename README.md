@@ -102,10 +102,12 @@ Create an apache virtual host entry along the lines of
 
 And add an entry to your hosts file for cmf.lo
 
-If you are running Symfony2 for the first time, run http://cmf.lo/config.php to ensure your system settings have been setup inline with the expected behaviour of the Symfony2 framework.
+If you are running Symfony2 for the first time, run http://cmf.lo/config.php to ensure your system settings have been
+setup inline with the expected behaviour of the Symfony2 framework.
+
+Note however that "Configure your Symfony Application online" is not supported in the sandbox.
 
 Then point your browser to http://cmf.lo/app_dev.php
-
 
 ## Production environment
 
