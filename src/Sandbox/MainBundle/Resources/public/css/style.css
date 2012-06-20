@@ -20,6 +20,7 @@ a:hover {
 
 hr {
     border-color: #aaa;
+    clear: both;
 }
 
 .boxed {
@@ -138,6 +139,19 @@ hr {
 
 .articleContainer {
     position: relative;
+}
+
+.articleContainer ul.tags {
+    margin: 0;
+}
+
+.articleContainer ul.tags li {
+    margin-right: .5em;
+    display: inline;
+    background-color: #4B4B4B;
+    font-size: 1em;
+    padding: 2px 4px 4px 4px;
+    font-weight: normal;
 }
 
 .articleContainer > * {

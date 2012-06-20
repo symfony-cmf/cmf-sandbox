@@ -12,7 +12,7 @@ class MultilangMenuItemAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('path', 'text')
+            ->addIdentifier('id', 'text')
             ->add('locale', 'text') // TODO: this should rather list all defined locales
             ->add('name', 'text')
             ->add('label', 'text')
@@ -25,7 +25,7 @@ class MultilangMenuItemAdmin extends Admin
     {
         $formMapper
             ->with('General')
-                ->add('path', 'text')
+                ->add('id', 'text')
                 ->add('locale', 'text')
                 ->add('name', 'text')
                 ->add('label', 'text')

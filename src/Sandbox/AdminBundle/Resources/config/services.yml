@@ -34,13 +34,6 @@ services:
         arguments: ["",Sandbox\MainBundle\Document\EditableStaticContent, "sandbox_admin.content_controller"]
         calls:
             - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
-    sandbox.admin.admin.menu_item:
-        class: Sandbox\AdminBundle\Admin\MenuItemAdmin
-        tags:
-            - {name: sonata.admin, manager_type: doctrine_phpcr, group: phpcr, label: menu item}
-        arguments: ["",Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem, "sandbox_admin.menu_item_controller"]
-        calls:
-            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
     sandbox.admin.admin.multilang_menu_item:
         class: Sandbox\AdminBundle\Admin\MultilangMenuItemAdmin
         tags:
