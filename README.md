@@ -45,7 +45,6 @@ Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist` 
 To have the Doctrine DBAL implementation installed run the following additional commands
 
     php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
-    php composer.phar update
 
 Then, create the tables in the database and set up the default workspace using
 
@@ -60,7 +59,6 @@ You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midga
 To have the midgard phpcr implementation installed run the following additional commands
 
     php composer.phar require midgard/phpcr:dev-master
-    php composer.phar update
 
 Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
 
