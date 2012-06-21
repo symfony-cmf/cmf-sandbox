@@ -25,6 +25,9 @@
         "liip/functional-test-bundle": "dev-master",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
     },
+    "require-dev":{
+        "jackalope/jackalope-doctrine-dbal": "dev-master"
+    },
     "suggest": {
         "jackalope/jackalope-doctrine-dbal": "dev-master",
         "midgard/phpcr": "dev-master"

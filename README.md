@@ -44,7 +44,7 @@ Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist` 
 
 To have the Doctrine DBAL implementation installed run the following additional commands
 
-    php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
+    php composer.phar install --dev
 
 Then, create the tables in the database and set up the default workspace using
 
