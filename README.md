@@ -110,10 +110,10 @@ Then point your browser to http://cmf.lo/app_dev.php
 ## Production environment
 
 In order to run the sandbox in production mode at http://cmf.lo/
-you need to generate the doctrine proxies:
+you need to generate the doctrine proxies and dump the assetic assets:
 
     app/console cache:warmup --env=prod --no-debug
-
+    app/console assetic:dump --env=prod --no-debug
 
 # Getting started using Vagrant
 
