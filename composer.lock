@@ -16,8 +16,8 @@
         {
             "package": "doctrine/data-fixtures",
             "version": "dev-master",
-            "source-reference": "1f0b8be5db0b53681f80c99324c94e21e1efe39a",
-            "commit-date": "1340392920"
+            "source-reference": "64538135ef2b17a296e26f88a04c7ce2e4551459",
+            "commit-date": "1340776266"
         },
         {
             "package": "doctrine/dbal",
@@ -28,8 +28,8 @@
         {
             "package": "doctrine/dbal",
             "version": "dev-master",
-            "source-reference": "baf30aebd60c246b7ac149098cc8c55455c512ce",
-            "commit-date": "1340595379"
+            "source-reference": "570b0983f12f577d2a7335f256faa882e2555d25",
+            "commit-date": "1340747203"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -64,8 +64,8 @@
         {
             "package": "doctrine/phpcr-odm",
             "version": "dev-master",
-            "source-reference": "e41e6a3fc4a1974b08b84e630e04afcd8f774913",
-            "commit-date": "1340194821"
+            "source-reference": "9f0889ae6c62bda4c088bffeb321cfa95f1fd8d4",
+            "commit-date": "1340806579"
         },
         {
             "package": "friendsofsymfony/jsrouting-bundle",
@@ -100,8 +100,8 @@
         {
             "package": "jackalope/jackalope",
             "version": "dev-master",
-            "source-reference": "54a2a440ecbe4cb7d9710f339c0bcccff06731bc",
-            "commit-date": "1340013838"
+            "source-reference": "7252ee4e5c8779263a5e1a666020e9a9be712879",
+            "commit-date": "1340800145"
         },
         {
             "package": "jackalope/jackalope-jackrabbit",
@@ -112,8 +112,8 @@
         {
             "package": "jackalope/jackalope-jackrabbit",
             "version": "dev-master",
-            "source-reference": "af9fd108bce598e9e4b85c821dc8946b2a62c5e2",
-            "commit-date": "1340364133"
+            "source-reference": "26b7ec3cc969883306f0c2d9eddf4eb447f6127b",
+            "commit-date": "1340711749"
         },
         {
             "package": "jms/aop-bundle",
@@ -178,8 +178,8 @@
         {
             "package": "liip/vie-bundle",
             "version": "dev-master",
-            "source-reference": "025a5bf85fd413564cffd60bae409a28bac89ceb",
-            "commit-date": "1339687843"
+            "source-reference": "ac783b7c1d2d2017b2ff11acb97d59baab34c92a",
+            "commit-date": "1340806626"
         },
         {
             "package": "monolog/monolog",
@@ -194,8 +194,8 @@
         {
             "package": "phpcr/phpcr",
             "version": "dev-master",
-            "source-reference": "d8c2b898150fb5760f27f2a45f26ca07e993c730",
-            "commit-date": "1339517423"
+            "source-reference": "52723c474d771fd5c524d2800d8ab0e0d8940afd",
+            "commit-date": "1340780638"
         },
         {
             "package": "phpcr/phpcr-utils",
@@ -212,8 +212,8 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "a360ad61fe34206a7295c1ef00b5455b2b2e1071",
-            "commit-date": "1340305968"
+            "source-reference": "f3515e702f9cae8e727d982557dca8de82dd12c5",
+            "commit-date": "1340790396"
         },
         {
             "package": "sensio/framework-extra-bundle",
@@ -224,8 +224,8 @@
         {
             "package": "sensio/framework-extra-bundle",
             "version": "dev-master",
-            "source-reference": "62e41b85947034b0f1dfe31bb8e76920e1488571",
-            "commit-date": "1340116878"
+            "source-reference": "ba7c2d872d609d972d43254bb9d1fdead25f7758",
+            "commit-date": "1340725130"
         },
         {
             "package": "sensio/generator-bundle",
@@ -446,8 +446,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "db9a8c1e4e8cce817448a49051e4f342f27469d9",
-            "commit-date": "1340623635"
+            "source-reference": "d0e154725c85a3ec5bc6760a59cc2769b8a17ae5",
+            "commit-date": "1340724924"
         },
         {
             "package": "twig/extensions",
@@ -464,16 +464,22 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "4679ad51c5390648b7ea4c8f0ecd2c0c344145ba",
-            "commit-date": "1339959143"
+            "source-reference": "48a04538659e85e4c89da3787587e1988db9c5e9",
+            "commit-date": "1340790574"
         }
     ],
     "packages-dev": [
         {
             "package": "jackalope/jackalope-doctrine-dbal",
             "version": "dev-master",
-            "source-reference": "6bf0d7198bd78dcece29cc1502ed34c579643e64",
-            "commit-date": "1340268250"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "jackalope/jackalope-doctrine-dbal",
+            "version": "dev-master",
+            "source-reference": "0185bf05b6321cbc5631650c26fb6a0b0e49ed13",
+            "commit-date": "1340707650"
         }
     ],
     "aliases": [
