@@ -56,7 +56,8 @@ short_open_tag = Off',
 			ensure => latest;
 	}
 
-	class {
-		"jackrabbit":
+	package {
+		"curl":
+			ensure => latest;
 	}
 }
