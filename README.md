@@ -125,14 +125,16 @@ you need to generate the doctrine proxies and dump the assetic assets:
 ## Get the code
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
-    cd cmf-sandbox
-    # we skipped the web installer for now
-    # copy parameters template and edit as needed
-    cp app/config/parameters.yml.dist app/config/parameters.yml
-    cd vagrant
+    cd cmf-sandbox/vagrant
     vagrant up
     vagrant ssh
-    bin/vendors install
+    # copy parameters template and edit as needed
+    cp app/config/parameters.yml.dist app/config/parameters.yml
+    cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
+    curl -s http://getcomposer.org/installer | php --
+    # if you run with --dev, will install midgard too
+    ./composer.phar install
+    ./jack start
 
 This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
 
