@@ -62,3 +62,7 @@ services:
         arguments: ["",Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route, "sandbox_admin.route_controller"]
         calls:
             - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
+            # TODO: can we not hardcode this?
+            - [ setContentRoot, [ "/cms/content" ] ]
+            # TODO: fix widget to show root node when root is selectable
+            - [ setRouteRoot, [ "/cms" ] ]
