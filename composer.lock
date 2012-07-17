@@ -1,17 +1,11 @@
 {
-    "hash": "344fd390b450b808ab58f1f3e8d54239",
+    "hash": "3ab3ac9a38a403364e82a784295d712a",
     "packages": [
         {
             "package": "doctrine/common",
-            "version": "dev-master",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/common",
-            "version": "dev-master",
-            "source-reference": "b3afbb80506d909743475c5b0904285ab0c07941",
-            "commit-date": "1341670930"
+            "version": "2.3.x-dev",
+            "source-reference": "15b04ec520ccded3dc0eba65b12a69ff1931360f",
+            "commit-date": "1342443556"
         },
         {
             "package": "doctrine/data-fixtures",
@@ -21,15 +15,9 @@
         },
         {
             "package": "doctrine/dbal",
-            "version": "dev-master",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/dbal",
-            "version": "dev-master",
-            "source-reference": "00ac50c0e721b1dcbcc4924938ab648e28feb4cf",
-            "commit-date": "1341891672"
+            "version": "2.3.x-dev",
+            "source-reference": "659de9a189e3316174d4edb6ee0b941230453794",
+            "commit-date": "1342444525"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -70,8 +58,8 @@
         {
             "package": "doctrine/phpcr-odm",
             "version": "dev-master",
-            "source-reference": "47199fbdc19cdade52f695db7c55727065dd449e",
-            "commit-date": "1342008237"
+            "source-reference": "b8cfb016c344e464d95fea0c12c4dd55369ab866",
+            "commit-date": "1342549631"
         },
         {
             "package": "friendsofsymfony/jsrouting-bundle",
@@ -94,14 +82,8 @@
         {
             "package": "friendsofsymfony/rest-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "0.8.x-dev",
-            "alias-version": "0.8.9999999.9999999-dev"
-        },
-        {
-            "package": "friendsofsymfony/rest-bundle",
-            "version": "dev-master",
-            "source-reference": "1dc00e3fa4e866ef7a95cdc508ac4e412786ed6b",
-            "commit-date": "1342010127"
+            "source-reference": "bd30b8dff393d23ec3e4663216e091e52ff1d3af",
+            "commit-date": "1342168029"
         },
         {
             "package": "jackalope/jackalope",
@@ -112,8 +94,8 @@
         {
             "package": "jackalope/jackalope",
             "version": "dev-master",
-            "source-reference": "fe01436d42f1cbbfa48873e619fc2758cd511a5a",
-            "commit-date": "1342006408"
+            "source-reference": "6ad592e9ccba23a2b43d85ddf67cee5897a66e6a",
+            "commit-date": "1342006705"
         },
         {
             "package": "jackalope/jackalope-jackrabbit",
@@ -184,8 +166,8 @@
         {
             "package": "liip/functional-test-bundle",
             "version": "dev-master",
-            "source-reference": "b53c0820a6a182c201fe97389390bd546dd07811",
-            "commit-date": "1341931216"
+            "source-reference": "238214474fb5b021fa4a56a2db5c821a8334b0b9",
+            "commit-date": "1342472781"
         },
         {
             "package": "liip/vie-bundle",
@@ -200,20 +182,8 @@
         {
             "package": "phpcr/phpcr",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "phpcr/phpcr",
-            "version": "dev-master",
             "source-reference": "72388ef211a85d7404f853fc02300e9399c13772",
             "commit-date": "1342006775"
-        },
-        {
-            "package": "phpcr/phpcr-utils",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "phpcr/phpcr-utils",
@@ -224,8 +194,8 @@
         {
             "package": "sensio/distribution-bundle",
             "version": "dev-master",
-            "source-reference": "f3515e702f9cae8e727d982557dca8de82dd12c5",
-            "commit-date": "1340790396"
+            "source-reference": "5886adae1613c0a72fbb95259a83ae798e86c0d3",
+            "commit-date": "1342347850"
         },
         {
             "package": "sensio/framework-extra-bundle",
@@ -236,20 +206,20 @@
         {
             "package": "sensio/framework-extra-bundle",
             "version": "dev-master",
-            "source-reference": "ba7c2d872d609d972d43254bb9d1fdead25f7758",
-            "commit-date": "1340725130"
+            "source-reference": "e9ac8f1a911ed29e30296c7f1549f53d4c94eddf",
+            "commit-date": "1342084432"
         },
         {
             "package": "sensio/generator-bundle",
             "version": "dev-master",
-            "source-reference": "43ed45c48db18e4a0e48aec0c098f42e56e22d36",
-            "commit-date": "1340138445"
+            "source-reference": "c17dbddefe517e3adfcbeaa1ab7cef3e572d29c6",
+            "commit-date": "1342195488"
         },
         {
             "package": "sonata-project/admin-bundle",
             "version": "dev-master",
-            "source-reference": "92a84cf74095686d6f3c8cba058172e9b0515eff",
-            "commit-date": "1341822640"
+            "source-reference": "8ebc06ce4bfd632acd11022093a90225e10534a1",
+            "commit-date": "1342045725"
         },
         {
             "package": "sonata-project/block-bundle",
@@ -272,8 +242,8 @@
         {
             "package": "sonata-project/doctrine-phpcr-admin-bundle",
             "version": "dev-master",
-            "source-reference": "e622eb39f3f8716941ebac66fa3f70d9cc26c8fd",
-            "commit-date": "1340806588"
+            "source-reference": "3e72bafa557023181bff55d2737fce81989a3823",
+            "commit-date": "1342098579"
         },
         {
             "package": "sonata-project/exporter",
@@ -290,14 +260,14 @@
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "alias-pretty-version": "4.1.x-dev",
-            "alias-version": "4.1.9999999.9999999-dev"
+            "alias-pretty-version": "4.2.x-dev",
+            "alias-version": "4.2.9999999.9999999-dev"
         },
         {
             "package": "swiftmailer/swiftmailer",
             "version": "dev-master",
-            "source-reference": "0173abd7bb539bc5dd0b823b06b46636121384e9",
-            "commit-date": "1340373948"
+            "source-reference": "8b2aa953f87da228ba413e8fb1372e49c1374050",
+            "commit-date": "1342198037"
         },
         {
             "package": "symfony-cmf/block-bundle",
@@ -393,7 +363,7 @@
             "package": "symfony-cmf/simple-cms-bundle",
             "version": "dev-master",
             "source-reference": "b7b5f1604573cd2206ec49a2c62936b3a15dd5a6",
-            "commit-date": "1342016269"
+            "commit-date": "1342020073"
         },
         {
             "package": "symfony-cmf/symfony-cmf",
@@ -434,26 +404,20 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "8fe7b898b08103c1d6fce64c3e279a7afd61adfc",
-            "commit-date": "1340234971"
+            "source-reference": "ed933dcfa45f00b6bc6d7727007403f3ff429e5a",
+            "commit-date": "1342126277"
         },
         {
             "package": "symfony/monolog-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/monolog-bundle",
-            "version": "dev-master",
-            "source-reference": "v2.1.0-BETA2",
+            "source-reference": "v2.1.0-BETA3",
             "commit-date": "1341078487"
         },
         {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA1",
-            "commit-date": "1340144744"
+            "source-reference": "v2.1.0-BETA3",
+            "commit-date": "1341509614"
         },
         {
             "package": "symfony/symfony",
@@ -464,8 +428,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "e8c0e078417bf2886c5ec8b352b67a28c89e3109",
-            "commit-date": "1340821918"
+            "source-reference": "f52ce6178243e4b11aa09bde147f684d596fb120",
+            "commit-date": "1342516073"
         },
         {
             "package": "twig/extensions",
@@ -482,18 +446,11 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "611f4451e3e44b582fc49e901fdf0f149ee50498",
-            "commit-date": "1341937853"
+            "source-reference": "d45664045194ef62573c153c424508527105041e",
+            "commit-date": "1342424564"
         }
     ],
-    "packages-dev": [
-        {
-            "package": "jackalope/jackalope-doctrine-dbal",
-            "version": "dev-master",
-            "source-reference": "7a0e6686b11e9add8e7d21d34a70298f4c784262",
-            "commit-date": "1340863353"
-        }
-    ],
+    "packages-dev": null,
     "aliases": [
 
     ],
