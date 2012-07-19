@@ -9,12 +9,15 @@
 
     <ul rel="dc:subject" property="dc:subject" class="tags">
         {% for subject in page.tags %}
-        <li about="{{ subject|replace({'<': '', '>': ''}) }}"></li>
+        <li class="label" about="{{ subject|replace({'<': '', '>': ''}) }}">
+            {{ subject|trim('<urn:tag:')|trim('>') }}
+        </li>
         {% endfor %}
     </ul>
     <h1 id="main_title" property="dcterms:title">{{ page.title|raw }}</h1>
     <div property="sioc:content">
         {{ page.content|raw }}
+        <div class="clearfix"></div>
     </div>
 </div>
 

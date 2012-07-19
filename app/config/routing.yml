@@ -3,12 +3,15 @@
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
+admin_dashboard:
+    pattern: /admin/
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true # this for 301
+
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
-
-admin_tree:
-    resource: '@SonataDoctrinePHPCRAdminBundle/Resources/config/routing/tree.xml'
     prefix: /admin
 
 _sonata_admin:
@@ -21,6 +24,9 @@ fos_js_routing:
 
 phpcrbrowser:
     resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/phpcrbrowser.xml
+    prefix: /admin/browser
+phpcrodmbrowser:
+    resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
     prefix: /admin/browser
 
 test:

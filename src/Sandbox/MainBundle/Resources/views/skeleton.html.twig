@@ -38,6 +38,12 @@
         {% endblock %}
     </head>
     <body>
+        {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
+            <div id="userBar">
+                <div class="inner"><button class="saveButton">Saved</button></div>
+            </div>
+        {% endif %}
+
         <div class="container">
 
             <div id="top" class="row">
