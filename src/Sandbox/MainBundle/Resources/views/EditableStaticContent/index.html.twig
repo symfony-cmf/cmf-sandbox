@@ -2,12 +2,16 @@
 
 {% block content %}
 
-<div xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
+<div xmlns:sioc="http://rdfs.org/sioc/ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+
      typeof="sioc:Post"
      about="{{ page.path }}"
      class="articleContainer hero-unit">
 
-    <ul rel="dc:subject" property="dc:subject" class="tags">
+    <ul rel="skos:related">
         {% for subject in page.tags %}
         <li class="label" about="{{ subject|replace({'<': '', '>': ''}) }}">
             {{ subject|trim('<urn:tag:')|trim('>') }}
