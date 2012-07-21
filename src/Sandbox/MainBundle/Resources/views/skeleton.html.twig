@@ -38,11 +38,6 @@
         {% endblock %}
     </head>
     <body>
-        {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-            <div id="userBar">
-                <div class="inner"><button class="saveButton">Saved</button></div>
-            </div>
-        {% endif %}
 
         <div class="container">
 
@@ -131,13 +126,6 @@
         {% block bottom_scripts %}
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
                 {% render "liip_vie.controller.vie:includeJSFilesAction" %}
-
-                {% javascripts
-                            '@SandboxMainBundle/Resources/public/js/savebutton.js'
-                            '@SandboxMainBundle/Resources/public/js/userbar.js'
-                %}
-                    <script src="{{ asset_url }}"></script>
-                {% endjavascripts %}
             {% endif %}
         {% endblock %}
     </body>
