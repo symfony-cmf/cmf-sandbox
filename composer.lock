@@ -22,12 +22,6 @@
         {
             "package": "doctrine/doctrine-bundle",
             "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/doctrine-bundle",
-            "version": "dev-master",
             "source-reference": "c9ea46d1f0c48bb88bb87b44214fe44e03c0c692",
             "commit-date": "1341405737"
         },
@@ -46,8 +40,8 @@
         {
             "package": "doctrine/phpcr-bundle",
             "version": "dev-master",
-            "source-reference": "37d1386c743cacbb053939989adc68630edd081f",
-            "commit-date": "1342006069"
+            "source-reference": "4530070aae9c1337e8ad458150dfa8f1ad0da54c",
+            "commit-date": "1342649767"
         },
         {
             "package": "doctrine/phpcr-odm",
@@ -58,14 +52,14 @@
         {
             "package": "doctrine/phpcr-odm",
             "version": "dev-master",
-            "source-reference": "b8cfb016c344e464d95fea0c12c4dd55369ab866",
-            "commit-date": "1342549631"
+            "source-reference": "e4a06121821c742664ff5ece09369752b1ba6f06",
+            "commit-date": "1342880735"
         },
         {
             "package": "friendsofsymfony/jsrouting-bundle",
             "version": "dev-master",
-            "source-reference": "1692ba9e4500b75001ec945993d4b7b8cec05a16",
-            "commit-date": "1339679434"
+            "source-reference": "b39b2a454c3a64a9e7546b00fd5948bb5699aca8",
+            "commit-date": "1342718224"
         },
         {
             "package": "friendsofsymfony/rest",
@@ -138,8 +132,8 @@
         {
             "package": "jms/serializer-bundle",
             "version": "dev-master",
-            "source-reference": "6df19222b597ab6f44c67dde4499766a5ca1fb99",
-            "commit-date": "1341570103"
+            "source-reference": "6bd1105030c7cc12fbd8ac64cb3a926777806045",
+            "commit-date": "1342557364"
         },
         {
             "package": "knplabs/knp-menu",
@@ -160,20 +154,20 @@
         {
             "package": "kriswallsmith/assetic",
             "version": "dev-master",
-            "source-reference": "d6f89a3170c5280ad554347dc113eb25fdf00ad7",
-            "commit-date": "1339515714"
+            "source-reference": "5c1c9b658b732a980312e8f29cec4e175c2bb6b2",
+            "commit-date": "1342787613"
         },
         {
             "package": "liip/functional-test-bundle",
             "version": "dev-master",
-            "source-reference": "238214474fb5b021fa4a56a2db5c821a8334b0b9",
-            "commit-date": "1342472781"
+            "source-reference": "0b9ae009973ddc9aac98db077f4528bdf56eff61",
+            "commit-date": "1342615174"
         },
         {
             "package": "liip/vie-bundle",
             "version": "dev-master",
-            "source-reference": "ac783b7c1d2d2017b2ff11acb97d59baab34c92a",
-            "commit-date": "1340806626"
+            "source-reference": "9ffd5a1aa58b226314bbd5ea1bd0f30cbba882c5",
+            "commit-date": "1342896576"
         },
         {
             "package": "monolog/monolog",
@@ -182,8 +176,20 @@
         {
             "package": "phpcr/phpcr",
             "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "phpcr/phpcr",
+            "version": "dev-master",
             "source-reference": "72388ef211a85d7404f853fc02300e9399c13772",
             "commit-date": "1342006775"
+        },
+        {
+            "package": "phpcr/phpcr-utils",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "phpcr/phpcr-utils",
@@ -218,20 +224,20 @@
         {
             "package": "sonata-project/admin-bundle",
             "version": "dev-master",
-            "source-reference": "8ebc06ce4bfd632acd11022093a90225e10534a1",
-            "commit-date": "1342045725"
+            "source-reference": "7018d7cf861cc5814142343939de06cfeadd8065",
+            "commit-date": "1342939739"
         },
         {
             "package": "sonata-project/block-bundle",
             "version": "dev-master",
-            "source-reference": "40b435dab9db1f6bf1f311af1635712924a0f361",
-            "commit-date": "1340007353"
+            "source-reference": "60909960a33575cd9c31c5263b4e284de5526736",
+            "commit-date": "1342902255"
         },
         {
             "package": "sonata-project/cache-bundle",
             "version": "dev-master",
-            "source-reference": "5b966e7350636750df7e45920acb30946415ba6d",
-            "commit-date": "1335863548"
+            "source-reference": "921309636b5f062c78bfde2c7dcdda2d820f0a4e",
+            "commit-date": "1342907451"
         },
         {
             "package": "sonata-project/doctrine-phpcr-admin-bundle",
@@ -242,8 +248,8 @@
         {
             "package": "sonata-project/doctrine-phpcr-admin-bundle",
             "version": "dev-master",
-            "source-reference": "3e72bafa557023181bff55d2737fce81989a3823",
-            "commit-date": "1342098579"
+            "source-reference": "90bab8989c84f16e70301052452cfcb3c448baf1",
+            "commit-date": "1342904354"
         },
         {
             "package": "sonata-project/exporter",
@@ -350,8 +356,8 @@
         {
             "package": "symfony-cmf/routing-extra-bundle",
             "version": "dev-master",
-            "source-reference": "6fe3283a7f463806730f5bca80b0f70909e2e6ac",
-            "commit-date": "1342012187"
+            "source-reference": "af5fb571b76d3d38aed53ef90f5e306986f67683",
+            "commit-date": "1342897531"
         },
         {
             "package": "symfony-cmf/simple-cms-bundle",
@@ -404,8 +410,8 @@
         {
             "package": "symfony/assetic-bundle",
             "version": "dev-master",
-            "source-reference": "ed933dcfa45f00b6bc6d7727007403f3ff429e5a",
-            "commit-date": "1342126277"
+            "source-reference": "e5e9a56a872d9e1f305d14cd8296bf77888388af",
+            "commit-date": "1342820047"
         },
         {
             "package": "symfony/monolog-bundle",
@@ -416,8 +422,8 @@
         {
             "package": "symfony/swiftmailer-bundle",
             "version": "dev-master",
-            "source-reference": "v2.1.0-BETA3",
-            "commit-date": "1341509614"
+            "source-reference": "65e6079443c3cd413012e146aa74307f18671f42",
+            "commit-date": "1342684512"
         },
         {
             "package": "symfony/symfony",
@@ -428,8 +434,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "f52ce6178243e4b11aa09bde147f684d596fb120",
-            "commit-date": "1342516073"
+            "source-reference": "1be155ab8c0ebd67b5c8f1290727bab74c7604c7",
+            "commit-date": "1342900339"
         },
         {
             "package": "twig/extensions",
@@ -446,8 +452,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "d45664045194ef62573c153c424508527105041e",
-            "commit-date": "1342424564"
+            "source-reference": "14a472b489fef539bea3ce2e31a0db3200127af7",
+            "commit-date": "1342908706"
         }
     ],
     "packages-dev": null,
