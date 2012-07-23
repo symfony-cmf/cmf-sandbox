@@ -28,6 +28,11 @@ class HomepageTest extends WebTestCase
         $this->assertCount(3, $crawler->filter('.symfony_cmf-block'));
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
         $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the Symfony CMF Demo")'));
-        $this->assertCount(14, $crawler->filter('ul.menu_main li'));
+
+        $menuCount = 13;
+        if ($this->getContainer()->get('doctrine_phpcr')->getConnection()->nodeExists('/cms/menu/main/search-item')) {
+            ++$menuCount;
+        }
+        $this->assertCount($menuCount, $crawler->filter('ul.menu_main li'));
     }
 }
