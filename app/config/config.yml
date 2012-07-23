@@ -195,3 +195,6 @@ fos_js_routing:
 fos_rest:
     view:
         view_response_listener: false
+
+liip_search:
+    restrict_by_language: true;

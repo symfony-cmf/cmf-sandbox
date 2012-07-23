@@ -50,3 +50,6 @@ vie:
 
 vie_asset_management:
     resource: "@LiipVieBundle/Resources/config/routing/asset_search.xml"
+
+liip_search:
+    resource: "@SymfonyCmfSearchBundle/Resources/config/routing.yml"
