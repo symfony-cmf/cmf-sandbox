@@ -15,7 +15,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * Git 1.6+
   * PHP 5.3.3+
   * php5-intl
-  * phpunit 3.5+ (optional)
+  * phpunit 3.6+ (optional)
   * composer
 
 ## Get the code
@@ -26,12 +26,10 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     cp app/config/parameters.yml.dist app/config/parameters.yml
     cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
-    # if you run with --dev, will install midgard too
     php composer.phar install
 
 This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed. If you want to use a different PHPCR backend
-copy the given ``phpcr_*.yml.dist`` file instead and adjust the URL and database configurations accordingly.
+Please also adjust the ``app/config/parameters.yml`` as needed.
 
 ### Install and run Apache JackRabbit
 
@@ -117,6 +115,8 @@ you need to generate the doctrine proxies and dump the assetic assets:
 
 # Getting started using Vagrant
 
+Note: The Vagrant setup is not really maintained atm, so do not be surprised if there are problems.
+
 ## You will need:
   * Git 1.6+
   * Nfs (MacOS works OOB, on Debian based linux distributions install nfs-kernel-server package)
@@ -132,7 +132,6 @@ you need to generate the doctrine proxies and dump the assetic assets:
     cp app/config/parameters.yml.dist app/config/parameters.yml
     cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
-    # if you run with --dev, will install midgard too
     ./composer.phar install
     ./jack start
 
