@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}{{ title }} | CMF Sandbox{% endblock %}</title>
+        <title>{% block title %}{{ title|default('CMF Sandbox') }}{% endblock %}</title>
 
         {% block includes %}
             {% stylesheets
@@ -82,35 +82,34 @@
 
             </div>
 
-
             <div  class="row">
                 <div id="content-container" class="span12 boxed">
-                    <div  class="row">
-                            <div id="navigation" class="span3">
-                                <div class="well">
-                                    {% block navigation %}
-                                        <h2>Navigation</h2>
-                                        {{ knp_menu_render('main') }}
+                    <div class="row">
+                        <div id="navigation" class="span3">
+                            <div class="well">
+                                {% block navigation %}
+                                    <h2>Navigation</h2>
+                                    {{ knp_menu_render('main') }}
+                                {% endblock %}
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div id="content">
+                                <div class="inner">
+                                    {% block content %}
                                     {% endblock %}
                                 </div>
                             </div>
-                            <div class="span9">
-                                <div id="content">
-                                    <div class="inner">
-                                        {% block content %}
-                                        {% endblock %}
-                                    </div>
-                                </div>
 
-                                <div id="content_extra">
-                                    <div class="inner">
-                                        {% block content_extra %}
-                                        {% endblock %}
-                                    </div>
+                            <div id="content_extra">
+                                <div class="inner">
+                                    {% block content_extra %}
+                                    {% endblock %}
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
 
             <hr/>
