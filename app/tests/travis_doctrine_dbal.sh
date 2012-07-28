@@ -1,6 +1,6 @@
 #!/bin/bash
 
-php composer.phar install --dev
+php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
 
 mysql -e 'create database IF NOT EXISTS sandbox;' -u root
 
