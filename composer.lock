@@ -3,21 +3,9 @@
     "packages": [
         {
             "package": "doctrine/common",
-            "version": "dev-master",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/common",
-            "version": "dev-master",
-            "alias-pretty-version": "2.4.x-dev",
-            "alias-version": "2.4.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/common",
-            "version": "dev-master",
-            "source-reference": "8cb70d80c5c95add69e5055044bb1bd4bf5de987",
-            "commit-date": "1343050234"
+            "version": "2.3.x-dev",
+            "source-reference": "b0ed9cc35ec28b7cd23d3d001e6fd4c7b5092926",
+            "commit-date": "1343082138"
         },
         {
             "package": "doctrine/data-fixtures",
@@ -27,21 +15,9 @@
         },
         {
             "package": "doctrine/dbal",
-            "version": "dev-master",
-            "alias-pretty-version": "2.3.x-dev",
-            "alias-version": "2.3.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/dbal",
-            "version": "dev-master",
-            "alias-pretty-version": "2.4.x-dev",
-            "alias-version": "2.4.9999999.9999999-dev"
-        },
-        {
-            "package": "doctrine/dbal",
-            "version": "dev-master",
-            "source-reference": "cb59d2b0922748f19c9a1f37fa8d70f2669fb408",
-            "commit-date": "1343019872"
+            "version": "2.3.x-dev",
+            "source-reference": "3d426e5b3957790b97008c341ac6e53e08a50503",
+            "commit-date": "1343082205"
         },
         {
             "package": "doctrine/doctrine-bundle",
@@ -230,8 +206,8 @@
         {
             "package": "phpcr/phpcr-utils",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
         },
         {
             "package": "phpcr/phpcr-utils",
