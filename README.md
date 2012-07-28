@@ -44,8 +44,9 @@ To have the Doctrine DBAL implementation installed run the following additional 
 
     php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
 
-Then, create the tables in the database and set up the default workspace using
+Then, create the database and tables and set up the default workspace using
 
+    app/console doctrine:database:create
     app/console doctrine:phpcr:init:dbal
 
 ### Install the Midgard2 PHPCR provider (optional)
