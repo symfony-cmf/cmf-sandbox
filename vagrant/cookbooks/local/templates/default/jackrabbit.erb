@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 ### BEGIN INIT INFO
 # Provides:          jackrabbit
 # Short-Description: Start/stop Jackrabbit JCR server.
@@ -18,6 +18,8 @@
 #
 # Author:           Daniel Barsotti <daniel.barsotti@liip.ch>
 #                   Bastian Widmer <bastian.widmer@liip.ch>
+#
+#                   Modified by <waldvogel@liip.ch>
 ### END INIT INFO
 
 
@@ -25,49 +27,35 @@
 # Directory in which jackrabbit will store local data, must be writeable
 BASEDIR=/opt/jackrabbit
 # Full filename of jackrabbit standalone .jar to run
-JACKRABBIT_JAR=$BASEDIR/jackrabbit.jar
+JACKRABBIT_JAR=$BASEDIR/jackrabbit-standalone-2.4.2.jar
 # IP address for jackrabbit to listen on. you can make jackrabbit listen on all
 # interfaces by using 0.0.0.0 here.
 JACKRABBIT_HOST=0.0.0.0
 # Port number to listen on. 8080 is default, you can use something else
 JACKRABBIT_PORT=8080
-# JMX-Port for monitoring
-JMX_PORT=1111
-# Directory of the JMX configuration files (jmx.user & jmx.role). It defaults to
-# the script directory
-JMX_DIR=$PWD
 # Java memory allocation
-MEMORY="-XX:MaxPermSize=128m \
-        -Xmx512M \
-        -Xms128M"
-# JMX Management Parameters
-MANAGEMENT=""
-# Full filename to the pid file to check if jackrabbit is running
-PIDFILE=$BASEDIR/jackrabbit.pid
+MEMORY="-XX:MaxPermSize=128m -Xmx512M -Xms128M"
 # Full filename to the logfile to output console output of jackrabbit
 # additionally, jackrabbit has its own logfile
 LOGFILE=$BASEDIR/jackrabbit.log
 ###
 
-# Uncomment to debug the script
-#set -x
+PID=$(pgrep -f "java $MEMORY -jar $JACKRABBIT_JAR -h $JACKRABBIT_HOST -p $JACKRABBIT_PORT")
 
 do_start() {
-    if [ ! -f $PIDFILE ]; then
+    if [ -z "$PID" ] ; then
         cd $BASEDIR
-		    nohup java $MEMORY $MANAGEMENT -jar $JACKRABBIT_JAR -h $JACKRABBIT_HOST -p $JACKRABBIT_PORT >> $LOGFILE 2>&1 & echo $! > $PIDFILE
+        nohup java $MEMORY -jar $JACKRABBIT_JAR -h $JACKRABBIT_HOST -p $JACKRABBIT_PORT >> $LOGFILE 2>&1 &
         # Wait until the server is ready (from an idea of Christoph Luehr)
-        while [[ -z `curl -s "http://$JACKRABBIT_HOST:$JACKRABBIT_PORT"` ]] ; do sleep 1s; echo -n "."; done
-        echo "Jackrabbit started"
+        echo "Jackrabbit started in the background"
     else
         echo "Jackrabbit is already running"
     fi
 }
 
 do_stop() {
-    if [ -f $PIDFILE ]; then
-        kill $(cat $PIDFILE)
-        rm $PIDFILE
+    if ! [ -z "$PID" ] ; then
+        kill "$PID"
         echo "Jackrabbit stopped"
     else
         echo "Jackrabbit is not running"
@@ -76,8 +64,8 @@ do_stop() {
 }
 
 do_status() {
-    if [ -f $PIDFILE ]; then
-          echo "Jackrabbit is running [ pid = " $(cat $PIDFILE) "]"
+    if ! [ -z "$PID" ]; then
+          echo "Jackrabbit is running [ pid = "$PID"]"
     else
         echo "Jackrabbit is not running"
         exit 3
