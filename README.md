@@ -116,7 +116,7 @@ you need to generate the doctrine proxies and dump the assetic assets:
 
 # Getting started using Vagrant
 
-please checkout the [README.md](/cmf-sandbox/tree/master/vagrant) in the vagrant/ folder of the project
+please checkout the [README.md](tree/master/vagrant) in the vagrant/ folder of the project
 
 # Other hints
 
