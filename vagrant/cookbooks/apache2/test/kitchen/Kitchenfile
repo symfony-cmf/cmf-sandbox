@@ -1,0 +1,23 @@
+cookbook "apache2" do
+  configuration "default"
+  configuration "basic_web_app"
+  configuration "mod_auth_basic"
+  configuration "mod_auth_digest"
+  configuration "mod_auth_openid"
+  configuration "mod_authnz_ldap"
+  configuration "mod_authz_groupfile"
+  configuration "mod_authz_listed_host"
+  configuration "mod_authz_unlisted_host"
+  configuration "mod_authz_user"
+  configuration "mod_cgi"
+  configuration "mod_dav_svn"
+  configuration "mod_expires"
+  configuration "mod_perl"
+  configuration "mod_php5"
+  configuration "mod_proxy_ajp"
+  configuration "mod_python"
+  configuration "mod_ssl"
+  configuration "mod_status_remote"
+  exclude :platform => 'centos', :configuration => 'mod_authnz_ldap'
+  run_list_extras ['apache2_test::setup']
+end
