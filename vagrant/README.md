@@ -1,7 +1,5 @@
 # Getting started using Vagrant
 
-Note: The Vagrant setup is not really maintained atm, so do not be surprised if there are problems.
-
 ## You will need:
   * Git 1.6+
   * NFS (MacOS works OOB, on Debian based linux distributions install nfs-kernel-server package)
@@ -20,7 +18,7 @@ In the meantime you can optionally add an entry to your `/etc/hosts` file like s
 
 ## Access by web browser
 
-If you have added `cmf.lo` to `/etc/hosts` you should be able to access the Sandbox in the browser:
+If you have added the entry to `/etc/hosts` you should be able to access the Sandbox like this:
 
 <http://cmf.lo/app_dev.php>
 
