@@ -55,21 +55,21 @@ end
 bash "Running composer install in separate vendor directory" do
   not_if "test -d /var/tmp/vendor"
   user "vagrant"
+  cwd "/var/tmp"
   code <<-EOH
     set -e
-    mkdir -p /var/tmp/vendor
-    cd /var/tmp
-    cp /vagrant/composer.* /var/tmp
+    mkdir -p vendor
+    cp /vagrant/composer.* .
     curl -s https://getcomposer.org/installer | php
     php composer.phar install
   EOH
 end
 
-execute "Bind mount vendor folder" do
-  not_if "mount|grep vendor|grep -v grep"
-  user "root"
-  command "mount --bind /var/tmp/vendor /vagrant/vendor"
-end
+# execute "Bind mount vendor folder" do
+#   not_if "mount|grep vendor|grep -v grep"
+#   user "root"
+#   command "mount --bind /var/tmp/vendor /vagrant/vendor"
+# end
 
 bash "Preparing the phpcr repository" do
   not_if "test -L /vagrant/web/bundles/framework"
@@ -77,6 +77,7 @@ bash "Preparing the phpcr repository" do
   cwd "/vagrant"
   code <<-EOH
     set -e
+    ln -s /var/tmp/vendor
     curl -s https://getcomposer.org/installer | php
     php composer.phar install
     echo "Waiting for Jackrabbit:"
