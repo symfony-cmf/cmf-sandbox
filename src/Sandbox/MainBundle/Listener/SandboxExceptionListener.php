@@ -46,6 +46,12 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
             <p>If you see this page, it means your sandbox is not correctly set up.
                Please see the README file in the sandbox root folder and if you can't figure out
                what is wrong, ask us on freenode irc #symfony-cmf or the mailinglist symfony-cmf-users@groups.google.com.
+            </p>
+
+            <p>If you are seeing this page as the result of an edit in the admin tool, please report what you were doing
+                to our <a href=\"https://github.com/symfony-cmf/cmf-sandbox/issues/new\">ticket system</a>,
+                so that we can add means to prevent this issue in the future. But to get things working again
+                for now, please just <a href=\"/reload-fixtures.php\">click here</a> to reload the data fixtures.
             </p><p style='color:red;'>
                <strong>Detected the following problem</strong>: $error
             </p>
