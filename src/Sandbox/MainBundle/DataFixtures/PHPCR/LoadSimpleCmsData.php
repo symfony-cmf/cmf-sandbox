@@ -22,7 +22,8 @@ class LoadSimpleCmsData implements FixtureInterface, OrderedFixtureInterface, Co
         $this->container = $container;
     }
 
-    public function getOrder() {
+    public function getOrder()
+    {
         return 50;
     }
 

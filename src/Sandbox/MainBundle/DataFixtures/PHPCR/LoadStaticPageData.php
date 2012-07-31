@@ -27,7 +27,8 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
     }
 
-    public function getOrder() {
+    public function getOrder()
+    {
         return 5;
     }
 
@@ -43,7 +44,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/../static/page.yml'));
 
-        foreach($data['static'] as $overview) {
+        foreach ($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
             if (! $page) {
@@ -55,7 +56,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
             $page->name = $overview['name'];
 
             if (is_array($overview['title'])) {
-                foreach($overview['title'] as $locale => $title) {
+                foreach ($overview['title'] as $locale => $title) {
                     $page->title = $title;
                     $page->body = $overview['content'][$locale];
                     $manager->bindTranslation($page, $locale);
@@ -65,7 +66,7 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
                 $page->body = $overview['content'];
             }
             if (isset($overview['blocks'])) {
-                foreach($overview['blocks'] as $name => $block) {
+                foreach ($overview['blocks'] as $name => $block) {
                     $this->loadBlock($manager, $page, $name, $block);
                 }
             }
@@ -106,7 +107,8 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
      * @param string $name the name of the block
      * @param array block the block definition
      */
-    private function loadBlock($manager, $parent, $name, $block) {
+    private function loadBlock($manager, $parent, $name, $block)
+    {
         $className = $block['class'];
         $document = $manager->find(null, $this->getIdentifier($manager, $parent) . '/' . $name);
         $class = $manager->getClassMetadata($className);
@@ -138,13 +140,14 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         }
         // create children
         if (isset($block['children'])) {
-            foreach($block['children'] as $childName => $child) {
+            foreach ($block['children'] as $childName => $child) {
                 $this->loadBlock($manager, $document, $childName, $child);
             }
         }
     }
 
-    private function getIdentifier($manager, $document) {
+    private function getIdentifier($manager, $document)
+    {
         $class = $manager->getClassMetadata(get_class($document));
         return $class->getIdentifierValue($document);
     }

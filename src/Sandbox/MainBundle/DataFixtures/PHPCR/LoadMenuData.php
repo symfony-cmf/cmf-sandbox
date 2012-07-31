@@ -95,7 +95,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         }
 
         if (is_array($label)) {
-            foreach($label as $locale => $l) {
+            foreach ($label as $locale => $l) {
                 $menuitem->setLabel($l);
                 $dm->bindTranslation($menuitem, $locale);
             }

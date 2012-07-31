@@ -26,7 +26,8 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
     }
 
-    public function getOrder() {
+    public function getOrder()
+    {
         return 21;
     }
 
@@ -55,7 +56,7 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         $parent->setPosition($root, basename($base_path));
         $dm->persist($parent);
 
-        foreach($locales as $locale) {
+        foreach ($locales as $locale) {
             $home = new Route;
             $home->setPosition($parent, $locale);
             $home->setDefault('_locale', $locale);;
