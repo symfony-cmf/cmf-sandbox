@@ -59,37 +59,37 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
         foreach ($locales as $locale) {
             $home = new Route;
             $home->setPosition($parent, $locale);
-            $home->setDefault('_locale', $locale);;
+            $home->setDefault('_locale', $locale);
             $home->setRouteContent($dm->find(null, "$content_path/home"));
             $dm->persist($home);
 
             $company = new Route;
             $company->setPosition($home, 'company');
-            $company->setDefault('_locale', $locale);;
+            $company->setDefault('_locale', $locale);
             $company->setRouteContent($dm->find(null, "$content_path/company"));
             $dm->persist($company);
 
             $team = new Route;
             $team->setPosition($company, 'team');
-            $team->setDefault('_locale', $locale);;
+            $team->setDefault('_locale', $locale);
             $team->setRouteContent($dm->find(null, "$content_path/team"));
             $dm->persist($team);
 
             $more = new Route;
             $more->setPosition($company, 'more');
-            $more->setDefault('_locale', $locale);;
+            $more->setDefault('_locale', $locale);
             $more->setRouteContent($dm->find(null, "$content_path/more"));
             $dm->persist($more);
 
             $projects = new Route;
             $projects->setPosition($home, 'projects');
-            $projects->setDefault('_locale', $locale);;
+            $projects->setDefault('_locale', $locale);
             $projects->setRouteContent($dm->find(null, "$content_path/projects"));
             $dm->persist($projects);
 
             $cmf = new Route;
             $cmf->setPosition($projects, 'cmf');
-            $cmf->setDefault('_locale', $locale);;
+            $cmf->setDefault('_locale', $locale);
             $cmf->setRouteContent($dm->find(null, "$content_path/cmf"));
             $dm->persist($cmf);
         }
