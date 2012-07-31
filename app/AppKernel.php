@@ -36,11 +36,12 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\SimpleCmsBundle\SymfonyCmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\SymfonyCmfSearchBundle(),
 
+            // search
+            new Liip\SearchBundle\LiipSearchBundle(),
+
             // create.js editing related
             new Liip\VieBundle\LiipVieBundle(),
-            new Liip\SearchBundle\LiipSearchBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
 
             // and the sandbox bundle
@@ -55,6 +56,7 @@ class AppKernel extends Kernel
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
