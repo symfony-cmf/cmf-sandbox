@@ -16,17 +16,3 @@ parameters:
     phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: password
-
-    liip_vie.use_coffee: false
-    # a little hack to avoid errors on missing node/coffescript.
-    # remove -disabled if you want coffee.
-    coffee.extension: "\.coffee-disabled$"
-    coffee.bin: ''
-    coffee.node: ''
-
-    database_driver: pdo_mysql
-    database_host: localhost
-    database_port:
-    database_name: jackalope
-    database_user: jackalope
-    database_password: test1234
