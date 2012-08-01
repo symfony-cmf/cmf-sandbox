@@ -92,7 +92,7 @@ Create an apache virtual host entry along the lines of
 <Virtualhost *:80>
     Servername cmf.lo
     DocumentRoot /path/to/symfony-cmf/cmf-sandbox/web
-    <Directory /path/to/symfony-cmf/cmf-sandox>
+    <Directory /path/to/symfony-cmf/cmf-sandbox>
         AllowOverride All
     </Directory>
 </Virtualhost>
