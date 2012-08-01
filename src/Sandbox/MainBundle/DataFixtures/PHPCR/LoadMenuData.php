@@ -6,21 +6,15 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use PHPCR\Util\NodeHelper;
+
+use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem;
 use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem;
 
-class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
+class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
-    protected $container;
-
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-    }
-
     public function getOrder()
     {
         return 10;
@@ -30,11 +24,11 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
     {
         $session = $dm->getPhpcrSession();
 
-        $base_path = $this->container->getParameter('symfony_cmf_menu.menu_basepath');
+        $basepath = $this->container->getParameter('symfony_cmf_menu.menu_basepath');
         $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
-        $this->createPath($session, $base_path);
-        $root = $dm->find(null, $base_path);
+        NodeHelper::createPath($session, $basepath);
+        $root = $dm->find(null, $basepath);
 
         /** @var $menuitem MenuItem */
         $main = $this->createMenuItem($dm, $root, 'main', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil'), $dm->find(null, "$content_path/home"));
@@ -88,7 +82,7 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
 
         if (null !== $content) {
             $menuitem->setContent($content);
-        } elseif (null !== $uri) {
+        } else if (null !== $uri) {
             $menuitem->setUri($uri);
         } else if (null !== $route) {
             $menuitem->setRoute($route);
@@ -104,29 +98,5 @@ class LoadMenuData implements FixtureInterface, OrderedFixtureInterface, Contain
         }
 
         return $menuitem;
-    }
-
-    /**
-     * Create a node and it's parents, if necessary.  Like mkdir -p.
-     *
-     * TODO: clean this up once the id generator stuff is done as intended
-     *
-     * @param string $path  full path, like /cms/navigation/main
-     * @return Node the (now for sure existing) node at path
-     */
-    public function createPath($session, $path)
-    {
-        $current = $session->getRootNode();
-
-        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
-        foreach ($segments as $segment) {
-            if ($current->hasNode($segment)) {
-                $current = $current->getNode($segment);
-            } else {
-                $current = $current->addNode($segment);
-            }
-        }
-
-        return $current;
     }
 }

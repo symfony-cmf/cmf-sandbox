@@ -6,27 +6,15 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use PHPCR\Util\NodeHelper;
+
+use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
 use Sandbox\MainBundle\Document\EditableStaticContent;
 
-class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
+class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
-    protected $session;
-
-    protected $container;
-
-    public function setContainer(ContainerInterface $container = null)
-    {
-        if (! $container) {
-            throw new \Exception("This does not work without container");
-        }
-        $this->container = $container;
-        $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
-    }
-
     public function getOrder()
     {
         return 5;
@@ -34,12 +22,10 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
 
     public function load(ObjectManager $manager)
     {
-        if (! $this->container) {
-            throw new \Exception("This does not work without container");
-        }
+        $session = $manager->getPhpcrSession();
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
-        $this->createPath($basepath);
+        NodeHelper::createPath($session, $basepath);
 
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/../static/page.yml'));
@@ -73,30 +59,6 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         }
 
         $manager->flush(); //to get ref id populated
-    }
-
-    /**
-     * Create a node and it's parents, if necessary.  Like mkdir -p.
-     *
-     * TODO: clean this up once the id generator stuff is done as intended
-     *
-     * @param string $path  full path, like /cms/navigation/main
-     * @return Node the (now for sure existing) node at path
-     */
-    public function createPath($path)
-    {
-        $current = $this->session->getRootNode();
-
-        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
-        foreach ($segments as $segment) {
-            if ($current->hasNode($segment)) {
-                $current = $current->getNode($segment);
-            } else {
-                $current = $current->addNode($segment);
-            }
-        }
-
-        return $current;
     }
 
     /**

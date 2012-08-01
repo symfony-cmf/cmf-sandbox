@@ -6,26 +6,17 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use PHPCR\Util\NodeHelper;
+
+use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route;
 use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute;
 use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangLanguageSelectRoute;
 
-class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
+class LoadRoutingData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
-    protected $session;
-
-    protected $container;
-
-    public function setContainer(ContainerInterface $container = null)
-    {
-        $this->container = $container;
-        $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
-    }
-
     public function getOrder()
     {
         return 21;
@@ -42,18 +33,21 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
      */
     public function load(ObjectManager $dm)
     {
-        $base_path    = $this->container->getParameter('symfony_cmf_routing_extra.routing_repositoryroot');
+        $session = $dm->getPhpcrSession();
+
+        $basepath    = $this->container->getParameter('symfony_cmf_routing_extra.routing_repositoryroot');
         $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
-        if ($this->session->itemExists($base_path)) {
-            $this->session->removeItem($base_path);
+        if ($session->itemExists($basepath)) {
+            $session->removeItem($basepath);
         }
-        $this->createPath(dirname($base_path));
-        $root = $dm->find(null, dirname($base_path));
+
+        NodeHelper::createPath($session, dirname($basepath));
+        $root = $dm->find(null, dirname($basepath));
         $locales = array('en', 'fr', 'de'); //TODO: can we get this from phpcr-odm in a sane way?
 
         $parent = new MultilangLanguageSelectRoute();
-        $parent->setPosition($root, basename($base_path));
+        $parent->setPosition($root, basename($basepath));
         $dm->persist($parent);
 
         foreach ($locales as $locale) {
@@ -155,27 +149,4 @@ class LoadRoutingData implements FixtureInterface, OrderedFixtureInterface, Cont
 
         $dm->flush();
     }
-
-    /**
-     * Create a node and it's parents, if necessary.  Like mkdir -p.
-     *
-     * @param string $path  full path, like /cms/navigation/main
-     * @return Node the (now for sure existing) node at path
-     */
-    public function createPath($path)
-    {
-        $current = $this->session->getRootNode();
-
-        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
-        foreach ($segments as $segment) {
-            if ($current->hasNode($segment)) {
-                $current = $current->getNode($segment);
-            } else {
-                $current = $current->addNode($segment);
-            }
-        }
-
-        return $current;
-    }
-
 }
