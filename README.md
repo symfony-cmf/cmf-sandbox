@@ -89,13 +89,14 @@ Run this to load the fixtures from the Sandbox MainBundle.
 ## Access by web browser
 
 Create an apache virtual host entry along the lines of
-<Virtualhost *:80>
-    Servername cmf.lo
-    DocumentRoot /path/to/symfony-cmf/cmf-sandbox/web
-    <Directory /path/to/symfony-cmf/cmf-sandbox>
-        AllowOverride All
-    </Directory>
-</Virtualhost>
+
+    <Virtualhost *:80>
+        Servername cmf.lo
+        DocumentRoot /path/to/symfony-cmf/cmf-sandbox/web
+        <Directory /path/to/symfony-cmf/cmf-sandbox>
+            AllowOverride All
+        </Directory>
+    </Virtualhost>
 
 And add an entry to your hosts file for cmf.lo
 
