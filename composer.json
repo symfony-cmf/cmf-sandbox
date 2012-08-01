@@ -25,7 +25,8 @@
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "liip/vie-bundle": "dev-master",
         "liip/functional-test-bundle": "dev-master",
-        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
+        "symfony-cmf/tree-browser-bundle":"1.0.*"
     },
     "suggest": {
         "jackalope/jackalope-doctrine-dbal": "dev-master",
