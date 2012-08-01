@@ -11,7 +11,6 @@ env:
   - TRANSPORT=doctrine_dbal
 
 before_script:
-  - curl -s http://getcomposer.org/installer | php --
   - cp app/config/phpcr_${TRANSPORT}.yml.dist app/config/phpcr.yml
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - ./app/tests/travis_${TRANSPORT}.sh

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-php composer.phar install
+composer install
 
 ./vendor/jackalope/jackalope-jackrabbit/bin/jackrabbit.sh
