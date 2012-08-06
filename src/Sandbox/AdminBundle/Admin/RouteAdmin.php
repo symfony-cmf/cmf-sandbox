@@ -37,7 +37,7 @@ class RouteAdmin extends Admin
                 ->add('parent', 'doctrine_phpcr_type_tree_model', array('choice_list' => array(), 'select_root_node' => true, 'root_node' => $this->routeRoot))
                 ->add('name', 'text', array('label'=>'Last URL part'))
                 ->add('variablePattern', 'text', array('required' => false))
-                ->add('routeContent', 'doctrine_phpcr_type_tree_model', array('class' => 'Sandbox\MainBundle\Document\EditableStaticContent', 'required' => false, 'root_node' => $this->contentRoot))
+                ->add('routeContent', 'doctrine_phpcr_type_tree_model', array('class' => 'Symfony\\Cmf\\Bundle\\MultilangContentBundle\\Document\\MultilangStaticContent', 'required' => false, 'root_node' => $this->contentRoot))
                 // TODO edit key-value fields for defaults and options
             ->end();
     }

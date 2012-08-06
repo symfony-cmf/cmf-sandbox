@@ -11,7 +11,7 @@ use PHPCR\Util\NodeHelper;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
-use Sandbox\MainBundle\Document\EditableStaticContent;
+use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent;
 
 class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -26,6 +26,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
         NodeHelper::createPath($session, $basepath);
+        $parent = $manager->find(null, $basepath);
 
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/../static/page.yml'));
@@ -34,22 +35,24 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
             if (! $page) {
-                $class = isset($overview['class']) ? $overview['class'] : 'Sandbox\\MainBundle\\Document\\EditableStaticContent';
+                $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\MultilangContentBundle\\Document\\MultilangStaticContent';
+                /** @var $page MultilangStaticContent */
                 $page = new $class();
-                $page->setPath($path);
+                $page->setName($overview['name']);
+                $page->setParent($parent);
                 $manager->persist($page);
             }
-            $page->name = $overview['name'];
 
             if (is_array($overview['title'])) {
+
                 foreach ($overview['title'] as $locale => $title) {
-                    $page->title = $title;
-                    $page->body = $overview['content'][$locale];
+                    $page->setTitle($title);
+                    $page->setBody($overview['content'][$locale]);
                     $manager->bindTranslation($page, $locale);
                 }
             } else {
-                $page->title = $overview['title'];
-                $page->body = $overview['content'];
+                $page->setTitle($overview['title']);
+                $page->setBody($overview['content']);
             }
             if (isset($overview['blocks'])) {
                 foreach ($overview['blocks'] as $name => $block) {
@@ -64,12 +67,12 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     /**
      * Load a block from the fixtures and create / update the node. Recurse if there are children.
      *
-     * @param $manager the document manager
+     * @param ObjectManager $manager the document manager
      * @param string $parentPath the parent of the block
      * @param string $name the name of the block
-     * @param array block the block definition
+     * @param array $block the block definition
      */
-    private function loadBlock($manager, $parent, $name, $block)
+    private function loadBlock(ObjectManager $manager, $parent, $name, $block)
     {
         $className = $block['class'];
         $document = $manager->find(null, $this->getIdentifier($manager, $parent) . '/' . $name);

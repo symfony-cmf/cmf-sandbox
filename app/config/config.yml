@@ -98,7 +98,7 @@ symfony_cmf_routing_extra:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
             Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
         templates_by_class:
-            Sandbox\MainBundle\Document\EditableStaticContent: SandboxMainBundle:EditableStaticContent:index.html.twig
+            Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
 
 symfony_cmf_simple_cms:
     routing:
@@ -111,7 +111,9 @@ knp_menu:
 liip_vie:
     phpcr_odm: true
     map:
-        '<http://rdfs.org/sioc/ns#Post>': 'Sandbox\MainBundle\Document\EditableStaticContent'
+        'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent'
+    rdf_config_dirs:
+        - /home/david/liip/symfony-cmf/cmf-sandbox_createphp/app/Resources/rdf-mappings
     use_coffee: %liip_vie.use_coffee%
     # TODO: these settings should come from the corresponding bundles, not be duplicated
     base_path: /cms/routes
@@ -142,7 +144,7 @@ sonata_doctrine_phpcr_admin:
         Doctrine\PHPCR\Odm\Document\Generic:
             valid_children:
                 - all
-        Sandbox\MainBundle\Document\EditableStaticContent: ~
+        Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent: ~
         Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
         Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route:
             valid_children:
@@ -165,9 +167,6 @@ sonata_doctrine_phpcr_admin:
 
 fos_js_routing:
     routes_to_expose:
-        - admin_sandbox_main_editablestaticcontent_create
-        - admin_sandbox_main_editablestaticcontent_delete
-        - admin_sandbox_main_editablestaticcontent_edit
         - admin_bundle_menu_menuitem_create
         - admin_bundle_menu_menuitem_delete
         - admin_bundle_menu_menuitem_edit
