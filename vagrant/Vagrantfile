@@ -31,16 +31,11 @@ Vagrant::Config.run do |config|
   # chef solo configuration
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = "cookbooks"
-    chef.roles_path = "roles"
     # chef debug level, start vagrant like this to debug:
     # $ CHEF_LOG_LEVEL=debug vagrant <provision or up>
     chef.log_level = ENV['CHEF_LOG_LEVEL'] || "info"
 
     # chef recipes
-    chef.add_recipe("apt")
-    chef.add_role("apache2")
     chef.add_recipe("local")
-
-    # chef roles (settings that can only be defined via roles)
   end
 end

@@ -1,6 +1,29 @@
-web_app "vhost" do
-  template "vhost.conf.erb"
-  notifies :reload, resources(:service => "apache2"), :delayed
+# Run apt-get update to create the stamp file
+execute "apt-get-update" do
+  command "apt-get update"
+  ignore_failure true
+  not_if do ::File.exists?('/var/lib/apt/periodic/update-success-stamp') end
+end
+
+# For other recipes to call to force an update
+execute "apt-get update" do
+  command "apt-get update"
+  ignore_failure true
+  action :nothing
+end
+
+# provides /var/lib/apt/periodic/update-success-stamp on apt-get update
+package "update-notifier-common" do
+  notifies :run, resources(:execute => "apt-get-update"), :immediately
+end
+
+execute "apt-get-update-periodic" do
+  command "apt-get update"
+  ignore_failure true
+  only_if do
+    File.exists?('/var/lib/apt/periodic/update-success-stamp') &&
+    File.mtime('/var/lib/apt/periodic/update-success-stamp') < Time.now - 86400
+  end
 end
 
 # install the software we need
@@ -11,11 +34,25 @@ tmux
 vim
 emacs23-nox
 git
+libapache2-mod-php5
 php5-cli
 php5-curl
 php5-sqlite
 php5-intl
 ).each { | pkg | package pkg }
+
+
+template "/etc/apache2/sites-enabled/vhost.conf" do
+  user "root"
+  mode "0644"
+  source "vhost.conf.erb"
+  notifies :reload, "service[apache2]"
+end
+
+service "apache2" do
+  supports :restart => true, :reload => true, :status => true
+  action [ :enable, :start ]
+end
 
 directory "/opt/jackrabbit" do
   owner "root"
@@ -50,28 +87,15 @@ execute "date.timezone = UTC in php.ini?" do
   command "echo -e '\ndate.timezone = UTC\n' >> /etc/php5/cli/php.ini"
 end
 
-bash "Running composer install in separate vendor directory" do
-  not_if "test -f /var/tmp/vendor/autoload.php"
-  user "vagrant"
-  cwd "/var/tmp"
-  code <<-EOH
-    set -e
-    mkdir -p vendor
-    cp /vagrant/composer.* .
-    curl -s https://getcomposer.org/installer | php
-    php composer.phar install
-  EOH
-end
-
-bash "Preparing the phpcr repository" do
-  not_if "test -L /vagrant/web/bundles/framework"
+bash "Running composer install and preparing the phpcr repository" do
+  not_if "test -e /var/tmp/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/public"
   user "vagrant"
   cwd "/vagrant"
   code <<-EOH
     set -e
-    ln -s /var/tmp/vendor
+    ln -sf /var/tmp/vendor
     curl -s https://getcomposer.org/installer | php
-    php composer.phar install
+    COMPOSER_VENDOR_DIR="/var/tmp/vendor" php composer.phar install
     echo "Waiting for Jackrabbit:"
     while [[ -z `curl -s "http://localhost:8080"` ]] ; do sleep 1s; echo -n "."; done
     app/console doctrine:phpcr:workspace:create sandbox
