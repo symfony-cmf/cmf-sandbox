@@ -18,7 +18,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * phpunit 3.6+ (optional)
   * composer
 
-## Get the code
+## Initial setup and configuration
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
@@ -26,15 +26,16 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     cp app/config/parameters.yml.dist app/config/parameters.yml
     cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
-    php composer.phar install
-
-This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed.
 
 ### Install and run Apache JackRabbit
 
 Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
 You can also use a different PHPCR implementation but this is what is most tested.
+
+    php composer.phar install
+
+This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
+Please also adjust the ``app/config/parameters.yml`` as needed.
 
 ### Install the Doctrine DBAL provider (optional)
 
