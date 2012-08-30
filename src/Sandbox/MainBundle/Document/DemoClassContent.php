@@ -29,26 +29,44 @@ class DemoClassContent implements RouteAwareInterface
      * @Assert\NotBlank
      * @PHPCRODM\String()
      */
-    public $name;
+    protected $name;
 
     /**
      * @Assert\NotBlank
      * @PHPCRODM\String()
      */
-    public $title;
+    protected $title;
 
     /**
      * @Assert\NotBlank
      * @PHPCRODM\String()
      */
-    public $body;
-
-
+    protected $body;
 
     /**
      * @PHPCRODM\Referrers(filter="routeContent")
      */
     public $routes;
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
 
     /**
      * Set repository path of this navigation item for creation
@@ -62,6 +80,7 @@ class DemoClassContent implements RouteAwareInterface
     {
       return $this->path;
     }
+
     public function getContent()
     {
         return $this->body;
@@ -71,6 +90,7 @@ class DemoClassContent implements RouteAwareInterface
     {
         $this->body = $content;
     }
+
     /**
      * @return array of route objects that point to this content
      */
