@@ -25,8 +25,8 @@ class MultilangStaticContentAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('path', 'text')
-                ->add('title')
-                ->add('name')
+                ->add('title', 'text')
+                ->add('name', 'text')
                 ->add('body', 'text')
             ->end();
     }
