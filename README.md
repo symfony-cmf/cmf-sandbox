@@ -45,6 +45,27 @@ To have the Doctrine DBAL implementation installed run the following additional 
 
     php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
 
+On Windows if you receive the error:
+
+    Installing assets using the symlink option
+    Installing assets for Symfony\Bundle\FrameworkBundle into web/bundles/framework
+
+    [Symfony\Component\Filesystem\Exception\IOException]
+    Unable to create symlink due to error code 1314: 'A required privilege is not held by the client'. Do you have the required Administrator-rights?
+
+    assets:install [--symlink] [--relative] [target]
+
+    Script Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::installAssets handling the post-update-cmd event terminated with an exception
+
+    [RuntimeException]
+    An error occurred when executing the ""assets:install --symlink  web "" command.
+
+edit the `composer.json` and remove the line
+
+    "symfony-assets-install": "symlink"
+    
+from the `"extra"` section of the file.
+
 Then, create the database and tables and set up the default workspace using
 
     app/console doctrine:database:create
