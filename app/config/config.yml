@@ -136,6 +136,26 @@ sonata_admin:
             # display a dashboard block
             - { position: right, type: sonata.admin.block.admin_list }
             - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
+        groups:
+            content:
+                label: page content
+                items:
+                    - sandbox.admin.admin.static_editable_content
+                    - sandbox.admin.admin.multilang_static_content
+            routing:
+                label: page routes
+                items:
+                    - sandbox.admin.admin.route
+                    - sandbox.admin.admin.multilang_language_select_route
+            menu:
+                label: menu structure
+                items:
+                    - symfony_cmf_menu.admin
+                    - sandbox.admin.admin.multilang_menu_item
+            simplecms:
+                label: simple cms (content/routing/menu as one)
+                items:
+                    - symfony_cmf_simple_cms.admin.page
 
 sonata_doctrine_phpcr_admin:
     document_tree:
