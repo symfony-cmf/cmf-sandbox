@@ -60,13 +60,17 @@ On Windows if you receive the error:
     [RuntimeException]
     An error occurred when executing the ""assets:install --symlink  web "" command.
 
-edit the `composer.json` and remove the line
+There are two ways you can resolve this issue.
 
-    "symfony-assets-install": "symlink"
+1.  If you wish to deploy _without_ using symlinks, simply edit the `composer.json` and change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""`
     
-from the `"extra"` section of the file.
+2.  If you wisy to deploy _with_ symlinks, you should close your git bash window, and re-open it with administrator privileges
+    
+Finally re-run the command
 
-Then, create the database and tables and set up the default workspace using
+    php composer.phar update
+
+Then, create the database and tables and set up the default workspace using 
 
     app/console doctrine:database:create
     app/console doctrine:phpcr:init:dbal
