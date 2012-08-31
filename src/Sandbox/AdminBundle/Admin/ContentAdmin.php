@@ -24,8 +24,8 @@ class ContentAdmin extends Admin
         $formMapper
             ->with('General')
                 ->add('path', 'text')
-                ->add('title')
-                ->add('name')
+                ->add('title', 'text')
+                ->add('name', 'text')
                 ->add('content', 'textarea')
             ->end();
     }
