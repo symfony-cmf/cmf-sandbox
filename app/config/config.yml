@@ -140,7 +140,7 @@ sonata_admin:
             content:
                 label: page content
                 items:
-                    - sandbox.admin.admin.static_editable_content
+                    - sandbox_main.admin.static_editable_content
                     - sandbox.admin.admin.multilang_static_content
             routing:
                 label: page routes
