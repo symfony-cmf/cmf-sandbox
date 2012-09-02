@@ -18,18 +18,3 @@ services:
             - [ setContainer, [@service_container] ]
         tags:
             - {name: "kernel.event_subscriber"}
-
-    sandbox_main.content_controller:
-        class: Sandbox\MainBundle\Controller\ContentAdminController
-        calls:
-            - [ setContainer, [@service_container] ]
-
-    sandbox_main.admin.static_editable_content:
-        class: Sandbox\MainBundle\Admin\ContentAdmin
-        tags:
-            - {name: sonata.admin, manager_type: doctrine_phpcr, group: content, label: content}
-        arguments: ["",Sandbox\MainBundle\Document\EditableStaticContent, "sandbox_main.content_controller"]
-        calls:
-            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
-            # TODO: can we not hardcode this?
-            - [ setContentRoot, [ "/cms/content" ] ]
