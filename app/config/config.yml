@@ -141,17 +141,17 @@ sonata_admin:
                 label: page content
                 items:
                     - sandbox_main.admin.static_editable_content
-                    - sandbox.admin.admin.multilang_static_content
+                    - symfony_cmf_multilang_content.static_content_admin
             routing:
                 label: page routes
                 items:
-                    - sandbox.admin.admin.route
-                    - sandbox.admin.admin.multilang_language_select_route
+                    - symfony_cmf_routing_extra.route_admin
+                    - symfony_cmf_multilang_content.language_select_route_admin
             menu:
                 label: menu structure
                 items:
                     - symfony_cmf_menu.admin
-                    - sandbox.admin.admin.multilang_menu_item
+                    - symfony_cmf_multilang_content.menu_item_admin
             simplecms:
                 label: simple cms (content/routing/menu as one)
                 items:

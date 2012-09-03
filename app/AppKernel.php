@@ -47,7 +47,6 @@ class AppKernel extends Kernel
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
             new Sandbox\TestBundle\SandboxTestBundle(),
-            new Sandbox\AdminBundle\SandboxAdminBundle(),
             new Sandbox\BlockBundle\SandboxBlockBundle(),
 
             // admin bundle
