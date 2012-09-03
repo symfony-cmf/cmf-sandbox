@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandbox\AdminBundle\Controller;
+namespace Sandbox\MainBundle\Controller;
 
 use Sonata\AdminBundle\Controller\CRUDController as Controller;
 use Symfony\Component\HttpFoundation\Response;

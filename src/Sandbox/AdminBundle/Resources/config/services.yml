@@ -1,8 +1,4 @@
 services:
-    sandbox_admin.content_controller:
-        class: Sandbox\AdminBundle\Controller\ContentAdminController
-        calls:
-            - [ setContainer, [@service_container] ]
     sandbox_admin.menu_item_controller:
         class: Sandbox\AdminBundle\Controller\MenuItemAdminController
         calls:
@@ -27,15 +23,6 @@ services:
         class: Sandbox\AdminBundle\Controller\RouteAdminController
         calls:
             - [ setContainer, [@service_container] ]
-    sandbox.admin.admin.static_editable_content:
-        class: Sandbox\AdminBundle\Admin\ContentAdmin
-        tags:
-            - {name: sonata.admin, manager_type: doctrine_phpcr, group: content, label: content}
-        arguments: ["",Sandbox\MainBundle\Document\EditableStaticContent, "sandbox_admin.content_controller"]
-        calls:
-            - [ setRouteBuilder, [ @sonata.admin.route.path_info_slashes ] ]
-            # TODO: can we not hardcode this?
-            - [ setContentRoot, [ "/cms/content" ] ]
     sandbox.admin.admin.multilang_menu_item:
         class: Sandbox\AdminBundle\Admin\MultilangMenuItemAdmin
         tags:
