@@ -14,7 +14,10 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('use_sonata_admin')->defaultValue('auto')->end()
+                ->enumNode('use_sonata_admin')
+                    ->values(array(true, false, 'auto'))
+                    ->defaultValue('auto')
+                ->end()
                 ->scalarNode('content_basepath')->defaultNull()->end()
             ->end()
         ;
