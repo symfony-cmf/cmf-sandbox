@@ -11,13 +11,15 @@
      about="{{ page.path }}"
      class="articleContainer hero-unit">
 
-    <ul rel="skos:related">
-        {% for subject in page.tags %}
-        <li class="label" about="{{ subject|replace({'<': '', '>': ''}) }}">
-            {{ subject|trim('<urn:tag:')|trim('>') }}
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="hiddenfields">
+        <ul rel="skos:related">
+            {% for subject in page.tags %}
+            <li class="label" about="{{ subject|replace({'<': '', '>': ''}) }}">
+                <span property="rdfs:label">{{ subject|trim('<urn:tag:')|trim('>') }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
     <h1 id="main_title" property="dcterms:title">{{ page.title|raw }}</h1>
     <div property="sioc:content">
         {{ page.content|raw }}
