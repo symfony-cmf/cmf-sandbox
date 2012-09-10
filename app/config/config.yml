@@ -136,6 +136,26 @@ sonata_admin:
             # display a dashboard block
             - { position: right, type: sonata.admin.block.admin_list }
             - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
+        groups:
+            content:
+                label: page content
+                items:
+                    - sandbox_main.admin.static_editable_content
+                    - symfony_cmf_multilang_content.static_content_admin
+            routing:
+                label: page routes
+                items:
+                    - symfony_cmf_routing_extra.route_admin
+                    - symfony_cmf_multilang_content.language_select_route_admin
+            menu:
+                label: menu structure
+                items:
+                    - symfony_cmf_menu.admin
+                    - symfony_cmf_multilang_content.menu_item_admin
+            simplecms:
+                label: simple cms (content/routing/menu as one)
+                items:
+                    - symfony_cmf_simple_cms.admin.page
 
 sonata_doctrine_phpcr_admin:
     document_tree:
@@ -162,7 +182,6 @@ sonata_doctrine_phpcr_admin:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuItem\Document\MenuItem
                 - Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem
-
 
 fos_js_routing:
     routes_to_expose:
@@ -192,6 +211,10 @@ fos_js_routing:
         - sonata.admin.doctrine_phpcr.phpcrodm_children
         - sonata.admin.doctrine_phpcr.phpcrodm_move
 
-fos_rest:
-    view:
-        view_response_listener: false
+sensio_framework_extra:
+    view:    { annotations: false }
+    router:  { annotations: true }
+    request: { converters: true }
+
+liip_search:
+    restrict_by_language: true;

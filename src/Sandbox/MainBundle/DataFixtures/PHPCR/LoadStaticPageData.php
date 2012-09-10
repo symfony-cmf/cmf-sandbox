@@ -6,44 +6,31 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use PHPCR\Util\NodeHelper;
+
+use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
 use Sandbox\MainBundle\Document\EditableStaticContent;
 
-class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
+class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
-    protected $session;
-
-    protected $container;
-
-    public function setContainer(ContainerInterface $container = null)
+    public function getOrder()
     {
-        if (! $container) {
-            throw new \Exception("This does not work without container");
-        }
-        $this->container = $container;
-        $this->session = $this->container->get('doctrine_phpcr.default_session'); // FIXME: should get this from manager in load, not necessarily the default
-    }
-
-    public function getOrder() {
         return 5;
     }
 
     public function load(ObjectManager $manager)
     {
-        if (! $this->container) {
-            throw new \Exception("This does not work without container");
-        }
+        $session = $manager->getPhpcrSession();
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
-        $this->createPath($basepath);
+        NodeHelper::createPath($session, $basepath);
 
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/../static/page.yml'));
 
-        foreach($data['static'] as $overview) {
+        foreach ($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
             if (! $page) {
@@ -52,50 +39,26 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
                 $page->setPath($path);
                 $manager->persist($page);
             }
-            $page->name = $overview['name'];
+            $page->setName($overview['name']);
 
             if (is_array($overview['title'])) {
-                foreach($overview['title'] as $locale => $title) {
-                    $page->title = $title;
-                    $page->body = $overview['content'][$locale];
+                foreach ($overview['title'] as $locale => $title) {
+                    $page->setTitle($title);
+                    $page->setContent($overview['content'][$locale]);
                     $manager->bindTranslation($page, $locale);
                 }
             } else {
-                $page->title = $overview['title'];
-                $page->body = $overview['content'];
+                $page->setTitle($overview['title']);
+                $page->setContent($overview['content']);
             }
             if (isset($overview['blocks'])) {
-                foreach($overview['blocks'] as $name => $block) {
+                foreach ($overview['blocks'] as $name => $block) {
                     $this->loadBlock($manager, $page, $name, $block);
                 }
             }
         }
 
         $manager->flush(); //to get ref id populated
-    }
-
-    /**
-     * Create a node and it's parents, if necessary.  Like mkdir -p.
-     *
-     * TODO: clean this up once the id generator stuff is done as intended
-     *
-     * @param string $path  full path, like /cms/navigation/main
-     * @return Node the (now for sure existing) node at path
-     */
-    public function createPath($path)
-    {
-        $current = $this->session->getRootNode();
-
-        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
-        foreach ($segments as $segment) {
-            if ($current->hasNode($segment)) {
-                $current = $current->getNode($segment);
-            } else {
-                $current = $current->addNode($segment);
-            }
-        }
-
-        return $current;
     }
 
     /**
@@ -106,7 +69,8 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
      * @param string $name the name of the block
      * @param array block the block definition
      */
-    private function loadBlock($manager, $parent, $name, $block) {
+    private function loadBlock($manager, $parent, $name, $block)
+    {
         $className = $block['class'];
         $document = $manager->find(null, $this->getIdentifier($manager, $parent) . '/' . $name);
         $class = $manager->getClassMetadata($className);
@@ -138,13 +102,14 @@ class LoadStaticPageData implements FixtureInterface, OrderedFixtureInterface, C
         }
         // create children
         if (isset($block['children'])) {
-            foreach($block['children'] as $childName => $child) {
+            foreach ($block['children'] as $childName => $child) {
                 $this->loadBlock($manager, $document, $childName, $child);
             }
         }
     }
 
-    private function getIdentifier($manager, $document) {
+    private function getIdentifier($manager, $document)
+    {
         $class = $manager->getClassMetadata(get_class($document));
         return $class->getIdentifierValue($document);
     }

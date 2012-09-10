@@ -18,16 +18,15 @@
         "jms/di-extra-bundle": "1.0.*",
         "symfony-cmf/symfony-cmf": "1.0.*",
         "symfony-cmf/simple-cms-bundle": "1.0.*",
+        "symfony-cmf/search-bundle": "dev-master",
         "jackalope/jackalope-jackrabbit": "1.0.*",
         "doctrine/doctrine-bundle": "dev-master",
         "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "liip/vie-bundle": "dev-master",
         "liip/functional-test-bundle": "dev-master",
-        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
-    },
-    "require-dev":{
-        "jackalope/jackalope-doctrine-dbal": "dev-master"
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
+        "symfony-cmf/tree-browser-bundle":"1.0.*"
     },
     "suggest": {
         "jackalope/jackalope-doctrine-dbal": "dev-master",

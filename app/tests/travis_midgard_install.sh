@@ -9,4 +9,4 @@ chmod +x ./travis_midgard.sh
 sudo wget --directory-prefix=/usr/share/midgard2/schema https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml
 sudo wget --directory-prefix=/usr/share/midgard2/schema https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_tree_node.xml
 
-php composer.phar require midgard/phpcr:dev-master
+composer require midgard/phpcr:dev-master

@@ -15,10 +15,10 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * Git 1.6+
   * PHP 5.3.3+
   * php5-intl
-  * phpunit 3.5+ (optional)
+  * phpunit 3.6+ (optional)
   * composer
 
-## Get the code
+## Initial setup and configuration
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
@@ -26,28 +26,28 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     cp app/config/parameters.yml.dist app/config/parameters.yml
     cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
-    # if you run with --dev, will install midgard too
-    php composer.phar install
-
-This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed. If you want to use a different PHPCR backend
-copy the given ``phpcr_*.yml.dist`` file instead and adjust the URL and database configurations accordingly.
 
 ### Install and run Apache JackRabbit
 
 Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
 You can also use a different PHPCR implementation but this is what is most tested.
 
+    php composer.phar install
+
+This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
+Please also adjust the ``app/config/parameters.yml`` as needed.
+
 ### Install the Doctrine DBAL provider (optional)
 
 Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist` files and create the database accordingly.
 
-To have the Doctrine DBAL implementation installed run the following additional commands
+To have the Doctrine DBAL implementation installed run the following additional command
 
-    php composer.phar install --dev
+    php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
 
-Then, create the tables in the database and set up the default workspace using
+Then, create the database and tables and set up the default workspace using
 
+    app/console doctrine:database:create
     app/console doctrine:phpcr:init:dbal
 
 ### Install the Midgard2 PHPCR provider (optional)
@@ -56,7 +56,7 @@ If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://mid
 
 You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midgardproject/phpcr-midgard2/master/data/share/schema/midgard_tree_node.xml) and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml) schema files, and place them into `/usr/share/midgard2/schema` (note: this path may be different if you built Midgard2 yourself. It is basically `$PREFIX/share/midgard2/schema`).
 
-To have the midgard phpcr implementation installed run the following additional commands
+To have the midgard phpcr implementation installed run the following additional command
 
     php composer.phar require midgard/phpcr:dev-master
 
@@ -90,13 +90,14 @@ Run this to load the fixtures from the Sandbox MainBundle.
 ## Access by web browser
 
 Create an apache virtual host entry along the lines of
-<Virtualhost *:80>
-    Servername cmf.lo
-    DocumentRoot /path/to/symfony-cmf/cmf-sandbox/web
-    <Directory /path/to/symfony-cmf/cmf-sandox>
-        AllowOverride All
-    </Directory>
-</Virtualhost>
+
+    <Virtualhost *:80>
+        Servername cmf.lo
+        DocumentRoot /path/to/symfony-cmf/cmf-sandbox/web
+        <Directory /path/to/symfony-cmf/cmf-sandbox>
+            AllowOverride All
+        </Directory>
+    </Virtualhost>
 
 And add an entry to your hosts file for cmf.lo
 
@@ -117,35 +118,7 @@ you need to generate the doctrine proxies and dump the assetic assets:
 
 # Getting started using Vagrant
 
-## You will need:
-  * Git 1.6+
-  * Nfs (MacOS works OOB, on Debian based linux distributions install nfs-kernel-server package)
-  * [Vagrant](http://vagrantup.com)
-
-## Get the code
-
-    git clone git://github.com/symfony-cmf/cmf-sandbox.git
-    cd cmf-sandbox/vagrant
-    vagrant up
-    vagrant ssh
-    # copy parameters template and edit as needed
-    cp app/config/parameters.yml.dist app/config/parameters.yml
-    cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
-    curl -s http://getcomposer.org/installer | php --
-    # if you run with --dev, will install midgard too
-    ./composer.phar install
-    ./jack start
-
-This will fetch the main project and all it's dependencies ( Cmf Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-
-## Jackrabbit
-
-Afterwards you will need to manually register the system node types and import the fixtures as explained above.
-
-## Access by web browser
-
-Optionally add an entry to your hosts file for cmf.lo pointing to 33.33.33.10, then point your browser to http://cmf.lo/app_dev.php
-Or go straight to http://33.33.33.10/app_dev.php
+please checkout the [README.md](cmf-sandbox/tree/master/vagrant) in the vagrant/ folder of the project
 
 # Other hints
 

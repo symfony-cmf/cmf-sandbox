@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}{{ title }} | CMF Sandbox{% endblock %}</title>
+        <title>{% block title %}{{ title|default('CMF Sandbox')|striptags }}{% endblock %}</title>
 
         {% block includes %}
             {% stylesheets
@@ -62,7 +62,7 @@
                 <div id="banner" class="span12">
                     <a href="https://github.com/symfony-cmf/cmf-sandbox"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
                     <div class="hero-unit">
-                        <h1 id="logo-text"><a href="{{ asset('') }}">CMF Sandbox</a></h1>
+                        <h1 id="logo-text"><a href="{{ path('', {'content_id': '/cms/routes'}) }}">CMF Sandbox</a></h1>
                         <p id="slogan">Symfony2 Content Management Framework</p>
                     </div>
                 </div>
@@ -79,35 +79,34 @@
 
             </div>
 
-
             <div  class="row">
                 <div id="content-container" class="span12 boxed">
-                    <div  class="row">
-                            <div id="navigation" class="span3">
-                                <div class="well">
-                                    {% block navigation %}
-                                        <h2>Navigation</h2>
-                                        {{ knp_menu_render('main') }}
+                    <div class="row">
+                        <div id="navigation" class="span3">
+                            <div class="well">
+                                {% block navigation %}
+                                    <h2>Navigation</h2>
+                                    {{ knp_menu_render('main') }}
+                                {% endblock %}
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <div id="content">
+                                <div class="inner">
+                                    {% block content %}
                                     {% endblock %}
                                 </div>
                             </div>
-                            <div class="span9">
-                                <div id="content">
-                                    <div class="inner">
-                                        {% block content %}
-                                        {% endblock %}
-                                    </div>
-                                </div>
 
-                                <div id="content_extra">
-                                    <div class="inner">
-                                        {% block content_extra %}
-                                        {% endblock %}
-                                    </div>
+                            <div id="content_extra">
+                                <div class="inner">
+                                    {% block content_extra %}
+                                    {% endblock %}
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
 
             <hr/>

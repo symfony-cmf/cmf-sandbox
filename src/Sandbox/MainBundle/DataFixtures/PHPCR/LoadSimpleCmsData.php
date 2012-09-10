@@ -6,35 +6,28 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use PHPCR\Util\NodeHelper;
 
-use PHPCR\SessionInterface;
+use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page;
 
-class LoadSimpleCmsData implements FixtureInterface, OrderedFixtureInterface, ContainerAwareInterface
+class LoadSimpleCmsData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
-    protected $container;
-
-    public function setContainer(ContainerInterface $container = null)
+    public function getOrder()
     {
-        $this->container = $container;
-    }
-
-    public function getOrder() {
         return 50;
     }
 
     public function load(ObjectManager $manager)
     {
+        $session = $manager->getPhpcrSession();
         $basepath = $this->container->getParameter('symfony_cmf_simple_cms.basepath');
 
-        $session = $manager->getPhpcrSession();
-        if ($session->nodeExists("$basepath")) {
-            $session->removeItem("$basepath");
+        if ($session->nodeExists($basepath)) {
+            $session->removeItem($basepath);
         }
-        $this->createPath($session, $basepath);
+        NodeHelper::createPath($session, $basepath);
         $base = $manager->find(null, $basepath);
 
         $root = $this->createPage($manager, $base, 'service', 'root', 'root page of service menu, never used', '');
@@ -55,33 +48,8 @@ class LoadSimpleCmsData implements FixtureInterface, OrderedFixtureInterface, Co
         $page->setTitle($title);
         $page->setBody($body);
 
-        $manager->persist($page); // do persist before binding translation
+        $manager->persist($page);
 
         return $page;
-    }
-
-    /**
-     * Create a node and it's parents, if necessary.  Like mkdir -p.
-     *
-     * TODO: clean this up once the id generator stuff is done as intended
-     *
-     * @param SessionInterface $session
-     * @param string $path  full path, like /cms/navigation/main
-     * @return \PHPCR\NodeInterface the (now for sure existing) node at path
-     */
-    public function createPath(SessionInterface $session, $path)
-    {
-        $current = $session->getRootNode();
-
-        $segments = preg_split('#/#', $path, null, PREG_SPLIT_NO_EMPTY);
-        foreach ($segments as $segment) {
-            if ($current->hasNode($segment)) {
-                $current = $current->getNode($segment);
-            } else {
-                $current = $current->addNode($segment);
-            }
-        }
-
-        return $current;
     }
 }

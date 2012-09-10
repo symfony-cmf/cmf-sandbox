@@ -25,4 +25,9 @@ abstract class WebTestCase extends BaseWebTestCase
 
         self::$fixturesLoaded = true;
     }
+
+    protected function isSearchSupported()
+    {
+        return $this->getContainer()->get('doctrine_phpcr')->getConnection()->nodeExists('/cms/menu/main/search-item');
+    }
 }

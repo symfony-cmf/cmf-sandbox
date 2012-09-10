@@ -1,3 +1,6 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
 Vagrant::Config.run do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
@@ -5,13 +8,8 @@ Vagrant::Config.run do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise32"
-
   config.vm.host_name = "cmfsandbox"
-
-  config.vm.customize do |vm|
-    vm.memory_size = 256
-    vm.name = "cmfsandbox"
-  end
+  config.vm.customize ["modifyvm", :id, "--memory", 768]
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -20,17 +18,24 @@ Vagrant::Config.run do |config|
   # Boot with a GUI so you can see the screen. (Default is headless)
   # config.vm.boot_mode = :gui
 
-  config.vm.network :hostonly, "33.33.33.10"
+  config.vm.network :hostonly, "172.22.22.22"
+  config.vm.share_folder "v-root", "/vagrant", ".." , :nfs => true
+  # whithout this symlinks can't be created on the shared folder
+  config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
-  config.vm.share_folder "app", "/app", "..", :nfs => true
 
   # create jackrabbit folder in repo and uncomment line if you want to keep your
   # repository outside the vm
   # config.vm.share_folder "jackrabbit", "/opt/jackrabbit/repository", "../jackrabbit"
 
-  config.vm.provision :puppet do |puppet|
-    puppet.manifests_path = "manifests"
-    puppet.module_path  = "modules"
-    puppet.manifest_file  = "sandbox.pp"
+  # chef solo configuration
+  config.vm.provision :chef_solo do |chef|
+    chef.cookbooks_path = "cookbooks"
+    # chef debug level, start vagrant like this to debug:
+    # $ CHEF_LOG_LEVEL=debug vagrant <provision or up>
+    chef.log_level = ENV['CHEF_LOG_LEVEL'] || "info"
+
+    # chef recipes
+    chef.add_recipe("local")
   end
 end

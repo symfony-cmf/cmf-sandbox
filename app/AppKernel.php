@@ -16,7 +16,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-            // new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
@@ -34,17 +34,19 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\TreeBrowserBundle\SymfonyCmfTreeBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\SymfonyCmfBlockBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\SymfonyCmfSimpleCmsBundle(),
+            new Symfony\Cmf\Bundle\SearchBundle\SymfonyCmfSearchBundle(),
+
+            // search
+            new Liip\SearchBundle\LiipSearchBundle(),
 
             // create.js editing related
             new Liip\VieBundle\LiipVieBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
             new Sandbox\TestBundle\SandboxTestBundle(),
-            new Sandbox\AdminBundle\SandboxAdminBundle(),
             new Sandbox\BlockBundle\SandboxBlockBundle(),
 
             // admin bundle
@@ -53,6 +55,7 @@ class AppKernel extends Kernel
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
