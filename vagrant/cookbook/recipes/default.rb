@@ -60,7 +60,7 @@ directory "/opt/jackrabbit" do
 end
 
 remote_file "/opt/jackrabbit/jackrabbit.jar" do
-  source "http://archive.apache.org/dist/jackrabbit/2.5.1/jackrabbit-standalone-2.5.1.jar"
+  source "http://archive.apache.org/dist/jackrabbit/2.4.3/jackrabbit-standalone-2.4.3.jar"
   mode "0644"
   checksum "e65d2677a9514cf9f8cd216d6a331c2253fd37a2e8daab9a6ca928d602aa83b7"
 end
