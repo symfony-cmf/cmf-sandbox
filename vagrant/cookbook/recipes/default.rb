@@ -88,7 +88,7 @@ execute "date.timezone = UTC in php.ini?" do
 end
 
 bash "Running composer install and preparing the phpcr repository" do
-  not_if "test -e /var/tmp/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/public"
+  not_if "test -e /vagrant/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/public"
   user "vagrant"
   cwd "/vagrant"
   code <<-EOH
