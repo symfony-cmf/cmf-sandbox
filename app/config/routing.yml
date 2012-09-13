@@ -33,13 +33,13 @@ test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
 
-image_upload:
-    pattern: /image/upload/
+hallo_image_upload:
+    pattern: /image/upload
     defaults: { _controller: sandbox_main.image_controller:uploadAction, _format: json }
     requirements:
         _format: json
 
-image_display:
+hallo_image_display:
     pattern: /image/{id}
     defaults: { _controller: sandbox_main.image_controller:displayAction }
     requirements:
