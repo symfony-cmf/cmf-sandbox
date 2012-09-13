@@ -59,10 +59,10 @@ directory "/opt/jackrabbit" do
   group "root"
 end
 
-remote_file "/opt/jackrabbit/jackrabbit-standalone-2.4.2.jar" do
-  source "http://apache.org/dist/jackrabbit/2.4.2/jackrabbit-standalone-2.4.2.jar"
+remote_file "/opt/jackrabbit/jackrabbit.jar" do
+  source "http://archive.apache.org/dist/jackrabbit/2.4.3/jackrabbit-standalone-2.4.3.jar"
   mode "0644"
-  checksum "608b1a35897dc260b12c51f76819f96ae9d01d7fb943289754669ee396e49604"
+  checksum "e65d2677a9514cf9f8cd216d6a331c2253fd37a2e8daab9a6ca928d602aa83b7"
 end
 
 template "/etc/init.d/jackrabbit" do
@@ -88,7 +88,7 @@ execute "date.timezone = UTC in php.ini?" do
 end
 
 bash "Running composer install and preparing the phpcr repository" do
-  not_if "test -e /var/tmp/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/public"
+  not_if "test -e /vagrant/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Resources/public"
   user "vagrant"
   cwd "/vagrant"
   code <<-EOH
