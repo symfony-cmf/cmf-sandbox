@@ -729,7 +729,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-02 20:50:26",
+            "time": "2012-01-02 19:50:26",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -771,7 +771,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 20:40:52",
+            "time": "2012-01-02 19:40:52",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -871,7 +871,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 21:32:49",
+            "time": "2012-01-02 20:32:49",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1110,7 +1110,7 @@
                 "knplabs/knp-menu": "1.1.*",
                 "symfony/framework-bundle": ">=2.0,<2.2-dev"
             },
-            "time": "2012-05-17 11:56:49",
+            "time": "2012-05-17 09:56:49",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1827,12 +1827,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "d36b92ffaa439aa5320e2c9beee5f95ff3f4d050"
+                "reference": "a71c4a814009586fd62c0d6fad3e3802992e987b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/d36b92ffaa439aa5320e2c9beee5f95ff3f4d050",
-                "reference": "d36b92ffaa439aa5320e2c9beee5f95ff3f4d050",
+                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/a71c4a814009586fd62c0d6fad3e3802992e987b",
+                "reference": "a71c4a814009586fd62c0d6fad3e3802992e987b",
                 "shasum": ""
             },
             "require": {
@@ -1848,7 +1848,7 @@
             "suggest": {
                 "symfony-cmf/tree-browser-bundle": "to have a tree widget for phpcr data. require version 1.0.*"
             },
-            "time": "1347451678",
+            "time": "1347710877",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
