@@ -361,12 +361,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm",
-                "reference": "7de78baeb1cdc22e3c61a0131ba51418719100d1"
+                "reference": "5e5f93a19b985e1ceebc39a01c97656d2cf8643c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/phpcr-odm/zipball/7de78baeb1cdc22e3c61a0131ba51418719100d1",
-                "reference": "7de78baeb1cdc22e3c61a0131ba51418719100d1",
+                "url": "https://github.com/doctrine/phpcr-odm/zipball/5e5f93a19b985e1ceebc39a01c97656d2cf8643c",
+                "reference": "5e5f93a19b985e1ceebc39a01c97656d2cf8643c",
                 "shasum": ""
             },
             "require": {
@@ -384,7 +384,7 @@
                 "jackalope/jackalope-jackrabbit": "1.0.*",
                 "midgard/phpcr": ">=1.3"
             },
-            "time": "1347608244",
+            "time": "1347865842",
             "bin": [
                 "bin/phpcr",
                 "bin/phpcr.php"
@@ -729,7 +729,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-02 19:50:26",
+            "time": "2012-01-02 18:50:26",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -771,7 +771,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 19:40:52",
+            "time": "2012-01-02 18:40:52",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -871,7 +871,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-02 20:32:49",
+            "time": "2012-01-02 19:32:49",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1110,7 +1110,7 @@
                 "knplabs/knp-menu": "1.1.*",
                 "symfony/framework-bundle": ">=2.0,<2.2-dev"
             },
-            "time": "2012-05-17 09:56:49",
+            "time": "2012-05-17 07:56:49",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1564,19 +1564,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle",
-                "reference": "v2.1.0"
+                "reference": "6d393099b17f301cc09a1d586292ed0b84763011"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/zipball/v2.1.0",
-                "reference": "v2.1.0",
+                "url": "https://github.com/sensio/SensioFrameworkExtraBundle/zipball/6d393099b17f301cc09a1d586292ed0b84763011",
+                "reference": "6d393099b17f301cc09a1d586292ed0b84763011",
                 "shasum": ""
             },
             "require": {
                 "symfony/framework-bundle": "2.1.*",
                 "doctrine/common": ">=2.1,<2.4-dev"
             },
-            "time": "1346234539",
+            "time": "1347780475",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2838,12 +2838,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "f23fd03732e115fd15ec675c0ada4cba20a035d1"
+                "reference": "9993b86a4844af0b3dcd79f1c795eb4a8f5ab7d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/f23fd03732e115fd15ec675c0ada4cba20a035d1",
-                "reference": "f23fd03732e115fd15ec675c0ada4cba20a035d1",
+                "url": "https://github.com/symfony/symfony/zipball/9993b86a4844af0b3dcd79f1c795eb4a8f5ab7d9",
+                "reference": "9993b86a4844af0b3dcd79f1c795eb4a8f5ab7d9",
                 "shasum": ""
             },
             "require": {
@@ -2892,7 +2892,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "dev-master"
             },
-            "time": "1347354770",
+            "time": "1347864860",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2978,22 +2978,22 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "956a66e6da304ead2aa2632acc01118b360d19d3"
+                "reference": "c38e06ff4134820f5acca2b5b0a163251b053d89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/zipball/956a66e6da304ead2aa2632acc01118b360d19d3",
-                "reference": "956a66e6da304ead2aa2632acc01118b360d19d3",
+                "url": "https://github.com/fabpot/Twig/zipball/c38e06ff4134820f5acca2b5b0a163251b053d89",
+                "reference": "c38e06ff4134820f5acca2b5b0a163251b053d89",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1347542132",
+            "time": "1347806324",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.9-dev"
+                    "dev-master": "1.10-dev"
                 }
             },
             "installation-source": "source",
