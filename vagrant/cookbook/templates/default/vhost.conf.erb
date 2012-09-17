@@ -1,0 +1,13 @@
+# Override the Apache User (vhosts are included at the end of apache2.conf)
+User vagrant
+Group vagrant
+
+<VirtualHost *:80>
+  Servername cmf.lo
+  Serveralias 172.22.22.22
+  DocumentRoot /vagrant/web
+  <Directory "/vagrant/web">
+    AllowOverride All
+  </Directory>
+</VirtualHost>
+

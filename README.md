@@ -18,7 +18,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * phpunit 3.6+ (optional)
   * composer
 
-## Get the code
+## Initial setup and configuration
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
@@ -26,15 +26,16 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     cp app/config/parameters.yml.dist app/config/parameters.yml
     cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
-    php composer.phar install
-
-This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed.
 
 ### Install and run Apache JackRabbit
 
 Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
 You can also use a different PHPCR implementation but this is what is most tested.
+
+    php composer.phar install
+
+This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
+Please also adjust the ``app/config/parameters.yml`` as needed.
 
 ### Install the Doctrine DBAL provider (optional)
 
@@ -44,7 +45,13 @@ To have the Doctrine DBAL implementation installed run the following additional 
 
     php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
 
-Then, create the database and tables and set up the default workspace using
+Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""` 
+If you fail to do this you might receive:
+
+    [Symfony\Component\Filesystem\Exception\IOException]
+    Unable to create symlink due to error code 1314: 'A required privilege is not held by the client'. Do you have the required Administrator-rights?
+
+Then, create the database and tables and set up the default workspace using 
 
     app/console doctrine:database:create
     app/console doctrine:phpcr:init:dbal
