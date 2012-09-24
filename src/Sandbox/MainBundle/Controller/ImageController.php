@@ -12,6 +12,7 @@ use FOS\RestBundle\View\View;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -64,36 +65,36 @@ class ImageController extends Controller
     public function uploadAction(Request $request)
     {
         $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
-        $error = false;
-        $path = '';
 
         $files = $request->files;
-
         $id = '';
-        foreach ($files->all() as $file ) {
-            if (in_array($file->getClientMimeType(), $this->images_mime)) {
-                $name = $file->getClientOriginalName();
-                $path = $file->getPathname();
-                $id = md5(time());
-                $jcrPath = $basepath.'/'.$id;
-                if (!$this->dm->find(null, $jcrPath)) {
-                    $image = new Image();
-                    $image->setPath($jcrPath);
-                    $image->name = $id;
-                    $image->content = file_get_contents($path);
-                    $image->tags = explode(',', $request->get('tags'));
-                } else {
-                    $error = 'This file already exists in your backend.';
-                }
 
-                $this->dm->persist($image);
-            } else {
-                $error = "What you're trying to upload is not an image.";
+        foreach ($files->all() as $file ) {
+            if (! in_array($file->getClientMimeType(), $this->images_mime)) {
+                throw new HttpException(400, "What you're trying to upload is not an image.");
             }
+
+            // TODO: this code is ridiculous. either save images with md5 and no need to check if exists
+            // or use filename.
+            // ideally we would put the image under the entity that was edited. this would require that
+            // the entity id is transmitted by the hallo dialog which i think it is not.
+
+            // $name = $file->getClientOriginalName();
+            $path = $file->getPathname();
+            $id = md5(time());
+            $jcrPath = $basepath.'/'.$id;
+            if (!$this->dm->find(null, $jcrPath)) {
+                $image = new Image();
+                $image->setPath($jcrPath);
+                $image->name = $id;
+                $image->content = file_get_contents($path);
+                $image->tags = explode(',', $request->get('tags'));
+                $this->dm->persist($image);
+                $this->dm->flush();
+            }
+            // otherwise we will still redirect to the existing document
         }
 
-        $this->dm->flush();
-
-        return $this->redirect($this->generateUrl('image_display', array('id' => $id)));
+        return $this->redirect($this->generateUrl('hallo_image_display', array('id' => $id)));
     }
 }
