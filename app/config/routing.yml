@@ -47,6 +47,7 @@ hallo_image_display:
 
 create:
     resource: "@SymfonyCmfCreateBundle/Resources/config/routing/rest.xml"
+create_image:
     resource: "@SymfonyCmfCreateBundle/Resources/config/routing/image.xml"
 
 liip_search:
