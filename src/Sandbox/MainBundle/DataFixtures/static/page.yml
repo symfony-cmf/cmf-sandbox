@@ -26,12 +26,12 @@ static:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
                 children:
                     child1:
-                        class: Sandbox\BlockBundle\Document\EditableSimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
                             title: Editable Simpleblock
                             content: This is a simple block. It is stored on the homepage, but also referenced from the company page.
                     child2:
-                        class: Sandbox\BlockBundle\Document\EditableSimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
                             title: Another editable SimpleBlock
                             content: Both title and content of this block are editable.
