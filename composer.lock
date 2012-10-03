@@ -740,7 +740,7 @@
                 "symfony/framework-bundle": "2.*",
                 "jms/cg": "1.0.0"
             },
-            "time": "2012-01-01 13:50:26",
+            "time": "2012-01-01 09:50:26",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -782,7 +782,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-01 13:40:52",
+            "time": "2012-01-01 09:40:52",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -884,7 +884,7 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-01-01 14:32:49",
+            "time": "2012-01-01 10:32:49",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -1003,7 +1003,7 @@
                 "twig/twig": ">=1.8,<2.0-dev",
                 "doctrine/orm": ">=2.1,<2.4-dev"
             },
-            "time": "2012-09-20 07:23:52",
+            "time": "2012-09-19 23:23:52",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1126,7 +1126,7 @@
                 "knplabs/knp-menu": "1.1.*",
                 "symfony/framework-bundle": ">=2.0,<2.2-dev"
             },
-            "time": "2012-05-14 21:56:49",
+            "time": "2012-05-14 13:56:49",
             "type": "symfony-bundle",
             "installation-source": "dist",
             "autoload": {
@@ -2114,12 +2114,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "7b0c242ef453bd408aa3cceac9366d5ed538f09b"
+                "reference": "99323e851c5877f186e53c8fccaad846d5e1bb75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/ContentBundle/zipball/7b0c242ef453bd408aa3cceac9366d5ed538f09b",
-                "reference": "7b0c242ef453bd408aa3cceac9366d5ed538f09b",
+                "url": "https://github.com/symfony-cmf/ContentBundle/zipball/99323e851c5877f186e53c8fccaad846d5e1bb75",
+                "reference": "99323e851c5877f186e53c8fccaad846d5e1bb75",
                 "shasum": ""
             },
             "require": {
@@ -2132,7 +2132,7 @@
             "suggest": {
                 "friendsofsymfony/rest-bundle": "Improved handling for different output formats"
             },
-            "time": "1349092324",
+            "time": "1349290079",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2331,12 +2331,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/MultilangContentBundle.git",
-                "reference": "b6183ed7249776bb3df9d6acaf6122adaec32de3"
+                "reference": "4f72735093bf4f0aadb9d91200d682b6556adb6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/MultilangContentBundle/zipball/b6183ed7249776bb3df9d6acaf6122adaec32de3",
-                "reference": "b6183ed7249776bb3df9d6acaf6122adaec32de3",
+                "url": "https://github.com/symfony-cmf/MultilangContentBundle/zipball/4f72735093bf4f0aadb9d91200d682b6556adb6f",
+                "reference": "4f72735093bf4f0aadb9d91200d682b6556adb6f",
                 "shasum": ""
             },
             "require": {
@@ -2348,7 +2348,7 @@
             "require-dev": {
                 "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
             },
-            "time": "1348779367",
+            "time": "1349290131",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
