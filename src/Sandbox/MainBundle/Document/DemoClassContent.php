@@ -88,19 +88,6 @@ class DemoClassContent implements RouteAwareInterface
     {
         $this->parent = $parent;
     }
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    public function setTitle($title)
-    {
-        $this->title = $title;
-    }
-    public function getTitle()
-    {
-        return $this->title;
-    }
 
     public function getBody()
     {
