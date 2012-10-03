@@ -45,11 +45,9 @@ hallo_image_display:
     requirements:
         id: '[A-Za-z0-9\.]+'
 
-vie:
-    resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"
-
-vie_asset_management:
-    resource: "@LiipVieBundle/Resources/config/routing/asset_search.xml"
+create:
+    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/rest.xml"
+    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/image.xml"
 
 liip_search:
     resource: "@SymfonyCmfSearchBundle/Resources/config/routing.yml"

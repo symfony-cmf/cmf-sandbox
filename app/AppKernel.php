@@ -40,7 +40,7 @@ class AppKernel extends Kernel
             new Liip\SearchBundle\LiipSearchBundle(),
 
             // create.js editing related
-            new Liip\VieBundle\LiipVieBundle(),
+            new Symfony\Cmf\Bundle\CreateBundle\SymfonyCmfCreateBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
 

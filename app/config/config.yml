@@ -105,16 +105,13 @@ symfony_cmf_simple_cms:
 knp_menu:
     twig: true
 
-liip_vie:
+symfony_cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent'
     rdf_config_dirs:
-        - /home/david/liip/symfony-cmf/cmf-sandbox_createphp/app/Resources/rdf-mappings
+        - %kernel.root_dir%/Resources/rdf-mappings
     use_coffee: %liip_vie.use_coffee%
-    # TODO: these settings should come from the corresponding bundles, not be duplicated
-    base_path: /cms/routes
-    cms_path: /cms/content/static
 
 sonata_block:
     default_contexts: [cms]
