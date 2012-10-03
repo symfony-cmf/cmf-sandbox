@@ -7,6 +7,6 @@
     <children>
         <property property="dcterms:title" identifier="title" tag-name="h1"/>
         <property property="sioc:content" identifier="body" />
-        <!-- fix tags handling => StaticContent tag children collection rel="skos:related" identifier="tags" tag-name="ul" /-->
+        <collection rel="skos:related" identifier="tags" tag-name="ul" />
     </children>
 </type>
