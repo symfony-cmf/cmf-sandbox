@@ -204,7 +204,9 @@ fos_js_routing:
         - admin_bundle_simplecms_page_delete
         - admin_bundle_simplecms_page_edit
         - symfony_cmf_tree_browser.phpcr_children
+        - symfony_cmf_tree_browser.phpcr_properties
         - symfony_cmf_tree_browser.phpcr_move
+        - symfony_cmf_tree_browser.phpcr_submit
         - sonata.admin.doctrine_phpcr.phpcrodm_children
         - sonata.admin.doctrine_phpcr.phpcrodm_move
 
