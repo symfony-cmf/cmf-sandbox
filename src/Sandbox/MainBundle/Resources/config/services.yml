@@ -4,14 +4,6 @@ services:
         calls:
             - [ setContainer, [@service_container] ]
 
-    sandbox_main.image_controller:
-        class: Sandbox\MainBundle\Controller\ImageController
-        factory_service: doctrine_phpcr.odm.document_manager
-        arguments:
-            - @service_container
-            - @doctrine_phpcr.odm.document_manager
-            - @fos_rest.view_handler
-
     sandbox_main.debugListener:
         class: Sandbox\MainBundle\Listener\SandboxExceptionListener
         calls:

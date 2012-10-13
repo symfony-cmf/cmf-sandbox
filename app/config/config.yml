@@ -109,9 +109,10 @@ symfony_cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent'
-    rdf_config_dirs:
-        - %kernel.root_dir%/Resources/rdf-mappings
     use_coffee: %liip_vie.use_coffee%
+    image:
+        model_class: Symfony\Cmf\Bundle\CreateBundle\Document\Image
+        controller_class: Symfony\Cmf\Bundle\CreateBundle\Controller\PHPCRImageController
 
 sonata_block:
     default_contexts: [cms]

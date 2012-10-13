@@ -25,6 +25,7 @@ fos_js_routing:
 phpcrbrowser:
     resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/phpcrbrowser.xml
     prefix: /admin/browser
+
 phpcrodmbrowser:
     resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
     prefix: /admin/browser
@@ -33,20 +34,9 @@ test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
 
-hallo_image_upload:
-    pattern: /image/upload
-    defaults: { _controller: sandbox_main.image_controller:uploadAction, _format: json }
-    requirements:
-        _format: json
-
-hallo_image_display:
-    pattern: /image/{id}
-    defaults: { _controller: sandbox_main.image_controller:displayAction }
-    requirements:
-        id: '[A-Za-z0-9\.]+'
-
 create:
     resource: "@SymfonyCmfCreateBundle/Resources/config/routing/rest.xml"
+
 create_image:
     resource: "@SymfonyCmfCreateBundle/Resources/config/routing/image.xml"
 
