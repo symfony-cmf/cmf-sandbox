@@ -29,7 +29,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $parent = $manager->find(null, $basepath);
 
         $yaml = new Parser();
-        $data = $yaml->parse(file_get_contents(__DIR__ . '/../static/page.yml'));
+        $data = $yaml->parse(file_get_contents(__DIR__ . '/../../Resources/data/page.yml'));
 
         foreach ($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
