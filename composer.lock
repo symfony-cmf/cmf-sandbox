@@ -1,5 +1,5 @@
 {
-    "hash": "96e37ead07177944983c94194cedbd76",
+    "hash": "2dc977f533d76d41de5049abcd60014a",
     "packages": [
         {
             "name": "doctrine/common",
@@ -1314,6 +1314,60 @@
             "description": "This bundles provides some basic infrastructure for creating a search UI in Symfony2 applications along with integration with Google's search API",
             "keywords": [
                 "Symfony2"
+            ]
+        },
+        {
+            "name": "lunetics/locale-bundle",
+            "version": "dev-master",
+            "target-dir": "Lunetics/LocaleBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lunetics/LocaleBundle",
+                "reference": "8bea5b9583e18f44ffc57a260783739e2f4d188d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/lunetics/LocaleBundle/zipball/8bea5b9583e18f44ffc57a260783739e2f4d188d",
+                "reference": "8bea5b9583e18f44ffc57a260783739e2f4d188d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "ext-intl": "*",
+                "symfony/framework-bundle": "2.1.*",
+                "symfony/yaml": "2.1.*",
+                "symfony/locale": "2.1.*"
+            },
+            "time": "1350426502",
+            "type": "symfony-bundle",
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Lunetics\\LocaleBundle": ""
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lunetics",
+                    "homepage": "http://www.lunetics.com"
+                },
+                {
+                    "name": "Christophe Willesmen",
+                    "homepage": "http://christophewillemsen.com"
+                }
+            ],
+            "description": "A Bundle for switching Languages",
+            "keywords": [
+                "browser",
+                "bundle",
+                "locale",
+                "router",
+                "multilanguage",
+                "language",
+                "cookie"
             ]
         },
         {
@@ -3071,6 +3125,7 @@
         "symfony-cmf/create-bundle": 20,
         "doctrine/data-fixtures": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
-        "liip/functional-test-bundle": 20
+        "liip/functional-test-bundle": 20,
+        "lunetics/locale-bundle": 20
     }
 }

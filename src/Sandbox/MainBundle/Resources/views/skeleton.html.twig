@@ -41,7 +41,7 @@
                     <div id="language_selector" class="pull-right">
                         {% block language_selector %}
                             {% if page is defined %}
-                                {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"id" : path, "languageUrls": languageUrls|default(false) } %}
+                                {{ locale_switcher('', {content: page}) }}
                             {% endif %}
                         {% endblock %}
                     </div>
@@ -52,7 +52,7 @@
                 <div id="banner" class="span12">
                     <a href="https://github.com/symfony-cmf/cmf-sandbox"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
                     <div class="hero-unit">
-                        <h1 id="logo-text"><a href="{{ path('', {'content_id': '/cms/routes'}) }}">CMF Sandbox</a></h1>
+                        <h1 id="logo-text"><a href="{{ path('home_redirect') }}">CMF Sandbox</a></h1>
                         <p id="slogan">Symfony2 Content Management Framework</p>
                     </div>
                 </div>

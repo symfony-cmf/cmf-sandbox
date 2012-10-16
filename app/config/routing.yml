@@ -3,6 +3,13 @@
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
+home_redirect:
+    pattern: /
+    defaults:
+        _controller: lunetics_locale.switcher_controller:switchAction
+        _locale: %locale%
+        route: cmf_routing_dynamic_route_cms_routes_%locale%
+
 admin_dashboard:
     pattern: /admin/
     defaults:

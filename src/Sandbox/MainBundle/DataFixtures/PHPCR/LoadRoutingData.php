@@ -13,7 +13,6 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route;
 use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute;
-use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangLanguageSelectRoute;
 
 class LoadRoutingData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -29,7 +28,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
      * consistent in what you use and only use different things for special
      * cases.
      *
-     * @param $dm
+     * @param $dm \Doctrine\ODM\PHPCR\DocumentManager
      */
     public function load(ObjectManager $dm)
     {
@@ -42,14 +41,10 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $session->removeItem($basepath);
         }
 
-        NodeHelper::createPath($session, dirname($basepath));
-        $root = $dm->find(null, dirname($basepath));
-        $locales = array('en', 'fr', 'de'); //TODO: can we get this from phpcr-odm in a sane way?
+        NodeHelper::createPath($session, $basepath);
+        $parent = $dm->find(null, $basepath);
 
-        $parent = new MultilangLanguageSelectRoute();
-        $parent->setPosition($root, basename($basepath));
-        $dm->persist($parent);
-
+        $locales = $this->container->getParameter('locales');
         foreach ($locales as $locale) {
             $home = new Route;
             $home->setPosition($parent, $locale);

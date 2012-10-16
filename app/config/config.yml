@@ -142,7 +142,6 @@ sonata_admin:
                 label: page routes
                 items:
                     - symfony_cmf_routing_extra.route_admin
-                    - symfony_cmf_multilang_content.language_select_route_admin
             menu:
                 label: menu structure
                 items:
@@ -166,10 +165,6 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
         Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:
             valid_children: []
-        Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangLanguageSelectRoute:
-            valid_children:
-                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
-                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
         Symfony\Cmf\Bundle\MenuItem\Document\MenuItem:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuItem\Document\MenuItem
@@ -190,9 +185,6 @@ fos_js_routing:
         - admin_bundle_multilangcontent_multilangstaticcontent_create
         - admin_bundle_multilangcontent_multilangstaticcontent_delete
         - admin_bundle_multilangcontent_multilangstaticcontent_edit
-        - admin_bundle_multilangcontent_multilanglanguageselectroute_create
-        - admin_bundle_multilangcontent_multilanglanguageselectroute_delete
-        - admin_bundle_multilangcontent_multilanglanguageselectroute_edit
         - admin_bundle_routingextra_route_create
         - admin_bundle_routingextra_route_delete
         - admin_bundle_routingextra_route_edit
@@ -211,3 +203,10 @@ sensio_framework_extra:
 
 liip_search:
     restrict_by_language: true;
+
+lunetics_locale:
+    guessing_order:
+        - cookie
+        - router
+        - browser
+    allowed_locales: %locales%
