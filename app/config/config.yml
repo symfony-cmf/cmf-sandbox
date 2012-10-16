@@ -137,7 +137,6 @@ sonata_admin:
             content:
                 label: page content
                 items:
-                    - sandbox_main.admin.static_editable_content
                     - symfony_cmf_multilang_content.static_content_admin
             routing:
                 label: page routes
