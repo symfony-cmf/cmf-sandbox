@@ -51,7 +51,7 @@ static:
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
-                referencedBlock: /cms/content/static/home/additionalInfoBlock/child1
+                referencedBlock: /cms/content/home/additionalInfoBlock/child1
     -
         name: "team"
         title: "The Team"

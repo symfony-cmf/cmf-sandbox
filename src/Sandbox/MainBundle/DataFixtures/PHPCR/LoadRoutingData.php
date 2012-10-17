@@ -35,8 +35,8 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath    = $this->container->getParameter('symfony_cmf_routing_extra.routing_repositoryroot');
-        $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
+        $basepath = $this->container->getParameter('symfony_cmf_routing_extra.routing_repositoryroot');
+        $content_path = $this->container->getParameter('symfony_cmf_content.content_basepath');
 
         if ($session->itemExists($basepath)) {
             $session->removeItem($basepath);
