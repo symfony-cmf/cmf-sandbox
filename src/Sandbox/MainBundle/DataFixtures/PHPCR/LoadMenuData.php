@@ -11,7 +11,7 @@ use PHPCR\Util\NodeHelper;
 use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem;
-use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuItem;
 
 class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {

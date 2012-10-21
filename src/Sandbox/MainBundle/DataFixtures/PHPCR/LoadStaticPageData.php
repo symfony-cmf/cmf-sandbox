@@ -11,7 +11,7 @@ use PHPCR\Util\NodeHelper;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
-use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangStaticContent;
+use Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent;
 
 class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -35,7 +35,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
             if (! $page) {
-                $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\MultilangContentBundle\\Document\\MultilangStaticContent';
+                $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\ContentBundle\\Document\\MultilangStaticContent';
                 /** @var $page MultilangStaticContent */
                 $page = new $class();
                 $page->setName($overview['name']);
