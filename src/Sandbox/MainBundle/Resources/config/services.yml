@@ -5,7 +5,7 @@ services:
             - [ setContainer, [@service_container] ]
 
     sandbox_main.debugListener:
-        class: Sandbox\MainBundle\Listener\SandboxExceptionListener
+        class: Sandbox\MainBundle\EventListener\SandboxExceptionListener
         calls:
             - [ setContainer, [@service_container] ]
         tags:
