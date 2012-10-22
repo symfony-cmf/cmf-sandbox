@@ -6,28 +6,6 @@
 {{ rdf|raw }}
 {% endcreatephp %}
 
-{# <div xmlns:sioc="http://rdfs.org/sioc/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
-     typeof="sioc:Post"
-     about="{{ page.path }}"
-     class="articleContainer hero-unit">
-
-    <div class="hiddenfields">
-        <ul rel="skos:related">
-            {% for subject in page.tags %}
-            <li class="label" about="{{ subject|replace({'<': '', '>': ''}) }}">
-                <span property="rdfs:label">{{ subject|trim('<urn:tag:')|trim('>') }}</span>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <h1 id="main_title" property="dcterms:title">{{ page.title|raw }}</h1>
-    <div property="sioc:content">
-        {{ page.content|raw }}
-        <div class="clearfix"></div>
-    </div>
-</div>
-#}
-
 <hr/>
 
 <div class="row">
@@ -39,13 +17,4 @@
 <hr/>
 
 {{ parent() }}
-{% endblock %}
-
-{% block content_extra %}
-<h3 class="offset">Child pages</h3>
-{#
-TODO: provide knp menu bundle child list renderer as twig extension
-https://github.com/KnpLabs/KnpMenu/blob/master/src/Knp/Menu/Renderer/ListRenderer.php#L48
-{% render "symfony_cmf_navigation.renderer:childlistAction" with { 'url': url } %}
-#}
 {% endblock %}
