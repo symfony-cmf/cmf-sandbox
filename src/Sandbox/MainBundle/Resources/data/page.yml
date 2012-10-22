@@ -8,17 +8,17 @@ static:
         content:
             en: |
                 <h2>Welcome to the Symfony CMF Demo</h2>
-                <p>If you see this page, it means that the Symfony CMF installation is running successfully!</p>
+                <p>If you see this page, it means that the <a href="http://cmf.symfony.com">Symfony CMF</a> installation ran successfully!</p>
                 <h2>How to proceed</h2>
                 <p>There is a couple of bundles to look into in the vendor/symfony-cmf/ folder. Look at the main README but also at the individual README files of the bundles.</p>
             fr: |
                 <h2>Bienvenue dans la démo de Symfony CMF</h2>
-                <p>Si vous voyez cette page, c'est que l'installation de Symfony CMF a fonctionné !</p>
+                <p>Si vous voyez cette page, c'est que l'installation de <a href="http://cmf.symfony.com">Symfony CMF</a> a fonctionné !</p>
                 <h2>Que faire maintenant ?</h2>
                 <p>Plusieurs bundles se trouvent dans le répertoire vendor/symfony-cmf/. Lisez le README principal ainsi que les README propres à chaque bundle.</p>
             de: |
                 <h2>Willkommen zur Symfony CMF Demo</h2>
-                <p>Wenn du diese Seite siehst, bedeutet das dass die Installation des Symfony CMF erfolgreich war!</p>
+                <p>Wenn du diese Seite siehst, bedeutet das dass die Installation des <a href="http://cmf.symfony.com">Symfony CMF</a> erfolgreich war!</p>
                 <h2>Was nun?</h2>
                 <p>Es gibt einige Bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen Bundles.</p>
         blocks:
@@ -26,12 +26,12 @@ static:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
                 children:
                     child1:
-                        class: Sandbox\BlockBundle\Document\EditableSimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
                             title: Editable Simpleblock
                             content: This is a simple block. It is stored on the homepage, but also referenced from the company page.
                     child2:
-                        class: Sandbox\BlockBundle\Document\EditableSimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
                             title: Another editable SimpleBlock
                             content: Both title and content of this block are editable.
@@ -51,7 +51,7 @@ static:
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
-                referencedBlock: /cms/content/static/home/additionalInfoBlock/child1
+                referencedBlock: /cms/content/home/additionalInfoBlock/child1
     -
         name: "team"
         title: "The Team"

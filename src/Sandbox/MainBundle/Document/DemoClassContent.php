@@ -26,8 +26,13 @@ class DemoClassContent implements RouteAwareInterface
     public $node;
 
     /**
+     * @PHPCRODM\Parentdocument()
+     */
+    public $parent;
+
+    /**
      * @Assert\NotBlank
-     * @PHPCRODM\String()
+     * @PHPCRODM\Nodename()
      */
     protected $name;
 
@@ -75,18 +80,21 @@ class DemoClassContent implements RouteAwareInterface
     {
       $this->path = $path;
     }
-
     public function getPath()
     {
       return $this->path;
     }
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
 
-    public function getContent()
+    public function getBody()
     {
         return $this->body;
     }
 
-    public function setContent($content)
+    public function setBody($content)
     {
         $this->body = $content;
     }

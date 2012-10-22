@@ -2,21 +2,12 @@
 {% extends "SandboxMainBundle::skeleton.html.twig" %}
 
 {% block content %}
-<div class="articleContainer">
-    <p><em>This is a template explicitly specified by a route</em></p>
-    <h1 id="main_title" property="dcterms:title">{{ page.title }}</h1>
-    <div property="sioc:content">
-        {{ page.content|raw }}
-    </div>
-</div>
+<p><em>This is a template explicitly specified by a route</em></p>
+{% createphp page as="rdf" %}
+    {{ rdf|raw }}
+{% endcreatephp %}
 {{ parent() }}
 {% endblock %}
 
 {% block content_extra %}
-<h3 class="offset">Child pages</h3>
-{#
-TODO: provide knp menu bundle child list renderer as twig extension
-https://github.com/KnpLabs/KnpMenu/blob/master/src/Knp/Menu/Renderer/ListRenderer.php#L48
-{% render "symfony_cmf_navigation.renderer:childlistAction" with { 'url': url } %}
-#}
 {% endblock %}
