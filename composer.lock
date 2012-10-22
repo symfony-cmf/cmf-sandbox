@@ -2447,12 +2447,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/SearchBundle.git",
-                "reference": "0fe4dcbef95483a4329000048f4e680836ac039a"
+                "reference": "5fbdc755c1a76cb57eac5893e678c8732092f9fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/SearchBundle/zipball/0fe4dcbef95483a4329000048f4e680836ac039a",
-                "reference": "0fe4dcbef95483a4329000048f4e680836ac039a",
+                "url": "https://github.com/symfony-cmf/SearchBundle/zipball/5fbdc755c1a76cb57eac5893e678c8732092f9fb",
+                "reference": "5fbdc755c1a76cb57eac5893e678c8732092f9fb",
                 "shasum": ""
             },
             "require": {
@@ -2460,7 +2460,7 @@
                 "symfony/framework-bundle": "2.1.*",
                 "liip/search-bundle": "dev-master"
             },
-            "time": "1343052001",
+            "time": "1350923336",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2474,9 +2474,7 @@
             "authors": [
                 {
                     "name": "Symfony CMF Community",
-                    "email": null,
-                    "homepage": "https://github.com/symfony-cmf/SearchBundle/contributors",
-                    "role": null
+                    "homepage": "https://github.com/symfony-cmf/SearchBundle/contributors"
                 }
             ],
             "description": "Symfony SearchBundle",
