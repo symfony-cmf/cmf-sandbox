@@ -23,14 +23,17 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     public function load(ObjectManager $manager)
     {
         $session = $manager->getPhpcrSession();
-        $basepath = $this->container->getParameter('symfony_cmf_content.content_basepath');
 
+        $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
         NodeHelper::createPath($session, $basepath);
-        $parent = $manager->find(null, $basepath);
+
+        $basepath = $this->container->getParameter('symfony_cmf_content.content_basepath');
+        NodeHelper::createPath($session, $basepath);
 
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/../../Resources/data/page.yml'));
 
+        $parent = $manager->find(null, $basepath);
         foreach ($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
