@@ -31,7 +31,8 @@ class StaticPageTest extends WebTestCase
             array('/demo/atemplate', 'Explicit template'),
             array('/demo/alias', 'Controller by alias'),
             array('/demo/class', 'Controller by class'),
-            array('/hello', 'Hello World!')
+            array('/hello', 'Hello World!'),
+            array('/service/about', 'Some information about us'),
         );
     }
 }
