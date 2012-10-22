@@ -45,6 +45,18 @@ To have the Doctrine DBAL implementation installed run the following additional 
 
     php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
 
+To enable the meta data and node cache to improve performance first enable ``LiipDoctrineCacheBundle``
+in ``app/AppKernel.php`` and then also perform:
+
+    php composer.phar require liip/doctrine-cache-bundle:dev-master
+
+Finally uncomment the ``caches`` settings in the `phpcr.yml`
+
+    caches:
+        meta: liip_doctrine_cache.ns.meta
+        nodes: liip_doctrine_cache.ns.nodes
+
+
 Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""` 
 If you fail to do this you might receive:
 
