@@ -11,7 +11,7 @@ use PHPCR\Util\NodeHelper;
 use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem;
-use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangMenuItem;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuItem;
 
 class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -25,7 +25,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $session = $dm->getPhpcrSession();
 
         $basepath = $this->container->getParameter('symfony_cmf_menu.menu_basepath');
-        $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
+        $content_path = $this->container->getParameter('symfony_cmf_content.content_basepath');
 
         NodeHelper::createPath($session, $basepath);
         $root = $dm->find(null, $basepath);

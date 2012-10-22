@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandbox\MainBundle\Listener;
+namespace Sandbox\MainBundle\EventListener;
 
 use PHPCR\RepositoryException;
 

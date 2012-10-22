@@ -3,6 +3,13 @@
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
+home_redirect:
+    pattern: /
+    defaults:
+        _controller: lunetics_locale.switcher_controller:switchAction
+        route: cmf_routing_dynamic_route_cms_routes_en
+        statusCode: 301
+
 admin_dashboard:
     pattern: /admin/
     defaults:
@@ -25,6 +32,7 @@ fos_js_routing:
 phpcrbrowser:
     resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/phpcrbrowser.xml
     prefix: /admin/browser
+
 phpcrodmbrowser:
     resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
     prefix: /admin/browser
@@ -33,23 +41,11 @@ test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
 
-image_upload:
-    pattern: /image/upload/
-    defaults: { _controller: sandbox_main.image_controller:uploadAction, _format: json }
-    requirements:
-        _format: json
+create:
+    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/rest.xml"
 
-image_display:
-    pattern: /image/{id}
-    defaults: { _controller: sandbox_main.image_controller:displayAction }
-    requirements:
-        id: '[A-Za-z0-9\.]+'
-
-vie:
-    resource: "@LiipVieBundle/Resources/config/routing/phpcr_odm.xml"
-
-vie_asset_management:
-    resource: "@LiipVieBundle/Resources/config/routing/asset_search.xml"
+create_image:
+    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/image.xml"
 
 liip_search:
     resource: "@SymfonyCmfSearchBundle/Resources/config/routing.yml"

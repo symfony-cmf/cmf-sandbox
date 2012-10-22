@@ -26,9 +26,15 @@ class ContentController extends Controller
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found');
         }
+
+        /** @var $rdfManager \Midgard\CreatePHP\Metadata\RdfTypeFactory */
+        $rdfManager = $this->get('liip_vie.rdf_type_manager');
+        $entity = $rdfManager->getEntity($contentDocument);
+
         $params = array(
             'title' => $contentDocument->title,
-            'page' => $contentDocument,
+            'path'  => $contentDocument->path,
+            'page' => $entity,
             'example' => 'Additional value injected by the controller for this alias (this could work without content if we want)',
         );
 
@@ -51,6 +57,7 @@ class ContentController extends Controller
         }
         $params = array(
             'title' => $contentDocument->title,
+            'path'  => $contentDocument->path,
             'page' => $contentDocument,
             'example' => 'Additional value injected by the controller for all content mapped to classAction',
         );
@@ -74,6 +81,7 @@ class ContentController extends Controller
         }
         $params = array(
             'title' => $contentDocument->title,
+            'path'  => $contentDocument->path,
             'page' => $contentDocument,
             'example' => 'Additional value injected by the controller when explicitly referenced',
         );
