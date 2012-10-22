@@ -54,6 +54,7 @@ doctrine:
         dbname:   %database_name%
         user:     %database_user%
         password: %database_password%
+        path:     %database_path%
         charset:  UTF8
 
 # cmf configuration
