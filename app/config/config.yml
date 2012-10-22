@@ -221,9 +221,9 @@ lunetics_locale:
     allowed_locales: %locales%
 
 # jackalope doctrine caching
-liip_doctrine_cache:
-    namespaces:
-        meta:
-            type: file_system
-        nodes:
-            type: file_system
+#liip_doctrine_cache:
+#    namespaces:
+#        meta:
+#            type: file_system
+#        nodes:
+#            type: file_system
