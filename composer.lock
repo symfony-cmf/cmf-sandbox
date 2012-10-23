@@ -1344,7 +1344,6 @@
             "suggest": {
                 "ext-intl": "Needed for displaying the countryname in the locale language"
             },
-            "time": "1350713189",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1374,7 +1373,8 @@
                 "multilanguage",
                 "language",
                 "cookie"
-            ]
+            ],
+            "time": "1350713189"
         },
         {
             "name": "midgard/createphp",
@@ -2447,12 +2447,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/SearchBundle.git",
-                "reference": "5fbdc755c1a76cb57eac5893e678c8732092f9fb"
+                "reference": "0fd73b0cff000e2a0e1b6a4b8b416add54fbcd39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/SearchBundle/zipball/5fbdc755c1a76cb57eac5893e678c8732092f9fb",
-                "reference": "5fbdc755c1a76cb57eac5893e678c8732092f9fb",
+                "url": "https://github.com/symfony-cmf/SearchBundle/zipball/0fd73b0cff000e2a0e1b6a4b8b416add54fbcd39",
+                "reference": "0fd73b0cff000e2a0e1b6a4b8b416add54fbcd39",
                 "shasum": ""
             },
             "require": {
@@ -2460,7 +2460,7 @@
                 "symfony/framework-bundle": "2.1.*",
                 "liip/search-bundle": "dev-master"
             },
-            "time": "1350923336",
+            "time": "1350998875",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
