@@ -1,8 +1,9 @@
 # Symfony Content Management Framework Sandbox
 
-This sandbox is a testing ground for the cmf bundles being developped.
+This sandbox is a testing ground for the cmf bundles being developed.
 
-It is based on the [Symfony Standard edition](https://github.com/symfony/symfony-standard) and adds all cmf related bundles on top of the standard edition bundles.
+It is based on the [Symfony Standard edition](https://github.com/symfony/symfony-standard) and adds all
+cmf related bundles on top of the standard edition bundles.
 
 Link to the [live demo](http://cmf.liip.ch)
 
@@ -54,7 +55,8 @@ Finally uncomment the ``caches`` settings in the `phpcr.yml` as well as the ``li
 settings in ``app/config.yml``.
 
 
-Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""` 
+Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and
+change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""`
 If you fail to do this you might receive:
 
     [Symfony\Component\Filesystem\Exception\IOException]
@@ -67,9 +69,15 @@ Then, create the database and tables and set up the default workspace using
 
 ### Install the Midgard2 PHPCR provider (optional)
 
-If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://midgard-project.org/phpcr/) instead of Jackrabbit, you need to install the [`midgard2` PHP extension](http://midgard-project.org/midgard2/#download). On current debian / ubuntu systems, this is simply done with ``sudo apt-get install php5-midgard2``, on OS X ``sudo port install php5-midgard2`` resp. ``brew install midgard2-php``.
+If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://midgard-project.org/phpcr/)
+instead of Jackrabbit, you need to install the [`midgard2` PHP extension](http://midgard-project.org/midgard2/#download).
+On current debian / ubuntu systems, this is simply done with ``sudo apt-get install php5-midgard2``, on OS X
+``sudo port install php5-midgard2`` resp. ``brew install midgard2-php``.
 
-You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midgardproject/phpcr-midgard2/master/data/share/schema/midgard_tree_node.xml) and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml) schema files, and place them into `/usr/share/midgard2/schema` (note: this path may be different if you built Midgard2 yourself. It is basically `$PREFIX/share/midgard2/schema`).
+You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midgardproject/phpcr-midgard2/master/data/share/schema/midgard_tree_node.xml)
+and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml)
+schema files, and place them into `/usr/share/midgard2/schema` (note: this path may be different if you built Midgard2 yourself. It is
+basically `$PREFIX/share/midgard2/schema`).
 
 To have the midgard phpcr implementation installed run the following additional command
 
@@ -85,7 +93,8 @@ change this of course. If you do, f.e. to 'sandbox, also run the following comma
 
     app/console doctrine:phpcr:workspace:create sandbox
 
-Once your workspace is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged) for phpcr-odm:
+Once your workspace is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged)
+for phpcr-odm:
 
     app/console doctrine:phpcr:register-system-node-types
 
@@ -147,7 +156,9 @@ Type app/console to see them all.
 There is a proof-of-concept admin interface using the SonataPhpcrAdminBundle at
 http://cmf.lo/app_dev.php/admin/dashboard
 
-Basically you have paginated lists for two types of documents. You create new documents, edit and delete them. Some filtering is available in the list. This bundle is an implementation of [Sonata Admin Bundle](https://github.com/sonata-project/SonataAdminBundle)
+Basically you have paginated lists for two types of documents. You create new documents, edit and delete them.
+Some filtering is available in the list. This bundle is an implementation of
+[Sonata Admin Bundle](https://github.com/sonata-project/SonataAdminBundle)
 
 At the moment there is no notion of parents and sons in the admin bundle.
 
