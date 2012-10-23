@@ -3,6 +3,7 @@
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use PHPCR\RepositoryInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -20,6 +21,9 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         return 10;
     }
 
+    /**
+     * @param \Doctrine\ODM\PHPCR\DocumentManager $dm
+     */
     public function load(ObjectManager $dm)
     {
         $session = $dm->getPhpcrSession();
@@ -34,18 +38,8 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $main = $this->createMenuItem($dm, $root, 'main', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil'), $dm->find(null, "$content_path/home"));
         $main->setChildrenAttributes(array("class" => "menu_main"));
 
-        try {
-            // run a dummy query to check if full text search is supported
-            // TODO: is this covered by the capabilities API?
-            $qb = $dm->createQueryBuilder();
-            $factory = $qb->getQOMFactory();
-            $qb->from($factory->selector('nt:unstructured'))
-                ->where($factory->fullTextSearch('foo', 'bar'))
-                ->execute();
-
+        if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
             $this->createMenuItem($dm, $main, 'search-item', 'Search', null, null, 'search');
-        } catch (\Exception $e) {
-            // search not supported
         }
 
         $this->createMenuItem($dm, $main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');
