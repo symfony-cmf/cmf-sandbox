@@ -213,6 +213,14 @@ sensio_framework_extra:
 liip_search:
     restrict_by_language: true;
 
+symfony_cmf_search:
+    translation_strategy: child
+#    translation_strategy: attribute
+#    search_path: /cms/simple
+    search_fields:
+        title: title
+        summary: body
+
 lunetics_locale:
     guessing_order:
         - cookie

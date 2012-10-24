@@ -48,4 +48,4 @@ create_image:
     resource: "@SymfonyCmfCreateBundle/Resources/config/routing/image.xml"
 
 liip_search:
-    resource: "@SymfonyCmfSearchBundle/Resources/config/routing.yml"
+    resource: "@SymfonyCmfSearchBundle/Resources/config/routing.xml"
