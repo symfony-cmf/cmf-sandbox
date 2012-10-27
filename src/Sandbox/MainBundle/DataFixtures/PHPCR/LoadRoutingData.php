@@ -78,7 +78,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $projects = new Route;
             $projects->setPosition($home, 'projects');
             $projects->setDefault('_locale', $locale);
-            $home->setRequirement('_locale', $locale);
+            $projects->setRequirement('_locale', $locale);
             $projects->setRouteContent($dm->find(null, "$content_path/projects"));
             $dm->persist($projects);
 
