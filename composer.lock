@@ -1323,12 +1323,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunetics/LocaleBundle",
-                "reference": "a5d8238b35f73291a66c219d5dbd96d3970f9a3b"
+                "reference": "cbcfa7238e04cce0cef8b320b9b2f13e31a3880c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/lunetics/LocaleBundle/zipball/a5d8238b35f73291a66c219d5dbd96d3970f9a3b",
-                "reference": "a5d8238b35f73291a66c219d5dbd96d3970f9a3b",
+                "url": "https://github.com/lunetics/LocaleBundle/zipball/cbcfa7238e04cce0cef8b320b9b2f13e31a3880c",
+                "reference": "cbcfa7238e04cce0cef8b320b9b2f13e31a3880c",
                 "shasum": ""
             },
             "require": {
@@ -1345,7 +1345,7 @@
             "suggest": {
                 "ext-intl": "Needed for displaying the countryname in the locale language"
             },
-            "time": "1351257207",
+            "time": "1351337125",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1803,13 +1803,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle",
-                "reference": "a368693c5a6b8ff4554b4b46afa43f5d4fc238f1"
+                "reference": "d95ce7a548e242435c747cd792cf92e9355f2606"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataBlockBundle/zipball/a368693c5a6b8ff4554b4b46afa43f5d4fc238f1",
-                "reference": "a368693c5a6b8ff4554b4b46afa43f5d4fc238f1",
+                "url": "https://github.com/sonata-project/SonataBlockBundle/zipball/d95ce7a548e242435c747cd792cf92e9355f2606",
+                "reference": "d95ce7a548e242435c747cd792cf92e9355f2606",
                 "shasum": ""
+            },
+            "require": {
+                "symfony/http-foundation": ">=2.1,<2.3-dev",
+                "symfony/form": ">=2.1,<2.3-dev"
             },
             "require-dev": {
                 "sonata-project/admin-bundle": "dev-master",
@@ -1819,7 +1823,7 @@
                 "sonata-project/admin-bundle": "dev-master",
                 "sonata-project/cache-bundle": "dev-master"
             },
-            "time": "1351031542",
+            "time": "1351290794",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2495,12 +2499,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/SimpleCmsBundle.git",
-                "reference": "fcad224e47550035e64c2f44ccff88bfab4cf1c6"
+                "reference": "96ea7124e49631bb83a3f555d08cb750b03dbb66"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/SimpleCmsBundle/zipball/fcad224e47550035e64c2f44ccff88bfab4cf1c6",
-                "reference": "fcad224e47550035e64c2f44ccff88bfab4cf1c6",
+                "url": "https://github.com/symfony-cmf/SimpleCmsBundle/zipball/96ea7124e49631bb83a3f555d08cb750b03dbb66",
+                "reference": "96ea7124e49631bb83a3f555d08cb750b03dbb66",
                 "shasum": ""
             },
             "require": {
@@ -2516,7 +2520,7 @@
                 "symfony-cmf/create-bundle": "1.0.*",
                 "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
             },
-            "time": "1350849963",
+            "time": "1351276323",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -3031,18 +3035,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "61393dc9fb8982110048624aa573aec4aee0b465"
+                "reference": "8dbe803b29548513ada64f71ed481e17b4d74952"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/zipball/61393dc9fb8982110048624aa573aec4aee0b465",
-                "reference": "61393dc9fb8982110048624aa573aec4aee0b465",
+                "url": "https://github.com/fabpot/Twig/zipball/8dbe803b29548513ada64f71ed481e17b4d74952",
+                "reference": "8dbe803b29548513ada64f71ed481e17b4d74952",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1350737598",
+            "time": "1351318999",
             "type": "library",
             "extra": {
                 "branch-alias": {

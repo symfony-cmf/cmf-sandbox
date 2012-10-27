@@ -9,6 +9,7 @@ home_redirect:
         _controller: lunetics_locale.switcher_controller:switchAction
         route: cmf_routing_dynamic_route_cms_routes_en
         statusCode: 301
+        useReferrer: false
 
 admin_dashboard:
     pattern: /admin/
