@@ -49,6 +49,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $home = new Route;
             $home->setPosition($parent, $locale);
             $home->setDefault('_locale', $locale);
+            $home->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Homepage:index.html.twig');
             $home->setRequirement('_locale', $locale);
             $home->setRouteContent($dm->find(null, "$content_path/home"));
             $dm->persist($home);

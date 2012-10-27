@@ -1,28 +1,29 @@
 {% extends "SandboxMainBundle::skeleton.html.twig" %}
 
 {% block content %}
-<div xmlns:sioc="http://rdfs.org/sioc/ns#"
-     xmlns:dcterms="http://purl.org/dc/terms/"
-     typeof="sioc:Post"
-     about="{{ page.path }}"
-     class="articleContainer hero-unit">
-
-     {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-         <div class="hiddenfieldsContainer">
-             <div class="hiddenfieldsToggle"></div>
-             <div class="hiddenfields">
-                <div class="hiddenfieldsCloseButton"></div>
-                <h2>Article settings</h2>
-             </div>
-             <div class="hiddenfieldsCloseCorner"></div>
-         </div>
-    {% endif %}
     <p><em>We are on the homepage which uses a special template</em></p>
-    <h1 id="main_title" property="dcterms:title">{{ page.title|raw }}</h1>
-    <div property="sioc:content">
-        {{ page.content|raw }}
+
+    {% createphp page as="rdf" %}
+    {{ rdf|raw }}
+    {% endcreatephp %}
+
+    <hr/>
+
+    <div class="row">
+        {{ sonata_block_render({
+            'name': 'additionalInfoBlock'
+        }) }}
     </div>
-</div>
-{{ parent() }}
+
+    <div>
+        <h2>Some additional links:</h2>
+        <ul>
+            {% for child in cmf_children(cmf_find('/cms/simple/service')) %}
+                <li>
+                    <a href="{{ path(child) }}">{{ child.title|striptags }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}
 
