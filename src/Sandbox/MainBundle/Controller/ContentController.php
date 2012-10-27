@@ -32,9 +32,7 @@ class ContentController extends Controller
         $entity = $rdfManager->getEntity($contentDocument);
 
         $params = array(
-            'title' => $contentDocument->title,
-            'path'  => $contentDocument->path,
-            'page' => $entity,
+            'alternateName' => $entity,
             'example' => 'Additional value injected by the controller for this alias (this could work without content if we want)',
         );
 
@@ -56,9 +54,7 @@ class ContentController extends Controller
             throw new NotFoundHttpException('Content not found');
         }
         $params = array(
-            'title' => $contentDocument->title,
-            'path'  => $contentDocument->path,
-            'page' => $contentDocument,
+            'alternateName' => $contentDocument,
             'example' => 'Additional value injected by the controller for all content mapped to classAction',
         );
 
@@ -80,9 +76,7 @@ class ContentController extends Controller
             throw new NotFoundHttpException('Content not found');
         }
         $params = array(
-            'title' => $contentDocument->title,
-            'path'  => $contentDocument->path,
-            'page' => $contentDocument,
+            'alternateName' => $contentDocument,
             'example' => 'Additional value injected by the controller when explicitly referenced',
         );
 
