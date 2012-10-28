@@ -363,12 +363,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm",
-                "reference": "c0664db84d956759533bedda803ead7254913eba"
+                "reference": "52eca52e7449f4767afed591eed7fcf3b8f1041a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/phpcr-odm/zipball/c0664db84d956759533bedda803ead7254913eba",
-                "reference": "c0664db84d956759533bedda803ead7254913eba",
+                "url": "https://github.com/doctrine/phpcr-odm/zipball/52eca52e7449f4767afed591eed7fcf3b8f1041a",
+                "reference": "52eca52e7449f4767afed591eed7fcf3b8f1041a",
                 "shasum": ""
             },
             "require": {
@@ -386,7 +386,7 @@
                 "midgard/phpcr": ">=1.3",
                 "symfony/yaml": ">=2.0.0,<2.3.0-dev"
             },
-            "time": "1350815736",
+            "time": "1351360813",
             "bin": [
                 "bin/phpcr",
                 "bin/phpcr.php"
@@ -1323,12 +1323,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunetics/LocaleBundle",
-                "reference": "cbcfa7238e04cce0cef8b320b9b2f13e31a3880c"
+                "reference": "f1862cc405a2f39977c783f8d54a911611ff5ba5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/lunetics/LocaleBundle/zipball/cbcfa7238e04cce0cef8b320b9b2f13e31a3880c",
-                "reference": "cbcfa7238e04cce0cef8b320b9b2f13e31a3880c",
+                "url": "https://github.com/lunetics/LocaleBundle/zipball/f1862cc405a2f39977c783f8d54a911611ff5ba5",
+                "reference": "f1862cc405a2f39977c783f8d54a911611ff5ba5",
                 "shasum": ""
             },
             "require": {
@@ -1345,7 +1345,7 @@
             "suggest": {
                 "ext-intl": "Needed for displaying the countryname in the locale language"
             },
-            "time": "1351337125",
+            "time": "1351301241",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1383,18 +1383,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/flack/createphp.git",
-                "reference": "158ba1c02e5dfb743c3680ffc9e406e14887307a"
+                "reference": "db960385839893df5c3d7bea15ef7c0ddd20b3e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/flack/createphp/zipball/158ba1c02e5dfb743c3680ffc9e406e14887307a",
-                "reference": "158ba1c02e5dfb743c3680ffc9e406e14887307a",
+                "url": "https://github.com/flack/createphp/zipball/db960385839893df5c3d7bea15ef7c0ddd20b3e6",
+                "reference": "db960385839893df5c3d7bea15ef7c0ddd20b3e6",
                 "shasum": ""
             },
             "require-dev": {
                 "twig/twig": ">=1.8,<2.0-dev"
             },
-            "time": "1350643884",
+            "time": "1351365195",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -1803,12 +1803,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle",
-                "reference": "d95ce7a548e242435c747cd792cf92e9355f2606"
+                "reference": "1f86cc605ada67227829d47b4a512c411b31225b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataBlockBundle/zipball/d95ce7a548e242435c747cd792cf92e9355f2606",
-                "reference": "d95ce7a548e242435c747cd792cf92e9355f2606",
+                "url": "https://github.com/sonata-project/SonataBlockBundle/zipball/1f86cc605ada67227829d47b4a512c411b31225b",
+                "reference": "1f86cc605ada67227829d47b4a512c411b31225b",
                 "shasum": ""
             },
             "require": {
@@ -1823,7 +1823,7 @@
                 "sonata-project/admin-bundle": "dev-master",
                 "sonata-project/cache-bundle": "dev-master"
             },
-            "time": "1351290794",
+            "time": "1351346271",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2123,12 +2123,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "0b9314fc143b1742a5566da321acdd04428d37ef"
+                "reference": "c7c7337f97ece19f06f25b803ed20efe710b6b21"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/ContentBundle/zipball/0b9314fc143b1742a5566da321acdd04428d37ef",
-                "reference": "0b9314fc143b1742a5566da321acdd04428d37ef",
+                "url": "https://github.com/symfony-cmf/ContentBundle/zipball/c7c7337f97ece19f06f25b803ed20efe710b6b21",
+                "reference": "c7c7337f97ece19f06f25b803ed20efe710b6b21",
                 "shasum": ""
             },
             "require": {
@@ -2141,7 +2141,7 @@
             "suggest": {
                 "friendsofsymfony/rest-bundle": "Improved handling for different output formats"
             },
-            "time": "1351276073",
+            "time": "1351361513",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2895,12 +2895,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "5155aecb3ac85597d7a70ac57899c860a6031501"
+                "reference": "43aa20fcb6e5b92d898e06700d7933d9a158f135"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/zipball/5155aecb3ac85597d7a70ac57899c860a6031501",
-                "reference": "5155aecb3ac85597d7a70ac57899c860a6031501",
+                "url": "https://github.com/symfony/symfony/zipball/43aa20fcb6e5b92d898e06700d7933d9a158f135",
+                "reference": "43aa20fcb6e5b92d898e06700d7933d9a158f135",
                 "shasum": ""
             },
             "require": {
@@ -2949,7 +2949,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1351255755",
+            "time": "1351353561",
             "type": "library",
             "extra": {
                 "branch-alias": {
