@@ -6,8 +6,10 @@ php:
 
 env:
   - TRANSPORT=jackrabbit
-  - TRANSPORT=midgard_sqlite
-  - TRANSPORT=midgard_mysql
+  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=ratatoskr
+  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=ratatoskr
+  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
+  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
   - TRANSPORT=doctrine_dbal
 
 before_script:

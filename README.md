@@ -13,6 +13,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
 "Getting started using Vagrant"
 
 ### You will need:
+
   * Git 1.6+
   * PHP 5.3.3+
   * php5-intl
@@ -98,7 +99,6 @@ for phpcr-odm:
 
     app/console doctrine:phpcr:register-system-node-types
 
-
 ## Import the fixtures
 
 The admin backend is still in an early stage. Until it improves, the easiest is
@@ -109,7 +109,6 @@ provides a command to load fixtures.
     app/console -v doctrine:phpcr:fixtures:load
 
 Run this to load the fixtures from the Sandbox MainBundle.
-
 
 ## Access by web browser
 
