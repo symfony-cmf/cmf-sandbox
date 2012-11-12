@@ -1,6 +1,7 @@
 #!/bin/bash
 
-composer require jackalope/jackalope-doctrine-dbal:dev-master
+composer require jackalope/jackalope-doctrine-dbal:dev-master --no-update
+composer update jackalope/jackalope-doctrine-dbal
 
 mysql -e 'create database IF NOT EXISTS sandbox;' -u root
 
