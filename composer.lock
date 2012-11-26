@@ -364,12 +364,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm",
-                "reference": "30631800ab0b8262bb995f2c0a5bff9641da1c80"
+                "reference": "b19f624a39b844f1d0fe9485e3c251701dd9729c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/phpcr-odm/archive/30631800ab0b8262bb995f2c0a5bff9641da1c80.zip",
-                "reference": "30631800ab0b8262bb995f2c0a5bff9641da1c80",
+                "url": "https://github.com/doctrine/phpcr-odm/archive/b19f624a39b844f1d0fe9485e3c251701dd9729c.zip",
+                "reference": "b19f624a39b844f1d0fe9485e3c251701dd9729c",
                 "shasum": ""
             },
             "require": {
@@ -387,7 +387,7 @@
                 "midgard/phpcr": ">=1.3",
                 "symfony/yaml": ">=2.0.0,<2.3.0-dev"
             },
-            "time": "1353658200",
+            "time": "1353930940",
             "bin": [
                 "bin/phpcr",
                 "bin/phpcr.php"
@@ -1874,12 +1874,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "3a5f3d3c90941208c372c233075ffd50e03f7a94"
+                "reference": "1f2459c1e8ca2a683cabc958775b428dfd917559"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataAdminBundle/archive/3a5f3d3c90941208c372c233075ffd50e03f7a94.zip",
-                "reference": "3a5f3d3c90941208c372c233075ffd50e03f7a94",
+                "url": "https://github.com/sonata-project/SonataAdminBundle/archive/1f2459c1e8ca2a683cabc958775b428dfd917559.zip",
+                "reference": "1f2459c1e8ca2a683cabc958775b428dfd917559",
                 "shasum": ""
             },
             "require": {
@@ -1904,7 +1904,7 @@
                 "sonata-project/doctrine-orm-admin-bundle": "dev-master",
                 "sonata-project/intl-bundle": "dev-master"
             },
-            "time": "1353873577",
+            "time": "1353875405",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2528,12 +2528,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/RoutingExtraBundle.git",
-                "reference": "bf6f0fd8e9d63d7bc0a713a12a776375228bc9e7"
+                "reference": "fcbef8d087a380f697ef06a44471349d6cf93312"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/bf6f0fd8e9d63d7bc0a713a12a776375228bc9e7.zip",
-                "reference": "bf6f0fd8e9d63d7bc0a713a12a776375228bc9e7",
+                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/fcbef8d087a380f697ef06a44471349d6cf93312.zip",
+                "reference": "fcbef8d087a380f697ef06a44471349d6cf93312",
                 "shasum": ""
             },
             "require": {
@@ -2558,7 +2558,7 @@
                 "symfony-cmf/content-bundle": "To optionally use the configured value for 'content_basepath' from the CoreBundle",
                 "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin interface for the PHPCR ODM documents"
             },
-            "time": "1353682215",
+            "time": "1353931643",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -3034,12 +3034,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "2adb781b238e8dfc9536babdaa03f538c47ddc34"
+                "reference": "ed6a345162bbfcae9b23ddbd0ec47b295832d9eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/2adb781b238e8dfc9536babdaa03f538c47ddc34.zip",
-                "reference": "2adb781b238e8dfc9536babdaa03f538c47ddc34",
+                "url": "https://github.com/symfony/symfony/archive/ed6a345162bbfcae9b23ddbd0ec47b295832d9eb.zip",
+                "reference": "ed6a345162bbfcae9b23ddbd0ec47b295832d9eb",
                 "shasum": ""
             },
             "require": {
@@ -3088,7 +3088,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "1353841236",
+            "time": "1353925640",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -3174,18 +3174,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/fabpot/Twig.git",
-                "reference": "b4743dcfaf48132203b467c5f5993e18f4f8f4c1"
+                "reference": "b58df0e1ae4b664f561bfaeffdb673829daa6b79"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig/archive/b4743dcfaf48132203b467c5f5993e18f4f8f4c1.zip",
-                "reference": "b4743dcfaf48132203b467c5f5993e18f4f8f4c1",
+                "url": "https://github.com/fabpot/Twig/archive/b58df0e1ae4b664f561bfaeffdb673829daa6b79.zip",
+                "reference": "b58df0e1ae4b664f561bfaeffdb673829daa6b79",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "1353847458",
+            "time": "1353925549",
             "type": "library",
             "extra": {
                 "branch-alias": {
