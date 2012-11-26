@@ -1998,12 +1998,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "79538025a4ebd708046fcef00356613c2db3fd41"
+                "reference": "99fa387360a3fd8ca78e82dc5cafa674c793c6e4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/79538025a4ebd708046fcef00356613c2db3fd41",
-                "reference": "79538025a4ebd708046fcef00356613c2db3fd41",
+                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/archive/99fa387360a3fd8ca78e82dc5cafa674c793c6e4.zip",
+                "reference": "99fa387360a3fd8ca78e82dc5cafa674c793c6e4",
                 "shasum": ""
             },
             "require": {
@@ -2019,7 +2019,7 @@
             "suggest": {
                 "symfony-cmf/tree-browser-bundle": "to have a tree widget for phpcr data. require version 1.0.*"
             },
-            "time": "1350897185",
+            "time": "1353937645",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2262,12 +2262,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "349b339e9e3c4a6dc2d3d21916d2c2294a0c9946"
+                "reference": "f1052728ecbe81c651a8ebed4f235a63017ebf52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/ContentBundle/archive/349b339e9e3c4a6dc2d3d21916d2c2294a0c9946.zip",
-                "reference": "349b339e9e3c4a6dc2d3d21916d2c2294a0c9946",
+                "url": "https://github.com/symfony-cmf/ContentBundle/archive/f1052728ecbe81c651a8ebed4f235a63017ebf52.zip",
+                "reference": "f1052728ecbe81c651a8ebed4f235a63017ebf52",
                 "shasum": ""
             },
             "require": {
@@ -2280,7 +2280,7 @@
             "suggest": {
                 "friendsofsymfony/rest-bundle": "Improved handling for different output formats"
             },
-            "time": "1352894443",
+            "time": "1353938094",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2422,12 +2422,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/MenuBundle.git",
-                "reference": "50704dd3b0939c76583ebfb2a332e075a063bc04"
+                "reference": "8610071717e5ba53947a11155486802a4ceaf93a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/MenuBundle/archive/50704dd3b0939c76583ebfb2a332e075a063bc04.zip",
-                "reference": "50704dd3b0939c76583ebfb2a332e075a063bc04",
+                "url": "https://github.com/symfony-cmf/MenuBundle/archive/8610071717e5ba53947a11155486802a4ceaf93a.zip",
+                "reference": "8610071717e5ba53947a11155486802a4ceaf93a",
                 "shasum": ""
             },
             "require": {
@@ -2443,7 +2443,7 @@
             "suggest": {
                 "sonata-project/doctrine-phpcr-admin-bundle": "if you want to have editing capabilities"
             },
-            "time": "1351769620",
+            "time": "1353938074",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2528,12 +2528,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/RoutingExtraBundle.git",
-                "reference": "fcbef8d087a380f697ef06a44471349d6cf93312"
+                "reference": "2ad3adc483120d72ea8439022f33f417e0fbd89f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/fcbef8d087a380f697ef06a44471349d6cf93312.zip",
-                "reference": "fcbef8d087a380f697ef06a44471349d6cf93312",
+                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/2ad3adc483120d72ea8439022f33f417e0fbd89f.zip",
+                "reference": "2ad3adc483120d72ea8439022f33f417e0fbd89f",
                 "shasum": ""
             },
             "require": {
@@ -2558,7 +2558,7 @@
                 "symfony-cmf/content-bundle": "To optionally use the configured value for 'content_basepath' from the CoreBundle",
                 "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin interface for the PHPCR ODM documents"
             },
-            "time": "1353931643",
+            "time": "1353938123",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2638,12 +2638,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/SimpleCmsBundle.git",
-                "reference": "e1654e5d559e23b0d16cf63656533b9fa0585bf7"
+                "reference": "808eba998ca1269c84b406ae0fd2d0198471d157"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/SimpleCmsBundle/archive/e1654e5d559e23b0d16cf63656533b9fa0585bf7.zip",
-                "reference": "e1654e5d559e23b0d16cf63656533b9fa0585bf7",
+                "url": "https://github.com/symfony-cmf/SimpleCmsBundle/archive/808eba998ca1269c84b406ae0fd2d0198471d157.zip",
+                "reference": "808eba998ca1269c84b406ae0fd2d0198471d157",
                 "shasum": ""
             },
             "require": {
@@ -2659,7 +2659,7 @@
                 "symfony-cmf/create-bundle": "1.0.*",
                 "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
             },
-            "time": "1353873994",
+            "time": "1353938108",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
