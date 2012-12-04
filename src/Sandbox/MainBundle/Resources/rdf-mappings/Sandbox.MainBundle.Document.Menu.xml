@@ -1,0 +1,15 @@
+<type
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:cmf="http://cmf.symfony.com/"
+    xmlns:mn="http://cmf.symfony.com/Menu/"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    typeof="cmf:Menu"
+    itemtype="http://cmf.symfony.com/Menu"
+        >
+
+<children>
+    <property property="mn:title" identifier="title" tag-name="h1"/>
+
+    <collection rel="skos:related" identifier="children" tag-name="ul" type="cmf:MenuItem" />
+</children>
+</type>
