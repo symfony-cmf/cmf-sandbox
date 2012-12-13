@@ -6,7 +6,7 @@
 
 {% createphp cmfMainContent as="rdf" %}
 
-<div {{ createphp_attributes(rdf) }}>
+<div class="newsoverview" {{ createphp_attributes(rdf) }}>
     <h2 {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
     <p {{ createphp_attributes( rdf.body ) }}>{{ createphp_content( rdf.body|raw ) }}</p>
     <ul {{ createphp_attributes( rdf.children ) }}>
