@@ -97,6 +97,8 @@ symfony_cmf_routing_extra:
             Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
+            Sandbox\MainBundle\Document\CollectionPage: SandboxMainBundle:News:news_overview.{_format}.twig
+            Sandbox\MainBundle\Document\NewsArticle: SandboxMainBundle:News:news_detail.html.twig
 
 symfony_cmf_simple_cms:
     routing:
@@ -105,13 +107,17 @@ symfony_cmf_simple_cms:
 
 knp_menu:
     twig:
-        template: SandboxMainBundle:Menu:my_menu.html.twig
+        #TODO: enable custom menu template to allow page creation from the menu
+        #template: SandboxMainBundle:Menu:my_menu.html.twig
+        template: knp_menu.html.twig
 
 symfony_cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent'
         'http://cmf.symfony.com/MenuItem': 'Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem'
+        'http://schema.org/NewsArticle': 'Sandbox\MainBundle\Document\NewsArticle'
+        'http://schema.org/CollectionPage': 'Sandbox\MainBundle\Document\CollectionPage'
 
     use_coffee: %liip_vie.use_coffee%
     image:

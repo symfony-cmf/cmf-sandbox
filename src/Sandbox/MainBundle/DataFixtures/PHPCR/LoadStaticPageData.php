@@ -33,9 +33,16 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/../../Resources/data/page.yml'));
 
-        $parent = $manager->find(null, $basepath);
         foreach ($data['static'] as $overview) {
+            $parent = null;
+            if (isset($overview['parent'])) {
+                $parent = $manager->find(null, $overview['parent']);
+            } else {
+                $parent = $manager->find(null, $basepath);
+            }
+
             $path = $basepath . '/' . $overview['name'];
+
             $page = $manager->find(null, $path);
             if (! $page) {
                 $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\ContentBundle\\Document\\MultilangStaticContent';
@@ -43,6 +50,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 $page = new $class();
                 $page->setName($overview['name']);
                 $page->setParent($parent);
+
                 $manager->persist($page);
             }
 
@@ -57,6 +65,11 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 $page->setTitle($overview['title']);
                 $page->setBody($overview['content']);
             }
+
+            if (isset($overview['publish_start_date'])) {
+                $page->setPublishStartDate(new \DateTime($overview['publish_start_date']));
+            }
+
             if (isset($overview['blocks'])) {
                 foreach ($overview['blocks'] as $name => $block) {
                     $this->loadBlock($manager, $page, $name, $block);

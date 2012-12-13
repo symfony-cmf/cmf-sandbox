@@ -1,0 +1,50 @@
+{% extends "SandboxMainBundle::skeleton.html.twig" %}
+
+{% block title %}{{ cmfMainContent.title }}{% endblock %}
+
+{% block content %}
+
+{% createphp cmfMainContent as="rdf" %}
+
+<div {{ createphp_attributes(rdf) }}>
+    <h2 {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
+    <p {{ createphp_attributes( rdf.body ) }}>{{ createphp_content( rdf.body|raw ) }}</p>
+    <ul {{ createphp_attributes( rdf.children ) }}>
+        {% for news in cmf_children(cmfMainContent) %}
+        {% createphp news %}
+        <li {{ createphp_attributes(news_rdf) }}>
+            <a href="{{ path(news) }}" {{ createphp_attributes(news_rdf.title) }}>{{ createphp_content(news_rdf.title) }}</a> ({{ news.publishStartDate | date('Y-m-d')  }})
+            <div class="newscontent" {{ createphp_attributes(news_rdf.body) }}>{{ createphp_content(news_rdf.body) }}</div>
+        </li>
+        {% endcreatephp %}
+        {% endfor %}
+    </ul>
+</div>
+
+{% endcreatephp %}
+
+{% endblock content %}
+
+{% block custom_scripts %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        //show / hide the news content according to the mode (edit / view)
+        $('body').bind('midgardcreatestatechange', function (event, options) {
+            if (options.state == 'edit') {
+                $('div.newscontent').show();
+            } else {
+                $('div.newscontent').hide();
+            }
+        });
+
+        //TODO: use it to intercept save event and create the corresponding route
+        $('body').bind('midgardstoragesaved', function (event, options) {
+            //midgardstoragesaved: when save has completed succesfully
+            console.log('saved successfully');
+        });
+
+        //title of type cw:headline are editable in plain text mode only
+        $('body').midgardCreate('setEditorForProperty', 'cw:headline', 'title');
+    });
+</script>
+{% endblock %}

@@ -11,19 +11,12 @@
 
 {% block list %}
 
-
-{% if item.name == 'company-item' %}
-
+{# TODO: make this work to allow content creation from the menu
 {{ item.name }}<br/>
-
 {% createphp item as="rdf" %}
 
 {% endcreatephp %}
-
-{% endif %}
-
-
-
+#}
 
 {% if item.hasChildren and options.depth is not sameas(0) and item.displayChildren %}
 <ul{{ _self.attributes(listAttributes) }}>

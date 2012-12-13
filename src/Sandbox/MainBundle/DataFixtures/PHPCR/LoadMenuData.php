@@ -47,6 +47,8 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $projects = $this->createMenuItem($dm, $main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $dm->find(null, "$content_path/projects"));
         $this->createMenuItem($dm, $projects, 'cmf-item', 'Symfony CMF', $dm->find(null, "$content_path/cmf"));
 
+        $news = $this->createMenuItem($dm, $main, 'news-item', array('News', 'de' => 'News', 'fr' => 'News'), $dm->find(null, "$content_path/news"));
+
         $company = $this->createMenuItem($dm, $main, 'company-item', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $dm->find(null, "$content_path/company"));
         $this->createMenuItem($dm, $company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $dm->find(null, "$content_path/team"));
         $this->createMenuItem($dm, $company, 'more-item', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $dm->find(null, "$content_path/more"));

@@ -145,3 +145,30 @@ static:
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+    -
+        name: "news"
+        title: "News"
+        content: |
+            The latest news about the CMF Sandbox. Also available on a
+            <a href="/en/news.rss">RSS feed</a>:
+        class: "Sandbox\\MainBundle\\Document\\CollectionPage"
+        formats: [html, rss]
+        template: SandboxMainBundle:News:news_overview.{_format}.twig
+    -
+        name: "news-on-the-sandbox"
+        title: "News system on the sandbox"
+        parent: "/cms/content/news"
+        class: "Sandbox\\MainBundle\\Document\\NewsArticle"
+        publish_start_date: "2012-12-12"
+        content: |
+            Adrien created a news sytem for the sandox. It is now possible to
+            create news directly in the frontend, thanks to create.js.
+    -
+        name: "refactoring-of-createphp"
+        title: "Refactoring of createphp for better collection support"
+        parent: "/cms/content/news"
+        class: "Sandbox\\MainBundle\\Document\\NewsArticle"
+        publish_start_date: "2012-12-11"
+        content: |
+           The <a href="https://github.com/flack/createphp/pull/28">PR</a>,
+            better support for item creation was merged by Flack.

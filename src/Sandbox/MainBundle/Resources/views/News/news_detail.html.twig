@@ -1,0 +1,25 @@
+{% extends "SandboxMainBundle::skeleton.html.twig" %}
+
+{% block content %}
+
+{% createphp cmfMainContent as="rdf" %}
+<div {{ createphp_attributes(rdf) }}>
+
+    <h2 class="my-title" {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
+    <div class="subtitle">Date: {{ cmfMainContent.publishStartDate| date('Y-m-d') }}</div>
+    <p {{ createphp_attributes( rdf.body|raw ) }}>{{ createphp_content( rdf.body|raw ) }}</p>
+
+    {% set prev = cmf_prev(cmfMainContent) %}
+    {% if prev %}
+        <a href="{{ path(prev) }}">prev</a>
+    {% endif %}
+
+    {% set next = cmf_next(cmfMainContent) %}
+    {% if next %}
+            <span style="float: right; padding-right: 40px;"><a href="{{ path(next) }}">next</a></span>
+    {% endif %}
+
+</div>
+{% endcreatephp %}
+
+{% endblock %}
