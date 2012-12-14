@@ -253,6 +253,7 @@ fos_rest:
     view:
         formats:
             rss: true
+            json: true
         templating_formats:
             rss: true
             html: true

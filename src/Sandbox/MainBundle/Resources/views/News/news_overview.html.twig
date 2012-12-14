@@ -36,11 +36,12 @@
                 $('div.newscontent').hide();
             }
         });
-        //TODO: use it to intercept save event and create the corresponding route
-        $('body').bind('midgardstoragesaved', function (event, options) {
-            //midgardstoragesaved: when save has completed succesfully
-            console.log('saved successfully');
+
+        //TODO: how to create a "RouteDocument" based on options.entity?
+        $('body').bind('midgardstoragesavedentity', function (event, options) {
+            console.log('id of the create entity in phpcr: ' + options.entity.id);
         });
+
     });
 </script>
 {% endblock %}
