@@ -124,6 +124,10 @@ symfony_cmf_create:
         model_class: Symfony\Cmf\Bundle\CreateBundle\Document\Image
         controller_class: Symfony\Cmf\Bundle\CreateBundle\Controller\PHPCRImageController
 
+    plain_text_types:
+        - dcterms:title
+        - cw:headline
+
 symfony_cmf_content:
     multilang:
       locales: %locales%

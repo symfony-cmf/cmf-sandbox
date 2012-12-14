@@ -36,15 +36,11 @@
                 $('div.newscontent').hide();
             }
         });
-
         //TODO: use it to intercept save event and create the corresponding route
         $('body').bind('midgardstoragesaved', function (event, options) {
             //midgardstoragesaved: when save has completed succesfully
             console.log('saved successfully');
         });
-
-        //title of type cw:headline are editable in plain text mode only
-        $('body').midgardCreate('setEditorForProperty', 'cw:headline', 'title');
     });
 </script>
 {% endblock %}
