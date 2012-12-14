@@ -89,13 +89,12 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $cmf->setRouteContent($dm->find(null, "$content_path/cmf"));
             $dm->persist($cmf);
 
-            $news = new Route;
+            //$addFormatPattern to true is needed to use the RSS format
+            $news = new Route(true);
             $news->setPosition($home, 'news');
             $news->setDefault('_locale', $locale);
             $news->setRequirement('_locale', $locale);
             $news->setRouteContent($dm->find(null, "$content_path/news"));
-            #TODO: doesn't work, why?
-            #$news->setDefault('_format', 'rss');
             $news->setRequirement('_format', 'html|rss');
             $dm->persist($news);
 
