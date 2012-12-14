@@ -1,5 +1,5 @@
 {
-    "hash": "a3d76ba762eb4d3310a7bbaebff05910",
+    "hash": "32202af27122e89831ef5e4acb9b682d",
     "packages": [
         {
             "name": "doctrine/common",
@@ -561,12 +561,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle",
-                "reference": "a8a9bff4583f2906f86b5e36a6697ded51b9ff71"
+                "reference": "4601376e17460b1078f20a2def31e31e39d0edad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FriendsOfSymfony/FOSRestBundle/archive/a8a9bff4583f2906f86b5e36a6697ded51b9ff71.zip",
-                "reference": "a8a9bff4583f2906f86b5e36a6697ded51b9ff71",
+                "url": "https://github.com/FriendsOfSymfony/FOSRestBundle/archive/4601376e17460b1078f20a2def31e31e39d0edad.zip",
+                "reference": "4601376e17460b1078f20a2def31e31e39d0edad",
                 "shasum": ""
             },
             "require": {
@@ -586,7 +586,7 @@
                 "sensio/framework-extra-bundle": "Add support for route annotations and the view response listener",
                 "jms/serializer-bundle": "Add support for advanced serialization capabilities, recommended, requires 1.0.*"
             },
-            "time": "2012-12-09 22:36:50",
+            "time": "2012-12-11 13:24:09",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -675,6 +675,65 @@
             "homepage": "http://jackalope.github.com",
             "keywords": [
                 "phpcr implementation"
+            ]
+        },
+        {
+            "name": "jackalope/jackalope-doctrine-dbal",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jackalope/jackalope-doctrine-dbal",
+                "reference": "f5b23c19bda8e7e3f375cedc2acc8e03d7391406"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/jackalope/jackalope-doctrine-dbal/archive/f5b23c19bda8e7e3f375cedc2acc8e03d7391406.zip",
+                "reference": "f5b23c19bda8e7e3f375cedc2acc8e03d7391406",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "doctrine/dbal": ">=2.2.0,<2.4",
+                "jackalope/jackalope": "1.0.*",
+                "phpcr/phpcr": ">=2.1.0-beta6"
+            },
+            "provide": {
+                "jackalope/jackalope-transport": "1.0.0-alpha1"
+            },
+            "require-dev": {
+                "phpcr/phpcr-api-tests": "dev-master"
+            },
+            "suggest": {
+                "phpcr/phpcr-api-tests": "dev-master"
+            },
+            "time": "2012-11-14 12:04:58",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "installation-source": "source",
+            "autoload": {
+                "psr-0": {
+                    "Jackalope\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jackalope Community",
+                    "homepage": "https://github.com/jackalope/jackalope-jackrabbit/contributors"
+                }
+            ],
+            "description": "Jackalope Transport library",
+            "homepage": "http://jackalope.github.com",
+            "keywords": [
+                "transport implementation",
+                "doctrine-dbal"
             ]
         },
         {
@@ -1124,12 +1183,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/schmittjoh/serializer",
-                "reference": "089900408388d32159c723da887420be92cda7b5"
+                "reference": "160cad9ed8a0a246317f14c6ccbed88d174d410d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/serializer/archive/089900408388d32159c723da887420be92cda7b5.zip",
-                "reference": "089900408388d32159c723da887420be92cda7b5",
+                "url": "https://github.com/schmittjoh/serializer/archive/160cad9ed8a0a246317f14c6ccbed88d174d410d.zip",
+                "reference": "160cad9ed8a0a246317f14c6ccbed88d174d410d",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1210,7 @@
             "suggest": {
                 "symfony/yaml": "Required if you'd like to serialize data to YAML format."
             },
-            "time": "2012-12-07 17:03:01",
+            "time": "2012-12-13 16:23:56",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1172,7 +1231,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1193,12 +1252,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "3e8d4ca415dfbdb50b3e40737da287d13a6f92ca"
+                "reference": "7ce10aa4915d9671ca8949d1f6731d186a59ad97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/JMSSerializerBundle/archive/3e8d4ca415dfbdb50b3e40737da287d13a6f92ca.zip",
-                "reference": "3e8d4ca415dfbdb50b3e40737da287d13a6f92ca",
+                "url": "https://github.com/schmittjoh/JMSSerializerBundle/archive/7ce10aa4915d9671ca8949d1f6731d186a59ad97.zip",
+                "reference": "7ce10aa4915d9671ca8949d1f6731d186a59ad97",
                 "shasum": ""
             },
             "require": {
@@ -1223,7 +1282,7 @@
             "suggest": {
                 "symfony/yaml": "Required if you'd like to serialize content to YAML format."
             },
-            "time": "2012-12-09 19:12:41",
+            "time": "2012-12-13 16:27:11",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -1244,7 +1303,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1606,18 +1665,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/flack/createphp.git",
-                "reference": "63d0566145385f5ff1fc22f4f6bc851229051100"
+                "reference": "db19f76e819f9aa0a10cc06203720ef529e92d68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/flack/createphp/archive/63d0566145385f5ff1fc22f4f6bc851229051100.zip",
-                "reference": "63d0566145385f5ff1fc22f4f6bc851229051100",
+                "url": "https://github.com/flack/createphp/archive/db19f76e819f9aa0a10cc06203720ef529e92d68.zip",
+                "reference": "db19f76e819f9aa0a10cc06203720ef529e92d68",
                 "shasum": ""
             },
             "require-dev": {
                 "twig/twig": ">=1.8,<2.0-dev"
             },
-            "time": "2012-12-06 14:11:02",
+            "time": "2012-12-11 09:22:17",
             "type": "library",
             "installation-source": "source",
             "autoload": {
@@ -2568,12 +2627,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/CreateBundle.git",
-                "reference": "281ba0372bed2bb63079c2dff7a701386ad709a4"
+                "reference": "097da239c931e9a60bb0f5c64834784f494ec9a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/CreateBundle/archive/281ba0372bed2bb63079c2dff7a701386ad709a4.zip",
-                "reference": "281ba0372bed2bb63079c2dff7a701386ad709a4",
+                "url": "https://github.com/symfony-cmf/CreateBundle/archive/097da239c931e9a60bb0f5c64834784f494ec9a1.zip",
+                "reference": "097da239c931e9a60bb0f5c64834784f494ec9a1",
                 "shasum": ""
             },
             "require": {
@@ -2587,7 +2646,7 @@
             "suggest": {
                 "dms/dms-filter": "if you want to filter content on your fields"
             },
-            "time": "2012-12-05 08:38:46",
+            "time": "2012-12-11 08:03:40",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2701,7 +2760,7 @@
                     "dev-master": "1.0-dev"
                 }
             },
-            "installation-source": "source",
+            "installation-source": "dist",
             "autoload": {
                 "psr-0": {
                     "Symfony\\Cmf\\Component\\Routing": ""
@@ -3428,7 +3487,9 @@
             ]
         }
     ],
-    "packages-dev": null,
+    "packages-dev": [
+
+    ],
     "aliases": [
 
     ],
@@ -3439,6 +3500,7 @@
         "doctrine/data-fixtures": 20,
         "doctrine/doctrine-fixtures-bundle": 20,
         "liip/functional-test-bundle": 20,
-        "lunetics/locale-bundle": 20
+        "lunetics/locale-bundle": 20,
+        "jackalope/jackalope-doctrine-dbal": 20
     }
 }
