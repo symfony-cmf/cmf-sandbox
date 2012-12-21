@@ -137,6 +137,7 @@ sonata_admin:
     templates:
         # default global templates
         ajax:    SonataAdminBundle::ajax_layout.html.twig
+        user_block: SandboxMainBundle:Admin:user_block.html.twig
     dashboard:
         blocks:
             # display a dashboard block
@@ -255,6 +256,7 @@ symfony_cmf_search:
         summary: body
 
 lunetics_locale:
+    strict_mode: true
     guessing_order:
         - cookie
         - router

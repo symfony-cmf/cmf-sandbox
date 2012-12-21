@@ -20,14 +20,14 @@ class AdminDashboardTest extends WebTestCase
 
         $client->followRedirect();
 
-        $this->assertEquals('http://localhost/admin/dashboard', $client->getRequest()->getUri());
+        $this->assertEquals('http://localhost/en/admin/dashboard', $client->getRequest()->getUri());
     }
 
     public function testContents()
     {
         $client = $this->createClient();
 
-        $crawler = $client->request('GET', '/admin/dashboard');
+        $crawler = $client->request('GET', '/en/admin/dashboard');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());

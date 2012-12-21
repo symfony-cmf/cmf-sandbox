@@ -8,7 +8,7 @@ class AdminTest extends WebTestCase
     {
         $client = $this->createClient();
 
-        $client->request('GET', '/admin/bundle/menu/menuitem/list');
+        $client->request('GET', '/en/admin/bundle/menu/menuitem/list');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
@@ -23,7 +23,7 @@ class AdminTest extends WebTestCase
     {
         $client = $this->createClient();
 
-        $crawler = $client->request('GET', '/admin/bundle/menu/menuitem/create');
+        $crawler = $client->request('GET', '/en/admin/bundle/menu/menuitem/create');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
@@ -38,7 +38,7 @@ class AdminTest extends WebTestCase
     {
         $client = $this->createClient();
 
-        $crawler = $client->request('GET', '/admin/bundle/menu/menuitem/cms/menu/main/demo-item/external-item/edit');
+        $crawler = $client->request('GET', '/en/admin/bundle/menu/menuitem/cms/menu/main/demo-item/external-item/edit');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
