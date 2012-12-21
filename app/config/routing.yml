@@ -46,11 +46,11 @@ fos_js_routing:
 
 phpcrbrowser:
     resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/phpcrbrowser.xml
-    prefix: /admin/browser
+    prefix: /{_locale}/admin/browser
 
 phpcrodmbrowser:
     resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
-    prefix: /admin/browser
+    prefix: /{_locale}/admin/browser
 
 test:
     pattern:  /hello
