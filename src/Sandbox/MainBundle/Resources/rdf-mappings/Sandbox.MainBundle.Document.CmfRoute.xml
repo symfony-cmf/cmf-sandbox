@@ -1,0 +1,20 @@
+<type
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:cmf="http://cmf.symfony.com/"
+        xmlns:route="http://cmf.symfony.com/CmfRoute/"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        typeof="cmf:CmfRoute"
+        itemtype="http://cmf.symfony.com/CmfRoute"
+>
+    <rev>dcterms:partOf</rev>
+    <children>
+        <property property="route:Parent" identifier="parent">
+            <config key="doctrine:reference" value=""/>
+        </property>
+        <property property="route:RouteContent" identifier="routeContent">
+            <config key="doctrine:reference" value=""/>
+        </property>
+        <property property="route:Name" identifier="name" />
+        <property property="route:Locale" identifier="locale" />
+    </children>
+</type>

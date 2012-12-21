@@ -9,26 +9,41 @@ class NewsTest extends WebTestCase
         $client = $this->createClient();
 
         $title = 'news title from testAddNews';
+        $formattedTitle = 'news-title-from-testAddNews';
         $content = 'some new content from testAddNews';
-        $request = $this->generateCreateArticleRequest($title, $content);
+        $documentRequest = $this->generateCreateArticleRequest($title, $content);
 
-        $client->request('POST', '/en/symfony-cmf/create/document/_:bnode89', $request);
-
+        $client->request('POST', '/en/symfony-cmf/create/document/_:bnode89', $documentRequest);
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        //the subject of the saved entity need to be set in the JSON response
+        $jsonResponse = json_decode($client->getResponse()->getContent());
+        $this->assertEquals($jsonResponse->{'@subject'},'</cms/content/news/' . $formattedTitle . '>');
 
-        //TODO: simulate here the route creation
+        $locales = array('en', 'fr', 'de');
 
-        //get the created page and check if everything is contained in the page
-        $crawler = $client->request('GET', '(/en/news/news-title-from-testAddNews');
+        foreach ($locales as $locale) {
+            $routeRequest = $this->generateCreateRouteRequest($formattedTitle, $locale);
+            $crawler = $client->request(
+                'POST',
+                '/' . $locale . ' /symfony-cmf/create/document/_:bnode26',
+                $routeRequest
+            );
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+            $this->assertEquals(200, $client->getResponse()->getStatusCode());
+            //the subject of the saved entity need to be set in the JSON response
+            $jsonResponse = json_decode($client->getResponse()->getContent());
+            $this->assertEquals($jsonResponse->{'@subject'},'</cms/routes/'. $locale . '/news/' . $formattedTitle . '>');
 
-        $this->assertCount(1, $crawler->filter(sprintf('h2:contains("%s")', $title)));
-        $this->assertCount(1, $crawler->filter(sprintf('p:contains("%s")', $content)));
-        $this->assertCount(1, $crawler->filter(sprintf('div.subtitle:contains("%s")', 'Date: ' . date('Y-m-d'))));
+            $crawler = $client->request('GET', '/' . $locale . '/news/' . $formattedTitle . '');
+            $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+            $this->assertCount(1, $crawler->filter(sprintf('h2:contains("%s")', $title)));
+            $this->assertCount(1, $crawler->filter(sprintf('p:contains("%s")', $content)));
+            $this->assertCount(1, $crawler->filter(sprintf('div.subtitle:contains("%s")', 'Date: ' . date('Y-m-d'))));
+        }
 
         //try to add a news with the same title, a collision on the node name should happen
-        $client->request('POST', '/en/symfony-cmf/create/document/_:bnode89', $request);
+        $client->request('POST', '/en/symfony-cmf/create/document/_:bnode89', $documentRequest);
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
         $this->assertEquals('The document could not be created', $client->getResponse()->getContent());
     }
@@ -68,6 +83,42 @@ class NewsTest extends WebTestCase
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
         $this->assertCount(1, $crawler->filter(sprintf('h2:contains("%s")', $title)));
         $this->assertCount(1, $crawler->filter(sprintf('p:contains("%s")', $content)));
+    }
+
+    private function generateCreateRouteRequest($title, $locale)
+    {
+        //prepare the POST request for the new route in the current locale
+        $localeKey = '<http://cmf.symfony.com/CmfRoute/Locale>';
+
+        $nameKey = '<http://cmf.symfony.com/CmfRoute/Name>';
+        $nameValue = $title;
+
+        $parentKey = '<http://cmf.symfony.com/CmfRoute/Parent>';
+        $parentValue = '/cms/routes/' . $locale . '/news';
+
+        $routeContentKey = '<http://cmf.symfony.com/CmfRoute/RouteContent>';
+        $routeContentValue = '/cms/content/news/' . $title;
+
+        $partOfKey = '<http://purl.org/dc/terms/partOf>';
+        $partOfValue = '/cms/routes/' . $locale. '/news';
+
+        $subjectKey = '@subject';
+        $subjectValue = '_:bnode26';
+
+        $typeKey = '@type';
+        $typeValue = '<http://cmf.symfony.com/CmfRoute>';
+
+        $routeRequest = array(
+            $localeKey => $locale,
+            $nameKey => $nameValue,
+            $parentKey => $parentValue,
+            $routeContentKey => $routeContentValue,
+            $partOfKey => array($partOfValue),
+            $subjectKey => $subjectValue,
+            $typeKey => $typeValue
+        );
+
+        return $routeRequest;
     }
 
     private function generateCreateArticleRequest($title, $content)

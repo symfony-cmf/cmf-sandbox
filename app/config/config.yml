@@ -118,6 +118,7 @@ symfony_cmf_create:
         'http://cmf.symfony.com/MenuItem': 'Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem'
         'http://schema.org/NewsArticle': 'Sandbox\MainBundle\Document\NewsArticle'
         'http://schema.org/CollectionPage': 'Sandbox\MainBundle\Document\CollectionPage'
+        'http://cmf.symfony.com/CmfRoute': 'Sandbox\MainBundle\Document\CmfRoute'
 
     use_coffee: %liip_vie.use_coffee%
     image:
@@ -127,6 +128,8 @@ symfony_cmf_create:
     plain_text_types:
         - dcterms:title
         - cw:headline
+
+    create_routes: true
 
 symfony_cmf_content:
     multilang:
@@ -184,6 +187,7 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
+                - Sandbox\MainBundle\Document\CmfRoute
                 - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
         Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:
             valid_children: []

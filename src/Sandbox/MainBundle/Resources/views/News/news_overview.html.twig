@@ -36,12 +36,6 @@
                 $('div.newscontent').hide();
             }
         });
-
-        //TODO: how to create a "RouteDocument" based on options.entity?
-        $('body').bind('midgardstoragesavedentity', function (event, options) {
-            console.log('id of the create entity in phpcr: ' + options.entity.id);
-        });
-
     });
 </script>
 {% endblock %}
