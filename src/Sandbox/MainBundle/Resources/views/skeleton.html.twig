@@ -41,7 +41,7 @@
                     <div id="language_selector" class="pull-right">
                         {% block language_selector %}
                             {% if cmfMainContent is defined %}
-                                N
+                                {{ locale_switcher(cmfMainContent) }}
                             {% endif %}
                         {% endblock %}
                     </div>
