@@ -1124,12 +1124,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/schmittjoh/serializer",
-                "reference": "b8f87c97157bfdeef2c3676fc86ff87f50cf2960"
+                "reference": "00d10555138e2ae7a807b83b802605983f255000"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/serializer/archive/b8f87c97157bfdeef2c3676fc86ff87f50cf2960.zip",
-                "reference": "b8f87c97157bfdeef2c3676fc86ff87f50cf2960",
+                "url": "https://github.com/schmittjoh/serializer/archive/00d10555138e2ae7a807b83b802605983f255000.zip",
+                "reference": "00d10555138e2ae7a807b83b802605983f255000",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
             "suggest": {
                 "symfony/yaml": "Required if you'd like to serialize data to YAML format."
             },
-            "time": "2012-12-19 19:29:34",
+            "time": "2012-12-21 15:55:11",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1545,12 +1545,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunetics/LocaleBundle",
-                "reference": "90860014481f71f3603b0acda554f0c75a26ef69"
+                "reference": "0ad742b6ba641a79fabb5e8c9d45a13beeb391a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/lunetics/LocaleBundle/archive/90860014481f71f3603b0acda554f0c75a26ef69.zip",
-                "reference": "90860014481f71f3603b0acda554f0c75a26ef69",
+                "url": "https://github.com/lunetics/LocaleBundle/archive/0ad742b6ba641a79fabb5e8c9d45a13beeb391a9.zip",
+                "reference": "0ad742b6ba641a79fabb5e8c9d45a13beeb391a9",
                 "shasum": ""
             },
             "require": {
@@ -1567,7 +1567,7 @@
             "suggest": {
                 "ext-intl": "Needed for displaying the countryname in the locale language"
             },
-            "time": "2012-12-10 08:11:08",
+            "time": "2012-12-21 16:36:29",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -1647,12 +1647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog",
-                "reference": "0df12342ef6c5efc748b27bb9ef92e1c95631058"
+                "reference": "52b454f89041c41c548bc242482aaf9dc6fee5d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/archive/0df12342ef6c5efc748b27bb9ef92e1c95631058.zip",
-                "reference": "0df12342ef6c5efc748b27bb9ef92e1c95631058",
+                "url": "https://github.com/Seldaek/monolog/archive/52b454f89041c41c548bc242482aaf9dc6fee5d8.zip",
+                "reference": "52b454f89041c41c548bc242482aaf9dc6fee5d8",
                 "shasum": ""
             },
             "require": {
@@ -1666,7 +1666,7 @@
                 "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
                 "ext-mongo": "Allow sending log messages to a MongoDB server"
             },
-            "time": "2012-12-14 11:27:44",
+            "time": "2012-12-21 09:35:52",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2137,12 +2137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle",
-                "reference": "60b12fd035b8f2e68f1ead4800dd4e6253800028"
+                "reference": "222ee00b6244792b00576fb3883e4aeb1548ad42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/60b12fd035b8f2e68f1ead4800dd4e6253800028.zip",
-                "reference": "60b12fd035b8f2e68f1ead4800dd4e6253800028",
+                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/222ee00b6244792b00576fb3883e4aeb1548ad42.zip",
+                "reference": "222ee00b6244792b00576fb3883e4aeb1548ad42",
                 "shasum": ""
             },
             "require": {
@@ -2157,7 +2157,7 @@
                 "sonata-project/admin-bundle": "dev-master",
                 "sonata-project/cache-bundle": "dev-master"
             },
-            "time": "2012-12-05 10:46:30",
+            "time": "2012-12-21 15:09:31",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -3246,12 +3246,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "8013469e0bac9bef1ba16d169e78fa9104505dae"
+                "reference": "031a09dc00502e152816179bb0de2dfe7b17c279"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/8013469e0bac9bef1ba16d169e78fa9104505dae.zip",
-                "reference": "8013469e0bac9bef1ba16d169e78fa9104505dae",
+                "url": "https://github.com/symfony/symfony/archive/031a09dc00502e152816179bb0de2dfe7b17c279.zip",
+                "reference": "031a09dc00502e152816179bb0de2dfe7b17c279",
                 "shasum": ""
             },
             "require": {
@@ -3300,7 +3300,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "2012-12-20 22:16:10",
+            "time": "2012-12-21 10:42:20",
             "type": "library",
             "installation-source": "source",
             "autoload": {
