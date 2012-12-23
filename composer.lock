@@ -128,19 +128,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "00f9575d24a15931c2ccfafd888b3d1d0bb5bd03"
+                "reference": "8d0bd31ec311b50b5f62c3da6f266da83da25995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/00f9575d24a15931c2ccfafd888b3d1d0bb5bd03.zip",
-                "reference": "00f9575d24a15931c2ccfafd888b3d1d0bb5bd03",
+                "url": "https://github.com/doctrine/dbal/archive/8d0bd31ec311b50b5f62c3da6f266da83da25995.zip",
+                "reference": "8d0bd31ec311b50b5f62c3da6f266da83da25995",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "2012-12-17 15:35:54",
+            "time": "2012-12-22 11:34:26",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -454,12 +454,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle",
-                "reference": "8d262cc1466ecfe98471680c1ad839ead2af7682"
+                "reference": "49449cd5ecde0254fdc554068fe8c87470b1057d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/archive/8d262cc1466ecfe98471680c1ad839ead2af7682.zip",
-                "reference": "8d262cc1466ecfe98471680c1ad839ead2af7682",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/archive/49449cd5ecde0254fdc554068fe8c87470b1057d.zip",
+                "reference": "49449cd5ecde0254fdc554068fe8c87470b1057d",
                 "shasum": ""
             },
             "require": {
@@ -468,7 +468,7 @@
                 "symfony/serializer": ">=2.0,<2.3-dev",
                 "symfony/console": ">=2.0,<2.3-dev"
             },
-            "time": "2012-12-18 10:03:51",
+            "time": "2012-12-22 11:27:51",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -750,22 +750,22 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/jdorn/sql-formatter.git",
-                "reference": "15ab7a899e33f42682f74804d340a6995711a0d4"
+                "reference": "v1.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jdorn/sql-formatter/archive/15ab7a899e33f42682f74804d340a6995711a0d4.zip",
-                "reference": "15ab7a899e33f42682f74804d340a6995711a0d4",
+                "url": "https://github.com/jdorn/sql-formatter/archive/v1.2.0.zip",
+                "reference": "v1.2.0",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-12-18 21:46:03",
+            "time": "2012-12-22 21:46:50",
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "installation-source": "source",
@@ -1545,12 +1545,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunetics/LocaleBundle",
-                "reference": "0ad742b6ba641a79fabb5e8c9d45a13beeb391a9"
+                "reference": "eafc6ee673ab4d90f8e411f388151083f80af2ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/lunetics/LocaleBundle/archive/0ad742b6ba641a79fabb5e8c9d45a13beeb391a9.zip",
-                "reference": "0ad742b6ba641a79fabb5e8c9d45a13beeb391a9",
+                "url": "https://github.com/lunetics/LocaleBundle/archive/eafc6ee673ab4d90f8e411f388151083f80af2ac.zip",
+                "reference": "eafc6ee673ab4d90f8e411f388151083f80af2ac",
                 "shasum": ""
             },
             "require": {
@@ -1567,7 +1567,7 @@
             "suggest": {
                 "ext-intl": "Needed for displaying the countryname in the locale language"
             },
-            "time": "2012-12-21 16:36:29",
+            "time": "2012-12-22 09:49:10",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2137,12 +2137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle",
-                "reference": "222ee00b6244792b00576fb3883e4aeb1548ad42"
+                "reference": "d15f0c30a55142e4a16c6df1040125bb5582870b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/222ee00b6244792b00576fb3883e4aeb1548ad42.zip",
-                "reference": "222ee00b6244792b00576fb3883e4aeb1548ad42",
+                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/d15f0c30a55142e4a16c6df1040125bb5582870b.zip",
+                "reference": "d15f0c30a55142e4a16c6df1040125bb5582870b",
                 "shasum": ""
             },
             "require": {
@@ -2157,7 +2157,7 @@
                 "sonata-project/admin-bundle": "dev-master",
                 "sonata-project/cache-bundle": "dev-master"
             },
-            "time": "2012-12-21 15:09:31",
+            "time": "2012-12-21 19:45:49",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -2194,12 +2194,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "ae57af25378d191b8ef64b77b55bdb4b5e033704"
+                "reference": "b6da7860c0dd0f7bec9ba5ba3b2a0408bcd7766c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/archive/ae57af25378d191b8ef64b77b55bdb4b5e033704.zip",
-                "reference": "ae57af25378d191b8ef64b77b55bdb4b5e033704",
+                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/archive/b6da7860c0dd0f7bec9ba5ba3b2a0408bcd7766c.zip",
+                "reference": "b6da7860c0dd0f7bec9ba5ba3b2a0408bcd7766c",
                 "shasum": ""
             },
             "require": {
@@ -2215,7 +2215,7 @@
             "suggest": {
                 "symfony-cmf/tree-browser-bundle": "to have a tree widget for phpcr data. require version 1.0.*"
             },
-            "time": "2012-12-20 19:49:43",
+            "time": "2012-12-23 10:40:19",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2406,12 +2406,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/BlockBundle.git",
-                "reference": "ae6770fe85e0a698ee66d874a45d0c89ca954591"
+                "reference": "423e6246f6489e42607c816c6d924de937e8a599"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/BlockBundle/archive/ae6770fe85e0a698ee66d874a45d0c89ca954591.zip",
-                "reference": "ae6770fe85e0a698ee66d874a45d0c89ca954591",
+                "url": "https://github.com/symfony-cmf/BlockBundle/archive/423e6246f6489e42607c816c6d924de937e8a599.zip",
+                "reference": "423e6246f6489e42607c816c6d924de937e8a599",
                 "shasum": ""
             },
             "require": {
@@ -2421,7 +2421,7 @@
                 "doctrine/phpcr-bundle": "1.0.*",
                 "doctrine/phpcr-odm": "1.0.*"
             },
-            "time": "2012-12-20 19:49:10",
+            "time": "2012-12-21 20:28:45",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2956,12 +2956,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/TreeBrowserBundle.git",
-                "reference": "a4890991d6fd5053ec5ee073fbfe8910969cea6d"
+                "reference": "2e3ed42be270463dd10b9909043a128fda0f0a49"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/TreeBrowserBundle/archive/a4890991d6fd5053ec5ee073fbfe8910969cea6d.zip",
-                "reference": "a4890991d6fd5053ec5ee073fbfe8910969cea6d",
+                "url": "https://github.com/symfony-cmf/TreeBrowserBundle/archive/2e3ed42be270463dd10b9909043a128fda0f0a49.zip",
+                "reference": "2e3ed42be270463dd10b9909043a128fda0f0a49",
                 "shasum": ""
             },
             "require": {
@@ -2983,7 +2983,7 @@
                 "doctrine/phpcr-bundle": "1.0.*",
                 "doctrine/phpcr-odm": "1.0.*"
             },
-            "time": "2012-11-05 10:16:10",
+            "time": "2012-12-23 10:40:00",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {

@@ -167,6 +167,7 @@ sonata_admin:
                     - symfony_cmf_simple_cms.admin.page
 
 sonata_doctrine_phpcr_admin:
+    document_tree_defaults: [locale]
     document_tree:
         Doctrine\PHPCR\Odm\Document\Generic:
             valid_children:
