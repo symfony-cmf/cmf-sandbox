@@ -14,7 +14,9 @@ class AdminDashboardTest extends WebTestCase
 
         $client->followRedirect();
 
-        $this->assertEquals('http://localhost/admin/', $client->getRequest()->getUri());
+        $this->assertEquals('http://localhost/en/admin/dashboard', $client->getRequest()->getUri());
+
+        $client->request('GET', '/admin/dashboard');
 
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
 
