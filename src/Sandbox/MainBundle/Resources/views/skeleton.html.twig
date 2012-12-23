@@ -41,7 +41,7 @@
                     <div id="language_selector" class="pull-right">
                         {% block language_selector %}
                             {% if cmfMainContent is defined %}
-                                {{ locale_switcher(cmfMainContent) }}
+                                {{ locale_switcher(cmfMainContent, null, 'SandboxMainBundle:Homepage:switcher_links.html.twig') }}
                             {% endif %}
                         {% endblock %}
                     </div>
