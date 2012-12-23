@@ -128,19 +128,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal",
-                "reference": "8d0bd31ec311b50b5f62c3da6f266da83da25995"
+                "reference": "cb3ec49cb4401bd1c8be6ba9671f651802586eaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/8d0bd31ec311b50b5f62c3da6f266da83da25995.zip",
-                "reference": "8d0bd31ec311b50b5f62c3da6f266da83da25995",
+                "url": "https://github.com/doctrine/dbal/archive/cb3ec49cb4401bd1c8be6ba9671f651802586eaf.zip",
+                "reference": "cb3ec49cb4401bd1c8be6ba9671f651802586eaf",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
                 "doctrine/common": "2.3.*"
             },
-            "time": "2012-12-22 11:34:26",
+            "time": "2012-12-23 20:28:39",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -750,18 +750,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/jdorn/sql-formatter.git",
-                "reference": "v1.2.0"
+                "reference": "14d1b5449c635a4fae3cbabec9843a8d5a30a417"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jdorn/sql-formatter/archive/v1.2.0.zip",
-                "reference": "v1.2.0",
+                "url": "https://github.com/jdorn/sql-formatter/archive/14d1b5449c635a4fae3cbabec9843a8d5a30a417.zip",
+                "reference": "14d1b5449c635a4fae3cbabec9843a8d5a30a417",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-12-22 21:46:50",
+            "time": "2012-12-23 19:43:23",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2137,12 +2137,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataBlockBundle",
-                "reference": "d15f0c30a55142e4a16c6df1040125bb5582870b"
+                "reference": "92b2bfd445bc83a0fa7149ef760fa0d0f2587845"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/d15f0c30a55142e4a16c6df1040125bb5582870b.zip",
-                "reference": "d15f0c30a55142e4a16c6df1040125bb5582870b",
+                "url": "https://github.com/sonata-project/SonataBlockBundle/archive/92b2bfd445bc83a0fa7149ef760fa0d0f2587845.zip",
+                "reference": "92b2bfd445bc83a0fa7149ef760fa0d0f2587845",
                 "shasum": ""
             },
             "require": {
@@ -2157,7 +2157,7 @@
                 "sonata-project/admin-bundle": "dev-master",
                 "sonata-project/cache-bundle": "dev-master"
             },
-            "time": "2012-12-21 19:45:49",
+            "time": "2012-12-23 13:10:09",
             "type": "symfony-bundle",
             "installation-source": "source",
             "autoload": {
@@ -3246,12 +3246,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony/symfony.git",
-                "reference": "031a09dc00502e152816179bb0de2dfe7b17c279"
+                "reference": "8fd34e4eae26c55c7aec04b9f452e10557b8bc89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/symfony/archive/031a09dc00502e152816179bb0de2dfe7b17c279.zip",
-                "reference": "031a09dc00502e152816179bb0de2dfe7b17c279",
+                "url": "https://github.com/symfony/symfony/archive/8fd34e4eae26c55c7aec04b9f452e10557b8bc89.zip",
+                "reference": "8fd34e4eae26c55c7aec04b9f452e10557b8bc89",
                 "shasum": ""
             },
             "require": {
@@ -3300,7 +3300,7 @@
                 "propel/propel1": "dev-master",
                 "monolog/monolog": "1.*"
             },
-            "time": "2012-12-21 10:42:20",
+            "time": "2012-12-23 18:08:33",
             "type": "library",
             "installation-source": "source",
             "autoload": {
