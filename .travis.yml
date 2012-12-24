@@ -28,5 +28,7 @@ notifications:
 
 matrix:
   allow_failures:
-    - env: TRANSPORT=midgard_sqlite
-    - env: TRANSPORT=midgard_mysql
+    - env: TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=ratatoskr
+    - env: TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=ratatoskr
+    - env: TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
+    - env: TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
