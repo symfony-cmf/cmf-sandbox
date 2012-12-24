@@ -750,18 +750,18 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/jdorn/sql-formatter.git",
-                "reference": "14d1b5449c635a4fae3cbabec9843a8d5a30a417"
+                "reference": "d0d9cea94cd6bdcdc3e164924e0d39e9192fe2bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/jdorn/sql-formatter/archive/14d1b5449c635a4fae3cbabec9843a8d5a30a417.zip",
-                "reference": "14d1b5449c635a4fae3cbabec9843a8d5a30a417",
+                "url": "https://github.com/jdorn/sql-formatter/archive/d0d9cea94cd6bdcdc3e164924e0d39e9192fe2bf.zip",
+                "reference": "d0d9cea94cd6bdcdc3e164924e0d39e9192fe2bf",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2012-12-23 19:43:23",
+            "time": "2012-12-24 01:54:21",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2406,12 +2406,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/BlockBundle.git",
-                "reference": "423e6246f6489e42607c816c6d924de937e8a599"
+                "reference": "00feebac4da56566c166f7557794d379204b7ea7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/BlockBundle/archive/423e6246f6489e42607c816c6d924de937e8a599.zip",
-                "reference": "423e6246f6489e42607c816c6d924de937e8a599",
+                "url": "https://github.com/symfony-cmf/BlockBundle/archive/00feebac4da56566c166f7557794d379204b7ea7.zip",
+                "reference": "00feebac4da56566c166f7557794d379204b7ea7",
                 "shasum": ""
             },
             "require": {
@@ -2421,7 +2421,7 @@
                 "doctrine/phpcr-bundle": "1.0.*",
                 "doctrine/phpcr-odm": "1.0.*"
             },
-            "time": "2012-12-21 20:28:45",
+            "time": "2012-12-24 13:22:17",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2568,12 +2568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/CreateBundle.git",
-                "reference": "84feaa177db0ca59a071be28018fd0207358c6a3"
+                "reference": "051590791f750cf52fe2970d8f1ecab8d2748d61"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/CreateBundle/archive/84feaa177db0ca59a071be28018fd0207358c6a3.zip",
-                "reference": "84feaa177db0ca59a071be28018fd0207358c6a3",
+                "url": "https://github.com/symfony-cmf/CreateBundle/archive/051590791f750cf52fe2970d8f1ecab8d2748d61.zip",
+                "reference": "051590791f750cf52fe2970d8f1ecab8d2748d61",
                 "shasum": ""
             },
             "require": {
@@ -2587,7 +2587,7 @@
             "suggest": {
                 "dms/dms-filter": "if you want to filter content on your fields"
             },
-            "time": "2012-12-16 12:04:44",
+            "time": "2012-12-24 13:22:47",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2731,12 +2731,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/RoutingExtraBundle.git",
-                "reference": "1.0.0-alpha3"
+                "reference": "b923c17cf8c2987997f09689d51d2d6166ef5b2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/1.0.0-alpha3.zip",
-                "reference": "1.0.0-alpha3",
+                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/b923c17cf8c2987997f09689d51d2d6166ef5b2f.zip",
+                "reference": "b923c17cf8c2987997f09689d51d2d6166ef5b2f",
                 "shasum": ""
             },
             "require": {
@@ -2761,7 +2761,7 @@
                 "symfony-cmf/content-bundle": "To optionally use the configured value for 'content_basepath' from the CoreBundle",
                 "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin interface for the PHPCR ODM documents"
             },
-            "time": "2012-12-16 18:32:39",
+            "time": "2012-12-24 13:25:17",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
