@@ -129,7 +129,8 @@ symfony_cmf_create:
         - dcterms:title
         - cw:headline
 
-    create_routes: true
+    create_routes_types:
+        - http://schema.org/NewsArticle
 
 symfony_cmf_content:
     multilang:
