@@ -33,7 +33,9 @@
         "doctrine/phpcr-odm": "1.0.*"
     },
     "suggest": {
-        "midgard/phpcr": "dev-master",
+        "midgard/phpcr": "dev-master"
+    },
+    "require-dev": {
         "sauce/sausage": "dev-master"
     },
     "scripts": {
