@@ -37,7 +37,7 @@ static:
                             content: Both title and content of this block are editable.
                     child3:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
-                        actionName: SandboxBlockBundle:Default:block
+                        actionName: SandboxMainBundle:Default:block
     -
         name: "company"
         title: "The Company"

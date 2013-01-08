@@ -11,8 +11,22 @@ home_redirect:
         statusCode: 301
         useReferrer: false
 
+admin_wo_locale:
+    pattern: /admin
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true # this for 301
+
+admin_dashboard_wo_locale:
+    pattern: /admin/dashboard
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: sonata_admin_dashboard
+        permanent: true # this for 301
+
 admin_dashboard:
-    pattern: /admin/
+    pattern: /{_locale}/admin/
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: sonata_admin_dashboard
@@ -20,23 +34,19 @@ admin_dashboard:
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
-    prefix: /admin
+    prefix: /{_locale}/admin
 
 _sonata_admin:
     resource: .
     type: sonata_admin
-    prefix: /admin
+    prefix: /{_locale}/admin
 
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
 
-phpcrbrowser:
-    resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/phpcrbrowser.xml
-    prefix: /admin/browser
-
 phpcrodmbrowser:
     resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
-    prefix: /admin/browser
+    prefix: /{_locale}/admin/browser
 
 test:
     pattern:  /hello
