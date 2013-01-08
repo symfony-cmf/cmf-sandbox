@@ -12,7 +12,7 @@ class AdminTest extends WebTestCase
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertContains('Menu Item List', $response->getContent());
+        $this->assertContains('Menu items', $response->getContent());
 
         $menuCount = $this->isSearchSupported() ? 10 : 9;
         $this->assertContains("$menuCount results", $response->getContent());

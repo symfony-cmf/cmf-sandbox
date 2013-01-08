@@ -33,7 +33,8 @@
         "doctrine/phpcr-odm": "1.0.*"
     },
     "suggest": {
-        "midgard/phpcr": "dev-master"
+        "midgard/phpcr": "dev-master",
+        "sauce/sausage": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
