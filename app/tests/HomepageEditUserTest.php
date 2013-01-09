@@ -2,8 +2,6 @@
 
 namespace Sandbox;
 
-use Sauce\Sausage\WebDriverTestCase;
-
 /**
  * Use Saucelabs to test the edition of content with Create.js
  */
@@ -21,6 +19,7 @@ class HomepageEditUserTest extends SaucelabsWebTestCase
         $originalTitle = 'Homepage';
         $toAddToTitle = 'Updated title for ';
         $titleXPath = '/html/body/div/div[3]/div/div/div[2]/div/div/div/h1';
+        $logoXPath = '/html/body/div/div[2]/div/div/h1/a';
 
         //page loaded correctly?
         $this->assertContains($originalTitle, $this->title());
@@ -51,7 +50,7 @@ class HomepageEditUserTest extends SaucelabsWebTestCase
         $this->assertContains("Edit", $editLink->text());
 
         //reload the page to ensure changes have been persisted
-        $this->setBrowserUrl($this->homeUrl);
+        $this->byXPath($logoXPath)->click();
 
         //updated title needs to be present in the page title and page content
         $this->assertContains($toAddToTitle . $originalTitle, $this->title());

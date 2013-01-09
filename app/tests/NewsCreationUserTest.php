@@ -2,8 +2,6 @@
 
 namespace Sandbox;
 
-use Sandbox\SaucelabsWebTestCase;
-
 /**
  * Use Saucelabs to test the creation of content with Create.js
  */
@@ -22,6 +20,6 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         //page loaded correctly?
         $this->assertContains($this->pageTitle, $this->title());
 
-        //TODO: test the news creation
+        //TODO: test the news creation once it is possible to reach the news url...
     }
 }
