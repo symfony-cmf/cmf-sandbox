@@ -25,12 +25,14 @@ abstract class SaucelabsWebTestCase extends WebDriverTestCase
 
     public function setUp()
     {
+        //load the fixtures through one of the normal WebTestCase objects
+        $webTestCase = new NewsTest();
+        $webTestCase->setUp();
+
         //TODO: add a enabling parameter somewhere in the config
         if (false) {
             $this->markTestSkipped('Saucelabs testing not activated');
         }
         parent::setUp();
-
-        //TODO: how to reload the fixtures from here?
-    }
+       }
 }
