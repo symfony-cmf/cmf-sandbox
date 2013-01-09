@@ -1,8 +1,9 @@
 <?php
 
-namespace Sandbox;
+namespace Sandbox\Saucelabs;
 
 use Sauce\Sausage\WebDriverTestCase;
+use Sandbox\NewsTest;
 
 /**
  * Base class for all CMF Sandbox frontend tests using Saucelabs
@@ -29,10 +30,6 @@ abstract class SaucelabsWebTestCase extends WebDriverTestCase
         $webTestCase = new NewsTest();
         $webTestCase->setUp();
 
-        //TODO: add a enabling parameter somewhere in the config
-        if (false) {
-            $this->markTestSkipped('Saucelabs testing not activated');
-        }
         parent::setUp();
-       }
+    }
 }

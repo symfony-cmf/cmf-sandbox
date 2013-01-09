@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandbox;
+namespace Sandbox\Saucelabs;
 
 /**
  * Use Saucelabs to test the edition of content with Create.js
