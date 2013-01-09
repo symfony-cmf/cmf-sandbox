@@ -10,7 +10,6 @@ use Sandbox\FixturesLoader;
  */
 abstract class SaucelabsWebTestCase extends WebDriverTestCase
 {
-    protected $newsUrl = 'http://cmf.lo/app_test.php/en/news';
     protected $homeUrl = 'http://cmf.lo/app_test.php';
 
     public static $browsers = array(
@@ -26,10 +25,10 @@ abstract class SaucelabsWebTestCase extends WebDriverTestCase
 
     public function setUp()
     {
+        parent::setUp();
+
         //loads the fixtures through an instance of WebTestCase
         $webTestCase = new FixturesLoader();
         $webTestCase->setUp();
-
-        parent::setUp();
     }
 }
