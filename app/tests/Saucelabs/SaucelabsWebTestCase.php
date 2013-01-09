@@ -3,7 +3,7 @@
 namespace Sandbox\Saucelabs;
 
 use Sauce\Sausage\WebDriverTestCase;
-use Sandbox\NewsTest;
+use Sandbox\FixturesLoader;
 
 /**
  * Base class for all CMF Sandbox frontend tests using Saucelabs
@@ -26,8 +26,8 @@ abstract class SaucelabsWebTestCase extends WebDriverTestCase
 
     public function setUp()
     {
-        //load the fixtures through one of the normal WebTestCase objects
-        $webTestCase = new NewsTest();
+        //loads the fixtures through an instance of WebTestCase
+        $webTestCase = new FixturesLoader();
         $webTestCase->setUp();
 
         parent::setUp();
