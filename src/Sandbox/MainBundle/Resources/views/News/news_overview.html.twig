@@ -36,6 +36,16 @@
             } else {
                 $('div.newscontent').hide();
             }
+
+            /**
+             * Create.js always duplicates the first element of the list when
+             * content is added. This hack allows to overwrite the news date
+             * of the 1st news with 'today' when a news is added. The backend
+             * takes care of setting the real date after save is clicked.
+             */
+            $(".btn").click(function() {
+                $('.newsdate').last().text('today');
+            });
         });
     });
 </script>
