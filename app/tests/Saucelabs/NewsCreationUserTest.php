@@ -7,8 +7,6 @@ namespace Sandbox\Saucelabs;
  */
 class NewsCreationUserTest extends SaucelabsWebTestCase
 {
-    private $pageTitle = 'News';
-
     public function setUp()
     {
         parent::setUp();
@@ -18,6 +16,7 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
     public function testCreateNewsAndRoutes()
     {
         //common variables
+        $originalNewsPageTitle = 'News';
         $createdNewsTitle = 'News title from sauce test';
         $createdNewsContent = 'And this is the news content from sauce test as well...';
         $today = date("Y-m-d");
@@ -34,7 +33,17 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
          */
         $this->url('/en/news');
         //page loaded correctly?
-        $this->assertContains($this->pageTitle, $this->title());
+        $driver = $this;
+
+        /*
+        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
+            //give some time to load the page
+            return ($driver->title() == $originalNewsPageTitle);
+        };
+        $this->spinAssert("News page was not loaded", $newsPageLoaded);
+        */
+        //TODO: remove
+        $this->assertEquals($originalNewsPageTitle, $this->title());
 
         //enter the edit mode
         $editLink = $this->byId('midgardcreate-edit');
@@ -63,6 +72,11 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
 
         //reload the current page to ensure the changes have been persisted
         $this->url('/en/news');
+        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
+            //give some time to load the page
+            return ($driver->title() == $originalNewsPageTitle);
+        };
+        $this->spinAssert("News page was not loaded", $newsPageLoaded);
 
         //check the creation date
         $creationDate = $this->byCss('div.newsoverview li:last-child span.newsdate');
@@ -71,9 +85,13 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         //click the news just created
         $newsTitle = $this->byXPath('//a[contains(text(), "'. $createdNewsTitle .'")]');
         $newsTitle->click();
+        $newsPageLoaded = function() use ($driver, $createdNewsTitle) {
+            //give some time to load the page
+            return ($driver->title() == $createdNewsTitle);
+        };
+        $this->spinAssert("Created news page was not loaded", $newsPageLoaded);
 
         //check that the created content, title and date are in the page
-        $this->assertContains($createdNewsTitle, $this->title());
         $newsTitle = $this->byCss('h2.my-title');
         $this->assertEquals($createdNewsTitle, $newsTitle->text());
         $newsContent = $this->byCss('div#content-container p');
