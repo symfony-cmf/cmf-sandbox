@@ -34,16 +34,11 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $this->url('/en/news');
         //page loaded correctly?
         $driver = $this;
-
-        /*
         $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
             //give some time to load the page
             return ($driver->title() == $originalNewsPageTitle);
         };
         $this->spinAssert("News page was not loaded", $newsPageLoaded);
-        */
-        //TODO: remove
-        $this->assertEquals($originalNewsPageTitle, $this->title());
 
         //enter the edit mode
         $editLink = $this->byId('midgardcreate-edit');

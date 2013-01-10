@@ -188,7 +188,7 @@ The Saucelabs tests have been written to be accessed with the URL http://cmf.lo/
 access this URL locally on your machine. If needed, add an entry to your hosts file and configure your virtual host
 accordingly ([see above](cmf-sandbox/tree/content-creation#access-by-web-browser)).
 
-The last step is to enable the Saucelabs test cases in the `phpunit.xml.dist`` file. The following line has to be commented:
+The last step is to enable the Saucelabs test cases in the `phpunit.xml.dist` file. The following line has to be commented:
 
     <exclude>app/tests/Saucelabs</exclude>
 
