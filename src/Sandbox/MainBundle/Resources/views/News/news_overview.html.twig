@@ -13,7 +13,8 @@
         {% for news in cmf_children(cmfMainContent) %}
         {% createphp news %}
         <li {{ createphp_attributes(news_rdf) }}>
-            <a href="{{ path(news) }}" {{ createphp_attributes(news_rdf.title) }}>{{ createphp_content(news_rdf.title) }}</a> ({{ news.publishStartDate | date('Y-m-d')  }})
+            <a href="{{ path(news) }}" {{ createphp_attributes(news_rdf.title) }}>{{ createphp_content(news_rdf.title) }}</a>
+                (<span class="newsdate">{{ news.publishStartDate | date('Y-m-d')  }}</span>)
             <div class="newscontent" {{ createphp_attributes(news_rdf.body) }}>{{ createphp_content(news_rdf.body) }}</div>
         </li>
         {% endcreatephp %}

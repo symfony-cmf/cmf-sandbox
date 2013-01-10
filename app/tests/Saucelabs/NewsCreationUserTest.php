@@ -20,8 +20,10 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         //common variables
         $createdNewsTitle = 'News title from sauce test';
         $createdNewsContent = 'And this is the news content from sauce test as well...';
+        $today = date("Y-m-d");
+
         /*
-         * First goes in the home url during setUp and changes to then to the
+         * Go first in the home url during setUp and change then to the
          * news URL. This work around is due to the trailing slash problem of
          * selenium:
          * If $this->setBrowserUrl($this->homeUrl); is called, the URL
@@ -30,16 +32,13 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
          *
          * TODO: remove this work around
          */
-
         $this->url('/en/news');
-
         //page loaded correctly?
         $this->assertContains($this->pageTitle, $this->title());
 
         //enter the edit mode
         $editLink = $this->byId('midgardcreate-edit');
         $editLink->click();
-
         //cancel should now be in the button content
         $cancelLink = $this->byId('midgardcreate-edit');
         $this->assertContains("Cancel", $cancelLink->text());
@@ -48,11 +47,9 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $addButton = $this->byCss('.newsoverview button:last-child');
         $addButton->click();
 
-        //write the news title
+        //write the news title and content
         $newsTitle = $this->byXPath('//a[contains(text(), "[cw:headline]")]');
         $newsTitle->value($createdNewsTitle);
-
-        //write the news content
         $newsTitle = $this->byXPath('//div[contains(text(), "[ar:articleBody]")]');
         $newsTitle->value($createdNewsContent);
 
@@ -67,20 +64,21 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         //reload the current page to ensure the changes have been persisted
         $this->url('/en/news');
 
-        //check the creation date of the news correspond to the day date
-        //TODO: do it...
+        //check the creation date
+        $creationDate = $this->byCss('div.newsoverview li:last-child span.newsdate');
+        $this->assertEquals($today, $creationDate->text());
 
-        //access the news just created
+        //click the news just created
         $newsTitle = $this->byXPath('//a[contains(text(), "'. $createdNewsTitle .'")]');
         $newsTitle->click();
 
-        //check the created content, title and date are present in the page
-        //TODO: ensure that the following works...
+        //check that the created content, title and date are in the page
         $this->assertContains($createdNewsTitle, $this->title());
         $newsTitle = $this->byCss('h2.my-title');
         $this->assertEquals($createdNewsTitle, $newsTitle->text());
         $newsContent = $this->byCss('div#content-container p');
         $this->assertEquals($createdNewsContent, $newsContent->text());
-        //TODO: check the creation date
+        $creationDate = $this->byCss('div.subtitle');
+        $this->assertEquals('Date: ' . $today, $creationDate->text());
     }
 }
