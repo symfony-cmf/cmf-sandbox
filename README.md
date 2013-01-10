@@ -169,3 +169,29 @@ Functional tests are written with PHPUnit. Note that Bundles and Components are 
     phpunit -c app
 
 [![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=master)](http://travis-ci.org/symfony-cmf/cmf-sandbox)
+
+### Enable the Saucelabs tests
+
+[Saucelabs](https://saucelabs.com) is used to test the frontend actions and especially the additional Javascript needed
+to create content and routes with Create.js. To enable these tests (excluded by default):
+
+Run ``php composer.phar install --dev`` to install the [sausage library](https://github.com/jlipps/sausage).
+
+Create a free *Open Sauce* account on https://saucelabs.com and note your *username* and *access key*.
+
+Run ``vendor/sauce/bin/sauce_config USERNAME ACCESS_KEY`` to configure the sausage library.
+
+Open the sauce tunnel to be able to access the saucelabs cloud. To do so, follow the official documentation:
+http://saucelabs.com/docs/connect
+
+The Saucelabs tests have been written to be accessed with the URL http://cmf.lo/app_test.php. So make sure you can
+access this URL locally on your machine. If needed, add an entry to your hosts file and configure your virtual host
+accordingly (see above).
+
+The last step is to enable the Saucelabs test cases in the phpunit.xml.dist file. The following line has to be commented:
+    <exclude>app/tests/Saucelabs</exclude>
+
+The Saucelabs tests are included in the phpunit test cases. They can be run separately with the command
+    phpunit -c app/ --filter Saucelabs
+
+Note that it can take several minutes to be completed and that a good Internet connection is recommended.
