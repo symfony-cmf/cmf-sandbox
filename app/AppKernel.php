@@ -56,6 +56,10 @@ class AppKernel extends Kernel
 
             // jackalope doctrine caching
             // new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
+
+            // block caching and feeds
+            new Sonata\CacheBundle\SonataCacheBundle(),
+            new Eko\FeedBundle\EkoFeedBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

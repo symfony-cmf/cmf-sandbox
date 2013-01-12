@@ -1,17 +1,17 @@
 {
-    "hash": "b23b33f7e962c602e2bb6444f7648db5",
+    "hash": "40f7286e31b1c1755fbcf69b6a2b4937",
     "packages": [
         {
             "name": "doctrine/common",
             "version": "2.3.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/common",
+                "url": "https://github.com/doctrine/common.git",
                 "reference": "bb0aebbf234db52df476a2b473d434745b34221c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/common/archive/bb0aebbf234db52df476a2b473d434745b34221c.zip",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/bb0aebbf234db52df476a2b473d434745b34221c",
                 "reference": "bb0aebbf234db52df476a2b473d434745b34221c",
                 "shasum": ""
             },
@@ -29,7 +29,7 @@
                     "Doctrine\\Common": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -40,7 +40,7 @@
                     "homepage": "http://www.jwage.com/"
                 },
                 {
-                    "name": "Guilherme Blanco",
+                    "name": "Christoph Dorn",
                     "email": "guilhermeblanco@gmail.com",
                     "homepage": "http://www.instaclick.com"
                 },
@@ -53,7 +53,7 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -107,7 +107,7 @@
                     "Doctrine\\Common\\DataFixtures": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -130,12 +130,12 @@
             "version": "2.3.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/doctrine/dbal",
+                "url": "https://github.com/doctrine/dbal.git",
                 "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/dbal/archive/fd45c6f6baa618d871f3201fabe76df5043abb1e.zip",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/fd45c6f6baa618d871f3201fabe76df5043abb1e",
                 "reference": "fd45c6f6baa618d871f3201fabe76df5043abb1e",
                 "shasum": ""
             },
@@ -154,7 +154,7 @@
                     "Doctrine\\DBAL": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -165,7 +165,7 @@
                     "homepage": "http://www.jwage.com/"
                 },
                 {
-                    "name": "Guilherme Blanco",
+                    "name": "Christoph Dorn",
                     "email": "guilhermeblanco@gmail.com",
                     "homepage": "http://www.instaclick.com"
                 },
@@ -228,7 +228,7 @@
                     "Doctrine\\Bundle\\DoctrineBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -288,7 +288,7 @@
                     "Doctrine\\Bundle\\FixturesBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -321,18 +321,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrinePHPCRBundle.git",
-                "reference": "4ae55c05a14b0841ba1ce243e04884468d31b60e"
+                "reference": "75317588c6dd1d4dc1b5dd0c975594bc14e79425"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrinePHPCRBundle/zipball/4ae55c05a14b0841ba1ce243e04884468d31b60e",
-                "reference": "4ae55c05a14b0841ba1ce243e04884468d31b60e",
+                "url": "https://api.github.com/repos/doctrine/DoctrinePHPCRBundle/zipball/75317588c6dd1d4dc1b5dd0c975594bc14e79425",
+                "reference": "75317588c6dd1d4dc1b5dd0c975594bc14e79425",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "phpcr/phpcr-implementation": "2.1.*",
-                "phpcr/phpcr-utils": ">=1.0-beta5",
+                "phpcr/phpcr-utils": ">=1.0-beta5,<2.0",
                 "symfony/doctrine-bridge": ">=2.1,<2.3-dev",
                 "symfony/framework-bundle": ">=2.1,<2.3-dev"
             },
@@ -352,7 +352,7 @@
                     "Doctrine\\Bundle\\PHPCRBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -374,7 +374,7 @@
                 "persistence",
                 "phpcr"
             ],
-            "time": "2013-02-18 12:00:15"
+            "time": "2013-02-24 14:49:36"
         },
         {
             "name": "doctrine/phpcr-odm",
@@ -382,12 +382,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm.git",
-                "reference": "a19a5cf52a906da887ca6c0f04126fbcf7553ad0"
+                "reference": "3dd1705f0085db0d54c9954d24f7ec8bace698ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/a19a5cf52a906da887ca6c0f04126fbcf7553ad0",
-                "reference": "a19a5cf52a906da887ca6c0f04126fbcf7553ad0",
+                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/3dd1705f0085db0d54c9954d24f7ec8bace698ce",
+                "reference": "3dd1705f0085db0d54c9954d24f7ec8bace698ce",
                 "shasum": ""
             },
             "require": {
@@ -420,7 +420,7 @@
                     "Doctrine\\ODM\\PHPCR": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -447,7 +447,54 @@
                 "odm",
                 "phpcr"
             ],
-            "time": "2013-02-23 12:03:27"
+            "time": "2013-02-24 15:28:20"
+        },
+        {
+            "name": "eko/feedbundle",
+            "version": "dev-master",
+            "target-dir": "Eko/FeedBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eko/FeedBundle.git",
+                "reference": "8f008a059e7f834183182e7db3532dbff7294686"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eko/FeedBundle/zipball/8f008a059e7f834183182e7db3532dbff7294686",
+                "reference": "8f008a059e7f834183182e7db3532dbff7294686",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": ">=2.0,<2.4-dev",
+                "zendframework/zend-feed": "2.0.*",
+                "zendframework/zend-http": "2.0.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Eko\\FeedBundle": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vincent Composieux",
+                    "email": "vincent.composieux@gmail.com"
+                }
+            ],
+            "description": "A Symfony bundle to build RSS feeds from entities",
+            "homepage": "http://github.com/eko/FeedBundle",
+            "keywords": [
+                "atom",
+                "bundle",
+                "feed",
+                "rss"
+            ],
+            "time": "2013-02-18 20:41:31"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -455,12 +502,12 @@
             "target-dir": "FOS/JsRoutingBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle",
+                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle.git",
                 "reference": "1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FriendsOfSymfony/FOSJsRoutingBundle/archive/1.1.2.zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSJsRoutingBundle/zipball/1.1.2",
                 "reference": "1.1.2",
                 "shasum": ""
             },
@@ -481,7 +528,7 @@
                     "FOS\\JsRoutingBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -509,12 +556,12 @@
             "target-dir": "FOS/Rest",
             "source": {
                 "type": "git",
-                "url": "https://github.com/FriendsOfSymfony/FOSRest",
+                "url": "https://github.com/FriendsOfSymfony/FOSRest.git",
                 "reference": "33c35fa3f8e7c3dd08085d849ebaa5bda54dfba4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/FriendsOfSymfony/FOSRest/archive/33c35fa3f8e7c3dd08085d849ebaa5bda54dfba4.zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRest/zipball/33c35fa3f8e7c3dd08085d849ebaa5bda54dfba4",
                 "reference": "33c35fa3f8e7c3dd08085d849ebaa5bda54dfba4",
                 "shasum": ""
             },
@@ -533,7 +580,7 @@
                     "FOS\\Rest": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -600,7 +647,7 @@
                     "FOS\\RestBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -661,7 +708,7 @@
                     "Jackalope\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -718,7 +765,7 @@
                     "Jackalope\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -742,12 +789,12 @@
             "target-dir": "JMS/AopBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/schmittjoh/JMSAopBundle",
+                "url": "https://github.com/schmittjoh/JMSAopBundle.git",
                 "reference": "7018357f5bedf204979a88867a9da05973744422"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/JMSAopBundle/archive/7018357f5bedf204979a88867a9da05973744422.zip",
+                "url": "https://api.github.com/repos/schmittjoh/JMSAopBundle/zipball/7018357f5bedf204979a88867a9da05973744422",
                 "reference": "7018357f5bedf204979a88867a9da05973744422",
                 "shasum": ""
             },
@@ -766,7 +813,7 @@
                     "JMS\\AopBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache"
             ],
@@ -774,7 +821,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -813,13 +860,13 @@
                     "CG\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
             "authors": [
                 {
-                    "name": "Johannes Schmitt",
+                    "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
                     "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
@@ -878,7 +925,7 @@
                     "JMS\\DiExtraBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache"
             ],
@@ -929,7 +976,7 @@
                     "Metadata\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache"
             ],
@@ -955,12 +1002,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/schmittjoh/parser-lib",
+                "url": "https://github.com/schmittjoh/parser-lib.git",
                 "reference": "4d469a70c6dd03f921cbdeadafbcb261bb23e8b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/parser-lib/archive/4d469a70c6dd03f921cbdeadafbcb261bb23e8b0.zip",
+                "url": "https://api.github.com/repos/schmittjoh/parser-lib/zipball/4d469a70c6dd03f921cbdeadafbcb261bb23e8b0",
                 "reference": "4d469a70c6dd03f921cbdeadafbcb261bb23e8b0",
                 "shasum": ""
             },
@@ -978,7 +1025,7 @@
                     "JMS\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -1033,7 +1080,7 @@
                     "JMS\\SecurityExtraBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -1058,16 +1105,16 @@
         },
         {
             "name": "jms/serializer",
-            "version": "dev-master",
+            "version": "0.11.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/schmittjoh/serializer.git",
-                "reference": "9ebbaf17bdc08cb54b8f38d1aaead484300241dc"
+                "url": "git://github.com/schmittjoh/serializer",
+                "reference": "0.11.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/9ebbaf17bdc08cb54b8f38d1aaead484300241dc",
-                "reference": "9ebbaf17bdc08cb54b8f38d1aaead484300241dc",
+                "url": "https://api.github.com/repos/schmittjoh/serializer/zipball/0.11.0",
+                "reference": "0.11.0",
                 "shasum": ""
             },
             "require": {
@@ -1092,7 +1139,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.12-dev"
+                    "dev-master": "1.0-dev"
                 }
             },
             "autoload": {
@@ -1100,7 +1147,7 @@
                     "JMS\\Serializer": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -1121,25 +1168,25 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2013-02-23 13:16:49"
+            "time": "2013-01-29 10:56:07"
         },
         {
             "name": "jms/serializer-bundle",
-            "version": "dev-master",
+            "version": "0.11.0",
             "target-dir": "JMS/SerializerBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "72782da20462c5faffc739a40bffc20f6a4fbc41"
+                "reference": "0.11.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/72782da20462c5faffc739a40bffc20f6a4fbc41",
-                "reference": "72782da20462c5faffc739a40bffc20f6a4fbc41",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/0.11.0",
+                "reference": "0.11.0",
                 "shasum": ""
             },
             "require": {
-                "jms/di-extra-bundle": ">=1.3,<2.0",
+                "jms/di-extra-bundle": ">=1.3",
                 "jms/serializer": "0.11.*",
                 "php": ">=5.3.2",
                 "symfony/framework-bundle": ">=2.1,<3.0-dev"
@@ -1160,7 +1207,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.11-dev"
+                    "dev-master": "1.0-dev"
                 }
             },
             "autoload": {
@@ -1168,7 +1215,7 @@
                     "JMS\\SerializerBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -1189,19 +1236,19 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2013-02-22 11:44:49"
+            "time": "2013-02-12 08:32:04"
         },
         {
             "name": "knplabs/knp-menu",
             "version": "1.1.x-dev",
             "source": {
                 "type": "git",
-                "url": "http://github.com/KnpLabs/KnpMenu.git",
+                "url": "https://github.com/KnpLabs/KnpMenu.git",
                 "reference": "v1.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenu/archive/v1.1.2.zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenu/zipball/v1.1.2",
                 "reference": "v1.1.2",
                 "shasum": ""
             },
@@ -1229,7 +1276,7 @@
                     "Knp\\Menu\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1261,12 +1308,12 @@
             "target-dir": "Knp/Bundle/MenuBundle",
             "source": {
                 "type": "git",
-                "url": "http://github.com/KnpLabs/KnpMenuBundle.git",
+                "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
                 "reference": "520d4d923c5a542f4aebeafe4b1301dddc8689c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenuBundle/archive/520d4d923c5a542f4aebeafe4b1301dddc8689c8.zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/520d4d923c5a542f4aebeafe4b1301dddc8689c8",
                 "reference": "520d4d923c5a542f4aebeafe4b1301dddc8689c8",
                 "shasum": ""
             },
@@ -1280,7 +1327,7 @@
                     "Knp\\Bundle\\MenuBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1290,7 +1337,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "Knplabs",
+                    "name": "KnpLabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -1310,12 +1357,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "v1.1.0-alpha3"
+                "reference": "4fdc4b425cf2a55b2ffc068a4a1f215c73dbe863"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.0-alpha3",
-                "reference": "v1.1.0-alpha3",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/4fdc4b425cf2a55b2ffc068a4a1f215c73dbe863",
+                "reference": "4fdc4b425cf2a55b2ffc068a4a1f215c73dbe863",
                 "shasum": ""
             },
             "require": {
@@ -1355,7 +1402,7 @@
                     "src/functions.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1373,7 +1420,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-02-18 16:17:57"
+            "time": "2013-02-24 00:37:33"
         },
         {
             "name": "liip/functional-test-bundle",
@@ -1381,12 +1428,12 @@
             "target-dir": "Liip/FunctionalTestBundle",
             "source": {
                 "type": "git",
-                "url": "git://github.com/liip/LiipFunctionalTestBundle.git",
+                "url": "https://github.com/liip/LiipFunctionalTestBundle.git",
                 "reference": "7c9062bf3a5fb69c2c892fe61f517a596ea24d5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipFunctionalTestBundle/archive/7c9062bf3a5fb69c2c892fe61f517a596ea24d5d.zip",
+                "url": "https://api.github.com/repos/liip/LiipFunctionalTestBundle/zipball/7c9062bf3a5fb69c2c892fe61f517a596ea24d5d",
                 "reference": "7c9062bf3a5fb69c2c892fe61f517a596ea24d5d",
                 "shasum": ""
             },
@@ -1411,7 +1458,7 @@
                     "Liip\\FunctionalTestBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1437,12 +1484,12 @@
             "target-dir": "Liip/SearchBundle",
             "source": {
                 "type": "git",
-                "url": "git://github.com/liip/LiipSearchBundle.git",
+                "url": "https://github.com/liip/LiipSearchBundle.git",
                 "reference": "46224784a6e489de033f7cda2143e79cebf71c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/liip/LiipSearchBundle/archive/46224784a6e489de033f7cda2143e79cebf71c39.zip",
+                "url": "https://api.github.com/repos/liip/LiipSearchBundle/zipball/46224784a6e489de033f7cda2143e79cebf71c39",
                 "reference": "46224784a6e489de033f7cda2143e79cebf71c39",
                 "shasum": ""
             },
@@ -1456,7 +1503,7 @@
                     "Liip\\SearchBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1483,12 +1530,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunetics/LocaleBundle.git",
-                "reference": "d03cc162dab67cb451e923f4b055eff69500d96c"
+                "reference": "7ad9d4893147849a5b059bdcca7a4b9375d9f5a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lunetics/LocaleBundle/zipball/d03cc162dab67cb451e923f4b055eff69500d96c",
-                "reference": "d03cc162dab67cb451e923f4b055eff69500d96c",
+                "url": "https://api.github.com/repos/lunetics/LocaleBundle/zipball/7ad9d4893147849a5b059bdcca7a4b9375d9f5a7",
+                "reference": "7ad9d4893147849a5b059bdcca7a4b9375d9f5a7",
                 "shasum": ""
             },
             "require": {
@@ -1511,7 +1558,7 @@
                     "Lunetics\\LocaleBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1535,7 +1582,7 @@
                 "multilanguage",
                 "router"
             ],
-            "time": "2013-02-12 20:51:11"
+            "time": "2013-02-24 12:26:22"
         },
         {
             "name": "midgard/createphp",
@@ -1560,7 +1607,7 @@
                     "Midgard\\CreatePHP": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "LGPL"
             ],
@@ -1587,7 +1634,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/Seldaek/monolog/zipball/1.2.1",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1.2.1",
                 "reference": "1.2.1",
                 "shasum": ""
             },
@@ -1613,7 +1660,7 @@
                     "Monolog": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1631,7 +1678,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2012-08-29 04:53:20"
+            "time": "2012-08-29 11:53:20"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -1661,7 +1708,7 @@
                     "PhpCollection": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -1711,7 +1758,7 @@
                     "PHPCR": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -1767,7 +1814,7 @@
                     "PHPCR\\Util": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache-2.0"
             ],
@@ -1804,12 +1851,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/schmittjoh/php-option",
+                "url": "https://github.com/schmittjoh/php-option.git",
                 "reference": "c899903cbc4cadc2b6fb7ab74a1470d59e4c2d27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/php-option/archive/c899903cbc4cadc2b6fb7ab74a1470d59e4c2d27.zip",
+                "url": "https://api.github.com/repos/schmittjoh/php-option/zipball/c899903cbc4cadc2b6fb7ab74a1470d59e4c2d27",
                 "reference": "c899903cbc4cadc2b6fb7ab74a1470d59e4c2d27",
                 "shasum": ""
             },
@@ -1827,7 +1874,7 @@
                     "PhpOption\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "Apache2"
             ],
@@ -1835,7 +1882,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -1855,12 +1902,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioDistributionBundle.git",
-                "reference": "615f76309dae8c45c72b69578b034713c09767d1"
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioDistributionBundle/zipball/615f76309dae8c45c72b69578b034713c09767d1",
-                "reference": "615f76309dae8c45c72b69578b034713c09767d1",
+                "url": "https://api.github.com/repos/sensio/SensioDistributionBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1877,7 +1924,7 @@
                     "Sensio\\Bundle\\DistributionBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1901,12 +1948,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensio/SensioFrameworkExtraBundle.git",
-                "reference": "a03ae85a8555e5f8d0bc18235b1dd7f7ef27b127"
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensio/SensioFrameworkExtraBundle/zipball/a03ae85a8555e5f8d0bc18235b1dd7f7ef27b127",
-                "reference": "a03ae85a8555e5f8d0bc18235b1dd7f7ef27b127",
+                "url": "https://api.github.com/repos/sensio/SensioFrameworkExtraBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1924,7 +1971,7 @@
                     "Sensio\\Bundle\\FrameworkExtraBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1947,13 +1994,13 @@
             "target-dir": "Sensio/Bundle/GeneratorBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/sensio/SensioGeneratorBundle",
-                "reference": "v2.1.7"
+                "url": "https://github.com/sensio/SensioGeneratorBundle.git",
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sensio/SensioGeneratorBundle/archive/v2.1.7.zip",
-                "reference": "v2.1.7",
+                "url": "https://api.github.com/repos/sensio/SensioGeneratorBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -1976,7 +2023,7 @@
                     "Sensio\\Bundle\\GeneratorBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1996,12 +2043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "785475567dad895f5ee7434570de0de3c06ea1b6"
+                "reference": "38e3b307aed4dc1cd98602871dcf42d16802e061"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/785475567dad895f5ee7434570de0de3c06ea1b6",
-                "reference": "785475567dad895f5ee7434570de0de3c06ea1b6",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/38e3b307aed4dc1cd98602871dcf42d16802e061",
+                "reference": "38e3b307aed4dc1cd98602871dcf42d16802e061",
                 "shasum": ""
             },
             "require": {
@@ -2033,7 +2080,7 @@
                     "Sonata\\AdminBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2056,7 +2103,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2013-02-22 18:37:53"
+            "time": "2013-02-24 16:10:10"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -2091,7 +2138,7 @@
                     "Sonata\\BlockBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2113,6 +2160,66 @@
                 "sonata"
             ],
             "time": "2013-02-16 14:05:06"
+        },
+        {
+            "name": "sonata-project/cache-bundle",
+            "version": "dev-master",
+            "target-dir": "Sonata/CacheBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataCacheBundle.git",
+                "reference": "2ac53eb6a44f43e8dd47f08190af7eac81265b6b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataCacheBundle/zipball/2ac53eb6a44f43e8dd47f08190af7eac81265b6b",
+                "reference": "2ac53eb6a44f43e8dd47f08190af7eac81265b6b",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/http-foundation": ">=2.1,<2.3-dev",
+                "symfony/process": ">=2.1,<2.3-dev",
+                "symfony/routing": ">=2.1,<2.3-dev",
+                "symfony/security": ">=2.1,<2.3-dev"
+            },
+            "require-dev": {
+                "doctrine/orm": ">=2.2.0"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "ORM support",
+                "doctrine/orm": "ORM support",
+                "doctrine/phpcr-bundle": "PHPCR ODM support",
+                "doctrine/phpcr-odm": "PHPCR ODM support",
+                "ext-apc": "Caching with ext/apc",
+                "ext-memcached": "Caching with ext/memcached"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Sonata\\CacheBundle": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataCacheBundle/contributors"
+                }
+            ],
+            "description": "This bundle provides caching services",
+            "homepage": "https://github.com/sonata-project/SonataCacheBundle",
+            "keywords": [
+                "cache block"
+            ],
+            "time": "2013-02-16 14:06:32"
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",
@@ -2151,7 +2258,7 @@
                     "Sonata\\DoctrinePHPCRAdminBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2206,7 +2313,7 @@
                     "Exporter": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2234,12 +2341,12 @@
             "target-dir": "Sonata/jQueryBundle",
             "source": {
                 "type": "git",
-                "url": "git://github.com/sonata-project/SonatajQueryBundle.git",
+                "url": "https://github.com/sonata-project/SonatajQueryBundle.git",
                 "reference": "5f87a761302e6c78304e071416f75d41eb1fb3c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonatajQueryBundle/archive/5f87a761302e6c78304e071416f75d41eb1fb3c2.zip",
+                "url": "https://api.github.com/repos/sonata-project/SonatajQueryBundle/zipball/5f87a761302e6c78304e071416f75d41eb1fb3c2",
                 "reference": "5f87a761302e6c78304e071416f75d41eb1fb3c2",
                 "shasum": ""
             },
@@ -2253,7 +2360,7 @@
                     "Sonata\\jQueryBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2304,7 +2411,7 @@
                     "lib/swift_required.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "LGPL"
             ],
@@ -2332,12 +2439,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/BlockBundle.git",
-                "reference": "89b890f10e445c74cc315d01839b0babcb658bf1"
+                "reference": "dac2e7fd2b8b52922de137331d7616e99d1851ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/BlockBundle/zipball/89b890f10e445c74cc315d01839b0babcb658bf1",
-                "reference": "89b890f10e445c74cc315d01839b0babcb658bf1",
+                "url": "https://api.github.com/repos/symfony-cmf/BlockBundle/zipball/dac2e7fd2b8b52922de137331d7616e99d1851ed",
+                "reference": "dac2e7fd2b8b52922de137331d7616e99d1851ed",
                 "shasum": ""
             },
             "require": {
@@ -2351,6 +2458,7 @@
                 "sonata-project/cache-bundle": "dev-master"
             },
             "suggest": {
+                "eko/feedbundle": "To use the RssBlock",
                 "sonata-project/cache-bundle": "To add caching support for block loading"
             },
             "type": "symfony-bundle",
@@ -2364,7 +2472,7 @@
                     "Symfony\\Cmf\\Bundle\\BlockBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2381,7 +2489,7 @@
                 "block",
                 "content fragments"
             ],
-            "time": "2013-02-15 12:14:58"
+            "time": "2013-02-24 14:05:27"
         },
         {
             "name": "symfony-cmf/blog-bundle",
@@ -2416,7 +2524,7 @@
                     "Symfony\\Cmf\\Bundle\\BlogBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2469,7 +2577,7 @@
                     "Symfony\\Cmf\\Bundle\\ContentBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2492,12 +2600,12 @@
             "target-dir": "Symfony/Cmf/Bundle/CoreBundle",
             "source": {
                 "type": "git",
-                "url": "git://github.com/symfony-cmf/CoreBundle.git",
+                "url": "https://github.com/symfony-cmf/CoreBundle.git",
                 "reference": "50694514d296b3275e390751ba2fb6ae58f38450"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/CoreBundle/archive/50694514d296b3275e390751ba2fb6ae58f38450.zip",
+                "url": "https://api.github.com/repos/symfony-cmf/CoreBundle/zipball/50694514d296b3275e390751ba2fb6ae58f38450",
                 "reference": "50694514d296b3275e390751ba2fb6ae58f38450",
                 "shasum": ""
             },
@@ -2522,7 +2630,7 @@
                     "Symfony\\Cmf\\Bundle\\CoreBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2573,7 +2681,7 @@
                     "Symfony\\Cmf\\Bundle\\CreateBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2626,7 +2734,7 @@
                     "Symfony\\Cmf\\Bundle\\MenuBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2675,7 +2783,7 @@
                     "Symfony\\Cmf\\Component\\Routing": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2741,7 +2849,7 @@
                     "Symfony\\Cmf\\Bundle\\RoutingExtraBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2765,12 +2873,12 @@
             "target-dir": "Symfony/Cmf/Bundle/SearchBundle",
             "source": {
                 "type": "git",
-                "url": "git://github.com/symfony-cmf/SearchBundle.git",
+                "url": "https://github.com/symfony-cmf/SearchBundle.git",
                 "reference": "567027cdf620543889c54a4de8461a28b448227d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/SearchBundle/archive/567027cdf620543889c54a4de8461a28b448227d.zip",
+                "url": "https://api.github.com/repos/symfony-cmf/SearchBundle/zipball/567027cdf620543889c54a4de8461a28b448227d",
                 "reference": "567027cdf620543889c54a4de8461a28b448227d",
                 "shasum": ""
             },
@@ -2785,7 +2893,7 @@
                     "Symfony\\Cmf\\Bundle\\SearchBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2842,14 +2950,14 @@
                     "Symfony\\Cmf\\Bundle\\SimpleCmsBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "authors": [
                 {
                     "name": "Symfony CMF Community",
-                    "homepage": "https://github.com/symfony-cmf/CreateBundle/contributors"
+                    "homepage": "https://github.com/symfony-cmf/SimpleCmsBundle/contributors"
                 }
             ],
             "description": "A simple CMS bundle based on the Symfony CMF",
@@ -2865,12 +2973,12 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git://github.com/symfony-cmf/symfony-cmf.git",
+                "url": "https://github.com/symfony-cmf/symfony-cmf.git",
                 "reference": "1bd811dd8fdc4daa8fb6f639fe26e033e924f864"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/symfony-cmf/archive/1bd811dd8fdc4daa8fb6f639fe26e033e924f864.zip",
+                "url": "https://api.github.com/repos/symfony-cmf/symfony-cmf/zipball/1bd811dd8fdc4daa8fb6f639fe26e033e924f864",
                 "reference": "1bd811dd8fdc4daa8fb6f639fe26e033e924f864",
                 "shasum": ""
             },
@@ -2900,7 +3008,7 @@
                     "Symfony\\Cmf": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2958,7 +3066,7 @@
                     "Symfony\\Cmf\\Bundle\\TreeBrowserBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2984,12 +3092,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/AsseticBundle.git",
-                "reference": "bc24734343cc6a77dc143d0cf80f33b5e18e4cc0"
+                "reference": "v2.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/bc24734343cc6a77dc143d0cf80f33b5e18e4cc0",
-                "reference": "bc24734343cc6a77dc143d0cf80f33b5e18e4cc0",
+                "url": "https://api.github.com/repos/symfony/AsseticBundle/zipball/v2.1.2",
+                "reference": "v2.1.2",
                 "shasum": ""
             },
             "require": {
@@ -3020,7 +3128,7 @@
                     "Symfony\\Bundle\\AsseticBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3038,7 +3146,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-02-18 16:21:03"
+            "time": "2013-02-23 22:29:21"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -3046,13 +3154,13 @@
             "target-dir": "Symfony/Bundle/MonologBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/MonologBundle",
-                "reference": "253fcda1128a0301aa68d040302cade65095f2c6"
+                "url": "https://github.com/symfony/MonologBundle.git",
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/MonologBundle/archive/253fcda1128a0301aa68d040302cade65095f2c6.zip",
-                "reference": "253fcda1128a0301aa68d040302cade65095f2c6",
+                "url": "https://api.github.com/repos/symfony/MonologBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -3077,7 +3185,7 @@
                     "Symfony\\Bundle\\MonologBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3105,13 +3213,13 @@
             "target-dir": "Symfony/Bundle/SwiftmailerBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/SwiftmailerBundle",
-                "reference": "v2.1.7"
+                "url": "https://github.com/symfony/SwiftmailerBundle.git",
+                "reference": "v2.1.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony/SwiftmailerBundle/archive/v2.1.7.zip",
-                "reference": "v2.1.7",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/v2.1.8",
+                "reference": "v2.1.8",
                 "shasum": ""
             },
             "require": {
@@ -3136,7 +3244,7 @@
                     "Symfony\\Bundle\\SwiftmailerBundle": ""
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3160,12 +3268,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "22dbfc009fcf990d77d77073ea6f728b159ededc"
+                "reference": "ae5b94fd7cc6085e9b932b49fb44a38ea49e25f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/22dbfc009fcf990d77d77073ea6f728b159ededc",
-                "reference": "22dbfc009fcf990d77d77073ea6f728b159ededc",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/ae5b94fd7cc6085e9b932b49fb44a38ea49e25f7",
+                "reference": "ae5b94fd7cc6085e9b932b49fb44a38ea49e25f7",
                 "shasum": ""
             },
             "require": {
@@ -3221,7 +3329,7 @@
                     "SessionHandlerInterface": "src/Symfony/Component/HttpFoundation/Resources/stubs"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3240,19 +3348,19 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-02-23 06:41:44"
+            "time": "2013-02-23 22:02:46"
         },
         {
             "name": "twig/extensions",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fabpot/Twig-extensions",
+                "url": "https://github.com/fabpot/Twig-extensions.git",
                 "reference": "5c2d515d4624bdd588226d688173cf0399a4d8cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/fabpot/Twig-extensions/archive/5c2d515d4624bdd588226d688173cf0399a4d8cf.zip",
+                "url": "https://api.github.com/repos/fabpot/Twig-extensions/zipball/5c2d515d4624bdd588226d688173cf0399a4d8cf",
                 "reference": "5c2d515d4624bdd588226d688173cf0399a4d8cf",
                 "shasum": ""
             },
@@ -3270,7 +3378,7 @@
                     "Twig_Extensions_": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3317,7 +3425,7 @@
                     "Twig_": "lib/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "notification-url": "http://packagist.org/downloads/",
             "license": [
                 "BSD-3"
             ],
@@ -3337,6 +3445,429 @@
                 "templating"
             ],
             "time": "2013-02-21 06:47:52"
+        },
+        {
+            "name": "zendframework/zend-escaper",
+            "version": "2.0.7",
+            "target-dir": "Zend/Escaper",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendEscaper.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendEscaper/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Escaper\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "escaper",
+                "zf2"
+            ],
+            "time": "2013-01-01 15:44:13"
+        },
+        {
+            "name": "zendframework/zend-feed",
+            "version": "2.0.7",
+            "target-dir": "Zend/Feed",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendFeed.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendFeed/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-escaper": "self.version",
+                "zendframework/zend-servicemanager": "self.version",
+                "zendframework/zend-stdlib": "self.version",
+                "zendframework/zend-uri": "self.version",
+                "zendframework/zend-version": "self.version"
+            },
+            "suggest": {
+                "zendframework/zend-validator": "Zend\\Validator component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Feed\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides functionality for consuming RSS and Atom feeds",
+            "keywords": [
+                "feed",
+                "zf2"
+            ],
+            "time": "2013-01-22 20:50:52"
+        },
+        {
+            "name": "zendframework/zend-filter",
+            "version": "2.0.7",
+            "target-dir": "Zend/Filter",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendFilter.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendFilter/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "require-dev": {
+                "zendframework/zend-crypt": "self.version"
+            },
+            "suggest": {
+                "zendframework/zend-crypt": "Zend\\Crypt component",
+                "zendframework/zend-i18n": "Zend\\I18n component",
+                "zendframework/zend-validator": "Zend\\Validator component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Filter\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides a set of commonly needed data filters",
+            "keywords": [
+                "filter",
+                "zf2"
+            ],
+            "time": "2013-01-25 16:31:35"
+        },
+        {
+            "name": "zendframework/zend-http",
+            "version": "2.0.7",
+            "target-dir": "Zend/Http",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendHttp.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendHttp/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-loader": "self.version",
+                "zendframework/zend-stdlib": "self.version",
+                "zendframework/zend-uri": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Http\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides an easy interface for performing Hyper-Text Transfer Protocol (HTTP) requests",
+            "keywords": [
+                "http",
+                "zf2"
+            ],
+            "time": "2013-01-25 15:49:30"
+        },
+        {
+            "name": "zendframework/zend-i18n",
+            "version": "2.0.7",
+            "target-dir": "Zend/I18n",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendI18n.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendI18n/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "ext-intl": "*",
+                "php": ">=5.3.3",
+                "zendframework/zend-filter": "self.version",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\I18n\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "i18n",
+                "zf2"
+            ],
+            "time": "2013-01-22 20:50:52"
+        },
+        {
+            "name": "zendframework/zend-loader",
+            "version": "2.0.7",
+            "target-dir": "Zend/Loader",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendLoader.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendLoader/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "zendframework/zend-stdlib": "Zend\\Stdlib component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Loader\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "loader",
+                "zf2"
+            ],
+            "time": "2013-01-22 20:50:52"
+        },
+        {
+            "name": "zendframework/zend-servicemanager",
+            "version": "2.0.7",
+            "target-dir": "Zend/ServiceManager",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendServiceManager.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendServiceManager/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "zendframework/zend-di": "Zend\\Di component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\ServiceManager\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "servicemanager",
+                "zf2"
+            ],
+            "time": "2013-01-29 20:11:45"
+        },
+        {
+            "name": "zendframework/zend-stdlib",
+            "version": "2.0.7",
+            "target-dir": "Zend/Stdlib",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendStdlib.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendStdlib/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "pecl-weakref": "Implementation of weak references for Stdlib\\CallbackHandler"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Stdlib\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "stdlib",
+                "zf2"
+            ],
+            "time": "2013-01-22 20:50:52"
+        },
+        {
+            "name": "zendframework/zend-uri",
+            "version": "2.0.7",
+            "target-dir": "Zend/Uri",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendUri.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendUri/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-escaper": "self.version",
+                "zendframework/zend-validator": "self.version"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Uri\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "a component that aids in manipulating and validating » Uniform Resource Identifiers (URIs)",
+            "keywords": [
+                "uri",
+                "zf2"
+            ],
+            "time": "2013-01-07 17:45:37"
+        },
+        {
+            "name": "zendframework/zend-validator",
+            "version": "2.0.7",
+            "target-dir": "Zend/Validator",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendValidator.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendValidator/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "zendframework/zend-i18n": "self.version",
+                "zendframework/zend-servicemanager": "self.version",
+                "zendframework/zend-stdlib": "self.version"
+            },
+            "require-dev": {
+                "zendframework/zend-math": "self.version"
+            },
+            "suggest": {
+                "zendframework/zend-db": "Zend\\Db component",
+                "zendframework/zend-math": "Zend\\Math component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Validator\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "provides a set of commonly needed validators",
+            "keywords": [
+                "validator",
+                "zf2"
+            ],
+            "time": "2013-01-25 16:14:33"
+        },
+        {
+            "name": "zendframework/zend-version",
+            "version": "2.0.7",
+            "target-dir": "Zend/Version",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/zendframework/Component_ZendVersion.git",
+                "reference": "release-2.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/zendframework/Component_ZendVersion/zipball/release-2.0.7",
+                "reference": "release-2.0.7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Zend\\Version\\": ""
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "keywords": [
+                "version",
+                "zf2"
+            ],
+            "time": "2013-01-29 22:52:16"
         }
     ],
     "packages-dev": null,
@@ -3351,6 +3882,8 @@
         "doctrine/doctrine-fixtures-bundle": 20,
         "liip/functional-test-bundle": 20,
         "lunetics/locale-bundle": 20,
-        "symfony-cmf/blog-bundle": 20
+        "symfony-cmf/blog-bundle": 20,
+        "sonata-project/cache-bundle": 20,
+        "eko/feedbundle": 20
     }
 }

@@ -60,3 +60,7 @@ create_image:
 
 liip_search:
     resource: "@SymfonyCmfSearchBundle/Resources/config/routing.xml"
+
+block_cache:
+    resource: "@SymfonyCmfBlockBundle/Resources/config/routing/cache.xml"
+    prefix: /
