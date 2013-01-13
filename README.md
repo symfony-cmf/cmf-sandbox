@@ -45,12 +45,14 @@ Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist` 
 
 To have the Doctrine DBAL implementation installed run the following additional command
 
-    php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master
+    php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master --no-update
+    php composer.phar update jackalope/jackalope-doctrine-dbal
 
 To enable the meta data and node cache to improve performance first enable ``LiipDoctrineCacheBundle``
 in ``app/AppKernel.php`` and then also perform:
 
-    php composer.phar require liip/doctrine-cache-bundle:dev-master
+    php composer.phar require liip/doctrine-cache-bundle:dev-master --no-update --no-update
+    php composer.phar update liip/doctrine-cache-bundle
 
 Finally uncomment the ``caches`` settings in the `phpcr.yml` as well as the ``liip_doctrine_cache``
 settings in ``app/config.yml``.
@@ -82,7 +84,8 @@ basically `$PREFIX/share/midgard2/schema`).
 
 To have the midgard phpcr implementation installed run the following additional command
 
-    php composer.phar require midgard/phpcr:dev-master
+    php composer.phar require midgard/phpcr:dev-master --no-update
+    php composer.phar update midgard/phpcr
 
 Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
 
