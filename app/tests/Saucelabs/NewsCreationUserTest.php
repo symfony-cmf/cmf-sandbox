@@ -13,12 +13,61 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $this->setBrowserUrl($this->newsUrl);
     }
 
-    public function testCreateNewsAndRoutes()
+    /**
+     * Test the case where a news is created and another updated in one shot
+     */
+    public function testNewsCreateAndUpdate()
     {
         //common variables
         $originalNewsPageTitle = 'News';
-        $createdNewsTitle = 'News title from sauce test';
-        $createdNewsContent = 'And this is the news content from sauce test as well...';
+        $createdNewsTitle = 'News title from testNewsCreateAndUpdate';
+        $createdNewsContent = 'News content from testNewsCreateAndUpdate';
+
+        $this->assertEquals($originalNewsPageTitle, $this->title());
+
+        //enter the edit mode
+        $editLink = $this->byId('midgardcreate-edit');
+        $editLink->click();
+
+        //click the add button
+        $addButton = $this->byCss('.newsoverview button:last-child');
+        $addButton->click();
+
+        //write the news title and content
+        $newsTitle = $this->byXPath('//a[contains(text(), "[cw:headline]")]');
+        $newsTitle->value($createdNewsTitle);
+        $newsTitle = $this->byXPath('//div[contains(text(), "[ar:articleBody]")]');
+        $newsTitle->value($createdNewsContent);
+
+        //modify the collection content
+        $collectionContent = $this->byCss('div.newsoverview p');
+        $collectionContent->click();
+        $collectionContent->value('Updated ');
+
+        //save the changes
+        $this->byId('midgardcreate-save')->click();
+
+        //reload the current page to ensure the changes have been persisted
+        $this->url('');
+        $driver = $this;
+        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
+            //give some time to load the page
+            return ($driver->title() == $originalNewsPageTitle);
+        };
+        $this->spinAssert("News page was not loaded", $newsPageLoaded);
+
+        $collectionContent = $this->byCss('div.newsoverview p');
+        $this->assertContains('Updated ', $collectionContent->text());
+        $allNews = $this->byCss('div.newsoverview');
+        $this->assertContains($createdNewsTitle, $allNews->text());
+    }
+
+    public function testNewsCreateRoutes()
+    {
+        //common variables
+        $originalNewsPageTitle = 'News';
+        $createdNewsTitle = 'News title from testNewsCreateRoutes';
+        $createdNewsContent = 'And this is the news content from sauce test as well';
         $today = date("Y-m-d");
 
         //page loaded correctly?
