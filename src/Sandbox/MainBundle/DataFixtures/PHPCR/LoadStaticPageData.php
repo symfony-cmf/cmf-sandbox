@@ -107,7 +107,10 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         }
 
         if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock') {
-            $referencedBlock = $this->container->get('symfony_cmf.block.service')->findByName($block['referencedBlock']);
+            $referencedBlock = $manager->find(null, $block['referencedBlock']);
+            if (null == $referencedBlock) {
+                throw new \Exception('did not find '.$block['referencedBlock']);
+            }
             $document->setReferencedBlock($referencedBlock);
         } else if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock') {
             $document->setActionName($block['actionName']);
