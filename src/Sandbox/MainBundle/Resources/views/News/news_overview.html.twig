@@ -4,14 +4,14 @@
 
 {% block content %}
 
-{% createphp cmfMainContent as="rdf" %}
+{% createphp cmfMainContent as="rdf" noautotag %}
 
 <div class="newsoverview" {{ createphp_attributes(rdf) }}>
     <h2 {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
     <p {{ createphp_attributes( rdf.body ) }}>{{ createphp_content( rdf.body|raw ) }}</p>
     <ul {{ createphp_attributes( rdf.children ) }}>
-        {% for news in cmf_children(cmfMainContent) %}
-        {% createphp news %}
+        {% for news in cmfMainContent.children %}
+        {% createphp news noautotag %}
         <li {{ createphp_attributes(news_rdf) }}>
             <a href="{{ path(news) }}" {{ createphp_attributes(news_rdf.title) }}>{{ createphp_content(news_rdf.title) }}</a>
                 (<span class="newsdate">{{ news.publishStartDate | date('Y-m-d')  }}</span>)

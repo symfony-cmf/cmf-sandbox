@@ -2,12 +2,12 @@
 
 {% block content %}
 
-{% createphp cmfMainContent as="rdf" %}
+{% createphp cmfMainContent as="rdf" noautotag %}
 <div {{ createphp_attributes(rdf) }}>
 
     <h2 class="my-title" {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
     <div class="subtitle">Date: {{ cmfMainContent.publishStartDate| date('Y-m-d') }}</div>
-    <p {{ createphp_attributes( rdf.body|raw ) }}>{{ createphp_content( rdf.body|raw ) }}</p>
+    <p {{ createphp_attributes( rdf.body ) }}>{{ createphp_content( rdf.body ) }}</p>
 
     {% set prev = cmf_prev(cmfMainContent) %}
     {% if prev %}
