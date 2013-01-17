@@ -10,7 +10,7 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
     public function setUp()
     {
         parent::setUp();
-        $this->setBrowserUrl($this->homeUrl);
+        $this->setBrowserUrl($this->newsUrl);
     }
 
     public function testCreateNewsAndRoutes()
@@ -21,24 +21,8 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $createdNewsContent = 'And this is the news content from sauce test as well...';
         $today = date("Y-m-d");
 
-        /*
-         * Go first in the home url during setUp and change then to the
-         * news URL. This work around is due to the trailing slash problem of
-         * selenium:
-         * If $this->setBrowserUrl($this->homeUrl); is called, the URL
-         * sent to the server is http://cmf.lo/app_test.php/en/news/
-         * what gives a 404.
-         *
-         * TODO: remove this work around
-         */
-        $this->url('/en/news');
         //page loaded correctly?
-        $driver = $this;
-        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
-            //give some time to load the page
-            return ($driver->title() == $originalNewsPageTitle);
-        };
-        $this->spinAssert("News page was not loaded", $newsPageLoaded);
+        $this->assertEquals($originalNewsPageTitle, $this->title());
 
         //enter the edit mode
         $editLink = $this->byId('midgardcreate-edit');
@@ -66,7 +50,8 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $this->assertContains("Edit", $editLink->text());
 
         //reload the current page to ensure the changes have been persisted
-        $this->url('/en/news');
+        $this->url('');
+        $driver = $this;
         $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
             //give some time to load the page
             return ($driver->title() == $originalNewsPageTitle);

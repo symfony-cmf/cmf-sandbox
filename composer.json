@@ -36,7 +36,8 @@
         "midgard/phpcr": "dev-master"
     },
     "require-dev": {
-        "sauce/sausage": "dev-master"
+        "sauce/sausage": "dev-master",
+        "phpunit/phpunit-selenium": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

@@ -11,6 +11,7 @@ use Sandbox\FixturesLoader;
 abstract class SaucelabsWebTestCase extends WebDriverTestCase
 {
     protected $homeUrl = 'http://cmf.lo/app_test.php';
+    protected $newsUrl = 'http://cmf.lo/app_test.php/en/news';
 
     public static $browsers = array(
         // run FF17 on Linux on Sauce
