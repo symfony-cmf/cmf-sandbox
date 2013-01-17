@@ -2180,12 +2180,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "2a199d34650090a6a35559d6de46e2b9025659c1"
+                "reference": "11cb042d3b3a081d6bb856aa123a25352bf3bc6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/archive/2a199d34650090a6a35559d6de46e2b9025659c1.zip",
-                "reference": "2a199d34650090a6a35559d6de46e2b9025659c1",
+                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/archive/11cb042d3b3a081d6bb856aa123a25352bf3bc6f.zip",
+                "reference": "11cb042d3b3a081d6bb856aa123a25352bf3bc6f",
                 "shasum": ""
             },
             "require": {
@@ -2196,13 +2196,12 @@
                 "symfony/twig-bundle": "2.1.*",
                 "doctrine/phpcr-odm": "1.0.*",
                 "doctrine/phpcr-bundle": "1.0.*",
-                "symfony-cmf/tree-browser-bundle": "dev-master",
-                "jackalope/jackalope-jackrabbit": "dev-master"
+                "symfony-cmf/tree-browser-bundle": "1.0.*"
             },
             "suggest": {
                 "symfony-cmf/tree-browser-bundle": "to have a tree widget for phpcr data. require version 1.0.*"
             },
-            "time": "2013-01-15 09:10:55",
+            "time": "2013-01-17 10:58:12",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2606,28 +2605,25 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/MenuBundle.git",
-                "reference": "4d8f506942e3e9316ebb825abb1b519e2ba8500a"
+                "reference": "6c69af5384d8fb8d8e2e1baec5f9483cbea33451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/MenuBundle/archive/4d8f506942e3e9316ebb825abb1b519e2ba8500a.zip",
-                "reference": "4d8f506942e3e9316ebb825abb1b519e2ba8500a",
+                "url": "https://github.com/symfony-cmf/MenuBundle/archive/6c69af5384d8fb8d8e2e1baec5f9483cbea33451.zip",
+                "reference": "6c69af5384d8fb8d8e2e1baec5f9483cbea33451",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/symfony": "2.1.*",
                 "knplabs/knp-menu-bundle": "1.1.*",
                 "doctrine/phpcr-bundle": "1.0.*",
-                "doctrine/phpcr-odm": "1.0.*"
-            },
-            "require-dev": {
-                "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
+                "doctrine/phpcr-odm": "1.0.*",
+                "symfony/symfony": ">=2.1,<2.3-dev"
             },
             "suggest": {
                 "sonata-project/doctrine-phpcr-admin-bundle": "if you want to have editing capabilities"
             },
-            "time": "2013-01-07 15:26:34",
+            "time": "2013-01-17 11:19:45",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
@@ -2822,12 +2818,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/SimpleCmsBundle.git",
-                "reference": "a8cf41df7a2ed3de0cff7094f9ef383d8df023cb"
+                "reference": "106167379b2c72fda2cafa9fae5ed5606724fa7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/SimpleCmsBundle/archive/a8cf41df7a2ed3de0cff7094f9ef383d8df023cb.zip",
-                "reference": "a8cf41df7a2ed3de0cff7094f9ef383d8df023cb",
+                "url": "https://github.com/symfony-cmf/SimpleCmsBundle/archive/106167379b2c72fda2cafa9fae5ed5606724fa7d.zip",
+                "reference": "106167379b2c72fda2cafa9fae5ed5606724fa7d",
                 "shasum": ""
             },
             "require": {
@@ -2843,7 +2839,7 @@
                 "symfony-cmf/create-bundle": "1.0.*",
                 "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*"
             },
-            "time": "2013-01-14 08:34:09",
+            "time": "2013-01-17 10:07:37",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
