@@ -121,7 +121,7 @@ symfony_cmf_create:
         'http://cmf.symfony.com/CmfRoute': 'Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route'
 
     rdfmapper:
-        'Cmf\RoutingExtraBundle\Document\Route': symfony_cmf_create.route_doctrine_phpcr_odm_mapper
+        'Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route': symfony_cmf_create.route_doctrine_phpcr_odm_mapper
 
     use_coffee: %liip_vie.use_coffee%
     image:
