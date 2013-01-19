@@ -106,16 +106,12 @@ symfony_cmf_simple_cms:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  SymfonyCmfSimpleCmsBundle:Page:index.html.twig
 
 knp_menu:
-    twig:
-        #TODO: enable custom menu template to allow page creation from the menu
-        #template: SandboxMainBundle:Menu:my_menu.html.twig
-        template: knp_menu.html.twig
+    twig: true
 
 symfony_cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent'
-        'http://cmf.symfony.com/MenuItem': 'Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem'
         'http://schema.org/NewsArticle': 'Sandbox\MainBundle\Document\NewsArticle'
         'http://schema.org/CollectionPage': 'Sandbox\MainBundle\Document\CollectionPage'
         'http://cmf.symfony.com/CmfRoute': 'Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route'
