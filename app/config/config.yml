@@ -197,23 +197,23 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
         Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:
             valid_children: []
-        Symfony\Cmf\Bundle\MenuItem\Document\MenuItem:
+        Symfony\Cmf\Bundle\MenuNode\Document\MenuNode:
             valid_children:
-                - Symfony\Cmf\Bundle\MenuItem\Document\MenuItem
-                - Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuItem
-        Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuItem:
+                - Symfony\Cmf\Bundle\MenuNode\Document\MenuNode
+                - Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuNode
+        Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuNode:
             valid_children:
-                - Symfony\Cmf\Bundle\MenuItem\Document\MenuItem
-                - Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuItem
+                - Symfony\Cmf\Bundle\MenuNode\Document\MenuNode
+                - Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuNode
 
 fos_js_routing:
     routes_to_expose:
-        - admin_bundle_menu_menuitem_create
-        - admin_bundle_menu_menuitem_delete
-        - admin_bundle_menu_menuitem_edit
-        - admin_bundle_menu_multilangmenuitem_create
-        - admin_bundle_menu_multilangmenuitem_delete
-        - admin_bundle_menu_multilangmenuitem_edit
+        - admin_bundle_menu_menunode_create
+        - admin_bundle_menu_menunode_delete
+        - admin_bundle_menu_menunode_edit
+        - admin_bundle_menu_multilangmenunode_create
+        - admin_bundle_menu_multilangmenunode_delete
+        - admin_bundle_menu_multilangmenunode_edit
         - admin_bundle_content_multilangstaticcontent_create
         - admin_bundle_content_multilangstaticcontent_delete
         - admin_bundle_content_multilangstaticcontent_edit
