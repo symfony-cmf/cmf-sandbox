@@ -44,9 +44,13 @@ _sonata_admin:
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
 
-phpcrodmbrowser:
+sonata_doctrine_phpcr_admin_phpcrodmbrowser:
     resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
     prefix: /{_locale}/admin/browser
+
+symfony_cmf_tree:
+    resource: .
+    type: 'symfony_cmf_tree'
 
 test:
     pattern:  /hello
