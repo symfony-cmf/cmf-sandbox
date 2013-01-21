@@ -377,12 +377,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm",
-                "reference": "3d22fec0b3442a4684f4c9ca4f92a0d874b98315"
+                "reference": "d47a9ffe6063d7c0c65bb0e25c1ea50c696ca754"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/phpcr-odm/archive/3d22fec0b3442a4684f4c9ca4f92a0d874b98315.zip",
-                "reference": "3d22fec0b3442a4684f4c9ca4f92a0d874b98315",
+                "url": "https://github.com/doctrine/phpcr-odm/archive/d47a9ffe6063d7c0c65bb0e25c1ea50c696ca754.zip",
+                "reference": "d47a9ffe6063d7c0c65bb0e25c1ea50c696ca754",
                 "shasum": ""
             },
             "require": {
@@ -400,7 +400,7 @@
                 "midgard/phpcr": ">=1.3",
                 "symfony/yaml": ">=2.0.0,<2.3.0-dev"
             },
-            "time": "2013-01-21 13:54:03",
+            "time": "2013-01-21 17:46:28",
             "bin": [
                 "bin/phpcr",
                 "bin/phpcr.php"
@@ -2122,12 +2122,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "f136155a6ac012fab2dd96a0eb09dc29d6b9f90b"
+                "reference": "81c8792faa2efa096a4a25c8d37fca94a837538a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/archive/f136155a6ac012fab2dd96a0eb09dc29d6b9f90b.zip",
-                "reference": "f136155a6ac012fab2dd96a0eb09dc29d6b9f90b",
+                "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle/archive/81c8792faa2efa096a4a25c8d37fca94a837538a.zip",
+                "reference": "81c8792faa2efa096a4a25c8d37fca94a837538a",
                 "shasum": ""
             },
             "require": {
@@ -2138,10 +2138,13 @@
                 "symfony-cmf/tree-browser-bundle": "1.0.*",
                 "symfony/framework-bundle": ">=2.1,<2.3-dev"
             },
+            "require-dev": {
+                "jackalope/jackalope-jackrabbit": "dev-master"
+            },
             "suggest": {
                 "symfony-cmf/tree-browser-bundle": "to have a tree widget for phpcr data. require version 1.0.*"
             },
-            "time": "2013-01-21 14:35:09",
+            "time": "2013-01-21 15:48:59",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
