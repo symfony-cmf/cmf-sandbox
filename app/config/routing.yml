@@ -36,17 +36,13 @@ admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /{_locale}/admin
 
-_sonata_admin:
+sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /{_locale}/admin
 
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
-
-sonata_doctrine_phpcr_admin_phpcrodmbrowser:
-    resource: @SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml
-    prefix: /{_locale}/admin/browser
 
 symfony_cmf_tree:
     resource: .
