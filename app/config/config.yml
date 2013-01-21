@@ -197,14 +197,14 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
         Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:
             valid_children: []
-        Symfony\Cmf\Bundle\MenuNode\Document\MenuNode:
+        Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode:
             valid_children:
-                - Symfony\Cmf\Bundle\MenuNode\Document\MenuNode
-                - Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuNode
-        Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuNode:
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode
+        Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode:
             valid_children:
-                - Symfony\Cmf\Bundle\MenuNode\Document\MenuNode
-                - Symfony\Cmf\Bundle\ContentBundle\Document\MultilangMenuNode
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode
 
 fos_js_routing:
     routes_to_expose:
