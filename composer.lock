@@ -377,12 +377,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm",
-                "reference": "d47a9ffe6063d7c0c65bb0e25c1ea50c696ca754"
+                "reference": "5ec03375923f46ee064fac96a4c2629bd836b74f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/doctrine/phpcr-odm/archive/d47a9ffe6063d7c0c65bb0e25c1ea50c696ca754.zip",
-                "reference": "d47a9ffe6063d7c0c65bb0e25c1ea50c696ca754",
+                "url": "https://github.com/doctrine/phpcr-odm/archive/5ec03375923f46ee064fac96a4c2629bd836b74f.zip",
+                "reference": "5ec03375923f46ee064fac96a4c2629bd836b74f",
                 "shasum": ""
             },
             "require": {
@@ -400,10 +400,10 @@
                 "midgard/phpcr": ">=1.3",
                 "symfony/yaml": ">=2.0.0,<2.3.0-dev"
             },
-            "time": "2013-01-21 17:46:28",
+            "time": "2013-01-21 18:25:48",
             "bin": [
-                "bin/phpcr",
-                "bin/phpcr.php"
+                "bin/phpcrodm",
+                "bin/phpcrodm.php"
             ],
             "type": "library",
             "extra": {
@@ -1062,12 +1062,12 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/schmittjoh/serializer",
-                "reference": "f319887562c3334c9bc54bd797034792e2cbf4ed"
+                "reference": "2f1b79ef332f83d16aea102e1c7bf41f36a6df28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/schmittjoh/serializer/archive/f319887562c3334c9bc54bd797034792e2cbf4ed.zip",
-                "reference": "f319887562c3334c9bc54bd797034792e2cbf4ed",
+                "url": "https://github.com/schmittjoh/serializer/archive/2f1b79ef332f83d16aea102e1c7bf41f36a6df28.zip",
+                "reference": "2f1b79ef332f83d16aea102e1c7bf41f36a6df28",
                 "shasum": ""
             },
             "require": {
@@ -1089,7 +1089,7 @@
             "suggest": {
                 "symfony/yaml": "Required if you'd like to serialize data to YAML format."
             },
-            "time": "2013-01-20 09:06:41",
+            "time": "2013-01-21 19:56:19",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2602,12 +2602,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/Routing",
-                "reference": "1.0.0-alpha4"
+                "reference": "ea4a10dd971580a9a57a69397f165e25233ba667"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/Routing/archive/1.0.0-alpha4.zip",
-                "reference": "1.0.0-alpha4",
+                "url": "https://github.com/symfony-cmf/Routing/archive/ea4a10dd971580a9a57a69397f165e25233ba667.zip",
+                "reference": "ea4a10dd971580a9a57a69397f165e25233ba667",
                 "shasum": ""
             },
             "require": {
@@ -2615,7 +2615,7 @@
                 "symfony/routing": ">=2.1,<2.3-dev",
                 "symfony/http-kernel": ">=2.1,<2.3-dev"
             },
-            "time": "2013-01-21 09:10:52",
+            "time": "2013-01-21 20:33:16",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2651,29 +2651,29 @@
             "source": {
                 "type": "git",
                 "url": "git://github.com/symfony-cmf/RoutingExtraBundle.git",
-                "reference": "1d23a80d592f11f549b6c5e23d433bc1fc1f6acb"
+                "reference": "d2f210e5ba095fe901c629dd38766547f8f8e418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/1d23a80d592f11f549b6c5e23d433bc1fc1f6acb.zip",
-                "reference": "1d23a80d592f11f549b6c5e23d433bc1fc1f6acb",
+                "url": "https://github.com/symfony-cmf/RoutingExtraBundle/archive/d2f210e5ba095fe901c629dd38766547f8f8e418.zip",
+                "reference": "d2f210e5ba095fe901c629dd38766547f8f8e418",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
                 "symfony/monolog-bundle": ">=2.1,<2.3-dev",
-                "symfony-cmf/routing": ">=1.0.0-alpha3",
-                "symfony/framework-bundle": ">=2.1.7,<2.3-dev"
+                "symfony/framework-bundle": ">=2.1.7,<2.3-dev",
+                "symfony-cmf/routing": ">=1.0.0-alpha4"
             },
             "require-dev": {
                 "doctrine/phpcr-odm": "1.0.*",
                 "doctrine/phpcr-bundle": "1.0.*",
                 "jackalope/jackalope-doctrine-dbal": "1.0.*",
-                "doctrine/doctrine-bundle": "1.0.*",
                 "symfony/class-loader": ">=2.1,<2.3-dev",
                 "symfony/yaml": ">=2.1,<2.3-dev",
                 "symfony/form": ">=2.1,<2.3-dev",
-                "symfony/finder": ">=2.1,<2.3-dev"
+                "symfony/finder": ">=2.1,<2.3-dev",
+                "doctrine/doctrine-bundle": "1.*"
             },
             "suggest": {
                 "doctrine/phpcr-odm": "To enable support for the PHPCR ODM documents",
@@ -2681,7 +2681,7 @@
                 "symfony-cmf/content-bundle": "To optionally use the configured value for 'content_basepath' from the CoreBundle",
                 "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin interface for the PHPCR ODM documents"
             },
-            "time": "2013-01-18 16:23:19",
+            "time": "2013-01-21 20:34:13",
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
