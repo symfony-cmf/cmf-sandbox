@@ -55,7 +55,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?
         $this->createMenuNode($dm, $demo, 'controller-item', 'Explicit controller', $dm->find(null, "$content_path/demo_controller"));
         $this->createMenuNode($dm, $demo, 'template-item', 'Explicit template', $dm->find(null, "$content_path/demo_template"));
-        $this->createMenuNode($dm, $demo, 'alias-item', 'Route alias to controller', $dm->find(null, "$content_path/demo_alias"));
+        $this->createMenuNode($dm, $demo, 'type-item', 'Route type to controller', $dm->find(null, "$content_path/demo_type"));
         $this->createMenuNode($dm, $demo, 'class-item', 'Class to controller', $dm->find(null, "$content_path/demo_class"));
         $this->createMenuNode($dm, $demo, 'test-item', 'Normal Symfony Route', null, null, 'test');
         $this->createMenuNode($dm, $demo, 'external-item', 'External Link', null, 'http://cmf.symfony.com/');
