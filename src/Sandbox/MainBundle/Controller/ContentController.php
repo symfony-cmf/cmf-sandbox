@@ -13,23 +13,23 @@ use Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController as BaseContent
 class ContentController extends BaseContentController
 {
     /**
-     * Action that is mapped in the controller_by_alias map
+     * Action that is mapped in the controller_by_type map
      *
-     * This can inject something else for the template for content with this alias
+     * This can inject something else for the template for content with this type
      *
      * @param object $contentDocument
      *
      * @return \Symfony\Component\HttpFoundation\Response the response
      */
-    public function aliasAction($contentDocument)
+    public function typeAction($contentDocument)
     {
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found');
         }
 
         $params = array(
-            'example' => 'Additional value injected by the controller for this alias (this could work without content if we want)',
             'cmfMainContent' => $contentDocument,
+            'example' => 'Additional value injected by the controller for this type (this could work without content if we want)',
         );
 
         return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
