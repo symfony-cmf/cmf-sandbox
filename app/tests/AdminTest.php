@@ -14,7 +14,7 @@ class AdminTest extends WebTestCase
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertContains('Menu nodes', $response->getContent());
 
-        $menuCount = $this->isSearchSupported() ? 10 : 9;
+        $menuCount = $this->isSearchSupported() ? 15 : 14;
         $this->assertContains("$menuCount results", $response->getContent());
         $this->assertContains('Explicit template', $response->getContent());
     }

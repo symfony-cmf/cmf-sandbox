@@ -90,8 +90,8 @@ symfony_cmf_routing_extra:
             router.default: 100
     dynamic:
         enabled: true
-        controllers_by_alias:
-            demo_alias: sandbox_main.controller:aliasAction
+        controllers_by_type:
+            demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
             Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
