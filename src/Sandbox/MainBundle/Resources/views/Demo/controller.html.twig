@@ -1,13 +1,13 @@
 {% extends "SandboxMainBundle::skeleton.html.twig" %}
 
-{% block title %}{{ alternateName.title|striptags }}{% endblock %}
+{% block title %}{{ cmfMainContent.title|striptags }}{% endblock %}
 
 {% block content %}
 <div class="articleContainer hero-unit">
     <p><em>This is a template used by the sandbox controller</em></p>
-    <h1 id="main_title">{{ alternateName.title }}</h1>
+    <h1 id="main_title">{{ cmfMainContent.title }}</h1>
     <div>
-        {{ alternateName.body|raw }}
+        {{ cmfMainContent.body|raw }}
     </div>
     <p style="color: green">{{ example }}</p>
 </div>

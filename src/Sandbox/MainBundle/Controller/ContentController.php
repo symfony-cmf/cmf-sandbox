@@ -27,13 +27,9 @@ class ContentController extends Controller
             throw new NotFoundHttpException('Content not found');
         }
 
-        /** @var $rdfManager \Midgard\CreatePHP\Metadata\RdfTypeFactory */
-        $rdfManager = $this->get('liip_vie.rdf_type_manager');
-        $entity = $rdfManager->getEntity($contentDocument);
-
         $params = array(
-            'alternateName' => $entity,
             'example' => 'Additional value injected by the controller for this alias (this could work without content if we want)',
+            'cmfMainContent' => $contentDocument,
         );
 
         return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
@@ -53,8 +49,9 @@ class ContentController extends Controller
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found');
         }
+
         $params = array(
-            'alternateName' => $contentDocument,
+            'cmfMainContent' => $contentDocument,
             'example' => 'Additional value injected by the controller for all content mapped to classAction',
         );
 
@@ -75,8 +72,9 @@ class ContentController extends Controller
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found');
         }
+
         $params = array(
-            'alternateName' => $contentDocument,
+            'cmfMainContent' => $contentDocument,
             'example' => 'Additional value injected by the controller when explicitly referenced',
         );
 
