@@ -3,14 +3,14 @@
 namespace Sandbox\MainBundle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController as BaseContentController;
 
 /**
  * Special routes to demo the features of the Doctrine Router in the SymfonyCmfRoutingExtraBundle
  */
-class ContentController extends Controller
+class ContentController extends BaseContentController
 {
     /**
      * Action that is mapped in the controller_by_alias map
@@ -32,7 +32,7 @@ class ContentController extends Controller
             'cmfMainContent' => $contentDocument,
         );
 
-        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
     }
 
     /**
@@ -55,7 +55,7 @@ class ContentController extends Controller
             'example' => 'Additional value injected by the controller for all content mapped to classAction',
         );
 
-        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
     }
 
     /**
@@ -78,6 +78,6 @@ class ContentController extends Controller
             'example' => 'Additional value injected by the controller when explicitly referenced',
         );
 
-        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
     }
 }

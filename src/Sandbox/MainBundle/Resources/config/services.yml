@@ -1,8 +1,7 @@
 services:
     sandbox_main.controller:
         class: Sandbox\MainBundle\Controller\ContentController
-        calls:
-            - [ setContainer, [@service_container] ]
+        parent: symfony_cmf_content.controller
 
     sandbox_main.debugListener:
         class: Sandbox\MainBundle\EventListener\SandboxExceptionListener
