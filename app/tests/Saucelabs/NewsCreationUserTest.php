@@ -25,9 +25,8 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
 
         $this->assertEquals($originalNewsPageTitle, $this->title());
 
-        //enter the edit mode
-        $editLink = $this->byId('midgardcreate-edit');
-        $editLink->click();
+        //click on edit
+        $this->enterEditMode();
 
         //click the add button
         $addButton = $this->byCss('.newsoverview button:last-child');
@@ -44,8 +43,8 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $collectionContent->click();
         $collectionContent->value('Updated ');
 
-        //save the changes
-        $this->byId('midgardcreate-save')->click();
+        //click on save
+        $this->saveChanges();
 
         //reload the current page to ensure the changes have been persisted
         $this->url('');
@@ -73,9 +72,9 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         //page loaded correctly?
         $this->assertEquals($originalNewsPageTitle, $this->title());
 
-        //enter the edit mode
-        $editLink = $this->byId('midgardcreate-edit');
-        $editLink->click();
+        //click on edit
+        $this->enterEditMode();
+
         //cancel should now be in the button content
         $cancelLink = $this->byId('midgardcreate-edit');
         $this->assertContains("Cancel", $cancelLink->text());
@@ -90,13 +89,11 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $newsTitle = $this->byXPath('//div[contains(text(), "[ar:articleBody]")]');
         $newsTitle->value($createdNewsContent);
 
-        //save the changes
-        $this->byId('midgardcreate-save')->click();
+        //click on save
+        $this->saveChanges();
 
-        //leave the edit mode
-        $this->byId('midgardcreate-edit')->click();
-        $editLink = $this->byId('midgardcreate-edit');
-        $this->assertContains("Edit", $editLink->text());
+        //click on cancel
+        $this->leaveEditMode();
 
         //reload the current page to ensure the changes have been persisted
         $this->url('');

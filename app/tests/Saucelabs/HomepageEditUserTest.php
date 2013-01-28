@@ -24,9 +24,8 @@ class HomepageEditUserTest extends SaucelabsWebTestCase
         //page loaded correctly?
         $this->assertContains($originalTitle, $this->title());
 
-        //enter the edit mode
-        $editLink = $this->byId('midgardcreate-edit');
-        $editLink->click();
+        //click on edit
+        $this->enterEditMode();
 
         //cancel should now be in the button text
         $cancelLink = $this->byId('midgardcreate-edit');
@@ -37,16 +36,14 @@ class HomepageEditUserTest extends SaucelabsWebTestCase
         $titleToEdit->click();
         $titleToEdit->value($toAddToTitle);
 
-        //save the changes
-        $this->byId('midgardcreate-save')->click();
+        //click on save
+        $this->saveChanges();
 
         //check the result
         $this->assertContains($updatedTitle, $this->byCss($titleCss)->text());
 
-        //leave the edit mode
-        $this->byId('midgardcreate-edit')->click();
-        $editLink = $this->byId('midgardcreate-edit');
-        $this->assertContains("Edit", $editLink->text());
+        //click on cancel
+        $this->leaveEditMode();
 
         //reload the page to ensure the changes have been persisted
         $this->url('/en');

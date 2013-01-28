@@ -45,7 +45,7 @@ class NewsTest extends WebTestCase
         //try to add a news with the same title, a collision on the node name should happen
         $client->request('POST', '/en/symfony-cmf/create/document/_:bnode89', $documentRequest);
         $this->assertEquals(500, $client->getResponse()->getStatusCode());
-        $this->assertEquals('The document "http://schema.org/NewsArticle" could not be created', $client->getResponse()->getContent());
+        $this->assertEquals("The document 'http://schema.org/NewsArticle' could not be created", $client->getResponse()->getContent());
     }
 
     public function testUpdateNews()

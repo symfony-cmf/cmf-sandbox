@@ -32,4 +32,34 @@ abstract class SaucelabsWebTestCase extends WebDriverTestCase
         $webTestCase = new FixturesLoader();
         $webTestCase->setUp();
     }
+
+    /**
+     * Enter the edit mode (click button edit)
+     *
+     * @return \PHPUnit_Extensions_Selenium2TestCase_Element
+     */
+    protected function enterEditMode()
+    {
+        $editLink = $this->byId('midgardcreate-edit');
+        $editLink->click();
+        return $editLink;
+    }
+
+    /**
+     * Leave the edit mode (click button cancel)
+     */
+    protected function leaveEditMode()
+    {
+        $this->byId('midgardcreate-edit')->click();
+        $editLink = $this->byId('midgardcreate-edit');
+        $this->assertContains("Edit", $editLink->text());
+    }
+
+    /**
+     * Save the changes (click button save)
+     */
+    protected function saveChanges()
+    {
+        $this->byId('midgardcreate-save')->click();
+    }
 }
