@@ -96,9 +96,10 @@ symfony_cmf_routing_extra:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
             Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
         templates_by_class:
-            Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
-            Sandbox\MainBundle\Document\CollectionPage: SandboxMainBundle:News:news_overview.{_format}.twig
             Sandbox\MainBundle\Document\NewsArticle: SandboxMainBundle:News:news_detail.html.twig
+            Sandbox\MainBundle\Document\CollectionPage: SandboxMainBundle:News:news_overview.{_format}.twig
+            Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
+
 
 symfony_cmf_simple_cms:
     routing:

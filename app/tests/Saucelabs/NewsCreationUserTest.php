@@ -125,4 +125,61 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $creationDate = $this->byCss('div.subtitle');
         $this->assertEquals('Date: ' . $today, $creationDate->text());
     }
+
+    public function testNewsMultilang()
+    {
+        //common variables
+        $originalNewsPageTitle = 'News';
+        $newsFrTitle = 'Nouvelles pour la Sandbox';
+        $newsEnTitle = 'News on the Sandbox';
+        $newsFrTitleUpdate = 'Mise à jour: ';
+        $newsFrTitleUpdated = $newsFrTitleUpdate . $newsFrTitle;
+
+        //load the french news page
+        $this->url($this->newsUrlFr);
+
+        $driver = $this;
+        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
+            //give some time to load the page
+            return ($driver->title() == $originalNewsPageTitle);
+        };
+        $this->spinAssert("News page in FR was not loaded", $newsPageLoaded);
+
+        //click on edit
+        $this->enterEditMode();
+
+        $newsTitle = $this->byCss('.newsoverview li:first-child a');
+        $newsTitle->value($newsFrTitleUpdate);
+
+        //click on save
+        $this->saveChanges();
+
+        //click on cancel
+        $this->leaveEditMode();
+
+        //reload the current page to ensure the changes have been persisted
+        $this->url($this->newsUrlFr);
+        $driver = $this;
+        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
+            //give some time to load the page
+            return ($driver->title() == $originalNewsPageTitle);
+        };
+        $this->spinAssert("News page was not loaded", $newsPageLoaded);
+
+        $newsTitle = $this->byCss('.newsoverview li:first-child a');
+        $this->assertEquals($newsFrTitleUpdated, $newsTitle->text());
+
+        //load the EN news page
+        $this->url($this->newsUrl);
+        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
+            //give some time to load the page
+            return ($driver->title() == $originalNewsPageTitle);
+        };
+        $this->spinAssert("News page was not loaded", $newsPageLoaded);
+
+        //the first news should not have changed
+        $newsTitle = $this->byCss('.newsoverview li:first-child a');
+        $this->assertNotContains($newsFrTitleUpdated, $newsTitle->text());
+        $this->assertContains($newsEnTitle, $newsTitle->text());
+    }
 }

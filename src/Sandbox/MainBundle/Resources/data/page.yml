@@ -149,26 +149,35 @@ static:
         name: "news"
         title: "News"
         content: |
-            The latest news about the CMF Sandbox. Also available on a
-            <a href="/en/news.rss">RSS feed</a>:
+            The latest news about the CMF Sandbox. Also available on a <a href="/en/news.rss">RSS feed</a>:
         class: "Sandbox\\MainBundle\\Document\\CollectionPage"
         formats: [html, rss]
         template: SandboxMainBundle:News:news_overview.{_format}.twig
     -
         name: "news-on-the-sandbox"
-        title: "News system on the sandbox"
+        title:
+            en: "News on the Sandbox"
+            fr: "Nouvelles pour la Sandbox"
+            de: "Nachrichten für das Sandbox"
         parent: "/cms/content/news"
         class: "Sandbox\\MainBundle\\Document\\NewsArticle"
         publish_start_date: "2012-12-12"
-        content: |
-            Adrien created a news sytem for the sandox. It is now possible to
-            create news directly in the frontend, thanks to create.js.
+        content:
+            en: |
+                Adrien created a news sytem for the sandox. It is now possible to
+                create news directly in the frontend, thanks to create.js.
+            fr: |
+                Adrien a crée un système de news pour la sandbox.
+            de: |
+                Adrien hat ein Nachrichten System entwickelt.
     -
         name: "refactoring-of-createphp"
-        title: "Refactoring of createphp for better collection support"
+        title:
+            en: "Refactoring of createphp for better collection support"
         parent: "/cms/content/news"
         class: "Sandbox\\MainBundle\\Document\\NewsArticle"
         publish_start_date: "2012-12-11"
-        content: |
-           The <a href="https://github.com/flack/createphp/pull/28">PR</a>,
-            better support for item creation was merged by Flack.
+        content:
+            en: |
+                The <a href="https://github.com/flack/createphp/pull/28">PR</a>,
+                better support for item creation was merged by Flack.
