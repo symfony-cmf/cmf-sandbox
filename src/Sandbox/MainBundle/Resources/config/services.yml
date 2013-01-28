@@ -1,19 +1,10 @@
 services:
     sandbox_main.controller:
         class: Sandbox\MainBundle\Controller\ContentController
-        calls:
-            - [ setContainer, [@service_container] ]
-
-    sandbox_main.image_controller:
-        class: Sandbox\MainBundle\Controller\ImageController
-        factory_service: doctrine_phpcr.odm.document_manager
-        arguments:
-            - @service_container
-            - @doctrine_phpcr.odm.document_manager
-            - @fos_rest.view_handler
+        parent: symfony_cmf_content.controller
 
     sandbox_main.debugListener:
-        class: Sandbox\MainBundle\Listener\SandboxExceptionListener
+        class: Sandbox\MainBundle\EventListener\SandboxExceptionListener
         calls:
             - [ setContainer, [@service_container] ]
         tags:

@@ -1,10 +1,10 @@
 <?php
 
-namespace Sandbox\BlockBundle\Controller;
+namespace Sandbox\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     Symfony\Component\HttpFoundation\Response,
-    Sonata\BlockBundle\Model\BlockInterface;
+    Sonata\MainBundle\Model\BlockInterface;
 
 class DefaultController extends Controller
 {
@@ -15,9 +15,9 @@ class DefaultController extends Controller
      *
      * @return \Symfony\Component\HttpFoundation\Response the response
      */
-    public function blockAction ($block)
+    public function blockAction($block)
     {
-        return $this->render('SandboxBlockBundle:Block:demo_action_block.html.twig', array(
+        return $this->render('SandboxMainBundle:Block:demo_action_block.html.twig', array(
             'block' => $block
         ));
     }

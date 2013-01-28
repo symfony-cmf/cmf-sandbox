@@ -1,6 +1,6 @@
 <?php
 
-namespace Sandbox\MainBundle\Listener;
+namespace Sandbox\MainBundle\EventListener;
 
 use PHPCR\RepositoryException;
 
@@ -51,7 +51,8 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
             <p>If you are seeing this page as the result of an edit in the admin tool, please report what you were doing
                 to our <a href=\"https://github.com/symfony-cmf/cmf-sandbox/issues/new\">ticket system</a>,
                 so that we can add means to prevent this issue in the future. But to get things working again
-                for now, please just <a href=\"/reload-fixtures.php\">click here</a> to reload the data fixtures.
+                for now, please just <a href=\"".$event->getRequest()->getSchemeAndHttpHost()."/reload-fixtures.php\">click here</a>
+                to reload the data fixtures.
             </p><p style='color:red;'>
                <strong>Detected the following problem</strong>: $error
             </p>

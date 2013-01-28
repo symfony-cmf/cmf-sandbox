@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width; user-scalable=no">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}{{ title|default('CMF Sandbox')|striptags }}{% endblock %}</title>
+        <title>{% block title %}{{ cmfMainContent.title|default('CMF Sandbox')|striptags }}{% endblock %}</title>
 
         {% block includes %}
             {% stylesheets
@@ -21,15 +21,7 @@
             {% endstylesheets %}
 
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-                {% stylesheets '@LiipVieBundle/Resources/public/vendor/hallo/examples/Aristo/jquery-ui-1.8.7.custom.css'
-                            '@LiipVieBundle/Resources/public/css/halloLiipStyle.css'
-                            '@LiipVieBundle/Resources/public/vendor/hallo/examples/overlay.css'
-                            '@LiipVieBundle/Resources/halloplugins/image.css'
-                            '@LiipVieBundle/Resources/halloplugins/link.css'
-                %}
-                    <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
-                {% endstylesheets %}
-                <link rel="stylesheet" href="/bundles/liipvie/vendor/create/themes/midgard-tags/tags.css" media="screen" type="text/css"/>
+                {% include "SymfonyCmfCreateBundle::includecssfiles.html.twig" %}
             {% endif %}
         {% endblock %}
 
@@ -37,24 +29,19 @@
         {% endblock %}
     </head>
     <body>
-        {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-            <div id="userBar">
-                <div class="inner"><button class="saveButton">Saved</button></div>
-            </div>
-        {% endif %}
 
         <div class="container">
 
             <div id="top" class="row">
-                <div id="banner" class="span12">
+                <div class="span12">
                     <ul id="skiplinks" class="pull-left hidden-desktop">
                         <li><a href="#content" title="Go to main content">content</a></li>
                         <li><a href="#navigation" title="go to navigation">navigation</a></li>
                     </ul>
                     <div id="language_selector" class="pull-right">
                         {% block language_selector %}
-                            {% if page is defined %}
-                                {% render "symfony_cmf_multilang_content.languageSelectorController:languagesAction" with {"id" : page.path, "languageUrls": languageUrls|default(false) } %}
+                            {% if cmfMainContent is defined %}
+                                {{ locale_switcher(cmfMainContent, null, 'SandboxMainBundle:Homepage:switcher_links.html.twig') }}
                             {% endif %}
                         {% endblock %}
                     </div>
@@ -65,7 +52,7 @@
                 <div id="banner" class="span12">
                     <a href="https://github.com/symfony-cmf/cmf-sandbox"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
                     <div class="hero-unit">
-                        <h1 id="logo-text"><a href="{{ path('', {'content_id': '/cms/routes'}) }}">CMF Sandbox</a></h1>
+                        <h1 id="logo-text"><a href="{{ path('home_redirect') }}">CMF Sandbox</a></h1>
                         <p id="slogan">Symfony2 Content Management Framework</p>
                     </div>
                 </div>
@@ -120,23 +107,14 @@
                 </div>
                 <div class="span12">
                 {% block footer %}
-                    <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a> | Frontend editing founded in part by <a href="http://www.iks-project.eu/">IKS</a></p>
+                    <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a> | Frontend editing funded in part by <a href="http://www.iks-project.eu/">IKS</a></p>
                     {% endblock %}
                 </div>
             </div>
         </div>
 
         {% block bottom_scripts %}
-            {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-                {% render "liip_vie.controller.vie:includeJSFilesAction" %}
-
-                {% javascripts
-                            '@SandboxMainBundle/Resources/public/js/savebutton.js'
-                            '@SandboxMainBundle/Resources/public/js/userbar.js'
-                %}
-                    <script src="{{ asset_url }}"></script>
-                {% endjavascripts %}
-            {% endif %}
+            {% render "symfony_cmf_create.jsloader.controller:includeJSFilesAction" %}
         {% endblock %}
     </body>
 </html>

@@ -3,6 +3,7 @@
 namespace Sandbox;
 
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
+use PHPCR\RepositoryInterface;
 use Doctrine\Common\DataFixtures\Executor\PHPCRExecutor;
 use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
 
@@ -28,6 +29,11 @@ abstract class WebTestCase extends BaseWebTestCase
 
     protected function isSearchSupported()
     {
-        return $this->getContainer()->get('doctrine_phpcr')->getConnection()->nodeExists('/cms/menu/main/search-item');
+        return $this->getContainer()
+            ->get('doctrine_phpcr')
+            ->getConnection()
+            ->getRepository()
+            ->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)
+        ;
     }
 }

@@ -116,7 +116,11 @@ hr {
     padding: .5em 0;
 }
 
-#navigation .current a {
+#navigation .current_ancestor > a {
+    font-weight: bold;
+}
+
+#navigation .current > a {
     color: #4b4b4b;
 }
 

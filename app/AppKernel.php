@@ -21,41 +21,40 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
-            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-
             // enable cmf bundles
+            new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
             new Symfony\Cmf\Bundle\RoutingExtraBundle\SymfonyCmfRoutingExtraBundle(),
             new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
-            new Symfony\Cmf\Bundle\MultilangContentBundle\SymfonyCmfMultilangContentBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle(),
             new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
-            new Symfony\Cmf\Bundle\TreeBundle\SymfonyCmfTreeBundle(),
             new Symfony\Cmf\Bundle\TreeBrowserBundle\SymfonyCmfTreeBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\SymfonyCmfBlockBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\SymfonyCmfSimpleCmsBundle(),
+            new Liip\SearchBundle\LiipSearchBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\SymfonyCmfSearchBundle(),
 
-            // search
-            new Liip\SearchBundle\LiipSearchBundle(),
+            // language switcher
+            new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
 
             // create.js editing related
-            new Liip\VieBundle\LiipVieBundle(),
+            new Symfony\Cmf\Bundle\CreateBundle\SymfonyCmfCreateBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
             new Sandbox\TestBundle\SandboxTestBundle(),
-            new Sandbox\BlockBundle\SandboxBlockBundle(),
 
             // admin bundle
             new Sonata\jQueryBundle\SonatajQueryBundle(),
-            new Sonata\CacheBundle\SonataCacheBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
+            // jackalope doctrine caching
+//            new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -63,7 +62,9 @@ class AppKernel extends Kernel
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
 
             // additional bundle for tests
-            $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
+            if ('test' === $this->getEnvironment()) {
+                $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
+            }
         }
 
         return $bundles;

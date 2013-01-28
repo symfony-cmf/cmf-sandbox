@@ -11,7 +11,7 @@ use PHPCR\Util\NodeHelper;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
-use Sandbox\MainBundle\Document\EditableStaticContent;
+use Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent;
 
 class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -23,34 +23,40 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     public function load(ObjectManager $manager)
     {
         $session = $manager->getPhpcrSession();
-        $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
 
+        $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
+        NodeHelper::createPath($session, $basepath);
+
+        $basepath = $this->container->getParameter('symfony_cmf_content.content_basepath');
         NodeHelper::createPath($session, $basepath);
 
         $yaml = new Parser();
-        $data = $yaml->parse(file_get_contents(__DIR__ . '/../static/page.yml'));
+        $data = $yaml->parse(file_get_contents(__DIR__ . '/../../Resources/data/page.yml'));
 
+        $parent = $manager->find(null, $basepath);
         foreach ($data['static'] as $overview) {
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
-            if (! $page) {
-                $class = isset($overview['class']) ? $overview['class'] : 'Sandbox\\MainBundle\\Document\\EditableStaticContent';
+            if (!$page) {
+                $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\ContentBundle\\Document\\MultilangStaticContent';
+                /** @var $page MultilangStaticContent */
                 $page = new $class();
-                $page->setPath($path);
+                $page->setName($overview['name']);
+                $page->setParent($parent);
                 $manager->persist($page);
             }
-            $page->setName($overview['name']);
 
             if (is_array($overview['title'])) {
                 foreach ($overview['title'] as $locale => $title) {
                     $page->setTitle($title);
-                    $page->setContent($overview['content'][$locale]);
+                    $page->setBody($overview['content'][$locale]);
                     $manager->bindTranslation($page, $locale);
                 }
             } else {
                 $page->setTitle($overview['title']);
-                $page->setContent($overview['content']);
+                $page->setBody($overview['content']);
             }
+
             if (isset($overview['blocks'])) {
                 foreach ($overview['blocks'] as $name => $block) {
                     $this->loadBlock($manager, $page, $name, $block);
@@ -64,12 +70,12 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     /**
      * Load a block from the fixtures and create / update the node. Recurse if there are children.
      *
-     * @param $manager the document manager
+     * @param ObjectManager $manager the document manager
      * @param string $parentPath the parent of the block
      * @param string $name the name of the block
-     * @param array block the block definition
+     * @param array $block the block definition
      */
-    private function loadBlock($manager, $parent, $name, $block)
+    private function loadBlock(ObjectManager $manager, $parent, $name, $block)
     {
         $className = $block['class'];
         $document = $manager->find(null, $this->getIdentifier($manager, $parent) . '/' . $name);
@@ -88,9 +94,12 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         }
 
         if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock') {
-            $referencedBlock = $this->container->get('symfony_cmf.block.service')->findByName($block['referencedBlock']);
+            $referencedBlock = $manager->find(null, $block['referencedBlock']);
+            if (null == $referencedBlock) {
+                throw new \Exception('did not find '.$block['referencedBlock']);
+            }
             $document->setReferencedBlock($referencedBlock);
-        } else if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock') {
+        } elseif ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock') {
             $document->setActionName($block['actionName']);
         }
 

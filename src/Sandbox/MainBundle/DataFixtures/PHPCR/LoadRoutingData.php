@@ -13,7 +13,6 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route;
 use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute;
-use Symfony\Cmf\Bundle\MultilangContentBundle\Document\MultilangLanguageSelectRoute;
 
 class LoadRoutingData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -29,61 +28,64 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
      * consistent in what you use and only use different things for special
      * cases.
      *
-     * @param $dm
+     * @param $dm \Doctrine\ODM\PHPCR\DocumentManager
      */
     public function load(ObjectManager $dm)
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath    = $this->container->getParameter('symfony_cmf_routing_extra.routing_repositoryroot');
-        $content_path = $this->container->getParameter('symfony_cmf_content.static_basepath');
+        $basepath = $this->container->getParameter('symfony_cmf_routing_extra.routing_repositoryroot');
+        $content_path = $this->container->getParameter('symfony_cmf_content.content_basepath');
 
         if ($session->itemExists($basepath)) {
             $session->removeItem($basepath);
         }
 
-        NodeHelper::createPath($session, dirname($basepath));
-        $root = $dm->find(null, dirname($basepath));
-        $locales = array('en', 'fr', 'de'); //TODO: can we get this from phpcr-odm in a sane way?
+        NodeHelper::createPath($session, $basepath);
+        $parent = $dm->find(null, $basepath);
 
-        $parent = new MultilangLanguageSelectRoute();
-        $parent->setPosition($root, basename($basepath));
-        $dm->persist($parent);
-
+        $locales = $this->container->getParameter('locales');
         foreach ($locales as $locale) {
             $home = new Route;
             $home->setPosition($parent, $locale);
             $home->setDefault('_locale', $locale);
+            $home->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Homepage:index.html.twig');
+            $home->setRequirement('_locale', $locale);
             $home->setRouteContent($dm->find(null, "$content_path/home"));
             $dm->persist($home);
 
             $company = new Route;
             $company->setPosition($home, 'company');
             $company->setDefault('_locale', $locale);
+            $company->setRequirement('_locale', $locale);
             $company->setRouteContent($dm->find(null, "$content_path/company"));
             $dm->persist($company);
 
             $team = new Route;
             $team->setPosition($company, 'team');
             $team->setDefault('_locale', $locale);
+            $team->setRequirement('_locale', $locale);
             $team->setRouteContent($dm->find(null, "$content_path/team"));
             $dm->persist($team);
 
             $more = new Route;
             $more->setPosition($company, 'more');
             $more->setDefault('_locale', $locale);
+            $more->setRequirement('_locale', $locale);
             $more->setRouteContent($dm->find(null, "$content_path/more"));
             $dm->persist($more);
 
             $projects = new Route;
             $projects->setPosition($home, 'projects');
             $projects->setDefault('_locale', $locale);
+            $projects->setRequirement('_locale', $locale);
             $projects->setRouteContent($dm->find(null, "$content_path/projects"));
             $dm->persist($projects);
 
             $cmf = new Route;
             $cmf->setPosition($projects, 'cmf');
             $cmf->setDefault('_locale', $locale);
+            $cmf->setRequirement('_locale', $locale);
             $cmf->setRouteContent($dm->find(null, "$content_path/cmf"));
             $dm->persist($cmf);
         }
@@ -112,12 +114,12 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $controller->setDefault('_controller', 'sandbox_main.controller:specialAction');
         $dm->persist($controller);
 
-        // alias to controller mapping
-        $alias = new Route;
-        $alias->setPosition($demo, 'alias');
-        $alias->setRouteContent($dm->find(null, "$content_path/demo_alias"));
-        $alias->setDefault(RouteObjectInterface::CONTROLLER_ALIAS, 'demo_alias');
-        $dm->persist($alias);
+        // type to controller mapping
+        $type = new Route;
+        $type->setPosition($demo, 'type');
+        $type->setRouteContent($dm->find(null, "$content_path/demo_type"));
+        $type->setDefault('type', 'demo_type');
+        $dm->persist($type);
 
         // class to controller mapping
         $class = new Route;

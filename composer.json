@@ -14,18 +14,19 @@
         "sensio/distribution-bundle": "2.1.*",
         "sensio/framework-extra-bundle": "2.1.*",
         "sensio/generator-bundle": "2.1.*",
-        "jms/security-extra-bundle": "1.2.*",
-        "jms/di-extra-bundle": "1.1.*",
+        "jms/security-extra-bundle": "1.4.*",
+        "jms/di-extra-bundle": "1.3.*",
         "symfony-cmf/symfony-cmf": "1.0.*",
         "symfony-cmf/simple-cms-bundle": "1.0.*",
         "symfony-cmf/search-bundle": "dev-master",
+        "symfony-cmf/create-bundle": "dev-master",
         "jackalope/jackalope-jackrabbit": "1.0.*",
         "doctrine/doctrine-bundle": "1.0.*",
         "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "liip/vie-bundle": "dev-master",
         "liip/functional-test-bundle": "dev-master",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
+        "lunetics/locale-bundle": "dev-master",
         "symfony-cmf/tree-browser-bundle":"1.0.*"
     },
     "suggest": {
@@ -34,13 +35,13 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Liip\\VieBundle\\Composer\\ScriptHandler::initSubmodules",
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::initSubmodules",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
         ],
         "post-update-cmd": [
-            "Liip\\VieBundle\\Composer\\ScriptHandler::initSubmodules",
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::initSubmodules",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"

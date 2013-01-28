@@ -14,26 +14,28 @@ class AdminDashboardTest extends WebTestCase
 
         $client->followRedirect();
 
-        $this->assertEquals('http://localhost/admin/', $client->getRequest()->getUri());
+        $this->assertEquals('http://localhost/en/admin/dashboard', $client->getRequest()->getUri());
+
+        $client->request('GET', '/admin/dashboard');
 
         $this->assertEquals(301, $client->getResponse()->getStatusCode());
 
         $client->followRedirect();
 
-        $this->assertEquals('http://localhost/admin/dashboard', $client->getRequest()->getUri());
+        $this->assertEquals('http://localhost/en/admin/dashboard', $client->getRequest()->getUri());
     }
 
     public function testContents()
     {
         $client = $this->createClient();
 
-        $crawler = $client->request('GET', '/admin/dashboard');
+        $crawler = $client->request('GET', '/en/admin/dashboard');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertContains('Sonata Admin', $response->getContent());
 
         $this->assertCount(2, $crawler->filter('.container-fluid'));
-        $this->assertCount(7, $crawler->filter('.sonata-ba-list-label'));
+        $this->assertCount(9, $crawler->filter('.sonata-ba-list-label'));
     }
 }

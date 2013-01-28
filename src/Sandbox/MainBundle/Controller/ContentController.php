@@ -3,36 +3,36 @@
 namespace Sandbox\MainBundle\Controller;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController as BaseContentController;
 
 /**
  * Special routes to demo the features of the Doctrine Router in the SymfonyCmfRoutingExtraBundle
  */
-class ContentController extends Controller
+class ContentController extends BaseContentController
 {
     /**
-     * Action that is mapped in the controller_by_alias map
+     * Action that is mapped in the controller_by_type map
      *
-     * This can inject something else for the template for content with this alias
+     * This can inject something else for the template for content with this type
      *
      * @param object $contentDocument
      *
      * @return \Symfony\Component\HttpFoundation\Response the response
      */
-    public function aliasAction($contentDocument)
+    public function typeAction($contentDocument)
     {
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found');
         }
+
         $params = array(
-            'title' => $contentDocument->title,
-            'page' => $contentDocument,
-            'example' => 'Additional value injected by the controller for this alias (this could work without content if we want)',
+            'cmfMainContent' => $contentDocument,
+            'example' => 'Additional value injected by the controller for this type (this could work without content if we want)',
         );
 
-        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
     }
 
     /**
@@ -49,13 +49,13 @@ class ContentController extends Controller
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found');
         }
+
         $params = array(
-            'title' => $contentDocument->title,
-            'page' => $contentDocument,
+            'cmfMainContent' => $contentDocument,
             'example' => 'Additional value injected by the controller for all content mapped to classAction',
         );
 
-        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
     }
 
     /**
@@ -72,12 +72,12 @@ class ContentController extends Controller
         if (!$contentDocument) {
             throw new NotFoundHttpException('Content not found');
         }
+
         $params = array(
-            'title' => $contentDocument->title,
-            'page' => $contentDocument,
+            'cmfMainContent' => $contentDocument,
             'example' => 'Additional value injected by the controller when explicitly referenced',
         );
 
-        return $this->render('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
     }
 }
