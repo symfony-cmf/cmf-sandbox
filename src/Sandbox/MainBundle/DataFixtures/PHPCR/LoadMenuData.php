@@ -11,8 +11,8 @@ use PHPCR\Util\NodeHelper;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-use Symfony\Cmf\Bundle\MenuBundle\Document\MenuItem;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuItem;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
 
 class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -47,7 +47,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $projects = $this->createMenuNode($dm, $main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $dm->find(null, "$content_path/projects"));
         $this->createMenuNode($dm, $projects, 'cmf-item', 'Symfony CMF', $dm->find(null, "$content_path/cmf"));
 
-        $news = $this->createMenuItem($dm, $main, 'news-item', array('News', 'de' => 'News', 'fr' => 'News'), $dm->find(null, "$content_path/news"));
+        $news = $this->createMenuNode($dm, $main, 'news-item', array('News', 'de' => 'News', 'fr' => 'News'), $dm->find(null, "$content_path/news"));
 
         $company = $this->createMenuNode($dm, $main, 'company-item', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $dm->find(null, "$content_path/company"));
         $this->createMenuNode($dm, $company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $dm->find(null, "$content_path/team"));
