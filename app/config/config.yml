@@ -128,6 +128,7 @@ symfony_cmf_create:
     plain_text_types:
         - dcterms:title
         - cw:headline
+        - loc:name
 
     create_routes_types:
         - http://schema.org/NewsArticle

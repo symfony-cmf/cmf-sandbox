@@ -3,6 +3,7 @@
         xmlns:sc="http://schema.org/"
         xmlns:cw="http://schema.org/CreativeWork/"
         xmlns:ar="http://schema.org/Article/"
+        xmlns:loc="http://schema.org/Language/"
         typeof="sc:NewsArticle"
         itemtype="http://schema.org/NewsArticle"
 >
@@ -10,5 +11,6 @@
     <children>
         <property property="cw:headline" identifier="title" tag-name="h1"/>
         <property property="ar:articleBody" identifier="body" />
+        <property property="loc:name" identifier="locale" />
     </children>
 </type>

@@ -4,9 +4,16 @@ namespace Sandbox\Saucelabs;
 
 /**
  * Use Saucelabs to test the creation of content with Create.js
+ *
+ * ATTENTION: These tests might be failing due to a raise condition in doctrine.
+ * When the 3 routes are created with parallel requests, an invalid and unnecessary
+ * content document is created for the locale of the route being created.
+ * TODO: paste the URL of the PR containing the unit test in doctrine repository
  */
 class NewsCreationUserTest extends SaucelabsWebTestCase
 {
+    protected $newsUrl = 'http://cmf.lo/app_test.php/en/news';
+
     public function setUp()
     {
         parent::setUp();
@@ -29,8 +36,7 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $this->enterEditMode();
 
         //click the add button
-        $addButton = $this->byCss('.newsoverview button:last-child');
-        $addButton->click();
+        $this->clickAddButton();
 
         //write the news title and content
         $newsTitle = $this->byXPath('//a[contains(text(), "[cw:headline]")]');
@@ -80,8 +86,7 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $this->assertContains("Cancel", $cancelLink->text());
 
         //click the add button
-        $addButton = $this->byCss('.newsoverview button:last-child');
-        $addButton->click();
+        $this->clickAddButton();
 
         //write the news title and content
         $newsTitle = $this->byXPath('//a[contains(text(), "[cw:headline]")]');
@@ -124,62 +129,5 @@ class NewsCreationUserTest extends SaucelabsWebTestCase
         $this->assertEquals($createdNewsContent, $newsContent->text());
         $creationDate = $this->byCss('div.subtitle');
         $this->assertEquals('Date: ' . $today, $creationDate->text());
-    }
-
-    public function testNewsMultilang()
-    {
-        //common variables
-        $originalNewsPageTitle = 'News';
-        $newsFrTitle = 'Nouvelles pour la Sandbox';
-        $newsEnTitle = 'News on the Sandbox';
-        $newsFrTitleUpdate = 'Mise à jour: ';
-        $newsFrTitleUpdated = $newsFrTitleUpdate . $newsFrTitle;
-
-        //load the french news page
-        $this->url($this->newsUrlFr);
-
-        $driver = $this;
-        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
-            //give some time to load the page
-            return ($driver->title() == $originalNewsPageTitle);
-        };
-        $this->spinAssert("News page in FR was not loaded", $newsPageLoaded);
-
-        //click on edit
-        $this->enterEditMode();
-
-        $newsTitle = $this->byCss('.newsoverview li:first-child a');
-        $newsTitle->value($newsFrTitleUpdate);
-
-        //click on save
-        $this->saveChanges();
-
-        //click on cancel
-        $this->leaveEditMode();
-
-        //reload the current page to ensure the changes have been persisted
-        $this->url($this->newsUrlFr);
-        $driver = $this;
-        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
-            //give some time to load the page
-            return ($driver->title() == $originalNewsPageTitle);
-        };
-        $this->spinAssert("News page was not loaded", $newsPageLoaded);
-
-        $newsTitle = $this->byCss('.newsoverview li:first-child a');
-        $this->assertEquals($newsFrTitleUpdated, $newsTitle->text());
-
-        //load the EN news page
-        $this->url($this->newsUrl);
-        $newsPageLoaded = function() use ($driver, $originalNewsPageTitle) {
-            //give some time to load the page
-            return ($driver->title() == $originalNewsPageTitle);
-        };
-        $this->spinAssert("News page was not loaded", $newsPageLoaded);
-
-        //the first news should not have changed
-        $newsTitle = $this->byCss('.newsoverview li:first-child a');
-        $this->assertNotContains($newsFrTitleUpdated, $newsTitle->text());
-        $this->assertContains($newsEnTitle, $newsTitle->text());
     }
 }

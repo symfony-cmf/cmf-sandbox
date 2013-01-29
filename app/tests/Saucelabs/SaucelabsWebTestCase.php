@@ -11,8 +11,6 @@ use Sandbox\FixturesLoader;
 abstract class SaucelabsWebTestCase extends WebDriverTestCase
 {
     protected $homeUrl = 'http://cmf.lo/app_test.php';
-    protected $newsUrl = 'http://cmf.lo/app_test.php/en/news';
-    protected $newsUrlFr = 'http://cmf.lo/app_test.php/fr/news';
 
     public static $browsers = array(
         // run FF17 on Linux on Sauce
@@ -62,5 +60,14 @@ abstract class SaucelabsWebTestCase extends WebDriverTestCase
     protected function saveChanges()
     {
         $this->byId('midgardcreate-save')->click();
+    }
+
+    /**
+     * Add content (click button add)
+     */
+    protected function clickAddButton()
+    {
+        $addButton = $this->byCss('.newsoverview button:last-child');
+        $addButton->click();
     }
 }

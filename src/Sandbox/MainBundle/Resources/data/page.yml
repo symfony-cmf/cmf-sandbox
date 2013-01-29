@@ -147,9 +147,14 @@ static:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
         name: "news"
-        title: "News"
-        content: |
-            The latest news about the CMF Sandbox. Also available on a <a href="/en/news.rss">RSS feed</a>:
+        title:
+            en: "News"
+            fr: "News"
+        content:
+            en: |
+                The latest news about the CMF Sandbox. Also available on a <a href="/en/news.rss">RSS feed</a>:
+            fr: |
+                Les dernières nouvelles de la CMF Sandbox. Aussi disponible dans un <a href="/fr/news.rss">flux RSS</a>:
         class: "Sandbox\\MainBundle\\Document\\CollectionPage"
         formats: [html, rss]
         template: SandboxMainBundle:News:news_overview.{_format}.twig
@@ -161,7 +166,7 @@ static:
             de: "Nachrichten für das Sandbox"
         parent: "/cms/content/news"
         class: "Sandbox\\MainBundle\\Document\\NewsArticle"
-        publish_start_date: "2012-12-12"
+        publish_start_date: "2013-01-28"
         content:
             en: |
                 Adrien created a news sytem for the sandox. It is now possible to
