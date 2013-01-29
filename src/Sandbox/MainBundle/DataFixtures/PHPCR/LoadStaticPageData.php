@@ -33,6 +33,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $yaml = new Parser();
         $data = $yaml->parse(file_get_contents(__DIR__ . '/../../Resources/data/page.yml'));
 
+        $parent = $manager->find(null, $basepath);
         foreach ($data['static'] as $overview) {
             $parent = null;
             if (isset($overview['parent'])) {
@@ -42,20 +43,17 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             }
 
             $path = $basepath . '/' . $overview['name'];
-
             $page = $manager->find(null, $path);
-            if (! $page) {
+            if (!$page) {
                 $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\ContentBundle\\Document\\MultilangStaticContent';
                 /** @var $page MultilangStaticContent */
                 $page = new $class();
                 $page->setName($overview['name']);
                 $page->setParent($parent);
-
                 $manager->persist($page);
             }
 
             if (is_array($overview['title'])) {
-
                 foreach ($overview['title'] as $locale => $title) {
                     $page->setTitle($title);
                     $page->setBody($overview['content'][$locale]);
@@ -112,7 +110,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 throw new \Exception('did not find '.$block['referencedBlock']);
             }
             $document->setReferencedBlock($referencedBlock);
-        } else if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock') {
+        } elseif ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock') {
             $document->setActionName($block['actionName']);
         }
 

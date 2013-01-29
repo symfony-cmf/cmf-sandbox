@@ -137,12 +137,12 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $controller->setDefault('_controller', 'sandbox_main.controller:specialAction');
         $dm->persist($controller);
 
-        // alias to controller mapping
-        $alias = new Route;
-        $alias->setPosition($demo, 'alias');
-        $alias->setRouteContent($dm->find(null, "$content_path/demo_alias"));
-        $alias->setDefault(RouteObjectInterface::CONTROLLER_ALIAS, 'demo_alias');
-        $dm->persist($alias);
+        // type to controller mapping
+        $type = new Route;
+        $type->setPosition($demo, 'type');
+        $type->setRouteContent($dm->find(null, "$content_path/demo_type"));
+        $type->setDefault('type', 'demo_type');
+        $dm->persist($type);
 
         // class to controller mapping
         $class = new Route;

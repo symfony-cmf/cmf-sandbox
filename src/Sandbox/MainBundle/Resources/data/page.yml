@@ -131,9 +131,9 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
     -
-        name: "demo_alias"
-        title: "Controller by alias"
-        content: "<p>This content is routed through a controller found by the route controller alias.</p>"
+        name: "demo_type"
+        title: "Controller by type"
+        content: "<p>This content is routed through a controller found by the route controller type.</p>"
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
