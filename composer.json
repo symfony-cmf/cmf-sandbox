@@ -31,7 +31,9 @@
         "symfony-cmf/routing-auto-bundle": "1.0.0-alpha2",
         "symfony-cmf/blog-bundle": "1.0.0-alpha2",
         "sonata-project/cache-bundle": "2.1.*",
-        "eko/feedbundle": "1.0.*"
+        "eko/feedbundle": "1.0.*",
+        "sonata-project/media-bundle": "2.2.*",
+        "liip/imagine-bundle": "1.0.*"
     },
     "suggest": {
         "jackalope/jackalope-doctrine-dbal": "1.0.0-alpha1",

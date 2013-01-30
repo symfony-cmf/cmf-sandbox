@@ -54,6 +54,12 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Sandbox\MediaBundle\SandboxMediaBundle(),
+            new Sandbox\BannerBundle\SandboxBannerBundle(),
+
+            // Media support
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
 
             // jackalope doctrine caching
             // new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),

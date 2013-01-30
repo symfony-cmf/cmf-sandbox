@@ -1,0 +1,11 @@
+{% extends 'SymfonyCmfBlockBundle:Block:block_base.html.twig' %}
+
+{% block block %}
+    <div class="image-banner-container">
+        <ul>
+        {% for item in items %}
+            <li>{{ item.title }} - {{ item.description }} - {% media item.image, 'small' with { 'class': 'slide' } %}</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

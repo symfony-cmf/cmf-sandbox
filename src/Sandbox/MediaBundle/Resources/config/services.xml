@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="sandbox_media.id_prefix_listener.class">Sandbox\MediaBundle\Listener\IdPrefix</parameter>
+    </parameters>
+
+    <services>
+        <service id="sandbox_media.id_prefix_listener" class="%sandbox_media.id_prefix_listener.class%">
+            <argument>%sandbox_media.media_basepath%</argument>
+            <argument>%sandbox_media.gallery_basepath%</argument>
+            <tag name="doctrine_phpcr.event_listener" event="postLoad" />
+            <tag name="doctrine_phpcr.event_listener" event="prePersist" />
+        </service>
+    </services>
+</container>
