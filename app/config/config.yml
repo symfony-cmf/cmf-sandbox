@@ -157,6 +157,7 @@ sonata_admin:
                 label: page routes
                 items:
                     - symfony_cmf_routing_extra.route_admin
+                    - symfony_cmf_routing_extra.redirect_route_admin
             menu:
                 label: menu structure
                 items:
