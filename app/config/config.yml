@@ -84,6 +84,7 @@ doctrine_phpcr:
                 - de
 
 symfony_cmf_routing_extra:
+    route_basepath: /cms/routes
     chain:
         routers_by_id:
             symfony_cmf_routing_extra.dynamic_router: 20
