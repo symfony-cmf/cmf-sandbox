@@ -124,6 +124,8 @@ symfony_cmf_menu:
     multilang:
       locales: %locales%
 
+symfony_cmf_blog: ~
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -163,6 +165,10 @@ sonata_admin:
                 items:
                     - symfony_cmf_menu.admin
                     - symfony_cmf_menu.multilang.admin
+            blog:
+                label: blog
+                items:
+                    - symfony_cmf_blog.admin
             simplecms:
                 label: simple cms (content/routing/menu as one)
                 items:

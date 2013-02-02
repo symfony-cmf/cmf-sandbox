@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\TreeBrowserBundle\SymfonyCmfTreeBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\SymfonyCmfBlockBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\SymfonyCmfSimpleCmsBundle(),
+            new Symfony\Cmf\Bundle\BlogBundle\SymfonyCmfBlogBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\SymfonyCmfSearchBundle(),
 
@@ -55,6 +56,7 @@ class AppKernel extends Kernel
 
             // jackalope doctrine caching
 //            new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
+            // new Symfony\Cmf\Bundle\BlogBundle\SymfonyCmfBlogBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
