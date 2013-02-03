@@ -8,7 +8,7 @@ namespace Sandbox\Saucelabs;
  * ATTENTION: These tests might be failing due to a raise condition in doctrine.
  * When the 3 routes are created with parallel requests, an invalid and unnecessary
  * content document is created for the locale of the route being created.
- * TODO: paste the URL of the PR containing the unit test in doctrine repository
+ * TODO: see if fixed by https://github.com/doctrine/phpcr-odm/pull/238
  */
 class NewsCreationUserTest extends SaucelabsWebTestCase
 {
