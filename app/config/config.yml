@@ -96,6 +96,11 @@ symfony_cmf_routing_extra:
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
             Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
+
+            Symfony\Cmf\Bundle\BlogBundle\Document\Blog: symfony_cmf_blog.blog_controller:list
+            Symfony\Cmf\Bundle\BlogBundle\Document\Post: symfony_cmf_blog.blog_controller:viewPost
+            Symfony\Cmf\Bundle\BlogBundle\Document\Tag: symfony_cmf_blog.blog_controller:list
+
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
 
@@ -169,6 +174,7 @@ sonata_admin:
                 label: blog
                 items:
                     - symfony_cmf_blog.admin
+                    - symfony_cmf_post.admin
             simplecms:
                 label: simple cms (content/routing/menu as one)
                 items:
