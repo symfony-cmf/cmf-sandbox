@@ -44,6 +44,8 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
 
         $this->createMenuNode($dm, $main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');
 
+        $this->createMenuNode($dm, $main, 'blog-item', 'Blog', $dm->find(null, "$content_path/CMF Blog"));
+
         $projects = $this->createMenuNode($dm, $main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $dm->find(null, "$content_path/projects"));
         $this->createMenuNode($dm, $projects, 'cmf-item', 'Symfony CMF', $dm->find(null, "$content_path/cmf"));
 
