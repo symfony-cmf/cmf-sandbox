@@ -1,7 +1,3 @@
-# symfony_cmf_blog:
-#     resource: "@SymfonyCmfBlogBundle/Resources/config/routing.xml"
-#     prefix:   /
-
 # Internal routing configuration to handle ESI
 #_internal:
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
@@ -51,10 +47,6 @@ fos_js_routing:
 symfony_cmf_tree:
     resource: .
     type: 'symfony_cmf_tree'
-
-phpcr_tree_browser:
-    resource: @SymfonyCmfTreeBrowserBundle/Resources/config/routing/routing_browser.xml
-    prefix: /{_locale}/admin/phpcrtree
 
 test:
     pattern:  /hello
