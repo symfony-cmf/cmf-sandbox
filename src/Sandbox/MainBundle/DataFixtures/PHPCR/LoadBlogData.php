@@ -126,11 +126,16 @@ HERE;
 
         $words = explode(' ', $projectNim);
 
-
         $nbWords = $nbWords ? $nbWords : rand(100,500);
         $sWords = array();
+        $paraBreak = rand(100,500);
+        $paraIdx = 0;
         for ($i = 0; $i < $nbWords; $i ++) {
             $sWords[] = $words[rand(0, (count($words) - 1))];
+            if ($paraIdx++ == $paraBreak) {
+                $sWords[] = "\n\n";
+                $paraIdx = 0;
+            };
         }
 
         return implode(' ', $sWords);

@@ -129,7 +129,8 @@ symfony_cmf_menu:
     multilang:
       locales: %locales%
 
-symfony_cmf_blog: ~
+symfony_cmf_blog:
+    routing_basepath: /cms/routes
 
 sonata_block:
     default_contexts: [cms]

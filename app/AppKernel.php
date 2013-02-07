@@ -55,8 +55,7 @@ class AppKernel extends Kernel
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             // jackalope doctrine caching
-//            new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
-            // new Symfony\Cmf\Bundle\BlogBundle\SymfonyCmfBlogBundle(),
+            // new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
