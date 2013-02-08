@@ -19,9 +19,11 @@ abstract class WebTestCase extends BaseWebTestCase
 
         $this->loadFixtures(array(
             'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadBlogData',
             'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
             'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
             'Sandbox\MainBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
+            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadBlogRouteData',
         ), null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;

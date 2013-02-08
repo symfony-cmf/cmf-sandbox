@@ -54,6 +54,14 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $home->setRouteContent($dm->find(null, "$content_path/home"));
             $dm->persist($home);
 
+            $blog = new Route;
+            $blog->setPosition($home, 'blog');
+            $blog->setDefault('_locale', $locale);
+            $blog->setRequirement('_locale', $locale);
+            $blog->setRouteContent($dm->find(null, "$content_path/CMF Blog"));
+            $dm->persist($blog);
+
+
             $company = new Route;
             $company->setPosition($home, 'company');
             $company->setDefault('_locale', $locale);
