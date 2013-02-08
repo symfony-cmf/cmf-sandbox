@@ -96,10 +96,8 @@ symfony_cmf_routing_extra:
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
             Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
-
             Symfony\Cmf\Bundle\BlogBundle\Document\Blog: symfony_cmf_blog.blog_controller:listAction
             Symfony\Cmf\Bundle\BlogBundle\Document\Post: symfony_cmf_blog.blog_controller:viewPostAction
-            Symfony\Cmf\Bundle\BlogBundle\Document\Tag: symfony_cmf_blog.blog_controller:listAction
 
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
@@ -220,6 +218,11 @@ sonata_doctrine_phpcr_admin:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode
                 - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode
+        Symfony\Cmf\Bundle\BlogBundle\Document\Blog:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlogBundle\Document\Post
+        Symfony\Cmf\Bundle\BlogBundle\Document\Post:
+            valid_children: []
 
 fos_js_routing:
     routes_to_expose:
@@ -244,6 +247,12 @@ fos_js_routing:
         - admin_bundle_block_actionblock_create
         - admin_bundle_block_actionblock_delete
         - admin_bundle_block_actionblock_edit
+        - admin_bundle_blog_blog_create
+        - admin_bundle_blog_blog_delete
+        - admin_bundle_blog_blog_edit
+        - admin_bundle_blog_post_create
+        - admin_bundle_blog_post_delete
+        - admin_bundle_blog_post_edit
         - admin_bundle_routingextra_route_create
         - admin_bundle_routingextra_route_delete
         - admin_bundle_routingextra_route_edit
