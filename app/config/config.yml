@@ -129,6 +129,7 @@ symfony_cmf_menu:
 
 symfony_cmf_blog:
     routing_basepath: /cms/routes
+    blog_basepath: /cms/content
 
 sonata_block:
     default_contexts: [cms]
