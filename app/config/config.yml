@@ -114,7 +114,6 @@ symfony_cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent'
-    use_coffee: %liip_vie.use_coffee%
     image:
         model_class: Symfony\Cmf\Bundle\CreateBundle\Document\Image
         controller_class: Symfony\Cmf\Bundle\CreateBundle\Controller\PHPCRImageController

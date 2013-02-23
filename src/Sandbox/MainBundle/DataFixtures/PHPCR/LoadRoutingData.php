@@ -3,6 +3,7 @@
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Symfony\Cmf\Bundle\BlogBundle\Util\PostUtils;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -55,7 +56,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $dm->persist($home);
 
             $blog = new Route;
-            $blog->setPosition($home, 'blog');
+            $blog->setPosition($home, PostUtils::slugify('CMF Blog'));
             $blog->setDefault('_locale', $locale);
             $blog->setRequirement('_locale', $locale);
             $blog->setRouteContent($dm->find(null, "$content_path/CMF Blog"));

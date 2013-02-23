@@ -8,7 +8,7 @@ class BlogControllerTest extends WebTestCase
     {
         $client = $this->createClient();
 
-        $crawler = $client->request('GET', '/en/blog');
+        $crawler = $client->request('GET', '/en/cmf-blog');
 
         $response = $client->getResponse();
 
