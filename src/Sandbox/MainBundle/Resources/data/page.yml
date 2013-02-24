@@ -38,6 +38,13 @@ static:
                     child3:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
                         actionName: SandboxMainBundle:Default:block
+            rssBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\RssBlock
+                properties:
+                    settings:
+                        title: Symfony2 CMF news
+                        url: http://cmf.symfony.com/news.rss
+                        maxItems: 3
     -
         name: "company"
         title: "The Company"
@@ -145,3 +152,4 @@ static:
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+
