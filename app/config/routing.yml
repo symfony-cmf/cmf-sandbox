@@ -41,6 +41,10 @@ sonata_admin:
     type: sonata_admin
     prefix: /{_locale}/admin
 
+admin_browser:
+    resource: '@SymfonyCmfPHPCRBrowserBundle/Resources/config/routing_browser.xml'
+    prefix: /admin/browser
+
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
 
