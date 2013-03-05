@@ -62,6 +62,9 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $this->createMenuNode($dm, $demo, 'test-item', 'Normal Symfony Route', null, null, 'test');
         $this->createMenuNode($dm, $demo, 'external-item', 'External Link', null, 'http://cmf.symfony.com/');
 
+        $singlelocale = $this->createMenuNode($dm, $main, 'singlelocale-item', array('en' => 'singlelocale'), $dm->find(null, "$content_path/singlelocale"));
+        $this->createMenuNode($dm, $singlelocale, 'singlelocale-sub-item', array('en' => 'singlelocale child'), $dm->find(null, "$content_path/singlelocale"));
+
         $dm->flush();
     }
 

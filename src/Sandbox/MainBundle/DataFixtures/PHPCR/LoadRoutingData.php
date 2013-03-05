@@ -62,7 +62,6 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $blog->setRouteContent($dm->find(null, "$content_path/CMF Blog"));
             $dm->persist($blog);
 
-
             $company = new Route;
             $company->setPosition($home, 'company');
             $company->setDefault('_locale', $locale);
@@ -157,6 +156,13 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $dm->persist($redirectS);
 
         // class to template mapping is used for all the rest
+
+        $singlelocale = new Route;
+        $singlelocale->setPosition($dm->find(null, "$basepath/en"), 'singlelocale');
+        $singlelocale->setDefault('_locale', 'en');
+        $singlelocale->setRequirement('_locale', 'en');
+        $singlelocale->setRouteContent($dm->find(null, "$content_path/singlelocale"));
+        $dm->persist($singlelocale);
 
         $dm->flush();
     }
