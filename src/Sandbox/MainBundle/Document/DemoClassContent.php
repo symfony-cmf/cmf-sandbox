@@ -49,7 +49,7 @@ class DemoClassContent implements RouteAwareInterface
     protected $body;
 
     /**
-     * @PHPCRODM\Referrers(filter="routeContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route", referencedBy="routeContent")
      */
     public $routes;
 

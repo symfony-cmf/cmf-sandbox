@@ -383,12 +383,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm.git",
-                "reference": "c49d72e609bb895c0a16bedb98f749902294ed04"
+                "reference": "88ececb7e19450c205f7635640b6b92f617d0265"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/c49d72e609bb895c0a16bedb98f749902294ed04",
-                "reference": "c49d72e609bb895c0a16bedb98f749902294ed04",
+                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/88ececb7e19450c205f7635640b6b92f617d0265",
+                "reference": "88ececb7e19450c205f7635640b6b92f617d0265",
                 "shasum": ""
             },
             "require": {
@@ -448,7 +448,7 @@
                 "odm",
                 "phpcr"
             ],
-            "time": "2013-03-05 14:30:47"
+            "time": "2013-03-06 09:02:13"
         },
         {
             "name": "eko/feedbundle",
@@ -1309,13 +1309,13 @@
             "target-dir": "Knp/Bundle/MenuBundle",
             "source": {
                 "type": "git",
-                "url": "http://github.com/KnpLabs/KnpMenuBundle.git",
-                "reference": "520d4d923c5a542f4aebeafe4b1301dddc8689c8"
+                "url": "https://github.com/KnpLabs/KnpMenuBundle.git",
+                "reference": "v1.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/KnpLabs/KnpMenuBundle/archive/520d4d923c5a542f4aebeafe4b1301dddc8689c8.zip",
-                "reference": "520d4d923c5a542f4aebeafe4b1301dddc8689c8",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMenuBundle/zipball/v1.1.1",
+                "reference": "v1.1.1",
                 "shasum": ""
             },
             "require": {
@@ -1358,12 +1358,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "v1.1.0-alpha4"
+                "reference": "fcee205a5a3a859c009d976ba3acfe67958e912c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/v1.1.0-alpha4",
-                "reference": "v1.1.0-alpha4",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/fcee205a5a3a859c009d976ba3acfe67958e912c",
+                "reference": "fcee205a5a3a859c009d976ba3acfe67958e912c",
                 "shasum": ""
             },
             "require": {
@@ -1421,7 +1421,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-02-24 17:22:20"
+            "time": "2013-03-05 17:56:54"
         },
         {
             "name": "liip/functional-test-bundle",
@@ -2518,12 +2518,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/BlogBundle.git",
-                "reference": "38f31292a4ec507496141752f8220adb3f35ec27"
+                "reference": "fe7784482a301e1036c241e57b5189d01eeb0236"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/BlogBundle/zipball/38f31292a4ec507496141752f8220adb3f35ec27",
-                "reference": "38f31292a4ec507496141752f8220adb3f35ec27",
+                "url": "https://api.github.com/repos/symfony-cmf/BlogBundle/zipball/fe7784482a301e1036c241e57b5189d01eeb0236",
+                "reference": "fe7784482a301e1036c241e57b5189d01eeb0236",
                 "shasum": ""
             },
             "require": {
@@ -2559,7 +2559,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2013-02-28 16:38:47"
+            "time": "2013-03-06 09:02:55"
         },
         {
             "name": "symfony-cmf/content-bundle",
@@ -2568,12 +2568,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "bc5a152ee2080baf85d5bf4aaaa0739d5522b425"
+                "reference": "37dc1798edbb5809e43cb3d61ec5df218936359b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/bc5a152ee2080baf85d5bf4aaaa0739d5522b425",
-                "reference": "bc5a152ee2080baf85d5bf4aaaa0739d5522b425",
+                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/37dc1798edbb5809e43cb3d61ec5df218936359b",
+                "reference": "37dc1798edbb5809e43cb3d61ec5df218936359b",
                 "shasum": ""
             },
             "require": {
@@ -2612,7 +2612,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2013-02-15 12:14:02"
+            "time": "2013-03-06 09:02:37"
         },
         {
             "name": "symfony-cmf/core-bundle",
@@ -2620,13 +2620,13 @@
             "target-dir": "Symfony/Cmf/Bundle/CoreBundle",
             "source": {
                 "type": "git",
-                "url": "git://github.com/symfony-cmf/CoreBundle.git",
-                "reference": "50694514d296b3275e390751ba2fb6ae58f38450"
+                "url": "https://github.com/symfony-cmf/CoreBundle.git",
+                "reference": "7613fbdc184e3e7b07d521247661aac7930e34f8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://github.com/symfony-cmf/CoreBundle/archive/50694514d296b3275e390751ba2fb6ae58f38450.zip",
-                "reference": "50694514d296b3275e390751ba2fb6ae58f38450",
+                "url": "https://api.github.com/repos/symfony-cmf/CoreBundle/zipball/7613fbdc184e3e7b07d521247661aac7930e34f8",
+                "reference": "7613fbdc184e3e7b07d521247661aac7930e34f8",
                 "shasum": ""
             },
             "require": {
@@ -2665,7 +2665,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2013-01-26 13:09:59"
+            "time": "2013-03-05 16:26:52"
         },
         {
             "name": "symfony-cmf/create-bundle",
@@ -2725,12 +2725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/MenuBundle.git",
-                "reference": "a93969268ad200093c9c2d8da462f67162a6ba5c"
+                "reference": "d615206665ac9fb777393587ad2409ef8574062c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/a93969268ad200093c9c2d8da462f67162a6ba5c",
-                "reference": "a93969268ad200093c9c2d8da462f67162a6ba5c",
+                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/d615206665ac9fb777393587ad2409ef8574062c",
+                "reference": "d615206665ac9fb777393587ad2409ef8574062c",
                 "shasum": ""
             },
             "require": {
@@ -2738,7 +2738,7 @@
                 "doctrine/phpcr-odm": "1.0.*",
                 "knplabs/knp-menu-bundle": "1.1.*",
                 "php": ">=5.3.2",
-                "symfony/symfony": ">=2.1,<2.3-dev"
+                "symfony/framework-bundle": ">=2.1,<2.3-dev"
             },
             "suggest": {
                 "sonata-project/doctrine-phpcr-admin-bundle": "if you want to have editing capabilities"
@@ -2770,7 +2770,7 @@
                 "Symfony CMF",
                 "menu"
             ],
-            "time": "2013-03-05 15:50:31"
+            "time": "2013-03-05 16:06:36"
         },
         {
             "name": "symfony-cmf/routing",
