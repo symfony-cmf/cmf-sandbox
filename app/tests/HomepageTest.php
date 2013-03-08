@@ -14,7 +14,7 @@ class HomepageTest extends WebTestCase
 
         $client->followRedirect();
 
-        $this->assertEquals('http://localhost/en', $client->getRequest()->getUri());
+        $this->assertContains('http://localhost/en', $client->getRequest()->getUri());
     }
 
     public function testContents()

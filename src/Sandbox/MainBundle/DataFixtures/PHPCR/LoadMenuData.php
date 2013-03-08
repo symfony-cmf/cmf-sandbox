@@ -39,7 +39,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $main->setChildrenAttributes(array("class" => "menu_main"));
 
         if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
-            $this->createMenuNode($dm, $main, 'search-item', 'Search', null, null, 'search');
+            $this->createMenuNode($dm, $main, 'search-item', 'Search', null, null, 'liip_search');
         }
 
         $this->createMenuNode($dm, $main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');

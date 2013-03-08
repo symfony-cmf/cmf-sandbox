@@ -114,7 +114,7 @@
         </div>
 
         {% block bottom_scripts %}
-            {% render "symfony_cmf_create.jsloader.controller:includeJSFilesAction" %}
+            {% render controller("symfony_cmf_create.jsloader.controller:includeJSFilesAction") %}
         {% endblock %}
     </body>
 </html>
