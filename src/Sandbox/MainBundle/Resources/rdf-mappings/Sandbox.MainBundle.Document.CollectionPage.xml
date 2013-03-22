@@ -1,0 +1,17 @@
+<type
+        xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:sc="http://schema.org/"
+        xmlns:cw="http://schema.org/CreativeWork/"
+        xmlns:ar="http://schema.org/Article/"
+        xmlns:loc="http://schema.org/Language/"
+        typeof="sc:CollectionPage"
+        itemtype="http://schema.org/CollectionPage"
+>
+    <children>
+        <property property="cw:headline" identifier="title" tag-name="h1"/>
+        <property property="ar:articleBody" identifier="body" />
+        <property property="loc:name" identifier="locale" />
+
+        <collection rel="dcterms:hasPart" rev="dcterms:partOf" identifier="children" />
+    </children>
+</type>

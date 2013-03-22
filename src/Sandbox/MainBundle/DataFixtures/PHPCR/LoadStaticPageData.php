@@ -35,6 +35,13 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
 
         $parent = $manager->find(null, $basepath);
         foreach ($data['static'] as $overview) {
+            $parent = null;
+            if (isset($overview['parent'])) {
+                $parent = $manager->find(null, $overview['parent']);
+            } else {
+                $parent = $manager->find(null, $basepath);
+            }
+
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
             if (!$page) {

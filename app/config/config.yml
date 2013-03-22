@@ -100,6 +100,8 @@ symfony_cmf_routing_extra:
             Symfony\Cmf\Bundle\BlogBundle\Document\Post: symfony_cmf_blog.blog_controller:viewPostAction
 
         templates_by_class:
+            Sandbox\MainBundle\Document\NewsArticle: SandboxMainBundle:News:news_detail.html.twig
+            Sandbox\MainBundle\Document\CollectionPage: SandboxMainBundle:News:news_overview.{_format}.twig
             Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
 
 symfony_cmf_simple_cms:
@@ -114,9 +116,24 @@ symfony_cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent'
+        'http://schema.org/NewsArticle': 'Sandbox\MainBundle\Document\NewsArticle'
+        'http://schema.org/CollectionPage': 'Sandbox\MainBundle\Document\CollectionPage'
+        'http://cmf.symfony.com/CmfRoute': 'Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route'
+
+    rdfmapper:
+        'Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route': symfony_cmf_create.route_doctrine_phpcr_odm_mapper
+
     image:
         model_class: Symfony\Cmf\Bundle\CreateBundle\Document\Image
         controller_class: Symfony\Cmf\Bundle\CreateBundle\Controller\PHPCRImageController
+
+    plain_text_types:
+        - dcterms:title
+        - cw:headline
+        - loc:name
+
+    create_routes_types:
+        - http://schema.org/NewsArticle
 
 symfony_cmf_content:
     multilang:
@@ -297,3 +314,14 @@ lunetics_locale:
 #            type: file_system
 #        nodes:
 #            type: file_system
+
+fos_rest:
+    view:
+        formats:
+            rss: true
+            json: true
+        templating_formats:
+            rss: true
+            html: true
+        mime_types:
+            rss: 'application/rss+xml'

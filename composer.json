@@ -30,11 +30,18 @@
         "symfony-cmf/tree-browser-bundle":"1.0.*",
         "symfony-cmf/blog-bundle": "1.0.*",
         "sonata-project/cache-bundle": "dev-master",
-        "eko/feedbundle": "dev-master"
+        "eko/feedbundle": "dev-master",
+        "doctrine/phpcr-bundle": "1.0.*",
+        "doctrine/phpcr-odm": "1.0.*"
     },
     "suggest": {
         "jackalope/jackalope-doctrine-dbal": "dev-master",
         "midgard/phpcr": "dev-master"
+    },
+    "require-dev": {
+        "sauce/sausage": "dev-master",
+        "phpunit/phpunit-selenium": "dev-master",
+        "jackalope/jackalope-doctrine-dbal": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

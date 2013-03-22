@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <channel>
+        <title>Symfony CMF</title>
+        <link>{{ app.request.getBaseUrl }}</link>
+        <description>The Symfony CMF Sandbox - Base project for trying CMF components integration</description>
+        <dc:language>{{ app.request.locale }}</dc:language>
+        <generator>Symfony2 CMF</generator>
+        <managingEditor>symfony-cmf-devs@googlegroups.com (Symfony CMF)</managingEditor>
+        <webMaster>symfony-cmf-devs@googlegroups.com (Symfony CMF)</webMaster>
+        <ttl>1440</ttl>
+        {% for news in cmf_children(cmfMainContent, false, true)|reverse %}
+        <item>
+            <title>{{ news.title }}</title>
+            <link>{{ url(news) }}</link>
+            <guid isPermaLink="true">{{ url(news) }}</guid>
+            <category>General</category>
+            <description>{{ news.body|striptags }}</description>
+            <content:encoded>{{ news.body|raw }}</content:encoded>
+            <pubDate>{{ news.publishStartDate | date('r') }}</pubDate>
+            <dc:creator>symfony-cmf-devs@googlegroups.com (Symfony CMF)</dc:creator>
+        </item>
+        {% endfor %}
+    </channel>
+</rss>

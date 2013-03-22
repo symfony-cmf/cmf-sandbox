@@ -19,6 +19,8 @@
             <directory>../vendor/symfony-cmf/src</directory>
             <directory>../src/*/*Bundle/Tests</directory>
             <directory>../src/*/Bundle/*Bundle/Tests</directory>
+            <!-- comment the following line to run Saucelabs tests -->
+            <exclude>app/tests/Saucelabs</exclude>
         </testsuite>
     </testsuites>
 

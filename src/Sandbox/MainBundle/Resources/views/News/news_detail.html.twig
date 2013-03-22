@@ -1,0 +1,44 @@
+{% extends "SandboxMainBundle::skeleton.html.twig" %}
+
+{% block content %}
+
+{% createphp cmfMainContent as="rdf" noautotag %}
+<div {{ createphp_attributes(rdf) }}>
+
+    <h2 class="my-title" {{ createphp_attributes( rdf.title ) }}>{{ createphp_content( rdf.title ) }}</h2>
+    <div class="subtitle">Date: {{ cmfMainContent.publishStartDate| date('Y-m-d') }}</div>
+    <p {{ createphp_attributes( rdf.body ) }}>{{ createphp_content( rdf.body ) }}</p>
+
+    <div class="newsmeta">
+        <div class="newslocale">Locale: <span {{ createphp_attributes(rdf.locale) }}>{{ createphp_content(rdf.locale) }}</span></div>
+    </div>
+
+    {% set prev = cmf_prev(cmfMainContent) %}
+    {% if prev %}
+        <a href="{{ path(prev) }}">prev</a>
+    {% endif %}
+
+    {% set next = cmf_next(cmfMainContent) %}
+    {% if next %}
+            <span style="float: right; padding-right: 40px;"><a href="{{ path(next) }}">next</a></span>
+    {% endif %}
+
+</div>
+{% endcreatephp %}
+
+{% endblock %}
+
+{% block custom_scripts %}
+<script type="text/javascript">
+    $(document).ready(function() {
+        //show / hide the news content according to the mode (edit / view)
+        $('body').bind('midgardcreatestatechange', function (event, options) {
+            if (options.state == 'edit') {
+                $('div.newsmeta').show();
+            } else {
+                $('div.newsmeta').hide();
+            }
+        });
+    });
+</script>
+{% endblock %}

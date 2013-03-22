@@ -96,6 +96,29 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $cmf->setRequirement('_locale', $locale);
             $cmf->setRouteContent($dm->find(null, "$content_path/cmf"));
             $dm->persist($cmf);
+
+            //$addFormatPattern to true is needed to use the RSS format
+            $news = new Route(true);
+            $news->setPosition($home, 'news');
+            $news->setDefault('_locale', $locale);
+            $news->setRequirement('_locale', $locale);
+            $news->setRouteContent($dm->find(null, "$content_path/news"));
+            $news->setRequirement('_format', 'html|rss');
+            $dm->persist($news);
+
+            $news1 = new Route;
+            $news1->setPosition($news, 'news-on-the-sandbox');
+            $news1->setDefault('_locale', $locale);
+            $news1->setRequirement('_locale', $locale);
+            $news1->setRouteContent($dm->find(null, "$content_path/news/news-on-the-sandbox"));
+            $dm->persist($news1);
+
+            $news2 = new Route;
+            $news2->setPosition($news, 'refactoring-of-createphp');
+            $news2->setDefault('_locale', $locale);
+            $news2->setRequirement('_locale', $locale);
+            $news2->setRouteContent($dm->find(null, "$content_path/news/refactoring-of-createphp"));
+            $dm->persist($news2);
         }
 
         // demo features of routing
