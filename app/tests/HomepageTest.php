@@ -14,7 +14,7 @@ class HomepageTest extends WebTestCase
 
         $client->followRedirect();
 
-        $this->assertEquals('http://localhost/en', $client->getRequest()->getUri());
+        $this->assertContains('http://localhost/en', $client->getRequest()->getUri());
     }
 
     public function testContents()
@@ -29,7 +29,7 @@ class HomepageTest extends WebTestCase
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
         $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the Symfony CMF Demo")'));
 
-        $menuCount = $this->isSearchSupported() ? 15 : 14;
+        $menuCount = $this->isSearchSupported() ? 18 : 17;
         $this->assertCount($menuCount, $crawler->filter('ul.menu_main li'));
     }
 }

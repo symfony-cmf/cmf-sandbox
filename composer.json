@@ -6,38 +6,42 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.1.*",
+        "symfony/symfony": "2.2.*",
         "twig/extensions": "1.0.*",
         "symfony/assetic-bundle": "2.1.*",
-        "symfony/swiftmailer-bundle": "2.1.*",
-        "symfony/monolog-bundle": "2.1.*",
-        "sensio/distribution-bundle": "2.1.*",
-        "sensio/framework-extra-bundle": "2.1.*",
-        "sensio/generator-bundle": "2.1.*",
+        "symfony/swiftmailer-bundle": "2.2.*",
+        "symfony/monolog-bundle": "2.2.*",
+        "sensio/distribution-bundle": "2.2.*",
+        "sensio/framework-extra-bundle": "2.2.*",
+        "sensio/generator-bundle": "2.2.*",
         "jms/security-extra-bundle": "1.4.*",
         "jms/di-extra-bundle": "1.3.*",
         "symfony-cmf/symfony-cmf": "1.0.*",
         "symfony-cmf/simple-cms-bundle": "1.0.*",
-        "symfony-cmf/search-bundle": "dev-master",
-        "symfony-cmf/create-bundle": "dev-master",
+        "symfony-cmf/search-bundle": "1.0.*",
+        "symfony-cmf/create-bundle": "1.0.*",
         "jackalope/jackalope-jackrabbit": "1.0.*",
-        "doctrine/doctrine-bundle": "1.0.*",
+        "doctrine/doctrine-bundle": "1.2.*",
         "doctrine/data-fixtures": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "liip/functional-test-bundle": "dev-master",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
         "lunetics/locale-bundle": "dev-master",
         "symfony-cmf/tree-browser-bundle":"1.0.*",
-        "jackalope/jackalope-doctrine-dbal": "dev-master",
+        "symfony-cmf/blog-bundle": "1.0.*",
+        "sonata-project/cache-bundle": "dev-master",
+        "eko/feedbundle": "dev-master",
         "doctrine/phpcr-bundle": "1.0.*",
         "doctrine/phpcr-odm": "1.0.*"
     },
     "suggest": {
+        "jackalope/jackalope-doctrine-dbal": "dev-master",
         "midgard/phpcr": "dev-master"
     },
     "require-dev": {
         "sauce/sausage": "dev-master",
-        "phpunit/phpunit-selenium": "dev-master"
+        "phpunit/phpunit-selenium": "dev-master",
+        "jackalope/jackalope-doctrine-dbal": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [

@@ -4,7 +4,6 @@ parameters:
 
     secret: ThisTokenIsNotSoSecretChangeIt
 
-    liip_vie.use_coffee: false
     # a little hack to avoid errors on missing node/coffescript.
     # remove -disabled if you want coffee.
     coffee.extension: "\.coffee-disabled$"

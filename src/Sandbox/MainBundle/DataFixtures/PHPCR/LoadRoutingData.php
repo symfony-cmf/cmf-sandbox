@@ -3,6 +3,7 @@
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Symfony\Cmf\Bundle\BlogBundle\Util\PostUtils;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -53,6 +54,13 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $home->setRequirement('_locale', $locale);
             $home->setRouteContent($dm->find(null, "$content_path/home"));
             $dm->persist($home);
+
+            $blog = new Route;
+            $blog->setPosition($home, PostUtils::slugify('CMF Blog'));
+            $blog->setDefault('_locale', $locale);
+            $blog->setRequirement('_locale', $locale);
+            $blog->setRouteContent($dm->find(null, "$content_path/CMF Blog"));
+            $dm->persist($blog);
 
             $company = new Route;
             $company->setPosition($home, 'company');
@@ -171,6 +179,13 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $dm->persist($redirectS);
 
         // class to template mapping is used for all the rest
+
+        $singlelocale = new Route;
+        $singlelocale->setPosition($dm->find(null, "$basepath/en"), 'singlelocale');
+        $singlelocale->setDefault('_locale', 'en');
+        $singlelocale->setRequirement('_locale', 'en');
+        $singlelocale->setRouteContent($dm->find(null, "$content_path/singlelocale"));
+        $dm->persist($singlelocale);
 
         $dm->flush();
     }

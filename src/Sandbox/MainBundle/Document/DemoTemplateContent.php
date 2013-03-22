@@ -44,10 +44,8 @@ class DemoTemplateContent implements RouteAwareInterface
      */
     public $body;
 
-
-
     /**
-     * @PHPCRODM\Referrers(filter="routeContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route", referencedBy="routeContent")
      */
     public $routes;
 
@@ -63,6 +61,7 @@ class DemoTemplateContent implements RouteAwareInterface
     {
       return $this->path;
     }
+
     public function getContent()
     {
         return $this->body;
@@ -72,6 +71,7 @@ class DemoTemplateContent implements RouteAwareInterface
     {
         $this->body = $content;
     }
+
     /**
      * @return array of route objects that point to this content
      */

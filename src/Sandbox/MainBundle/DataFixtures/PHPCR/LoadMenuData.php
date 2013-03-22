@@ -39,10 +39,12 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $main->setChildrenAttributes(array("class" => "menu_main"));
 
         if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
-            $this->createMenuNode($dm, $main, 'search-item', 'Search', null, null, 'search');
+            $this->createMenuNode($dm, $main, 'search-item', 'Search', null, null, 'liip_search');
         }
 
         $this->createMenuNode($dm, $main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');
+
+        $this->createMenuNode($dm, $main, 'blog-item', 'Blog', $dm->find(null, "$content_path/CMF Blog"));
 
         $projects = $this->createMenuNode($dm, $main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $dm->find(null, "$content_path/projects"));
         $this->createMenuNode($dm, $projects, 'cmf-item', 'Symfony CMF', $dm->find(null, "$content_path/cmf"));
@@ -61,6 +63,9 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $this->createMenuNode($dm, $demo, 'class-item', 'Class to controller', $dm->find(null, "$content_path/demo_class"));
         $this->createMenuNode($dm, $demo, 'test-item', 'Normal Symfony Route', null, null, 'test');
         $this->createMenuNode($dm, $demo, 'external-item', 'External Link', null, 'http://cmf.symfony.com/');
+
+        $singlelocale = $this->createMenuNode($dm, $main, 'singlelocale-item', array('en' => 'singlelocale'), $dm->find(null, "$content_path/singlelocale"));
+        $this->createMenuNode($dm, $singlelocale, 'singlelocale-sub-item', array('en' => 'singlelocale child'), $dm->find(null, "$content_path/singlelocale"));
 
         $dm->flush();
     }

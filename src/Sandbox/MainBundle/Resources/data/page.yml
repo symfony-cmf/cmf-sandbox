@@ -38,6 +38,13 @@ static:
                     child3:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
                         actionName: SandboxMainBundle:Default:block
+            rssBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Document\RssBlock
+                properties:
+                    settings:
+                        title: Symfony2 CMF news
+                        url: http://cmf.symfony.com/news.rss
+                        maxItems: 3
     -
         name: "company"
         title: "The Company"
@@ -145,6 +152,20 @@ static:
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+
+    -
+        name: "singlelocale"
+        title:
+            en: "Single locale"
+            fr: "Single locale"
+        content:
+            en: |
+                <h2>This page is only available in english</h2>
+                <p>The content is actually also translated to french, but there is no route for french.
+            fr: |
+                <h2>This page is only available in english</h2>
+                <p>The content is actually also translated to french, but there is no route for french.
+
     -
         name: "news"
         title:

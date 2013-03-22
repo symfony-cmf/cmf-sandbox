@@ -84,6 +84,7 @@ doctrine_phpcr:
                 - de
 
 symfony_cmf_routing_extra:
+    route_basepath: /cms/routes
     chain:
         routers_by_id:
             symfony_cmf_routing_extra.dynamic_router: 20
@@ -95,11 +96,13 @@ symfony_cmf_routing_extra:
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
             Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
+            Symfony\Cmf\Bundle\BlogBundle\Document\Blog: symfony_cmf_blog.blog_controller:listAction
+            Symfony\Cmf\Bundle\BlogBundle\Document\Post: symfony_cmf_blog.blog_controller:viewPostAction
+
         templates_by_class:
             Sandbox\MainBundle\Document\NewsArticle: SandboxMainBundle:News:news_detail.html.twig
             Sandbox\MainBundle\Document\CollectionPage: SandboxMainBundle:News:news_overview.{_format}.twig
             Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
-
 
 symfony_cmf_simple_cms:
     routing:
@@ -120,7 +123,6 @@ symfony_cmf_create:
     rdfmapper:
         'Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route': symfony_cmf_create.route_doctrine_phpcr_odm_mapper
 
-    use_coffee: %liip_vie.use_coffee%
     image:
         model_class: Symfony\Cmf\Bundle\CreateBundle\Document\Image
         controller_class: Symfony\Cmf\Bundle\CreateBundle\Controller\PHPCRImageController
@@ -141,6 +143,10 @@ symfony_cmf_menu:
     multilang:
       locales: %locales%
 
+symfony_cmf_blog:
+    routing_basepath: /cms/routes
+    blog_basepath: /cms/content
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -150,6 +156,8 @@ sonata_block:
             settings:
                 id: '/cms'
             contexts:   [admin]
+        symfony_cmf.block.action:
+            cache: symfony_cmf.block.cache.js_async
 
 sonata_admin:
     templates:
@@ -174,11 +182,17 @@ sonata_admin:
                 label: page routes
                 items:
                     - symfony_cmf_routing_extra.route_admin
+                    - symfony_cmf_routing_extra.redirect_route_admin
             menu:
                 label: menu structure
                 items:
                     - symfony_cmf_menu.admin
                     - symfony_cmf_menu.multilang.admin
+            blog:
+                label: blog
+                items:
+                    - symfony_cmf_blog.admin
+                    - symfony_cmf_post.admin
             simplecms:
                 label: simple cms (content/routing/menu as one)
                 items:
@@ -187,7 +201,7 @@ sonata_admin:
 sonata_doctrine_phpcr_admin:
     document_tree_defaults: [locale]
     document_tree:
-        Doctrine\PHPCR\Odm\Document\Generic:
+        Doctrine\ODM\PHPCR\Document\Generic:
             valid_children:
                 - all
         Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent:
@@ -223,6 +237,11 @@ sonata_doctrine_phpcr_admin:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode
                 - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode
+        Symfony\Cmf\Bundle\BlogBundle\Document\Blog:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlogBundle\Document\Post
+        Symfony\Cmf\Bundle\BlogBundle\Document\Post:
+            valid_children: []
 
 fos_js_routing:
     routes_to_expose:
@@ -247,6 +266,12 @@ fos_js_routing:
         - admin_bundle_block_actionblock_create
         - admin_bundle_block_actionblock_delete
         - admin_bundle_block_actionblock_edit
+        - admin_bundle_blog_blog_create
+        - admin_bundle_blog_blog_delete
+        - admin_bundle_blog_blog_edit
+        - admin_bundle_blog_post_create
+        - admin_bundle_blog_post_delete
+        - admin_bundle_blog_post_edit
         - admin_bundle_routingextra_route_create
         - admin_bundle_routingextra_route_delete
         - admin_bundle_routingextra_route_edit
