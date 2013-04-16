@@ -154,7 +154,7 @@ sonata_admin:
             - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
         groups:
             content:
-                label: page content
+                label: Content
                 items:
                     - symfony_cmf_content.multilang.admin
                     - symfony_cmf_block.simple_admin
@@ -162,22 +162,22 @@ sonata_admin:
                     - symfony_cmf_block.reference_admin
                     - symfony_cmf_block.action_admin
             routing:
-                label: page routes
+                label: URLs
                 items:
                     - symfony_cmf_routing.route_admin
                     - symfony_cmf_routing.redirect_route_admin
             menu:
-                label: menu structure
+                label: Menu
                 items:
                     - symfony_cmf_menu.admin
                     - symfony_cmf_menu.multilang.admin
             blog:
-                label: blog
+                label: Blog
                 items:
                     - symfony_cmf_blog.admin
                     - symfony_cmf_post.admin
             simplecms:
-                label: simple cms (content/routing/menu as one)
+                label: Simple CMS
                 items:
                     - symfony_cmf_simple_cms.admin.page
 
