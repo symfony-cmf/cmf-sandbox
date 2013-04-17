@@ -41,12 +41,19 @@ Please also adjust the ``app/config/parameters.yml`` as needed.
 
 ### Install the Doctrine DBAL provider (optional)
 
-Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist` files and create the database accordingly.
+Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist`
+files and create the database accordingly.
 
-To have the Doctrine DBAL implementation installed run the following additional command
+To have the Doctrine DBAL implementation installed, edit composer.json and replace
+the line ``"jackalope/jackalope-jackrabbit": "1.0.*",`` with
+``"jackalope/jackalope-jackrabbit": "1.0.*",`` then run the update and install commands
 
-    php composer.phar require jackalope/jackalope-doctrine-dbal:dev-master --no-update
     php composer.phar update jackalope/jackalope-doctrine-dbal
+    php composer.phar install
+
+Note: If you already ran install before changing the dependency to
+jackalope-doctrine-dbal and see composer errors, remove the vendor directory
+to have composer re-install everything.
 
 To enable the meta data and node cache to improve performance first enable ``LiipDoctrineCacheBundle``
 in ``app/AppKernel.php`` and then also perform:
@@ -65,7 +72,7 @@ If you fail to do this you might receive:
     [Symfony\Component\Filesystem\Exception\IOException]
     Unable to create symlink due to error code 1314: 'A required privilege is not held by the client'. Do you have the required Administrator-rights?
 
-Then, create the database and tables and set up the default workspace using 
+Then, create the database and tables and set up the default workspace using
 
     app/console doctrine:database:create
     app/console doctrine:phpcr:init:dbal
