@@ -46,7 +46,7 @@ files and create the database accordingly.
 
 To have the Doctrine DBAL implementation installed, edit composer.json and replace
 the line ``"jackalope/jackalope-jackrabbit": "1.0.*",`` with
-``"jackalope/jackalope-jackrabbit": "1.0.*",`` then run the update and install commands
+``"jackalope/jackalope-doctrine-dbal": "dev-master",`` then run the update and install commands
 
     php composer.phar update jackalope/jackalope-doctrine-dbal
     php composer.phar install
@@ -58,11 +58,11 @@ to have composer re-install everything.
 To enable the meta data and node cache to improve performance first enable ``LiipDoctrineCacheBundle``
 in ``app/AppKernel.php`` and then also perform:
 
-    php composer.phar require liip/doctrine-cache-bundle:dev-master --no-update --no-update
+    php composer.phar require liip/doctrine-cache-bundle:dev-master --no-update
     php composer.phar update liip/doctrine-cache-bundle
 
 Finally uncomment the ``caches`` settings in the `phpcr.yml` as well as the ``liip_doctrine_cache``
-settings in ``app/config.yml``.
+settings in ``app/config/config.yml``.
 
 
 Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and
