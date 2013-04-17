@@ -17,7 +17,7 @@ before_script:
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - ./app/tests/travis_${TRANSPORT}.sh
   - app/console doctrine:phpcr:workspace:create sandbox_test
-  - app/console doctrine:phpcr:register-system-node-types -e=test
+  - app/console doctrine:phpcr:repository:init -e=test
 
 
 script: phpunit -c app
