@@ -102,6 +102,8 @@ symfony_cmf_routing_extra:
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
 
+        locales: %locales%
+
 symfony_cmf_simple_cms:
     routing:
         templates_by_class:
