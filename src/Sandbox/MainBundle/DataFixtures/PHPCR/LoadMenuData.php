@@ -18,7 +18,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
 {
     public function getOrder()
     {
-        return 10;
+        return 40;
     }
 
     /**

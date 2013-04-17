@@ -20,7 +20,7 @@ class LoadBlogData extends ContainerAware implements FixtureInterface, OrderedFi
 {
     public function getOrder()
     {
-        return 6;
+        return 25;
     }
 
     /**
