@@ -107,7 +107,7 @@ change this of course. If you do, f.e. to 'sandbox, also run the following comma
 Once your workspace is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged)
 for phpcr-odm:
 
-    app/console doctrine:phpcr:register-system-node-types
+    app/console doctrine:phpcr:repository:init
 
 ## Import the fixtures
 
