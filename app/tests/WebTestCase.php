@@ -23,7 +23,6 @@ abstract class WebTestCase extends BaseWebTestCase
             'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
             'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
             'Sandbox\MainBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadBlogRouteData',
         ), null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;

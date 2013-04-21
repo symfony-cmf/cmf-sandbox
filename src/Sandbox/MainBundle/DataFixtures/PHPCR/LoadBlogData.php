@@ -20,7 +20,7 @@ class LoadBlogData extends ContainerAware implements FixtureInterface, OrderedFi
 {
     public function getOrder()
     {
-        return 6;
+        return 30;
     }
 
     /**
@@ -46,50 +46,10 @@ class LoadBlogData extends ContainerAware implements FixtureInterface, OrderedFi
             $p->setDate(new \DateTime());
             $p->setBody($this->getWords());
             $p->setBlog($blog);
-            $p->setTags($this->getTags());
             $dm->persist($p);
         }
 
         $dm->flush();
-    }
-
-    protected function getTags()
-    {
-        $tags = array(
-            'apache',
-            'php',
-            'jackrabbit',
-            'phpcr',
-            'doctrine',
-            'symfony2',
-            'routing',
-            'cms',
-            'cmf',
-            'content',
-            'midgard',
-            'doctrine-dbal',
-            'createjs',
-            'phpcr-odm',
-            'tree-browser',
-            'sonata-project',
-            'menu',
-            'search',
-            'jcr',
-            'jackalope',
-            'documentation',
-            'mongodb',
-            'couchdb',
-            'admin',
-            'blocks',
-        );
-
-        $nbTags = rand(2,5);
-        $sTags = array();
-        for ($i = 0; $i < $nbTags; $i ++) {
-            $sTags[] = $tags[rand(0, (count($tags) - 1))];
-        }
-
-        return $sTags;
     }
 
     protected function getWords($nbWords = null)
