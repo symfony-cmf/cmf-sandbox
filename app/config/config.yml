@@ -71,15 +71,12 @@ doctrine_phpcr:
         auto_generate_proxy_classes: %kernel.debug%
         locales:
             en:
-                - en
                 - de
                 - fr
             de:
-                - de
                 - en
                 - fr
             fr:
-                - fr
                 - en
                 - de
 
