@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: phpcr.yml }
     - { resource: security.yml }
+    - { resource: @SymfonyCmfBlogBundle/Resources/config/routing/autoroute_default.yml }
 
 framework:
     #esi:             ~
@@ -126,8 +127,8 @@ symfony_cmf_menu:
       locales: %locales%
 
 symfony_cmf_blog:
-    routing_basepath: /cms/routes
     blog_basepath: /cms/content
+
 
 sonata_block:
     default_contexts: [cms]
