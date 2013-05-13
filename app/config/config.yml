@@ -80,11 +80,11 @@ doctrine_phpcr:
                 - en
                 - de
 
-symfony_cmf_routing_extra:
+symfony_cmf_routing:
     route_basepath: /cms/routes
     chain:
         routers_by_id:
-            symfony_cmf_routing_extra.dynamic_router: 20
+            symfony_cmf_routing.dynamic_router: 20
             router.default: 100
     dynamic:
         enabled: true
@@ -92,7 +92,7 @@ symfony_cmf_routing_extra:
             demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
-            Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
+            Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:  symfony_cmf_routing.redirect_controller:redirectAction
             Symfony\Cmf\Bundle\BlogBundle\Document\Blog: symfony_cmf_blog.blog_controller:listAction
             Symfony\Cmf\Bundle\BlogBundle\Document\Post: symfony_cmf_blog.blog_controller:viewPostAction
 
@@ -163,8 +163,8 @@ sonata_admin:
             routing:
                 label: page routes
                 items:
-                    - symfony_cmf_routing_extra.route_admin
-                    - symfony_cmf_routing_extra.redirect_route_admin
+                    - symfony_cmf_routing.route_admin
+                    - symfony_cmf_routing.redirect_route_admin
             menu:
                 label: menu structure
                 items:
@@ -236,7 +236,7 @@ fos_js_routing:
         - admin_bundle_block_actionblock_*
         - admin_bundle_blog_blog_*
         - admin_bundle_blog_post_*
-        - symfony_cmf_routing_extra_route_admin_*
+        - symfony_cmf_routing_route_admin_*
         - admin_bundle_simplecms_page_*
         - symfony_cmf_tree_browser.phpcr_children
         - symfony_cmf_tree_browser.phpcr_move
