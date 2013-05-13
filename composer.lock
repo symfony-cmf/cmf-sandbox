@@ -3076,7 +3076,7 @@
                 "php": ">=5.3.2",
                 "symfony-cmf/core-bundle": "1.0.*",
                 "symfony-cmf/menu-bundle": "1.0.*",
-                "symfony-cmf/routing-extra-bundle": "1.0.*",
+                "symfony-cmf/routing-bundle": "1.1.*",
                 "symfony/framework-bundle": ">=2.1,<2.3-dev"
             },
             "suggest": {
@@ -3133,7 +3133,7 @@
                 "doctrine/phpcr-bundle": "To be able to use the CMF twig extension, 1.0.*",
                 "doctrine/phpcr-odm": "To be able to use the CMF twig extension, 1.0.*",
                 "symfony-cmf/routing": "To be able to use the CMF twig extension functions cmf_prev_linkable/cmf_next_linkable, 1.0.*",
-                "symfony-cmf/routing-extra-bundle": "To be able to enable the publish_workflow_listener, 1.0.*",
+                "symfony-cmf/routing-bundle": "To be able to enable the publish_workflow_listener, 1.1.*",
                 "symfony/security-bundle": "To be able to use the publish worklow system, >=2.1,<2.3-dev",
                 "symfony/twig-bundle": "To get access to the CMF twig extension, >=2.1,<2.3-dev"
             },
@@ -3324,23 +3324,23 @@
             "time": "2013-04-12 12:40:51"
         },
         {
-            "name": "symfony-cmf/routing-extra-bundle",
+            "name": "symfony-cmf/routing-bundle",
             "version": "dev-master",
-            "target-dir": "Symfony/Cmf/Bundle/RoutingExtraBundle",
+            "target-dir": "Symfony/Cmf/Bundle/RoutingBundle",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony-cmf/RoutingExtraBundle.git",
-                "reference": "0ef09de604700ae87265f533957908f171818631"
+                "url": "https://github.com/symfony-cmf/RoutingBundle.git",
+                "reference": "1be0837fd7374736de07335d53d37df9e6f738cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/RoutingExtraBundle/zipball/0ef09de604700ae87265f533957908f171818631",
-                "reference": "0ef09de604700ae87265f533957908f171818631",
+                "url": "https://api.github.com/repos/symfony-cmf/RoutingBundle/zipball/0ef09de604700ae87265f533957908f171818631",
+                "reference": "1be0837fd7374736de07335d53d37df9e6f738cd",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3",
-                "symfony-cmf/routing": ">=1.0.0-beta1,<1.1-dev",
+                "symfony-cmf/routing": "~1.1",
                 "symfony/framework-bundle": ">=2.1.7,<2.3-dev",
                 "symfony/monolog-bundle": ">=2.1,<2.3-dev"
             },
@@ -3368,7 +3368,7 @@
             },
             "autoload": {
                 "psr-0": {
-                    "Symfony\\Cmf\\Bundle\\RoutingExtraBundle": ""
+                    "Symfony\\Cmf\\Bundle\\RoutingBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3378,10 +3378,10 @@
             "authors": [
                 {
                     "name": "Symfony CMF Community",
-                    "homepage": "https://github.com/symfony-cmf/RoutingExtraBundle/contributors"
+                    "homepage": "https://github.com/symfony-cmf/RoutingBundle/contributors"
                 }
             ],
-            "description": "Symfony RoutingExtraBundle",
+            "description": "Symfony RoutingBundle",
             "homepage": "http://cmf.symfony.com",
             "keywords": [
                 "database",
@@ -3458,7 +3458,7 @@
                 "doctrine/phpcr-odm": "1.0.*",
                 "php": ">=5.3.2",
                 "symfony-cmf/content-bundle": "1.0.*",
-                "symfony-cmf/routing-extra-bundle": "<1.1, >1.0.0-alpha3",
+                "symfony-cmf/routing-bundle": "1.1.*",
                 "symfony/framework-bundle": ">=2.1,<2.3-dev"
             },
             "suggest": {
@@ -3517,7 +3517,7 @@
                 "symfony-cmf/content-bundle": "1.0.*",
                 "symfony-cmf/core-bundle": "1.0.*",
                 "symfony-cmf/menu-bundle": "1.0.*",
-                "symfony-cmf/routing-extra-bundle": "1.0.*",
+                "symfony-cmf/routing-bundle": "1.1.*",
                 "symfony-cmf/tree-browser-bundle": "1.0.*",
                 "symfony/framework-bundle": ">=2.1,<2.3-dev"
             },
