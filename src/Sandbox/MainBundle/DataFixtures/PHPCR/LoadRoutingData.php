@@ -12,8 +12,8 @@ use PHPCR\Util\NodeHelper;
 use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
-use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route;
-use Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute;
+use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
+use Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute;
 
 class LoadRoutingData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -35,7 +35,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('symfony_cmf_routing_extra.routing_repositoryroot');
+        $basepath = $this->container->getParameter('symfony_cmf_routing.routing_repositoryroot');
         $content_path = $this->container->getParameter('symfony_cmf_content.content_basepath');
 
         if ($session->itemExists($basepath)) {

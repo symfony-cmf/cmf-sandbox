@@ -45,7 +45,7 @@ class DemoTemplateContent implements RouteAwareInterface
     public $body;
 
     /**
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route", referencedBy="routeContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Document\Route", referencedBy="routeContent")
      */
     public $routes;
 
