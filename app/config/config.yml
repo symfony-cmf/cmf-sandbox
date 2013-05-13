@@ -92,7 +92,7 @@ symfony_cmf_routing_extra:
             demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
-            Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
+            Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:  symfony_cmf_routing_extra.redirect_controller:redirectAction
             Symfony\Cmf\Bundle\BlogBundle\Document\Blog: symfony_cmf_blog.blog_controller:listAction
             Symfony\Cmf\Bundle\BlogBundle\Document\Post: symfony_cmf_blog.blog_controller:viewPostAction
 
@@ -205,11 +205,11 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
         Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
-        Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route:
+        Symfony\Cmf\Bundle\RoutingBundle\Document\Route:
             valid_children:
-                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\Route
-                - Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute
-        Symfony\Cmf\Bundle\RoutingExtraBundle\Document\RedirectRoute:
+                - Symfony\Cmf\Bundle\RoutingBundle\Document\Route
+                - Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute
+        Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:
             valid_children: []
         Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode:
             valid_children:
