@@ -4,6 +4,7 @@
         "psr-0": { "": "src/" }
     },
     "minimum-stability": "dev",
+    "prefer-stable": false,
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.2.*",
@@ -22,15 +23,15 @@
         "symfony-cmf/create-bundle": "1.0.*",
         "jackalope/jackalope-jackrabbit": "1.0.*",
         "doctrine/doctrine-bundle": "1.2.*",
-        "doctrine/data-fixtures": "dev-master",
-        "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "liip/functional-test-bundle": "dev-master",
+        "doctrine/data-fixtures": "1.0.*",
+        "doctrine/doctrine-fixtures-bundle": "2.1.*",
+        "liip/functional-test-bundle": "1.0.*",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0.*",
         "lunetics/locale-bundle": "dev-master",
         "symfony-cmf/tree-browser-bundle":"1.0.*",
         "symfony-cmf/blog-bundle": "1.0.*",
-        "sonata-project/cache-bundle": "dev-master",
-        "eko/feedbundle": "dev-master"
+        "sonata-project/cache-bundle": "2.1.*",
+        "eko/feedbundle": "1.0.*"
     },
     "suggest": {
         "jackalope/jackalope-doctrine-dbal": "dev-master",
@@ -38,13 +39,13 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::initSubmodules",
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
         ],
         "post-update-cmd": [
-            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::initSubmodules",
+            "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
