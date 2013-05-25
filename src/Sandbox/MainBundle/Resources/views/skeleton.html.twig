@@ -21,7 +21,7 @@
             {% endstylesheets %}
 
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-                {% include "SymfonyCmfCreateBundle::includecssfiles.html.twig" %}
+                {% include "CmfCreateBundle::includecssfiles.html.twig" %}
             {% endif %}
         {% endblock %}
 
@@ -114,7 +114,7 @@
         </div>
 
         {% block bottom_scripts %}
-            {% render controller("symfony_cmf_create.jsloader.controller:includeJSFilesAction") %}
+            {% render controller("cmf_create.jsloader.controller:includeJSFilesAction") %}
         {% endblock %}
     </body>
 </html>

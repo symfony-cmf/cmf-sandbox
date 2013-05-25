@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController as BaseContentController;
 
 /**
- * Special routes to demo the features of the Doctrine Router in the SymfonyCmfRoutingBundle
+ * Special routes to demo the features of the Doctrine Router in the CmfRoutingBundle
  */
 class ContentController extends BaseContentController
 {
