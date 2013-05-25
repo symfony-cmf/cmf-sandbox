@@ -139,7 +139,8 @@ sonata_block:
             settings:
                 id: '/cms'
             contexts:   [admin]
-        symfony_cmf.block.action:
+    blocks_by_class:
+        Symfony\Cmf\Bundle\BlockBundle\Document\RssBlock:
             cache: symfony_cmf.block.cache.js_async
 
 sonata_admin:
