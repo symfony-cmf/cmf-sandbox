@@ -44,25 +44,25 @@ sonata_admin:
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
 
-symfony_cmf_tree:
+cmf_tree:
     resource: .
-    type: 'symfony_cmf_tree'
+    type: 'cmf_tree'
 
 test:
     pattern:  /hello
     defaults: { _controller: SandboxTestBundle:Test:index }
 
 create:
-    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/rest.xml"
+    resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"
 
 create_image:
-    resource: "@SymfonyCmfCreateBundle/Resources/config/routing/image.xml"
+    resource: "@CmfCreateBundle/Resources/config/routing/image.xml"
 
 liip_search:
-    resource: "@SymfonyCmfSearchBundle/Resources/config/routing.xml"
+    resource: "@CmfSearchBundle/Resources/config/routing.xml"
 
 block_cache:
-    resource: "@SymfonyCmfBlockBundle/Resources/config/routing/cache.xml"
+    resource: "@CmfBlockBundle/Resources/config/routing/cache.xml"
     prefix: /
 
 tree:
