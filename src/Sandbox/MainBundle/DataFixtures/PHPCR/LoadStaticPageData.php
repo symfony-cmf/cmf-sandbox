@@ -24,10 +24,10 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     {
         $session = $manager->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('symfony_cmf_content.static_basepath');
+        $basepath = $this->container->getParameter('cmf_content.static_basepath');
         NodeHelper::createPath($session, $basepath);
 
-        $basepath = $this->container->getParameter('symfony_cmf_content.content_basepath');
+        $basepath = $this->container->getParameter('cmf_content.content_basepath');
         NodeHelper::createPath($session, $basepath);
 
         $yaml = new Parser();

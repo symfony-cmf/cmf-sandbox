@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: phpcr.yml }
     - { resource: security.yml }
-    - { resource: @SymfonyCmfBlogBundle/Resources/config/routing/autoroute_default.yml }
+    - { resource: @CmfBlogBundle/Resources/config/routing/autoroute_default.yml }
 
 framework:
     #esi:             ~
@@ -81,11 +81,11 @@ doctrine_phpcr:
                 - en
                 - de
 
-symfony_cmf_routing:
+cmf_routing:
     route_basepath: /cms/routes
     chain:
         routers_by_id:
-            symfony_cmf_routing.dynamic_router: 20
+            cmf_routing.dynamic_router: 20
             router.default: 100
     dynamic:
         enabled: true
@@ -93,24 +93,24 @@ symfony_cmf_routing:
             demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
-            Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:  symfony_cmf_routing.redirect_controller:redirectAction
-            Symfony\Cmf\Bundle\BlogBundle\Document\Blog: symfony_cmf_blog.blog_controller:listAction
-            Symfony\Cmf\Bundle\BlogBundle\Document\Post: symfony_cmf_blog.blog_controller:viewPostAction
+            Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
+            Symfony\Cmf\Bundle\BlogBundle\Document\Blog: cmf_blog.blog_controller:listAction
+            Symfony\Cmf\Bundle\BlogBundle\Document\Post: cmf_blog.blog_controller:viewPostAction
 
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
 
         locales: %locales%
 
-symfony_cmf_simple_cms:
+cmf_simple_cms:
     routing:
         templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  SymfonyCmfSimpleCmsBundle:Page:index.html.twig
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  CmfSimpleCmsBundle:Page:index.html.twig
 
 knp_menu:
     twig: true
 
-symfony_cmf_create:
+cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent'
@@ -118,15 +118,15 @@ symfony_cmf_create:
         model_class: Symfony\Cmf\Bundle\CreateBundle\Document\Image
         controller_class: Symfony\Cmf\Bundle\CreateBundle\Controller\PHPCRImageController
 
-symfony_cmf_content:
+cmf_content:
     multilang:
       locales: %locales%
 
-symfony_cmf_menu:
+cmf_menu:
     multilang:
       locales: %locales%
 
-symfony_cmf_blog:
+cmf_blog:
     blog_basepath: /cms/content
 
 
@@ -141,7 +141,7 @@ sonata_block:
             contexts:   [admin]
     blocks_by_class:
         Symfony\Cmf\Bundle\BlockBundle\Document\RssBlock:
-            cache: symfony_cmf.block.cache.js_async
+            cache: cmf.block.cache.js_async
 
 sonata_admin:
     templates:
@@ -157,30 +157,30 @@ sonata_admin:
             content:
                 label: page content
                 items:
-                    - symfony_cmf_content.multilang.admin
-                    - symfony_cmf_block.simple_admin
-                    - symfony_cmf_block.container_admin
-                    - symfony_cmf_block.reference_admin
-                    - symfony_cmf_block.action_admin
+                    - cmf_content.multilang.admin
+                    - cmf_block.simple_admin
+                    - cmf_block.container_admin
+                    - cmf_block.reference_admin
+                    - cmf_block.action_admin
             routing:
                 label: page routes
                 items:
-                    - symfony_cmf_routing.route_admin
-                    - symfony_cmf_routing.redirect_route_admin
+                    - cmf_routing.route_admin
+                    - cmf_routing.redirect_route_admin
             menu:
                 label: menu structure
                 items:
-                    - symfony_cmf_menu.admin
-                    - symfony_cmf_menu.multilang.admin
+                    - cmf_menu.admin
+                    - cmf_menu.multilang.admin
             blog:
                 label: blog
                 items:
-                    - symfony_cmf_blog.admin
-                    - symfony_cmf_post.admin
+                    - cmf_blog.admin
+                    - cmf_post.admin
             simplecms:
                 label: simple cms (content/routing/menu as one)
                 items:
-                    - symfony_cmf_simple_cms.admin.page
+                    - cmf_simple_cms.admin.page
 
 sonata_doctrine_phpcr_admin:
     document_tree_defaults: [locale]
@@ -238,10 +238,10 @@ fos_js_routing:
         - admin_bundle_block_actionblock_*
         - admin_bundle_blog_blog_*
         - admin_bundle_blog_post_*
-        - symfony_cmf_routing_route_admin_*
+        - cmf_routing_route_admin_*
         - admin_bundle_simplecms_page_*
-        - symfony_cmf_tree_browser.phpcr_children
-        - symfony_cmf_tree_browser.phpcr_move
+        - cmf_tree_browser.phpcr_children
+        - cmf_tree_browser.phpcr_move
         - sonata.admin.doctrine_phpcr.phpcrodm_children
         - sonata.admin.doctrine_phpcr.phpcrodm_move
 
@@ -253,7 +253,7 @@ sensio_framework_extra:
 liip_search:
     restrict_by_language: true;
 
-symfony_cmf_search:
+cmf_search:
     translation_strategy: child
 #    translation_strategy: attribute
 #    search_path: /cms/simple

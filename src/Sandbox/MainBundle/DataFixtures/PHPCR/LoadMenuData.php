@@ -28,8 +28,8 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('symfony_cmf_menu.menu_basepath');
-        $content_path = $this->container->getParameter('symfony_cmf_content.content_basepath');
+        $basepath = $this->container->getParameter('cmf_menu.menu_basepath');
+        $content_path = $this->container->getParameter('cmf_content.content_basepath');
 
         NodeHelper::createPath($session, $basepath);
         $root = $dm->find(null, $basepath);
