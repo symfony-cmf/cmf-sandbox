@@ -6,10 +6,10 @@ php:
 
 env:
   - TRANSPORT=jackrabbit
-  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=ratatoskr
-  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=ratatoskr
-  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
-  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
+#  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=ratatoskr
+#  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=ratatoskr
+#  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
+#  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
   - TRANSPORT=doctrine_dbal
 
 before_script:
@@ -26,9 +26,9 @@ notifications:
   irc: "irc.freenode.org#symfony-cmf"
   email: "symfony-cmf-devs@googlegroups.com"
 
-matrix:
-  allow_failures:
-    - env: TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=ratatoskr
-    - env: TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=ratatoskr
-    - env: TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
-    - env: TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
+#matrix:
+#  allow_failures:
+#    - env: TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=ratatoskr
+#    - env: TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=ratatoskr
+#    - env: TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
+#    - env: TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
