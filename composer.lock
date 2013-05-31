@@ -769,7 +769,7 @@
                 "persistence",
                 "phpcr"
             ],
-            "time": "2013-05-28 20:12:46"
+            "time": "2013-05-30 21:10:01"
         },
         {
             "name": "doctrine/phpcr-odm",
@@ -1634,12 +1634,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/JMSSerializerBundle.git",
-                "reference": "ab2ca253c3e2fb12dfbe3f1048224661ebf25494"
+                "reference": "bc4c8ddf89c1daba6d24d696e261e088677f49af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/ab2ca253c3e2fb12dfbe3f1048224661ebf25494",
-                "reference": "ab2ca253c3e2fb12dfbe3f1048224661ebf25494",
+                "url": "https://api.github.com/repos/schmittjoh/JMSSerializerBundle/zipball/bc4c8ddf89c1daba6d24d696e261e088677f49af",
+                "reference": "bc4c8ddf89c1daba6d24d696e261e088677f49af",
                 "shasum": ""
             },
             "require": {
@@ -1693,7 +1693,7 @@
                 "serialization",
                 "xml"
             ],
-            "time": "2013-03-14 09:30:30"
+            "time": "2013-05-29 14:42:59"
         },
         {
             "name": "knplabs/knp-menu",
@@ -1814,12 +1814,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "3d25cde13c3202f87f4e4892e1c868d772d80d88"
+                "reference": "de188e471f59918b0b523b8fc346761c2e4ff1a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/3d25cde13c3202f87f4e4892e1c868d772d80d88",
-                "reference": "3d25cde13c3202f87f4e4892e1c868d772d80d88",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/de188e471f59918b0b523b8fc346761c2e4ff1a4",
+                "reference": "de188e471f59918b0b523b8fc346761c2e4ff1a4",
                 "shasum": ""
             },
             "require": {
@@ -1877,7 +1877,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-05-28 19:48:46"
+            "time": "2013-05-29 08:54:41"
         },
         {
             "name": "liip/functional-test-bundle",
@@ -1992,12 +1992,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunetics/LocaleBundle.git",
-                "reference": "93386231e9c44afd83de76f77ae71eaf37a1fe8c"
+                "reference": "c7275576ac8b926d07d0cfd03da648b313395b91"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lunetics/LocaleBundle/zipball/93386231e9c44afd83de76f77ae71eaf37a1fe8c",
-                "reference": "93386231e9c44afd83de76f77ae71eaf37a1fe8c",
+                "url": "https://api.github.com/repos/lunetics/LocaleBundle/zipball/c7275576ac8b926d07d0cfd03da648b313395b91",
+                "reference": "c7275576ac8b926d07d0cfd03da648b313395b91",
                 "shasum": ""
             },
             "require": {
@@ -2050,7 +2050,7 @@
                 "multilanguage",
                 "router"
             ],
-            "time": "2013-05-14 06:41:10"
+            "time": "2013-05-29 17:45:43"
         },
         {
             "name": "midgard/createphp",
@@ -2813,7 +2813,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2013-05-25 18:41:26"
+            "time": "2013-05-30 05:53:54"
         },
         {
             "name": "sonata-project/exporter",
@@ -3300,7 +3300,7 @@
                 "Symfony CMF",
                 "menu"
             ],
-            "time": "2013-05-25 18:03:41"
+            "time": "2013-05-29 09:54:20"
         },
         {
             "name": "symfony-cmf/routing",
@@ -3309,12 +3309,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/Routing.git",
-                "reference": "1.1.0-alpha2"
+                "reference": "1dabb1f3503bb2539df9cc20444a258be4011c28"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/Routing/zipball/1.1.0-alpha2",
-                "reference": "1.1.0-alpha2",
+                "url": "https://api.github.com/repos/symfony-cmf/Routing/zipball/1dabb1f3503bb2539df9cc20444a258be4011c28",
+                "reference": "1dabb1f3503bb2539df9cc20444a258be4011c28",
                 "shasum": ""
             },
             "require": {
@@ -3353,7 +3353,7 @@
                 "database",
                 "routing"
             ],
-            "time": "2013-05-28 19:50:20"
+            "time": "2013-05-31 11:26:26"
         },
         {
             "name": "symfony-cmf/routing-auto-bundle",
@@ -3480,7 +3480,7 @@
                 "database",
                 "routing"
             ],
-            "time": "2013-05-28 12:32:54"
+            "time": "2013-05-31 06:17:04"
         },
         {
             "name": "symfony-cmf/search-bundle",
@@ -4038,12 +4038,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "f6c00587f8b2d6e680d09fd6015fa521f9c72327"
+                "reference": "fca6a9562dc032a7ba3ab8278b731b72efa8bd9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/f6c00587f8b2d6e680d09fd6015fa521f9c72327",
-                "reference": "f6c00587f8b2d6e680d09fd6015fa521f9c72327",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/fca6a9562dc032a7ba3ab8278b731b72efa8bd9c",
+                "reference": "fca6a9562dc032a7ba3ab8278b731b72efa8bd9c",
                 "shasum": ""
             },
             "require": {
@@ -4079,7 +4079,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-05-27 06:08:37"
+            "time": "2013-05-29 14:58:12"
         },
         {
             "name": "zendframework/zend-escaper",
