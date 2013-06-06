@@ -171,8 +171,8 @@ sonata_admin:
             menu:
                 label: menu structure
                 items:
-                    - cmf_menu.admin
-                    - cmf_menu.multilang.admin
+                    - cmf_menu.menu_admin
+                    - cmf_menu.multilang.menu_admin
             blog:
                 label: blog
                 items:
@@ -214,6 +214,14 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute
         Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:
             valid_children: []
+        Symfony\Cmf\Bundle\MenuBundle\Document\Menu:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode
+        Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenu:
+            valid_children:
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode
+                - Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode
         Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode
