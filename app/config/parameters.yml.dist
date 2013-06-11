@@ -4,7 +4,7 @@ parameters:
 
     secret: ThisTokenIsNotSoSecretChangeIt
 
-    # a little hack to avoid errors on missing node/coffescript.
+    # a little hack to avoid errors on missing node/coffeescript.
     # remove -disabled if you want coffee.
     coffee.extension: "\.coffee-disabled$"
     coffee.bin: ''

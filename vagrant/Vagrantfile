@@ -20,7 +20,7 @@ Vagrant::Config.run do |config|
 
   config.vm.network :hostonly, "172.22.22.22"
   config.vm.share_folder "v-root", "/vagrant", ".." , :nfs => true
-  # whithout this symlinks can't be created on the shared folder
+  # without this symlinks can't be created on the shared folder
   config.vm.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
 
 
