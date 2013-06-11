@@ -82,6 +82,9 @@ doctrine_phpcr:
                 - en
                 - de
 
+cmf_core:
+    role: CAN_VIEW_NON_PUBLISHED
+
 cmf_routing:
     route_basepath: /cms/routes
     chain:
