@@ -82,6 +82,9 @@ doctrine_phpcr:
                 - en
                 - de
 
+cmf_core:
+    role: CAN_VIEW_NON_PUBLISHED
+
 cmf_routing:
     route_basepath: /cms/routes
     chain:
@@ -145,6 +148,11 @@ sonata_block:
             cache: cmf.block.cache.js_async
 
 sonata_admin:
+    extensions:
+        cmf_core.admin_extension.publish_workflow:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface
+
     templates:
         # default global templates
         ajax:    SonataAdminBundle::ajax_layout.html.twig

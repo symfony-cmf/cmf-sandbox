@@ -46,6 +46,7 @@ class LoadBlogData extends ContainerAware implements FixtureInterface, OrderedFi
             $p->setDate(new \DateTime());
             $p->setBody($this->getWords());
             $p->setBlog($blog);
+            $p->setPublishable(true);
             $dm->persist($p);
         }
 
