@@ -15,5 +15,14 @@
             <tag name="doctrine_phpcr.event_listener" event="postLoad" />
             <tag name="doctrine_phpcr.event_listener" event="prePersist" />
         </service>
+
+        <service id="liip_imagine.data.loader.phpcr" class="Liip\ImagineBundle\Imagine\Data\Loader\DoctrinePHPCRLoader">
+            <tag name="liip_imagine.data.loader" loader="doctrine_phpcr" />
+            <argument type="service" id="liip_imagine" />
+            <argument>%liip_imagine.formats%</argument>
+            <argument/>
+            <argument type="service" id="doctrine_phpcr.odm.document_manager" />
+            <argument>Doctrine\ODM\PHPCR\Document\Image</argument>
+        </service>
     </services>
 </container>

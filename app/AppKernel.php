@@ -35,6 +35,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\BlogBundle\CmfBlogBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
+            new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
 
             // language switcher
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),

@@ -25,6 +25,8 @@ class LoadRootNodeData extends ContainerAware implements FixtureInterface, Order
      */
     public function load(ObjectManager $manager)
     {
+        return;
+
         $session = $manager->getPhpcrSession();
 
         // Create media root
