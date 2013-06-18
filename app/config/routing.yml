@@ -40,6 +40,30 @@ sonata_admin:
     resource: .
     type: sonata_admin
     prefix: /{_locale}/admin
+    requirements:
+        id:  .+
+
+sonata_media_gallery:
+    resource: '@SonataMediaBundle/Resources/config/routing/gallery.xml'
+    prefix: /media/gallery
+    requirements:
+        id:  .+
+
+sonata_media_media:
+    resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
+    prefix: /media
+    requirements:
+        id:  .+
+
+#sonata_media_pixlr:
+#    resource: '@SonataMediaBundle/Resources/config/routing/pixlr.xml'
+#    prefix: /admin/media
+#    requirements:
+#        id:  .+
+
+_imagine:
+    resource: .
+    type:     imagine
 
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml

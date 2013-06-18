@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-phpcr-mapping xmlns="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
+                        http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
+
+    <document name="Sandbox\MediaBundle\Document\Gallery"
+              repository-class="Sandbox\MediaBundle\Document\GalleryRepository"
+              referenceable="true" >
+
+        <id name="id" type="id">
+            <generator strategy="repository" />
+        </id>
+
+    </document>
+
+</doctrine-phpcr-mapping>

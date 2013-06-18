@@ -21,6 +21,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'CmfMediaBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -71,6 +74,9 @@ doctrine_phpcr:
     odm:
         auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
+        mappings:
+            SonataMediaBundle:
+                prefix: Sonata\MediaBundle\PHPCR
         locales:
             en:
                 - de
@@ -133,6 +139,11 @@ cmf_menu:
 cmf_blog:
     blog_basepath: /cms/content
 
+cmf_block:
+    imagine: true
+
+cmf_media:
+    imagine_filter: image_upload_thumbnail
 
 sonata_block:
     default_contexts: [cms]
@@ -171,6 +182,9 @@ sonata_admin:
                     - cmf_block.container_admin
                     - cmf_block.reference_admin
                     - cmf_block.action_admin
+                    - cmf_block.imagine.multilang_slideshow_admin
+                    - cmf_block.imagine.multilang_imagine_admin
+                    - sandbox_banner.admin.image_block                    
             routing:
                 label: page routes
                 items:
@@ -186,6 +200,11 @@ sonata_admin:
                 items:
                     - cmf_blog.admin
                     - cmf_post.admin
+            media:
+                label: media library
+                items:
+                    - sonata.media.admin.media
+                    - sonata.media.admin.gallery                    
             simplecms:
                 label: simple cms (content/routing/menu as one)
                 items:
@@ -203,11 +222,22 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
+                - Sandbox\BannerBundle\Document\ImageBlock
         Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock:
             valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock:
             valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Document\SlideshowBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Document\ImagineBlock
+        Symfony\Cmf\Bundle\BlockBundle\Document\MultilangSlideshowBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Document\MultilangImagineBlock
+        Symfony\Cmf\Bundle\BlockBundle\Document\ImagineBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Document\MultilangImagineBlock:
             valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock:
             valid_children:
@@ -215,6 +245,11 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\SlideshowBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\MultilangSlideshowBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\ImagineBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\MultilangImagineBlock
+                - Sandbox\BannerBundle\Document\ImageBlock
         Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
         Symfony\Cmf\Bundle\RoutingBundle\Document\Route:
             valid_children:
@@ -236,6 +271,32 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\BlogBundle\Document\Post:
             valid_children: []
 
+        # media
+        Sandbox\MediaBundle\Document\MediaRoot:
+            image: /bundles/sonataadmin/famfamfam/folder_image.png
+            valid_children:
+                - Sandbox\MediaBundle\Document\Media
+        Sandbox\MediaBundle\Document\GalleryRoot:
+            image: /bundles/sonataadmin/famfamfam/images.png
+            valid_children:
+                - Sandbox\MediaBundle\Document\Gallery
+        Sandbox\MediaBundle\Document\Media:
+            image: /bundles/sonataadmin/famfamfam/image.png
+            valid_children: []
+        Sandbox\MediaBundle\Document\Gallery:
+            valid_children: []
+        Sandbox\MediaBundle\Document\GalleryHasMedia:
+            valid_children: []
+
+        # banner
+        Sandbox\BannerBundle\Document\ImageBlock:
+            image: /bundles/sonataadmin/famfamfam/images.png
+            valid_children:
+                - Sandbox\BannerBundle\Document\BannerImage
+        Sandbox\BannerBundle\Document\BannerImage:
+            image: /bundles/sonataadmin/famfamfam/picture.png
+            valid_children: []
+
 fos_js_routing:
     routes_to_expose:
         - admin_bundle_menu_menunode_*
@@ -253,6 +314,13 @@ fos_js_routing:
         - cmf_tree_browser.phpcr_move
         - sonata.admin.doctrine_phpcr.phpcrodm_children
         - sonata.admin.doctrine_phpcr.phpcrodm_move
+
+        # media
+        - admin_sandbox_media_media_*
+        - admin_sandbox_media_gallery_*
+
+        # banner
+        - admin_sandbox_banner_imageblock_*
 
 sensio_framework_extra:
     view:    { annotations: false }
@@ -285,3 +353,87 @@ lunetics_locale:
 #            type: file_system
 #        nodes:
 #            type: file_system
+
+#jms_di_extra:
+#    locations:
+#        bundles: [ SandboxMediaBundle ]
+#    doctrine_integration: true # currently on supported for Doctrine ORM
+
+# SonataMediaBundle
+# more information can be found here http://sonata-project.org/bundles/media
+sonata_media:
+    class:
+        media:              Sandbox\MediaBundle\Document\Media
+        gallery:            Sandbox\MediaBundle\Document\Gallery
+        gallery_has_media:  Sandbox\MediaBundle\Document\GalleryHasMedia
+    default_context: default
+    db_driver: doctrine_phpcr # or doctrine_orm, doctrine_mongodb
+    contexts:
+        default: # the default context is mandatory
+            providers:
+                - sonata.media.provider.image
+#                - sonata.media.provider.dailymotion
+#                - sonata.media.provider.youtube
+#                - sonata.media.provider.file
+#                - sonata.media.provider.vimeo
+
+            formats:
+                # if using liip_imagine these formats are only used in the view of the admin
+                # define a format as filter_set in liip_imagine: {context}_{format}
+                small: { width: 100 , quality: 70 }
+                big:   { width: 500 , quality: 70 }
+
+    cdn:
+        # define the base url for the uploaded media
+        server:
+            path: /uploads/media
+#
+    filesystem:
+        # define where the uploaded file will be stored
+        local:
+            directory: %kernel.root_dir%/../web/uploads/media
+            create: true
+
+#    providers:
+#        image:
+#            resizer: sonata.media.resizer.square
+
+#    pixlr:
+#        enabled: true
+#        referrer: Demo - Sonata Project
+
+# The LiipImagineBundle can be used if you want to convert on demand an image
+# to a specific format. (ie a controller render the file)
+# more information can be found here : https://github.com/liip/LiipImagineBundle
+liip_imagine:
+    filter_sets:
+        # sonata media admin list thumbs
+        admin:
+            quality: 70
+            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [75, 60], mode: outbound }
+
+        # sonata media admin context default filters
+        default_small:
+            quality: 70
+            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [100, 75], mode: outbound }
+
+        default_big:
+            controller_action: 'SonataMediaBundle:Media:liipImagineFilter'
+            filters:
+                thumbnail: { size: [500, 200], mode: outbound }
+
+        # define the filter to be used with the image preview
+        image_upload_thumbnail:
+            data_loader: cmf_media_doctrine_phpcr
+            filters:
+                thumbnail: { size: [100, 100], mode: outbound }
+
+        cmf_block:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                thumbnail: { size: [50, 50], mode: outbound }

@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="sandbox_banner.block.image.class">Sandbox\BannerBundle\Block\MediaBlockService</parameter>
+        <parameter key="sandbox_banner.admin.image_block.class">Sandbox\BannerBundle\Admin\ImageBlockAdmin</parameter>
+        <parameter key="sandbox_banner.image_block.class">Sandbox\BannerBundle\Document\ImageBlock</parameter>
+        <parameter key="sandbox_banner.admin.banner_image.class">Sandbox\BannerBundle\Admin\BannerImageAdmin</parameter>
+        <parameter key="sandbox_banner.banner_image.class">Sandbox\BannerBundle\Document\BannerImage</parameter>
+    </parameters>
+
+    <services>
+        <service id="sandbox_banner.block.image" class="%sandbox_banner.block.image.class%">
+            <tag name="sonata.block" />
+            <argument>sandbox_banner.block.image</argument>
+            <argument type="service" id="templating" />
+        </service>
+
+        <service id="sandbox_banner.admin.image_block" class="%sandbox_banner.admin.image_block.class%">
+            <tag name="sonata.admin" manager_type="doctrine_phpcr" group="sandbox_banner" label="dashboard.label_banner_image_block" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%sandbox_banner.image_block.class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setRoot">
+                <argument>%cmf_content.content_basepath%</argument>
+            </call>
+            <call method="setTranslationDomain">
+                <argument>ImageBlockAdmin</argument>
+            </call>
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+        </service>
+
+        <service id="sandbox_banner.admin.banner_image" class="%sandbox_banner.admin.banner_image.class%">
+            <tag name="sonata.admin" manager_type="doctrine_phpcr" group="sandbox_banner" label="label_banner_image" label_translator_strategy="sonata.admin.label.strategy.underscore" />
+            <argument />
+            <argument>%sandbox_banner.banner_image.class%</argument>
+            <argument>SonataAdminBundle:CRUD</argument>
+
+            <call method="setTranslationDomain">
+                <argument>BannerImageAdmin</argument>
+            </call>
+            <call method="setRouteBuilder">
+                <argument type="service" id="sonata.admin.route.path_info_slashes" />
+            </call>
+        </service>
+    </services>
+</container>

@@ -31,8 +31,34 @@
         "symfony-cmf/routing-auto-bundle": "1.0.0-alpha2",
         "symfony-cmf/blog-bundle": "1.0.0-alpha2",
         "sonata-project/cache-bundle": "2.1.*",
-        "eko/feedbundle": "1.0.*"
+        "eko/feedbundle": "1.0.*",
+        "sonata-project/media-bundle": "2.2.*",
+        "liip/imagine-bundle": "1.0.*",
+        "symfony-cmf/media-bundle": "dev-master"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "symfony-cmf/media-bundle",
+                "autoload":{
+                    "psr-0":{
+                        "Symfony\\Cmf\\Bundle\\MediaBundle": ""
+                    }
+                },
+                "version": "dev-master",
+                "target-dir": "Symfony/Cmf/Bundle/MediaBundle",
+                "source": {
+                    "reference": "define-interfaces",
+                    "url": "https://github.com/symfony-cmf/MediaBundle.git",
+                    "type": "git"
+                }
+            },
+            "require": {
+                "php": ">=5.3.2"
+            }
+        }
+    ],
     "suggest": {
         "jackalope/jackalope-doctrine-dbal": "1.0.0-alpha1",
         "midgard/phpcr": "dev-master"

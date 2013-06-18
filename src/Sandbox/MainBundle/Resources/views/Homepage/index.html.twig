@@ -9,11 +9,10 @@
 
     <hr/>
 
-    <div class="row">
-        {{ sonata_block_render({
-            'name': 'additionalInfoBlock'
-        }) }}
-    </div>
+    {{ sonata_block_render({ 'name': 'additionalInfoBlock' }, {
+        'divisibleBy': 3,
+        'divisibleClass': 'row'
+    }) }}
 
     <div class="row">
         <div class="span3">
