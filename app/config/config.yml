@@ -21,6 +21,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'CmfMediaBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -121,10 +124,11 @@ cmf_create:
     phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent'
-    image:
-        enabled: true
-        model_class: Symfony\Cmf\Bundle\CreateBundle\Document\Image
-        controller_class: Symfony\Cmf\Bundle\CreateBundle\Controller\PHPCRImageController
+
+cmf_block:
+    persistence:
+        phpcr:
+            enabled: true
 
 sonata_block:
     default_contexts: [cms]
@@ -175,6 +179,7 @@ sonata_admin:
                     - cmf_block.container_admin
                     - cmf_block.reference_admin
                     - cmf_block.action_admin
+                    - cmf_block.imagine.slideshow_admin
             routing:
                 label: URLs
                 items:
@@ -213,12 +218,18 @@ sonata_doctrine_phpcr_admin:
             valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock:
             valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock:
+            valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock:
             valid_children:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
         Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
@@ -270,3 +281,20 @@ lunetics_locale:
 #            type: file_system
 #        nodes:
 #            type: file_system
+
+# The LiipImagineBundle can be used if you want to convert on demand an image
+# to a specific format. (ie a controller render the file)
+# more information can be found here : https://github.com/liip/LiipImagineBundle
+liip_imagine:
+    filter_sets:
+        # define the filter to be used with the image preview
+        image_upload_thumbnail:
+            data_loader: cmf_media_doctrine_phpcr
+            filters:
+                thumbnail: { size: [100, 100], mode: outbound }
+
+        cmf_block:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                thumbnail: { size: [50, 50], mode: outbound }
