@@ -29,7 +29,7 @@ class AdminTest extends WebTestCase
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertContains('Create', $response->getContent());
 
-        $this->assertCount(6, $crawler->filter('.control-group'));
+        $this->assertCount(9, $crawler->filter('.control-group'));
         $this->assertContains('Parent', $crawler->filter('.control-group')->first()->children()->first()->text());
         $this->assertContains(' *', $crawler->filter('.control-group')->first()->children()->first()->text());
     }
@@ -44,7 +44,7 @@ class AdminTest extends WebTestCase
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertContains('Edit &quot;External Link&quot;', $response->getContent());
 
-        $this->assertCount(6, $crawler->filter('.control-group'));
+        $this->assertCount(9, $crawler->filter('.control-group'));
         $this->assertContains('Parent', $crawler->filter('.control-group')->first()->children()->first()->text());
         $this->assertContains(' *', $crawler->filter('.control-group')->first()->children()->first()->text());
     }
