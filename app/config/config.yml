@@ -82,9 +82,6 @@ doctrine_phpcr:
                 - en
                 - de
 
-cmf_core:
-    role: CAN_VIEW_NON_PUBLISHED
-
 cmf_routing:
     route_basepath: /cms/routes
     chain:
@@ -149,9 +146,13 @@ sonata_block:
 
 sonata_admin:
     extensions:
-        cmf_core.admin_extension.publish_workflow:
+        cmf_core.admin_extension.publish_workflow.time_period:
             implements:
-                - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishWorkflowInterface
+                - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface
+
+        cmf_core.admin_extension.publish_workflow.publishable:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface
 
     templates:
         # default global templates
