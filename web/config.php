@@ -78,8 +78,8 @@ $minorProblems = $symfonyRequirements->getFailedRecommendations();
 
                         <ul class="symfony-install-continue">
                             <?php if (!count($majorProblems)): ?>
-                                <li><a href="app_dev.php/_configurator/">Configure your Symfony Application online</a></li>
-                                <li><a href="app_dev.php/">Bypass configuration and go to the Welcome page</a></li>
+                                <!--li><a href="app_dev.php/_configurator/">Configure your Symfony Application online</a></li-->
+                                <li><a href="app_dev.php/"><!--Bypass configuration and -->Go to the Welcome page</a></li>
                             <?php endif; ?>
                             <li><a href="config.php">Re-check configuration</a></li>
                         </ul>
