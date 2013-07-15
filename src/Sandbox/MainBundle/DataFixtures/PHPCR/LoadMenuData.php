@@ -13,6 +13,8 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
+use Symfony\Cmf\Bundle\MenuBundle\Document\Menu;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenu;
 
 class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -73,7 +75,12 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
      */
     protected function createMenuNode($dm, $parent, $name, $label, $content, $uri = null, $route = null)
     {
-        $MenuNode = is_array($label) ? new MultilangMenuNode() : new MenuNode();
+        if (!$parent instanceof MenuNode) {
+            $MenuNode = is_array($label) ? new MultilangMenu() : new Menu();
+        } else {
+            $MenuNode = is_array($label) ? new MultilangMenuNode() : new MenuNode();
+        }
+
         $MenuNode->setParent($parent);
         $MenuNode->setName($name);
 
