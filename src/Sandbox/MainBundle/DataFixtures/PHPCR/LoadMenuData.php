@@ -2,8 +2,9 @@
 
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
 use PHPCR\RepositoryInterface;
+use Doctrine\ODM\PHPCR\DocumentManager;
+use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -36,8 +37,9 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         NodeHelper::createPath($session, $basepath);
         $root = $dm->find(null, $basepath);
 
-        /** @var $MenuNode MenuNode */
-        $main = $this->createMenuNode($dm, $root, 'main', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil'), $dm->find(null, "$content_path/home"));
+        $labels = array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil');
+        /** @var $main Menu */
+        $main = $this->createMenuNode($dm, $root, 'main', $labels, $dm->find(null, "$content_path/home"));
         $main->setChildrenAttributes(array("class" => "menu_main"));
 
         if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
@@ -71,38 +73,38 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
     }
 
     /**
-     * @return a Navigation instance with the specified information
+     * @return MenuNode a Navigation instance with the specified information
      */
-    protected function createMenuNode($dm, $parent, $name, $label, $content, $uri = null, $route = null)
+    protected function createMenuNode(DocumentManager $dm, $parent, $name, $label, $content, $uri = null, $route = null)
     {
         if (!$parent instanceof MenuNode) {
-            $MenuNode = is_array($label) ? new MultilangMenu() : new Menu();
+            $menuNode = is_array($label) ? new MultilangMenu() : new Menu();
         } else {
-            $MenuNode = is_array($label) ? new MultilangMenuNode() : new MenuNode();
+            $menuNode = is_array($label) ? new MultilangMenuNode() : new MenuNode();
         }
 
-        $MenuNode->setParent($parent);
-        $MenuNode->setName($name);
+        $menuNode->setParent($parent);
+        $menuNode->setName($name);
 
-        $dm->persist($MenuNode); // do persist before binding translation
+        $dm->persist($menuNode); // do persist before binding translation
 
         if (null !== $content) {
-            $MenuNode->setContent($content);
+            $menuNode->setContent($content);
         } else if (null !== $uri) {
-            $MenuNode->setUri($uri);
+            $menuNode->setUri($uri);
         } else if (null !== $route) {
-            $MenuNode->setRoute($route);
+            $menuNode->setRoute($route);
         }
 
         if (is_array($label)) {
             foreach ($label as $locale => $l) {
-                $MenuNode->setLabel($l);
-                $dm->bindTranslation($MenuNode, $locale);
+                $menuNode->setLabel($l);
+                $dm->bindTranslation($menuNode, $locale);
             }
         } else {
-            $MenuNode->setLabel($label);
+            $menuNode->setLabel($label);
         }
 
-        return $MenuNode;
+        return $menuNode;
     }
 }
