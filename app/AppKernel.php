@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\BlogBundle\CmfBlogBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
+            new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
 
             // language switcher
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
@@ -51,6 +52,9 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
+            // Media support
+            new Liip\ImagineBundle\LiipImagineBundle(),
 
             // jackalope doctrine caching
             // new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),

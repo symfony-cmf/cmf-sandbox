@@ -21,6 +21,9 @@ framework:
 twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
+    form:
+        resources:
+            - 'CmfMediaBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -130,6 +133,11 @@ cmf_menu:
 cmf_blog:
     blog_basepath: /cms/content
 
+cmf_block:
+    imagine: true
+
+cmf_media:
+    imagine_filter: image_upload_thumbnail
 
 sonata_block:
     default_contexts: [cms]
@@ -172,6 +180,7 @@ sonata_admin:
                     - cmf_block.container_admin
                     - cmf_block.reference_admin
                     - cmf_block.action_admin
+                    - cmf_block.imagine.multilang_slideshow_admin
             routing:
                 label: page routes
                 items:
@@ -210,12 +219,26 @@ sonata_doctrine_phpcr_admin:
             valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock:
             valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Document\SlideshowBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Document\ImagineBlock
+        Symfony\Cmf\Bundle\BlockBundle\Document\MultilangSlideshowBlock:
+            valid_children:
+                - Symfony\Cmf\Bundle\BlockBundle\Document\MultilangImagineBlock
+        Symfony\Cmf\Bundle\BlockBundle\Document\ImagineBlock:
+            valid_children: []
+        Symfony\Cmf\Bundle\BlockBundle\Document\MultilangImagineBlock:
+            valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock:
             valid_children:
                 - Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\SlideshowBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\MultilangSlideshowBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\ImagineBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Document\MultilangImagineBlock
         Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
         Symfony\Cmf\Bundle\RoutingBundle\Document\Route:
             valid_children:
@@ -294,3 +317,20 @@ lunetics_locale:
 #            type: file_system
 #        nodes:
 #            type: file_system
+
+# The LiipImagineBundle can be used if you want to convert on demand an image
+# to a specific format. (ie a controller render the file)
+# more information can be found here : https://github.com/liip/LiipImagineBundle
+liip_imagine:
+    filter_sets:
+        # define the filter to be used with the image preview
+        image_upload_thumbnail:
+            data_loader: cmf_media_doctrine_phpcr
+            filters:
+                thumbnail: { size: [100, 100], mode: outbound }
+
+        cmf_block:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                thumbnail: { size: [50, 50], mode: outbound }
