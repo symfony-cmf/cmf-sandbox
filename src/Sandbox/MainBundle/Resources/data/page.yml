@@ -33,8 +33,8 @@ static:
                     child2:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
                         properties:
-                            title: Another editable SimpleBlock
-                            content: Both title and content of this block are editable.
+                            title: Admin Credentials
+                            content: To log into the <a href="admin/dashboard">backend admin</a>, use the username 'admin' and the password 'admin'.
                     child3:
                         class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
                         actionName: SandboxMainBundle:Default:block

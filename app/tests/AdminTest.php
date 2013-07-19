@@ -6,7 +6,7 @@ class AdminTest extends WebTestCase
 {
     public function testList()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $client->request('GET', '/en/admin/bundle/menu/menunode/list');
 
@@ -21,7 +21,7 @@ class AdminTest extends WebTestCase
 
     public function testCreate()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $crawler = $client->request('GET', '/en/admin/bundle/menu/menunode/create');
 
@@ -36,7 +36,7 @@ class AdminTest extends WebTestCase
 
     public function testEdit()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $crawler = $client->request('GET', '/en/admin/bundle/menu/menunode/cms/menu/main/demo-item/external-item/edit');
 

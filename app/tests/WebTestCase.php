@@ -37,4 +37,13 @@ abstract class WebTestCase extends BaseWebTestCase
             ->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)
         ;
     }
+
+    protected function createClientAuthenticated(array $options = array(), array $server = array())
+    {
+        $server = array_merge($server, array(
+            'PHP_AUTH_USER' => 'admin',
+            'PHP_AUTH_PW'   => 'admin',
+        ));
+        return $this->createClient($options, $server);
+    }
 }

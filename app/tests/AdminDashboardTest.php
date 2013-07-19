@@ -6,7 +6,7 @@ class AdminDashboardTest extends WebTestCase
 {
     public function testRedirectToDashboard()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $client->request('GET', '/admin');
 
@@ -27,7 +27,7 @@ class AdminDashboardTest extends WebTestCase
 
     public function testContents()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $crawler = $client->request('GET', '/en/admin/dashboard');
 

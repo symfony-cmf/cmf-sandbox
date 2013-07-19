@@ -6,7 +6,7 @@ class BlogControllerTest extends WebTestCase
 {
     public function testList()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $crawler = $client->request('GET', '/blog/cmf-blog');
 
