@@ -1,5 +1,8 @@
 {
     "name": "symfony-cmf/sandbox",
+    "description": "Demo Sandbox for the Symfony Content Management Framework",
+    "homepage": "http://cmf.symfony.com",
+    "license": "MIT",
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -7,34 +10,35 @@
     "prefer-stable": false,
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "2.2.*",
+        "symfony/symfony": "2.3.*",
         "twig/extensions": "1.0.*",
-        "symfony/assetic-bundle": "2.1.*",
-        "symfony/swiftmailer-bundle": "2.2.*",
-        "symfony/monolog-bundle": "2.2.*",
-        "sensio/distribution-bundle": "2.2.*",
-        "sensio/framework-extra-bundle": "2.2.*",
-        "sensio/generator-bundle": "2.2.*",
-        "jms/security-extra-bundle": "1.4.*",
-        "jms/di-extra-bundle": "1.3.*",
-        "symfony-cmf/symfony-cmf": "1.0.0-alpha1",
-        "symfony-cmf/simple-cms-bundle": "1.0.0-alpha2",
-        "symfony-cmf/search-bundle": "1.0.0-alpha1",
-        "symfony-cmf/create-bundle": "1.0.0-alpha1",
-        "jackalope/jackalope-jackrabbit": "1.0.0-beta1",
+        "symfony/assetic-bundle": "2.3.*",
+        "symfony/swiftmailer-bundle": "2.3.*",
+        "symfony/monolog-bundle": "2.3.*",
+        "sensio/distribution-bundle": "2.3.*",
+        "sensio/framework-extra-bundle": "2.3.*",
+        "sensio/generator-bundle": "2.3.*",
+        "symfony-cmf/symfony-cmf": "1.0.0-beta2",
+        "symfony-cmf/simple-cms-bundle": "1.0.0-beta2",
+        "symfony-cmf/search-bundle": "1.0.0-beta1",
+        "symfony-cmf/create-bundle": "1.0.0-beta2",
+        "symfony-cmf/routing-auto-bundle": "1.0.0-alpha3",
+        "symfony-cmf/blog-bundle": "1.0.0-beta1",
+        "jackalope/jackalope-jackrabbit": "1.0.0-beta3",
         "doctrine/doctrine-bundle": "1.2.*",
         "doctrine/data-fixtures": "1.0.*",
         "doctrine/doctrine-fixtures-bundle": "2.1.*",
-        "liip/functional-test-bundle": "1.0.*",
-        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.0-alpha2",
-        "lunetics/locale-bundle": "2.2.*",
-        "symfony-cmf/routing-auto-bundle": "1.0.0-alpha1",
-        "symfony-cmf/blog-bundle": "1.0.0-alpha1",
         "sonata-project/cache-bundle": "2.1.*",
-        "eko/feedbundle": "1.0.*"
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.0.0-beta2",
+        "eko/feedbundle": "1.0.*",
+        "lunetics/locale-bundle": "2.2.*",
+        "liip/functional-test-bundle": "1.0.*"
+    },
+    "require-dev": {
+        "symfony-cmf/testing": "1.0.*"
     },
     "suggest": {
-        "jackalope/jackalope-doctrine-dbal": "1.0.0-alpha1",
+        "jackalope/jackalope-doctrine-dbal": "1.0.0-beta1",
         "midgard/phpcr": "dev-master"
     },
     "scripts": {

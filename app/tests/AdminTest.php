@@ -6,7 +6,7 @@ class AdminTest extends WebTestCase
 {
     public function testList()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $client->request('GET', '/en/admin/bundle/menu/menunode/list');
 
@@ -21,7 +21,7 @@ class AdminTest extends WebTestCase
 
     public function testCreate()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $crawler = $client->request('GET', '/en/admin/bundle/menu/menunode/create');
 
@@ -29,14 +29,14 @@ class AdminTest extends WebTestCase
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertContains('Create', $response->getContent());
 
-        $this->assertCount(6, $crawler->filter('.control-group'));
+        $this->assertCount(11, $crawler->filter('.control-group'));
         $this->assertContains('Parent', $crawler->filter('.control-group')->first()->children()->first()->text());
         $this->assertContains(' *', $crawler->filter('.control-group')->first()->children()->first()->text());
     }
 
     public function testEdit()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $crawler = $client->request('GET', '/en/admin/bundle/menu/menunode/cms/menu/main/demo-item/external-item/edit');
 
@@ -44,7 +44,7 @@ class AdminTest extends WebTestCase
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertContains('Edit &quot;External Link&quot;', $response->getContent());
 
-        $this->assertCount(6, $crawler->filter('.control-group'));
+        $this->assertCount(11, $crawler->filter('.control-group'));
         $this->assertContains('Parent', $crawler->filter('.control-group')->first()->children()->first()->text());
         $this->assertContains(' *', $crawler->filter('.control-group')->first()->children()->first()->text());
     }

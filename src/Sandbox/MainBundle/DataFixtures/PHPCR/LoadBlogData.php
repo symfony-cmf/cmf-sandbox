@@ -30,7 +30,7 @@ class LoadBlogData extends ContainerAware implements FixtureInterface, OrderedFi
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('symfony_cmf_blog.blog_basepath');
+        $basepath = $this->container->getParameter('cmf_blog.blog_basepath');
         NodeHelper::createPath($session, $basepath);
         $root = $dm->find(null, $basepath);
 
@@ -46,6 +46,7 @@ class LoadBlogData extends ContainerAware implements FixtureInterface, OrderedFi
             $p->setDate(new \DateTime());
             $p->setBody($this->getWords());
             $p->setBlog($blog);
+            $p->setPublishable(true);
             $dm->persist($p);
         }
 

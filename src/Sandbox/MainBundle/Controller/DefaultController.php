@@ -4,7 +4,7 @@ namespace Sandbox\MainBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller,
     Symfony\Component\HttpFoundation\Response,
-    Sonata\MainBundle\Model\BlockInterface;
+    Sonata\BlockBundle\Model\BlockInterface;
 
 class DefaultController extends Controller
 {

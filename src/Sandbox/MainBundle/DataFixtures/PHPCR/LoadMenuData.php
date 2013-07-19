@@ -2,8 +2,9 @@
 
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
 use PHPCR\RepositoryInterface;
+use Doctrine\ODM\PHPCR\DocumentManager;
+use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -13,6 +14,8 @@ use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
+use Symfony\Cmf\Bundle\MenuBundle\Document\Menu;
+use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenu;
 
 class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -28,14 +31,15 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('symfony_cmf_menu.menu_basepath');
-        $content_path = $this->container->getParameter('symfony_cmf_content.content_basepath');
+        $basepath = $this->container->getParameter('cmf_menu.menu_basepath');
+        $content_path = $this->container->getParameter('cmf_content.content_basepath');
 
         NodeHelper::createPath($session, $basepath);
         $root = $dm->find(null, $basepath);
 
-        /** @var $MenuNode MenuNode */
-        $main = $this->createMenuNode($dm, $root, 'main', array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil'), $dm->find(null, "$content_path/home"));
+        $labels = array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil');
+        /** @var $main Menu */
+        $main = $this->createMenuNode($dm, $root, 'main', $labels, $dm->find(null, "$content_path/home"));
         $main->setChildrenAttributes(array("class" => "menu_main"));
 
         if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
@@ -69,33 +73,38 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
     }
 
     /**
-     * @return a Navigation instance with the specified information
+     * @return MenuNode a Navigation instance with the specified information
      */
-    protected function createMenuNode($dm, $parent, $name, $label, $content, $uri = null, $route = null)
+    protected function createMenuNode(DocumentManager $dm, $parent, $name, $label, $content, $uri = null, $route = null)
     {
-        $MenuNode = is_array($label) ? new MultilangMenuNode() : new MenuNode();
-        $MenuNode->setParent($parent);
-        $MenuNode->setName($name);
+        if (!$parent instanceof MenuNode) {
+            $menuNode = is_array($label) ? new MultilangMenu() : new Menu();
+        } else {
+            $menuNode = is_array($label) ? new MultilangMenuNode() : new MenuNode();
+        }
 
-        $dm->persist($MenuNode); // do persist before binding translation
+        $menuNode->setParent($parent);
+        $menuNode->setName($name);
+
+        $dm->persist($menuNode); // do persist before binding translation
 
         if (null !== $content) {
-            $MenuNode->setContent($content);
+            $menuNode->setContent($content);
         } else if (null !== $uri) {
-            $MenuNode->setUri($uri);
+            $menuNode->setUri($uri);
         } else if (null !== $route) {
-            $MenuNode->setRoute($route);
+            $menuNode->setRoute($route);
         }
 
         if (is_array($label)) {
             foreach ($label as $locale => $l) {
-                $MenuNode->setLabel($l);
-                $dm->bindTranslation($MenuNode, $locale);
+                $menuNode->setLabel($l);
+                $dm->bindTranslation($menuNode, $locale);
             }
         } else {
-            $MenuNode->setLabel($label);
+            $menuNode->setLabel($label);
         }
 
-        return $MenuNode;
+        return $menuNode;
     }
 }

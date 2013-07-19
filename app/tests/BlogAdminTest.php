@@ -6,7 +6,7 @@ class BlogAdminTest extends WebTestCase
 {
     public function testList()
     {
-        $client = $this->createClient();
+        $client = $this->createClientAuthenticated();
 
         $client->request('GET', '/en/admin/bundle/blog/blog/list');
 

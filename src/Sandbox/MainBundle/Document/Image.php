@@ -35,8 +35,8 @@ class Image
 
     /**
      * @Assert\NotBlank()
-     * @var binary
-     * @PHPCRODM\Binary(name="content")
+     * @var stream
+     * @PHPCRODM\Binary
      */
     public $content;
 

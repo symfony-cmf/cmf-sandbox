@@ -28,11 +28,11 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
         } else {
             try {
                 $om = $this->container->get('doctrine_phpcr.odm.default_document_manager');
-                $doc = $om->find(null, $this->container->getParameter('symfony_cmf_menu.menu_basepath'));
+                $doc = $om->find(null, $this->container->getParameter('cmf_menu.menu_basepath'));
                 if ($doc) {
                     $error = 'Hm. No clue what goes wrong. Maybe this is a real 404?<pre>'.$event->getException()->__toString().'</pre>';
                 } else {
-                    $error = 'Did you load the fixtures? See README for how to load them. I found no node at menu_basepath: '.$this->container->getParameter('symfony_cmf_menu.menu_basepath');
+                    $error = 'Did you load the fixtures? See README for how to load them. I found no node at menu_basepath: '.$this->container->getParameter('cmf_menu.menu_basepath');
                 }
             } catch(RepositoryException $e) {
                 $error = 'There was an exception loading the document manager: <strong>' . $e->getMessage() .
@@ -45,7 +45,7 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
             <h2>Sandbox</h2>
             <p>If you see this page, it means your sandbox is not correctly set up.
                Please see the README file in the sandbox root folder and if you can't figure out
-               what is wrong, ask us on freenode irc #symfony-cmf or the mailinglist symfony-cmf-users@groups.google.com.
+               what is wrong, ask us on freenode irc #symfony-cmf or the mailinglist cmf-users@groups.google.com.
             </p>
 
             <p>If you are seeing this page as the result of an edit in the admin tool, please report what you were doing

@@ -17,30 +17,27 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-            new JMS\AopBundle\JMSAopBundle(),
-            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
             // enable cmf bundles
             new Doctrine\Bundle\PHPCRBundle\DoctrinePHPCRBundle(),
-            new Symfony\Cmf\Bundle\RoutingBundle\SymfonyCmfRoutingBundle(),
-            new Symfony\Cmf\Bundle\RoutingAutoBundle\SymfonyCmfRoutingAutoBundle(),
-            new Symfony\Cmf\Bundle\CoreBundle\SymfonyCmfCoreBundle(),
+            new Symfony\Cmf\Bundle\RoutingBundle\CmfRoutingBundle(),
+            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
+            new Symfony\Cmf\Bundle\CoreBundle\CmfCoreBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Symfony\Cmf\Bundle\MenuBundle\SymfonyCmfMenuBundle(),
-            new Symfony\Cmf\Bundle\ContentBundle\SymfonyCmfContentBundle(),
-            new Symfony\Cmf\Bundle\TreeBrowserBundle\SymfonyCmfTreeBrowserBundle(),
-            new Symfony\Cmf\Bundle\BlockBundle\SymfonyCmfBlockBundle(),
-            new Symfony\Cmf\Bundle\SimpleCmsBundle\SymfonyCmfSimpleCmsBundle(),
-            new Symfony\Cmf\Bundle\BlogBundle\SymfonyCmfBlogBundle(),
+            new Symfony\Cmf\Bundle\MenuBundle\CmfMenuBundle(),
+            new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
+            new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
+            new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
+            new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
+            new Symfony\Cmf\Bundle\BlogBundle\CmfBlogBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
-            new Symfony\Cmf\Bundle\SearchBundle\SymfonyCmfSearchBundle(),
+            new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
 
             // language switcher
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
 
             // create.js editing related
-            new Symfony\Cmf\Bundle\CreateBundle\SymfonyCmfCreateBundle(),
+            new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
 
