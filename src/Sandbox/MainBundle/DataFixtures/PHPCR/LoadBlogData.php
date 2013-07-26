@@ -11,8 +11,6 @@ use PHPCR\Util\NodeHelper;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-use Symfony\Cmf\Bundle\BlogBundle\Document\BlogNode;
-use Symfony\Cmf\Bundle\BlogBundle\Document\MultilangBlogNode;
 use Symfony\Cmf\Bundle\BlogBundle\Document\Blog;
 use Symfony\Cmf\Bundle\BlogBundle\Document\Post;
 

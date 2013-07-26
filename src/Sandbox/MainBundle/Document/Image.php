@@ -4,10 +4,7 @@ namespace Sandbox\MainBundle\Document;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\Common\Collections\ArrayCollection;
 
-use Symfony\Cmf\Bundle\ContentBundle\Document\StaticContent;
 use Symfony\Component\Validator\Constraints as Assert;
-
-use Liip\VieBundle\FromJsonLdInterface;
 
 /**
  * @PHPCRODM\Document(referenceable=true)
