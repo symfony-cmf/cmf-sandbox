@@ -23,23 +23,23 @@ static:
                 <p>Es gibt einige Bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen Bundles.</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
                 children:
                     child1:
-                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                         properties:
                             title: Editable Simpleblock
-                            content: This is a simple block. It is stored on the homepage, but also referenced from the company page.
+                            body: This is a simple block. It is stored on the homepage, but also referenced from the company page.
                     child2:
-                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                         properties:
                             title: Admin Credentials
-                            content: To log into the <a href="admin/dashboard">backend admin</a>, use the username 'admin' and the password 'admin'.
+                            body: To log into the <a href="admin/dashboard">backend admin</a>, use the username 'admin' and the password 'admin'.
                     child3:
-                        class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                         actionName: SandboxMainBundle:Default:block
             rssBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\RssBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
                 properties:
                     settings:
                         title: Symfony2 CMF news
@@ -57,7 +57,7 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 referencedBlock: /cms/content/home/additionalInfoBlock/child1
     -
         name: "team"
@@ -71,7 +71,7 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "more"
         title: "More Information"
@@ -84,7 +84,7 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "projects"
         title: "The projects"
@@ -96,7 +96,7 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "cmf"
         title: "Content Management Framework"
@@ -108,7 +108,7 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo"
         title: "Routing demo"
@@ -122,28 +122,28 @@ static:
             </ul>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_controller"
         title: "Explicit Controller"
         content: "<p>This content is routed through an explicit controller that can do additional things.</p>"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_template"
         title: "Explicit template"
         content: "<p>This content is rendered through the generic content controller with an explicitly specified template.</p>"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_type"
         title: "Controller by type"
         content: "<p>This content is routed through a controller found by the route controller type.</p>"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_class"
         title: "Controller by class"
@@ -151,7 +151,7 @@ static:
         class: "Sandbox\MainBundle\Document\DemoClassContent"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
 
     -
         name: "singlelocale"
