@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "2008fd32f9dceea19b646142b2909966",
+    "hash": "83840e50980348bd52464ae7886cd17a",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1116,6 +1116,64 @@
                 "phpcr implementation"
             ],
             "time": "2013-07-22 07:26:25"
+        },
+        {
+            "name": "jackalope/jackalope-doctrine-dbal",
+            "version": "1.0.0-beta3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jackalope/jackalope-doctrine-dbal.git",
+                "reference": "1.0.0-beta3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jackalope/jackalope-doctrine-dbal/zipball/1.0.0-beta3",
+                "reference": "1.0.0-beta3",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": ">=2.2.0,<2.4",
+                "jackalope/jackalope": "1.0.0-beta4",
+                "php": ">=5.3.3",
+                "phpcr/phpcr-utils": "~1.0.0-beta13"
+            },
+            "provide": {
+                "jackalope/jackalope-transport": "1.0.0-beta4"
+            },
+            "require-dev": {
+                "phpcr/phpcr-api-tests": "dev-master"
+            },
+            "bin": [
+                "bin/jackalope"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Jackalope\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Jackalope Community",
+                    "homepage": "https://github.com/jackalope/jackalope-jackrabbit/contributors"
+                }
+            ],
+            "description": "Jackalope Transport library",
+            "homepage": "http://jackalope.github.com",
+            "keywords": [
+                "doctrine-dbal",
+                "transport implementation"
+            ],
+            "time": "2013-07-31 21:33:07"
         },
         {
             "name": "jackalope/jackalope-jackrabbit",
@@ -3087,12 +3145,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/Routing.git",
-                "reference": "1.1.0-RC1"
+                "reference": "8ffcc7f955f45656dc92903b2ab6170a6c1d1ae7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/Routing/zipball/1.1.0-RC1",
-                "reference": "1.1.0-RC1",
+                "url": "https://api.github.com/repos/symfony-cmf/Routing/zipball/8ffcc7f955f45656dc92903b2ab6170a6c1d1ae7",
+                "reference": "8ffcc7f955f45656dc92903b2ab6170a6c1d1ae7",
                 "shasum": ""
             },
             "require": {
@@ -3137,7 +3195,7 @@
                 "database",
                 "routing"
             ],
-            "time": "2013-07-31 21:06:34"
+            "time": "2013-08-04 18:25:40"
         },
         {
             "name": "symfony-cmf/routing-auto-bundle",
@@ -4262,64 +4320,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "jackalope/jackalope-doctrine-dbal",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jackalope/jackalope-doctrine-dbal.git",
-                "reference": "1.0.0-beta3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope-doctrine-dbal/zipball/1.0.0-beta3",
-                "reference": "1.0.0-beta3",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/dbal": ">=2.2.0,<2.4",
-                "jackalope/jackalope": "1.0.0-beta4",
-                "php": ">=5.3.3",
-                "phpcr/phpcr-utils": "~1.0.0-beta13"
-            },
-            "provide": {
-                "jackalope/jackalope-transport": "1.0.0-beta4"
-            },
-            "require-dev": {
-                "phpcr/phpcr-api-tests": "dev-master"
-            },
-            "bin": [
-                "bin/jackalope"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Jackalope\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Jackalope Community",
-                    "homepage": "https://github.com/jackalope/jackalope-jackrabbit/contributors"
-                }
-            ],
-            "description": "Jackalope Transport library",
-            "homepage": "http://jackalope.github.com",
-            "keywords": [
-                "doctrine-dbal",
-                "transport implementation"
-            ],
-            "time": "2013-07-31 21:33:07"
-        },
         {
             "name": "symfony-cmf/testing",
             "version": "dev-master",
