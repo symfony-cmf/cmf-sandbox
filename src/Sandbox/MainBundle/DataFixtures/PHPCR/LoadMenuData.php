@@ -12,10 +12,8 @@ use PHPCR\Util\NodeHelper;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-use Symfony\Cmf\Bundle\MenuBundle\Document\MenuNode;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenuNode;
-use Symfony\Cmf\Bundle\MenuBundle\Document\Menu;
-use Symfony\Cmf\Bundle\MenuBundle\Document\MultilangMenu;
+use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
+use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
 
 class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -31,8 +29,8 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('cmf_menu.menu_basepath');
-        $content_path = $this->container->getParameter('cmf_content.content_basepath');
+        $basepath = $this->container->getParameter('cmf_menu.persistence.phpcr.menu_basepath');
+        $content_path = $this->container->getParameter('cmf_content.persistence.phpcr.content_basepath');
 
         NodeHelper::createPath($session, $basepath);
         $root = $dm->find(null, $basepath);
@@ -77,10 +75,10 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
      */
     protected function createMenuNode(DocumentManager $dm, $parent, $name, $label, $content, $uri = null, $route = null)
     {
-        if (!$parent instanceof MenuNode) {
-            $menuNode = is_array($label) ? new MultilangMenu() : new Menu();
+        if (!$parent instanceof MenuNode && !$parent instanceof Menu) {
+            $menuNode = new Menu();
         } else {
-            $menuNode = is_array($label) ? new MultilangMenuNode() : new MenuNode();
+            $menuNode = new MenuNode();
         }
 
         $menuNode->setParent($parent);

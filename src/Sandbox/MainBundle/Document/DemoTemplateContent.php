@@ -4,7 +4,7 @@ namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Cmf\Component\Routing\RouteAwareInterface;
+use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
 
 /**
  * A document that we map to a template to be used with the generic content
@@ -12,7 +12,7 @@ use Symfony\Cmf\Component\Routing\RouteAwareInterface;
  *
  * @PHPCRODM\Document(referenceable=true)
  */
-class DemoTemplateContent implements RouteAwareInterface
+class DemoTemplateContent implements RouteReferrersReadInterface
 {
     /**
      * to create the document at the specified location. read only for existing documents.
@@ -45,7 +45,7 @@ class DemoTemplateContent implements RouteAwareInterface
     public $body;
 
     /**
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Document\Route", referencedBy="routeContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route", referencedBy="content")
      */
     public $routes;
 

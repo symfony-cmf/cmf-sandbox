@@ -28,11 +28,11 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
         } else {
             try {
                 $om = $this->container->get('doctrine_phpcr.odm.default_document_manager');
-                $doc = $om->find(null, $this->container->getParameter('cmf_menu.menu_basepath'));
+                $doc = $om->find(null, $this->container->getParameter('cmf_menu.persistence.phpcr.menu_basepath'));
                 if ($doc) {
                     $error = 'Hm. No clue what goes wrong. Maybe this is a real 404?<pre>'.$event->getException()->__toString().'</pre>';
                 } else {
-                    $error = 'Did you load the fixtures? See README for how to load them. I found no node at menu_basepath: '.$this->container->getParameter('cmf_menu.menu_basepath');
+                    $error = 'Did you load the fixtures? See README for how to load them. I found no node at menu_basepath: '.$this->container->getParameter('cmf_menu.persistence.phpcr.menu_basepath');
                 }
             } catch(RepositoryException $e) {
                 $error = 'There was an exception loading the document manager: <strong>' . $e->getMessage() .

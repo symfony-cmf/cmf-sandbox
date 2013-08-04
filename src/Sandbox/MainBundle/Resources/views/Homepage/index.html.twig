@@ -19,7 +19,7 @@
         <div class="span3">
             <h2>Some additional links:</h2>
             <ul>
-                {% for child in cmf_children(cmf_find('/cms/simple/service')) %}
+                {% for child in cmf_children(cmf_find('/cms/simple')) %}
                     <li>
                         <a href="{{ path(child) }}">{{ child.title|striptags }}</a>
                     </li>

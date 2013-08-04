@@ -32,7 +32,7 @@ class StaticPageTest extends WebTestCase
             array('/demo/type', 'Controller by type'),
             array('/demo/class', 'Controller by class'),
             array('/hello', 'Hello World!'),
-            array('/service/about', 'Some information about us'),
+            array('/about', 'Some information about us'),
         );
     }
 }

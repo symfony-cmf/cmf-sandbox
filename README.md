@@ -44,16 +44,7 @@ Please also adjust the ``app/config/parameters.yml`` as needed.
 Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist`
 files and create the database accordingly.
 
-To have the Doctrine DBAL implementation installed, edit composer.json and replace
-the line ``"jackalope/jackalope-jackrabbit": "1.0.*",`` with
-``"jackalope/jackalope-doctrine-dbal": "dev-master",`` then run the update and install commands
-
-    php composer.phar update jackalope/jackalope-doctrine-dbal
-    php composer.phar install
-
-Note: If you already ran install before changing the dependency to
-jackalope-doctrine-dbal and see composer errors, remove the vendor directory
-to have composer re-install everything.
+The Doctrine DBAL implementation is installed by default already along side the Jackrabbit implementation.
 
 To enable the meta data and node cache to improve performance first enable ``LiipDoctrineCacheBundle``
 in ``app/AppKernel.php`` and then also perform:

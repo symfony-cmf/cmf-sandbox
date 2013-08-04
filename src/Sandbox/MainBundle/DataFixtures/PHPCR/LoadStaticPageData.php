@@ -11,7 +11,7 @@ use PHPCR\Util\NodeHelper;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
-use Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent;
+use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 
 class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -24,10 +24,10 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     {
         $session = $manager->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('cmf_content.static_basepath');
+        $basepath = $this->container->getParameter('cmf_create.image.static_basepath');
         NodeHelper::createPath($session, $basepath);
 
-        $basepath = $this->container->getParameter('cmf_content.content_basepath');
+        $basepath = $this->container->getParameter('cmf_content.persistence.phpcr.content_basepath');
         NodeHelper::createPath($session, $basepath);
 
         $yaml = new Parser();
@@ -38,8 +38,8 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
             if (!$page) {
-                $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\ContentBundle\\Document\\MultilangStaticContent';
-                /** @var $page MultilangStaticContent */
+                $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\ContentBundle\\Doctrine\\Phpcr\\StaticContent';
+                /** @var $page StaticContent */
                 $page = new $class();
                 $page->setName($overview['name']);
                 $page->setParent($parent);
