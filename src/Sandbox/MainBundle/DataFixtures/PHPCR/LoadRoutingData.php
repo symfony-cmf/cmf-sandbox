@@ -9,11 +9,11 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 use PHPCR\Util\NodeHelper;
 
+use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute;
+use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
 use Symfony\Component\DependencyInjection\ContainerAware;
 
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
-use Symfony\Cmf\Bundle\RoutingBundle\Document\Route;
-use Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute;
 
 class LoadRoutingData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -35,9 +35,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('cmf_routing.routing_repositoryroot');
-        $content_path = $this->container->getParameter('cmf_content.content_basepath');
-
+        $basepath = $this->container->getParameter('cmf_routing.dynamic.persistence.phpcr.route_basepath');
         if ($session->itemExists($basepath)) {
             $session->removeItem($basepath);
         }
@@ -45,42 +43,43 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         NodeHelper::createPath($session, $basepath);
         $parent = $dm->find(null, $basepath);
 
+        $content_path = $this->container->getParameter('cmf_content.persistence.phpcr.content_basepath');
         $locales = $this->container->getParameter('locales');
         foreach ($locales as $locale) {
-            $home = new Route;
+            $home = new Route();
             $home->setPosition($parent, $locale);
             $home->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Homepage:index.html.twig');
-            $home->setRouteContent($dm->find(null, "$content_path/home"));
+            $home->setContent($dm->find(null, "$content_path/home"));
             $dm->persist($home);
 
             $blog = new Route;
             $blog->setPosition($home, PostUtils::slugify('CMF Blog'));
-            $blog->setRouteContent($dm->find(null, "$content_path/CMF Blog"));
+            $blog->setContent($dm->find(null, "$content_path/CMF Blog"));
             $dm->persist($blog);
 
             $company = new Route;
             $company->setPosition($home, 'company');
-            $company->setRouteContent($dm->find(null, "$content_path/company"));
+            $company->setContent($dm->find(null, "$content_path/company"));
             $dm->persist($company);
 
             $team = new Route;
             $team->setPosition($company, 'team');
-            $team->setRouteContent($dm->find(null, "$content_path/team"));
+            $team->setContent($dm->find(null, "$content_path/team"));
             $dm->persist($team);
 
             $more = new Route;
             $more->setPosition($company, 'more');
-            $more->setRouteContent($dm->find(null, "$content_path/more"));
+            $more->setContent($dm->find(null, "$content_path/more"));
             $dm->persist($more);
 
             $projects = new Route;
             $projects->setPosition($home, 'projects');
-            $projects->setRouteContent($dm->find(null, "$content_path/projects"));
+            $projects->setContent($dm->find(null, "$content_path/projects"));
             $dm->persist($projects);
 
             $cmf = new Route;
             $cmf->setPosition($projects, 'cmf');
-            $cmf->setRouteContent($dm->find(null, "$content_path/cmf"));
+            $cmf->setContent($dm->find(null, "$content_path/cmf"));
             $dm->persist($cmf);
         }
 
@@ -90,35 +89,35 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
 
         $demo = new Route;
         $demo->setPosition($parent, 'demo');
-        $demo->setRouteContent($dm->find(null, "$content_path/demo"));
+        $demo->setContent($dm->find(null, "$content_path/demo"));
         $demo->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Demo:template_explicit.html.twig');
         $dm->persist($demo);
 
         // explicit template
         $template = new Route;
         $template->setPosition($demo, 'atemplate');
-        $template->setRouteContent($dm->find(null, "$content_path/demo_template"));
+        $template->setContent($dm->find(null, "$content_path/demo_template"));
         $template->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Demo:template_explicit.html.twig');
         $dm->persist($template);
 
         // explicit controller
         $controller = new Route;
         $controller->setPosition($demo, 'controller');
-        $controller->setRouteContent($dm->find(null, "$content_path/demo_controller"));
+        $controller->setContent($dm->find(null, "$content_path/demo_controller"));
         $controller->setDefault('_controller', 'sandbox_main.controller:specialAction');
         $dm->persist($controller);
 
         // type to controller mapping
         $type = new Route;
         $type->setPosition($demo, 'type');
-        $type->setRouteContent($dm->find(null, "$content_path/demo_type"));
+        $type->setContent($dm->find(null, "$content_path/demo_type"));
         $type->setDefault('type', 'demo_type');
         $dm->persist($type);
 
         // class to controller mapping
         $class = new Route;
         $class->setPosition($demo, 'class');
-        $class->setRouteContent($dm->find(null, "$content_path/demo_class"));
+        $class->setContent($dm->find(null, "$content_path/demo_class"));
         $dm->persist($class);
 
         // redirections
@@ -147,7 +146,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $singlelocale->setPosition($dm->find(null, "$basepath/en"), 'singlelocale');
         $singlelocale->setDefault('_locale', 'en');
         $singlelocale->setRequirement('_locale', 'en');
-        $singlelocale->setRouteContent($dm->find(null, "$content_path/singlelocale"));
+        $singlelocale->setContent($dm->find(null, "$content_path/singlelocale"));
         $dm->persist($singlelocale);
 
         $dm->flush();

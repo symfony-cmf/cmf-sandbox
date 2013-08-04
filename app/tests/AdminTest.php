@@ -8,13 +8,13 @@ class AdminTest extends WebTestCase
     {
         $client = $this->createClientAuthenticated();
 
-        $client->request('GET', '/en/admin/bundle/menu/menunode/list');
+        $client->request('GET', '/en/admin/cmf/menu/menunode/list');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertContains('Menu nodes', $response->getContent());
+        $this->assertContains('Menus', $response->getContent());
 
-        $menuCount = $this->isSearchSupported() ? 18 : 17;
+        $menuCount = $this->isSearchSupported() ? 17 : 16;
         $this->assertContains("$menuCount results", $response->getContent());
         $this->assertContains('Explicit template', $response->getContent());
     }
@@ -23,7 +23,7 @@ class AdminTest extends WebTestCase
     {
         $client = $this->createClientAuthenticated();
 
-        $crawler = $client->request('GET', '/en/admin/bundle/menu/menunode/create');
+        $crawler = $client->request('GET', '/en/admin/cmf/menu/menunode/create');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
@@ -38,7 +38,7 @@ class AdminTest extends WebTestCase
     {
         $client = $this->createClientAuthenticated();
 
-        $crawler = $client->request('GET', '/en/admin/bundle/menu/menunode/cms/menu/main/demo-item/external-item/edit');
+        $crawler = $client->request('GET', '/en/admin/cmf/menu/menunode/cms/menu/main/demo-item/external-item/edit');
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());

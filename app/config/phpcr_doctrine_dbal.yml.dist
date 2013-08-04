@@ -1,7 +1,7 @@
 parameters:
     phpcr_backend:
         type: doctrinedbal
-        connection: doctrine.dbal.default_connection
+        connection: default
 #        caches:
 #            meta: liip_doctrine_cache.ns.meta
 #            nodes: liip_doctrine_cache.ns.nodes
