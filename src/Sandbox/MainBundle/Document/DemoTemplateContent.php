@@ -45,7 +45,7 @@ class DemoTemplateContent implements RouteReferrersReadInterface
     public $body;
 
     /**
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Document\Route", referencedBy="routeContent")
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route", referencedBy="content")
      */
     public $routes;
 
