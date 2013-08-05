@@ -112,6 +112,11 @@ cmf_routing:
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
 
+cmf_block:
+    persistence:
+        phpcr:
+            enabled: true
+
 cmf_simple_cms:
     multilang:
         locales: %locales%

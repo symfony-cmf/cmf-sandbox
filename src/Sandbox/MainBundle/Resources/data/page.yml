@@ -5,7 +5,7 @@ static:
             en: "Homepage"
             fr: "Page principale"
             de: "Startseite"
-        content:
+        body:
             en: |
                 <h2>Welcome to the Symfony CMF Demo</h2>
                 <p>If you see this page, it means that the <a href="http://cmf.symfony.com">Symfony CMF</a> installation ran successfully!</p>
@@ -23,23 +23,23 @@ static:
                 <p>Es gibt einige Bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen Bundles.</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
                 children:
                     child1:
-                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                         properties:
                             title: Editable Simpleblock
-                            content: This is a simple block. It is stored on the homepage, but also referenced from the company page.
+                            body: This is a simple block. It is stored on the homepage, but also referenced from the company page.
                     child2:
-                        class: Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                         properties:
                             title: Admin Credentials
-                            content: To log into the <a href="admin/dashboard">backend admin</a>, use the username 'admin' and the password 'admin'.
+                            body: To log into the <a href="admin/dashboard">backend admin</a>, use the username 'admin' and the password 'admin'.
                     child3:
-                        class: Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
+                        class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                         actionName: SandboxMainBundle:Default:block
             rssBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\RssBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
                 properties:
                     settings:
                         title: Symfony2 CMF news
@@ -48,7 +48,7 @@ static:
     -
         name: "company"
         title: "The Company"
-        content: |
+        body: |
             <h2>Who is behind the Symfony CMF project?</h2>
             <p>The content management framework is a joint effort by various developers and companies</p>
             <h2>dicta facete eu vis</h2>
@@ -57,12 +57,12 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 referencedBlock: /cms/content/home/additionalInfoBlock/child1
     -
         name: "team"
         title: "The Team"
-        content: |
+        body: |
             <h2>Our Team</h2>
             <p>There are some core developers and many other contributors. We need more help, so please contribute.</p>
             <h2>dicta facete eu vis</h2>
@@ -71,11 +71,11 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "more"
         title: "More Information"
-        content: |
+        body: |
             <h2>Yet another page</h2>
             <p>About the companies, though we don't have more to say here. But you want pages to see the navigation in action.</p>
             <h2>dicta facete eu vis</h2>
@@ -84,11 +84,11 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "projects"
         title: "The projects"
-        content: |
+        body: |
             <h2>We do a lot of projects</h2>
             <p>Sed sale modus nusquam ne. At omnesque senserit vel, veritus denique epicuri pri eu, nam illud constituam in. Id sit convenire mediocrem. Erant facilisi pri ea, quo ignota graeci dolores in, idque legere commune nam an. Eros fabulas scripserit mea ea. Mei everti hendrerit et, sit in harum vituperata.</p>
             <h2>dicta facete eu vis</h2>
@@ -96,11 +96,11 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "cmf"
         title: "Content Management Framework"
-        content: |
+        body: |
             <h2>The CMF is what this is all about</h2>
             <p>Sed sale modus nusquam ne. At omnesque senserit vel, veritus denique epicuri pri eu, nam illud constituam in. Id sit convenire mediocrem. Erant facilisi pri ea, quo ignota graeci dolores in, idque legere commune nam an. Eros fabulas scripserit mea ea. Mei everti hendrerit et, sit in harum vituperata.</p>
             <h2>dicta facete eu vis</h2>
@@ -108,11 +108,11 @@ static:
             Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo"
         title: "Routing demo"
-        content: |
+        body: |
             <p>The Children of this page show the various use cases of the cmf menu and the cmf content routing.</p>
             <p>There are also some routes that have no menu entry:</p>
             <ul>
@@ -122,43 +122,43 @@ static:
             </ul>
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_controller"
         title: "Explicit Controller"
-        content: "<p>This content is routed through an explicit controller that can do additional things.</p>"
+        body: "<p>This content is routed through an explicit controller that can do additional things.</p>"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_template"
         title: "Explicit template"
-        content: "<p>This content is rendered through the generic content controller with an explicitly specified template.</p>"
+        body: "<p>This content is rendered through the generic content controller with an explicitly specified template.</p>"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_type"
         title: "Controller by type"
-        content: "<p>This content is routed through a controller found by the route controller type.</p>"
+        body: "<p>This content is routed through a controller found by the route controller type.</p>"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "demo_class"
         title: "Controller by class"
-        content: "<p>This content is routed through a controller found by the content class.</p>"
+        body: "<p>This content is routed through a controller found by the content class.</p>"
         class: "Sandbox\MainBundle\Document\DemoClassContent"
         blocks:
             additionalInfoBlock:
-                class: Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
 
     -
         name: "singlelocale"
         title:
             en: "Single locale"
             fr: "Single locale"
-        content:
+        body:
             en: |
                 <h2>This page is only available in english</h2>
                 <p>The content is actually also translated to french, but there is no route for french.
