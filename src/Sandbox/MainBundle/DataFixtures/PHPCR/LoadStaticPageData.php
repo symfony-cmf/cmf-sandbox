@@ -49,12 +49,12 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             if (is_array($overview['title'])) {
                 foreach ($overview['title'] as $locale => $title) {
                     $page->setTitle($title);
-                    $page->setBody($overview['content'][$locale]);
+                    $page->setBody($overview['body'][$locale]);
                     $manager->bindTranslation($page, $locale);
                 }
             } else {
                 $page->setTitle($overview['title']);
-                $page->setBody($overview['content']);
+                $page->setBody($overview['body']);
             }
 
             if (!empty($overview['publishStartDate'])) {
@@ -101,13 +101,13 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             $manager->persist($document);
         }
 
-        if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock') {
+        if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock') {
             $referencedBlock = $manager->find(null, $block['referencedBlock']);
             if (null == $referencedBlock) {
                 throw new \Exception('did not find '.$block['referencedBlock']);
             }
             $document->setReferencedBlock($referencedBlock);
-        } elseif ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock') {
+        } elseif ($className == 'Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock') {
             $document->setActionName($block['actionName']);
         }
 
