@@ -25,7 +25,7 @@ class HomepageTest extends WebTestCase
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
-        $this->assertCount(3, $crawler->filter('.cmf-block'));
+        $this->assertCount(4, $crawler->filter('.cmf-block'));
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
         $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the Symfony CMF Demo")'));
 
