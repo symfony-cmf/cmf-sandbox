@@ -143,7 +143,7 @@ sonata_block:
                 id: '/cms'
             contexts:   [admin]
     blocks_by_class:
-        Symfony\Cmf\Bundle\BlockBundle\Document\RssBlock:
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock:
             cache: cmf.block.cache.js_async
 
 sonata_admin:
@@ -210,22 +210,22 @@ sonata_doctrine_phpcr_admin:
                 - all
         Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent:
             valid_children:
-                - Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
-        Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock:
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
             valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock:
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
             valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock:
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock:
             valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock:
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock:
             valid_children:
-                - Symfony\Cmf\Bundle\BlockBundle\Document\SimpleBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Document\ContainerBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
+                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
         Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
