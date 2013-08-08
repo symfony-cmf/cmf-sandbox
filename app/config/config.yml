@@ -91,6 +91,12 @@ cmf_core:
     persistence:
         phpcr:
             enabled: true
+cmf_block:
+    multilang:
+        locales: %locales%
+    persistence:
+        phpcr:
+            enabled: true
 
 cmf_blog:
     blog_basepath: /cms/content
@@ -177,6 +183,9 @@ sonata_admin:
                     - cmf_block.container_admin
                     - cmf_block.reference_admin
                     - cmf_block.action_admin
+                    - cmf_block.string_admin
+                    - cmf_block.imagine.slideshow_admin
+                    - cmf_block.imagine.imagine_admin
             routing:
                 label: URLs
                 items:

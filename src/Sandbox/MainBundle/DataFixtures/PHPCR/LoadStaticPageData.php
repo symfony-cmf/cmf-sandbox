@@ -101,13 +101,13 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             $manager->persist($document);
         }
 
-        if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ReferenceBlock') {
+        if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock') {
             $referencedBlock = $manager->find(null, $block['referencedBlock']);
             if (null == $referencedBlock) {
                 throw new \Exception('did not find '.$block['referencedBlock']);
             }
             $document->setReferencedBlock($referencedBlock);
-        } elseif ($className == 'Symfony\Cmf\Bundle\BlockBundle\Document\ActionBlock') {
+        } elseif ($className == 'Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock') {
             $document->setActionName($block['actionName']);
         }
 
