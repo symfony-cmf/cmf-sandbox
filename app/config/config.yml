@@ -112,14 +112,7 @@ cmf_routing:
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
 
-cmf_block:
-    persistence:
-        phpcr:
-            enabled: true
-
 cmf_simple_cms:
-    multilang:
-        locales: %locales%
     routing:
         templates_by_class:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  CmfSimpleCmsBundle:Page:index.html.twig
@@ -200,7 +193,7 @@ sonata_admin:
             simplecms:
                 label: Simple CMS
                 items:
-                    - cmf_simple_cms.admin.page
+                    - cmf_simple_cms.persistence.phpcr.admin.page
 
 sonata_doctrine_phpcr_admin:
     document_tree_defaults: [locale]
