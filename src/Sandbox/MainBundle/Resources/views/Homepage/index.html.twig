@@ -9,12 +9,11 @@
 
     <hr/>
 
-    <div class="row">
-        {{ sonata_block_render({ 'name': 'additionalInfoBlock' }, {
-            'divisibleBy': 3,
-            'divisibleClass': 'row'
-        }) }}
-    </div>
+    {{ sonata_block_render({ 'name': 'additionalInfoBlock' }, {
+        'divisibleBy': 3,
+        'divisibleClass': 'row',
+        'childClass': 'span3'
+    }) }}
 
     <div class="row">
         <div class="span3">
@@ -28,9 +27,11 @@
             </ul>
         </div>
 
+        <div class="span3">
         {{ sonata_block_render({
             'name': 'rssBlock'
         }) }}
+        </div>
     </div>
 {% endblock %}
 
