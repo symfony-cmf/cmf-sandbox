@@ -118,12 +118,12 @@ cmf_routing:
 cmf_simple_cms:
     routing:
         templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page:  CmfSimpleCmsBundle:Page:index.html.twig
+            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
 
 cmf_create:
     phpcr_odm: true
     map:
-        'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Document\MultilangStaticContent'
+        'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent'
 
 cmf_block:
     persistence:
@@ -230,12 +230,12 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
-        Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page: ~
+        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: ~
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute
-        Symfony\Cmf\Bundle\RoutingBundle\Document\RedirectRoute:
+        Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:
             valid_children: []
         Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu:
             valid_children:
