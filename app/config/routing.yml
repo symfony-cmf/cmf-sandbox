@@ -41,6 +41,10 @@ sonata_admin:
     type: sonata_admin
     prefix: /{_locale}/admin
 
+_imagine:
+    resource: .
+    type:     imagine
+
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
 
@@ -64,6 +68,12 @@ liip_search:
 block_cache:
     resource: "@CmfBlockBundle/Resources/config/routing/cache.xml"
     prefix: /
+
+cmf_media_file:
+    resource: "@CmfMediaBundle/Resources/config/routing/file.xml"
+
+cmf_media_image:
+    resource: "@CmfMediaBundle/Resources/config/routing/image.xml"
 
 tree:
     resource: "@SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml"

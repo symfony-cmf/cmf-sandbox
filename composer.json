@@ -34,7 +34,9 @@
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0.0-beta3",
         "eko/feedbundle": "1.0.*",
         "lunetics/locale-bundle": "2.2.*",
-        "liip/functional-test-bundle": "1.0.*"
+        "liip/functional-test-bundle": "1.0.*",
+        "liip/imagine-bundle": "dev-master",
+        "symfony-cmf/media-bundle": "dev-master"
     },
     "require-dev": {
         "symfony-cmf/testing": "1.0.*"
