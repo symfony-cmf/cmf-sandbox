@@ -121,11 +121,18 @@ cmf_simple_cms:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
 
 cmf_create:
-    phpcr_odm: true
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent'
+    persistence:
+        phpcr:
+            enabled: true
 
 cmf_block:
+    persistence:
+        phpcr:
+            enabled: true
+
+cmf_media:
     persistence:
         phpcr:
             enabled: true
