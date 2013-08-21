@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "1f72ff719109e2903db7c5773b8c056f",
+    "hash": "30ddb4a1118fe3115122d03b4da63056",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1001,12 +1001,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "0.13.1"
+                "reference": "e7cfb8e2a77536302c78b68aac851a5208fff2b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/0.13.1",
-                "reference": "0.13.1",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/e7cfb8e2a77536302c78b68aac851a5208fff2b6",
+                "reference": "e7cfb8e2a77536302c78b68aac851a5208fff2b6",
                 "shasum": ""
             },
             "require": {
@@ -1067,7 +1067,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2013-08-15 13:30:47"
+            "time": "2013-08-22 06:56:34"
         },
         {
             "name": "imagine/imagine",
@@ -2341,12 +2341,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioDistributionBundle.git",
-                "reference": "f666c65c810f6a23455966c37f99ba76094775b5"
+                "reference": "66df91b4bd637a83299d8072aed3658bfd3b3021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/f666c65c810f6a23455966c37f99ba76094775b5",
-                "reference": "f666c65c810f6a23455966c37f99ba76094775b5",
+                "url": "https://api.github.com/repos/sensiolabs/SensioDistributionBundle/zipball/66df91b4bd637a83299d8072aed3658bfd3b3021",
+                "reference": "66df91b4bd637a83299d8072aed3658bfd3b3021",
                 "shasum": ""
             },
             "require": {
@@ -2378,7 +2378,7 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2013-08-08 12:18:08"
+            "time": "2013-08-22 05:04:53"
         },
         {
             "name": "sensio/framework-extra-bundle",
@@ -2387,12 +2387,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "v2.3.3"
+                "reference": "cce05719041d952bbec856789ca18646a1891d03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/v2.3.3",
-                "reference": "v2.3.3",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/cce05719041d952bbec856789ca18646a1891d03",
+                "reference": "cce05719041d952bbec856789ca18646a1891d03",
                 "shasum": ""
             },
             "require": {
@@ -2958,17 +2958,17 @@
         },
         {
             "name": "symfony-cmf/blog-bundle",
-            "version": "1.0.0-beta3",
+            "version": "1.0.0-beta4",
             "target-dir": "Symfony/Cmf/Bundle/BlogBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/BlogBundle.git",
-                "reference": "1.0.0-beta3"
+                "reference": "b7dd90243a3db210eed962253109bd8411baae82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/BlogBundle/zipball/1.0.0-beta3",
-                "reference": "1.0.0-beta3",
+                "url": "https://api.github.com/repos/symfony-cmf/BlogBundle/zipball/b7dd90243a3db210eed962253109bd8411baae82",
+                "reference": "b7dd90243a3db210eed962253109bd8411baae82",
                 "shasum": ""
             },
             "require": {
@@ -3013,7 +3013,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2013-08-04 17:04:12"
+            "time": "2013-08-14 19:15:04"
         },
         {
             "name": "symfony-cmf/content-bundle",
@@ -3950,12 +3950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "cbc30a31e2248bccd9ee8e8142177b617fb32e37"
+                "reference": "8e1cb3e3ca9c05064d827e58bd4dd406c317ea50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/cbc30a31e2248bccd9ee8e8142177b617fb32e37",
-                "reference": "cbc30a31e2248bccd9ee8e8142177b617fb32e37",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/8e1cb3e3ca9c05064d827e58bd4dd406c317ea50",
+                "reference": "8e1cb3e3ca9c05064d827e58bd4dd406c317ea50",
                 "shasum": ""
             },
             "require": {
@@ -4050,7 +4050,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-08-21 19:09:08"
+            "time": "2013-08-22 06:42:25"
         },
         {
             "name": "twig/extensions",
