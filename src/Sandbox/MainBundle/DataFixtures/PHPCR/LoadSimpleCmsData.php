@@ -10,7 +10,7 @@ use PHPCR\Util\NodeHelper;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-use Symfony\Cmf\Bundle\SimpleCmsBundle\Document\Page;
+use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 
 class LoadSimpleCmsData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -21,7 +21,7 @@ class LoadSimpleCmsData extends ContainerAware implements FixtureInterface, Orde
 
     public function load(ObjectManager $manager)
     {
-        $basepath = $this->container->getParameter('cmf_simple_cms.menu_basepath');
+        $basepath = $this->container->getParameter('cmf_simple_cms.persistence.phpcr.menu_basepath');
         $base = $manager->find(null, $basepath);
 
         $root = $this->createPage($manager, $base, 'simple', 'root', 'root page of simple menu, never used', '');
