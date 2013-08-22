@@ -35,13 +35,12 @@
         "lunetics/locale-bundle": "2.2.*",
         "liip/functional-test-bundle": "1.0.*",
         "liip/imagine-bundle": "~0.12",
-        "wjzijderveld/check-bundles": "~0.2"
+        "wjzijderveld/check-bundles": "dev-master"
     },
     "require-dev": {
         "symfony-cmf/testing": "1.0.*"
     },
     "suggest": {
-        "jackalope/jackalope-doctrine-dbal": "1.0.0-beta3",
         "midgard/phpcr": "dev-master"
     },
     "scripts": {
@@ -64,6 +63,10 @@
         "bin-dir": "bin"
     },
     "extra": {
+        "checkbundles-ignore": [
+            "Liip\\FunctionalTestBundle\\LiipFunctionalTestBundle",
+            "Sensio\\Bundle\DistributionBundle\\SensioDistributionBundle"
+        ],
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
         "symfony-assets-install": "symlink"

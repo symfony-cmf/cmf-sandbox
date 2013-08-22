@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "46c7a1a3c50481430c0baaed20a71d0e",
+    "hash": "14f4b516cc3fd2e8c17ce49a6018c00e",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -4142,16 +4142,16 @@
         },
         {
             "name": "wjzijderveld/check-bundles",
-            "version": "v0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wjzijderveld/CheckBundles.git",
-                "reference": "v0.2"
+                "reference": "37a8b3280c761bde828bddf43eb7b1687b070277"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wjzijderveld/CheckBundles/zipball/v0.2",
-                "reference": "v0.2",
+                "url": "https://api.github.com/repos/wjzijderveld/CheckBundles/zipball/37a8b3280c761bde828bddf43eb7b1687b070277",
+                "reference": "37a8b3280c761bde828bddf43eb7b1687b070277",
                 "shasum": ""
             },
             "require": {
@@ -4161,6 +4161,11 @@
                 "composer/composer": "*"
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "WillemJan": "lib/"
@@ -4185,7 +4190,7 @@
                 "script",
                 "symfony"
             ],
-            "time": "2013-03-11 19:57:01"
+            "time": "2013-08-01 11:32:17"
         },
         {
             "name": "zendframework/zend-escaper",
@@ -4607,7 +4612,8 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "twig/twig": 0
+        "twig/twig": 0,
+        "wjzijderveld/check-bundles": 20
     },
     "platform": {
         "php": ">=5.3.3"
