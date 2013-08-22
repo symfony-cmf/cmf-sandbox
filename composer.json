@@ -29,13 +29,13 @@
         "jackalope/jackalope-jackrabbit": "1.0.0-beta4",
         "doctrine/doctrine-bundle": "1.2.*",
         "doctrine/data-fixtures": "1.0.*",
-        "doctrine/doctrine-fixtures-bundle": "2.1.*",
         "sonata-project/cache-bundle": "2.1.*",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.0.0-beta4",
         "eko/feedbundle": "1.0.*",
         "lunetics/locale-bundle": "2.2.*",
         "liip/functional-test-bundle": "1.0.*",
-        "liip/imagine-bundle": "~0.12"
+        "liip/imagine-bundle": "~0.12",
+        "wjzijderveld/check-bundles": "~0.2"
     },
     "require-dev": {
         "symfony-cmf/testing": "1.0.*"
@@ -46,12 +46,14 @@
     },
     "scripts": {
         "post-install-cmd": [
+            "WillemJan\\CheckBundles\\Composer\\CheckBundles::postPackageUpdate",
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
         ],
         "post-update-cmd": [
+            "WillemJan\\CheckBundles\\Composer\\CheckBundles::postPackageUpdate",
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreate",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",

@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "30ddb4a1118fe3115122d03b4da63056",
+    "hash": "46c7a1a3c50481430c0baaed20a71d0e",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -519,64 +519,6 @@
             "time": "2013-08-09 10:00:34"
         },
         {
-            "name": "doctrine/doctrine-fixtures-bundle",
-            "version": "dev-master",
-            "target-dir": "Doctrine/Bundle/FixturesBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/doctrine/DoctrineFixturesBundle.git",
-                "reference": "e018cf34f6c8642eba40ca44871fead97616922a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineFixturesBundle/zipball/e018cf34f6c8642eba40ca44871fead97616922a",
-                "reference": "e018cf34f6c8642eba40ca44871fead97616922a",
-                "shasum": ""
-            },
-            "require": {
-                "doctrine/data-fixtures": "*",
-                "doctrine/doctrine-bundle": "~1.0",
-                "php": ">=5.3.2",
-                "symfony/doctrine-bridge": "~2.1"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.1.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Doctrine\\Bundle\\FixturesBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Doctrine Project",
-                    "homepage": "http://www.doctrine-project.org"
-                }
-            ],
-            "description": "Symfony DoctrineFixturesBundle",
-            "homepage": "http://www.doctrine-project.org",
-            "keywords": [
-                "Fixture",
-                "persistence"
-            ],
-            "time": "2013-08-05 08:41:18"
-        },
-        {
             "name": "doctrine/inflector",
             "version": "dev-master",
             "source": {
@@ -1001,12 +943,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSRestBundle.git",
-                "reference": "e7cfb8e2a77536302c78b68aac851a5208fff2b6"
+                "reference": "541645b59aa64120fbc5ed46bfda06afd27ac042"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/e7cfb8e2a77536302c78b68aac851a5208fff2b6",
-                "reference": "e7cfb8e2a77536302c78b68aac851a5208fff2b6",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSRestBundle/zipball/541645b59aa64120fbc5ed46bfda06afd27ac042",
+                "reference": "541645b59aa64120fbc5ed46bfda06afd27ac042",
                 "shasum": ""
             },
             "require": {
@@ -1067,7 +1009,7 @@
             "keywords": [
                 "rest"
             ],
-            "time": "2013-08-22 06:56:34"
+            "time": "2013-08-22 13:05:04"
         },
         {
             "name": "imagine/imagine",
@@ -2087,12 +2029,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/php-collection.git",
-                "reference": "4925a0d7a39e137447a8f9d6339e6921fa09dca8"
+                "reference": "5c8ec0d1091c95b973b59a3bf0eb19c5de72d8d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/4925a0d7a39e137447a8f9d6339e6921fa09dca8",
-                "reference": "4925a0d7a39e137447a8f9d6339e6921fa09dca8",
+                "url": "https://api.github.com/repos/schmittjoh/php-collection/zipball/5c8ec0d1091c95b973b59a3bf0eb19c5de72d8d1",
+                "reference": "5c8ec0d1091c95b973b59a3bf0eb19c5de72d8d1",
                 "shasum": ""
             },
             "require": {
@@ -2129,7 +2071,7 @@
                 "sequence",
                 "set"
             ],
-            "time": "2013-07-16 08:26:26"
+            "time": "2013-08-22 09:46:14"
         },
         {
             "name": "phpcr/phpcr",
@@ -4197,6 +4139,53 @@
                 "negotiation"
             ],
             "time": "2013-08-06 14:47:08"
+        },
+        {
+            "name": "wjzijderveld/check-bundles",
+            "version": "v0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wjzijderveld/CheckBundles.git",
+                "reference": "v0.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wjzijderveld/CheckBundles/zipball/v0.2",
+                "reference": "v0.2",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/http-kernel": ">=2.0.0"
+            },
+            "require-dev": {
+                "composer/composer": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "WillemJan": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Willem-Jan Zijderveld",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A script which checks for bundles in your composer.json that aren't registered in your Kernel. For now, only packages with type symfony-bundle will be checked",
+            "homepage": "https://github.com/wjzijderveld/CheckBundles",
+            "keywords": [
+                "bundles",
+                "check",
+                "composer",
+                "script",
+                "symfony"
+            ],
+            "time": "2013-03-11 19:57:01"
         },
         {
             "name": "zendframework/zend-escaper",
