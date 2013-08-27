@@ -121,6 +121,7 @@ cmf_simple_cms:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
 
 cmf_create:
+    editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
     map:
         'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent'
 
@@ -298,3 +299,22 @@ liip_imagine:
             quality: 85
             filters:
                 thumbnail: { size: [50, 50], mode: outbound }
+
+cmf_media:
+    upload_file_role:        ROLE_CAN_UPLOAD_FILE
+    use_jms_serializer:      auto
+    use_elfinder:            auto
+    use_imagine:             auto
+    imagine_filter:
+        upload_thumbnail:   ~ # default: image_upload_thumbnail
+        elfinder_thumbnail: ~ # default: elfinder_thumbnail
+fm_elfinder:
+    locale: %locale%
+    editor: ckeditor
+    connector:
+        roots:
+            media:
+                driver: cmf_media.adapter.elfinder.phpcr_driver
+                path: %cmf_media.persistence.phpcr.media_basepath%
+                upload_allow: ['all']
+                upload_max_size: 2M

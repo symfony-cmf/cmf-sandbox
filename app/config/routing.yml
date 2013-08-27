@@ -78,3 +78,6 @@ cmf_media_image:
 tree:
     resource: "@SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml"
     prefix: /phpcrodmbrowser
+
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"
