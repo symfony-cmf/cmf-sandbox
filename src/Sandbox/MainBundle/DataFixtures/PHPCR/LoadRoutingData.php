@@ -142,10 +142,11 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
 
         // class to template mapping is used for all the rest
 
+        $default_locale = $this->container->getParameter('locale');
         $singlelocale = new Route;
-        $singlelocale->setPosition($dm->find(null, "$basepath/en"), 'singlelocale');
-        $singlelocale->setDefault('_locale', 'en');
-        $singlelocale->setRequirement('_locale', 'en');
+        $singlelocale->setPosition($dm->find(null, "$basepath/$default_locale"), 'singlelocale');
+        $singlelocale->setDefault('_locale', $default_locale);
+        $singlelocale->setRequirement('_locale', $default_locale);
         $singlelocale->setContent($dm->find(null, "$content_path/singlelocale"));
         $dm->persist($singlelocale);
 
