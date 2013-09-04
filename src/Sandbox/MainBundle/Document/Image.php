@@ -54,9 +54,4 @@ class Image
     {
         return $this->path;
     }
-
-    public function __toString()
-    {
-        return $this->name;
-    }
 }
