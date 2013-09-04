@@ -63,7 +63,7 @@ create_image:
     resource: "@CmfCreateBundle/Resources/config/routing/image.xml"
 
 liip_search:
-    resource: "@CmfSearchBundle/Resources/config/routing.xml"
+    resource: "@CmfSearchBundle/Resources/config/routing/phpcr/search.xml"
 
 block_cache:
     resource: "@CmfBlockBundle/Resources/config/routing/cache.xml"
