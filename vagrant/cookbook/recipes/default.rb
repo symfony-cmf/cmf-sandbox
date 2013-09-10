@@ -118,7 +118,7 @@ bash "Running composer install and preparing the phpcr repository" do
     echo "Waiting for Jackrabbit:"
     while [[ -z `curl -s "http://localhost:8080"` ]] ; do sleep 1s; echo -n "."; done
     app/console doctrine:phpcr:workspace:create sandbox
-    app/console doctrine:phpcr:register-system-node-types
-    app/console -v doctrine:phpcr:fixtures:load
+    app/console doctrine:phpcr:repository:init
+    app/console doctrine:phpcr:fixtures:load
   EOH
 end
