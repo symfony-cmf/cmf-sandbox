@@ -114,7 +114,7 @@
         </div>
 
         {% block bottom_scripts %}
-            {% render controller("cmf_create.jsloader.controller:includeJSFilesAction",{ _locale: app.request.locale }) %}
+            {% render controller("cmf_create.jsloader.controller:includeJSFilesAction", { "editor": "ckeditor", "_locale": app.request.locale }) %}
         {% endblock %}
     </body>
 </html>
