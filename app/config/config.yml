@@ -122,8 +122,6 @@ cmf_simple_cms:
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
-    map:
-        'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent'
 
 sonata_block:
     default_contexts: [cms]
@@ -263,8 +261,6 @@ cmf_search:
     persistence:
         phpcr:
             translation_strategy: child
-        #    translation_strategy: attribute
-        #    search_basepath: /cms/simple
             search_fields:
                 title: title
                 summary: body
@@ -276,14 +272,6 @@ lunetics_locale:
         - router
         - browser
     allowed_locales: %locales%
-
-# jackalope doctrine caching
-#liip_doctrine_cache:
-#    namespaces:
-#        meta:
-#            type: file_system
-#        nodes:
-#            type: file_system
 
 # The LiipImagineBundle can be used if you want to convert on demand an image
 # to a specific format. (ie a controller render the file)
@@ -310,6 +298,7 @@ cmf_media:
     imagine_filter:
         upload_thumbnail:   ~ # default: image_upload_thumbnail
         elfinder_thumbnail: ~ # default: elfinder_thumbnail
+
 fm_elfinder:
     locale: %locale%
     editor: ckeditor
@@ -320,3 +309,11 @@ fm_elfinder:
                 path: %cmf_media.persistence.phpcr.media_basepath%
                 upload_allow: ['all']
                 upload_max_size: 2M
+
+# jackalope doctrine caching
+#liip_doctrine_cache:
+#    namespaces:
+#        meta:
+#            type: file_system
+#        nodes:
+#            type: file_system
