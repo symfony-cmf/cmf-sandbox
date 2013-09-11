@@ -106,9 +106,4 @@ class DemoClassContent implements RouteReferrersReadInterface
     {
         return $this->routes->toArray();
     }
-
-    public function __toString()
-    {
-        return $this->name;
-    }
 }

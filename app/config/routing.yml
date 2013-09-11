@@ -63,7 +63,7 @@ create_image:
     resource: "@CmfCreateBundle/Resources/config/routing/image.xml"
 
 liip_search:
-    resource: "@CmfSearchBundle/Resources/config/routing.xml"
+    resource: "@CmfSearchBundle/Resources/config/routing/phpcr/search.xml"
 
 block_cache:
     resource: "@CmfBlockBundle/Resources/config/routing/cache.xml"
@@ -75,6 +75,5 @@ cmf_media_file:
 cmf_media_image:
     resource: "@CmfMediaBundle/Resources/config/routing/image.xml"
 
-tree:
-    resource: "@SonataDoctrinePHPCRAdminBundle/Resources/config/routing/phpcrodmbrowser.xml"
-    prefix: /phpcrodmbrowser
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"

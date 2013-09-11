@@ -42,7 +42,7 @@ class AdminTest extends WebTestCase
 
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
-        $this->assertContains('Edit &quot;External Link&quot;', $response->getContent());
+        $this->assertContains('Edit &quot;external-item&quot;', $response->getContent());
 
         $this->assertCount(11, $crawler->filter('.control-group'));
         $this->assertContains('Parent', $crawler->filter('.control-group')->first()->children()->first()->text());

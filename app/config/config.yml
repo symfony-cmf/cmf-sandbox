@@ -121,8 +121,7 @@ cmf_simple_cms:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
 
 cmf_create:
-    map:
-        'http://rdfs.org/sioc/ns#Post': 'Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent'
+    editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
 
 sonata_block:
     default_contexts: [cms]
@@ -259,12 +258,12 @@ liip_search:
     restrict_by_language: true;
 
 cmf_search:
-    translation_strategy: child
-#    translation_strategy: attribute
-#    search_path: /cms/simple
-    search_fields:
-        title: title
-        summary: body
+    persistence:
+        phpcr:
+            translation_strategy: child
+            search_fields:
+                title: title
+                summary: body
 
 lunetics_locale:
     strict_mode: true
@@ -273,14 +272,6 @@ lunetics_locale:
         - router
         - browser
     allowed_locales: %locales%
-
-# jackalope doctrine caching
-#liip_doctrine_cache:
-#    namespaces:
-#        meta:
-#            type: file_system
-#        nodes:
-#            type: file_system
 
 # The LiipImagineBundle can be used if you want to convert on demand an image
 # to a specific format. (ie a controller render the file)
@@ -298,3 +289,31 @@ liip_imagine:
             quality: 85
             filters:
                 thumbnail: { size: [50, 50], mode: outbound }
+
+cmf_media:
+    upload_file_role:        ROLE_CAN_UPLOAD_FILE
+    use_jms_serializer:      auto
+    use_elfinder:            auto
+    use_imagine:             auto
+    imagine_filter:
+        upload_thumbnail:   ~ # default: image_upload_thumbnail
+        elfinder_thumbnail: ~ # default: elfinder_thumbnail
+
+fm_elfinder:
+    locale: %locale%
+    editor: ckeditor
+    connector:
+        roots:
+            media:
+                driver: cmf_media.adapter.elfinder.phpcr_driver
+                path: %cmf_media.persistence.phpcr.media_basepath%
+                upload_allow: ['all']
+                upload_max_size: 2M
+
+# jackalope doctrine caching
+#liip_doctrine_cache:
+#    namespaces:
+#        meta:
+#            type: file_system
+#        nodes:
+#            type: file_system
