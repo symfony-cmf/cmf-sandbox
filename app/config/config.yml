@@ -295,7 +295,7 @@ cmf_media:
     use_jms_serializer:      auto
     use_elfinder:            auto
     use_imagine:             auto
-    imagine_filter:
+    imagine_filters:
         upload_thumbnail:   ~ # default: image_upload_thumbnail
         elfinder_thumbnail: ~ # default: elfinder_thumbnail
 
