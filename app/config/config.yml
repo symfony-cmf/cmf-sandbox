@@ -284,6 +284,13 @@ liip_imagine:
             filters:
                 thumbnail: { size: [100, 100], mode: outbound }
 
+        # default filter to be used for elfinder thumbnails
+        elfinder_thumbnail:
+            data_loader: cmf_media_doctrine_phpcr
+            quality: 85
+            filters:
+                thumbnail: { size: [48, 48], mode: inset }
+
         cmf_block:
             data_loader: cmf_media_doctrine_phpcr
             quality: 85
@@ -295,9 +302,6 @@ cmf_media:
     use_jms_serializer:      auto
     use_elfinder:            auto
     use_imagine:             auto
-    imagine_filters:
-        upload_thumbnail:   ~ # default: image_upload_thumbnail
-        elfinder_thumbnail: ~ # default: elfinder_thumbnail
 
 fm_elfinder:
     locale: %locale%
