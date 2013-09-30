@@ -111,6 +111,15 @@ provides a command to load fixtures.
 
 Run this to load the fixtures from the Sandbox MainBundle.
 
+## Setup permissions
+
+As with any Symfony, you need to set up permissions. A good guide is at http://symfony.com/doc/current/book/installation.html#configuration-and-setup. In addition to that, if you are using sqlite database, you have to setup owner of app/ folder and owner of app.sqlite to APACHEUSER.
+
+    APACHEUSER=`ps aux | grep -E '[a]pache|[h]ttpd' | grep -v root | head -1 | cut -d\  -f1`
+    sudo chown $APACHEUSER app app/app.sqlite
+
+But if you just want to move on for now, run sudo chmod -R 777 on app/ folder.
+
 ## Access by web browser
 
 Create an apache virtual host entry along the lines of
