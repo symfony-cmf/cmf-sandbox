@@ -111,6 +111,15 @@ provides a command to load fixtures.
 
 Run this to load the fixtures from the Sandbox MainBundle.
 
+## Setup permissions
+
+As with any Symfony, you need to set up permissions.
+A good guide is at [Symfony2 installation guide](http://symfony.com/doc/current/book/installation.html#configuration-and-setup).
+If you use the default setup, an sqlite database will be created at `app/app.sqlite`.
+You need to set up permissions for this file and app/ folder as well.
+
+But if you are just want to move on for now run sudo chmod -R 777 on app/ folder.
+
 ## Access by web browser
 
 Create an apache virtual host entry along the lines of
