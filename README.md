@@ -26,23 +26,33 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     cd cmf-sandbox
     # copy parameters template and edit as needed
     cp app/config/parameters.yml.dist app/config/parameters.yml
-    cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     curl -s http://getcomposer.org/installer | php --
 
 ### Install and run Apache JackRabbit
 
 Follow the guide in the [Jackalope Wiki](https://github.com/jackalope/jackalope/wiki/Running-a-jackrabbit-server).
-You can also use a different PHPCR implementation but this is what is most tested.
+You can also use a different PHPCR implementation but this is the most solid
+implementation.
 
+Once you have that, copy the default jackalope-jackrabbit configuration file,
+adjust it as needed and install the dependencies with composer:
+
+    cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
     php composer.phar install
 
-This will fetch the main project and all it's dependencies ( CMF Bundles, Symfony, Doctrine\PHPCR, Jackalope ... )
-Please also adjust the ``app/config/parameters.yml`` as needed.
+The last command will fetch the main project and all its dependencies (CMF
+Bundles, Symfony, Doctrine\PHPCR, Jackalope ... ). You might want to have a look
+at the ``app/config/parameters.yml`` and adjust as needed.
 
 ### Install the Doctrine DBAL provider (optional)
 
 Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist`
-files and create the database accordingly.
+files and create the database accordingly. If you have the PHP sqlite extension
+available, this is the simplest to quickly try out the CMF. Copy one of the files
+and then install the dependencies:
+
+    cp app/config/phpcr_doctrine_dbal_<type>.yml.dist app/config/phpcr.yml
+    php composer.phar install
 
 The Doctrine DBAL implementation is installed by default already along side the Jackrabbit implementation.
 
@@ -63,7 +73,7 @@ If you fail to do this you might receive:
     [Symfony\Component\Filesystem\Exception\IOException]
     Unable to create symlink due to error code 1314: 'A required privilege is not held by the client'. Do you have the required Administrator-rights?
 
-Then, create the database and tables and set up the default workspace using
+Then, create the database and tables and set up the default workspace using:
 
     app/console doctrine:database:create
     app/console doctrine:phpcr:init:dbal
@@ -80,14 +90,18 @@ and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-m
 schema files, and place them into `/usr/share/midgard2/schema` (note: this path may be different if you built Midgard2 yourself. It is
 basically `$PREFIX/share/midgard2/schema`).
 
-To have the midgard phpcr implementation installed run the following additional command
+Then chose the storage layer you want to use, copy the corresponding configuration file
+and adjust as needed, and install the project dependencies:
+
+    cp app/config/phpcr_midgard_<type>.yml.dist app/config/phpcr.yml
+    php composer.phar install
+
+To have the midgard PHPCR implementation installed run the following additional command
 
     php composer.phar require midgard/phpcr:dev-master --no-update
     php composer.phar update midgard/phpcr
 
-Finally, instead of `phpcr_jackrabbit.yml.dist`, use one of the `phpcr_midgard_*.yml.dist` files.
-
-## Prepare the phpcr repository
+## Prepare the PHPCR repository
 
 First you need to create a workspace that will hold the data for the sandbox.
 The default parameters.yml defines the workspace to be 'default'. You can
@@ -96,7 +110,7 @@ change this of course. If you do, f.e. to 'sandbox, also run the following comma
     app/console doctrine:phpcr:workspace:create sandbox
 
 Once your workspace is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged)
-for phpcr-odm:
+for PHPCR-ODM:
 
     app/console doctrine:phpcr:repository:init
 
@@ -105,24 +119,28 @@ for phpcr-odm:
 The admin backend is still in an early stage. Until it improves, the easiest is
 to programmatically create data. The best way to do that is with the doctrine
 data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf repository
-provides a command to load fixtures.
+provides a command to load fixtures:
 
     app/console -v doctrine:phpcr:fixtures:load
 
 Run this to load the fixtures from the Sandbox MainBundle.
 
-## Setup permissions
+## Setup filesystem permissions
 
-As with any Symfony, you need to set up permissions.
-A good guide is at [Symfony2 installation guide](http://symfony.com/doc/current/book/installation.html#configuration-and-setup).
+As with any Symfony2 installation, you need to set up some filesystem permissions.
+A good guide is in the [Symfony2 installation guide](http://symfony.com/doc/current/book/installation.html#configuration-and-setup).
 If you use the default setup, an sqlite database will be created at `app/app.sqlite`.
-You need to set up permissions for this file and app/ folder as well.
+You need to set up permissions for this file and the app/ folder with the method
+you chose from the installation guide.
 
-But if you are just want to move on for now run sudo chmod -R 777 on app/ folder.
+If you just want to move on and try out the sandbox for now, you can 
+run:
+
+    sudo chmod -R 777 app/
 
 ## Access by web browser
 
-Create an apache virtual host entry along the lines of
+Create an apache virtual host entry along the lines of:
 
     <Virtualhost *:80>
         Servername cmf.lo
@@ -173,7 +191,7 @@ At the moment there is no notion of parents and sons in the admin bundle.
 
 ## Run the test suite
 
-Functional tests are written with PHPUnit. Note that Bundles and Components are tested independently.
+Functional tests are written with PHPUnit. Note that Bundles and Components are tested independently:
 
     app/console doctrine:phpcr:workspace:create sandbox_test
     phpunit -c app
