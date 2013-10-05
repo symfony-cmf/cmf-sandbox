@@ -94,6 +94,7 @@ cmf_core:
     persistence:
         phpcr:
             enabled: true
+            translation_strategy: attribute
 
 cmf_blog:
     blog_basepath: /cms/content
@@ -262,7 +263,6 @@ liip_search:
 cmf_search:
     persistence:
         phpcr:
-            translation_strategy: child
             search_fields:
                 title: title
                 summary: body
