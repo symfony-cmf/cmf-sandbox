@@ -94,6 +94,7 @@ cmf_core:
     persistence:
         phpcr:
             enabled: true
+            translation_strategy: attribute
 
 cmf_blog:
     blog_basepath: /cms/content
@@ -122,6 +123,9 @@ cmf_simple_cms:
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
+    # WARNING: REMOVE THIS FOR PRODUCTION SITES
+    # for demo purposes we are allowing anonymous inline editing
+    role: IS_AUTHENTICATED_ANONYMOUSLY
 
 sonata_block:
     default_contexts: [cms]
@@ -262,7 +266,6 @@ liip_search:
 cmf_search:
     persistence:
         phpcr:
-            translation_strategy: child
             search_fields:
                 title: title
                 summary: body
