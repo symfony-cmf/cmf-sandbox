@@ -235,7 +235,9 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
-        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: ~
+        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
+            valid_children:
+                - Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
