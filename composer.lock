@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "a6c59d097f3440709091942bbb2bad3d",
+    "hash": "abe5e05ac3e10eddd0cee73ce9a5fa71",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1172,23 +1172,23 @@
         },
         {
             "name": "jackalope/jackalope",
-            "version": "1.0.0-RC1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackalope/jackalope.git",
-                "reference": "2a6329f325f6aff536d9efa2d8fbea33ca690cc2"
+                "reference": "ae9d494c4b907495c369b98d07faa013542931a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/2a6329f325f6aff536d9efa2d8fbea33ca690cc2",
-                "reference": "2a6329f325f6aff536d9efa2d8fbea33ca690cc2",
+                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/ae9d494c4b907495c369b98d07faa013542931a3",
+                "reference": "ae9d494c4b907495c369b98d07faa013542931a3",
                 "shasum": ""
             },
             "require": {
                 "ext-libxml": "*",
                 "jackalope/jackalope-transport": "*",
                 "php": ">=5.3.2",
-                "phpcr/phpcr": "=2.1.0-RC1",
+                "phpcr/phpcr": "~2.1.0-RC1",
                 "phpcr/phpcr-utils": "~1.0.0-RC1"
             },
             "provide": {
@@ -1219,9 +1219,9 @@
             "description": "Jackalope PHPCR library",
             "homepage": "http://jackalope.github.io",
             "keywords": [
-                "phpcr implementation"
+                "phpcr"
             ],
-            "time": "2013-09-25 19:17:44"
+            "time": "2013-10-05 21:08:30"
         },
         {
             "name": "jackalope/jackalope-doctrine-dbal",
@@ -1286,22 +1286,22 @@
         },
         {
             "name": "jackalope/jackalope-jackrabbit",
-            "version": "1.0.0-RC2",
+            "version": "1.0.0-RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackalope/jackalope-jackrabbit.git",
-                "reference": "c6fb0ea0c4d9e4abcbff44db2b63679620232bb2"
+                "reference": "091da56510dc93a07b3b5a56ab6a20d21aa8e57e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope-jackrabbit/zipball/c6fb0ea0c4d9e4abcbff44db2b63679620232bb2",
-                "reference": "c6fb0ea0c4d9e4abcbff44db2b63679620232bb2",
+                "url": "https://api.github.com/repos/jackalope/jackalope-jackrabbit/zipball/091da56510dc93a07b3b5a56ab6a20d21aa8e57e",
+                "reference": "091da56510dc93a07b3b5a56ab6a20d21aa8e57e",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
                 "ext-libxml": "*",
-                "jackalope/jackalope": "1.0.0-RC1",
+                "jackalope/jackalope": "~1.0.0-RC1",
                 "php": ">=5.3.3",
                 "phpcr/phpcr": "~2.1.0-RC1",
                 "phpcr/phpcr-utils": "~1.0.0-RC1"
@@ -1339,13 +1339,14 @@
                     "homepage": "https://github.com/jackalope/jackalope-jackrabbit/contributors"
                 }
             ],
-            "description": "Jackalope Transport library",
+            "description": "Jackalope Transport library for Jackrabbit",
             "homepage": "http://jackalope.github.com",
             "keywords": [
                 "jackrabbit",
+                "phpcr",
                 "transport implementation"
             ],
-            "time": "2013-10-02 20:46:40"
+            "time": "2013-10-05 21:08:42"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -2195,16 +2196,16 @@
         },
         {
             "name": "phpcr/phpcr",
-            "version": "2.1.0-RC1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpcr/phpcr.git",
-                "reference": "18dc77eed902f7484b6ad8fa580c017d7cbd71de"
+                "reference": "f9483968fb77584e47c1dbf2dbc7906447f8c5b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpcr/phpcr/zipball/18dc77eed902f7484b6ad8fa580c017d7cbd71de",
-                "reference": "18dc77eed902f7484b6ad8fa580c017d7cbd71de",
+                "url": "https://api.github.com/repos/phpcr/phpcr/zipball/f9483968fb77584e47c1dbf2dbc7906447f8c5b1",
+                "reference": "f9483968fb77584e47c1dbf2dbc7906447f8c5b1",
                 "shasum": ""
             },
             "require": {
@@ -2246,7 +2247,7 @@
                 "contentrepository",
                 "phpcr"
             ],
-            "time": "2013-09-25 12:01:08"
+            "time": "2013-10-07 15:34:44"
         },
         {
             "name": "phpcr/phpcr-utils",
