@@ -78,7 +78,7 @@ Then, create the database and tables and set up the default workspace using:
     app/console doctrine:database:create
     app/console doctrine:phpcr:init:dbal
 
-### Install the Midgard2 PHPCR provider (optional)
+### Install the Midgard2 PHPCR provider (optional, currently broken)
 
 If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://midgard-project.org/phpcr/)
 instead of Jackrabbit, you need to install the [`midgard2` PHP extension](http://midgard-project.org/midgard2/#download).
