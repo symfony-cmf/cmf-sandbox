@@ -256,7 +256,6 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\BlogBundle\Document\Post:
             valid_children: []
 
-
 sensio_framework_extra:
     view:    { annotations: false }
     router:  { annotations: true }
