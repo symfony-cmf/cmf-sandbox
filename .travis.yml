@@ -14,13 +14,14 @@ env:
   - TRANSPORT=doctrine_dbal
 
 before_script:
+  - echo "memory_limit = 1024M" >> travis.php.ini
+  - phpenv config-add travis.php.ini
   - composer self-update
   - cp app/config/phpcr_${TRANSPORT}.yml.dist app/config/phpcr.yml
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - ./app/tests/travis_${TRANSPORT}.sh
   - app/console doctrine:phpcr:workspace:create sandbox_test
   - app/console doctrine:phpcr:repository:init -e=test
-
 
 script: phpunit -c app
 
