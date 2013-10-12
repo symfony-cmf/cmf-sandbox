@@ -3,6 +3,12 @@
     "description": "Demo Sandbox for the Symfony Content Management Framework",
     "homepage": "http://cmf.symfony.com",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "Symfony CMF Community",
+            "homepage": "https://github.com/symfony-cmf/SimpleCmsBundle/contributors"
+        }
+    ],
     "autoload": {
         "psr-0": { "": "src/" }
     },
@@ -11,8 +17,7 @@
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
-        "twig/extensions": "1.0.*",
-        "twig/twig": "@stable",
+        "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "2.3.*",
         "symfony/swiftmailer-bundle": "2.3.*",
         "symfony/monolog-bundle": "2.3.*",
@@ -25,8 +30,8 @@
         "symfony-cmf/create-bundle": "1.0.0-RC3",
         "symfony-cmf/routing-auto-bundle": "1.0.0-alpha6",
         "symfony-cmf/blog-bundle": "1.0.0-beta6",
-        "jackalope/jackalope-doctrine-dbal": "1.0.0-RC4",
-        "jackalope/jackalope-jackrabbit": "1.0.0-RC3",
+        "jackalope/jackalope-doctrine-dbal": "1.0.*",
+        "jackalope/jackalope-jackrabbit": "1.0.*",
         "doctrine/doctrine-bundle": "1.2.*",
         "doctrine/data-fixtures": "1.0.*",
         "sonata-project/cache-bundle": "2.1.*",
@@ -40,9 +45,6 @@
     "require-dev": {
         "liip/functional-test-bundle": "1.0.*",
         "symfony-cmf/testing": "1.0.*"
-    },
-    "suggest": {
-        "midgard/phpcr": "dev-master"
     },
     "scripts": {
         "post-install-cmd": [
