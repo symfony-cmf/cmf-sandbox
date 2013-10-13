@@ -327,3 +327,19 @@ fm_elfinder:
 #            type: file_system
 #        nodes:
 #            type: file_system
+
+fos_rest:
+    view:
+        force_redirects:
+          html: true
+        formats:
+            json: true
+            xml: true
+        templating_formats:
+            html: true
+    allowed_methods_listener: true
+    access_denied_listener:
+        json: true
+    format_listener:
+        rules:
+            - { path: ^/, priorities: [ html, json, xml ], fallback_format: ~, prefer_extension: true }

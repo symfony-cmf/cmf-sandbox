@@ -32,4 +32,23 @@ class HomepageTest extends WebTestCase
         $menuCount = $this->isSearchSupported() ? 17 : 16;
         $this->assertCount($menuCount, $crawler->filter('ul.menu_main li'));
     }
+
+    public function testJsonContents()
+    {
+        $client = $this->createClient();
+
+        $client->request(
+            'GET',
+            '/en',
+            array(),
+            array(),
+            array(
+                'CONTENT_TYPE'          => 'application/json',
+            )
+        );
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $json = @json_decode($client->getResponse()->getContent());
+        $this->assertTrue($json);
+    }
 }
