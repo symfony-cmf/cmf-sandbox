@@ -114,7 +114,7 @@ cmf_routing:
             Symfony\Cmf\Bundle\BlogBundle\Document\Post: cmf_blog.blog_controller:viewPostAction
 
         templates_by_class:
-            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:MultilangStaticContent:index.html.twig
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:StaticContent:index.html.twig
 
 cmf_simple_cms:
     routing:
