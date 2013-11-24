@@ -43,12 +43,13 @@ class HomepageTest extends WebTestCase
             array(),
             array(),
             array(
-                'CONTENT_TYPE'          => 'application/json',
+                'HTTP_ACCEPT'  => 'application/json',
+                'CONTENT_TYPE' => 'application/json'
             )
         );
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         $json = @json_decode($client->getResponse()->getContent());
-        $this->assertTrue($json);
+        $this->assertNotEmpty($json);
     }
 }
