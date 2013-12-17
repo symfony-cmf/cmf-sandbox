@@ -75,8 +75,8 @@ If you fail to do this you might receive:
 
 Then, create the database and tables and set up the default workspace using:
 
-    app/console doctrine:database:create
-    app/console doctrine:phpcr:init:dbal
+    php app/console doctrine:database:create
+    php app/console doctrine:phpcr:init:dbal
 
 ### Install the Midgard2 PHPCR provider (optional, currently broken)
 
@@ -107,12 +107,12 @@ First you need to create a workspace that will hold the data for the sandbox.
 The default parameters.yml defines the workspace to be 'default'. You can
 change this of course. If you do, f.e. to 'sandbox, also run the following command:
 
-    app/console doctrine:phpcr:workspace:create sandbox
+    php app/console doctrine:phpcr:workspace:create sandbox
 
 Once your workspace is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged)
 for PHPCR-ODM:
 
-    app/console doctrine:phpcr:repository:init
+    php app/console doctrine:phpcr:repository:init
 
 ## Import the fixtures
 
@@ -121,7 +121,7 @@ to programmatically create data. The best way to do that is with the doctrine
 data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf repository
 provides a command to load fixtures:
 
-    app/console -v doctrine:phpcr:fixtures:load
+    php app/console -v doctrine:phpcr:fixtures:load
 
 Run this to load the fixtures from the Sandbox MainBundle.
 
@@ -164,8 +164,8 @@ Then point your browser to http://cmf.lo/app_dev.php
 In order to run the sandbox in production mode at http://cmf.lo/
 you need to generate the doctrine proxies and dump the assetic assets:
 
-    app/console cache:warmup --env=prod --no-debug
-    app/console assetic:dump --env=prod --no-debug
+    php app/console cache:warmup --env=prod --no-debug
+    php app/console assetic:dump --env=prod --no-debug
 
 # Getting started using Vagrant
 
@@ -193,5 +193,5 @@ At the moment there is no notion of parents and sons in the admin bundle.
 
 Functional tests are written with PHPUnit. Note that Bundles and Components are tested independently:
 
-    app/console doctrine:phpcr:workspace:create sandbox_test
+    php app/console doctrine:phpcr:workspace:create sandbox_test
     phpunit -c app
