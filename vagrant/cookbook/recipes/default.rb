@@ -37,6 +37,7 @@ git
 libapache2-mod-php5
 php5-cli
 php5-curl
+php5-gd
 php5-sqlite
 php5-intl
 php-apc
