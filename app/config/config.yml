@@ -126,7 +126,8 @@ cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
     # WARNING: REMOVE THIS FOR PRODUCTION SITES
     # for demo purposes we are allowing anonymous inline editing
-    role: IS_AUTHENTICATED_ANONYMOUSLY
+    security:
+        role: IS_AUTHENTICATED_ANONYMOUSLY
 
 sonata_block:
     default_contexts: [cms]
