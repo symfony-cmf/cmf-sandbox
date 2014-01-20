@@ -24,6 +24,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
+    git checkout 1.0
     # copy parameters template and edit as needed
     cp app/config/parameters.yml.dist app/config/parameters.yml
     curl -s http://getcomposer.org/installer | php --
