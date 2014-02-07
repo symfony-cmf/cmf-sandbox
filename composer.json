@@ -62,9 +62,6 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
         ]
     },
-    "config": {
-        "bin-dir": "bin"
-    },
     "extra": {
         "checkbundles-ignore": [
             "Liip\\FunctionalTestBundle\\LiipFunctionalTestBundle",
