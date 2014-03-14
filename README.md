@@ -48,10 +48,10 @@ at the ``app/config/parameters.yml`` and adjust as needed.
 
 Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist`
 files and create the database accordingly. If you have the PHP sqlite extension
-available, this is the simplest to quickly try out the CMF. Copy one of the files
+available, this is the simplest to quickly try out the CMF. Copy the file
 and then install the dependencies:
 
-    cp app/config/phpcr_doctrine_dbal_<type>.yml.dist app/config/phpcr.yml
+    cp app/config/phpcr_doctrine_dbal.yml.dist app/config/phpcr.yml
     php composer.phar install
 
 The Doctrine DBAL implementation is installed by default already along side the Jackrabbit implementation.
