@@ -3,7 +3,6 @@
 namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
-use Symfony\Cmf\Bundle\BlogBundle\Util\PostUtils;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
@@ -51,11 +50,6 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $home->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Homepage:index.html.twig');
             $home->setContent($dm->find(null, "$content_path/home"));
             $dm->persist($home);
-
-            $blog = new Route;
-            $blog->setPosition($home, PostUtils::slugify('CMF Blog'));
-            $blog->setContent($dm->find(null, "$content_path/CMF Blog"));
-            $dm->persist($blog);
 
             $company = new Route;
             $company->setPosition($home, 'company');
