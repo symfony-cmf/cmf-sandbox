@@ -94,7 +94,12 @@ cmf_core:
     persistence:
         phpcr:
             enabled: true
-            translation_strategy: attribute
+
+cmf_menu:
+    persistence:
+        phpcr:
+            # TODO remove once https://github.com/jackalope/jackalope-doctrine-dbal/issues/189 is fixed
+            prefetch:             0
 
 cmf_routing:
     chain:
@@ -118,9 +123,10 @@ cmf_simple_cms:
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
-    # WARNING: REMOVE THIS FOR PRODUCTION SITES
-    # for demo purposes we are allowing anonymous inline editing
-    role: IS_AUTHENTICATED_ANONYMOUSLY
+    security:
+        # WARNING: REMOVE THIS FOR PRODUCTION SITES
+        # for demo purposes we are allowing anonymous inline editing
+        role: IS_AUTHENTICATED_ANONYMOUSLY
 
 sonata_block:
     default_contexts: [cms]

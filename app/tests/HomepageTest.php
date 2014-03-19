@@ -29,7 +29,7 @@ class HomepageTest extends WebTestCase
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
         $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the Symfony CMF Demo")'));
 
-        $menuCount = $this->isSearchSupported() ? 17 : 16;
+        $menuCount = $this->isSearchSupported() ? 16 : 15;
         $this->assertCount($menuCount, $crawler->filter('ul.menu_main li'));
     }
 
