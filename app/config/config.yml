@@ -2,7 +2,6 @@ imports:
     - { resource: parameters.yml }
     - { resource: phpcr.yml }
     - { resource: security.yml }
-    - { resource: @CmfBlogBundle/Resources/config/routing/autoroute_default.yml }
 
 framework:
     #esi:             ~
@@ -95,10 +94,12 @@ cmf_core:
     persistence:
         phpcr:
             enabled: true
-            translation_strategy: attribute
 
-cmf_blog:
-    blog_basepath: /cms/content
+cmf_menu:
+    persistence:
+        phpcr:
+            # TODO remove once https://github.com/jackalope/jackalope-doctrine-dbal/issues/189 is fixed
+            prefetch:             0
 
 cmf_routing:
     chain:
@@ -111,8 +112,6 @@ cmf_routing:
         controllers_by_class:
             Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
-            Symfony\Cmf\Bundle\BlogBundle\Document\Blog: cmf_blog.blog_controller:listAction
-            Symfony\Cmf\Bundle\BlogBundle\Document\Post: cmf_blog.blog_controller:viewPostAction
 
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:StaticContent:index.html.twig
@@ -124,9 +123,10 @@ cmf_simple_cms:
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
-    # WARNING: REMOVE THIS FOR PRODUCTION SITES
-    # for demo purposes we are allowing anonymous inline editing
-    role: IS_AUTHENTICATED_ANONYMOUSLY
+    security:
+        # WARNING: REMOVE THIS FOR PRODUCTION SITES
+        # for demo purposes we are allowing anonymous inline editing
+        role: IS_AUTHENTICATED_ANONYMOUSLY
 
 sonata_block:
     default_contexts: [cms]
@@ -191,11 +191,6 @@ sonata_admin:
                 items:
                     - cmf_menu.menu_admin
                     - cmf_menu.node_admin
-            blog:
-                label: Blog
-                items:
-                    - cmf_blog.admin
-                    - cmf_post.admin
             simplecms:
                 label: Simple CMS
                 items:
@@ -251,11 +246,6 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
-        Symfony\Cmf\Bundle\BlogBundle\Document\Blog:
-            valid_children:
-                - Symfony\Cmf\Bundle\BlogBundle\Document\Post
-        Symfony\Cmf\Bundle\BlogBundle\Document\Post:
-            valid_children: []
 
 sensio_framework_extra:
     view:    { annotations: false }
