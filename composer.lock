@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "c4133c4c9d25bf4d53e0ffaad4bb9d8d",
+    "hash": "515065cd5285983edc72a9cb606faea0",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -786,12 +786,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/phpcr-odm.git",
-                "reference": "2c0f6bea16df6d72b9b6f83c77cc6b9e75726cc2"
+                "reference": "22d03a826ac0e6a6089326fe29d41f20ecadb726"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/2c0f6bea16df6d72b9b6f83c77cc6b9e75726cc2",
-                "reference": "2c0f6bea16df6d72b9b6f83c77cc6b9e75726cc2",
+                "url": "https://api.github.com/repos/doctrine/phpcr-odm/zipball/22d03a826ac0e6a6089326fe29d41f20ecadb726",
+                "reference": "22d03a826ac0e6a6089326fe29d41f20ecadb726",
                 "shasum": ""
             },
             "require": {
@@ -852,7 +852,7 @@
                 "odm",
                 "phpcr"
             ],
-            "time": "2014-03-20 09:40:26"
+            "time": "2014-03-24 09:03:01"
         },
         {
             "name": "eko/feedbundle",
