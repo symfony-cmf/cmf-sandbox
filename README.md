@@ -56,14 +56,7 @@ and then install the dependencies:
 
 The Doctrine DBAL implementation is installed by default already along side the Jackrabbit implementation.
 
-To enable the meta data and node cache to improve performance first enable ``LiipDoctrineCacheBundle``
-in ``app/AppKernel.php`` and then also perform:
-
-    php composer.phar require liip/doctrine-cache-bundle:dev-master --no-update
-    php composer.phar update liip/doctrine-cache-bundle
-
-Finally uncomment the ``caches`` settings in the `phpcr.yml` as well as the ``liip_doctrine_cache``
-settings in ``app/config/config.yml``.
+To disable the meta data and node cache for debugging comment the ``caches`` settings in the `phpcr.yml`.
 
 
 Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and

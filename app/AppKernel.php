@@ -57,7 +57,7 @@ class AppKernel extends Kernel
             new Liip\ImagineBundle\LiipImagineBundle(),
 
             // jackalope doctrine caching
-            // new Liip\DoctrineCacheBundle\LiipDoctrineCacheBundle(),
+            new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
 
             // block caching and feeds
             new Sonata\CacheBundle\SonataCacheBundle(),
