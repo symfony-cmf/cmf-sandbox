@@ -14,6 +14,7 @@
     },
     "minimum-stability": "dev",
     "require": {
+        "symfony-cmf/routing-bundle": "dev-cleanup-routing as 1.2.0",
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
         "twig/extensions": "~1.0",
@@ -24,7 +25,7 @@
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
         "symfony-cmf/symfony-cmf": "~1.1",
-        "symfony-cmf/simple-cms-bundle": "~1.1",
+        "symfony-cmf/simple-cms-bundle": "dev-cleanup-routing as 1.1.0",
         "symfony-cmf/search-bundle": "~1.1",
         "symfony-cmf/create-bundle": "~1.1",
         "jackalope/jackalope-doctrine-dbal": "~1.1",

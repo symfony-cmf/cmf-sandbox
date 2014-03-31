@@ -107,6 +107,12 @@ cmf_routing:
             cmf_routing.dynamic_router: 20
             router.default: 100
     dynamic:
+        # todo: adjust CoreBundle to prepend
+        persistence:
+            phpcr:
+                route_basepaths:
+                    - /cms/routes
+                    - /cms/simple
         controllers_by_type:
             demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
