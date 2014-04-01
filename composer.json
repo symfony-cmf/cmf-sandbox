@@ -14,7 +14,6 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "symfony-cmf/routing-bundle": "dev-cleanup-routing as 1.2.0",
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
         "twig/extensions": "~1.0",
