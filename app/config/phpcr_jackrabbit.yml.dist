@@ -1,5 +1,7 @@
 parameters:
     phpcr_backend:
+        logging: true
+        profiling: true
         type: jackrabbit
         url: http://localhost:8080/server/
     phpcr_workspace: default
