@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "458d714748bce6bf6d14a961d4da396c",
+    "hash": "d01658516dbeb8a2c0d4b69dfbe0f972",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -418,36 +418,30 @@
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "dev-master",
+            "version": "v1.2.0",
             "target-dir": "Doctrine/Bundle/DoctrineBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "326bc9422817a0c3abe4551fd3b816a066947630"
+                "reference": "765b0d87fcc3e839c74817b7211258cbef3a4fb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/326bc9422817a0c3abe4551fd3b816a066947630",
-                "reference": "326bc9422817a0c3abe4551fd3b816a066947630",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/765b0d87fcc3e839c74817b7211258cbef3a4fb9",
+                "reference": "765b0d87fcc3e839c74817b7211258cbef3a4fb9",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "~2.3",
-                "doctrine/doctrine-cache-bundle": "~1.0",
+                "doctrine/dbal": ">=2.2,<2.5-dev",
                 "jdorn/sql-formatter": "~1.1",
                 "php": ">=5.3.2",
                 "symfony/doctrine-bridge": "~2.2",
                 "symfony/framework-bundle": "~2.2"
             },
             "require-dev": {
-                "doctrine/orm": "~2.3",
-                "phpunit/php-code-coverage": "~1.2",
-                "phpunit/phpunit": "~3.7",
-                "phpunit/phpunit-mock-objects": "~1.2",
-                "satooshi/php-coveralls": "~0.6.1",
+                "doctrine/orm": ">=2.2,<2.5-dev",
                 "symfony/validator": "~2.2",
-                "symfony/yaml": "~2.2",
-                "twig/twig": "~1"
+                "symfony/yaml": "~2.2"
             },
             "suggest": {
                 "doctrine/orm": "The Doctrine ORM integration is optional in the bundle.",
@@ -456,7 +450,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.2.x-dev"
                 }
             },
             "autoload": {
@@ -482,10 +476,6 @@
                 {
                     "name": "Benjamin Eberlei",
                     "email": "kontakt@beberlei.de"
-                },
-                {
-                    "name": "Doctrine Project",
-                    "homepage": "http://www.doctrine-project.org/"
                 }
             ],
             "description": "Symfony DoctrineBundle",
@@ -496,7 +486,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2014-03-04 21:50:51"
+            "time": "2013-03-25 20:13:59"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -715,12 +705,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrinePHPCRBundle.git",
-                "reference": "bf318493ef874905c66d7cd01108f39d2266ec74"
+                "reference": "e7fc9122f67766eef9cb4054034926b7660a275c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrinePHPCRBundle/zipball/bf318493ef874905c66d7cd01108f39d2266ec74",
-                "reference": "bf318493ef874905c66d7cd01108f39d2266ec74",
+                "url": "https://api.github.com/repos/doctrine/DoctrinePHPCRBundle/zipball/e7fc9122f67766eef9cb4054034926b7660a275c",
+                "reference": "e7fc9122f67766eef9cb4054034926b7660a275c",
                 "shasum": ""
             },
             "require": {
@@ -778,7 +768,7 @@
                 "persistence",
                 "phpcr"
             ],
-            "time": "2014-03-27 07:24:29"
+            "time": "2014-04-03 12:45:33"
         },
         {
             "name": "doctrine/phpcr-odm",
@@ -856,21 +846,22 @@
         },
         {
             "name": "eko/feedbundle",
-            "version": "dev-master",
+            "version": "1.0.1",
+            "target-dir": "Eko/FeedBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eko/FeedBundle.git",
-                "reference": "59008490ef8fe8a97e0c167d66ca84a59eb584c1"
+                "reference": "f180c6dc7d5216ff0a5f1b905d32f4b427a4dcf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eko/FeedBundle/zipball/59008490ef8fe8a97e0c167d66ca84a59eb584c1",
-                "reference": "59008490ef8fe8a97e0c167d66ca84a59eb584c1",
+                "url": "https://api.github.com/repos/eko/FeedBundle/zipball/f180c6dc7d5216ff0a5f1b905d32f4b427a4dcf5",
+                "reference": "f180c6dc7d5216ff0a5f1b905d32f4b427a4dcf5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2",
-                "symfony/framework-bundle": "~2.0",
+                "symfony/framework-bundle": ">=2.0,<2.4-dev",
                 "zendframework/zend-feed": ">=2.0",
                 "zendframework/zend-http": ">=2.0",
                 "zendframework/zend-servicemanager": ">=2.0"
@@ -878,12 +869,12 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Eko\\FeedBundle\\": ""
+                "psr-0": {
+                    "Eko\\FeedBundle": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -904,7 +895,7 @@
                 "feed",
                 "rss"
             ],
-            "time": "2014-03-07 19:16:00"
+            "time": "2013-06-08 08:30:49"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -1255,12 +1246,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackalope/jackalope-doctrine-dbal.git",
-                "reference": "b3fc10e3e365637730ecb622806d8a73e6962f16"
+                "reference": "9fac0169f5fc0486f717e2051a4a61ded69d325e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope-doctrine-dbal/zipball/b3fc10e3e365637730ecb622806d8a73e6962f16",
-                "reference": "b3fc10e3e365637730ecb622806d8a73e6962f16",
+                "url": "https://api.github.com/repos/jackalope/jackalope-doctrine-dbal/zipball/9fac0169f5fc0486f717e2051a4a61ded69d325e",
+                "reference": "9fac0169f5fc0486f717e2051a4a61ded69d325e",
                 "shasum": ""
             },
             "require": {
@@ -1309,7 +1300,7 @@
                 "phpcr",
                 "transport implementation"
             ],
-            "time": "2014-03-17 08:47:49"
+            "time": "2014-04-03 12:44:49"
         },
         {
             "name": "jackalope/jackalope-jackrabbit",
@@ -1839,17 +1830,17 @@
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "0.x-dev",
+            "version": "v0.21.1",
             "target-dir": "Liip/ImagineBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipImagineBundle.git",
-                "reference": "e39b7c1d5a969605690ef5f9ab1f837bf4083b5f"
+                "reference": "0490ecfd7184e71b24108ba0c2a85261c14b9fc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/e39b7c1d5a969605690ef5f9ab1f837bf4083b5f",
-                "reference": "e39b7c1d5a969605690ef5f9ab1f837bf4083b5f",
+                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/0490ecfd7184e71b24108ba0c2a85261c14b9fc4",
+                "reference": "0490ecfd7184e71b24108ba0c2a85261c14b9fc4",
                 "shasum": ""
             },
             "require": {
@@ -1890,7 +1881,7 @@
                 "image",
                 "imagine"
             ],
-            "time": "2014-03-23 14:00:21"
+            "time": "2014-03-14 17:57:09"
         },
         {
             "name": "liip/search-bundle",
@@ -2738,16 +2729,16 @@
         },
         {
             "name": "sonata-project/cache-bundle",
-            "version": "dev-master",
+            "version": "2.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCacheBundle.git",
-                "reference": "af5b3f2bc1622b4952bcb7a5d2edde313fb0c847"
+                "reference": "2803d69b13e237b2de53076750e5c0df528727e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCacheBundle/zipball/af5b3f2bc1622b4952bcb7a5d2edde313fb0c847",
-                "reference": "af5b3f2bc1622b4952bcb7a5d2edde313fb0c847",
+                "url": "https://api.github.com/repos/sonata-project/SonataCacheBundle/zipball/2803d69b13e237b2de53076750e5c0df528727e8",
+                "reference": "2803d69b13e237b2de53076750e5c0df528727e8",
                 "shasum": ""
             },
             "require": {
@@ -2802,7 +2793,7 @@
             "keywords": [
                 "cache block"
             ],
-            "time": "2014-03-19 11:43:29"
+            "time": "2014-02-14 14:16:31"
         },
         {
             "name": "sonata-project/core-bundle",
@@ -3639,17 +3630,17 @@
         },
         {
             "name": "symfony-cmf/simple-cms-bundle",
-            "version": "dev-cleanup-routing",
+            "version": "dev-master",
             "target-dir": "Symfony/Cmf/Bundle/SimpleCmsBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/SimpleCmsBundle.git",
-                "reference": "9ae1897de42e909d594c39555164789fc9957a96"
+                "reference": "d9ece63cd4fab71767793eb8f5773f20fcd640aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/SimpleCmsBundle/zipball/9ae1897de42e909d594c39555164789fc9957a96",
-                "reference": "9ae1897de42e909d594c39555164789fc9957a96",
+                "url": "https://api.github.com/repos/symfony-cmf/SimpleCmsBundle/zipball/d9ece63cd4fab71767793eb8f5773f20fcd640aa",
+                "reference": "d9ece63cd4fab71767793eb8f5773f20fcd640aa",
                 "shasum": ""
             },
             "require": {
@@ -3700,7 +3691,7 @@
                 "Symfony CMF",
                 "cms"
             ],
-            "time": "2014-04-03 09:31:00"
+            "time": "2014-04-03 10:03:25"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
@@ -4354,7 +4345,7 @@
         },
         {
             "name": "wjzijderveld/check-bundles",
-            "version": "1.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wjzijderveld/CheckBundles.git",
@@ -4897,17 +4888,12 @@
         }
     ],
     "aliases": [
-        {
-            "alias": "1.1.0",
-            "alias_normalized": "1.1.0.0",
-            "version": "dev-cleanup-routing",
-            "package": "symfony-cmf/simple-cms-bundle"
-        }
+
     ],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "symfony-cmf/simple-cms-bundle": 20
-    },
+    "stability-flags": [
+
+    ],
     "platform": {
         "php": ">=5.3.3"
     },
