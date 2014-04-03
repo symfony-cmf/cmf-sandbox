@@ -107,12 +107,6 @@ cmf_routing:
             cmf_routing.dynamic_router: 20
             router.default: 100
     dynamic:
-        # todo: adjust CoreBundle to prepend
-        persistence:
-            phpcr:
-                route_basepaths:
-                    - /cms/routes
-                    - /cms/simple
         controllers_by_type:
             demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
@@ -121,10 +115,6 @@ cmf_routing:
 
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:StaticContent:index.html.twig
-
-cmf_simple_cms:
-    routing:
-        templates_by_class:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
 
 cmf_create:
