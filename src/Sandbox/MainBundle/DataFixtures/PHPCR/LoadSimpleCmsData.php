@@ -5,6 +5,7 @@ namespace Sandbox\MainBundle\DataFixtures\PHPCR;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\ODM\PHPCR\DocumentManager;
 
 use PHPCR\Util\NodeHelper;
 
@@ -23,6 +24,7 @@ class LoadSimpleCmsData extends ContainerAware implements FixtureInterface, Orde
     {
         $basepath = $this->container->getParameter('cmf_simple_cms.persistence.phpcr.basepath');
         $root = $manager->find(null, $basepath);
+        $root->setTitle('simple cms root (hidden by the home route in the sandbox)');
 
         $this->createPage($manager, $root, 'about', 'About us', 'Some information about us', 'The about us page with some content');
         $this->createPage($manager, $root, 'contact', 'Contact', 'A contact page', 'Please send an email to cmf-devs@groups.google.com');
@@ -33,7 +35,7 @@ class LoadSimpleCmsData extends ContainerAware implements FixtureInterface, Orde
     /**
      * @return Page instance with the specified information
      */
-    protected function createPage($manager, $parent, $name, $label, $title, $body)
+    protected function createPage(DocumentManager $manager, $parent, $name, $label, $title, $body)
     {
         $page = new Page();
         $page->setPosition($parent, $name);

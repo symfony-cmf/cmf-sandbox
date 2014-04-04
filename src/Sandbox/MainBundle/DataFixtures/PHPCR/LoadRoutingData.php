@@ -34,7 +34,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
     {
         $session = $dm->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('cmf_routing.dynamic.persistence.phpcr.route_basepath');
+        $basepath = $this->container->getParameter('cmf_routing.dynamic.persistence.phpcr.admin_basepath');
         if ($session->itemExists($basepath)) {
             $session->removeItem($basepath);
         }

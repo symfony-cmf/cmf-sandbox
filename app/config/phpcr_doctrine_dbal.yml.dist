@@ -1,5 +1,7 @@
 parameters:
     phpcr_backend:
+        logging: true
+        profiling: true
         type: doctrinedbal
         connection: default
         caches:
