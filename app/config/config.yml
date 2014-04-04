@@ -253,8 +253,7 @@ sonata_seo:
     page:
         title: CMF Sandbox
         metas:
-            names:
-                description: "The Content Management Framework."
+            name:
                 keywords: "CMF, Symfony, Routing, Content, PHPCR"
 
 sensio_framework_extra:
