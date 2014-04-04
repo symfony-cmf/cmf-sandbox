@@ -165,3 +165,20 @@ static:
             fr: |
                 <h2>This page is only available in english</h2>
                 <p>The content is actually also translated to french, but there is no route for french.
+
+    -
+        name: "demo-seo-extractor"
+        class: "Sandbox\MainBundle\Document\DemoSeoExtractor"
+        title:
+            en: Demo - Seo extractors
+            fr: Demo - Seo extractors
+        body:
+            en: |
+                This Example extracts its SeoMetada directly from the document. Extractors for title, description
+                and original url gerenerates the values for the page title, the description for metadata and the absolute url for
+                redirect/canonical link.
+            fr: |
+                Needs to be translated:
+                This Example extracts its SeoMetada directly from the document. Extractors for title, description
+                and original url gerenerates the values for the page title, the description for metadata and the absolute url for
+                redirect/canonical link.

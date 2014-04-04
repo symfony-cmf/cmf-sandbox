@@ -8,6 +8,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 use PHPCR\Util\NodeHelper;
 
+use Sandbox\MainBundle\Document\DemoSeoMetadata;
+use Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadata;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
@@ -42,7 +44,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 /** @var $page StaticContent */
                 $page = new $class();
                 $page->setName($overview['name']);
-                $page->setParent($parent);
+                $page->setParentDocument($parent);
                 $manager->persist($page);
             }
 
@@ -71,6 +73,28 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 }
             }
         }
+
+        //add a loading for a simple seo aware page
+        $seoDemo = new DemoSeoMetadata();
+        $seoDemo->setName('simple-seo-example');
+        $seoDemo->setTitle('Simple seo example');
+        $seoDemo->setBody(
+            '<p>
+                Just implementing the SeoAwareInterface will give the chance to add the SeoMetadata
+                (page $title. description, keywords and original url) to the document. When using
+                sonatas admin bundle will extend your form by adding a form type to insert that values.
+                For more special use you can use the extractors.
+            </p>'
+        );
+        $seoDemo->setParentDocument($parent);
+
+        $seoMetadata = new SeoMetadata();
+        $seoMetadata->setTitle('Simple seo example');
+        $seoMetadata->setOriginalUrl('/home');
+        $seoMetadata->setMetaDescription('This is a simple example for a seo aware document in sandbox');
+        $seoMetadata->setMetaKeywords('Seo');
+        $seoDemo->setSeoMetadata($seoMetadata);
+        $manager->persist($seoDemo);
 
         $manager->flush(); //to get ref id populated
     }

@@ -118,6 +118,11 @@ cmf_create:
         # for demo purposes we are allowing anonymous inline editing
         role: IS_AUTHENTICATED_ANONYMOUSLY
 
+cmf_seo:
+    title: CMF Sandbox - %%content_title%%
+    description: The Content Management Framework. %%content_description%%
+    sonata_admin_extension: true
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -153,6 +158,9 @@ sonata_admin:
         cmf_routing.admin_extension.route_referrers:
             implements:
                 - Symfony\Cmf\Component\Routing\RouteReferrersInterface
+        cmf_seo.admin_extension:
+            implements:
+                - Symfony\Cmf\Bundle\SeoBundle\Model\SeoAwareInterface
 
     templates:
         # default global templates
@@ -239,6 +247,15 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
+
+
+sonata_seo:
+    page:
+        title: CMF Sandbox
+        metas:
+            names:
+                description: "The Content Management Framework."
+                keywords: "CMF, Symfony, Routing, Content, PHPCR"
 
 sensio_framework_extra:
     view:    { annotations: false }

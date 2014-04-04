@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d01658516dbeb8a2c0d4b69dfbe0f972",
+    "hash": "8bcbce0e0d6281517deac27d0dfac58e",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -2054,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "f3032a2b9874aa76efcc155eff776eabdf322d05"
+                "reference": "c3dd9b972b8e070580f0660b842a898871fadf13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f3032a2b9874aa76efcc155eff776eabdf322d05",
-                "reference": "f3032a2b9874aa76efcc155eff776eabdf322d05",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c3dd9b972b8e070580f0660b842a898871fadf13",
+                "reference": "c3dd9b972b8e070580f0660b842a898871fadf13",
                 "shasum": ""
             },
             "require": {
@@ -2114,7 +2114,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-04-01 19:53:04"
+            "time": "2014-04-04 15:22:02"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -3024,6 +3024,69 @@
             "time": "2013-03-01 17:24:02"
         },
         {
+            "name": "sonata-project/seo-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataSeoBundle.git",
+                "reference": "1a2d98bb58be725c9832cf0635ccf9628e8cd1a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataSeoBundle/zipball/1a2d98bb58be725c9832cf0635ccf9628e8cd1a1",
+                "reference": "1a2d98bb58be725c9832cf0635ccf9628e8cd1a1",
+                "shasum": ""
+            },
+            "require": {
+                "sonata-project/exporter": ">=1.2.2,<2.0",
+                "symfony/symfony": "~2.1",
+                "twig/twig": "*"
+            },
+            "require-dev": {
+                "guzzle/guzzle": "3.*",
+                "sonata-project/admin-bundle": "~2.2",
+                "sonata-project/block-bundle": "~2.2,>=2.2.7"
+            },
+            "suggest": {
+                "guzzle/guzzle": "3.*",
+                "knplabs/knp-menu-bundle": "Used by the BreadcrumbMenuBuilder",
+                "sonata-project/block-bundle": "Allows you to use SEO friendly blocks"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\SeoBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataSeoBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonataSeoBundle",
+            "homepage": "http://sonata-project.org/bundles/seo",
+            "keywords": [
+                "seo",
+                "sonata"
+            ],
+            "time": "2014-03-20 15:14:33"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "dev-master",
             "source": {
@@ -3627,6 +3690,69 @@
                 "search"
             ],
             "time": "2014-03-27 08:00:52"
+        },
+        {
+            "name": "symfony-cmf/seo-bundle",
+            "version": "dev-master",
+            "target-dir": "Symfony/Cmf/Bundle/SeoBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-cmf/SeoBundle.git",
+                "reference": "da9cf69c20bf3532de8d10d5fc71e5ec9bc6e28b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-cmf/SeoBundle/zipball/da9cf69c20bf3532de8d10d5fc71e5ec9bc6e28b",
+                "reference": "da9cf69c20bf3532de8d10d5fc71e5ec9bc6e28b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sonata-project/seo-bundle": "1.1.*@dev",
+                "symfony-cmf/core-bundle": "1.1.*@dev"
+            },
+            "require-dev": {
+                "doctrine/phpcr-bundle": "1.1.*@dev",
+                "doctrine/phpcr-odm": "1.1.*@dev",
+                "matthiasnoback/symfony-config-test": "0.*",
+                "matthiasnoback/symfony-dependency-injection-test": "0.*",
+                "sonata-project/doctrine-phpcr-admin-bundle": "1.1.*@dev",
+                "symfony-cmf/routing-bundle": "1.2.*@dev",
+                "symfony-cmf/testing": "dev-master"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "To persist the metadata in ORM entities",
+                "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
+                "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin extension for the seo metadata"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Cmf\\Bundle\\SeoBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony CMF Community",
+                    "homepage": "https://github.com/symfony-cmf/SeoBundle/contributors"
+                }
+            ],
+            "description": "Symfony CMF Search Engine Optimization Bundle",
+            "homepage": "http://cmf.symfony.com",
+            "keywords": [
+                "Symfony CMF",
+                "seo"
+            ],
+            "time": "2014-04-02 06:46:56"
         },
         {
             "name": "symfony-cmf/simple-cms-bundle",
@@ -4842,12 +4968,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/Testing.git",
-                "reference": "3b89e9f57774ddf98ad1d4d62166d6be5ddaa357"
+                "reference": "be08f6fd67113471eb437ade7f7ac400f550f07a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/Testing/zipball/3b89e9f57774ddf98ad1d4d62166d6be5ddaa357",
-                "reference": "3b89e9f57774ddf98ad1d4d62166d6be5ddaa357",
+                "url": "https://api.github.com/repos/symfony-cmf/Testing/zipball/be08f6fd67113471eb437ade7f7ac400f550f07a",
+                "reference": "be08f6fd67113471eb437ade7f7ac400f550f07a",
                 "shasum": ""
             },
             "require": {
@@ -4884,7 +5010,7 @@
                 }
             ],
             "description": "Component for bootstraping functional tests for CMF bundles only.",
-            "time": "2014-04-02 20:46:35"
+            "time": "2014-04-04 15:26:27"
         }
     ],
     "aliases": [
