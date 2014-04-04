@@ -110,7 +110,8 @@ class AdminTest extends WebTestCase
 
             // if an ID is required, try and find a document to test
             if (isset($requirements['id'])) {
-                if ($document = $this->dm->getRepository($class)->findOneBy(array())) {
+                $document = $admin->createQuery('list')->execute()->first();
+                if ($document) {
                     $node = $this->dm->getNodeForDocument($document);
                     $routeParams['id'] = $node->getPath();
                 } else {
