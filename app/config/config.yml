@@ -95,12 +95,6 @@ cmf_core:
         phpcr:
             enabled: true
 
-cmf_menu:
-    persistence:
-        phpcr:
-            # TODO remove once https://github.com/jackalope/jackalope-doctrine-dbal/issues/189 is fixed
-            prefetch:             0
-
 cmf_routing:
     chain:
         routers_by_id:
@@ -114,8 +108,8 @@ cmf_routing:
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
 
         templates_by_class:
-            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:StaticContent:index.html.twig
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:StaticContent:index.html.twig
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
@@ -141,6 +135,9 @@ sonata_block:
 
 sonata_admin:
     extensions:
+        cmf_core.admin_extension.child:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface
         cmf_core.admin_extension.publish_workflow.time_period:
             implements:
                 - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface
