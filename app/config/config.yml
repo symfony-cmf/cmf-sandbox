@@ -208,7 +208,7 @@ sonata_doctrine_phpcr_admin:
         Doctrine\ODM\PHPCR\Document\Generic:
             valid_children:
                 - all
-        Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent:
+        Sandbox\MainBundle\Document\DemoSeoContent:
             valid_children:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
