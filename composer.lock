@@ -1193,12 +1193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackalope/jackalope.git",
-                "reference": "1f936da47bd29deb8b0a1a21af46519485f99d37"
+                "reference": "252f613a12a23600d8600339e58a892adb16f629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/1f936da47bd29deb8b0a1a21af46519485f99d37",
-                "reference": "1f936da47bd29deb8b0a1a21af46519485f99d37",
+                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/252f613a12a23600d8600339e58a892adb16f629",
+                "reference": "252f613a12a23600d8600339e58a892adb16f629",
                 "shasum": ""
             },
             "require": {
@@ -1238,7 +1238,7 @@
             "keywords": [
                 "phpcr"
             ],
-            "time": "2014-04-04 10:29:19"
+            "time": "2014-04-05 09:23:22"
         },
         {
             "name": "jackalope/jackalope-doctrine-dbal",
@@ -3144,12 +3144,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/BlockBundle.git",
-                "reference": "26bcf5465b972042b6e5fe43c8115a567187d8e5"
+                "reference": "f3080e3bb4adf678c64540f0562959cb88869491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/BlockBundle/zipball/26bcf5465b972042b6e5fe43c8115a567187d8e5",
-                "reference": "26bcf5465b972042b6e5fe43c8115a567187d8e5",
+                "url": "https://api.github.com/repos/symfony-cmf/BlockBundle/zipball/f3080e3bb4adf678c64540f0562959cb88869491",
+                "reference": "f3080e3bb4adf678c64540f0562959cb88869491",
                 "shasum": ""
             },
             "require": {
@@ -3204,7 +3204,7 @@
                 "block",
                 "content fragments"
             ],
-            "time": "2014-04-02 12:52:00"
+            "time": "2014-04-04 22:12:58"
         },
         {
             "name": "symfony-cmf/content-bundle",
@@ -3213,12 +3213,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "ae15dbbcb38c47bc28cfc618779dac13c23e9a1b"
+                "reference": "20234960ea8a4702bad0e1986fd08430198a9125"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/ae15dbbcb38c47bc28cfc618779dac13c23e9a1b",
-                "reference": "ae15dbbcb38c47bc28cfc618779dac13c23e9a1b",
+                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/20234960ea8a4702bad0e1986fd08430198a9125",
+                "reference": "20234960ea8a4702bad0e1986fd08430198a9125",
                 "shasum": ""
             },
             "require": {
@@ -3269,7 +3269,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2014-03-27 07:56:59"
+            "time": "2014-04-05 18:31:24"
         },
         {
             "name": "symfony-cmf/core-bundle",
@@ -3396,12 +3396,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/MediaBundle.git",
-                "reference": "a954667518abbb36e6d47f5412ff76cc922d0179"
+                "reference": "aac47e6fcb4c91d4237831d79afffe372284ede3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MediaBundle/zipball/a954667518abbb36e6d47f5412ff76cc922d0179",
-                "reference": "a954667518abbb36e6d47f5412ff76cc922d0179",
+                "url": "https://api.github.com/repos/symfony-cmf/MediaBundle/zipball/aac47e6fcb4c91d4237831d79afffe372284ede3",
+                "reference": "aac47e6fcb4c91d4237831d79afffe372284ede3",
                 "shasum": ""
             },
             "require": {
@@ -3450,7 +3450,7 @@
                 "image",
                 "media"
             ],
-            "time": "2014-03-27 07:58:41"
+            "time": "2014-04-04 22:13:26"
         },
         {
             "name": "symfony-cmf/menu-bundle",
@@ -3459,12 +3459,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/MenuBundle.git",
-                "reference": "dae5e530c066913b145f09e4255b2fd651488da6"
+                "reference": "a191ba1dc0a78b114cdc16094be98f5987b761c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/dae5e530c066913b145f09e4255b2fd651488da6",
-                "reference": "dae5e530c066913b145f09e4255b2fd651488da6",
+                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/a191ba1dc0a78b114cdc16094be98f5987b761c4",
+                "reference": "a191ba1dc0a78b114cdc16094be98f5987b761c4",
                 "shasum": ""
             },
             "require": {
@@ -3511,7 +3511,7 @@
                 "Symfony CMF",
                 "menu"
             ],
-            "time": "2014-04-04 12:22:35"
+            "time": "2014-04-04 22:12:33"
         },
         {
             "name": "symfony-cmf/routing",
@@ -4113,12 +4113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "d272424f01656f9327198fd6c07a48499622d133"
+                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/d272424f01656f9327198fd6c07a48499622d133",
-                "reference": "d272424f01656f9327198fd6c07a48499622d133",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
+                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
                 "shasum": ""
             },
             "require": {
@@ -4161,7 +4161,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2014-04-03 07:36:17"
+            "time": "2014-04-05 17:15:52"
         },
         {
             "name": "symfony/symfony",

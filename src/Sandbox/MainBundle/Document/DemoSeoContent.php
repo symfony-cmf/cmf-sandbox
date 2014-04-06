@@ -16,7 +16,7 @@ use Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadata;
  *
  * @author Maximilian Berghoff <Maximilian.Berghoff@gmx.de>
  */
-class DemoSeoMetadata  extends StaticContent implements SeoAwareInterface
+class DemoSeoContent extends StaticContent implements SeoAwareInterface
 {
     /**
      * @var SeoMetadata

@@ -3,7 +3,6 @@
 namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoDescriptionReadInterface;
 use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoOriginalUrlReadInterface;
 use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoTitleReadInterface;
@@ -16,9 +15,10 @@ use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoTitleReadInterface;
  *
  * @author Maximilian Berghoff <Maximilian.Berghoff@gmx.de>
  */
-class DemoSeoExtractor extends StaticContent implements
+class DemoSeoExtractor extends DemoSeoContent implements
     SeoTitleReadInterface,
-    SeoDescriptionReadInterface
+    SeoDescriptionReadInterface,
+    SeoOriginalUrlReadInterface
 {
     /**
      * {@inheritDoc}
@@ -34,5 +34,13 @@ class DemoSeoExtractor extends StaticContent implements
     public function getSeoDescription()
     {
         return substr($this->getBody(), 0, 200).' ...';
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSeoOriginalUrl()
+    {
+        return "/home";
     }
 }
