@@ -10,10 +10,10 @@ class AdminTest extends WebTestCase
     protected $router;
 
     protected $verifiablePatterns = array(
-        '/cmf/content/staticcontent/list',
-        '/cmf/content/staticcontent/create',
-        '/cmf/content/staticcontent/{id}/edit',
-        '/cmf/content/staticcontent/{id}/delete',
+        '/cmf/content/demoseocontent/list',
+        '/cmf/content/demoseocontent/create',
+        '/cmf/content/demoseocontent/{id}/edit',
+        '/cmf/content/demoseocontent/{id}/delete',
         '/cmf/block/simpleblock/list',
         '/cmf/block/simpleblock/create',
         '/cmf/block/simpleblock/{id}/edit',
