@@ -28,7 +28,7 @@ class DemoClassContent implements RouteReferrersReadInterface
     /**
      * @PHPCRODM\Parentdocument()
      */
-    public $parent;
+    public $parentDocument;
 
     /**
      * @Assert\NotBlank
@@ -84,9 +84,9 @@ class DemoClassContent implements RouteReferrersReadInterface
     {
       return $this->path;
     }
-    public function setParent($parent)
+    public function setParentDocument($parent)
     {
-        $this->parent = $parent;
+        $this->parentDocument = $parent;
     }
 
     public function getBody()

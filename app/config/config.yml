@@ -95,6 +95,11 @@ cmf_core:
         phpcr:
             enabled: true
 
+cmf_content:
+    persistence:
+        phpcr:
+            document_class: Sandbox\MainBundle\Document\DemoSeoContent
+
 cmf_routing:
     chain:
         routers_by_id:
@@ -117,6 +122,11 @@ cmf_create:
         # WARNING: REMOVE THIS FOR PRODUCTION SITES
         # for demo purposes we are allowing anonymous inline editing
         role: IS_AUTHENTICATED_ANONYMOUSLY
+
+cmf_seo:
+    title: CMF Sandbox - %%content_title%%
+    description: The Content Management Framework. %%content_description%%
+    sonata_admin_extension: true
 
 sonata_block:
     default_contexts: [cms]
@@ -153,6 +163,9 @@ sonata_admin:
         cmf_routing.admin_extension.route_referrers:
             implements:
                 - Symfony\Cmf\Component\Routing\RouteReferrersInterface
+        cmf_seo.admin_extension:
+            implements:
+                - Symfony\Cmf\Bundle\SeoBundle\Model\SeoAwareInterface
 
     templates:
         # default global templates
@@ -195,7 +208,7 @@ sonata_doctrine_phpcr_admin:
         Doctrine\ODM\PHPCR\Document\Generic:
             valid_children:
                 - all
-        Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent:
+        Sandbox\MainBundle\Document\DemoSeoContent:
             valid_children:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
@@ -239,6 +252,14 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
+
+
+sonata_seo:
+    page:
+        title: CMF Sandbox
+        metas:
+            name:
+                keywords: "CMF, Symfony, Routing, Content, PHPCR"
 
 sensio_framework_extra:
     view:    { annotations: false }

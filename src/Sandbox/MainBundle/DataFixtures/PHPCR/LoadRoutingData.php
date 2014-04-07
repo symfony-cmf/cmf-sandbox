@@ -75,6 +75,16 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $cmf->setPosition($projects, 'cmf');
             $cmf->setContent($dm->find(null, "$content_path/cmf"));
             $dm->persist($cmf);
+
+            $seo = new Route();
+            $seo->setPosition($home, 'simple-seo-example');
+            $seo->setContent($dm->find(null, "$content_path/simple-seo-example"));
+            $dm->persist($seo);
+
+            $seo = new Route();
+            $seo->setPosition($home, 'demo-seo-extractor');
+            $seo->setContent($dm->find(null, "$content_path/demo-seo-extractor"));
+            $dm->persist($seo);
         }
 
         // demo features of routing

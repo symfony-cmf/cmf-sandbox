@@ -8,10 +8,10 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 use PHPCR\Util\NodeHelper;
 
+use Sandbox\MainBundle\Document\DemoSeoContent;
+use Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadata;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
-
-use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 
 class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
 {
@@ -38,11 +38,11 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
             $path = $basepath . '/' . $overview['name'];
             $page = $manager->find(null, $path);
             if (!$page) {
-                $class = isset($overview['class']) ? $overview['class'] : 'Symfony\\Cmf\\Bundle\\ContentBundle\\Doctrine\\Phpcr\\StaticContent';
-                /** @var $page StaticContent */
+                $class = isset($overview['class']) ? $overview['class'] : 'Sandbox\\MainBundle\\Document\\DemoSeoContent';
+                /** @var $page DemoSeoContent */
                 $page = new $class();
                 $page->setName($overview['name']);
-                $page->setParent($parent);
+                $page->setParentDocument($parent);
                 $manager->persist($page);
             }
 
@@ -71,6 +71,29 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 }
             }
         }
+
+        //add a loading for a simple seo aware page
+        $seoDemo = new DemoSeoContent();
+        $seoDemo->setName('simple-seo-example');
+        $seoDemo->setTitle('Simple seo example');
+        $seoDemo->setBody(
+            '<p>
+                When implementing the SeoAwareInterface,
+                you get a chance to configure SEO data
+                (title, description, keywords and original url)
+                of the document.
+                The SonataAdminBundle integration allows admins to update this data.
+            </p>'
+        );
+        $seoDemo->setParentDocument($parent);
+
+        $seoMetadata = new SeoMetadata();
+        $seoMetadata->setTitle('Simple seo example');
+        $seoMetadata->setOriginalUrl('/home');
+        $seoMetadata->setMetaDescription('This is a simple example of an seo aware document in the sandbox.');
+        $seoMetadata->setMetaKeywords('Seo');
+        $seoDemo->setSeoMetadata($seoMetadata);
+        $manager->persist($seoDemo);
 
         $manager->flush(); //to get ref id populated
     }

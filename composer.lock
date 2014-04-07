@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "d01658516dbeb8a2c0d4b69dfbe0f972",
+    "hash": "a13a54f456ecea3c0d2f1e0d0f3fe8da",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -118,7 +118,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1193,12 +1193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jackalope/jackalope.git",
-                "reference": "1f936da47bd29deb8b0a1a21af46519485f99d37"
+                "reference": "252f613a12a23600d8600339e58a892adb16f629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/1f936da47bd29deb8b0a1a21af46519485f99d37",
-                "reference": "1f936da47bd29deb8b0a1a21af46519485f99d37",
+                "url": "https://api.github.com/repos/jackalope/jackalope/zipball/252f613a12a23600d8600339e58a892adb16f629",
+                "reference": "252f613a12a23600d8600339e58a892adb16f629",
                 "shasum": ""
             },
             "require": {
@@ -1238,7 +1238,7 @@
             "keywords": [
                 "phpcr"
             ],
-            "time": "2014-04-04 10:29:19"
+            "time": "2014-04-05 09:23:22"
         },
         {
             "name": "jackalope/jackalope-doctrine-dbal",
@@ -1506,7 +1506,7 @@
         },
         {
             "name": "jms/serializer",
-            "version": "dev-master",
+            "version": "0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
@@ -1559,7 +1559,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2054,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "f3032a2b9874aa76efcc155eff776eabdf322d05"
+                "reference": "c3dd9b972b8e070580f0660b842a898871fadf13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/f3032a2b9874aa76efcc155eff776eabdf322d05",
-                "reference": "f3032a2b9874aa76efcc155eff776eabdf322d05",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/c3dd9b972b8e070580f0660b842a898871fadf13",
+                "reference": "c3dd9b972b8e070580f0660b842a898871fadf13",
                 "shasum": ""
             },
             "require": {
@@ -2114,7 +2114,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-04-01 19:53:04"
+            "time": "2014-04-04 15:22:02"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -3024,6 +3024,69 @@
             "time": "2013-03-01 17:24:02"
         },
         {
+            "name": "sonata-project/seo-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataSeoBundle.git",
+                "reference": "1a2d98bb58be725c9832cf0635ccf9628e8cd1a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataSeoBundle/zipball/1a2d98bb58be725c9832cf0635ccf9628e8cd1a1",
+                "reference": "1a2d98bb58be725c9832cf0635ccf9628e8cd1a1",
+                "shasum": ""
+            },
+            "require": {
+                "sonata-project/exporter": ">=1.2.2,<2.0",
+                "symfony/symfony": "~2.1",
+                "twig/twig": "*"
+            },
+            "require-dev": {
+                "guzzle/guzzle": "3.*",
+                "sonata-project/admin-bundle": "~2.2",
+                "sonata-project/block-bundle": "~2.2,>=2.2.7"
+            },
+            "suggest": {
+                "guzzle/guzzle": "3.*",
+                "knplabs/knp-menu-bundle": "Used by the BreadcrumbMenuBuilder",
+                "sonata-project/block-bundle": "Allows you to use SEO friendly blocks"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\SeoBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataSeoBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonataSeoBundle",
+            "homepage": "http://sonata-project.org/bundles/seo",
+            "keywords": [
+                "seo",
+                "sonata"
+            ],
+            "time": "2014-03-20 15:14:33"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "dev-master",
             "source": {
@@ -3081,12 +3144,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/BlockBundle.git",
-                "reference": "26bcf5465b972042b6e5fe43c8115a567187d8e5"
+                "reference": "f3080e3bb4adf678c64540f0562959cb88869491"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/BlockBundle/zipball/26bcf5465b972042b6e5fe43c8115a567187d8e5",
-                "reference": "26bcf5465b972042b6e5fe43c8115a567187d8e5",
+                "url": "https://api.github.com/repos/symfony-cmf/BlockBundle/zipball/f3080e3bb4adf678c64540f0562959cb88869491",
+                "reference": "f3080e3bb4adf678c64540f0562959cb88869491",
                 "shasum": ""
             },
             "require": {
@@ -3141,7 +3204,7 @@
                 "block",
                 "content fragments"
             ],
-            "time": "2014-04-02 12:52:00"
+            "time": "2014-04-04 22:12:58"
         },
         {
             "name": "symfony-cmf/content-bundle",
@@ -3150,12 +3213,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "ae15dbbcb38c47bc28cfc618779dac13c23e9a1b"
+                "reference": "20234960ea8a4702bad0e1986fd08430198a9125"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/ae15dbbcb38c47bc28cfc618779dac13c23e9a1b",
-                "reference": "ae15dbbcb38c47bc28cfc618779dac13c23e9a1b",
+                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/20234960ea8a4702bad0e1986fd08430198a9125",
+                "reference": "20234960ea8a4702bad0e1986fd08430198a9125",
                 "shasum": ""
             },
             "require": {
@@ -3206,7 +3269,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2014-03-27 07:56:59"
+            "time": "2014-04-05 18:31:24"
         },
         {
             "name": "symfony-cmf/core-bundle",
@@ -3333,12 +3396,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/MediaBundle.git",
-                "reference": "a954667518abbb36e6d47f5412ff76cc922d0179"
+                "reference": "aac47e6fcb4c91d4237831d79afffe372284ede3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MediaBundle/zipball/a954667518abbb36e6d47f5412ff76cc922d0179",
-                "reference": "a954667518abbb36e6d47f5412ff76cc922d0179",
+                "url": "https://api.github.com/repos/symfony-cmf/MediaBundle/zipball/aac47e6fcb4c91d4237831d79afffe372284ede3",
+                "reference": "aac47e6fcb4c91d4237831d79afffe372284ede3",
                 "shasum": ""
             },
             "require": {
@@ -3387,7 +3450,7 @@
                 "image",
                 "media"
             ],
-            "time": "2014-03-27 07:58:41"
+            "time": "2014-04-04 22:13:26"
         },
         {
             "name": "symfony-cmf/menu-bundle",
@@ -3396,12 +3459,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/MenuBundle.git",
-                "reference": "dae5e530c066913b145f09e4255b2fd651488da6"
+                "reference": "a191ba1dc0a78b114cdc16094be98f5987b761c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/dae5e530c066913b145f09e4255b2fd651488da6",
-                "reference": "dae5e530c066913b145f09e4255b2fd651488da6",
+                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/a191ba1dc0a78b114cdc16094be98f5987b761c4",
+                "reference": "a191ba1dc0a78b114cdc16094be98f5987b761c4",
                 "shasum": ""
             },
             "require": {
@@ -3448,7 +3511,7 @@
                 "Symfony CMF",
                 "menu"
             ],
-            "time": "2014-04-04 12:22:35"
+            "time": "2014-04-04 22:12:33"
         },
         {
             "name": "symfony-cmf/routing",
@@ -3627,6 +3690,69 @@
                 "search"
             ],
             "time": "2014-03-27 08:00:52"
+        },
+        {
+            "name": "symfony-cmf/seo-bundle",
+            "version": "dev-master",
+            "target-dir": "Symfony/Cmf/Bundle/SeoBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-cmf/SeoBundle.git",
+                "reference": "4cac30f9571e866403eb76b5a86189dcc1d49f69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-cmf/SeoBundle/zipball/4cac30f9571e866403eb76b5a86189dcc1d49f69",
+                "reference": "4cac30f9571e866403eb76b5a86189dcc1d49f69",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "sonata-project/seo-bundle": "1.1.*@dev",
+                "symfony-cmf/core-bundle": "1.1.*@dev"
+            },
+            "require-dev": {
+                "doctrine/phpcr-bundle": "1.1.*@dev",
+                "doctrine/phpcr-odm": "1.1.*@dev",
+                "matthiasnoback/symfony-config-test": "0.*",
+                "matthiasnoback/symfony-dependency-injection-test": "0.*",
+                "sonata-project/doctrine-phpcr-admin-bundle": "1.1.*@dev",
+                "symfony-cmf/routing-bundle": "1.2.*@dev",
+                "symfony-cmf/testing": "dev-master"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "To persist the metadata in ORM entities",
+                "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
+                "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin extension for the seo metadata"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Cmf\\Bundle\\SeoBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony CMF Community",
+                    "homepage": "https://github.com/symfony-cmf/SeoBundle/contributors"
+                }
+            ],
+            "description": "Symfony CMF Search Engine Optimization Bundle",
+            "homepage": "http://cmf.symfony.com",
+            "keywords": [
+                "Symfony CMF",
+                "seo"
+            ],
+            "time": "2014-04-07 04:50:07"
         },
         {
             "name": "symfony-cmf/simple-cms-bundle",
@@ -3987,12 +4113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "d272424f01656f9327198fd6c07a48499622d133"
+                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/d272424f01656f9327198fd6c07a48499622d133",
-                "reference": "d272424f01656f9327198fd6c07a48499622d133",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
+                "reference": "e98defd402f72e8b54a029ba4d3ac4cb51dc3577",
                 "shasum": ""
             },
             "require": {
@@ -4035,7 +4161,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2014-04-03 07:36:17"
+            "time": "2014-04-05 17:15:52"
         },
         {
             "name": "symfony/symfony",
@@ -4842,12 +4968,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/Testing.git",
-                "reference": "3b89e9f57774ddf98ad1d4d62166d6be5ddaa357"
+                "reference": "be08f6fd67113471eb437ade7f7ac400f550f07a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/Testing/zipball/3b89e9f57774ddf98ad1d4d62166d6be5ddaa357",
-                "reference": "3b89e9f57774ddf98ad1d4d62166d6be5ddaa357",
+                "url": "https://api.github.com/repos/symfony-cmf/Testing/zipball/be08f6fd67113471eb437ade7f7ac400f550f07a",
+                "reference": "be08f6fd67113471eb437ade7f7ac400f550f07a",
                 "shasum": ""
             },
             "require": {
@@ -4884,7 +5010,7 @@
                 }
             ],
             "description": "Component for bootstraping functional tests for CMF bundles only.",
-            "time": "2014-04-02 20:46:35"
+            "time": "2014-04-04 15:26:27"
         }
     ],
     "aliases": [
