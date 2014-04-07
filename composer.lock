@@ -118,7 +118,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
+                    "name": "Jonathan H. Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/",
                     "role": "Creator"
@@ -1506,7 +1506,7 @@
         },
         {
             "name": "jms/serializer",
-            "version": "dev-master",
+            "version": "0.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/schmittjoh/serializer.git",
@@ -1559,7 +1559,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -3698,12 +3698,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/SeoBundle.git",
-                "reference": "da9cf69c20bf3532de8d10d5fc71e5ec9bc6e28b"
+                "reference": "4cac30f9571e866403eb76b5a86189dcc1d49f69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/SeoBundle/zipball/da9cf69c20bf3532de8d10d5fc71e5ec9bc6e28b",
-                "reference": "da9cf69c20bf3532de8d10d5fc71e5ec9bc6e28b",
+                "url": "https://api.github.com/repos/symfony-cmf/SeoBundle/zipball/4cac30f9571e866403eb76b5a86189dcc1d49f69",
+                "reference": "4cac30f9571e866403eb76b5a86189dcc1d49f69",
                 "shasum": ""
             },
             "require": {
@@ -3752,7 +3752,7 @@
                 "Symfony CMF",
                 "seo"
             ],
-            "time": "2014-04-02 06:46:56"
+            "time": "2014-04-07 04:50:07"
         },
         {
             "name": "symfony-cmf/simple-cms-bundle",
