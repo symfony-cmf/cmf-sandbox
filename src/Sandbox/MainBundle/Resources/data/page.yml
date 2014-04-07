@@ -174,11 +174,10 @@ static:
             fr: Demo - Seo extractors
         body:
             en: |
-                This Example extracts its SeoMetada directly from the document. Extractors for title, description
-                and original url gerenerates the values for the page title, the description for metadata and the absolute url for
-                redirect/canonical link.
+                This example uses extractors to get the SeoMetadata.
+                Extractor try to extract the title, description, keywords and
+                original url from the document.
             fr: |
                 Needs to be translated:
-                This Example extracts its SeoMetada directly from the document. Extractors for title, description
-                and original url gerenerates the values for the page title, the description for metadata and the absolute url for
-                redirect/canonical link.
+                This example uses extractors to get the SeoMetadata.
+                Extractor try to extract the title, description, keywords and original url from the document.

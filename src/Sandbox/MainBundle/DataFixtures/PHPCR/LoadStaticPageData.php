@@ -78,10 +78,11 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $seoDemo->setTitle('Simple seo example');
         $seoDemo->setBody(
             '<p>
-                Just implementing the SeoAwareInterface will give the chance to add the SeoMetadata
-                (page $title. description, keywords and original url) to the document. When using
-                sonatas admin bundle will extend your form by adding a form type to insert that values.
-                For more special use you can use the extractors.
+                When implementing the SeoAwareInterface,
+                you get a chance to configure SEO data
+                (title, description, keywords and original url)
+                of the document.
+                The SonataAdminBundle integration allows admins to update this data.
             </p>'
         );
         $seoDemo->setParentDocument($parent);
@@ -89,7 +90,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $seoMetadata = new SeoMetadata();
         $seoMetadata->setTitle('Simple seo example');
         $seoMetadata->setOriginalUrl('/home');
-        $seoMetadata->setMetaDescription('This is a simple example for a seo aware document in sandbox');
+        $seoMetadata->setMetaDescription('This is a simple example of an seo aware document in the sandbox.');
         $seoMetadata->setMetaKeywords('Seo');
         $seoDemo->setSeoMetadata($seoMetadata);
         $manager->persist($seoDemo);

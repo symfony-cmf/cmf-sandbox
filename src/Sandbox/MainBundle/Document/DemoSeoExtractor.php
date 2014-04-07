@@ -8,7 +8,6 @@ use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoKeywordsReadInterface;
 use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoOriginalUrlReadInterface;
 use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoTitleReadInterface;
 
-
 /**
  * That example class uses the extractors for the creation of the SeoMetadata.
  *
