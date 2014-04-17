@@ -165,7 +165,7 @@ sonata_admin:
                 - Symfony\Cmf\Component\Routing\RouteReferrersInterface
         cmf_seo.admin_extension:
             implements:
-                - Symfony\Cmf\Bundle\SeoBundle\Model\SeoAwareInterface
+                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
     templates:
         # default global templates
