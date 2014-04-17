@@ -9,7 +9,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use PHPCR\Util\NodeHelper;
 
 use Sandbox\MainBundle\Document\DemoSeoContent;
-use Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadata;
+use Symfony\Cmf\Bundle\SeoBundle\SeoMetadata;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 

@@ -3,10 +3,10 @@
 namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoDescriptionReadInterface;
-use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoKeywordsReadInterface;
-use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoOriginalUrlReadInterface;
-use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoTitleReadInterface;
+use Symfony\Cmf\Bundle\SeoBundle\Extractor\DescriptionReadInterface;
+use Symfony\Cmf\Bundle\SeoBundle\Extractor\KeywordsReadInterface;
+use Symfony\Cmf\Bundle\SeoBundle\Extractor\OriginalUrlReadInterface;
+use Symfony\Cmf\Bundle\SeoBundle\Extractor\TitleReadInterface;
 
 /**
  * That example class uses the extractors for the creation of the SeoMetadata.
@@ -16,10 +16,10 @@ use Symfony\Cmf\Bundle\SeoBundle\Extractor\SeoTitleReadInterface;
  * @author Maximilian Berghoff <Maximilian.Berghoff@gmx.de>
  */
 class DemoSeoExtractor extends DemoSeoContent implements
-    SeoTitleReadInterface,
-    SeoDescriptionReadInterface,
-    SeoOriginalUrlReadInterface,
-    SeoKeywordsReadInterface
+    TitleReadInterface,
+    DescriptionReadInterface,
+    OriginalUrlReadInterface,
+    KeywordsReadInterface
 {
     /**
      * {@inheritDoc}
