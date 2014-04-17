@@ -4,9 +4,9 @@ namespace Sandbox\MainBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
-use Symfony\Cmf\Bundle\SeoBundle\Model\SeoAwareInterface;
+use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
+use Symfony\Cmf\Bundle\SeoBundle\SeoMetadata;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadata;
 
 
 /**
