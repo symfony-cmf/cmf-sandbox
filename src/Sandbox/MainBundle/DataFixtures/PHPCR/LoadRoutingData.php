@@ -82,6 +82,11 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $dm->persist($seo);
 
             $seo = new Route();
+            $seo->setPosition($home, 'simple-seo-property');
+            $seo->setContent($dm->find(null, "$content_path/simple-seo-property"));
+            $dm->persist($seo);
+
+            $seo = new Route();
             $seo->setPosition($home, 'demo-seo-extractor');
             $seo->setContent($dm->find(null, "$content_path/demo-seo-extractor"));
             $dm->persist($seo);

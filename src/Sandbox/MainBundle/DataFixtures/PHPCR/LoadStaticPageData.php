@@ -9,6 +9,8 @@ use Doctrine\Common\Persistence\ObjectManager;
 use PHPCR\Util\NodeHelper;
 
 use Sandbox\MainBundle\Document\DemoSeoContent;
+use Symfony\Cmf\Bundle\SeoBundle\Model\ExtraProperty;
+use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
 use Symfony\Cmf\Bundle\SeoBundle\SeoMetadata;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
@@ -50,6 +52,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 foreach ($overview['title'] as $locale => $title) {
                     $page->setTitle($title);
                     $page->setBody($overview['body'][$locale]);
+
                     $manager->bindTranslation($page, $locale);
                 }
             } else {
@@ -93,7 +96,35 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $seoMetadata->setMetaDescription('This is a simple example of an seo aware document in the sandbox.');
         $seoMetadata->setMetaKeywords('Seo');
         $seoDemo->setSeoMetadata($seoMetadata);
+
         $manager->persist($seoDemo);
+        $manager->bindTranslation($seoDemo, 'en');
+
+        //add a loading for a simple seo aware page
+        $seoDemo = new DemoSeoContent();
+        $seoDemo->setName('simple-seo-property');
+        $seoDemo->setTitle('Simple seo property');
+        $seoDemo->setBody(
+            '<p>
+                SeoMetadata have got the possibility to
+                to add custom properties for custom
+                meta tags. You just to set a type, key
+                and value
+            </p>'
+        );
+        $seoDemo->setParentDocument($parent);
+
+        $seoMetadata = new SeoMetadata();
+        $seoMetadata->setTitle('Simple seo property');
+        $seoMetadata->setMetaKeywords('Seo, Properties');
+        $seoMetadata->addExtraProperty(new ExtraProperty('content-type','text/html', 'http-equiv'));
+        $seoMetadata->addExtraProperty(new ExtraProperty('robots','index, follow', 'name'));
+        $seoMetadata->addExtraProperty(new ExtraProperty('og:title','extra title', 'property'));
+        $seoDemo->setSeoMetadata($seoMetadata);
+        $manager->persist($seoDemo);
+
+        $manager->bindTranslation($seoDemo, 'en');
+
 
         $manager->flush(); //to get ref id populated
     }

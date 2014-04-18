@@ -172,6 +172,7 @@ static:
         title:
             en: Demo - Seo extractors
             fr: Demo - Seo extractors
+            de: Demo - Seo extractors
         body:
             en: |
                 This example uses extractors to get the SeoMetadata.
@@ -181,3 +182,8 @@ static:
                 Needs to be translated:
                 This example uses extractors to get the SeoMetadata.
                 Extractor try to extract the title, description, keywords and original url from the document.
+            de: |
+                Dieses Beispiel benutzt die sog. Extractors
+                um die SeoMetada direct vom content zu bekommen.
+                Title, Description, Keywords und die originale url
+                können einfach ausgelesen werden.
