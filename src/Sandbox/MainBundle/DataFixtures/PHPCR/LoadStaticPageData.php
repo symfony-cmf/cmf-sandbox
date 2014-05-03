@@ -9,9 +9,7 @@ use Doctrine\Common\Persistence\ObjectManager;
 use PHPCR\Util\NodeHelper;
 
 use Sandbox\MainBundle\Document\DemoSeoContent;
-use Symfony\Cmf\Bundle\SeoBundle\Model\ExtraProperty;
-use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
-use Symfony\Cmf\Bundle\SeoBundle\SeoMetadata;
+use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\Yaml\Parser;
 
@@ -117,9 +115,9 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $seoMetadata = new SeoMetadata();
         $seoMetadata->setTitle('Simple seo property');
         $seoMetadata->setMetaKeywords('Seo, Properties');
-        $seoMetadata->addExtraProperty(new ExtraProperty('content-type','text/html', 'http-equiv'));
-        $seoMetadata->addExtraProperty(new ExtraProperty('robots','index, follow', 'name'));
-        $seoMetadata->addExtraProperty(new ExtraProperty('og:title','extra title', 'property'));
+        $seoMetadata->addExtraHttp('content-type','text/html');
+        $seoMetadata->addExtraName('robots','index, follow');
+        $seoMetadata->addExtraProperty('og:title','extra title');
         $seoDemo->setSeoMetadata($seoMetadata);
         $manager->persist($seoDemo);
 

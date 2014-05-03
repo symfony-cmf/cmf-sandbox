@@ -5,7 +5,7 @@ namespace Sandbox\MainBundle\Document;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
-use Symfony\Cmf\Bundle\SeoBundle\SeoMetadata;
+use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
 use Symfony\Component\Validator\Constraints as Assert;
 
 
@@ -21,7 +21,7 @@ class DemoSeoContent extends StaticContent implements SeoAwareInterface
     /**
      * @var SeoMetadata
      *
-     * @PHPCRODM\String(translated=true, assoc="")
+     * @PHPCRODM\Child
      */
     protected $seoMetadata;
 
