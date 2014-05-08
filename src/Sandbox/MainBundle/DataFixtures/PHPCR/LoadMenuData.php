@@ -83,16 +83,16 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
             $menuNode = new MenuNode();
         }
 
-        $menuNode->setParent($parent);
+        $menuNode->setParentDocument($parent);
         $menuNode->setName($name);
 
         $dm->persist($menuNode); // do persist before binding translation
 
         if (null !== $content) {
             $menuNode->setContent($content);
-        } else if (null !== $uri) {
+        } elseif (null !== $uri) {
             $menuNode->setUri($uri);
-        } else if (null !== $route) {
+        } elseif (null !== $route) {
             $menuNode->setRoute($route);
         }
 

@@ -2,7 +2,6 @@
 
 namespace Sandbox\MainBundle\Controller;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController as BaseContentController;
@@ -19,7 +18,7 @@ class ContentController extends BaseContentController
      *
      * @param object $contentDocument
      *
-     * @return \Symfony\Component\HttpFoundation\Response the response
+     * @return Response
      */
     public function typeAction($contentDocument)
     {
@@ -42,7 +41,7 @@ class ContentController extends BaseContentController
      *
      * @param object $contentDocument
      *
-     * @return \Symfony\Component\HttpFoundation\Response the response
+     * @return Response the response
      */
     public function classAction($contentDocument)
     {
@@ -65,7 +64,7 @@ class ContentController extends BaseContentController
      *
      * @param object $contentDocument
      *
-     * @return \Symfony\Component\HttpFoundation\Response the response
+     * @return Response
      */
     public function specialAction($contentDocument)
     {

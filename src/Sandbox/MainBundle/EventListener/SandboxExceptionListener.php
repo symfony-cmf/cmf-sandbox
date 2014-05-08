@@ -34,7 +34,7 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
                 } else {
                     $error = 'Did you load the fixtures? See README for how to load them. I found no node at menu_basepath: '.$this->container->getParameter('cmf_menu.persistence.phpcr.menu_basepath');
                 }
-            } catch(RepositoryException $e) {
+            } catch (RepositoryException $e) {
                 $error = 'There was an exception loading the document manager: <strong>' . $e->getMessage() .
                     "</strong><br/>\n<em>Make sure you have a phpcr backend properly set up and running.</em><br/><pre>".
                     $e->__toString() .'</pre>';
@@ -62,8 +62,7 @@ class SandboxExceptionListener extends ContainerAware implements EventSubscriber
         $event->setResponse($response);
     }
 
-
-    static public function getSubscribedEvents()
+    public static function getSubscribedEvents()
     {
         return array(
             KernelEvents::EXCEPTION => array('onKernelException', 0),

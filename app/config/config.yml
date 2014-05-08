@@ -126,7 +126,6 @@ cmf_create:
 cmf_seo:
     title: CMF Sandbox - %%content_title%%
     description: The Content Management Framework. %%content_description%%
-    sonata_admin_extension: true
 
 sonata_block:
     default_contexts: [cms]
