@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "4e2a2133023a25528af49984fd92b891",
+    "hash": "5affc80ddac3dfde701ced2082ae176e",
     "packages": [
         {
             "name": "burgov/key-value-form-bundle",
@@ -4499,16 +4499,16 @@
         },
         {
             "name": "wjzijderveld/check-bundles",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wjzijderveld/CheckBundles.git",
-                "reference": "98cff7f48855640115c14918d45695e57f21748a"
+                "reference": "87c1ea5a42562dd051aba26d2d4d088513c407bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wjzijderveld/CheckBundles/zipball/98cff7f48855640115c14918d45695e57f21748a",
-                "reference": "98cff7f48855640115c14918d45695e57f21748a",
+                "url": "https://api.github.com/repos/wjzijderveld/CheckBundles/zipball/87c1ea5a42562dd051aba26d2d4d088513c407bc",
+                "reference": "87c1ea5a42562dd051aba26d2d4d088513c407bc",
                 "shasum": ""
             },
             "require": {
@@ -4547,7 +4547,7 @@
                 "script",
                 "symfony"
             ],
-            "time": "2014-01-21 20:26:03"
+            "time": "2014-03-15 16:56:57"
         },
         {
             "name": "zendframework/zend-escaper",
