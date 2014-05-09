@@ -167,12 +167,9 @@ sonata_admin:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
     templates:
-        # default global templates
-        ajax:    SonataAdminBundle::ajax_layout.html.twig
         user_block: SandboxMainBundle:Admin:user_block.html.twig
     dashboard:
         blocks:
-            # display a dashboard block
             - { position: right, type: sonata.admin.block.admin_list }
             - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
         groups:
