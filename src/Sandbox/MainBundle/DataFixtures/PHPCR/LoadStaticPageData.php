@@ -123,17 +123,16 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
 
         $manager->bindTranslation($seoDemo, 'en');
 
-
         $manager->flush(); //to get ref id populated
     }
 
     /**
      * Load a block from the fixtures and create / update the node. Recurse if there are children.
      *
-     * @param ObjectManager $manager the document manager
-     * @param string $parentPath the parent of the block
-     * @param string $name the name of the block
-     * @param array $block the block definition
+     * @param ObjectManager $manager    the document manager
+     * @param string        $parentPath the parent of the block
+     * @param string        $name       the name of the block
+     * @param array         $block      the block definition
      */
     private function loadBlock(ObjectManager $manager, $parent, $name, $block)
     {
@@ -180,6 +179,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     private function getIdentifier($manager, $document)
     {
         $class = $manager->getClassMetadata(get_class($document));
+
         return $class->getIdentifierValue($document);
     }
 
