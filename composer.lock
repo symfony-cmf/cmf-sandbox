@@ -1585,7 +1585,7 @@
                 {
                     "name": "Johannes M. Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "http://jmsyst.com",
+                    "homepage": "https://github.com/schmittjoh",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -2690,22 +2690,22 @@
         },
         {
             "name": "sonata-project/cache",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/cache.git",
-                "reference": "3bd8c266c6184ebcf82846d659292e9680b979eb"
+                "reference": "7c91e7fd1ca5be4273b09388650709bff31d8966"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/cache/zipball/3bd8c266c6184ebcf82846d659292e9680b979eb",
-                "reference": "3bd8c266c6184ebcf82846d659292e9680b979eb",
+                "url": "https://api.github.com/repos/sonata-project/cache/zipball/7c91e7fd1ca5be4273b09388650709bff31d8966",
+                "reference": "7c91e7fd1ca5be4273b09388650709bff31d8966",
                 "shasum": ""
             },
             "require-dev": {
                 "doctrine/orm": "~2.2",
                 "doctrine/phpcr-odm": "~1.0",
-                "predis/predis": "~0.8",
+                "predis/predis": "~0.8,<1.0",
                 "psr/log": "~1.0"
             },
             "suggest": {
@@ -2746,20 +2746,20 @@
                 "mongodb",
                 "redis"
             ],
-            "time": "2014-02-13 15:12:33"
+            "time": "2014-05-12 08:55:48"
         },
         {
             "name": "sonata-project/cache-bundle",
-            "version": "2.1.6",
+            "version": "2.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCacheBundle.git",
-                "reference": "2803d69b13e237b2de53076750e5c0df528727e8"
+                "reference": "340ff403738c0761ee2bcf5be08c30856878afb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCacheBundle/zipball/2803d69b13e237b2de53076750e5c0df528727e8",
-                "reference": "2803d69b13e237b2de53076750e5c0df528727e8",
+                "url": "https://api.github.com/repos/sonata-project/SonataCacheBundle/zipball/340ff403738c0761ee2bcf5be08c30856878afb7",
+                "reference": "340ff403738c0761ee2bcf5be08c30856878afb7",
                 "shasum": ""
             },
             "require": {
@@ -2772,7 +2772,7 @@
             "require-dev": {
                 "doctrine/orm": "~2.2",
                 "predis/predis": "~0.8",
-                "sonata-project/cache": "~1.0@dev"
+                "sonata-project/cache": "~1.0,>=1.0.2"
             },
             "suggest": {
                 "doctrine/doctrine-bundle": "ORM support",
@@ -2814,7 +2814,7 @@
             "keywords": [
                 "cache block"
             ],
-            "time": "2014-02-14 14:16:31"
+            "time": "2014-05-12 09:02:20"
         },
         {
             "name": "sonata-project/core-bundle",
@@ -3475,17 +3475,17 @@
         },
         {
             "name": "symfony-cmf/menu-bundle",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "target-dir": "Symfony/Cmf/Bundle/MenuBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/MenuBundle.git",
-                "reference": "1f217aac0b74b7aa8fb8c8b4fc56807308918bf3"
+                "reference": "9ab067ff1c5451d40f093f84ebc606de70437f08"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/1f217aac0b74b7aa8fb8c8b4fc56807308918bf3",
-                "reference": "1f217aac0b74b7aa8fb8c8b4fc56807308918bf3",
+                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/9ab067ff1c5451d40f093f84ebc606de70437f08",
+                "reference": "9ab067ff1c5451d40f093f84ebc606de70437f08",
                 "shasum": ""
             },
             "require": {
@@ -3493,7 +3493,7 @@
                 "doctrine/phpcr-odm": "1.1.*",
                 "knplabs/knp-menu-bundle": "1.1.*",
                 "php": ">=5.3.3",
-                "symfony-cmf/core-bundle": ">=1.0.0,<1.2-dev",
+                "symfony-cmf/core-bundle": ">=1.1.0,<1.2-dev",
                 "symfony/framework-bundle": "~2.3"
             },
             "require-dev": {
@@ -3532,7 +3532,7 @@
                 "Symfony CMF",
                 "menu"
             ],
-            "time": "2014-05-08 15:38:11"
+            "time": "2014-05-14 11:21:46"
         },
         {
             "name": "symfony-cmf/routing",
@@ -4439,7 +4439,7 @@
             ],
             "authors": [
                 {
-                    "name": "William Durand",
+                    "name": "William DURAND",
                     "email": "william.durand1@gmail.com",
                     "homepage": "http://www.willdurand.fr"
                 }
