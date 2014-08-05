@@ -106,6 +106,7 @@ cmf_routing:
             cmf_routing.dynamic_router: 20
             router.default: 100
     dynamic:
+        route_collection_limit: 10
         controllers_by_type:
             demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
