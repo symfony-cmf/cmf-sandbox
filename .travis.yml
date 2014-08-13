@@ -4,6 +4,7 @@ php:
   - 5.3
   - 5.4
   - 5.5
+  - hhvm
 
 env:
   - TRANSPORT=jackrabbit
@@ -12,6 +13,10 @@ env:
 #  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
 #  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
   - TRANSPORT=doctrine_dbal
+
+matrix:
+  allow_failures:
+    - php: hhvm
 
 before_script:
   - echo "memory_limit = 1024M" >> travis.php.ini
