@@ -41,9 +41,8 @@ sonata_admin:
     type: sonata_admin
     prefix: /{_locale}/admin
 
-_imagine:
-    resource: .
-    type:     imagine
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
 fos_js_routing:
     resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
