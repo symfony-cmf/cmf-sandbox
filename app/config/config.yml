@@ -259,7 +259,6 @@ sonata_seo:
                 keywords: "CMF, Symfony, Routing, Content, PHPCR"
 
 sensio_framework_extra:
-    view:    { annotations: false }
     router:  { annotations: true }
     request: { converters: true }
 

@@ -41,7 +41,7 @@ class AppKernel extends Kernel
             // create.js editing related
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle($this),
+            new JMS\SerializerBundle\JMSSerializerBundle(),
 
             // and the sandbox bundle
             new Sandbox\MainBundle\SandboxMainBundle(),
