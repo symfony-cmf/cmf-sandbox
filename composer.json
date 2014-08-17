@@ -22,32 +22,33 @@
         "sensio/distribution-bundle": "2.3.*",
         "sensio/framework-extra-bundle": "2.3.*",
         "sensio/generator-bundle": "2.3.*",
-        "symfony-cmf/symfony-cmf": "1.1.*",
-        "symfony-cmf/simple-cms-bundle": "1.1.*",
-        "symfony-cmf/search-bundle": "1.0.*",
-        "symfony-cmf/create-bundle": "1.1.*",
-        "symfony-cmf/seo-bundle": "1.0.*",
+        "symfony-cmf/symfony-cmf": "1.2.*",
+        "symfony-cmf/simple-cms-bundle": "1.2.*",
+        "symfony-cmf/search-bundle": "1.1.*",
+        "symfony-cmf/create-bundle": "1.2.*",
+        "symfony-cmf/seo-bundle": "1.1.*",
+        "symfony-cmf/routing-auto-bundle": "1.0.*",
         "jackalope/jackalope-doctrine-dbal": "1.1.*",
         "jackalope/jackalope-jackrabbit": "1.1.*",
         "doctrine/doctrine-bundle": "1.2.*",
         "doctrine/data-fixtures": "1.0.*",
         "doctrine/doctrine-cache-bundle": "1.0.*",
         "sonata-project/cache-bundle": "2.1.*",
-        "sonata-project/doctrine-phpcr-admin-bundle": "1.1.*",
+        "sonata-project/doctrine-phpcr-admin-bundle": "1.2.*",
         "sonata-project/jquery-bundle": "1.8.3",
-        "symfony-cmf/block-bundle": "1.1.*",
+        "symfony-cmf/block-bundle": "1.2.*",
         "eko/feedbundle": "1.0.*",
         "lunetics/locale-bundle": "2.3.*",
-        "liip/imagine-bundle": "0.21.*",
+        "liip/imagine-bundle": "1.0.*",
         "wjzijderveld/check-bundles": "1.1.*",
         "helios-ag/fm-elfinder-bundle": "1.4.*",
         "burgov/key-value-form-bundle": "1.0.*"
     },
     "require-dev": {
         "liip/functional-test-bundle": "1.0.*",
-        "symfony-cmf/testing": "1.1.*"
+        "symfony-cmf/testing": "1.2.*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
             "WillemJan\\CheckBundles\\Composer\\CheckBundles::postPackageUpdate",
@@ -64,6 +65,9 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets"
         ]
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "extra": {
         "checkbundles-ignore": [
             "Liip\\FunctionalTestBundle\\LiipFunctionalTestBundle",
@@ -71,6 +75,11 @@
         ],
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "symfony-assets-install": "symlink"
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": {
+            "dev-master": "1.2-dev"
+        }
     }
 }

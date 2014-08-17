@@ -69,6 +69,9 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $this->createMenuNode($dm, $seo, 'simple-seo-example', array('en' => 'Seo-Simple-Content'), $dm->find(null, "$content_path/simple-seo-example"));
         $this->createMenuNode($dm, $seo, 'demo-seo-extractor', array('en' => 'Seo-Extractor'), $dm->find(null, "$content_path/demo-seo-extractor"));
         $this->createMenuNode($dm, $seo, 'simple-seo-property', array('en' => 'Seo-Extra-Properties'), $dm->find(null, "$content_path/simple-seo-property"));
+
+        $this->createMenuNode($dm, $main, 'routing-auto-item', array('en' => 'Auto routing example', 'de' => 'Auto routing beispiel', 'fr' => 'Auto routing exemple'), $dm->find(null, "$content_path/news/RoutingAutoBundle generates routes!"));
+
         $dm->flush();
     }
 
