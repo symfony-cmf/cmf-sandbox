@@ -65,7 +65,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $singlelocale = $this->createMenuNode($dm, $main, 'singlelocale-item', array('en' => 'singlelocale'), $dm->find(null, "$content_path/singlelocale"));
         $this->createMenuNode($dm, $singlelocale, 'singlelocale-sub-item', array('en' => 'singlelocale child'), $dm->find(null, "$content_path/singlelocale"));
 
-        $seo = $this->createMenuNode($dm, $main, 'seo', array('SEO'), $dm->find(null, "$content_path/simple-seo-example"));
+        $seo = $this->createMenuNode($dm, $main, 'seo', 'SEO', $dm->find(null, "$content_path/simple-seo-example"));
         $this->createMenuNode($dm, $seo, 'simple-seo-example', array('en' => 'Seo-Simple-Content'), $dm->find(null, "$content_path/simple-seo-example"));
         $this->createMenuNode($dm, $seo, 'demo-seo-extractor', array('en' => 'Seo-Extractor'), $dm->find(null, "$content_path/demo-seo-extractor"));
         $this->createMenuNode($dm, $seo, 'simple-seo-property', array('en' => 'Seo-Extra-Properties'), $dm->find(null, "$content_path/simple-seo-property"));
