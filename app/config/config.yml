@@ -304,12 +304,6 @@ liip_imagine:
             filters:
                 thumbnail: { size: [50, 50], mode: outbound }
 
-cmf_media:
-    upload_file_role:        ROLE_CAN_UPLOAD_FILE
-    use_jms_serializer:      auto
-    use_elfinder:            auto
-    use_imagine:             auto
-
 fm_elfinder:
     locale: %locale%
     editor: ckeditor
@@ -331,7 +325,7 @@ doctrine_cache:
 fos_rest:
     view:
         force_redirects:
-          html: true
+            html: true
         formats:
             json: true
             xml: true

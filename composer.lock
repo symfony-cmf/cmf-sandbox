@@ -4,8 +4,52 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "af2984b7b5c2424014f00b1775a1284d",
+    "hash": "3dc81ca7449539ddc60fb2ba0cea9709",
     "packages": [
+        {
+            "name": "aferrandini/urlizer",
+            "version": "1.0.0",
+            "target-dir": "Ferrandini",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aferrandini/Urlizer.git",
+                "reference": "9223a883ac24981385cf3ea41bff526c95a3547a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aferrandini/Urlizer/zipball/9223a883ac24981385cf3ea41bff526c95a3547a",
+                "reference": "9223a883ac24981385cf3ea41bff526c95a3547a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ferrandini": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ariel Ferrandini",
+                    "email": "arielferrandini@gmail.com",
+                    "homepage": "http://www.ferrandini.com/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Library for urlizer",
+            "homepage": "https://github.com/aferrandini/urlizer",
+            "keywords": [
+                "url",
+                "urlizer"
+            ],
+            "time": "2012-11-15 19:49:27"
+        },
         {
             "name": "burgov/key-value-form-bundle",
             "version": "dev-master",
@@ -3382,12 +3426,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/CoreBundle.git",
-                "reference": "ad74b63f7c796125edfa7e2d31df9f302c6cade4"
+                "reference": "ce8e70c8f1353f555c03fa30c5309ea7bc309b0c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/CoreBundle/zipball/ad74b63f7c796125edfa7e2d31df9f302c6cade4",
-                "reference": "ad74b63f7c796125edfa7e2d31df9f302c6cade4",
+                "url": "https://api.github.com/repos/symfony-cmf/CoreBundle/zipball/ce8e70c8f1353f555c03fa30c5309ea7bc309b0c",
+                "reference": "ce8e70c8f1353f555c03fa30c5309ea7bc309b0c",
                 "shasum": ""
             },
             "require": {
@@ -3434,7 +3478,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2014-08-20 19:18:29"
+            "time": "2014-08-21 08:25:01"
         },
         {
             "name": "symfony-cmf/create-bundle",
@@ -3671,6 +3715,120 @@
                 "routing"
             ],
             "time": "2014-08-21 06:18:27"
+        },
+        {
+            "name": "symfony-cmf/routing-auto",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-cmf/RoutingAuto.git",
+                "reference": "6825ef284ab94d7fa3aa39ba731dfdad23e08f4f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-cmf/RoutingAuto/zipball/6825ef284ab94d7fa3aa39ba731dfdad23e08f4f",
+                "reference": "6825ef284ab94d7fa3aa39ba731dfdad23e08f4f",
+                "shasum": ""
+            },
+            "require": {
+                "jms/metadata": "1.5.*",
+                "symfony-cmf/core-bundle": "~1.1",
+                "symfony-cmf/routing": "~1.2",
+                "symfony/config": "~2.2",
+                "symfony/options-resolver": "~2.2"
+            },
+            "require-dev": {
+                "phpspec/prophecy": "~1.1.2",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "symfony-cmf/routing-auto-bundle": "To integrate this lirbary with Symfony and the CMF",
+                "symfony/yaml": "To be able to load Yaml configuration files"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Cmf\\Component\\RoutingAuto\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony CMF Community",
+                    "homepage": "https://github.com/symfony-cmf/symfony-cmf/contributors"
+                }
+            ],
+            "description": "Component for automatically creating and managing routes for persisted objects",
+            "homepage": "http://cmf.symfony.com",
+            "time": "2014-08-20 18:51:58"
+        },
+        {
+            "name": "symfony-cmf/routing-auto-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-cmf/RoutingAutoBundle.git",
+                "reference": "11dc7bf572c0a87082ad20505e08792b3119448c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-cmf/RoutingAutoBundle/zipball/11dc7bf572c0a87082ad20505e08792b3119448c",
+                "reference": "11dc7bf572c0a87082ad20505e08792b3119448c",
+                "shasum": ""
+            },
+            "require": {
+                "aferrandini/urlizer": "1.0.*",
+                "jms/metadata": "1.5.*",
+                "symfony-cmf/core-bundle": "~1.1",
+                "symfony-cmf/routing-auto": "1.0.*",
+                "symfony-cmf/routing-bundle": "~1.2",
+                "symfony/config": "~2.2"
+            },
+            "require-dev": {
+                "doctrine/phpcr-odm": "~1.2",
+                "matthiasnoback/symfony-config-test": "0.*",
+                "matthiasnoback/symfony-dependency-injection-test": "0.*",
+                "phpspec/prophecy": "~1.1.2",
+                "symfony-cmf/testing": "~1.1",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "doctrine/phpcr-bundle": "To enable support for the PHPCR ODM documents",
+                "doctrine/phpcr-odm": "To enable support for the PHPCR ODM documents",
+                "symfony/yaml": "To be able to load Yaml configuration files"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Cmf\\Bundle\\RoutingAutoBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony CMF Community",
+                    "homepage": "https://github.com/symfony-cmf/symfony-cmf/contributors"
+                }
+            ],
+            "description": "Bundle which automatically creates and manages routes for persisted objects",
+            "homepage": "http://cmf.symfony.com",
+            "time": "2014-08-21 06:12:52"
         },
         {
             "name": "symfony-cmf/routing-bundle",
