@@ -35,4 +35,17 @@ class StaticPageTest extends WebTestCase
             array('/about', 'Some information about us'),
         );
     }
+
+    public function testJson()
+    {
+        $client = $this->createClient();
+        $client->request('GET', '/de/company/team.json');
+        $response = $client->getResponse();
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertTrue(
+            $response->headers->contains('Content-Type', 'application/json'),
+            $response->headers
+        );
+        $this->assertContains('"title":"The Team",', $response->getContent());
+    }
 }
