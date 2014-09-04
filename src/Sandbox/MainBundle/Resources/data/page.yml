@@ -65,10 +65,14 @@ static:
         body: |
             <h2>Our Team</h2>
             <p>There are some core developers and many other contributors. We need more help, so please contribute.</p>
-            <h2>dicta facete eu vis</h2>
-            <p>Sonet affert an has. Nam id odio nisl eruditi. Te quo falli propriae delectus, ut animal meliore est, agam decore in sea. Prima debet fierent id sed. Usu debet paulo argumentum ex, solum homero in sed, modus laboramus et usu. Brute legendos contentiones ex pri.
 
-            Ut suscipit honestatis sed, per id facer euismod probatus. Ne persius posidonium eum, has elaboraret philosophia eu. No eam wisi choro labores. Sit id oratio aperiam electram, quodsi deterruisset no eum, vel modo quaeque ei</p>
+            <h2>REST example</h2>
+
+            <p>The route for this page also supports adding ".json" or ".xml" to the end in order to get a JSON or XML
+            rendered version. However actually the CMF also fully supports Accept header based content negotiation. So
+            using 'curl -H "Accept: application/json" http://cmf-sandbox.lo/app_dev.php/en/company/team' would work just
+            as well. In fact the sandbox is configured that it is possible to get an JSON/XML representation of all
+            content pages. For example 'curl -H "Accept: application/xml" http://cmf-sandbox.lo/app_dev.php/en'</p>
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock

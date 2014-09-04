@@ -6,6 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
+use Doctrine\ODM\PHPCR\DocumentManager;
 use PHPCR\Util\NodeHelper;
 
 use Sandbox\MainBundle\Document\DemoSeoContent;
@@ -20,6 +21,9 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         return 5;
     }
 
+    /**
+     * @param DocumentManager $manager
+     */
     public function load(ObjectManager $manager)
     {
         $session = $manager->getPhpcrSession();

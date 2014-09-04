@@ -322,6 +322,14 @@ doctrine_cache:
         phpcr_nodes:
             type: file_system
 
+jms_serializer:
+    metadata:
+        auto_detection: true
+        directories:
+            CmfContentBundle:
+                namespace_prefix: "Symfony\Cmf\Bundle\ContentBundle"
+                path: "@SandboxMainBundle/Resources/config/serializer/cmf"
+
 fos_rest:
     view:
         force_redirects:
@@ -336,4 +344,5 @@ fos_rest:
         json: true
     format_listener:
         rules:
+            - { path: ^/../company/team, priorities: [ html, json, xml, css ], fallback_format: html, prefer_extension: true }
             - { path: ^/, priorities: [ html, json, xml, css ], fallback_format: html, prefer_extension: false }
