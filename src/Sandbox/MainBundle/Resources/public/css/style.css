@@ -67,7 +67,7 @@ hr {
     display: none;
 }
 
-#breadcrumb .breadcrumb {
+#breadcrumb .breadcrumb, #raw_format .raw_format {
     border: none;
     background-color: #4b4b4b;
     background-image: none;
@@ -92,6 +92,39 @@ hr {
 
 #breadcrumb .breadcrumb li:last-child:after {
     content: none;
+}
+
+#raw_format p {
+    text-align: right;
+    padding: 7px;
+    color: white;
+}
+
+#raw_format a {
+    cursor: pointer;
+}
+
+#raw_data_overlay {
+    background-color: #ddd;
+    border: 1px black solid;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    width: 80%;
+    display: none;
+    padding: 16px;
+}
+
+#overlay_description {
+    margin-bottom: 16px;
+    padding: 8px;
+    background-color: #eee;
+}
+
+#overlay_content {
+    font-family: courier, monospace;
+    padding: 8px;
+    white-space: pre-wrap;
 }
 
 #navigation ul {

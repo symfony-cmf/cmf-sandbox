@@ -56,12 +56,8 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $company->setContent($dm->find(null, "$content_path/company"));
             $dm->persist($company);
 
-            // special route that also supports adding the format as a parameter
             $team = new Route;
             $team->setPosition($company, 'team');
-            $team->setOption('add_format_pattern', true);
-            $team->setDefault('_format', 'html');
-            $team->setRequirement('_format', 'html|json|xml');
             $team->setContent($dm->find(null, "$content_path/team"));
             $dm->persist($team);
 

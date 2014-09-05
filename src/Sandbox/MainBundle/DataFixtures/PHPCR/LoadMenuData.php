@@ -51,10 +51,6 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
 
         $company = $this->createMenuNode($dm, $main, 'company-item', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $dm->find(null, "$content_path/company"));
         $this->createMenuNode($dm, $company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $dm->find(null, "$content_path/team"));
-        $team = $this->createMenuNode($dm, $company, 'team-json-item', array('en' => 'Team (json)', 'de' => 'Team (json)', 'fr' => 'Equipe (json)'), $dm->find(null, "$content_path/team"));
-        $team->setRouteParameters(array('_format' => 'json'));
-        $team = $this->createMenuNode($dm, $company, 'team-xml-item', array('en' => 'Team (xml)', 'de' => 'Team (xml)', 'fr' => 'Equipe (xml)'), $dm->find(null, "$content_path/team"));
-        $team->setRouteParameters(array('_format' => 'xml'));
         $this->createMenuNode($dm, $company, 'more-item', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $dm->find(null, "$content_path/more"));
 
         $demo = $this->createMenuNode($dm, $main, 'demo-item', 'Demo', $dm->find(null, "$content_path/demo"));

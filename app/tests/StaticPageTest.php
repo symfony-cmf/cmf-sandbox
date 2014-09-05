@@ -39,7 +39,10 @@ class StaticPageTest extends WebTestCase
     public function testJson()
     {
         $client = $this->createClient();
-        $client->request('GET', '/de/company/team.json');
+        $client->request('GET', '/de/company/team', array(), array(), array(
+                'HTTP_ACCEPT'  => 'application/json',
+            )
+        );
         $response = $client->getResponse();
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertTrue(
