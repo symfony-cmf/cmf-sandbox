@@ -2,3 +2,9 @@ cmf:
     action_block:
         title: Demo block d'action
         body: Ce contenu est rendu par une action d'un controlleur Symfony2. Il n'a pas le inline editing.
+    raw_data: |
+      <p>Cette fenêtre montre le résultat obtenu quand on envoye un header Accept demandant du xml / json.
+       Pour controler les formats permit, on utilise les règles dans fos_rest.format_listener.rules et
+       on a besoin d'un mapping pour le document en question avec le jms serializer dans config.yml.</p>
+       <p><em>Tapper la touche escape pour férmer cette fenêtre</em>.</p>
+    raw_data_hint: Data brut de ce page.
