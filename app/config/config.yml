@@ -275,8 +275,8 @@ cmf_search:
 lunetics_locale:
     strict_mode: true
     guessing_order:
-        - cookie
         - router
+        - cookie
         - browser
     allowed_locales: %locales%
 

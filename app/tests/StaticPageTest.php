@@ -21,10 +21,15 @@ class StaticPageTest extends WebTestCase
     public function contentDataProvider()
     {
         return array(
+            array('/en', 'Homepage'),
+            array('/fr', 'Page principale'),
+            array('/de', 'Startseite'),
             array('/en/projects', 'The projects'),
             array('/en/projects/cmf', 'Content Management Framework'),
             array('/en/company', 'The Company'),
             array('/en/company/team', 'The Team'),
+            array('/fr/company/team', 'The Team'),
+            array('/de/company/team', 'The Team'),
             array('/en/company/more', 'More Information'),
             array('/demo', 'Routing demo'),
             array('/demo/controller', 'Explicit Controller'),
@@ -39,7 +44,7 @@ class StaticPageTest extends WebTestCase
     public function testJson()
     {
         $client = $this->createClient();
-        $client->request('GET', '/de/company/team', array(), array(), array(
+        $client->request('GET', '/en/company/team', array(), array(), array(
                 'HTTP_ACCEPT'  => 'application/json',
             )
         );
