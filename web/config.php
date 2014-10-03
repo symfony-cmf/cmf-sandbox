@@ -34,7 +34,7 @@ $minorProblems = $symfonyRequirements->getFailedRecommendations();
         <div id="content">
             <div class="header clear-fix">
                 <div class="header-logo">
-                    <img src="logo_symfony_cmf.png" alt="Symfony" />
+                    <img src="bundles/framework/images/logo_symfony.png" alt="Symfony" />
                 </div>
 
                 <div class="search">

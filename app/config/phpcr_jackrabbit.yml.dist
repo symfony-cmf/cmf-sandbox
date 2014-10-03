@@ -4,6 +4,8 @@ parameters:
         profiling: true
         type: jackrabbit
         url: http://localhost:8080/server/
+        parameters:
+            jackalope.check_login_on_server: false
     phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: admin

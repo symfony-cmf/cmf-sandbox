@@ -4,19 +4,12 @@ php:
   - 5.3
   - 5.4
   - 5.5
+  - 5.6
   - hhvm
 
 env:
   - TRANSPORT=jackrabbit
-#  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=ratatoskr
-#  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=ratatoskr
-#  - TRANSPORT=midgard_sqlite MIDGARD_EXT_VERSION=gjallarhorn
-#  - TRANSPORT=midgard_mysql MIDGARD_EXT_VERSION=gjallarhorn
   - TRANSPORT=doctrine_dbal
-
-matrix:
-  allow_failures:
-    - php: hhvm
 
 before_script:
   - composer self-update
@@ -24,7 +17,7 @@ before_script:
   - cp app/config/phpcr_${TRANSPORT}.yml.dist app/config/phpcr.yml
   - cp app/config/parameters.yml.dist app/config/parameters.yml
   - ./app/tests/travis_${TRANSPORT}.sh
-  - app/console doctrine:phpcr:workspace:create sandbox_test
+  - app/console doctrine:phpcr:workspace:create sandbox_test -e=test
   - app/console doctrine:phpcr:repository:init -e=test
 
 script: phpunit -c app
