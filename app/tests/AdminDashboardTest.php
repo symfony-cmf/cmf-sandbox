@@ -35,7 +35,7 @@ class AdminDashboardTest extends WebTestCase
         $this->assertEquals(200, $response->getStatusCode());
         $this->assertContains('Sonata Admin', $response->getContent());
 
-        $this->assertCount(2, $crawler->filter('.container-fluid'));
+        $this->assertCount(1, $crawler->filter('.container-fluid'));
         $this->assertCount(12, $crawler->filter('.sonata-ba-list-label'));
     }
 }
