@@ -6,6 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
+use Doctrine\ODM\PHPCR\DocumentManager;
 use PHPCR\Util\NodeHelper;
 
 use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute;
@@ -28,11 +29,16 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
      * consistent in what you use and only use different things for special
      * cases.
      *
-     * @param $dm \Doctrine\ODM\PHPCR\DocumentManager
+     * @param $manager \Doctrine\ODM\PHPCR\DocumentManager
      */
-    public function load(ObjectManager $dm)
+    public function load(ObjectManager $manager)
     {
-        $session = $dm->getPhpcrSession();
+        if (!$manager instanceof DocumentManager) {
+            $class = get_class($manager);
+            throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
+        }
+
+        $session = $manager->getPhpcrSession();
 
         $basepath = $this->container->getParameter('cmf_routing.dynamic.persistence.phpcr.admin_basepath');
         if ($session->itemExists($basepath)) {
@@ -40,7 +46,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         }
 
         NodeHelper::createPath($session, $basepath);
-        $parent = $dm->find(null, $basepath);
+        $parent = $manager->find(null, $basepath);
 
         $content_path = $this->container->getParameter('cmf_content.persistence.phpcr.content_basepath');
         $locales = $this->container->getParameter('locales');
@@ -48,48 +54,48 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $home = new Route();
             $home->setPosition($parent, $locale);
             $home->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Homepage:index.html.twig');
-            $home->setContent($dm->find(null, "$content_path/home"));
-            $dm->persist($home);
+            $home->setContent($manager->find(null, "$content_path/home"));
+            $manager->persist($home);
 
             $company = new Route;
             $company->setPosition($home, 'company');
-            $company->setContent($dm->find(null, "$content_path/company"));
-            $dm->persist($company);
+            $company->setContent($manager->find(null, "$content_path/company"));
+            $manager->persist($company);
 
             $team = new Route;
             $team->setPosition($company, 'team');
-            $team->setContent($dm->find(null, "$content_path/team"));
-            $dm->persist($team);
+            $team->setContent($manager->find(null, "$content_path/team"));
+            $manager->persist($team);
 
             $more = new Route;
             $more->setPosition($company, 'more');
-            $more->setContent($dm->find(null, "$content_path/more"));
-            $dm->persist($more);
+            $more->setContent($manager->find(null, "$content_path/more"));
+            $manager->persist($more);
 
             $projects = new Route;
             $projects->setPosition($home, 'projects');
-            $projects->setContent($dm->find(null, "$content_path/projects"));
-            $dm->persist($projects);
+            $projects->setContent($manager->find(null, "$content_path/projects"));
+            $manager->persist($projects);
 
             $cmf = new Route;
             $cmf->setPosition($projects, 'cmf');
-            $cmf->setContent($dm->find(null, "$content_path/cmf"));
-            $dm->persist($cmf);
+            $cmf->setContent($manager->find(null, "$content_path/cmf"));
+            $manager->persist($cmf);
 
             $seo = new Route();
             $seo->setPosition($home, 'simple-seo-example');
-            $seo->setContent($dm->find(null, "$content_path/simple-seo-example"));
-            $dm->persist($seo);
+            $seo->setContent($manager->find(null, "$content_path/simple-seo-example"));
+            $manager->persist($seo);
 
             $seo = new Route();
             $seo->setPosition($home, 'simple-seo-property');
-            $seo->setContent($dm->find(null, "$content_path/simple-seo-property"));
-            $dm->persist($seo);
+            $seo->setContent($manager->find(null, "$content_path/simple-seo-property"));
+            $manager->persist($seo);
 
             $seo = new Route();
             $seo->setPosition($home, 'demo-seo-extractor');
-            $seo->setContent($dm->find(null, "$content_path/demo-seo-extractor"));
-            $dm->persist($seo);
+            $seo->setContent($manager->find(null, "$content_path/demo-seo-extractor"));
+            $manager->persist($seo);
         }
 
         // demo features of routing
@@ -98,36 +104,36 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
 
         $demo = new Route;
         $demo->setPosition($parent, 'demo');
-        $demo->setContent($dm->find(null, "$content_path/demo"));
+        $demo->setContent($manager->find(null, "$content_path/demo"));
         $demo->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Demo:template_explicit.html.twig');
-        $dm->persist($demo);
+        $manager->persist($demo);
 
         // explicit template
         $template = new Route;
         $template->setPosition($demo, 'atemplate');
-        $template->setContent($dm->find(null, "$content_path/demo_template"));
+        $template->setContent($manager->find(null, "$content_path/demo_template"));
         $template->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Demo:template_explicit.html.twig');
-        $dm->persist($template);
+        $manager->persist($template);
 
         // explicit controller
         $controller = new Route;
         $controller->setPosition($demo, 'controller');
-        $controller->setContent($dm->find(null, "$content_path/demo_controller"));
+        $controller->setContent($manager->find(null, "$content_path/demo_controller"));
         $controller->setDefault('_controller', 'sandbox_main.controller:specialAction');
-        $dm->persist($controller);
+        $manager->persist($controller);
 
         // type to controller mapping
         $type = new Route;
         $type->setPosition($demo, 'type');
-        $type->setContent($dm->find(null, "$content_path/demo_type"));
+        $type->setContent($manager->find(null, "$content_path/demo_type"));
         $type->setDefault('type', 'demo_type');
-        $dm->persist($type);
+        $manager->persist($type);
 
         // class to controller mapping
         $class = new Route;
         $class->setPosition($demo, 'class');
-        $class->setContent($dm->find(null, "$content_path/demo_class"));
-        $dm->persist($class);
+        $class->setContent($manager->find(null, "$content_path/demo_class"));
+        $manager->persist($class);
 
         // redirections
 
@@ -135,30 +141,30 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $redirect = new RedirectRoute();
         $redirect->setPosition($parent, 'external');
         $redirect->setUri('http://cmf.symfony.com');
-        $dm->persist($redirect);
+        $manager->persist($redirect);
 
         // redirect to other doctrine route
         $redirectRoute = new RedirectRoute();
         $redirectRoute->setPosition($parent, 'short');
         $redirectRoute->setRouteTarget($cmf);
-        $dm->persist($redirectRoute);
+        $manager->persist($redirectRoute);
 
         // redirect to Symfony route
         $redirectS = new RedirectRoute();
         $redirectS->setPosition($parent, 'short1');
         $redirectS->setRouteName('test');
-        $dm->persist($redirectS);
+        $manager->persist($redirectS);
 
         // class to template mapping is used for all the rest
 
         $default_locale = $this->container->getParameter('locale');
         $singlelocale = new Route;
-        $singlelocale->setPosition($dm->find(null, "$basepath/$default_locale"), 'singlelocale');
+        $singlelocale->setPosition($manager->find(null, "$basepath/$default_locale"), 'singlelocale');
         $singlelocale->setDefault('_locale', $default_locale);
         $singlelocale->setRequirement('_locale', $default_locale);
-        $singlelocale->setContent($dm->find(null, "$content_path/singlelocale"));
-        $dm->persist($singlelocale);
+        $singlelocale->setContent($manager->find(null, "$content_path/singlelocale"));
+        $manager->persist($singlelocale);
 
-        $dm->flush();
+        $manager->flush();
     }
 }

@@ -22,6 +22,11 @@ class LoadNewsData extends ContainerAware implements FixtureInterface, OrderedFi
 
     public function load(ObjectManager $manager)
     {
+        if (!$manager instanceof DocumentManager) {
+            $class = get_class($manager);
+            throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
+        }
+
         $basePath = $this->container->getParameter('cmf_content.persistence.phpcr.content_basepath');
         $newsPath = $basePath . '/news';
         NodeHelper::createPath($manager->getPhpcrSession(), $newsPath);

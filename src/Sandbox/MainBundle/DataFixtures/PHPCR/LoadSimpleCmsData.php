@@ -20,6 +20,11 @@ class LoadSimpleCmsData extends ContainerAware implements FixtureInterface, Orde
 
     public function load(ObjectManager $manager)
     {
+        if (!$manager instanceof DocumentManager) {
+            $class = get_class($manager);
+            throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
+        }
+
         $basepath = $this->container->getParameter('cmf_simple_cms.persistence.phpcr.basepath');
         $root = $manager->find(null, $basepath);
         $root->setTitle('simple cms root (hidden by the home route in the sandbox)');

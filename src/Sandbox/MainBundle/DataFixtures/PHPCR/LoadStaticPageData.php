@@ -26,6 +26,11 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
      */
     public function load(ObjectManager $manager)
     {
+        if (!$manager instanceof DocumentManager) {
+            $class = get_class($manager);
+            throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
+        }
+
         $session = $manager->getPhpcrSession();
 
         $basepath = $this->container->getParameter('cmf_media.persistence.phpcr.media_basepath');
