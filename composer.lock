@@ -816,16 +816,16 @@
         },
         {
             "name": "doctrine/phpcr-bundle",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrinePHPCRBundle.git",
-                "reference": "ea26276b7ef458acd4e4d17622eb6bd38b973031"
+                "reference": "1a4fc663f36a8c09e455e8f79692b47d7c18d669"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrinePHPCRBundle/zipball/ea26276b7ef458acd4e4d17622eb6bd38b973031",
-                "reference": "ea26276b7ef458acd4e4d17622eb6bd38b973031",
+                "url": "https://api.github.com/repos/doctrine/DoctrinePHPCRBundle/zipball/1a4fc663f36a8c09e455e8f79692b47d7c18d669",
+                "reference": "1a4fc663f36a8c09e455e8f79692b47d7c18d669",
                 "shasum": ""
             },
             "require": {
@@ -884,7 +884,7 @@
                 "persistence",
                 "phpcr"
             ],
-            "time": "2014-10-14 14:31:45"
+            "time": "2014-10-25 14:49:36"
         },
         {
             "name": "doctrine/phpcr-odm",
