@@ -6,6 +6,7 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
+use Doctrine\ODM\PHPCR\DocumentManager;
 use PHPCR\Util\NodeHelper;
 
 use Sandbox\MainBundle\Document\DemoSeoContent;
@@ -20,8 +21,16 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         return 5;
     }
 
+    /**
+     * @param DocumentManager $manager
+     */
     public function load(ObjectManager $manager)
     {
+        if (!$manager instanceof DocumentManager) {
+            $class = get_class($manager);
+            throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
+        }
+
         $session = $manager->getPhpcrSession();
 
         $basepath = $this->container->getParameter('cmf_media.persistence.phpcr.media_basepath');

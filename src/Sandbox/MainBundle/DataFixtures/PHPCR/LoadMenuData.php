@@ -23,59 +23,67 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
     }
 
     /**
-     * @param \Doctrine\ODM\PHPCR\DocumentManager $dm
+     * @param \Doctrine\ODM\PHPCR\DocumentManager $manager
      */
-    public function load(ObjectManager $dm)
+    public function load(ObjectManager $manager)
     {
-        $session = $dm->getPhpcrSession();
+        if (!$manager instanceof DocumentManager) {
+            $class = get_class($manager);
+            throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
+        }
+
+        $session = $manager->getPhpcrSession();
 
         $basepath = $this->container->getParameter('cmf_menu.persistence.phpcr.menu_basepath');
         $content_path = $this->container->getParameter('cmf_content.persistence.phpcr.content_basepath');
 
         NodeHelper::createPath($session, $basepath);
-        $root = $dm->find(null, $basepath);
+        $root = $manager->find(null, $basepath);
 
         $labels = array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil');
         /** @var $main Menu */
-        $main = $this->createMenuNode($dm, $root, 'main', $labels, $dm->find(null, "$content_path/home"));
+        $main = $this->createMenuNode($manager, $root, 'main', $labels, $manager->find(null, "$content_path/home"));
         $main->setChildrenAttributes(array("class" => "menu_main"));
 
         if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
-            $this->createMenuNode($dm, $main, 'search-item', 'Search', null, null, 'liip_search');
+            $this->createMenuNode($manager, $main, 'search-item', 'Search', null, null, 'liip_search');
         }
 
-        $this->createMenuNode($dm, $main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');
+        $this->createMenuNode($manager, $main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');
 
-        $projects = $this->createMenuNode($dm, $main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $dm->find(null, "$content_path/projects"));
-        $this->createMenuNode($dm, $projects, 'cmf-item', 'Symfony CMF', $dm->find(null, "$content_path/cmf"));
+        $projects = $this->createMenuNode($manager, $main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $manager->find(null, "$content_path/projects"));
+        $this->createMenuNode($manager, $projects, 'cmf-item', 'Symfony CMF', $manager->find(null, "$content_path/cmf"));
 
-        $company = $this->createMenuNode($dm, $main, 'company-item', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $dm->find(null, "$content_path/company"));
-        $this->createMenuNode($dm, $company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $dm->find(null, "$content_path/team"));
-        $this->createMenuNode($dm, $company, 'more-item', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $dm->find(null, "$content_path/more"));
+        $company = $this->createMenuNode($manager, $main, 'company-item', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $manager->find(null, "$content_path/company"));
+        $this->createMenuNode($manager, $company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $manager->find(null, "$content_path/team"));
+        $this->createMenuNode($manager, $company, 'more-item', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $manager->find(null, "$content_path/more"));
 
-        $demo = $this->createMenuNode($dm, $main, 'demo-item', 'Demo', $dm->find(null, "$content_path/demo"));
+        $demo = $this->createMenuNode($manager, $main, 'demo-item', 'Demo', $manager->find(null, "$content_path/demo"));
         //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?
-        $this->createMenuNode($dm, $demo, 'controller-item', 'Explicit controller', $dm->find(null, "$content_path/demo_controller"));
-        $this->createMenuNode($dm, $demo, 'template-item', 'Explicit template', $dm->find(null, "$content_path/demo_template"));
-        $this->createMenuNode($dm, $demo, 'type-item', 'Route type to controller', $dm->find(null, "$content_path/demo_type"));
-        $this->createMenuNode($dm, $demo, 'class-item', 'Class to controller', $dm->find(null, "$content_path/demo_class"));
-        $this->createMenuNode($dm, $demo, 'test-item', 'Normal Symfony Route', null, null, 'test');
-        $this->createMenuNode($dm, $demo, 'external-item', 'External Link', null, 'http://cmf.symfony.com/');
+        $this->createMenuNode($manager, $demo, 'controller-item', 'Explicit controller', $manager->find(null, "$content_path/demo_controller"));
+        $this->createMenuNode($manager, $demo, 'template-item', 'Explicit template', $manager->find(null, "$content_path/demo_template"));
+        $this->createMenuNode($manager, $demo, 'type-item', 'Route type to controller', $manager->find(null, "$content_path/demo_type"));
+        $this->createMenuNode($manager, $demo, 'class-item', 'Class to controller', $manager->find(null, "$content_path/demo_class"));
+        $this->createMenuNode($manager, $demo, 'test-item', 'Normal Symfony Route', null, null, 'test');
+        $this->createMenuNode($manager, $demo, 'external-item', 'External Link', null, 'http://cmf.symfony.com/');
 
-        $singlelocale = $this->createMenuNode($dm, $main, 'singlelocale-item', array('en' => 'singlelocale'), $dm->find(null, "$content_path/singlelocale"));
-        $this->createMenuNode($dm, $singlelocale, 'singlelocale-sub-item', array('en' => 'singlelocale child'), $dm->find(null, "$content_path/singlelocale"));
+        $singlelocale = $this->createMenuNode($manager, $main, 'singlelocale-item', array('en' => 'singlelocale'), $manager->find(null, "$content_path/singlelocale"));
+        $this->createMenuNode($manager, $singlelocale, 'singlelocale-sub-item', array('en' => 'singlelocale child'), $manager->find(null, "$content_path/singlelocale"));
 
-        $seo = $this->createMenuNode($dm, $main, 'seo', 'SEO', $dm->find(null, "$content_path/simple-seo-example"));
-        $this->createMenuNode($dm, $seo, 'simple-seo-example', array('en' => 'Seo-Simple-Content'), $dm->find(null, "$content_path/simple-seo-example"));
-        $this->createMenuNode($dm, $seo, 'demo-seo-extractor', array('en' => 'Seo-Extractor'), $dm->find(null, "$content_path/demo-seo-extractor"));
-        $this->createMenuNode($dm, $seo, 'simple-seo-property', array('en' => 'Seo-Extra-Properties'), $dm->find(null, "$content_path/simple-seo-property"));
-        $dm->flush();
+        $seo = $this->createMenuNode($manager, $main, 'seo', 'SEO', $manager->find(null, "$content_path/simple-seo-example"));
+        $this->createMenuNode($manager, $seo, 'simple-seo-example', array('en' => 'Seo-Simple-Content'), $manager->find(null, "$content_path/simple-seo-example"));
+        $this->createMenuNode($manager, $seo, 'demo-seo-extractor', array('en' => 'Seo-Extractor'), $manager->find(null, "$content_path/demo-seo-extractor"));
+        $this->createMenuNode($manager, $seo, 'simple-seo-property', array('en' => 'Seo-Extra-Properties'), $manager->find(null, "$content_path/simple-seo-property"));
+
+        $this->createMenuNode($manager, $main, 'routing-auto-item', array('en' => 'Auto routing example', 'de' => 'Auto routing beispiel', 'fr' => 'Auto routing exemple'), $manager->find(null, "$content_path/news/RoutingAutoBundle generates routes!"));
+
+        $manager->flush();
     }
 
     /**
      * @return MenuNode a Navigation instance with the specified information
      */
-    protected function createMenuNode(DocumentManager $dm, $parent, $name, $label, $content, $uri = null, $route = null)
+    protected function createMenuNode(DocumentManager $manager, $parent, $name, $label, $content, $uri = null, $route = null)
     {
         if (!$parent instanceof MenuNode && !$parent instanceof Menu) {
             $menuNode = new Menu();
@@ -86,7 +94,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $menuNode->setParentDocument($parent);
         $menuNode->setName($name);
 
-        $dm->persist($menuNode); // do persist before binding translation
+        $manager->persist($menuNode); // do persist before binding translation
 
         if (null !== $content) {
             $menuNode->setContent($content);
@@ -99,7 +107,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         if (is_array($label)) {
             foreach ($label as $locale => $l) {
                 $menuNode->setLabel($l);
-                $dm->bindTranslation($menuNode, $locale);
+                $manager->bindTranslation($menuNode, $locale);
             }
         } else {
             $menuNode->setLabel($label);

@@ -127,6 +127,7 @@ cmf_create:
 cmf_seo:
     title: CMF Sandbox - %%content_title%%
     description: The Content Management Framework. %%content_description%%
+    alternate_locale: ~
 
 sonata_block:
     default_contexts: [cms]
@@ -275,8 +276,8 @@ cmf_search:
 lunetics_locale:
     strict_mode: true
     guessing_order:
-        - cookie
         - router
+        - cookie
         - browser
     allowed_locales: %locales%
 
@@ -304,12 +305,6 @@ liip_imagine:
             filters:
                 thumbnail: { size: [50, 50], mode: outbound }
 
-cmf_media:
-    upload_file_role:        ROLE_CAN_UPLOAD_FILE
-    use_jms_serializer:      auto
-    use_elfinder:            auto
-    use_imagine:             auto
-
 fm_elfinder:
     locale: %locale%
     editor: ckeditor
@@ -328,10 +323,18 @@ doctrine_cache:
         phpcr_nodes:
             type: file_system
 
+jms_serializer:
+    metadata:
+        auto_detection: true
+        directories:
+            CmfContentBundle:
+                namespace_prefix: "Symfony\Cmf\Bundle\ContentBundle"
+                path: "@SandboxMainBundle/Resources/config/serializer/cmf"
+
 fos_rest:
     view:
         force_redirects:
-          html: true
+            html: true
         formats:
             json: true
             xml: true

@@ -21,10 +21,15 @@ class StaticPageTest extends WebTestCase
     public function contentDataProvider()
     {
         return array(
+            array('/en', 'Homepage'),
+            array('/fr', 'Page principale'),
+            array('/de', 'Startseite'),
             array('/en/projects', 'The projects'),
             array('/en/projects/cmf', 'Content Management Framework'),
             array('/en/company', 'The Company'),
             array('/en/company/team', 'The Team'),
+            array('/fr/company/team', 'The Team'),
+            array('/de/company/team', 'The Team'),
             array('/en/company/more', 'More Information'),
             array('/demo', 'Routing demo'),
             array('/demo/controller', 'Explicit Controller'),
@@ -34,5 +39,21 @@ class StaticPageTest extends WebTestCase
             array('/hello', 'Hello World!'),
             array('/about', 'Some information about us'),
         );
+    }
+
+    public function testJson()
+    {
+        $client = $this->createClient();
+        $client->request('GET', '/en/company/team', array(), array(), array(
+                'HTTP_ACCEPT'  => 'application/json',
+            )
+        );
+        $response = $client->getResponse();
+        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertTrue(
+            $response->headers->contains('Content-Type', 'application/json'),
+            $response->headers
+        );
+        $this->assertContains('"title":"The Team",', $response->getContent());
     }
 }

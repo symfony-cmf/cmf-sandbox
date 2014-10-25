@@ -7,6 +7,8 @@ parameters:
         caches:
             meta: doctrine_cache.providers.phpcr_meta
             nodes: doctrine_cache.providers.phpcr_nodes
+        parameters:
+            jackalope.check_login_on_server: false
     phpcr_workspace: default
     phpcr_user: admin
     phpcr_pass: admin
