@@ -5,8 +5,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="sandbox_main.controller" class="Sandbox\MainBundle\Controller\ContentController" parent="cmf_content.controller">
-        </service>
+        <service id="sandbox_main.controller" class="Sandbox\MainBundle\Controller\ContentController" parent="cmf_content.controller" />
 
         <service id="sandbox_main.debugListener" class="Sandbox\MainBundle\EventListener\SandboxExceptionListener">
             <call method="setContainer">
