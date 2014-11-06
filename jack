@@ -133,7 +133,6 @@ case "$action" in
     flush:article)
         [ -z $args ] && args=$(date +%Y/%m/%d)
         [ $args = "all" ] && args=""
-        # TODO extract port from $args
         curl -X DELETE http://admin:admin@localhost:8080/server/nzz/jcr:root/article/$args
         ;;
 
