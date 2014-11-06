@@ -1,0 +1,8 @@
+.sonata-admin-menu-item a.sonata-admin-frontend-link {
+    font-weight: bold;
+}
+
+.sonata-admin-menu-item a.sonata-admin-frontend-link:before {
+    font-family: FontAwesome;
+    content: "\f08e";
+}
