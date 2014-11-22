@@ -164,11 +164,17 @@ sonata_admin:
         cmf_routing.admin_extension.route_referrers:
             implements:
                 - Symfony\Cmf\Component\Routing\RouteReferrersInterface
+        cmf_routing.admin_extension.frontend_link:
+            implements:
+                - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
+            extends:
+                - Symfony\Component\Routing\Route
         cmf_seo.admin_extension:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
     templates:
+        layout:     SandboxMainBundle:Admin:custom_layout.html.twig
         user_block: SandboxMainBundle:Admin:user_block.html.twig
     dashboard:
         blocks:
