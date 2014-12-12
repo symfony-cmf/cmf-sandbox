@@ -165,6 +165,22 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $singlelocale->setContent($manager->find(null, "$content_path/singlelocale"));
         $manager->persist($singlelocale);
 
+        // publication demos
+        $publicationDemo = new Route;
+        $publicationDemo->setPosition($parent, 'publicationdemo');
+        $publicationDemo->setContent($manager->find(null, "$content_path/publication_demo"));
+        $manager->persist($publicationDemo);
+
+        $notPublished = new Route;
+        $notPublished->setPosition($publicationDemo, 'notpublished');
+        $notPublished->setContent($manager->find(null, "$content_path/not_published"));
+        $manager->persist($notPublished);
+
+        $publishedTomorrow = new Route;
+        $publishedTomorrow->setPosition($publicationDemo, 'publishedtomorrow');
+        $publishedTomorrow->setContent($manager->find(null, "$content_path/published_tomorrow"));
+        $manager->persist($publishedTomorrow);
+
         $manager->flush();
     }
 }
