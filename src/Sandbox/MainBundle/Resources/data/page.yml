@@ -151,7 +151,34 @@ static:
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
-
+    -
+        name: "publication_demo"
+        title: "Publication demo"
+        body: |
+            <p>There are two not published pages as children nodes of this item. You should be able to see them in the Admin GUI.</p>
+            <p>You have the possibilities to disable publication at all or to specify a time range in that a page should appear.</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+    -
+        name: "not_published"
+        title: "Not published"
+        publishable: false
+        body: |
+            <p>You should see this only in the Admin GUI.</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+    -
+        name: "published_tomorrow"
+        title: "Published tomorrow"
+        publishStartDate: tomorrow
+        publishEndDate: "+1 year"
+        body: |
+            <p>You should see this only in the Admin GUI, tomorrow...</p>
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
         name: "singlelocale"
         title:

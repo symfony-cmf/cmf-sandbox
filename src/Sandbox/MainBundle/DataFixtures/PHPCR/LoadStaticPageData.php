@@ -67,6 +67,11 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 $page->setBody($overview['body']);
             }
 
+
+            if (isset($overview['publishable']) && $overview['publishable'] === false) {
+                $page->setPublishable(false);
+            }
+
             if (!empty($overview['publishStartDate'])) {
                 $page->setPublishStartDate(new \DateTime($overview['publishStartDate']));
             }
