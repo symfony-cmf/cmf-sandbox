@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="sandbox_main.controller" class="Sandbox\MainBundle\Controller\ContentController" parent="cmf_content.controller" />
+
+        <service id="sandbox_main.debugListener" class="Sandbox\MainBundle\EventListener\SandboxExceptionListener">
+            <call method="setContainer">
+                <argument type="service" id="service_container" />
+            </call>
+            <tag name="kernel.event_subscriber" />
+        </service>
+
+    </services>
+</container>

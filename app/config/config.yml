@@ -13,7 +13,8 @@ framework:
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
     default_locale:  %locale%
-    session:         ~
+    session:
+        name: symfony-cmf
     trusted_proxies: ~
 
 # Twig Configuration
