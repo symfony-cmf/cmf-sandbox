@@ -40,7 +40,12 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         NodeHelper::createPath($session, $basepath);
 
         $yaml = new Parser();
-        $data = $yaml->parse(file_get_contents(__DIR__ . '/../../Resources/data/page.yml'));
+        $data = $yaml->parse(
+            file_get_contents(
+                rtrim($this->container->get('kernel')->getRootDir(), DIRECTORY_SEPARATOR) .
+                '/../src/Sandbox/MainBundle/Resources/data/page.yml'
+            )
+        );
 
         $parent = $manager->find(null, $basepath);
         foreach ($data['static'] as $overview) {
@@ -168,7 +173,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
 
         if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock') {
             $referencedBlock = $manager->find(null, $block['referencedBlock']);
-            if (null == $referencedBlock) {
+            if (null === $referencedBlock) {
                 throw new \Exception('did not find '.$block['referencedBlock']);
             }
             $document->setReferencedBlock($referencedBlock);

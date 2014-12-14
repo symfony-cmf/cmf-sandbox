@@ -9,7 +9,6 @@ use Doctrine\ODM\PHPCR\DocumentManager;
 
 use Symfony\Component\DependencyInjection\ContainerAware;
 
-use Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page;
 use PHPCR\Util\NodeHelper;
 use Sandbox\MainBundle\Document\DemoNewsContent;
 

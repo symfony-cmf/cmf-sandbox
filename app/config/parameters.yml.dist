@@ -22,3 +22,7 @@ parameters:
     mailer_host:       localhost
     mailer_user:       ~
     mailer_password:   ~
+
+    security_users:
+        user:  { password: user, roles: [ 'ROLE_USER' ] }
+        admin: { password: admin, roles: [ 'ROLE_ADMIN' ] }

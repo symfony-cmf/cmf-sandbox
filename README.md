@@ -1,4 +1,4 @@
-# Symfony Content Management Framework Sandbox  [![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=master)](http://travis-ci.org/symfony-cmf/cmf-sandbox)
+# Symfony Content Management Framework Sandbox  [![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=master)](http://travis-ci.org/symfony-cmf/cmf-sandbox) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/01a6d3b6-a2b4-4a0a-b3cd-2b46a62d6ed9/mini.png)](https://insight.sensiolabs.com/projects/01a6d3b6-a2b4-4a0a-b3cd-2b46a62d6ed9)
 
 This sandbox is a testing ground for the cmf bundles being developed.
 
@@ -188,3 +188,7 @@ Functional tests are written with PHPUnit. Note that Bundles and Components are 
 
     php app/console doctrine:phpcr:workspace:create sandbox_test
     phpunit -c app
+
+## Remove demo configuration
+
+If you start a project from the sandbox, remove ```.sensiolabs.yml``` as its not a good example for production use.
