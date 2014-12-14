@@ -1,4 +1,4 @@
-# Symfony Content Management Framework Sandbox  [![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=1.2)](http://travis-ci.org/symfony-cmf/cmf-sandbox)
+# Symfony Content Management Framework Sandbox  [![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=master)](http://travis-ci.org/symfony-cmf/cmf-sandbox)
 
 This sandbox is a testing ground for the cmf bundles being developed.
 
