@@ -21,8 +21,8 @@
         "symfony/monolog-bundle": "~2.3",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~2.3",
-        "symfony-cmf/symfony-cmf": "1.2.*",
-        "symfony-cmf/simple-cms-bundle": "1.2.*",
+        "symfony-cmf/symfony-cmf": "dev-menu_2.0",
+        "symfony-cmf/simple-cms-bundle": "dev-menu_20",
         "symfony-cmf/search-bundle": "1.1.*",
         "symfony-cmf/create-bundle": "1.2.*",
         "symfony-cmf/seo-bundle": "1.1.*",
@@ -48,7 +48,7 @@
         "liip/functional-test-bundle": "~1.0",
         "symfony-cmf/testing": "1.2.*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
