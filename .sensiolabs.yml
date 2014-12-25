@@ -1,0 +1,26 @@
+# Sensiolabs Insight configuration
+#
+# Please remove this file if you start a real project. It's not intended for production use.
+#
+
+global_exclude_dirs:
+    - vendor
+    - web
+    - app/tests
+    - vagrant
+    - bin
+
+pre_composer_script: |
+    #!/bin/bash
+
+    cp app/config/parameters.yml.dist app/config/parameters.yml
+    cp app/config/phpcr_doctrine_dbal.yml.dist app/config/phpcr.yml
+
+exclude_patterns:
+    - app/autoload.php
+    - app/check.php
+    - app/SymfonyRequirements.php
+
+rules:
+    symfony.web_config_should_not_be_present:
+        enabled: false
