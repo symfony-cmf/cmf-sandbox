@@ -1,6 +1,6 @@
 #!/bin/bash
 
-composer install --prefer-source
+composer install --prefer-dist
 
 mysql -e 'create database IF NOT EXISTS sandbox;' -u root
 
