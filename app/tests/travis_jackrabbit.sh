@@ -1,5 +1,5 @@
 #!/bin/bash
 
-composer install --prefer-source
+composer install --prefer-dist
 
 ./vendor/jackalope/jackalope-jackrabbit/bin/jackrabbit.sh
