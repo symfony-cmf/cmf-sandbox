@@ -31,7 +31,7 @@ class ContentController extends BaseContentController
             'example' => 'Additional value injected by the controller for this type (this could work without content if we want)',
         );
 
-        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('demo/controller.html.twig', $params);
     }
 
     /**
@@ -54,7 +54,7 @@ class ContentController extends BaseContentController
             'example' => 'Additional value injected by the controller for all content mapped to classAction',
         );
 
-        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('demo/controller.html.twig', $params);
     }
 
     /**
@@ -77,6 +77,6 @@ class ContentController extends BaseContentController
             'example' => 'Additional value injected by the controller when explicitly referenced',
         );
 
-        return $this->renderResponse('SandboxMainBundle:Demo:controller.html.twig', $params);
+        return $this->renderResponse('demo/controller.html.twig', $params);
     }
 }

@@ -17,7 +17,7 @@ class DefaultController extends Controller
      */
     public function blockAction($block)
     {
-        return $this->render('SandboxMainBundle:Block:demo_action_block.html.twig', array(
+        return $this->render('block/demo_action_block.html.twig', array(
             'block' => $block
         ));
     }

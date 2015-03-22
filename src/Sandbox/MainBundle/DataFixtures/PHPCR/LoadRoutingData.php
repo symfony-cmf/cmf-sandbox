@@ -53,7 +53,7 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         foreach ($locales as $locale) {
             $home = new Route();
             $home->setPosition($parent, $locale);
-            $home->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Homepage:index.html.twig');
+            $home->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'homepage/index.html.twig');
             $home->setContent($manager->find(null, "$content_path/home"));
             $manager->persist($home);
 
@@ -105,14 +105,14 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
         $demo = new Route;
         $demo->setPosition($parent, 'demo');
         $demo->setContent($manager->find(null, "$content_path/demo"));
-        $demo->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Demo:template_explicit.html.twig');
+        $demo->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'demo/template_explicit.html.twig');
         $manager->persist($demo);
 
         // explicit template
         $template = new Route;
         $template->setPosition($demo, 'atemplate');
         $template->setContent($manager->find(null, "$content_path/demo_template"));
-        $template->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'SandboxMainBundle:Demo:template_explicit.html.twig');
+        $template->setDefault(RouteObjectInterface::TEMPLATE_NAME, 'demo/template_explicit.html.twig');
         $manager->persist($template);
 
         // explicit controller

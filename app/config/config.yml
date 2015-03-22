@@ -116,7 +116,7 @@ cmf_routing:
 
         templates_by_class:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
-            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:StaticContent:index.html.twig
+            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: static_content/index.html.twig
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
@@ -175,8 +175,8 @@ sonata_admin:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
     templates:
-        layout:     SandboxMainBundle:Admin:custom_layout.html.twig
-        user_block: SandboxMainBundle:Admin:user_block.html.twig
+        layout:     admin/custom_layout.html.twig
+        user_block: admin/user_block.html.twig
     dashboard:
         blocks:
             - { position: right, type: sonata.admin.block.admin_list }
