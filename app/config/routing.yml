@@ -53,7 +53,7 @@ cmf_tree:
 
 test:
     pattern:  /hello
-    defaults: { _controller: SandboxTestBundle:Test:index }
+    defaults: { _controller: TestBundle:Test:index }
 
 create:
     resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"

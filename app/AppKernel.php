@@ -45,8 +45,8 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
 
             // and the sandbox bundle
-            new Sandbox\MainBundle\SandboxMainBundle(),
-            new Sandbox\TestBundle\SandboxTestBundle(),
+            new AppBundle\AppBundle(),
+            new TestBundle\TestBundle(),
 
             // admin bundle
             new Sonata\jQueryBundle\SonatajQueryBundle(),

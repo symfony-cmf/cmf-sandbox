@@ -1,7 +1,5 @@
 <?php
 
-namespace Sandbox;
-
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
 use PHPCR\RepositoryInterface;
 use Doctrine\Common\DataFixtures\Executor\PHPCRExecutor;
@@ -18,10 +16,10 @@ abstract class WebTestCase extends BaseWebTestCase
         }
 
         $this->loadFixtures(array(
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
+            'AppBundle\DataFixtures\PHPCR\LoadStaticPageData',
+            'AppBundle\DataFixtures\PHPCR\LoadMenuData',
+            'AppBundle\DataFixtures\PHPCR\LoadRoutingData',
+            'AppBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
         ), null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;

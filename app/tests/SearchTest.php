@@ -1,7 +1,5 @@
 <?php
 
-namespace Sandbox;
-
 class SearchTest extends WebTestCase
 {
     public function testSearch()

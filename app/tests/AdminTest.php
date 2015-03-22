@@ -1,7 +1,5 @@
 <?php
 
-namespace Sandbox;
-
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 class AdminTest extends WebTestCase

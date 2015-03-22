@@ -1,7 +1,5 @@
 <?php
 
-namespace Sandbox;
-
 class HomepageTest extends WebTestCase
 {
     public function testRedirectToDefaultLanguage()

@@ -1,7 +1,5 @@
 <?php
 
-namespace Sandbox;
-
 class AdminDashboardTest extends WebTestCase
 {
     public function testRedirectToDashboard()

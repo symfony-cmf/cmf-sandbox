@@ -1,7 +1,5 @@
 <?php
 
-namespace Sandbox;
-
 class StaticPageTest extends WebTestCase
 {
     /**
