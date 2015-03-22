@@ -184,6 +184,7 @@ sonata_admin:
         groups:
             content:
                 label: Content
+                icon: '<i class="fa fa-file-text-o"></i>'
                 items:
                     - cmf_content.admin
                     - cmf_block.simple_admin
@@ -194,16 +195,19 @@ sonata_admin:
                     - cmf_block.imagine.imagine_admin
             routing:
                 label: URLs
+                icon: '<i class="fa fa-link"></i>'
                 items:
                     - cmf_routing.route_admin
                     - cmf_routing.redirect_route_admin
             menu:
                 label: Menu
+                icon: '<i class="fa  fa-bars"></i>'
                 items:
                     - cmf_menu.menu_admin
                     - cmf_menu.node_admin
             simplecms:
                 label: Simple CMS
+                icon: '<i class="fa fa-puzzle-piece"></i>'
                 items:
                     - cmf_simple_cms.persistence.phpcr.admin.page
 
