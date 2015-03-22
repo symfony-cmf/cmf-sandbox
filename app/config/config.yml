@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: phpcr.yml }
     - { resource: security.yml }
+    - { resource: services.yml }
 
 framework:
     #esi:             ~
@@ -109,9 +110,9 @@ cmf_routing:
     dynamic:
         route_collection_limit: 10
         controllers_by_type:
-            demo_type: sandbox_main.controller:typeAction
+            demo_type: app.content_controller:typeAction
         controllers_by_class:
-            AppBundle\Document\DemoClassContent: sandbox_main.controller:classAction
+            AppBundle\Document\DemoClassContent: app.content_controller:classAction
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
 
         templates_by_class:
