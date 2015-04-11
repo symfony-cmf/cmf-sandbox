@@ -44,10 +44,6 @@ class AppKernel extends Kernel
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
 
-            // and the sandbox bundle
-            new AppBundle\AppBundle(),
-            new TestBundle\TestBundle(),
-
             // admin bundle
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
@@ -66,12 +62,15 @@ class AppKernel extends Kernel
             // block caching and feeds
             new Sonata\CacheBundle\SonataCacheBundle(),
             new Eko\FeedBundle\EkoFeedBundle(),
+
+            // and the app bundle
+            new AppBundle\AppBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
-            $bundles[] = new \Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
 
             // additional bundle for tests
             if ('test' === $this->getEnvironment()) {
