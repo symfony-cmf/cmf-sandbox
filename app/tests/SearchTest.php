@@ -20,9 +20,10 @@ class SearchTest extends WebTestCase
         $client = $this->createClient();
 
         $client->request('GET', '/search?query=cmf');
+        $response = $client->getResponse();
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertResponseSuccess($response);
 
-        $this->assertContains('results for &quot;cmf&quot; have been found', $client->getResponse()->getContent());
+        $this->assertContains('results for &quot;cmf&quot; have been found', $response->getContent());
     }
 }

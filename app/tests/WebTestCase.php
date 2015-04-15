@@ -11,6 +11,7 @@
 
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
 use PHPCR\RepositoryInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\DataFixtures\Executor\PHPCRExecutor;
 use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
 
@@ -51,5 +52,19 @@ abstract class WebTestCase extends BaseWebTestCase
             'PHP_AUTH_PW'   => 'admin',
         ));
         return $this->createClient($options, $server);
+    }
+
+    protected function assertResponseSuccess(Response $response)
+    {
+        $dom = new \DomDocument();
+        $dom->loadHTML($response->getContent());
+
+        $xpath = new \DOMXpath($dom);
+        $result = $xpath->query('//div[contains(@class,"text-exception")]/h1');
+        if ($result->length) {
+            $exception = $result->item(0)->nodeValue;
+        }
+
+        $this->assertEquals(200, $response->getStatusCode(), $exception);
     }
 }

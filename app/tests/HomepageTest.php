@@ -30,7 +30,7 @@ class HomepageTest extends WebTestCase
 
         $crawler = $client->request('GET', '/en');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertResponseSuccess($client->getResponse());
 
         $this->assertCount(3, $crawler->filter('.cmf-block'));
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));

@@ -133,13 +133,10 @@ class AdminTest extends WebTestCase
                 continue;
             }
 
-            $crawler = $this->client->request('GET', $url);
+            $this->client->request('GET', $url);
             $res = $this->client->getResponse();
-            $statusCode = $res->getStatusCode();
 
-            $this->assertEquals(200, $statusCode, sprintf(
-                'URL %s returns 200 OK HTTP Code', $url
-            ));
+            $this->assertResponseSuccess($res);
 
             $this->testedPatterns[] = $route->getPattern();
         }
