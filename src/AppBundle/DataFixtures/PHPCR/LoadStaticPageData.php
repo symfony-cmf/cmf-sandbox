@@ -51,8 +51,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $yaml = new Parser();
         $data = $yaml->parse(
             file_get_contents(
-                __DIR__.rtrim($this->container->get('kernel')->getRootDir(), DIRECTORY_SEPARATOR) .
-                '/../src/AppBundle/Resources/data/page.yml'
+                __DIR__.'/../../Resources/data/page.yml'
             )
         );
 
