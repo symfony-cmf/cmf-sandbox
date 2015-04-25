@@ -29,12 +29,14 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
-            new \Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
+            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
+            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
-            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
+            new Symfony\Cmf\Bundle\ResourceBundle\CmfResourceBundle(),
+            new Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle(),
 
             // language switcher
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
@@ -55,7 +57,6 @@ class AppKernel extends Kernel
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             // Media support
             new Liip\ImagineBundle\LiipImagineBundle(),

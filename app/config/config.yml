@@ -130,6 +130,15 @@ cmf_seo:
     description: The Content Management Framework. %%content_description%%
     alternate_locale: ~
 
+cmf_resource:
+    repositories:
+        default:
+            type: doctrine_phpcr_odm
+
+cmf_resource_rest:
+    enhancer_map:
+        - { repository: default, enhancer: sonata_admin }
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -257,7 +266,6 @@ sonata_doctrine_phpcr_admin:
         Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
-
 
 sonata_seo:
     page:
