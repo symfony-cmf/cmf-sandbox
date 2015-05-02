@@ -71,29 +71,6 @@ Then, create the database and tables and set up the default workspace using:
     php app/console doctrine:database:create
     php app/console doctrine:phpcr:init:dbal
 
-### Install the Midgard2 PHPCR provider (optional, currently broken)
-
-If you want to run the CMF sandbox with the [Midgard2 PHPCR provider](http://midgard-project.org/phpcr/)
-instead of Jackrabbit, you need to install the [`midgard2` PHP extension](http://midgard-project.org/midgard2/#download).
-On current debian / ubuntu systems, this is simply done with ``sudo apt-get install php5-midgard2``, on OS X
-``sudo port install php5-midgard2`` resp. ``brew install midgard2-php``.
-
-You also need to download [`midgard_tree_node.xml`](https://raw.github.com/midgardproject/phpcr-midgard2/master/data/share/schema/midgard_tree_node.xml)
-and [`midgard_namespace_registry.xml`](https://github.com/midgardproject/phpcr-midgard2/raw/master/data/share/schema/midgard_namespace_registry.xml)
-schema files, and place them into `/usr/share/midgard2/schema` (note: this path may be different if you built Midgard2 yourself. It is
-basically `$PREFIX/share/midgard2/schema`).
-
-Then chose the storage layer you want to use, copy the corresponding configuration file
-and adjust as needed, and install the project dependencies:
-
-    cp app/config/phpcr_midgard_<type>.yml.dist app/config/phpcr.yml
-    php composer.phar install
-
-To have the midgard PHPCR implementation installed run the following additional command
-
-    php composer.phar require midgard/phpcr:dev-master --no-update
-    php composer.phar update midgard/phpcr
-
 ## Prepare the PHPCR repository
 
 First you need to create a workspace that will hold the data for the sandbox.
