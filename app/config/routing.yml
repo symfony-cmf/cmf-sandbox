@@ -44,12 +44,8 @@ sonata_admin:
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
-fos_js_routing:
-    resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
-
-cmf_tree:
-    resource: .
-    type: 'cmf_tree'
+_cmf_resource_rest:
+    resource: "@CmfResourceRestBundle/Resources/config/routing.yml"
 
 test:
     pattern:  /hello
