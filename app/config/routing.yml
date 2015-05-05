@@ -45,7 +45,7 @@ _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
 _cmf_resource_rest:
-    resource: "@CmfResourceRestBundle/Resources/config/routing.xml"
+    resource: "@CmfResourceRestBundle/Resources/config/routing.yml"
 
 test:
     pattern:  /hello
