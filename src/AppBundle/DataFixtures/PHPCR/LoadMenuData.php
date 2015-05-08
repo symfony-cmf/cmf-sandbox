@@ -73,7 +73,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $this->createMenuNode($manager, $demo, 'template-item', 'Explicit template', $manager->find(null, "$content_path/demo_template"));
         $this->createMenuNode($manager, $demo, 'type-item', 'Route type to controller', $manager->find(null, "$content_path/demo_type"));
         $this->createMenuNode($manager, $demo, 'class-item', 'Class to controller', $manager->find(null, "$content_path/demo_class"));
-        $this->createMenuNode($manager, $demo, 'test-item', 'Normal Symfony Route', null, null, 'test');
+        $this->createMenuNode($manager, $demo, 'test-item', 'Normal Symfony Route', null, null, 'symfony_route');
         $this->createMenuNode($manager, $demo, 'external-item', 'External Link', null, 'http://cmf.symfony.com/');
 
         $publicationDemo = $this->createMenuNode($manager, $main, 'publication-demo-item', 'Publication Demo', $manager->find(null, "$content_path/publication_demo"));

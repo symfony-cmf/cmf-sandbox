@@ -11,6 +11,7 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Sonata\BlockBundle\Model\BlockInterface;
@@ -29,5 +30,13 @@ class DefaultController extends Controller
         return $this->render('block/demo_action_block.html.twig', array(
             'block' => $block
         ));
+    }
+
+    /**
+     * @Route("/hello", name="symfony_route")
+     */
+    public function helloAction()
+    {
+        return $this->render('static_content/hello.html.twig');
     }
 }

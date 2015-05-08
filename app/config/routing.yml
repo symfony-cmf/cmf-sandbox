@@ -3,6 +3,10 @@
 #   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #   prefix:   /_internal
 
+_app:
+    resource: "@AppBundle/Controller"
+    type: annotation
+
 home_redirect:
     pattern: /
     defaults:
@@ -33,7 +37,7 @@ admin_dashboard:
         permanent: true # this for 301
 
 admin:
-    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
     prefix: /{_locale}/admin
 
 sonata_admin:
