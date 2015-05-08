@@ -54,17 +54,25 @@ abstract class WebTestCase extends BaseWebTestCase
         return $this->createClient($options, $server);
     }
 
+    /**
+     * Method to assert a 200 response code.
+     *
+     * This code is taken from symfony-cmf/Testing.
+     */
     protected function assertResponseSuccess(Response $response)
     {
+        libxml_use_internal_errors(true);
+
         $dom = new \DomDocument();
         $dom->loadHTML($response->getContent());
 
         $xpath = new \DOMXpath($dom);
         $result = $xpath->query('//div[contains(@class,"text-exception")]/h1');
+        $exception = null;
         if ($result->length) {
             $exception = $result->item(0)->nodeValue;
         }
 
-        $this->assertEquals(200, $response->getStatusCode(), $exception);
+        $this->assertEquals(200, $response->getStatusCode(), $exception ? 'Exception: "'.$exception.'"' : null);
     }
 }
