@@ -1,9 +1,17 @@
 <?php
 
-namespace Sandbox;
+/*
+ * This file is part of the CMF Sandbox package.
+ *
+ * (c) 2011-2015 Symfony CMF
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
 use PHPCR\RepositoryInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\DataFixtures\Executor\PHPCRExecutor;
 use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
 
@@ -18,10 +26,10 @@ abstract class WebTestCase extends BaseWebTestCase
         }
 
         $this->loadFixtures(array(
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadStaticPageData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadMenuData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadRoutingData',
-            'Sandbox\MainBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
+            'AppBundle\DataFixtures\PHPCR\LoadStaticPageData',
+            'AppBundle\DataFixtures\PHPCR\LoadMenuData',
+            'AppBundle\DataFixtures\PHPCR\LoadRoutingData',
+            'AppBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
         ), null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;
@@ -44,5 +52,27 @@ abstract class WebTestCase extends BaseWebTestCase
             'PHP_AUTH_PW'   => 'admin',
         ));
         return $this->createClient($options, $server);
+    }
+
+    /**
+     * Method to assert a 200 response code.
+     *
+     * This code is taken from symfony-cmf/Testing.
+     */
+    protected function assertResponseSuccess(Response $response)
+    {
+        libxml_use_internal_errors(true);
+
+        $dom = new \DomDocument();
+        $dom->loadHTML($response->getContent());
+
+        $xpath = new \DOMXpath($dom);
+        $result = $xpath->query('//div[contains(@class,"text-exception")]/h1');
+        $exception = null;
+        if ($result->length) {
+            $exception = $result->item(0)->nodeValue;
+        }
+
+        $this->assertEquals(200, $response->getStatusCode(), $exception ? 'Exception: "'.$exception.'"' : null);
     }
 }

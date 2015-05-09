@@ -93,7 +93,7 @@ provides a command to load fixtures:
 
     php app/console -v doctrine:phpcr:fixtures:load
 
-Run this to load the fixtures from the Sandbox MainBundle.
+Run this to load the fixtures from the Sandbox AppBundle.
 
 ## Setup filesystem permissions
 
@@ -103,7 +103,7 @@ If you use the default setup, an sqlite database will be created at `app/app.sql
 You need to set up permissions for this file and the app/ folder with the method
 you chose from the installation guide.
 
-If you just want to move on and try out the sandbox for now, you can 
+If you just want to move on and try out the sandbox for now, you can
 run:
 
     sudo chmod -R 777 app/

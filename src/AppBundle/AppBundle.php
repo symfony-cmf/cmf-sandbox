@@ -9,5 +9,10 @@
  * file that was distributed with this source code.
  */
 
-require __DIR__.'/../bootstrap.php.cache';
-require __DIR__.'/WebTestCase.php';
+namespace AppBundle;
+
+use Symfony\Component\HttpKernel\Bundle\Bundle;
+
+class AppBundle extends Bundle
+{
+}

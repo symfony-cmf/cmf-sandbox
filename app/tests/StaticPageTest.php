@@ -1,6 +1,13 @@
 <?php
 
-namespace Sandbox;
+/*
+ * This file is part of the CMF Sandbox package.
+ *
+ * (c) 2011-2015 Symfony CMF
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 class StaticPageTest extends WebTestCase
 {
@@ -13,7 +20,7 @@ class StaticPageTest extends WebTestCase
 
         $crawler = $client->request('GET', $url);
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertResponseSuccess($client->getResponse());
 
         $this->assertCount(1, $crawler->filter(sprintf('h1:contains("%s")', $title)));
     }
@@ -49,7 +56,7 @@ class StaticPageTest extends WebTestCase
             )
         );
         $response = $client->getResponse();
-        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertResponseSuccess($response);
         $this->assertTrue(
             $response->headers->contains('Content-Type', 'application/json'),
             $response->headers

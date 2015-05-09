@@ -1,0 +1,11 @@
+services:
+    app.content_controller:
+        class: AppBundle\Controller\ContentController
+        parent: cmf_content.controller
+
+    app.exception_listener:
+        class: AppBundle\EventListener\SandboxExceptionListener
+        calls:
+            - [setContainer, ["@service_container"]]
+        tags:
+            - { name: kernel.event_subscriber }

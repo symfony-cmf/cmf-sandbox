@@ -1,6 +1,13 @@
 <?php
 
-namespace Sandbox;
+/*
+ * This file is part of the CMF Sandbox package.
+ *
+ * (c) 2011-2015 Symfony CMF
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 class HomepageTest extends WebTestCase
 {
@@ -23,7 +30,7 @@ class HomepageTest extends WebTestCase
 
         $crawler = $client->request('GET', '/en');
 
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertResponseSuccess($client->getResponse());
 
         $this->assertCount(3, $crawler->filter('.cmf-block'));
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));

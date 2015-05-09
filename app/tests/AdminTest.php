@@ -1,6 +1,13 @@
 <?php
 
-namespace Sandbox;
+/*
+ * This file is part of the CMF Sandbox package.
+ *
+ * (c) 2011-2015 Symfony CMF
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
@@ -10,10 +17,10 @@ class AdminTest extends WebTestCase
     protected $router;
 
     protected $verifiablePatterns = array(
-        '/sandbox/main/demoseocontent/list',
-        '/sandbox/main/demoseocontent/create',
-        '/sandbox/main/demoseocontent/{id}/edit',
-        '/sandbox/main/demoseocontent/{id}/delete',
+        '/app/demoseocontent/list',
+        '/app/demoseocontent/create',
+        '/app/demoseocontent/{id}/edit',
+        '/app/demoseocontent/{id}/delete',
         '/cmf/block/simpleblock/list',
         '/cmf/block/simpleblock/create',
         '/cmf/block/simpleblock/{id}/edit',
@@ -126,13 +133,10 @@ class AdminTest extends WebTestCase
                 continue;
             }
 
-            $crawler = $this->client->request('GET', $url);
+            $this->client->request('GET', $url);
             $res = $this->client->getResponse();
-            $statusCode = $res->getStatusCode();
 
-            $this->assertEquals(200, $statusCode, sprintf(
-                'URL %s returns 200 OK HTTP Code', $url
-            ));
+            $this->assertResponseSuccess($res);
 
             $this->testedPatterns[] = $route->getPattern();
         }

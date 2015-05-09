@@ -1,6 +1,13 @@
 <?php
 
-namespace Sandbox;
+/*
+ * This file is part of the CMF Sandbox package.
+ *
+ * (c) 2011-2015 Symfony CMF
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
 class AdminDashboardTest extends WebTestCase
 {
@@ -32,7 +39,7 @@ class AdminDashboardTest extends WebTestCase
         $crawler = $client->request('GET', '/en/admin/dashboard');
 
         $response = $client->getResponse();
-        $this->assertEquals(200, $response->getStatusCode());
+        $this->assertResponseSuccess($response);
         $this->assertContains('Sonata Admin', $response->getContent());
 
         $this->assertCount(1, $crawler->filter('.container-fluid'));
