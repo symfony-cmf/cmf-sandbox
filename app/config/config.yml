@@ -3,6 +3,7 @@ imports:
     - { resource: phpcr.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: @AppBundle/Resources/config/services.yml }
 
 framework:
     #esi:             ~
@@ -211,6 +212,12 @@ sonata_admin:
                 icon: '<i class="fa fa-puzzle-piece"></i>'
                 items:
                     - cmf_simple_cms.persistence.phpcr.admin.page
+            custom:
+                label: Custom Dashboard
+                items:
+                    - cartenoire.block.admin.basecontent_admin
+                    - cartenoire.block.admin.basecontainer_block_admin
+                    - cartenoire.block.admin.baseimagine_block_admin
 
 sonata_doctrine_phpcr_admin:
     document_tree_defaults: [locale]

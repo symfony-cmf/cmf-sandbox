@@ -1,0 +1,40 @@
+services:
+
+    cartenoire.block.admin.baseimagine_block_admin:
+        class: AppBundle\Admin\BaseImagineBlockAdmin
+        arguments:
+            - ''
+            - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock
+            - 'SonataAdminBundle:CRUD'
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: custom, label: 'Base Imagine Block' }
+        calls:
+            - [setRootPath, ['/cms/content']]
+            - [setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
+            - [setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
+
+    cartenoire.block.admin.basecontainer_block_admin:
+        class: AppBundle\Admin\BaseContainerBlockAdmin
+        arguments:
+            - ''
+            - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+            - 'SonataAdminBundle:CRUD'
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: custom, label: 'Base Container Block' }
+        calls:
+            - [setEmbeddedMediaAdmin, ['cartenoire.block.admin.baseimagine_block_admin']]
+            - [setRootPath, ['/cms/content']]
+            - [setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
+
+    cartenoire.block.admin.basecontent_admin:
+        class: AppBundle\Admin\BaseStaticContentAdmin
+        arguments:
+            - ''
+            - AppBundle\Document\BaseStaticContent
+            - 'SonataAdminBundle:CRUD'
+        tags:
+            - { name: sonata.admin, manager_type: doctrine_phpcr, group: custom, label: 'Base Static ConTent' }
+        calls:
+            - [setEmbeddedContainerAdmin, ['cartenoire.block.admin.basecontainer_block_admin']]
+            - [setRootPath, ['/cms/content']]
+            - [setRouteBuilder, ['@sonata.admin.route.path_info_slashes']]
