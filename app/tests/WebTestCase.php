@@ -72,6 +72,6 @@ abstract class WebTestCase extends BaseWebTestCase
             $exception = $result->item(0)->nodeValue;
         }
 
-        $this->assertEquals(200, $response->getStatusCode(), $exception ? 'Exception: "'.$exception.'"' : null);
+        $this->assertEquals(200, $response->getStatusCode(), $exception ? 'Exception: "'.trim($exception).'"' : null);
     }
 }
