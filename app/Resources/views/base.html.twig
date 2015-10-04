@@ -59,12 +59,13 @@
                         <p id="slogan">Symfony2 Content Management Framework</p>
                     </div>
                 </div>
-                {% set currentItem = knp_menu_get('main').currentItem %}
+
+                {% set currentItem = app_get_current_menu_item('main') %}
                 {% if currentItem %}
                 <div id="breadcrumb" class="span10">
                     <ul class="breadcrumb boxed">
-                        {% for title, url in currentItem.breadcrumbsArray %}
-                            <li><a href="{{url}}">{{ title }}</a></li>
+                        {% for item in knp_menu_get_breadcrumbs_array(currentItem) %}
+                            <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -72,11 +73,11 @@
                 {% block raw_data %}
                 <div id="raw_format" class="span2">
                     <p class="raw_format boxed">Raw:
-                        <a id="raw_xml" title="{{ "cmf.raw_data_hint"|trans() }}">XML</a>,
-                        <a id="raw_json" title="{{ "cmf.raw_data_hint"|trans() }}">json</a>
+                        <a id="raw_xml" title="{{ "cmf.raw_data_hint"|trans }}">XML</a>,
+                        <a id="raw_json" title="{{ "cmf.raw_data_hint"|trans }}">json</a>
                     </p>
                 </div>
-                {% endblock raw_data %}
+                {% endblock %}
 
             </div>
 
@@ -94,15 +95,13 @@
                         <div class="span9">
                             <div id="content">
                                 <div class="inner">
-                                    {% block content %}
-                                    {% endblock %}
+                                    {% block content %}{% endblock %}
                                 </div>
                             </div>
 
                             <div id="content_extra">
                                 <div class="inner">
-                                    {% block content_extra %}
-                                    {% endblock %}
+                                    {% block content_extra %}{% endblock %}
                                 </div>
                             </div>
                         </div>
@@ -116,13 +115,14 @@
                 <div id="menu-service">
                     {{ knp_menu_render('simple') }}
                 </div>
+
                 <div class="span12">
                 {% block footer %}
                     <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a>
                         | Frontend editing funded in part by <a href="http://www.iks-project.eu/">IKS</a>
                         | Hosting graciously sponsored by <a href="http://platform.sh/">platform.sh</a>
                     </p>
-                    {% endblock %}
+                {% endblock %}
                 </div>
             </div>
         </div>
@@ -135,9 +135,7 @@
         {% block bottom_scripts %}
             {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction")) %}
 
-            {% javascripts
-                '@AppBundle/Resources/public/js/rawdata.js'
-            %}
+            {% javascripts '@AppBundle/Resources/public/js/rawdata.js' %}
                 <script src="{{ asset_url }}"></script>
             {% endjavascripts %}
         {% endblock %}

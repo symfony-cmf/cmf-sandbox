@@ -9,3 +9,9 @@ services:
             - [setContainer, ["@service_container"]]
         tags:
             - { name: kernel.event_subscriber }
+
+    app.twig.menu_extension:
+        class: AppBundle\Twig\MenuExtension
+        arguments: ["@knp_menu.helper", "@knp_menu.matcher"]
+        tags:
+            - { name: twig.extension }
