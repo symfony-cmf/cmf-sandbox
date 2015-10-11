@@ -1,0 +1,35 @@
+## Infrastructure
+cmf::infrastructure::packages::installs:
+  - vim
+  - git
+  - wget
+  - bash-completion
+  - ruby-dev
+  - software-properties-common
+  - python-software-properties
+
+## Application
+cmf::application::php::version: "5.6" # Available are "5.5" and "5.6"
+#cmf::application::php::use_apc: false
+#cmf::application::php::use_xdebug: true
+#cmf::application::php::environment: dev
+
+#cmf::application::symfony::environment: dev
+#cmf::application::symfony::allow_override: None
+cmf::application::symfony::front: app_dev.php
+cmf::application::symfony::vhost_name: cmf.dev
+
+## PHPCR
+cmf::infrastructure::phpcr::mysql: true
+cmf::infrastructure::phpcr::jack: false
+
+## MySQL
+cmf::infrastructure::phpcr::mysql_wrapper::root_password: root
+cmf::infrastructure::phpcr::mysql_wrapper::database_name: cmf-database
+cmf::infrastructure::phpcr::mysql_wrapper::database_credentials:
+  user:     dev
+  password: dev
+  host:     localhost
+
+## Jackrabbit
+#cmf::infrastructure::phpcr::jack_wrapper::version: "2.6.5"

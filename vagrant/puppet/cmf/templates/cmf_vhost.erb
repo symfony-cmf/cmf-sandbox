@@ -1,0 +1,24 @@
+# Custom vhost for puppet
+
+<VirtualHost *:80>
+    ServerName <%= @server_name_value %>
+    DocumentRoot /var/www/cmf/web
+<% if scope.lookupvar('ip') == nil %>
+    ServerAlias 192.168.66.211
+<% else %>
+    ServerAlias <%= scope.lookupvar('ip') %>
+<% end %>
+
+    ErrorLog  <%= scope.lookupvar('apache::log_dir') %>/<%= @name %>-error_log
+    CustomLog <%= scope.lookupvar('apache::log_dir') %>/<%= @name %>-access_log common
+
+    <Directory /var/www/cmf/web>
+        AllowOverride <%= @directory_allow_override %>
+
+        DirectoryIndex <%= scope.lookupvar('cmf::application::symfony::front') %>
+
+        RewriteEngine on
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^(.*)$ <%= scope.lookupvar('cmf::application::symfony::front') %> [QSA,L]
+    </Directory>
+</VirtualHost>

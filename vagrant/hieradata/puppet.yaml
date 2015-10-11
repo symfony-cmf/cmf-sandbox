@@ -1,0 +1,7 @@
+classes:
+  - cmf::infrastructure::packages
+  - cmf::infrastructure::phpcr
+  - cmf::application::symfony
+  - cmf::application::php
+
+environment: dev

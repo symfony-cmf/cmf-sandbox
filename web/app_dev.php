@@ -11,7 +11,7 @@ if (isset($_SERVER['HTTP_CLIENT_IP'])
     || !in_array(@$_SERVER['REMOTE_ADDR'], array(
        '127.0.0.1',
        '::1',
-       '172.22.22.1',
+       '192.168.66.1', // ip of the vagrant machine (needs to be changed when having another ip)
     ))
 ) {
     header('HTTP/1.0 403 Forbidden');

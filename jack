@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-VERSION=2.6.0
+VERSION=2.6.5
 JAR=jackrabbit-standalone-$VERSION.jar
 
 # one per line

@@ -1,0 +1,17 @@
+# INTERNAL:
+# This file contains the paths of the configuration files for the puppet provisioner.
+# This should NOT be edited!
+
+---
+:backends:
+  - yaml
+
+:yaml:
+    :datadir: /var/www/cmf/vagrant
+
+:hierarchy:
+  - hieradata/puppet
+  - hieradata/common
+  - hieradata/local
+  - machine
+  - local_machine
