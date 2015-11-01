@@ -40,7 +40,8 @@
         "liip/imagine-bundle": "~1.0",
         "wjzijderveld/check-bundles": "~1.1",
         "helios-ag/fm-elfinder-bundle": "~1.4",
-        "burgov/key-value-form-bundle": "~1.0"
+        "burgov/key-value-form-bundle": "~1.0",
+        "incenteev/composer-parameter-handler": "~2.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
@@ -50,6 +51,7 @@
     "minimum-stability": "stable",
     "scripts": {
         "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "WillemJan\\CheckBundles\\Composer\\CheckBundles::postPackageUpdate",
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
@@ -58,6 +60,7 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ],
         "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
             "WillemJan\\CheckBundles\\Composer\\CheckBundles::postPackageUpdate",
             "Symfony\\Cmf\\Bundle\\CreateBundle\\Composer\\ScriptHandler::downloadCreateAndCkeditor",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
@@ -79,9 +82,16 @@
         ],
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",
-        "incenteev-parameters": {
-            "file": "app/config/parameters.yml"
-        },
+        "incenteev-parameters": [
+            {
+                "file": "app/config/parameters.yml",
+                "env-map": {}
+            },
+            {
+                "file": "app/config/phpcr.yml",
+                "dist-file": "app/config/phpcr_doctrine_dbal.yml.dist"
+            }
+        ],
         "branch-alias": {
             "dev-master": "1.3-dev"
         }
