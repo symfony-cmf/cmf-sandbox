@@ -27,9 +27,20 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
 
     git clone git://github.com/symfony-cmf/cmf-sandbox.git
     cd cmf-sandbox
-    # copy parameters template and edit as needed
-    cp app/config/parameters.yml.dist app/config/parameters.yml
     curl -s http://getcomposer.org/installer | php --
+    php composer.phar install
+
+Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and
+change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""`
+If you fail to do this you might receive:
+
+    [Symfony\Component\Filesystem\Exception\IOException]
+    Unable to create symlink due to error code 1314: 'A required privilege is not held by the client'. Do you have the required Administrator-rights?
+
+At the end of the installation you will be interactively asked several configuration
+questions. Note that by default you will end up with a configuration using
+SQLite and Doctrine DBAL for storage. If you want to adjust the configuration
+to use Jackrabbit please look at the following section.
 
 ### Install and run Apache JackRabbit
 
@@ -41,7 +52,6 @@ Once you have that, copy the default jackalope-jackrabbit configuration file,
 adjust it as needed and install the dependencies with composer:
 
     cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
-    php composer.phar install
 
 The last command will fetch the main project and all its dependencies (CMF
 Bundles, Symfony, Doctrine\PHPCR, Jackalope ... ). You might want to have a look
@@ -55,19 +65,10 @@ available, this is the simplest to quickly try out the CMF. Copy the file
 and then install the dependencies:
 
     cp app/config/phpcr_doctrine_dbal.yml.dist app/config/phpcr.yml
-    php composer.phar install
 
 The Doctrine DBAL implementation is installed by default already along side the Jackrabbit implementation.
 
 To disable the meta data and node cache for debugging comment the ``caches`` settings in the `phpcr.yml`.
-
-
-Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and
-change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""`
-If you fail to do this you might receive:
-
-    [Symfony\Component\Filesystem\Exception\IOException]
-    Unable to create symlink due to error code 1314: 'A required privilege is not held by the client'. Do you have the required Administrator-rights?
 
 Then, create the database and tables and set up the default workspace using:
 
