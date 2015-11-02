@@ -1,0 +1,71 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+
+# The name of this app. Must be unique within a project.
+name: php
+
+# The toolstack used to build the application.
+type: php:5.6
+build:
+    flavor: symfony
+
+# The relationships of the application with services or other applications.
+# The left-hand side is the name of the relationship as it will be exposed
+# to the application in the PLATFORM_RELATIONSHIPS variable. The right-hand
+# side is in the form `<service name>:<endpoint name>`.
+#relationships:
+#    database: "mysql:mysql"
+
+# The configuration of app when it is exposed to the web.
+web:
+    # The public directory of the app, relative to its root.
+    document_root: "/web"
+    # The front-controller script to send non-static requests to.
+    passthru: "/app.php"
+    whitelist:
+      # slides
+      - ^/slides/.*\.html$
+
+      # CSS and Javascript.
+      - \.css$
+      - \.js$
+
+      # image/* types.
+      - \.gif$
+      - \.jpe?g$
+      - \.png$
+      - \.ico
+
+      # robots.txt.
+      - /robots\.txt$
+
+# The size of the persistent disk of the application (in MB).
+disk: 2048
+
+# The mounts that will be performed when the package is deployed.
+mounts:
+    "/app/cache": "shared:files/cache"
+    "/app/logs": "shared:files/logs"
+
+# The hooks that will be performed when the package is deployed.
+hooks:
+    build: |
+      rm web/app_dev.php
+      # place sqlite file into /tmp so that we can write to it during deploy
+      sed -i 's@%kernel.root_dir%/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
+      app/console --env=prod assets:install -n --no-debug
+      app/console --env=prod assetic:dump -n --no-debug
+    deploy: |
+      # force clearing the cache
+      rm -rf app/cache
+      app/console doctrine:phpcr:init:dbal --drop -n
+      app/console doctrine:phpcr:repository:init -n
+      app/console doctrine:phpcr:fixtures:load -n
+      app/console --env=prod cache:warmup -n --no-debug
+
+runtime:
+  extensions:
+    - name: blackfire
+      configuration:
+        server_id: "ce95eba9-2d90-48b7-ad75-fcad42e1bcab"
+        server_token: "ca7e32ac2d466ecfdf30b8ac43bdfef1304fc3feeb66e8906c1192b435e206f0"
