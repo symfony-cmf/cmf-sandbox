@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "71492b27185fd86ee5ee0f87aca8159e",
-    "content-hash": "10289b420862124b06b09d9804213974",
+    "hash": "ad0cd764968982179e19596cc28486f4",
+    "content-hash": "f0754672dacd7f7e7afffe544c01363c",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -723,12 +723,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "097e7ba84f64a427e55008117ef2bb94096731dc"
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/097e7ba84f64a427e55008117ef2bb94096731dc",
-                "reference": "097e7ba84f64a427e55008117ef2bb94096731dc",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
                 "shasum": ""
             },
             "require": {
@@ -740,7 +740,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -782,7 +782,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-10-07 18:00:26"
+            "time": "2015-11-06 14:35:42"
         },
         {
             "name": "doctrine/instantiator",
@@ -2296,12 +2296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/lunetics/LocaleBundle.git",
-                "reference": "6149a024be34afc7e7e9af362ad020037d0ab87f"
+                "reference": "f3f0b70c5d34b009a72de2785809b311a725418c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/lunetics/LocaleBundle/zipball/6149a024be34afc7e7e9af362ad020037d0ab87f",
-                "reference": "6149a024be34afc7e7e9af362ad020037d0ab87f",
+                "url": "https://api.github.com/repos/lunetics/LocaleBundle/zipball/f3f0b70c5d34b009a72de2785809b311a725418c",
+                "reference": "f3f0b70c5d34b009a72de2785809b311a725418c",
                 "shasum": ""
             },
             "require": {
@@ -2358,7 +2358,7 @@
                 "multilanguage",
                 "router"
             ],
-            "time": "2015-09-17 21:30:38"
+            "time": "2015-11-07 05:49:52"
         },
         {
             "name": "midgard/createphp",
@@ -2962,16 +2962,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "7735fd97ff7303d9df776b8dbc970f949399abc9"
+                "reference": "21696b0daa731064c23cfb694c60a2584a7b6e93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/7735fd97ff7303d9df776b8dbc970f949399abc9",
-                "reference": "7735fd97ff7303d9df776b8dbc970f949399abc9",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/21696b0daa731064c23cfb694c60a2584a7b6e93",
+                "reference": "21696b0daa731064c23cfb694c60a2584a7b6e93",
                 "shasum": ""
             },
             "require": {
-                "symfony/console": "~2.0"
+                "symfony/console": "~2.0|~3.0"
             },
             "bin": [
                 "security-checker"
@@ -2998,7 +2998,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2015-08-11 12:11:25"
+            "time": "2015-11-07 08:07:40"
         },
         {
             "name": "sonata-project/admin-bundle",
@@ -4153,12 +4153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/RoutingAutoBundle.git",
-                "reference": "ee71ce997b754ed3288d91f1221a468a6c6b9b2d"
+                "reference": "ec05a6f705cf5a0117fa34ce90ba97de47b81925"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/RoutingAutoBundle/zipball/ee71ce997b754ed3288d91f1221a468a6c6b9b2d",
-                "reference": "ee71ce997b754ed3288d91f1221a468a6c6b9b2d",
+                "url": "https://api.github.com/repos/symfony-cmf/RoutingAutoBundle/zipball/ec05a6f705cf5a0117fa34ce90ba97de47b81925",
+                "reference": "ec05a6f705cf5a0117fa34ce90ba97de47b81925",
                 "shasum": ""
             },
             "require": {
@@ -4207,7 +4207,7 @@
             ],
             "description": "Bundle which automatically creates and manages routes for persisted objects",
             "homepage": "http://cmf.symfony.com",
-            "time": "2015-10-31 16:13:35"
+            "time": "2015-11-06 18:30:46"
         },
         {
             "name": "symfony-cmf/routing-bundle",
@@ -5229,12 +5229,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "8c4e756c1b1460d3497638fd3778824185779041"
+                "reference": "515007e941cb43616e224bbbaa6d8354868d647f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/8c4e756c1b1460d3497638fd3778824185779041",
-                "reference": "8c4e756c1b1460d3497638fd3778824185779041",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/515007e941cb43616e224bbbaa6d8354868d647f",
+                "reference": "515007e941cb43616e224bbbaa6d8354868d647f",
                 "shasum": ""
             },
             "require": {
@@ -5354,7 +5354,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2015-11-05 13:32:43"
+            "time": "2015-11-07 08:30:54"
         },
         {
             "name": "twig/extensions",
@@ -6088,33 +6088,36 @@
         },
         {
             "name": "symfony-cmf/testing",
-            "version": "1.2.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/Testing.git",
-                "reference": "49a41fff81fb7235b2441a75bea9aba1cb5cb826"
+                "reference": "2245556e30ef582795aaf26c21cbb15bdd151a9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/Testing/zipball/49a41fff81fb7235b2441a75bea9aba1cb5cb826",
-                "reference": "49a41fff81fb7235b2441a75bea9aba1cb5cb826",
+                "url": "https://api.github.com/repos/symfony-cmf/Testing/zipball/2245556e30ef582795aaf26c21cbb15bdd151a9c",
+                "reference": "2245556e30ef582795aaf26c21cbb15bdd151a9c",
                 "shasum": ""
             },
             "require": {
-                "doctrine/common": "~2.4",
-                "doctrine/data-fixtures": "1.*,>=1.0.0-alpha3",
-                "doctrine/doctrine-bundle": "~1.0",
-                "doctrine/phpcr-bundle": "~1.1,>=1.1.0-beta2",
-                "doctrine/phpcr-odm": "~1.1,>=1.1.0-RC1",
-                "jackalope/jackalope": "~1.1,>=1.1.5",
-                "jackalope/jackalope-doctrine-dbal": "~1.1,>=1.1.5",
-                "symfony/monolog-bundle": "~2.1",
-                "symfony/symfony": "~2.3"
+                "doctrine/common": "^2.4",
+                "doctrine/data-fixtures": "^1.0.0-alpha3",
+                "doctrine/doctrine-bundle": "^1.0",
+                "doctrine/phpcr-bundle": "^1.1.0-beta2",
+                "doctrine/phpcr-odm": "^1.1.0-RC1",
+                "friendsofsymfony/jsrouting-bundle": "^1.1",
+                "jackalope/jackalope": "^1.1.5",
+                "jackalope/jackalope-doctrine-dbal": "^1.1.5",
+                "php": ">=5.3.9",
+                "symfony/monolog-bundle": "^2.1|3.*",
+                "symfony/phpunit-bridge": "^2.7|3.*",
+                "symfony/symfony": "^2.3|3.*"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev"
+                    "dev-master": "1.3-dev"
                 }
             },
             "autoload": {
@@ -6128,12 +6131,67 @@
             ],
             "authors": [
                 {
-                    "name": "dantleech",
-                    "email": "daniel@dantleech.com"
+                    "name": "Symfony CMF community",
+                    "homepage": "https://github.com/symfony-cmf/Routing/contributors"
                 }
             ],
-            "description": "Component for bootstraping functional tests for CMF bundles only.",
-            "time": "2015-06-24 08:04:44"
+            "description": "Component to easily test CMF bundles.",
+            "time": "2015-11-05 11:51:14"
+        },
+        {
+            "name": "symfony/phpunit-bridge",
+            "version": "2.8.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/phpunit-bridge.git",
+                "reference": "03fefc568a820a813d1932ce807c7d57c8d9fc04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/03fefc568a820a813d1932ce807c7d57c8d9fc04",
+                "reference": "03fefc568a820a813d1932ce807c7d57c8d9fc04",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "suggest": {
+                "symfony/debug": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
+            },
+            "type": "symfony-bridge",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.8-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "Symfony\\Bridge\\PhpUnit\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony PHPUnit Bridge",
+            "homepage": "https://symfony.com",
+            "time": "2015-11-04 08:57:16"
         }
     ],
     "aliases": [],
