@@ -75,7 +75,7 @@ def get_validated_vm_config()
   end
 
   if config['hostname'].nil?
-    config['hostname'] = 'symfony-cmf'
+    config['hostname'] = 'cmf.dev'
   end
 
   return config

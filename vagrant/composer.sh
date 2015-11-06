@@ -32,6 +32,7 @@ main() {
     export $storage_type
 
     echo "cd /var/www/cmf" >> /home/vagrant/.bashrc
+    sudo a2dissite 000-default.conf && service apache2 reload
 }
 
 main
