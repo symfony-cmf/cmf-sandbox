@@ -30,6 +30,8 @@ main() {
     exec_cmf_command "php app/console assetic:dump"
 
     export $storage_type
+
+    echo "cd /var/www/cmf" >> /home/vagrant/.bashrc
 }
 
 main
