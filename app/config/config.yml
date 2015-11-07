@@ -131,6 +131,10 @@ cmf_seo:
     description: The Content Management Framework. %%content_description%%
     alternate_locale: ~
 
+cmf_menu:
+    voters:
+        content_identity: ~
+
 sonata_block:
     default_contexts: [cms]
     blocks:
