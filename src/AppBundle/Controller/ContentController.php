@@ -37,7 +37,7 @@ class ContentController extends BaseContentController
 
         $params = array(
             'cmfMainContent' => $contentDocument,
-            'example' => 'Additional value injected by the controller for this type (this could work without content if we want)',
+            'info'           => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was configured for this route type.',
         );
 
         return $this->renderResponse('demo/controller.html.twig', $params);
@@ -60,7 +60,7 @@ class ContentController extends BaseContentController
 
         $params = array(
             'cmfMainContent' => $contentDocument,
-            'example' => 'Additional value injected by the controller for all content mapped to classAction',
+            'info'           => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller will be called for content objects that are instances of <code>AppBundle\Document\DemoClassContent</code>.',
         );
 
         return $this->renderResponse('demo/controller.html.twig', $params);
@@ -83,7 +83,7 @@ class ContentController extends BaseContentController
 
         $params = array(
             'cmfMainContent' => $contentDocument,
-            'example' => 'Additional value injected by the controller when explicitly referenced',
+            'info'           => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was explicitely defined for the route by setting the <code>_controller</code> default.',
         );
 
         return $this->renderResponse('demo/controller.html.twig', $params);

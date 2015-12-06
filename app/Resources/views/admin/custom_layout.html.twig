@@ -1,9 +1,7 @@
 {% extends 'SonataAdminBundle::standard_layout.html.twig' %}
 
 {% block stylesheets %}
-    {% stylesheets 'bundles/app/css/sonata_admin.css' %}
-        <link rel="stylesheet" href="{{ asset_url }}"/>
-    {% endstylesheets %}
-
     {{ parent() }}
+
+    <link rel="stylesheet" href="{{ asset("assets/css/sonata_admin.css") }}"/>
 {% endblock %}

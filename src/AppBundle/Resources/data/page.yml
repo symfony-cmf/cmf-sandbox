@@ -10,17 +10,17 @@ static:
                 <h2>Welcome to the Symfony CMF Demo</h2>
                 <p>If you see this page, it means that the <a href="http://cmf.symfony.com">Symfony CMF</a> installation ran successfully!</p>
                 <h2>How to proceed</h2>
-                <p>There is a couple of bundles to look into in the vendor/symfony-cmf/ folder. Look at the main README but also at the individual README files of the bundles.</p>
+                <p>There is a couple of bundles to look into in the <code>vendor/symfony-cmf/</code> folder. Look at the main README but also at the individual README files of the bundles.</p>
             fr: |
                 <h2>Bienvenue dans la démo de Symfony CMF</h2>
                 <p>Si vous voyez cette page, c'est que l'installation de <a href="http://cmf.symfony.com">Symfony CMF</a> a fonctionné !</p>
                 <h2>Que faire maintenant ?</h2>
-                <p>Plusieurs bundles se trouvent dans le répertoire vendor/symfony-cmf/. Lisez le README principal ainsi que les README propres à chaque bundle.</p>
+                <p>Plusieurs bundles se trouvent dans le répertoire <code>vendor/symfony-cmf/</code>. Lisez le README principal ainsi que les README propres à chaque bundle.</p>
             de: |
                 <h2>Willkommen zur Symfony CMF Demo</h2>
                 <p>Wenn du diese Seite siehst, bedeutet das dass die Installation des <a href="http://cmf.symfony.com">Symfony CMF</a> erfolgreich war!</p>
                 <h2>Was nun?</h2>
-                <p>Es gibt einige Bundles im Verzeichnis vendor/symfony-cmf/. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen Bundles.</p>
+                <p>Es gibt einige Bundles im Verzeichnis <code>vendor/symfony-cmf/</code>. Lies die README Datei im Hauptverzeichnis, und dann die README der einzelnen Bundles.</p>
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
@@ -157,6 +157,8 @@ static:
         body: |
             <p>There are two not published pages as children nodes of this item. You should be able to see them in the Admin GUI.</p>
             <p>You have the possibilities to disable publication at all or to specify a time range in that a page should appear.</p>
+
+            <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/core/publish_workflow.html"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
@@ -204,12 +206,19 @@ static:
                 This example uses extractors to get the SeoMetadata.
                 Extractor try to extract the title, description, keywords and
                 original url from the document.
+
+                
+                <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/extractors.html"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
             fr: |
                 Needs to be translated:
                 This example uses extractors to get the SeoMetadata.
                 Extractor try to extract the title, description, keywords and original url from the document.
+
+                <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/extractors.html"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
             de: |
                 Dieses Beispiel benutzt die sog. Extractors
                 um die SeoMetada direct vom content zu bekommen.
                 Title, Description, Keywords und die originale url
                 können einfach ausgelesen werden.
+
+                <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/extractors.html"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation (translation needed).</a>

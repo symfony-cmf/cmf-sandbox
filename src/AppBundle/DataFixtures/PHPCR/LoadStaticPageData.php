@@ -101,14 +101,17 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $seoDemo = new DemoSeoContent();
         $seoDemo->setName('simple-seo-example');
         $seoDemo->setTitle('Simple seo example');
-        $seoDemo->setBody(
-            '<p>
-                When implementing the SeoAwareInterface,
-                you get a chance to configure SEO data
-                (title, description, keywords and original url)
-                of the document.
-                The SonataAdminBundle integration allows admins to update this data.
-            </p>'
+        $seoDemo->setBody(<<<EOH
+<p>
+    When implementing the SeoAwareInterface,
+    you get a chance to configure SEO data
+    (title, description, keywords and original url)
+    of the document using <code>SeoMetadata</code>.
+    The SonataAdminBundle integration allows admins to update this data.
+</p>
+
+<a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/seo_aware.html"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
+EOH
         );
         $seoDemo->setParentDocument($parent);
 

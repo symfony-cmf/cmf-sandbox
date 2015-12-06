@@ -1,0 +1,12 @@
+{% extends "knp_menu.html.twig" %}
+
+{% block list %}
+    {% set listAttributes = item.childrenAttributes|merge({ class: 'list-group' }) %}
+    {{ parent() }}
+{% endblock %}
+
+{% block item %}
+    {% set classes = item.attribute('class') is not empty ? [item.attribute('class')] : [] %}
+    {% do item.setAttribute('class', classes|merge(['list-group-item'])|join(' ')) %}
+    {{ parent() }}
+{% endblock %}

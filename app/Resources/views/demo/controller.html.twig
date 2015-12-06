@@ -1,13 +1,12 @@
 {% extends "base.html.twig" %}
 
 {% block content %}
-<div class="articleContainer hero-unit">
-    <p><em>This is a template used by the sandbox controller</em></p>
-    <h1 id="main_title">{{ cmfMainContent.title }}</h1>
-    <div>
-        {{ cmfMainContent.body|raw }}
+    <div class="alert  alert-info  clearfix">
+        <p>{{ info|raw }}</p>
+
+        <a href="http://symfony.com/doc/current/cmf/bundles/routing/dynamic.html#configuring-the-controller-for-a-route" class="docref"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
     </div>
-    <p style="color: green">{{ example }}</p>
-</div>
-{{ parent() }}
+
+    <h1 id="main_title">{{ cmfMainContent.title }}</h1>
+    <div>{{ cmfMainContent.body|raw }}</div>
 {% endblock %}
