@@ -1,6 +1,7 @@
 # Symfony Content Management Framework Sandbox  
 
-[![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=master)](http://travis-ci.org/symfony-cmf/cmf-sandbox) [![SensioLabsInsight](https://insight.sensiolabs.com/projects/01a6d3b6-a2b4-4a0a-b3cd-2b46a62d6ed9/mini.png)](https://insight.sensiolabs.com/projects/01a6d3b6-a2b4-4a0a-b3cd-2b46a62d6ed9)
+[![Build Status](https://secure.travis-ci.org/symfony-cmf/cmf-sandbox.png?branch=master)](http://travis-ci.org/symfony-cmf/cmf-sandbox)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/01a6d3b6-a2b4-4a0a-b3cd-2b46a62d6ed9/mini.png)](https://insight.sensiolabs.com/projects/01a6d3b6-a2b4-4a0a-b3cd-2b46a62d6ed9)
 [![Dependency Status](https://www.versioneye.com/php/symfony-cmf:sandbox/badge.svg)](https://www.versioneye.com/php/symfony-cmf:sandbox)
 
 This sandbox is a testing ground for the cmf bundles being developed.
@@ -22,6 +23,85 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
   * php5-intl
   * phpunit 3.6+ (optional)
   * composer
+
+## Setup with vagrant
+
+In order to have a simple VM with a database configuration for Jackalope, you simply need to run **vagrant up**.
+
+### Advanced usage
+
+#### Enhanced machine configuration
+
+When having multiple cmf databases, you'll have conflicts with the IP address and the VM name.
+These parameters are changeable. You simply need to uncomment the values in the *vagrant/machine.yaml*:
+
+This table contains all parameters and their default values:
+
+| Parameter | Description                                          | Default Value  |
+| --------- | ---------------------------------------------------- | -------------- |
+| ip        | IP of the VM inside the private network              | 192.168.66.211 |
+| cpus      | The amount of available cpus for the virtual machine | 1              |
+| memory    | Maximum memory of the virtual machine                | 1024           |
+| name      | Name of the virtual machine                          | Symfony-CMF VM |
+| hostname  | Hostname of the virtual machine                      | symfony-cmf    |
+
+Unless these parameters are present, the given default value will be used.
+
+You can add a file named *local_machine.yaml* inside the *vagrant/* directory that is able to override these parameters.
+This can be useful if any project member needs another ip as the default ip is reserved by another vm.
+
+__Note:__ you __must__ edit the *web/app_dev.php* file since there's a white list with IPs that are allowed to access the dev environment.
+
+#### Puppet configuration
+
+The configuration is done with [Hiera](http://docs.puppetlabs.com/hiera/1/):
+We have several configuration files inside the *vagrant/hieradata* directory.
+
+Configuration files:
+    - puppet.yaml: This file contains all classes that needs to be included and the environment
+    - common.yaml: Contains all default values
+    - local.yaml: This file is ignored by git and can be used in order to adjust custom parameters
+
+##### Use jackrabbit
+
+By default the Doctrine implementation of Jackalope is used. When using the jackrabbit implementation, you just need to do the following things:
+
+- set the value *cmf::infrastructure::phpcr::mysql* to false
+- set the value *cmf::infrastructure::phpcr::jack* to true
+- uncomment the value *jackrabbit::versin*
+- comment all values prefixed with *cmf::infrastructure::phpcr::mysql_wrapper::*
+- run *vagrant provision* (or *vagrant up* if the machine isn't created yet)
+
+Then the jackrabbit-standalone-2.6.0.jar will be downloaded automatically and will be started in the background.
+
+__NOTE__: Please don't change the *jackrabbit::version* parameter unless you've changed the version inside the __jack__ shell script or you'll run into unexpected conflicts!
+
+##### Change the php version
+
+The parameter *cmf::application::php::version* needs to be changed in order to change the version.
+The following values are allowed:
+
+- 5.5
+- 5.6
+
+##### Add required packages
+
+The parameter *cmf::infrastructure::packages::installs* contains a list of all packages that will be installed inside the vm.
+
+You simple need to add more package names (or created a new list in the *local.yaml* that will be merged with the values of the *common.yaml*)
+
+##### Changing vhost name
+
+When having multiple projects using the CMF, we need multiple vhost names:
+
+The parameter *cmf::application::symfony::vhost_name* in the file *vagrant/hieradata/common.yaml* needs to be changed in order to change the vhost name.
+
+##### Accessing the page in the browser
+
+In order to edit the */etc/hosts* file which is mandatory in order to access the page using the actual server name (e.g. *cmf.dev*),
+the usage of the [Vagrant Hostmanager Plugin](https://github.com/smdahlen/vagrant-hostmanager) is highly recommended.
+
+Otherwise it is possible to access the page using the ip (e.g. 192.166.68.211)
 
 ## Initial setup and configuration
 
@@ -59,7 +139,7 @@ at the ``app/config/parameters.yml`` and adjust as needed.
 
 ### Install the Doctrine DBAL provider (optional)
 
-Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal*.yml.dist`
+Instead of `phpcr_jackrabbit.yml.dist`, use the `phpcr_doctrine_dbal.yml.dist`
 files and create the database accordingly. If you have the PHP sqlite extension
 available, this is the simplest to quickly try out the CMF. Copy the file
 and then install the dependencies:

@@ -1,3 +1,4 @@
+# CMF
 composer.phar
 app/cache/*
 app/logs/*
@@ -18,3 +19,8 @@ jackrabbit/
 jackrabbit-standalone-*.jar
 vagrant/.vagrant
 bin/
+
+# Vagrant Environment
+vagrant/hieradata/local.yaml
+.vagrant/
+vagrant/local_machine.yaml
