@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -14,10 +14,8 @@ namespace AppBundle\DataFixtures\PHPCR;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-
 use Doctrine\ODM\PHPCR\DocumentManager;
 use PHPCR\Util\NodeHelper;
-
 use AppBundle\Document\DemoSeoContent;
 use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
 use Symfony\Component\DependencyInjection\ContainerAware;
@@ -57,7 +55,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
 
         $parent = $manager->find(null, $basepath);
         foreach ($data['static'] as $overview) {
-            $path = $basepath . '/' . $overview['name'];
+            $path = $basepath.'/'.$overview['name'];
             $page = $manager->find(null, $path);
             if (!$page) {
                 $class = isset($overview['class']) ? $overview['class'] : 'AppBundle\\Document\\DemoSeoContent';
@@ -79,7 +77,6 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
                 $page->setTitle($overview['title']);
                 $page->setBody($overview['body']);
             }
-
 
             if (isset($overview['publishable']) && $overview['publishable'] === false) {
                 $page->setPublishable(false);
@@ -142,9 +139,9 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $seoMetadata = new SeoMetadata();
         $seoMetadata->setTitle('Simple seo property');
         $seoMetadata->setMetaKeywords('Seo, Properties');
-        $seoMetadata->addExtraHttp('content-type','text/html');
-        $seoMetadata->addExtraName('robots','index, follow');
-        $seoMetadata->addExtraProperty('og:title','extra title');
+        $seoMetadata->addExtraHttp('content-type', 'text/html');
+        $seoMetadata->addExtraName('robots', 'index, follow');
+        $seoMetadata->addExtraProperty('og:title', 'extra title');
         $seoDemo->setSeoMetadata($seoMetadata);
         $manager->persist($seoDemo);
 
@@ -164,7 +161,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
     private function loadBlock(ObjectManager $manager, $parent, $name, $block)
     {
         $className = $block['class'];
-        $document = $manager->find(null, $this->getIdentifier($manager, $parent) . '/' . $name);
+        $document = $manager->find(null, $this->getIdentifier($manager, $parent).'/'.$name);
         $class = $manager->getClassMetadata($className);
         if ($document && get_class($document) != $className) {
             $manager->remove($document);
@@ -209,5 +206,4 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
 
         return $class->getIdentifierValue($document);
     }
-
 }

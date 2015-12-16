@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -16,7 +16,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
 
 /**
- * A document that we map to a controller
+ * A document that we map to a controller.
  *
  * @PHPCRODM\Document(referenceable=true)
  */
@@ -83,16 +83,18 @@ class DemoClassContent implements RouteReferrersReadInterface
     }
 
     /**
-     * Set repository path of this navigation item for creation
+     * Set repository path of this navigation item for creation.
      */
     public function setPath($path)
     {
-      $this->path = $path;
+        $this->path = $path;
     }
+
     public function getPath()
     {
-      return $this->path;
+        return $this->path;
     }
+
     public function setParentDocument($parent)
     {
         $this->parentDocument = $parent;

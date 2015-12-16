@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -52,7 +52,7 @@ class StaticPageTest extends WebTestCase
     {
         $client = $this->createClient();
         $client->request('GET', '/en/company/team', array(), array(), array(
-                'HTTP_ACCEPT'  => 'application/json',
+                'HTTP_ACCEPT' => 'application/json',
             )
         );
         $response = $client->getResponse();

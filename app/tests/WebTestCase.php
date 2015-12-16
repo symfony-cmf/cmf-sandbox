@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -12,12 +12,10 @@
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
 use PHPCR\RepositoryInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Doctrine\Common\DataFixtures\Executor\PHPCRExecutor;
-use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
 
 abstract class WebTestCase extends BaseWebTestCase
 {
-    static protected $fixturesLoaded = false;
+    protected static $fixturesLoaded = false;
 
     public function setUp()
     {
@@ -49,8 +47,9 @@ abstract class WebTestCase extends BaseWebTestCase
     {
         $server = array_merge($server, array(
             'PHP_AUTH_USER' => 'admin',
-            'PHP_AUTH_PW'   => 'admin',
+            'PHP_AUTH_PW' => 'admin',
         ));
+
         return $this->createClient($options, $server);
     }
 

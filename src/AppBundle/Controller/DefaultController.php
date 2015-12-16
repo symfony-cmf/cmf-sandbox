@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -19,7 +19,7 @@ use Sonata\BlockBundle\Model\BlockInterface;
 class DefaultController extends Controller
 {
     /**
-     * Action that is referenced in an ActionBlock
+     * Action that is referenced in an ActionBlock.
      *
      * @param BlockInterface $block
      *
@@ -28,7 +28,7 @@ class DefaultController extends Controller
     public function blockAction($block)
     {
         return $this->render('block/demo_action_block.html.twig', array(
-            'block' => $block
+            'block' => $block,
         ));
     }
 

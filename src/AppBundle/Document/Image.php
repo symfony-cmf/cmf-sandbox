@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -12,7 +12,6 @@
 namespace AppBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -41,6 +40,7 @@ class Image
 
     /**
      * @Assert\NotBlank()
+     *
      * @var stream
      * @PHPCRODM\Binary
      */
@@ -52,7 +52,7 @@ class Image
     public $tags;
 
     /**
-     * Set repository path of this navigation item for creation
+     * Set repository path of this navigation item for creation.
      */
     public function setPath($path)
     {

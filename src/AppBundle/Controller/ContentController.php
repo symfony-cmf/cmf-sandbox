@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -16,12 +16,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController as BaseContentController;
 
 /**
- * Special routes to demo the features of the Doctrine Router in the CmfRoutingBundle
+ * Special routes to demo the features of the Doctrine Router in the CmfRoutingBundle.
  */
 class ContentController extends BaseContentController
 {
     /**
-     * Action that is mapped in the controller_by_type map
+     * Action that is mapped in the controller_by_type map.
      *
      * This can inject something else for the template for content with this type
      *
@@ -44,7 +44,7 @@ class ContentController extends BaseContentController
     }
 
     /**
-     * Action that is mapped in the controller_by_class map
+     * Action that is mapped in the controller_by_class map.
      *
      * This can inject something else for the template for this type of content.
      *
@@ -67,7 +67,7 @@ class ContentController extends BaseContentController
     }
 
     /**
-     * Action that is explicitly referenced in the _controller field of a content
+     * Action that is explicitly referenced in the _controller field of a content.
      *
      * This can inject something else for the template
      *

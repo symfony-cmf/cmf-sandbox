@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -17,7 +17,7 @@ use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
 
 /**
  * A document that we map to a template to be used with the generic content
- * controller
+ * controller.
  *
  * @PHPCRODM\Document(referenceable=true)
  */
@@ -59,16 +59,16 @@ class DemoTemplateContent implements RouteReferrersReadInterface
     public $routes;
 
     /**
-     * Set repository path of this navigation item for creation
+     * Set repository path of this navigation item for creation.
      */
     public function setPath($path)
     {
-      $this->path = $path;
+        $this->path = $path;
     }
 
     public function getPath()
     {
-      return $this->path;
+        return $this->path;
     }
 
     public function getContent()
