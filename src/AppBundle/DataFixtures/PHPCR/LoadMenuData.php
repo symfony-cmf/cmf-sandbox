@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -16,11 +16,8 @@ use Doctrine\ODM\PHPCR\DocumentManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-
 use PHPCR\Util\NodeHelper;
-
 use Symfony\Component\DependencyInjection\ContainerAware;
-
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
 
@@ -52,7 +49,7 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $labels = array('en' => 'Home', 'de' => 'Start', 'fr' => 'Accueil');
         /** @var $main Menu */
         $main = $this->createMenuNode($manager, $root, 'main', $labels, $manager->find(null, "$content_path/home"));
-        $main->setChildrenAttributes(array("class" => "menu_main"));
+        $main->setChildrenAttributes(array('class' => 'menu_main'));
 
         if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
             $this->createMenuNode($manager, $main, 'search-item', 'Search', null, null, 'liip_search');

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the CMF Sandbox package.
+ * This file is part of the Symfony CMF package.
  *
  * (c) 2011-2015 Symfony CMF
  *
@@ -31,7 +31,7 @@ class DemoSeoExtractor extends DemoSeoContent implements
     KeywordsReadInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSeoTitle()
     {
@@ -39,7 +39,7 @@ class DemoSeoExtractor extends DemoSeoContent implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSeoDescription()
     {
@@ -47,15 +47,15 @@ class DemoSeoExtractor extends DemoSeoContent implements
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSeoOriginalUrl()
     {
-        return "/home";
+        return '/home';
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getSeoKeywords()
     {

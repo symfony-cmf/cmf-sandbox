@@ -1,7 +1,7 @@
 <pre>
 <?php
 
-$output = $return_var= null;
+$output = $return_var = null;
 $command = __DIR__.'/../app/console -v doctrine:phpcr:fixtures:load -e=prod';
 echo "Running: $command\n";
 exec($command, $output, $return_var);
