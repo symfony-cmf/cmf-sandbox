@@ -10,12 +10,7 @@
         {{ sonata_seo_title() }}
 
         {% block includes %}
-            <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-            <!--[if lt IE 9]>
-            <script src="{{ asset("vendor/html5shiv/dist/html5shiv.js") }}"></script>
-            <![endif]-->
-
-            <link rel="stylesheet" href="{{ asset("vendor/bootstrap/dist/css/bootstrap.min.css") }}">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
             <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
 
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
@@ -129,11 +124,12 @@
         </div>
 
         {% block bottom_scripts %}
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
             {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction")) %}
 
             <script src="{{ asset("assets/js/rawdata.js") }}"></script>
-            <script src="{{ asset("vendor/jquery/dist/jquery.min.js") }}"></script>
-            <script src="{{ asset("vendor/bootstrap/dist/js/bootstrap.min.js") }}"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
         {% endblock %}
     </body>
 </html>
