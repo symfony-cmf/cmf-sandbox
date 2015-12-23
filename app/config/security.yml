@@ -20,7 +20,7 @@ security:
             pattern: ^/
             anonymous: ~
             http_basic:
-                realm: "Secured Demo Area (username: admin, password: admin)"
+                realm: 'Secured Demo Area (username: admin, password: admin)'
 
     access_control:
         - { path: ^(/(de|fr|en))?/admin, roles: ROLE_ADMIN }

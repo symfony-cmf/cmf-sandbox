@@ -1,10 +1,10 @@
 # Internal routing configuration to handle ESI
 #_internal:
-#   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+#   resource: '@FrameworkBundle/Resources/config/routing/internal.xml'
 #   prefix:   /_internal
 
 _app:
-    resource: "@AppBundle/Controller"
+    resource: '@AppBundle/Controller'
     type: annotation
 
 home_redirect:
@@ -37,7 +37,7 @@ admin_dashboard:
         permanent: true # this for 301
 
 admin:
-    resource: "@SonataAdminBundle/Resources/config/routing/sonata_admin.xml"
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /{_locale}/admin
 
 sonata_admin:
@@ -46,33 +46,33 @@ sonata_admin:
     prefix: /{_locale}/admin
 
 _liip_imagine:
-    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+    resource: '@LiipImagineBundle/Resources/config/routing.xml'
 
 fos_js_routing:
-    resource: @FOSJsRoutingBundle/Resources/config/routing/routing.xml
+    resource: '@FOSJsRoutingBundle/Resources/config/routing/routing.xml'
 
 cmf_tree:
     resource: .
     type: 'cmf_tree'
 
 create:
-    resource: "@CmfCreateBundle/Resources/config/routing/rest.xml"
+    resource: '@CmfCreateBundle/Resources/config/routing/rest.xml'
 
 create_image:
-    resource: "@CmfCreateBundle/Resources/config/routing/image.xml"
+    resource: '@CmfCreateBundle/Resources/config/routing/image.xml'
 
 liip_search:
-    resource: "@CmfSearchBundle/Resources/config/routing/phpcr/search.xml"
+    resource: '@CmfSearchBundle/Resources/config/routing/phpcr/search.xml'
 
 block_cache:
-    resource: "@CmfBlockBundle/Resources/config/routing/cache.xml"
+    resource: '@CmfBlockBundle/Resources/config/routing/cache.xml'
     prefix: /
 
 cmf_media_file:
-    resource: "@CmfMediaBundle/Resources/config/routing/file.xml"
+    resource: '@CmfMediaBundle/Resources/config/routing/file.xml'
 
 cmf_media_image:
-    resource: "@CmfMediaBundle/Resources/config/routing/image.xml"
+    resource: '@CmfMediaBundle/Resources/config/routing/image.xml'
 
 elfinder:
-     resource: "@FMElfinderBundle/Resources/config/routing.yml"
+     resource: '@FMElfinderBundle/Resources/config/routing.yml'

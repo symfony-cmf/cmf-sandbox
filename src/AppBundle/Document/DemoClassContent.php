@@ -47,13 +47,13 @@ class DemoClassContent implements RouteReferrersReadInterface
 
     /**
      * @Assert\NotBlank
-     * @PHPCRODM\String()
+     * @PHPCRODM\Field(type="string")
      */
     protected $title;
 
     /**
      * @Assert\NotBlank
-     * @PHPCRODM\String()
+     * @PHPCRODM\Field(type="string")
      */
     protected $body;
 

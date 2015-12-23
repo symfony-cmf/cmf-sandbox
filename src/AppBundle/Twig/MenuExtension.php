@@ -1,0 +1,58 @@
+<?php
+
+/*
+ * This file is part of the Symfony CMF package.
+ *
+ * (c) 2011-2015 Symfony CMF
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace AppBundle\Twig;
+
+use Knp\Menu\ItemInterface;
+use Knp\Menu\Matcher\MatcherInterface;
+use Knp\Menu\Twig\Helper;
+
+class MenuExtension extends \Twig_Extension
+{
+    private $helper;
+    private $matcher;
+
+    public function __construct(Helper $helper, MatcherInterface $matcher)
+    {
+        $this->helper = $helper;
+        $this->matcher = $matcher;
+    }
+
+    public function getFunctions()
+    {
+        return array(
+            new \Twig_SimpleFunction('app_get_current_menu_item', array($this, 'getCurrent')),
+        );
+    }
+
+    public function getCurrent($menu, array $path = array(), array $options = array())
+    {
+        return $this->doGetCurrent($this->helper->get($menu, $path, $options));
+    }
+
+    private function doGetCurrent(ItemInterface $item)
+    {
+        if ($this->matcher->isCurrent($item)) {
+            return $item;
+        }
+
+        foreach ($item->getChildren() as $child) {
+            if (null !== $this->doGetCurrent($child)) {
+                return $child;
+            }
+        }
+    }
+
+    public function getName()
+    {
+        return 'app_menu';
+    }
+}
