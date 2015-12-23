@@ -6,12 +6,12 @@ services:
     app.exception_listener:
         class: AppBundle\EventListener\SandboxExceptionListener
         calls:
-            - [setContainer, ["@service_container"]]
+            - [setContainer, ['@service_container']]
         tags:
             - { name: kernel.event_subscriber }
 
     app.twig.menu_extension:
         class: AppBundle\Twig\MenuExtension
-        arguments: ["@knp_menu.helper", "@knp_menu.matcher"]
+        arguments: ['@knp_menu.helper', '@knp_menu.matcher']
         tags:
             - { name: twig.extension }

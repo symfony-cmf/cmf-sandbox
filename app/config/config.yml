@@ -8,7 +8,7 @@ framework:
     #esi:             ~
     translator:      { fallback: en }
     secret:          %secret%
-    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    router:          { resource: '%kernel.root_dir%/config/routing.yml' }
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
@@ -276,7 +276,7 @@ sonata_seo:
         title: CMF Sandbox
         metas:
             name:
-                keywords: "CMF, Symfony, Routing, Content, PHPCR"
+                keywords: 'CMF, Symfony, Routing, Content, PHPCR'
 
 sensio_framework_extra:
     router:  { annotations: true }
@@ -347,8 +347,8 @@ jms_serializer:
         auto_detection: true
         directories:
             CmfContentBundle:
-                namespace_prefix: "Symfony\Cmf\Bundle\ContentBundle"
-                path: "@AppBundle/Resources/config/serializer/cmf"
+                namespace_prefix: 'Symfony\Cmf\Bundle\ContentBundle'
+                path: '@AppBundle/Resources/config/serializer/cmf'
 
 fos_rest:
     view:

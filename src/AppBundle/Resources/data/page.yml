@@ -1,10 +1,10 @@
 static:
     -
-        name: "home"
+        name: 'home'
         title:
-            en: "Homepage"
-            fr: "Page principale"
-            de: "Startseite"
+            en: 'Homepage'
+            fr: 'Page principale'
+            de: 'Startseite'
         body:
             en: |
                 <h2>Welcome to the Symfony CMF Demo</h2>
@@ -46,8 +46,8 @@ static:
                         url: http://cmf.symfony.com/news.rss
                         maxItems: 3
     -
-        name: "company"
-        title: "The Company"
+        name: 'company'
+        title: 'The Company'
         body: |
             <h2>Who is behind the Symfony CMF project?</h2>
             <p>The content management framework is a joint effort by various developers and companies</p>
@@ -60,8 +60,8 @@ static:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 referencedBlock: /cms/content/home/additionalInfoBlock/child1
     -
-        name: "team"
-        title: "The Team"
+        name: 'team'
+        title: 'The Team'
         body: |
             <h2>Our Team</h2>
             <p>There are some core developers and many other contributors. We need more help, so please contribute.</p>
@@ -72,8 +72,8 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "more"
-        title: "More Information"
+        name: 'more'
+        title: 'More Information'
         body: |
             <h2>Yet another page</h2>
             <p>About the companies, though we don't have more to say here. But you want pages to see the navigation in action.</p>
@@ -85,8 +85,8 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "projects"
-        title: "The projects"
+        name: 'projects'
+        title: 'The projects'
         body: |
             <h2>We do a lot of projects</h2>
             <p>Sed sale modus nusquam ne. At omnesque senserit vel, veritus denique epicuri pri eu, nam illud constituam in. Id sit convenire mediocrem. Erant facilisi pri ea, quo ignota graeci dolores in, idque legere commune nam an. Eros fabulas scripserit mea ea. Mei everti hendrerit et, sit in harum vituperata.</p>
@@ -97,8 +97,8 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "cmf"
-        title: "Content Management Framework"
+        name: 'cmf'
+        title: 'Content Management Framework'
         body: |
             <h2>The CMF is what this is all about</h2>
             <p>Sed sale modus nusquam ne. At omnesque senserit vel, veritus denique epicuri pri eu, nam illud constituam in. Id sit convenire mediocrem. Erant facilisi pri ea, quo ignota graeci dolores in, idque legere commune nam an. Eros fabulas scripserit mea ea. Mei everti hendrerit et, sit in harum vituperata.</p>
@@ -109,8 +109,8 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "demo"
-        title: "Routing demo"
+        name: 'demo'
+        title: 'Routing demo'
         body: |
             <p>The Children of this page show the various use cases of the cmf menu and the cmf content routing.</p>
             <p>There are also some routes that have no menu entry:</p>
@@ -123,37 +123,37 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "demo_controller"
-        title: "Explicit Controller"
-        body: "<p>This content is routed through an explicit controller that can do additional things.</p>"
+        name: 'demo_controller'
+        title: 'Explicit Controller'
+        body: '<p>This content is routed through an explicit controller that can do additional things.</p>'
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "demo_template"
-        title: "Explicit template"
-        body: "<p>This content is rendered through the generic content controller with an explicitly specified template.</p>"
+        name: 'demo_template'
+        title: 'Explicit template'
+        body: '<p>This content is rendered through the generic content controller with an explicitly specified template.</p>'
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "demo_type"
-        title: "Controller by type"
-        body: "<p>This content is routed through a controller found by the route controller type.</p>"
+        name: 'demo_type'
+        title: 'Controller by type'
+        body: '<p>This content is routed through a controller found by the route controller type.</p>'
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "demo_class"
-        title: "Controller by class"
-        body: "<p>This content is routed through a controller found by the content class.</p>"
-        class: "AppBundle\Document\DemoClassContent"
+        name: 'demo_class'
+        title: 'Controller by class'
+        body: '<p>This content is routed through a controller found by the content class.</p>'
+        class: 'AppBundle\Document\DemoClassContent'
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "publication_demo"
-        title: "Publication demo"
+        name: 'publication_demo'
+        title: 'Publication demo'
         body: |
             <p>There are two not published pages as children nodes of this item. You should be able to see them in the Admin GUI.</p>
             <p>You have the possibilities to disable publication at all or to specify a time range in that a page should appear.</p>
@@ -161,8 +161,8 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "not_published"
-        title: "Not published"
+        name: 'not_published'
+        title: 'Not published'
         publishable: false
         body: |
             <p>You should see this only in the Admin GUI.</p>
@@ -170,20 +170,20 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "published_tomorrow"
-        title: "Published tomorrow"
+        name: 'published_tomorrow'
+        title: 'Published tomorrow'
         publishStartDate: tomorrow
-        publishEndDate: "+1 year"
+        publishEndDate: '+1 year'
         body: |
             <p>You should see this only in the Admin GUI, tomorrow...</p>
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
-        name: "singlelocale"
+        name: 'singlelocale'
         title:
-            en: "Single locale"
-            fr: "Single locale"
+            en: 'Single locale'
+            fr: 'Single locale'
         body:
             en: |
                 <h2>This page is only available in english</h2>
@@ -193,8 +193,8 @@ static:
                 <p>The content is actually also translated to french, but there is no route for french.
 
     -
-        name: "demo-seo-extractor"
-        class: "AppBundle\Document\DemoSeoExtractor"
+        name: 'demo-seo-extractor'
+        class: 'AppBundle\Document\DemoSeoExtractor'
         title:
             en: Demo - Seo extractors
             fr: Demo - Seo extractors
