@@ -37,7 +37,7 @@ class ContentController extends BaseContentController
 
         $params = array(
             'cmfMainContent' => $contentDocument,
-            'info'           => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was configured for this route type.',
+            'info' => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was configured for this route type.',
         );
 
         return $this->renderResponse('demo/controller.html.twig', $params);
@@ -60,7 +60,7 @@ class ContentController extends BaseContentController
 
         $params = array(
             'cmfMainContent' => $contentDocument,
-            'info'           => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller will be called for content objects that are instances of <code>AppBundle\Document\DemoClassContent</code>.',
+            'info' => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller will be called for content objects that are instances of <code>AppBundle\Document\DemoClassContent</code>.',
         );
 
         return $this->renderResponse('demo/controller.html.twig', $params);
@@ -83,7 +83,7 @@ class ContentController extends BaseContentController
 
         $params = array(
             'cmfMainContent' => $contentDocument,
-            'info'           => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was explicitely defined for the route by setting the <code>_controller</code> default.',
+            'info' => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was explicitely defined for the route by setting the <code>_controller</code> default.',
         );
 
         return $this->renderResponse('demo/controller.html.twig', $params);
