@@ -1,0 +1,5 @@
+{% for locale in locales %}
+    <li{% if current_locale == locale.locale %} class="locale_current"{% endif %}>
+        <a href="{{ locale.link }}" title="{{ locale.locale_current_language }}">{{ locale.locale_current_language }}</a>
+    </li>
+{% endfor %}

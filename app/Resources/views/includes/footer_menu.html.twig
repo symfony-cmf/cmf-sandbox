@@ -1,0 +1,6 @@
+{% extends "knp_menu.html.twig" %}
+
+{% block list %}
+    {% set listAttributes = item.childrenAttributes|merge({ class: 'footer-nav' }) %}
+    {{ parent() }}
+{% endblock %}

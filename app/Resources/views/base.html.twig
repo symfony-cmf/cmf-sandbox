@@ -2,26 +2,16 @@
 <html>
     <head>
         <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta charset="utf-8" />
+
         {{ sonata_seo_metadatas() }}
         {{ sonata_seo_link_canonical() }}
         {{ sonata_seo_lang_alternates() }}
         {{ sonata_seo_title() }}
 
         {% block includes %}
-            {% stylesheets
-                '@AppBundle/Resources/public/bootstrap/css/bootstrap.min.css'
-                '@AppBundle/Resources/public/bootstrap/css/bootstrap-responsive.min.css'
-                '@AppBundle/Resources/public/css/style.css'
-            %}
-
-            <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-            <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-            <![endif]-->
-
-            <link rel="stylesheet" href="{{ asset_url }}" media="screen" type="text/css"/>
-            {% endstylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+            <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
 
             {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
                 {% include "CmfCreateBundle::includecssfiles.html.twig" %}
@@ -32,98 +22,98 @@
         {% endblock %}
     </head>
     <body>
+        <div class="navbar  navbar-default  navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ path('home_redirect') }}">
+                        <img alt="Symfony CMF" src="{{ asset("assets/images/symfony-cmf-logo.svg") }}">
+                    </a>
+                </div>
 
-        <div class="container">
-
-            <div id="top" class="row">
-                <div class="span12">
-                    <ul id="skiplinks" class="pull-left hidden-desktop">
-                        <li><a href="#content" title="Go to main content">content</a></li>
-                        <li><a href="#navigation" title="go to navigation">navigation</a></li>
+                <div class="navbar-text  navbar-left">
+                    {% set currentItem = app_get_current_menu_item('main') %}
+                    {% if currentItem %}
+                    <ol class="breadcrumb  navbar-breadcrumb">
+                        <li></li>
+                        {% for item in knp_menu_get_breadcrumbs_array(currentItem) %}
+                        {% if loop.last %}
+                        <li class="active">{{ item.label }}</li>
+                        {% else %}
+                        <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+                    </ol>
+                    {% endif %}
+                </div>
+                <div class="navbar-right">
+                    <ul class="nav  navbar-nav">
+                        <li><a href="{{ path('sonata_admin_dashboard') }}">Admin Dashboard</a></li>
                     </ul>
-                    <div id="language_selector" class="pull-right">
-                        {% block language_selector %}
-                            {% if cmfMainContent is defined %}
-                                {{ locale_switcher(cmfMainContent, null, 'homepage/switcher_links.html.twig') }}
-                            {% endif %}
+
+                    {% block language_selector %}
+                    <div class="dropdown  navbar-dropdown">
+                        <a href="#" class="btn  btn-default  btn-xs  navbar-btn  dropdown-toggle" data-toggle="dropdown">Read this page in <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                                {% if cmfMainContent is defined %}
+                                    {{ locale_switcher(cmfMainContent, null, 'includes/switcher_links.html.twig') }}
+                                {% endif %}
+                        </ul>
+                    </div>
+                    {% endblock %}
+
+                    {% block raw_data %}
+                    <div class="dropdown  navbar-dropdown">
+                        <a href="#" class="btn  btn-default  btn-xs  navbar-btn  dropdown-toggle" data-toggle="dropdown">View raw page <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a id="raw_xml" title="{{ "cmf.raw_data_hint"|trans }}">XML</a></li>
+                            <li><a id="raw_json" title="{{ "cmf.raw_data_hint"|trans }}">JSON</a></li>
+                        </ul>
+                    </div>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {% block banner %}
+            <div class="jumbotron  banner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h1>CMF Sandbox <small>Symfony Content Management Framework</small></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+
+        <div class="main  container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="panel  panel-default  panel-nav">
+                        <div class="panel-heading">Navigation</div>
+
+                        {{ knp_menu_render('main', { template: 'includes/main_menu.html.twig' }) }}
+                    </div>
+                </div>
+
+                <div class="col-sm-9">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        {{ knp_menu_render("simple", { template: 'includes/footer_menu.html.twig' }) }}
+                    </div>
+
+                    <div class="col-sm-8  text-right">
+                        {% block footer %}
+                        <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a> | Frontend editing funded in part by <a href="http://www.iks-project.eu/">IKS</a></p>
                         {% endblock %}
                     </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div id="banner" class="span12">
-                    <a href="https://github.com/symfony-cmf/cmf-sandbox"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/></a>
-                    <div class="hero-unit">
-                        <h1 id="logo-text"><a href="{{ path('home_redirect') }}">CMF Sandbox</a></h1>
-                        <p id="slogan">Symfony2 Content Management Framework</p>
-                    </div>
-                </div>
-
-                {% set currentItem = app_get_current_menu_item('main') %}
-                {% if currentItem %}
-                <div id="breadcrumb" class="span10">
-                    <ul class="breadcrumb boxed">
-                        {% for item in knp_menu_get_breadcrumbs_array(currentItem) %}
-                            <li><a href="{{ item.uri }}">{{ item.label }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% endif %}
-                {% block raw_data %}
-                <div id="raw_format" class="span2">
-                    <p class="raw_format boxed">Raw:
-                        <a id="raw_xml" title="{{ "cmf.raw_data_hint"|trans() }}">XML</a>,
-                        <a id="raw_json" title="{{ "cmf.raw_data_hint"|trans() }}">json</a>
-                    </p>
-                </div>
-                {% endblock raw_data %}
-
-            </div>
-
-            <div  class="row">
-                <div id="content-container" class="span12 boxed">
-                    <div class="row">
-                        <div id="navigation" class="span3">
-                            <div class="well">
-                                {% block navigation %}
-                                    <h2>Navigation</h2>
-                                    {{ knp_menu_render('main') }}
-                                {% endblock %}
-                            </div>
-                        </div>
-                        <div class="span9">
-                            <div id="content">
-                                <div class="inner">
-                                    {% block content %}
-                                    {% endblock %}
-                                </div>
-                            </div>
-
-                            <div id="content_extra">
-                                <div class="inner">
-                                    {% block content_extra %}
-                                    {% endblock %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <hr/>
-
-            <div id="footer" class="row">
-                <div id="menu-service">
-                    {{ knp_menu_render('simple') }}
-                </div>
-                <div class="span12">
-                {% block footer %}
-                    <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a>
-                        | Frontend editing funded in part by <a href="http://www.iks-project.eu/">IKS</a>
-                        | Hosting graciously sponsored by <a href="http://platform.sh/">platform.sh</a>
-                    </p>
-                    {% endblock %}
                 </div>
             </div>
         </div>
@@ -134,13 +124,12 @@
         </div>
 
         {% block bottom_scripts %}
+            <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
             {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction")) %}
 
-            {% javascripts
-                '@AppBundle/Resources/public/js/rawdata.js'
-            %}
-                <script src="{{ asset_url }}"></script>
-            {% endjavascripts %}
+            <script src="{{ asset("assets/js/rawdata.js") }}"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IFl3agK0p/pqT9KAo= sha512-2e8qq0ETcfWRI4HJBzQiA3UoyFk6tbNyG+qSaIBZLyW9Xf3sWZHN/lxe9fTh1U45DpPf07yj94KsUHHWe4Yk1A==" crossorigin="anonymous"></script>
         {% endblock %}
     </body>
 </html>

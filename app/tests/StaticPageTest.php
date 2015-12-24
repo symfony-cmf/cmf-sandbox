@@ -22,7 +22,7 @@ class StaticPageTest extends WebTestCase
 
         $this->assertResponseSuccess($client->getResponse());
 
-        $this->assertCount(1, $crawler->filter(sprintf('h1:contains("%s")', $title)));
+        $this->assertGreaterThanOrEqual(1, $crawler->filter(sprintf('h1:contains("%s")', $title))->count());
     }
 
     public function contentDataProvider()

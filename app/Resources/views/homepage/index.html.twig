@@ -1,36 +1,50 @@
 {% extends "base.html.twig" %}
 
+{% block banner %}
+<div class="jumbotron  banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>CMF Sandbox <small>Symfony Content Management Framework</small></h1>
+
+                <p>Welcome to the demo project of the Symfony CMF! Inside this application, you can play with almost all features included in the Symfony CMF.</p>
+
+                <p><a class="btn  btn-primary  btn-lg" href="http://symfony.com/doc/current/cmf/">Read the documentation</a> <a class="btn  btn-primary  btn-lg" href="https://github.com/symfony-cmf/cmf-sandbox" role="button">Fork on GitHub</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-    <p><em>We are on the homepage which uses a special template</em></p>
+    <div class="alert  alert-info  clearfix">
+        <p>The homepage uses a custom template. This template is directly configured at the route by using the <code>_template</code> setting.</p>
+
+        <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/routing/dynamic.html#configuring-the-controller-for-a-route"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
+    </div>
 
     {% createphp cmfMainContent as="rdf" %}
-    {{ rdf|raw }}
+        {{ rdf|raw }}
     {% endcreatephp %}
-
-    <hr/>
 
     {{ sonata_block_render({ 'name': 'additionalInfoBlock' }, {
         'divisible_by': 3,
         'divisible_class': 'row',
-        'child_class': 'span3'
+        'child_class': 'col-md-4'
     }) }}
 
     <div class="row">
-        <div class="span3">
+        <div class="col-md-6">
             <h2>Some additional links:</h2>
             <ul>
                 {% for child in cmf_children(cmf_find('/cms/simple')) %}
-                    <li>
-                        <a href="{{ path(child) }}">{{ child.title|striptags }}</a>
-                    </li>
+                    <li><a href="{{ path(child) }}">{{ child.title|striptags }}</a></li>
                 {% endfor %}
             </ul>
         </div>
 
-        <div class="span3">
-        {{ sonata_block_render({
-            'name': 'rssBlock'
-        }) }}
+        <div class="col-md-6">
+            {{ sonata_block_render({ 'name': 'rssBlock' }) }}
         </div>
     </div>
 {% endblock %}

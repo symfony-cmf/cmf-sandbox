@@ -8,6 +8,7 @@ $(document).ready(function () {
             }
         });
     });
+
     $("#raw_json").on("click", function () {
         $.ajax({
             "dataType": "json",
