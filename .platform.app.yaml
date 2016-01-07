@@ -58,7 +58,7 @@ hooks:
     deploy: |
       # force clearing the cache
       rm -rf app/cache
-      app/console doctrine:phpcr:init:dbal --drop -n
+      app/console doctrine:phpcr:init:dbal --drop --force -n
       app/console doctrine:phpcr:repository:init -n
       app/console doctrine:phpcr:fixtures:load -n
       app/console --env=prod cache:warmup -n --no-debug
