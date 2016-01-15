@@ -35,7 +35,7 @@ class DemoClassContent implements RouteReferrersReadInterface
     public $node;
 
     /**
-     * @PHPCRODM\Parentdocument()
+     * @PHPCRODM\ParentDocument()
      */
     public $parentDocument;
 
