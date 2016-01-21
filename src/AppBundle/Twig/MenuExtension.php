@@ -45,8 +45,9 @@ class MenuExtension extends \Twig_Extension
         }
 
         foreach ($item->getChildren() as $child) {
-            if (null !== $this->doGetCurrent($child)) {
-                return $child;
+            $result = $this->doGetCurrent($child);
+            if (null !== $result) {
+                return $result;
             }
         }
     }
