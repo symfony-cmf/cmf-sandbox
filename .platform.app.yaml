@@ -26,9 +26,10 @@ web:
       # slides
       - ^/slides/.*\.html$
 
-      # CSS and Javascript.
+      # CSS, JavaScript and Other assets.
       - \.css$
       - \.js$
+      - ^/assets/
 
       # image/* types.
       - \.gif$
