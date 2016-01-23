@@ -35,6 +35,7 @@ web:
       - \.jpe?g$
       - \.png$
       - \.ico
+      - \.svg$
 
       # robots.txt.
       - /robots\.txt$
