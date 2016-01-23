@@ -18,11 +18,9 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
 
 ### You will need:
 
-  * Git 1.6+
-  * PHP 5.3.3+
-  * php5-intl
-  * phpunit 3.6+ (optional)
-  * composer
+  * PHP 5.3.9+ (with intl extension)
+  * PHPUnit 3.6+ (optional)
+  * Composer
 
 ## Initial setup and configuration
 
