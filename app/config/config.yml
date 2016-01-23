@@ -167,6 +167,9 @@ sonata_admin:
         cmf_menu.admin_extension.menu_node_referrers:
             implements:
                 - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
+        cmf_menu.admin_extension.menu_options:
+            implements:
+                - Symfony\Cmf\Bundle\MenuBundle\Model\MenuOptionsInterface
         cmf_routing.admin_extension.route_referrers:
             implements:
                 - Symfony\Cmf\Component\Routing\RouteReferrersInterface
