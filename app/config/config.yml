@@ -155,9 +155,6 @@ sonata_admin:
         cmf_core.admin_extension.publish_workflow.publishable:
             implements:
                 - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface
-        cmf_core.admin_extension.translatable:
-            implements:
-                - Symfony\Cmf\Bundle\CoreBundle\Translatable\TranslatableInterface
         cmf_menu.admin_extension.menu_node_referrers:
             implements:
                 - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
@@ -267,6 +264,10 @@ sonata_doctrine_phpcr_admin:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
 
+sonata_translation:
+    locales: '%locales%'
+    default_locale: '%locale%'
+    phpcr: true
 
 sonata_seo:
     page:
