@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b14b8a67da55b643ab7c4b0b86003314",
-    "content-hash": "826327328034cdb68dfec565c044382a",
+    "hash": "1da567d164a6313e7c7a70370cfa810d",
+    "content-hash": "fd75b9be1b524bf0e32b7b13f62b68b3",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1079,6 +1079,117 @@
                 "phpcr"
             ],
             "time": "2015-12-08 16:42:00"
+        },
+        {
+            "name": "egeloen/ckeditor-bundle",
+            "version": "4.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/egeloen/IvoryCKEditorBundle.git",
+                "reference": "da7c2264ba89d834677749e4f041c6a3731eec72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/egeloen/IvoryCKEditorBundle/zipball/da7c2264ba89d834677749e4f041c6a3731eec72",
+                "reference": "da7c2264ba89d834677749e4f041c6a3731eec72",
+                "shasum": ""
+            },
+            "require": {
+                "egeloen/json-builder": "~1.0|~2.0",
+                "php": ">=5.3.3",
+                "symfony/dependency-injection": "~2.2|~3.0",
+                "symfony/form": "~2.2|~3.0",
+                "symfony/framework-bundle": "~2.2|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/yaml": "^2.0.5|~3.0",
+                "twig/twig": "~1.12"
+            },
+            "suggest": {
+                "twig/twig": "Allows to use Twig templates"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ivory\\CKEditorBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric GELOEN",
+                    "email": "geloen.eric@gmail.com"
+                }
+            ],
+            "description": "Provides a CKEditor integration for your Symfony2 Project.",
+            "keywords": [
+                "CKEditor"
+            ],
+            "time": "2015-12-09 10:54:32"
+        },
+        {
+            "name": "egeloen/json-builder",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/egeloen/ivory-json-builder.git",
+                "reference": "c6afb2c53ac1070144d5d3330d5f86567b132d23"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/egeloen/ivory-json-builder/zipball/c6afb2c53ac1070144d5d3330d5f86567b132d23",
+                "reference": "c6afb2c53ac1070144d5d3330d5f86567b132d23",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.3.0",
+                "symfony/property-access": "~2.2|~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6",
+                "symfony/phpunit-bridge": "~2.7|~3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Ivory\\JsonBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Eric GELOEN",
+                    "email": "geloen.eric@gmail.com"
+                }
+            ],
+            "description": "JSON builder with escaping control for PHP 5.3+",
+            "keywords": [
+                "Escape",
+                "builder",
+                "json"
+            ],
+            "time": "2015-12-06 13:20:24"
         },
         {
             "name": "eko/feedbundle",
@@ -3750,12 +3861,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/ContentBundle.git",
-                "reference": "68dd570ee098f35b8bfabcba3591099eab7d29e6"
+                "reference": "431b035c22a00b3d9610dc3a037691a78c2b9197"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/68dd570ee098f35b8bfabcba3591099eab7d29e6",
-                "reference": "68dd570ee098f35b8bfabcba3591099eab7d29e6",
+                "url": "https://api.github.com/repos/symfony-cmf/ContentBundle/zipball/431b035c22a00b3d9610dc3a037691a78c2b9197",
+                "reference": "431b035c22a00b3d9610dc3a037691a78c2b9197",
                 "shasum": ""
             },
             "require": {
@@ -3767,15 +3878,15 @@
             },
             "require-dev": {
                 "sonata-project/doctrine-phpcr-admin-bundle": "^1.1",
-                "symfony-cmf/testing": "^1.3",
+                "symfony-cmf/testing": "^1.3@dev",
                 "symfony-cmf/tree-browser-bundle": "^1.0.0-RC1",
                 "symfony/monolog-bundle": "^2.3"
             },
             "suggest": {
                 "doctrine/phpcr-bundle": "To integrate PHPCR-ODM with Symfony",
                 "doctrine/phpcr-odm": "To persist content with the PHP content repository",
+                "egeloen/ckeditor-bundle": "to provide a CKEditor in the admin interface",
                 "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
-                "ivory/ckeditor-bundle": "to provide a CKEditor in the admin interface",
                 "sonata-project/doctrine-phpcr-admin-bundle": "To provide admin interfaces for the content (^1.1)"
             },
             "type": "symfony-bundle",
@@ -3804,7 +3915,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2016-01-05 07:39:42"
+            "time": "2016-01-24 17:20:14"
         },
         {
             "name": "symfony-cmf/core-bundle",
@@ -3816,7 +3927,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/CoreBundle/zipball/b1c6d6bfe6ef51b087fa489fa1d63c5e8e3d4e69",
+                "url": "https://api.github.com/repos/symfony-cmf/CoreBundle/zipball/e2455b7127ebbfa29b3127d89f4e621237a6f132",
                 "reference": "b1c6d6bfe6ef51b087fa489fa1d63c5e8e3d4e69",
                 "shasum": ""
             },
@@ -3937,7 +4048,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MediaBundle/zipball/c0700b90b47210cd4696c1d29232d444b4f89a43",
+                "url": "https://api.github.com/repos/symfony-cmf/MediaBundle/zipball/09fe2c6b35894c7d5961fb01870842cece34929f",
                 "reference": "c0700b90b47210cd4696c1d29232d444b4f89a43",
                 "shasum": ""
             },
@@ -4002,7 +4113,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/ee6ace86d753b346ff3526abde59a1f26f7c4ec6",
+                "url": "https://api.github.com/repos/symfony-cmf/MenuBundle/zipball/c391535555e4a794501d14c5aa137a8e9a4f1aa4",
                 "reference": "ee6ace86d753b346ff3526abde59a1f26f7c4ec6",
                 "shasum": ""
             },
@@ -4239,7 +4350,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/RoutingBundle/zipball/9c746de8a4af393d418977d9b31fc0c0e2206ce1",
+                "url": "https://api.github.com/repos/symfony-cmf/RoutingBundle/zipball/827703c49b81dd34833aca8b493ab717a38e5afa",
                 "reference": "9c746de8a4af393d418977d9b31fc0c0e2206ce1",
                 "shasum": ""
             },

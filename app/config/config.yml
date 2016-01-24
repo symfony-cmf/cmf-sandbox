@@ -7,21 +7,21 @@ imports:
 framework:
     #esi:             ~
     translator:      { fallback: en }
-    secret:          %secret%
+    secret:          '%secret%'
     router:          { resource: '%kernel.root_dir%/config/routing.yml' }
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
-    default_locale:  %locale%
+    default_locale:  '%locale%'
     session:
         name: symfony-cmf
     trusted_proxies: ~
 
 # Twig Configuration
 twig:
-    debug:            %kernel.debug%
-    strict_variables: %kernel.debug%
+    debug:            '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
     form:
         resources:
             - 'CmfMediaBundle:Form:fields.html.twig'
@@ -29,70 +29,64 @@ twig:
 
 # Assetic Configuration
 assetic:
-    debug:          %kernel.debug%
+    debug:          '%kernel.debug%'
     use_controller: false
     # bundles: [ ] # if enabled, every bundle must be added
     #java: /usr/bin/java
     filters:
         cssrewrite: ~
         coffee:
-           bin: %coffee.bin%
-           node: %coffee.node%
-           apply_to: %coffee.extension%
+           bin:  '%coffee.bin%'
+           node: '%coffee.node%'
+           apply_to: '%coffee.extension%'
         # closure:
-        #     jar: %kernel.root_dir%/java/compiler.jar
+        #     jar: '%kernel.root_dir%/java/compiler.jar'
         # yui_css:
-        #     jar: %kernel.root_dir%/java/yuicompressor-2.4.2.jar
+        #     jar: '%kernel.root_dir%/java/yuicompressor-2.4.2.jar'
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: %mailer_transport%
-    host:      %mailer_host%
-    username:  %mailer_user%
-    password:  %mailer_password%
+    transport: '%mailer_transport%'
+    host:      '%mailer_host%'
+    username:  '%mailer_user%'
+    password:  '%mailer_password%'
     spool:     { type: memory }
 
 # for jackalope-doctrine-dbal
 doctrine:
     dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%
-        user:     %database_user%
-        password: %database_password%
-        path:     %database_path%
+        driver:   '%database_driver%'
+        host:     '%database_host%'
+        port:     '%database_port%'
+        dbname:   '%database_name%'
+        user:     '%database_user%'
+        password: '%database_password%'
+        path:     '%database_path%'
         charset:  UTF8
 
 # cmf configuration
 doctrine_phpcr:
     # configure the PHPCR session
     session:
-        backend: %phpcr_backend%
-        workspace: %phpcr_workspace%
-        username: %phpcr_user%
-        password: %phpcr_pass%
+        backend:   '%phpcr_backend%'
+        workspace: '%phpcr_workspace%'
+        username:  '%phpcr_user%'
+        password:  '%phpcr_pass%'
     # enable the ODM layer
     odm:
         auto_mapping: true
-        auto_generate_proxy_classes: %kernel.debug%
+        auto_generate_proxy_classes: '%kernel.debug%'
         locales:
-            en:
-                - de
-                - fr
-            de:
-                - en
-                - fr
-            fr:
-                - en
-                - de
+            en: [de, fr]
+            de: [en, fr]
+            fr: [en, de]
 
 knp_menu:
     twig: true
 
 cmf_core:
     multilang:
-        locales: %locales%
+        locales: '%locales%'
     persistence:
         phpcr:
             enabled: true
@@ -127,8 +121,8 @@ cmf_create:
         role: IS_AUTHENTICATED_ANONYMOUSLY
 
 cmf_seo:
-    title: CMF Sandbox - %%content_title%%
-    description: The Content Management Framework. %%content_description%%
+    title: 'CMF Sandbox - %%content_title%%'
+    description: 'The Content Management Framework. %%content_description%%'
     alternate_locale: ~
 
 cmf_menu:
@@ -281,12 +275,17 @@ sonata_seo:
             name:
                 keywords: 'CMF, Symfony, Routing, Content, PHPCR'
 
+ivory_ck_editor:
+    configs:
+        cmf_simple_cms: { toolbar: standard }
+        cmf_content: { toolbar: standard }
+
 sensio_framework_extra:
     router:  { annotations: true }
     request: { converters: true }
 
 liip_search:
-    restrict_by_language: true;
+    restrict_by_language: true
 
 cmf_search:
     persistence:
@@ -301,7 +300,7 @@ lunetics_locale:
         - router
         - cookie
         - browser
-    allowed_locales: %locales%
+    allowed_locales: '%locales%'
 
 # The LiipImagineBundle can be used if you want to convert on demand an image
 # to a specific format. (ie a controller render the file)

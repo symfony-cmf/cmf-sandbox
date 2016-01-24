@@ -11,7 +11,7 @@ home_redirect:
     pattern: /
     defaults:
         _controller: lunetics_locale.switcher_controller:switchAction
-        route: /cms/routes/%locale%
+        route: '/cms/routes/%locale%'
         statusCode: 301
         useReferrer: false
 
