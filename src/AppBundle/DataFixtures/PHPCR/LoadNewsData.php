@@ -41,7 +41,7 @@ class LoadNewsData extends ContainerAware implements FixtureInterface, OrderedFi
         $news = new DemoNewsContent();
         $news->setParentDocument($newsRoot);
         $news->setTitle('RoutingAutoBundle generates routes!');
-        $news->setBody(<<<EOT
+        $news->setBody(<<<'EOT'
 'This is a news item which demonstrates the routing auto bundle. The routing
 auto bundle automatically creates routes for documents which are persisted.
 

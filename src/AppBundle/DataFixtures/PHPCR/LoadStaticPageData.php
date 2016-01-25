@@ -101,7 +101,7 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
         $seoDemo = new DemoSeoContent();
         $seoDemo->setName('simple-seo-example');
         $seoDemo->setTitle('Simple seo example');
-        $seoDemo->setBody(<<<EOH
+        $seoDemo->setBody(<<<'EOH'
 <p>
     When implementing the SeoAwareInterface,
     you get a chance to configure SEO data
