@@ -48,8 +48,7 @@ class AppKernel extends Kernel
             // language switcher
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
 
-            // create.js editing related
-            new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
+            // API
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
 

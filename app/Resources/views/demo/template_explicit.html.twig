@@ -8,9 +8,8 @@
         <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/routing/dynamic.html#configuring-the-controller-for-a-route"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
     </div>
 
-    {% createphp cmfMainContent as="rdf" %}
-        {{ rdf|raw }}
-    {% endcreatephp %}
+    <h1>{{ cmfMainContent.title }}</h1>
+    {{ cmfMainContent.body|raw }}
 
     {{ parent() }}
 {% endblock %}

@@ -12,10 +12,6 @@
         {% block includes %}
             <link rel="stylesheet" href="{{ asset("assets/vendor/bootstrap.min.css") }}">
             <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
-
-            {% if is_granted("IS_AUTHENTICATED_ANONYMOUSLY") %}
-                {% include "CmfCreateBundle::includecssfiles.html.twig" %}
-            {% endif %}
         {% endblock %}
 
         {% block top_scripts %}
@@ -124,10 +120,7 @@
         </div>
 
         {% block bottom_scripts %}
-            <script type="text/javascript" src="{{ asset("assets/vendor/jquery.min.js") }}"></script>
-
-            {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction")) %}
-
+            <script src="{{ asset("assets/vendor/jquery.min.js") }}"></script>
             <script src="{{ asset("assets/js/rawdata.js") }}"></script>
             <script src="{{ asset("assets/vendor/bootstrap.min.js") }}"></script>
         {% endblock %}

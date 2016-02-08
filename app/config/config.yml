@@ -113,13 +113,6 @@ cmf_routing:
             Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: CmfSimpleCmsBundle:Page:index.html.twig
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: static_content/index.html.twig
 
-cmf_create:
-    editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
-    security:
-        # WARNING: REMOVE THIS FOR PRODUCTION SITES
-        # for demo purposes we are allowing anonymous inline editing
-        role: IS_AUTHENTICATED_ANONYMOUSLY
-
 cmf_seo:
     title: 'CMF Sandbox - %%content_title%%'
     description: 'The Content Management Framework. %%content_description%%'
