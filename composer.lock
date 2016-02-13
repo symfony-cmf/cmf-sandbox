@@ -3453,16 +3453,16 @@
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",
-            "version": "1.2.4",
+            "version": "1.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "bcbcccb7fc56480271969ef63fa5bb7ba5203d03"
+                "reference": "d3ea0db8ec222220485bae7ac37d18aacbc0bb6f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/bcbcccb7fc56480271969ef63fa5bb7ba5203d03",
-                "reference": "bcbcccb7fc56480271969ef63fa5bb7ba5203d03",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/d3ea0db8ec222220485bae7ac37d18aacbc0bb6f",
+                "reference": "d3ea0db8ec222220485bae7ac37d18aacbc0bb6f",
                 "shasum": ""
             },
             "require": {
@@ -3514,7 +3514,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-12-19 20:42:30"
+            "time": "2016-02-13 15:06:24"
         },
         {
             "name": "sonata-project/exporter",
