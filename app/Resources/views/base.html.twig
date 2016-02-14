@@ -61,8 +61,8 @@
                     <div class="dropdown  navbar-dropdown">
                         <a href="#" class="btn  btn-default  btn-xs  navbar-btn  dropdown-toggle" data-toggle="dropdown">View raw page <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a id="raw_xml" title="{{ "cmf.raw_data_hint"|trans }}">XML</a></li>
-                            <li><a id="raw_json" title="{{ "cmf.raw_data_hint"|trans }}">JSON</a></li>
+                            <li><a class="raw-data-link" data-format="xml" title="{{ "cmf.raw_data_hint"|trans }}">XML</a></li>
+                            <li><a class="raw-data-link" data-format="json" title="{{ "cmf.raw_data_hint"|trans }}">JSON</a></li>
                         </ul>
                     </div>
                     {% endblock %}
@@ -114,15 +114,21 @@
             </div>
         </div>
 
-        <div id="raw_data_overlay" class="boxed">
-            <div id="overlay_description">{{ "cmf.raw_data"|trans|raw }}</div>
-            <div id="overlay_content"></div>
+        <div class="modal fade" id="raw-data-modal">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <p>{{ "cmf.raw_data"|trans }}</p>
+                        <pre id="raw-data"></pre>
+                    </div>
+                </div>
+            </div>
         </div>
 
         {% block bottom_scripts %}
             <script src="{{ asset("assets/vendor/jquery.min.js") }}"></script>
-            <script src="{{ asset("assets/js/rawdata.js") }}"></script>
             <script src="{{ asset("assets/vendor/bootstrap.min.js") }}"></script>
+            <script src="{{ asset("assets/js/rawdata.js") }}"></script>
         {% endblock %}
     </body>
 </html>

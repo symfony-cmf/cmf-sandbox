@@ -3,8 +3,7 @@ cmf:
         title: Demo Aktions-Block
         body: Dieser Inhalt wurde durch eine Symfony2 Controller Action gerendert. Er kann nicht inline editiert werden.
     raw_data: |
-      <p>Dieses Fenster zeigt, wie Inhalt mit einem Accept Header im xml bzw json Format abgefragt werden kann.
+       Dieses Fenster zeigt, wie Inhalt mit einem Accept Header im xml bzw json Format abgefragt werden kann.
        Damit dies geht, muss das Format erlabut sein in fos_rest.format_listener.rules und braucht es Konfiguration
-       für den jms serializer für das Dokument in config.yml.</p>
-       <p><em>Escape Taste drücken um das Fenster wieder zu schliessen</em>.</p>
+       für den jms serializer für das Dokument in config.yml.
     raw_data_hint: Rohdaten dieser Seite anzeigen.

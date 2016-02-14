@@ -3,8 +3,7 @@ cmf:
         title: Demo Action Block
         body: This block content is rendered by a custom Symfony2 action. It has no inline-editing.
     raw_data: |
-      <p>This window shows the output when requesting content with an accept-header asking for xml / json.
+       This window shows the output when requesting content with an accept-header asking for xml / json.
        This is enabled by configuring a rule in fos_rest.format_listener.rules and a jms serializer mapping
-       for the content document in config.yml.</p>
-       <p><em>Press the escape key to close</em>.</p>
+       for the content document in config.yml.
     raw_data_hint: Show raw data of this page.
