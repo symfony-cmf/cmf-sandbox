@@ -160,27 +160,8 @@ body { padding-top:50px; }
 /*******************************\
     $OVERLAY
 \*******************************/
-#raw_data_overlay {
-    width:80%;
-    display:none;
-    padding:16px;
-    background-color:#ddd;
-    border:1px black solid;
-    position:absolute;
-    top:100px;
-    left:100px;
-}
-
-#overlay_description {
-    margin-bottom:16px;
-    padding:8px;
-    background-color:#eee;
-}
-
-#overlay_content {
-    padding:8px;
-    font-family:courier, monospace;
-    white-space:pre-wrap;
+.raw-data-link{
+    cursor:pointer;
 }
 
 

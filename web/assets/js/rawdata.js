@@ -1,25 +1,32 @@
-$(document).ready(function () {
-    $("#raw_xml").on("click", function () {
+jQuery(function ($) {
+
+    var $rawData = $('#raw-data');
+    var $modal = $('#raw-data-modal');
+
+    $('.raw-data-link').click(function (e) {
+        var format = $(this).data('format');
+
+        $modal.modal('show');
+        var i = 0;
+        var loaderIcon =setInterval(function () {
+            $rawData.append('.');
+            if (i++ == 10) $rawData.text('.');
+        }, 250);
+
         $.ajax({
-           "dataType": "xml",
-            "success": function(xml) {
-                $("#overlay_content").text((new XMLSerializer()).serializeToString(xml));
-                $("#raw_data_overlay").show();
+            dataType: format,
+            success: function (data) {
+                var str = '';
+                if ('xml' === format) {
+                    str = (new XMLSerializer()).serializeToString(data);
+                } else if ('json' === format) {
+                    str = JSON.stringify(data, undefined, 4);
+                }
+
+                $rawData.text(str);
+                clearInterval(loaderIcon);
             }
         });
     });
 
-    $("#raw_json").on("click", function () {
-        $.ajax({
-            "dataType": "json",
-            "success": function(json) {
-                $("#overlay_content").text(JSON.stringify(json, undefined, 4));
-                $("#raw_data_overlay").show();
-            }
-        });
-    });
-});
-
-$(document).keyup(function(e) {
-    if (e.keyCode == 27) { $("#raw_data_overlay").hide(); }   // esc
 });
