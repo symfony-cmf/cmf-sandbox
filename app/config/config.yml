@@ -158,8 +158,8 @@ sonata_admin:
             implements:
                 - Symfony\Cmf\Component\Routing\RouteReferrersInterface
         cmf_routing.admin_extension.frontend_link:
-            #implements:
-            #    - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
+            implements:
+                - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
             extends:
                 - Symfony\Component\Routing\Route
         cmf_seo.admin_extension:
