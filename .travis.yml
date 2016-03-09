@@ -23,11 +23,15 @@ matrix:
       env: TRANSPORT=doctrine_dbal COMPOSER_INSTALL=1
 
 env:
-  - TRANSPORT=jackrabbit
-  - TRANSPORT=doctrine_dbal
+  matrix:
+    - TRANSPORT=jackrabbit
+    - TRANSPORT=doctrine_dbal
+  global:
+    secure: DY8dajugriGNObYRThdvC2acCd8zFbvxhJwlX6+KgQn71y+wvFMyqE9oMNbivuMtoGS6bCRLJNW1lujWzEjXn8BlDebJqR71szSeATsB6K/+Xw6iUqJOM5VVx7aHh1/3kdKrWzG2XdTIu2w0XYfNQ8KyIrJWHGRGBJzriPRRchU=
 
 before_install:
   - composer self-update
+  - composer config --no-interaction --global github-oauth.github.com $GITHUB_TRAVIS_TOKEN
   - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi
 
 install: if [ "$COMPOSER_INSTALL" != "1" ]; then composer update --no-scripts --prefer-dist; else composer install --no-scripts --prefer-dist; fi
@@ -43,4 +47,3 @@ script: phpunit -c app
 
 notifications:
   irc: "irc.freenode.org#symfony-cmf"
-  email: "symfony-cmf-devs@googlegroups.com"
