@@ -177,7 +177,7 @@ static:
         publishStartDate: tomorrow
         publishEndDate: '+1 year'
         body: |
-            <p>You should see this only in the Admin GUI, tomorrow...</p>
+            <p>At the date you installed the sandbox, you should see this only in the Admin GUI. From the next day on, it will be published</p>
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
@@ -207,7 +207,7 @@ static:
                 Extractor try to extract the title, description, keywords and
                 original url from the document.
 
-                
+
                 <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/extractors.html"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.</a>
             fr: |
                 Needs to be translated:
