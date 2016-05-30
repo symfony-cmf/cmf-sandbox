@@ -278,16 +278,6 @@ sensio_framework_extra:
     router:  { annotations: true }
     request: { converters: true }
 
-liip_search:
-    restrict_by_language: true
-
-cmf_search:
-    persistence:
-        phpcr:
-            search_fields:
-                title: title
-                summary: body
-
 lunetics_locale:
     strict_mode: true
     guessing_order:

@@ -55,9 +55,6 @@ cmf_tree:
     resource: .
     type: 'cmf_tree'
 
-liip_search:
-    resource: '@CmfSearchBundle/Resources/config/routing/phpcr/search.xml'
-
 block_cache:
     resource: '@CmfBlockBundle/Resources/config/routing/cache.xml'
     prefix: /

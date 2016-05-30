@@ -39,8 +39,6 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
             new \Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
-            new Liip\SearchBundle\LiipSearchBundle(),
-            new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
             new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
