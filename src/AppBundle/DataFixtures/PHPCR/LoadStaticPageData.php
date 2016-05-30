@@ -40,9 +40,6 @@ class LoadStaticPageData extends ContainerAware implements FixtureInterface, Ord
 
         $session = $manager->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('cmf_media.persistence.phpcr.media_basepath');
-        NodeHelper::createPath($session, $basepath);
-
         $basepath = $this->container->getParameter('cmf_content.persistence.phpcr.content_basepath');
         NodeHelper::createPath($session, $basepath);
 

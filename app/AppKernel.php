@@ -38,9 +38,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
             new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
-            new \Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
-            new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
-            new FM\ElfinderBundle\FMElfinderBundle(),
+            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
             new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
 
             // language switcher
@@ -60,9 +58,6 @@ class AppKernel extends Kernel
             new Sonata\TranslationBundle\SonataTranslationBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-
-            // Media support
-            new Liip\ImagineBundle\LiipImagineBundle(),
 
             // jackalope doctrine caching
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),

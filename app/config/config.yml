@@ -286,41 +286,6 @@ lunetics_locale:
         - browser
     allowed_locales: '%locales%'
 
-# The LiipImagineBundle can be used if you want to convert on demand an image
-# to a specific format. (ie a controller render the file)
-# more information can be found here : https://github.com/liip/LiipImagineBundle
-liip_imagine:
-    filter_sets:
-        # define the filter to be used with the image preview
-        image_upload_thumbnail:
-            data_loader: cmf_media_doctrine_phpcr
-            filters:
-                thumbnail: { size: [100, 100], mode: outbound }
-
-        # default filter to be used for elfinder thumbnails
-        elfinder_thumbnail:
-            data_loader: cmf_media_doctrine_phpcr
-            quality: 85
-            filters:
-                thumbnail: { size: [48, 48], mode: inset }
-
-        cmf_block:
-            data_loader: cmf_media_doctrine_phpcr
-            quality: 85
-            filters:
-                thumbnail: { size: [50, 50], mode: outbound }
-
-fm_elfinder:
-    locale: %locale%
-    editor: ckeditor
-    connector:
-        roots:
-            media:
-                driver: cmf_media.adapter.elfinder.phpcr_driver
-                path: %cmf_media.persistence.phpcr.media_basepath%
-                upload_allow: ['all']
-                upload_max_size: 2M
-
 doctrine_cache:
     providers:
         phpcr_meta:
