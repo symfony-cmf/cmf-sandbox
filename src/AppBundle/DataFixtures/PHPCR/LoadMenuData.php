@@ -60,6 +60,9 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $this->createMenuNode($manager, $company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $manager->find(null, "$content_path/team"));
         $this->createMenuNode($manager, $company, 'more-item', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $manager->find(null, "$content_path/more"));
 
+        $this->createMenuNode($manager, $main, 'about', 'About us', $manager->find(null, "$content_path/about"));
+        $this->createMenuNode($manager, $main, 'contact', 'Contact', $manager->find(null, "$content_path/contact"));
+
         $demo = $this->createMenuNode($manager, $main, 'demo-item', 'Demo', $manager->find(null, "$content_path/demo"));
         //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?
         $this->createMenuNode($manager, $demo, 'controller-item', 'Explicit controller', $manager->find(null, "$content_path/demo_controller"));

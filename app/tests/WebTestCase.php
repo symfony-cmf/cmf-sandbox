@@ -27,7 +27,6 @@ abstract class WebTestCase extends BaseWebTestCase
             'AppBundle\DataFixtures\PHPCR\LoadStaticPageData',
             'AppBundle\DataFixtures\PHPCR\LoadMenuData',
             'AppBundle\DataFixtures\PHPCR\LoadRoutingData',
-            'AppBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
         ), null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;

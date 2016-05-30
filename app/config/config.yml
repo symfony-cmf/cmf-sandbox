@@ -110,7 +110,6 @@ cmf_routing:
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
 
         templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: CmfSimpleCmsBundle:Page:index.html.twig
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: static_content/index.html.twig
 
 cmf_seo:
@@ -197,11 +196,6 @@ sonata_admin:
                 items:
                     - cmf_menu.menu_admin
                     - cmf_menu.node_admin
-            simplecms:
-                label: Simple CMS
-                icon: '<i class="fa fa-puzzle-piece"></i>'
-                items:
-                    - cmf_simple_cms.persistence.phpcr.admin.page
 
 sonata_doctrine_phpcr_admin:
     templates:
@@ -241,9 +235,6 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
-        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
-            valid_children:
-                - Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
@@ -271,7 +262,6 @@ sonata_seo:
 
 ivory_ck_editor:
     configs:
-        cmf_simple_cms: { toolbar: standard }
         cmf_content: { toolbar: standard }
 
 sensio_framework_extra:
