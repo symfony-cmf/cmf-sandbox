@@ -11,7 +11,6 @@
 
 namespace AppBundle\DataFixtures\PHPCR;
 
-use PHPCR\RepositoryInterface;
 use Doctrine\ODM\PHPCR\DocumentManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;

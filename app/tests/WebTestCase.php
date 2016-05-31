@@ -10,7 +10,6 @@
  */
 
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
-use PHPCR\RepositoryInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 abstract class WebTestCase extends BaseWebTestCase
