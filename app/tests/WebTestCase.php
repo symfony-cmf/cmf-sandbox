@@ -32,16 +32,6 @@ abstract class WebTestCase extends BaseWebTestCase
         self::$fixturesLoaded = true;
     }
 
-    protected function isSearchSupported()
-    {
-        return $this->getContainer()
-            ->get('doctrine_phpcr')
-            ->getConnection()
-            ->getRepository()
-            ->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)
-        ;
-    }
-
     protected function createClientAuthenticated(array $options = array(), array $server = array())
     {
         $server = array_merge($server, array(

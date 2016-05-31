@@ -22,9 +22,6 @@ framework:
 twig:
     debug:            '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    form:
-        resources:
-            - 'CmfMediaBundle:Form:fields.html.twig'
     exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
 
 # Assetic Configuration
@@ -182,8 +179,6 @@ sonata_admin:
                     - cmf_block.container_admin
                     - cmf_block.reference_admin
                     - cmf_block.action_admin
-                    - cmf_block.imagine.slideshow_admin
-                    - cmf_block.imagine.imagine_admin
             routing:
                 label: URLs
                 icon: '<i class="fa fa-link"></i>'
@@ -212,7 +207,6 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
             valid_children: []
