@@ -10,7 +10,11 @@
         }
     ],
     "autoload": {
-        "psr-0": { "": "src/" }
+        "psr-4": { "": "src/" },
+        "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
+    },
+    "autoload-dev": {
+        "classmap": [ "app/tests/WebTestCase.php" ]
     },
     "repositories": [
         {
