@@ -118,6 +118,11 @@ cmf_menu:
     voters:
         content_identity: ~
 
+cmf_resource:
+    repositories:
+        default:
+            type: doctrine_phpcr_odm
+
 sonata_block:
     default_contexts: [cms]
     blocks:

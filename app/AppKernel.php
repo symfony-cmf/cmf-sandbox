@@ -37,8 +37,9 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
-            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
             new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
+            new Symfony\Cmf\Bundle\ResourceBundle\CmfResourceBundle(),
+            new Symfony\Cmf\Bundle\ResourceRestBundle\CmfResourceRestBundle(),
 
             // language switcher
             new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
@@ -48,15 +49,14 @@ class AppKernel extends Kernel
             new JMS\SerializerBundle\JMSSerializerBundle(),
 
             // admin bundle
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new Sonata\TranslationBundle\SonataTranslationBundle(),
-            new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
 
             // jackalope doctrine caching
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
