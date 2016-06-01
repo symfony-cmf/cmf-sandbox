@@ -101,11 +101,11 @@
         <div class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-4">
-                        {{ knp_menu_render("simple", { template: 'includes/footer_menu.html.twig' }) }}
+                    <div class="col-sm-7">
+                        {{ knp_menu_render("main", { depth: 1, template: 'includes/footer_menu.html.twig' }) }}
                     </div>
 
-                    <div class="col-sm-8  text-right">
+                    <div class="col-sm-5  text-right">
                         {% block footer %}
                         <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a> | Frontend editing funded in part by <a href="http://www.iks-project.eu/">IKS</a></p>
                         {% endblock %}

@@ -43,6 +43,6 @@ class AdminDashboardTest extends WebTestCase
         $this->assertContains('Sonata Admin', $response->getContent());
 
         $this->assertCount(1, $crawler->filter('.container-fluid'));
-        $this->assertCount(12, $crawler->filter('.sonata-ba-list-label'));
+        $this->assertCount(9, $crawler->filter('.sonata-ba-list-label'));
     }
 }

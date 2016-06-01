@@ -37,8 +37,6 @@ class AdminTest extends WebTestCase
         '/cmf/block/actionblock/create',
         '/cmf/block/actionblock/{id}/edit',
         '/cmf/block/actionblock/{id}/delete',
-        '/cmf/block/imagineblock/list',
-        '/cmf/block/imagineblock/create',
         '/cmf/routing/route/list',
         '/cmf/routing/route/create',
         '/cmf/routing/route/{id}/edit',
@@ -55,10 +53,6 @@ class AdminTest extends WebTestCase
         '/cmf/menu/menunode/create',
         '/cmf/menu/menunode/{id}/edit',
         '/cmf/menu/menunode/{id}/delete',
-        '/cmf/simplecms/page/list',
-        '/cmf/simplecms/page/create',
-        '/cmf/simplecms/page/{id}/edit',
-        '/cmf/simplecms/page/{id}/delete',
     );
 
     protected $testedPatterns = array();

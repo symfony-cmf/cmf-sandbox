@@ -11,7 +11,6 @@
 
 namespace AppBundle\DataFixtures\PHPCR;
 
-use PHPCR\RepositoryInterface;
 use Doctrine\ODM\PHPCR\DocumentManager;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
@@ -51,10 +50,6 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $main = $this->createMenuNode($manager, $root, 'main', $labels, $manager->find(null, "$content_path/home"));
         $main->setChildrenAttributes(array('class' => 'menu_main'));
 
-        if ($session->getRepository()->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)) {
-            $this->createMenuNode($manager, $main, 'search-item', 'Search', null, null, 'liip_search');
-        }
-
         $this->createMenuNode($manager, $main, 'admin-item', 'Admin', null, null, 'sonata_admin_dashboard');
 
         $projects = $this->createMenuNode($manager, $main, 'projects-item', array('en' => 'Projects', 'de' => 'Projekte', 'fr' => 'Projets'), $manager->find(null, "$content_path/projects"));
@@ -63,6 +58,9 @@ class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFi
         $company = $this->createMenuNode($manager, $main, 'company-item', array('en' => 'Company', 'de' => 'Firma', 'fr' => 'Entreprise'), $manager->find(null, "$content_path/company"));
         $this->createMenuNode($manager, $company, 'team-item', array('en' => 'Team', 'de' => 'Team', 'fr' => 'Equipe'), $manager->find(null, "$content_path/team"));
         $this->createMenuNode($manager, $company, 'more-item', array('en' => 'More', 'de' => 'Mehr', 'fr' => 'Plus'), $manager->find(null, "$content_path/more"));
+
+        $this->createMenuNode($manager, $main, 'about', 'About us', $manager->find(null, "$content_path/about"));
+        $this->createMenuNode($manager, $main, 'contact', 'Contact', $manager->find(null, "$content_path/contact"));
 
         $demo = $this->createMenuNode($manager, $main, 'demo-item', 'Demo', $manager->find(null, "$content_path/demo"));
         //TODO: this should be possible without a content as the controller might not need a content. support directly having the route document as "content" in the menu document?

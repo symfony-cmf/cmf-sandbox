@@ -10,7 +10,6 @@
  */
 
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
-use PHPCR\RepositoryInterface;
 use Symfony\Component\HttpFoundation\Response;
 
 abstract class WebTestCase extends BaseWebTestCase
@@ -27,20 +26,9 @@ abstract class WebTestCase extends BaseWebTestCase
             'AppBundle\DataFixtures\PHPCR\LoadStaticPageData',
             'AppBundle\DataFixtures\PHPCR\LoadMenuData',
             'AppBundle\DataFixtures\PHPCR\LoadRoutingData',
-            'AppBundle\DataFixtures\PHPCR\LoadSimpleCmsData',
         ), null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;
-    }
-
-    protected function isSearchSupported()
-    {
-        return $this->getContainer()
-            ->get('doctrine_phpcr')
-            ->getConnection()
-            ->getRepository()
-            ->getDescriptor(RepositoryInterface::QUERY_FULL_TEXT_SEARCH_SUPPORTED)
-        ;
     }
 
     protected function createClientAuthenticated(array $options = array(), array $server = array())

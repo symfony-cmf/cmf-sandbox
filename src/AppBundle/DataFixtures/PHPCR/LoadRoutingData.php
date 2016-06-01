@@ -78,6 +78,16 @@ class LoadRoutingData extends ContainerAware implements FixtureInterface, Ordere
             $more->setContent($manager->find(null, "$content_path/more"));
             $manager->persist($more);
 
+            $about = new Route();
+            $about->setPosition($home, 'about');
+            $about->setContent($manager->find(null, "$content_path/about"));
+            $manager->persist($about);
+
+            $contact = new Route();
+            $contact->setPosition($home, 'contact');
+            $contact->setContent($manager->find(null, "$content_path/contact"));
+            $manager->persist($contact);
+
             $projects = new Route();
             $projects->setPosition($home, 'projects');
             $projects->setContent($manager->find(null, "$content_path/projects"));

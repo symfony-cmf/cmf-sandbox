@@ -22,9 +22,6 @@ framework:
 twig:
     debug:            '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    form:
-        resources:
-            - 'CmfMediaBundle:Form:fields.html.twig'
     exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
 
 # Assetic Configuration
@@ -110,7 +107,6 @@ cmf_routing:
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
 
         templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page: CmfSimpleCmsBundle:Page:index.html.twig
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: static_content/index.html.twig
 
 cmf_seo:
@@ -183,8 +179,6 @@ sonata_admin:
                     - cmf_block.container_admin
                     - cmf_block.reference_admin
                     - cmf_block.action_admin
-                    - cmf_block.imagine.slideshow_admin
-                    - cmf_block.imagine.imagine_admin
             routing:
                 label: URLs
                 icon: '<i class="fa fa-link"></i>'
@@ -197,11 +191,6 @@ sonata_admin:
                 items:
                     - cmf_menu.menu_admin
                     - cmf_menu.node_admin
-            simplecms:
-                label: Simple CMS
-                icon: '<i class="fa fa-puzzle-piece"></i>'
-                items:
-                    - cmf_simple_cms.persistence.phpcr.admin.page
 
 sonata_doctrine_phpcr_admin:
     templates:
@@ -218,7 +207,6 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
             valid_children: []
@@ -241,9 +229,6 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
-        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
-            valid_children:
-                - Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
@@ -271,22 +256,11 @@ sonata_seo:
 
 ivory_ck_editor:
     configs:
-        cmf_simple_cms: { toolbar: standard }
         cmf_content: { toolbar: standard }
 
 sensio_framework_extra:
     router:  { annotations: true }
     request: { converters: true }
-
-liip_search:
-    restrict_by_language: true
-
-cmf_search:
-    persistence:
-        phpcr:
-            search_fields:
-                title: title
-                summary: body
 
 lunetics_locale:
     strict_mode: true
@@ -295,41 +269,6 @@ lunetics_locale:
         - cookie
         - browser
     allowed_locales: '%locales%'
-
-# The LiipImagineBundle can be used if you want to convert on demand an image
-# to a specific format. (ie a controller render the file)
-# more information can be found here : https://github.com/liip/LiipImagineBundle
-liip_imagine:
-    filter_sets:
-        # define the filter to be used with the image preview
-        image_upload_thumbnail:
-            data_loader: cmf_media_doctrine_phpcr
-            filters:
-                thumbnail: { size: [100, 100], mode: outbound }
-
-        # default filter to be used for elfinder thumbnails
-        elfinder_thumbnail:
-            data_loader: cmf_media_doctrine_phpcr
-            quality: 85
-            filters:
-                thumbnail: { size: [48, 48], mode: inset }
-
-        cmf_block:
-            data_loader: cmf_media_doctrine_phpcr
-            quality: 85
-            filters:
-                thumbnail: { size: [50, 50], mode: outbound }
-
-fm_elfinder:
-    locale: %locale%
-    editor: ckeditor
-    connector:
-        roots:
-            media:
-                driver: cmf_media.adapter.elfinder.phpcr_driver
-                path: %cmf_media.persistence.phpcr.media_basepath%
-                upload_allow: ['all']
-                upload_max_size: 2M
 
 doctrine_cache:
     providers:

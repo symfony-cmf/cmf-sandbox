@@ -72,6 +72,20 @@ static:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
     -
+        name: 'about'
+        title: 'Some information about us'
+        body: The about us page with some content...
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+    -
+        name: 'contact'
+        title: 'A contact page'
+        body: Please send an email to cmf-devs@groups.google.com
+        blocks:
+            additionalInfoBlock:
+                class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
+    -
         name: 'more'
         title: 'More Information'
         body: |
