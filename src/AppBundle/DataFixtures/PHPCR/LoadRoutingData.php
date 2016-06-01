@@ -18,11 +18,14 @@ use Doctrine\ODM\PHPCR\DocumentManager;
 use PHPCR\Util\NodeHelper;
 use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute;
 use Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route;
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Cmf\Component\Routing\RouteObjectInterface;
 
-class LoadRoutingData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
+class LoadRoutingData implements ContainerAwareInterface, FixtureInterface, OrderedFixtureInterface
 {
+    use ContainerAwareTrait;
+
     public function getOrder()
     {
         return 21;

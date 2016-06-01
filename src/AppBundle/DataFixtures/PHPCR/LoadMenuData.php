@@ -16,12 +16,15 @@ use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use PHPCR\Util\NodeHelper;
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode;
 use Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu;
 
-class LoadMenuData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
+class LoadMenuData implements ContainerAwareInterface, FixtureInterface, OrderedFixtureInterface
 {
+    use ContainerAwareTrait;
+
     public function getOrder()
     {
         return 60;

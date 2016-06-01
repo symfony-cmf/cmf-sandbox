@@ -12,7 +12,8 @@
 namespace AppBundle\EventListener;
 
 use PHPCR\RepositoryException;
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelEvents;
@@ -23,8 +24,10 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
  * Exception listener that will handle not found exceptions and try to give the
  * first time installer some clues what is wrong.
  */
-class SandboxExceptionListener extends ContainerAware implements EventSubscriberInterface
+class SandboxExceptionListener implements EventSubscriberInterface, ContainerAwareInterface
 {
+    use ContainerAwareTrait;
+
     public function onKernelException(GetResponseForExceptionEvent $event)
     {
         if (!$event->getException() instanceof NotFoundHttpException) {
