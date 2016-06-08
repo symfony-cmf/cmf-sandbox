@@ -30,6 +30,7 @@ web:
       - \.css$
       - \.js$
       - ^/assets/
+      - ^/bundles/
 
       # image/* types.
       - \.gif$
