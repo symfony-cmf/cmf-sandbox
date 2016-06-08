@@ -8,7 +8,7 @@ _app:
     type: annotation
 
 home_redirect:
-    pattern: /
+    path: /
     defaults:
         _controller: lunetics_locale.switcher_controller:switchAction
         route: '/cms/routes/%locale%'
@@ -16,21 +16,21 @@ home_redirect:
         useReferrer: false
 
 admin_wo_locale:
-    pattern: /admin
+    path: /admin
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: sonata_admin_dashboard
         permanent: true # this for 301
 
 admin_dashboard_wo_locale:
-    pattern: /admin/dashboard
+    path: /admin/dashboard
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: sonata_admin_dashboard
         permanent: true # this for 301
 
 admin_dashboard:
-    pattern: /{_locale}/admin/
+    path: /{_locale}/admin/
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
         route: sonata_admin_dashboard
@@ -45,13 +45,10 @@ sonata_admin:
     type: sonata_admin
     prefix: /{_locale}/admin
 
-fos_js_routing:
-    resource: '@FOSJsRoutingBundle/Resources/config/routing/routing.xml'
-
-cmf_tree:
-    resource: .
-    type: 'cmf_tree'
-
 block_cache:
     resource: '@CmfBlockBundle/Resources/config/routing/cache.xml'
     prefix: /
+
+cmf_resource:
+    resource: '@CmfResourceRestBundle/Resources/config/routing.yml'
+    prefix: /admin

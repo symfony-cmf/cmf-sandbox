@@ -93,12 +93,12 @@ class AdminTest extends WebTestCase
             $requirements = $route->getRequirements();
 
             // fix this one later
-            if (strpos($route->getPattern(), 'export')) {
+            if (strpos($route->getPath(), 'export')) {
                 continue;
             }
 
             // these don't all work atm
-            if (strpos($route->getPattern(), 'show')) {
+            if (strpos($route->getPath(), 'show')) {
                 continue;
             }
 
@@ -132,7 +132,7 @@ class AdminTest extends WebTestCase
 
             $this->assertResponseSuccess($res);
 
-            $this->testedPatterns[] = $route->getPattern();
+            $this->testedPatterns[] = $route->getPath();
         }
     }
 }

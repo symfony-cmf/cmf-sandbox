@@ -1,5 +1,6 @@
 AppBundle\Document\DemoNewsContent:
-    uri_schema: /news/{date}/{title}
+    definitions:
+        - { uri_schema: '/news/{date}/{title}' }
     token_providers:
         date: [content_datetime, { method: getDate, date_format: Y-m-d }]
         title: [content_method, {method: getTitle, slugify: true }]

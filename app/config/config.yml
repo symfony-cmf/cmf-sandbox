@@ -118,6 +118,15 @@ cmf_menu:
     voters:
         content_identity: ~
 
+cmf_resource:
+    repositories:
+        default:
+            type: doctrine_phpcr_odm
+
+cmf_resource_rest:
+    enhancer_map:
+        - { repository: default, enhancer: sonata_admin }
+
 sonata_block:
     default_contexts: [cms]
     blocks:

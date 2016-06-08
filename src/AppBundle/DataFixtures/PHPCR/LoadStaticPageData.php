@@ -18,11 +18,14 @@ use Doctrine\ODM\PHPCR\DocumentManager;
 use PHPCR\Util\NodeHelper;
 use AppBundle\Document\DemoSeoContent;
 use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
-use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\Yaml\Parser;
 
-class LoadStaticPageData extends ContainerAware implements FixtureInterface, OrderedFixtureInterface
+class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, OrderedFixtureInterface
 {
+    use ContainerAwareTrait;
+
     public function getOrder()
     {
         return 5;
