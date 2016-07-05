@@ -23,7 +23,7 @@ use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 class DemoNewsContent extends DemoClassContent
 {
     /**
-     * @PHPCRODM\Date()
+     * @PHPCRODM\Field(type="date")
      */
     protected $date;
 
