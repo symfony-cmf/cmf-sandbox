@@ -1,4 +1,6 @@
 security:
+    # *NEVER* store passwords as plaintext in production, this is purely for
+    # demo purposes.
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
 
@@ -9,7 +11,11 @@ security:
     providers:
         in_memory:
             memory:
-                users: %security_users%
+                # Only for demo purposes. Of course, use a more
+                # secure password on production.
+                users:
+                    anna_admin: { password: kitten, roles: ROLE_ADMIN }
+                    admin:      { password: admin, roles: ROLE_ADMIN }
 
     firewalls:
         dev:
@@ -17,11 +23,12 @@ security:
             security: false
 
         main:
-            pattern: ^/
             anonymous: ~
-            http_basic:
-                realm: 'Secured Demo Area (username: admin, password: admin)'
+            form_login:
+                login_path: login
+                check_path: login
+            logout: ~
 
     access_control:
         - { path: ^(/(de|fr|en))?/admin, roles: ROLE_ADMIN }
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -9,6 +9,11 @@ framework:
     session:
         storage_id: session.storage.filesystem
 
+security:
+    firewalls:
+        main:
+            http_basic: ~
+
 web_profiler:
     toolbar: false
     intercept_redirects: false
