@@ -5,7 +5,7 @@
 name: php
 
 # The toolstack used to build the application.
-type: php:5.6
+type: php:7.0
 build:
     flavor: symfony
 
