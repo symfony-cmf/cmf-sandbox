@@ -37,11 +37,11 @@ install: if [ "$COMPOSER_INSTALL" != "1" ]; then composer update --no-scripts --
 before_script:
   - cp app/config/phpcr_${TRANSPORT}.yml.dist app/config/phpcr.yml
   - composer run-script post-update-cmd
-  - ./app/tests/travis_${TRANSPORT}.sh
-  - app/console doctrine:phpcr:workspace:create sandbox_test -e=test
-  - app/console doctrine:phpcr:repository:init -e=test
+  - ./tests/travis_${TRANSPORT}.sh
+  - bin/console doctrine:phpcr:workspace:create sandbox_test -e=test
+  - bin/console doctrine:phpcr:repository:init -e=test
 
-script: phpunit -c app
+script: phpunit
 
 notifications:
   irc: "irc.freenode.org#symfony-cmf"
