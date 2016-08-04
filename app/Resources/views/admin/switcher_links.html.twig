@@ -1,4 +1,4 @@
-Switch to :
+Read in
 {% for locale in locales %}
-    {% if loop.index > 1 %} | {% endif %}<a href="{{ locale.link }}" title="{{ locale.locale_target_language }}">{{ locale.locale_target_language }}</a>
+    <a href="{{ locale.link }}" title="{{ locale.locale_target_language }}"><img src="{{ asset('/bundles/sonatatranslation/img/flags/' ~ locale.locale ~ '.png') }}"></a>
 {% endfor %}
