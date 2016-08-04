@@ -47,8 +47,8 @@ disk: 2048
 
 # The mounts that will be performed when the package is deployed.
 mounts:
-    "/app/cache": "shared:files/cache"
-    "/app/logs": "shared:files/logs"
+    "/var/cache": "shared:files/cache"
+    "/var/logs": "shared:files/logs"
 
 # The hooks that will be performed when the package is deployed.
 hooks:
@@ -56,15 +56,15 @@ hooks:
       rm web/app_dev.php
       # place sqlite file into /tmp so that we can write to it during deploy
       sed -i 's@%kernel.root_dir%/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
-      app/console --env=prod assets:install -n --no-debug
-      app/console --env=prod assetic:dump -n --no-debug
+      bin/console --env=prod assets:install -n --no-debug
+      bin/console --env=prod assetic:dump -n --no-debug
     deploy: |
       # force clearing the cache
-      rm -rf app/cache
-      app/console doctrine:phpcr:init:dbal --drop --force -n
-      app/console doctrine:phpcr:repository:init -n
-      app/console doctrine:phpcr:fixtures:load -n
-      app/console --env=prod cache:warmup -n --no-debug
+      rm -rf var/cache
+      bin/console doctrine:phpcr:init:dbal --drop --force -n
+      bin/console doctrine:phpcr:repository:init -n
+      bin/console doctrine:phpcr:fixtures:load -n
+      bin/console --env=prod cache:warmup -n --no-debug
 
 runtime:
   extensions:
