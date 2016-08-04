@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+namespace Tests\Functional;
+
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 class AdminTest extends WebTestCase

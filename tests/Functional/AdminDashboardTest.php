@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+namespace Tests\Functional;
+
 class AdminDashboardTest extends WebTestCase
 {
     public function testRedirectToDashboard()

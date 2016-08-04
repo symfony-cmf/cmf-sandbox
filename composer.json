@@ -14,7 +14,7 @@
         "classmap": [ "app/AppKernel.php", "app/AppCache.php" ]
     },
     "autoload-dev": {
-        "classmap": [ "app/tests/WebTestCase.php" ]
+        "psr-4": { "Tests\\": "tests/" }
     },
     "require": {
         "php": "^5.5.9|^7.0",
@@ -72,18 +72,15 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
         ]
     },
-    "config": {
-        "bin-dir": "bin"
-    },
     "extra": {
         "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
         "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
         "symfony-assets-install": "relative",
         "incenteev-parameters": [
-            {
-                "file": "app/config/parameters.yml",
-                "env-map": {}
-            },
+            { "file": "app/config/parameters.yml" },
             {
                 "file": "app/config/phpcr.yml",
                 "dist-file": "app/config/phpcr_doctrine_dbal.yml.dist"
