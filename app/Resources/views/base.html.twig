@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
     <head>
         <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
@@ -44,6 +44,10 @@
                 <div class="navbar-right">
                     <ul class="nav  navbar-nav">
                         <li><a href="{{ path('sonata_admin_dashboard') }}">Admin Dashboard</a></li>
+
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{ path('logout') }}">Logout</a></li>
+                        {% endif %}
                     </ul>
 
                     {% block language_selector %}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+        <meta charset="utf-8" />
+
+        <title>Admin area login</title>
+
+        <link rel="stylesheet" href="{{ asset("assets/vendor/bootstrap.min.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
+        <style>
+            body { background:#fafafa; }
+            .login-form { margin-bottom:20px; }
+            .login-form-box{
+                width:430px;
+                margin-top:200px;
+                padding:20px;
+                background:rgba(255, 255, 255, .8);
+                border:1px solid #cee3ab;
+                border-top:5px solid #a3ca5f;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="login-form-box center-block">
+            <div class="alert  alert-info  clearfix">
+                <p>This login form is using the Security component.</p>
+
+                <a class="docref" href="https://symfony.com/doc/current/security/form_login_setup"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the documentation.</a>
+            </div>
+
+            <h3>Admin area</h3>
+
+            {% if error %}
+                <div class="alert alert-danger">
+                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+
+            <form action="{{ path('login') }}" method="post" class="form-horizontal clearfix login-form">
+                <div class="form-group">
+                    <label for="username" class="col-sm-4">Username:</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" id="username" name="_username" value="{{ last_username }}" />
+                        <span class="help-block">The demo username is "anna_admin".</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="col-sm-4">Password:</label>
+                    <div class="col-sm-8">
+                        <input type="password" class="form-control" id="password" name="_password" />
+                        <span class="help-block">The demo password is "kitten".</span>
+                    </div>
+                </div>
+
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
