@@ -1,3 +1,6 @@
 preset: symfony
 
 disabled: [phpdoc_to_comment, phpdoc_var_without_name]
+
+finder:
+    exclude: [var]
