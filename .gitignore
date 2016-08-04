@@ -1,4 +1,5 @@
 /app/config/parameters.yml
+/app/config/phpcr.yml
 /build/
 /phpunit.xml
 /var/*
@@ -14,8 +15,3 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-
-/app/config/phpcr.yml
-/jackrabbit/
-/jackrabbit-standalone-*.jar
-/vagrant/.vagrant
