@@ -55,7 +55,7 @@ hooks:
     build: |
       rm web/app_dev.php
       # place sqlite file into /tmp so that we can write to it during deploy
-      sed -i 's@%kernel.root_dir%/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
+      sed -i 's@%kernel.root_dir%/../var/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
       bin/console --env=prod assets:install -n --no-debug
       bin/console --env=prod assetic:dump -n --no-debug
     deploy: |
