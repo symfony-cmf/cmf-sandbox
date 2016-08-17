@@ -2,7 +2,7 @@
 <?php
 
 $output = $return_var = null;
-$command = __DIR__.'/../app/console -v doctrine:phpcr:fixtures:load -e=prod';
+$command = __DIR__.'/../bin/console -v doctrine:phpcr:fixtures:load -e=prod';
 echo "Running: $command\n";
 exec($command, $output, $return_var);
 
