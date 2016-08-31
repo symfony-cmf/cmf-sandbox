@@ -23,6 +23,8 @@ twig:
     debug:            '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
+    form_themes:
+        - '@CmfTreeBrowser/Form/fields.html.twig'
 
 # Assetic Configuration
 assetic:
