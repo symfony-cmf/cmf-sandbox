@@ -13,8 +13,8 @@ Link to the [live demo](http://sandbox.cmf.symfony.com/)
 
 ## Getting started
 
-You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For the latter, see
-"Getting started using Vagrant"
+You can run the sandbox on your system if you have Apache or Nginx installed or
+[use Homestead](https://symfony.com/doc/current/setup/homestead).
 
 ### You will need:
 
@@ -139,10 +139,6 @@ you need to generate the doctrine proxies and dump the assetic assets:
 
     php app/console cache:warmup --env=prod --no-debug
     php app/console assetic:dump --env=prod --no-debug
-
-# Getting started using Vagrant
-
-please checkout the [README.md](vagrant) in the vagrant/ folder of the project
 
 # Other hints
 
