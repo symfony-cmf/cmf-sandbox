@@ -118,8 +118,8 @@ bash "Running composer install and preparing the phpcr repository" do
     COMPOSER_VENDOR_DIR="/var/tmp/vendor" php composer.phar install
     echo "Waiting for Jackrabbit:"
     while [[ -z `curl -s "http://localhost:8080"` ]] ; do sleep 1s; echo -n "."; done
-    app/console doctrine:phpcr:workspace:create sandbox
-    app/console doctrine:phpcr:repository:init
-    app/console doctrine:phpcr:fixtures:load
+    bin/console doctrine:phpcr:workspace:create sandbox
+    bin/console doctrine:phpcr:repository:init
+    bin/console doctrine:phpcr:fixtures:load
   EOH
 end

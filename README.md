@@ -71,8 +71,8 @@ To disable the meta data and node cache for debugging comment the ``caches`` set
 
 Then, create the database and tables and set up the default workspace using:
 
-    php app/console doctrine:database:create
-    php app/console doctrine:phpcr:init:dbal
+    php bin/console doctrine:database:create
+    php bin/console doctrine:phpcr:init:dbal
 
 ## Prepare the PHPCR repository
 
@@ -80,12 +80,12 @@ First you need to create a workspace that will hold the data for the sandbox.
 The default parameters.yml defines the workspace to be 'default'. You can
 change this of course. If you do, f.e. to 'sandbox, also run the following command:
 
-    php app/console doctrine:phpcr:workspace:create sandbox
+    php bin/console doctrine:phpcr:workspace:create sandbox
 
 Once your workspace is set up, you need to [register the node types](https://github.com/doctrine/phpcr-odm/wiki/Custom-node-type-phpcr%3Amanaged)
 for PHPCR-ODM:
 
-    php app/console doctrine:phpcr:repository:init
+    php bin/console doctrine:phpcr:repository:init
 
 ## Import the fixtures
 
@@ -94,7 +94,7 @@ to programmatically create data. The best way to do that is with the doctrine
 data fixtures. The DoctrinePHPCRBundle included in the symfony-cmf repository
 provides a command to load fixtures:
 
-    php app/console -v doctrine:phpcr:fixtures:load
+    php bin/console -v doctrine:phpcr:fixtures:load
 
 Run this to load the fixtures from the Sandbox AppBundle.
 
@@ -137,8 +137,8 @@ Then point your browser to http://cmf.lo/app_dev.php
 In order to run the sandbox in production mode at http://cmf.lo/
 you need to generate the doctrine proxies and dump the assetic assets:
 
-    php app/console cache:warmup --env=prod --no-debug
-    php app/console assetic:dump --env=prod --no-debug
+    php bin/console cache:warmup --env=prod --no-debug
+    php bin/console assetic:dump --env=prod --no-debug
 
 # Getting started using Vagrant
 
@@ -149,7 +149,7 @@ please checkout the [README.md](vagrant) in the vagrant/ folder of the project
 ## Console
 
 The PHPCR ODM Bundle provides a couple of useful commands in the doctrine:phpcr namespace.
-Type app/console to see them all.
+Type bin/console to see them all.
 
 ## Admin interface
 
@@ -166,7 +166,7 @@ At the moment there is no notion of parents and sons in the admin bundle.
 
 Functional tests are written with PHPUnit. Note that Bundles and Components are tested independently:
 
-    php app/console doctrine:phpcr:workspace:create sandbox_test
+    php bin/console doctrine:phpcr:workspace:create sandbox_test
     phpunit -c app
 
 ## Remove demo configuration
