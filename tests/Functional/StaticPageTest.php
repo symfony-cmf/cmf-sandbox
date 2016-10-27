@@ -47,7 +47,7 @@ class StaticPageTest extends WebTestCase
             array('/demo/class', 'Controller by class'),
             array('/hello', 'Hello World!'),
             array('/en/about', 'Some information about us'),
-            'sitemap' => array('/sitemaps/sitemap.html', 'Sitemap')
+            'sitemap' => array('/sitemaps/sitemap.html', 'Sitemap'),
         );
     }
 

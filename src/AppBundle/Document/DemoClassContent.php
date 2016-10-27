@@ -140,7 +140,7 @@ class DemoClassContent implements RouteReferrersReadInterface, SitemapAwareInter
     }
 
     /**
-     * @param boolean $isVisibleForSitemap
+     * @param bool $isVisibleForSitemap
      */
     public function setIsVisibleForSitemap($isVisibleForSitemap)
     {
