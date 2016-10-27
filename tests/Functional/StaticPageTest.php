@@ -66,4 +66,14 @@ class StaticPageTest extends WebTestCase
         );
         $this->assertContains('"title":"The Team",', $response->getContent());
     }
+
+    public function testErrorPage()
+    {
+        $client = $this->createClient();
+        $client->request('GET', '/en/company/tea');
+        $this->assertStatusCode(404, $client);
+
+        $response = $client->getResponse();
+        $this->assertContains('Oops! An Error Occurred', $response->getContent());
+    }
 }
