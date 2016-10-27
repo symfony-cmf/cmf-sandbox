@@ -12,6 +12,7 @@
 namespace AppBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
+use Symfony\Cmf\Bundle\SeoBundle\SitemapAwareInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
 
@@ -20,7 +21,7 @@ use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
  *
  * @PHPCRODM\Document(referenceable=true)
  */
-class DemoClassContent implements RouteReferrersReadInterface
+class DemoClassContent implements RouteReferrersReadInterface, SitemapAwareInterface
 {
     /**
      * to create the document at the specified location. read only for existing documents.
@@ -61,6 +62,13 @@ class DemoClassContent implements RouteReferrersReadInterface
      * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route", referencedBy="content")
      */
     public $routes;
+
+    /**
+     * @var bool
+     *
+     * @PHPCRODM\Field(type="boolean", property="visible_for_sitemap")
+     */
+    private $isVisibleForSitemap;
 
     public function getName()
     {
@@ -116,5 +124,26 @@ class DemoClassContent implements RouteReferrersReadInterface
     public function getRoutes()
     {
         return $this->routes->toArray();
+    }
+
+    /**
+     * Decision whether a document should be visible
+     * in sitemap or not.
+     *
+     * @param $sitemap
+     *
+     * @return bool
+     */
+    public function isVisibleInSitemap($sitemap)
+    {
+        return $this->isVisibleForSitemap;
+    }
+
+    /**
+     * @param boolean $isVisibleForSitemap
+     */
+    public function setIsVisibleForSitemap($isVisibleForSitemap)
+    {
+        $this->isVisibleForSitemap = $isVisibleForSitemap;
     }
 }

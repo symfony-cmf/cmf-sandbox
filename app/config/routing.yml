@@ -52,3 +52,7 @@ block_cache:
 cmf_resource:
     resource: '@CmfResourceRestBundle/Resources/config/routing.yml'
     prefix: /admin
+
+sitemaps:
+     prefix: /sitemaps
+     resource: "@CmfSeoBundle/Resources/config/routing/sitemap.xml"

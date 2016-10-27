@@ -38,7 +38,7 @@ class HomepageTest extends WebTestCase
         $this->assertCount(1, $crawler->filter('h1:contains(Homepage)'));
         $this->assertCount(1, $crawler->filter('h2:contains("Welcome to the Symfony CMF Demo")'));
 
-        $this->assertCount(23, $crawler->filter('.panel-nav li'));
+        $this->assertCount(24, $crawler->filter('.panel-nav li'));
     }
 
     public function testJsonContents()

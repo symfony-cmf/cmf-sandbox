@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <h1>Sitemap</h1>
+    <ul class="cmf-sitemap">
+        {% for url in urls %}
+            <li{% if url.depth is not null %} class="indent-{{ url.depth }}"{% endif %}>
+                <a href="{{ url.location }}" title="{{ url.label }}">{{ url.label }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

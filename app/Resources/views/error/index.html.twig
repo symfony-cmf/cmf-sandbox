@@ -1,0 +1,24 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "{{ status_code }} {{ status_text }}".</h2>
+
+    <p>
+        Something is broken. Please let us know what you were doing when this error occurred.
+        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    </p>
+
+    <h3>Suggested pages</h3>
+
+    {% for group, list in best_matches if list is not empty %}
+        <h4>{{ group|capitalize }}</h4>
+        <ul>
+            {% for match in list %}
+                <li><a href="{{ path(match.id) }}">{{ match.content.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h4>No suggestions found</h4>
+    {% endfor %}
+{% endblock %}
