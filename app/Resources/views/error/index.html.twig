@@ -3,11 +3,19 @@
 {% block content %}
     <h1>Oops! An Error Occurred</h1>
     <h2>The server returned a "{{ status_code }} {{ status_text }}".</h2>
-
-    <p>
-        Something is broken. Please let us know what you were doing when this error occurred.
-        We will fix it as soon as possible. Sorry for any inconvenience caused.
+    <p>If you see this page, it means your sandbox is not correctly set up.
+        Please see the README file in the sandbox root folder and if you can't figure out
+        what is wrong, ask us on freenode irc #symfonycmf or the mailinglist cmfusers@groups.google.com.
     </p>
+
+    <p>If you are seeing this page as the result of an edit in the admin tool, please report what you were doing
+        to our <a href=\"https://github.com/symfonycmf/cmfsandbox/issues/new\">ticket system</a>,
+        so that we can add means to prevent this issue in the future. But to get things working again
+        for now, please just <a href="{{ app.request.getSchemeAndHttpHost() }}/reloadfixtures.php">click here</a>
+        to reload the data fixtures.
+    </p><p style='color:red;'>
+    <strong>Detected the following problem</strong>:
+    {{ exception.getMessage() }}
 
     <h3>Suggested pages</h3>
 
