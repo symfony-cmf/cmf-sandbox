@@ -18,6 +18,7 @@ use Doctrine\ODM\PHPCR\DocumentManager;
 use PHPCR\Util\NodeHelper;
 use AppBundle\Document\DemoSeoContent;
 use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
+use Symfony\Cmf\Bundle\SeoBundle\SitemapAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\Yaml\Parser;
@@ -95,6 +96,10 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
                     $this->loadBlock($manager, $page, $name, $block);
                 }
             }
+
+            if ($page instanceof SitemapAwareInterface) {
+                $page->setIsVisibleForSitemap(true);
+            }
         }
 
         //add a loading for a simple seo aware page
@@ -114,6 +119,7 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
 EOH
         );
         $seoDemo->setParentDocument($parent);
+        $seoDemo->setIsVisibleForSitemap(true);
 
         $seoMetadata = new SeoMetadata();
         $seoMetadata->setTitle('Simple seo example');
@@ -146,6 +152,7 @@ EOH
         $seoMetadata->addExtraName('robots', 'index, follow');
         $seoMetadata->addExtraProperty('og:title', 'extra title');
         $seoDemo->setSeoMetadata($seoMetadata);
+        $seoDemo->setIsVisibleForSitemap(true);
         $manager->persist($seoDemo);
 
         $manager->bindTranslation($seoDemo, 'en');
