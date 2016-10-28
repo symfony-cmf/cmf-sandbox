@@ -115,6 +115,11 @@ class LoadRoutingData implements ContainerAwareInterface, FixtureInterface, Orde
             $seo->setPosition($home, 'demo-seo-extractor');
             $seo->setContent($manager->find(null, "$content_path/demo-seo-extractor"));
             $manager->persist($seo);
+
+            $seo = new Route();
+            $seo->setPosition($home, 'seo-error-pages');
+            $seo->setContent($manager->find(null, "$content_path/seo-error-pages"));
+            $manager->persist($seo);
         }
 
         // demo features of routing
