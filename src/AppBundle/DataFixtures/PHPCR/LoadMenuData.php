@@ -85,6 +85,7 @@ class LoadMenuData implements ContainerAwareInterface, FixtureInterface, Ordered
         $this->createMenuNode($manager, $seo, 'simple-seo-example', array('en' => 'Seo-Simple-Content'), $manager->find(null, "$content_path/simple-seo-example"));
         $this->createMenuNode($manager, $seo, 'demo-seo-extractor', array('en' => 'Seo-Extractor'), $manager->find(null, "$content_path/demo-seo-extractor"));
         $this->createMenuNode($manager, $seo, 'simple-seo-property', array('en' => 'Seo-Extra-Properties'), $manager->find(null, "$content_path/simple-seo-property"));
+        $this->createMenuNode($manager, $seo, 'seo-error-pages', array('en' => 'Seo-Error-Pages'), $manager->find(null, "$content_path/seo-error-pages"));
         $this->createMenuNode($manager, $seo, 'seo-sitemap', 'Sitemap', null, '/sitemaps/sitemap.html');
 
         $this->createMenuNode($manager, $main, 'routing-auto-item', array('en' => 'Auto routing example', 'de' => 'Auto routing beispiel', 'fr' => 'Auto routing exemple'), $manager->find(null, "$content_path/news/RoutingAutoBundle generates routes!"));
