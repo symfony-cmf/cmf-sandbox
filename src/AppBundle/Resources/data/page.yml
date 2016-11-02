@@ -258,21 +258,6 @@ static:
                 <li><a href="/demo/controlle">Error!!</a></li>
                 <li><a href="/en/company/mor">Error!!</a></li>
               </ul>
-          fr: |
-              TODO: translate
-              Fehlerseiten, eventuell sogar mit Stack-Traces von Exceptions, gehören schon seid längerem der Vergangenheit
-              an. Symfony bietet dabei schon im Zusammenspiel mit dem TwigBundle eine Möglichkeit Fehlerseiten
-              selbst zu erstellen oder bestehende zu manipulieren.<br />
-              Mit dem SymfonyCMF und dem PHPCR haben wir Zugriff auf den Baum indem der Content und deren Routes abgelegt
-              sind. Warum dann nicht gleich Möglichkeiten für das weiter Navigieren anzeigen, wenn ein Nutzer
-              eine fehlerhafte URL hat? Zwei sog. SuggestionProvider
-              helfen dabei mögliche Matches für Nachbarn der fehlerhaften URL-Eingabe oder, wenn vorhanden, einen
-              darüber angeordneten Content anzuzeiten. <br />
-              Probiert es einfach aus, nehm buchstaben aus der aktuellen url oder probiert einden der folgenden links:
-              <ul>
-                <li><a href="/demo/controller">Error!!</a></li>
-                <li><a href="/fr/company/mor">Error!!</a></li>
-              </ul>
           de: |
               Fehlerseiten, eventuell sogar mit Stack-Traces von Exceptions, gehören schon seid längerem der Vergangenheit
               an. Symfony bietet dabei schon im Zusammenspiel mit dem TwigBundle eine Möglichkeit Fehlerseiten
@@ -282,7 +267,7 @@ static:
               eine fehlerhafte URL hat? Zwei sog. SuggestionProvider
               helfen dabei mögliche Matches für Nachbarn der fehlerhaften URL-Eingabe oder, wenn vorhanden, einen
               darüber angeordneten Content anzuzeiten. <br />
-              Probiert es einfach aus, nehm buchstaben aus der aktuellen url oder probiert einden der folgenden links:
+              Probiere es einfach aus, nimm Buchstaben aus der aktuellen url oder probiert einen der folgenden Links:
               <ul>
                 <li><a href="/demo/controller">Error!!</a></li>
                 <li><a href="/de/company/mor">Error!!</a></li>
