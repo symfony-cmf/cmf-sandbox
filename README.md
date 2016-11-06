@@ -29,13 +29,6 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
     curl -s http://getcomposer.org/installer | php --
     php composer.phar install
 
-Note: On Windows you need to run the shell as Administrator or edit the `composer.json` and
-change the line `"symfony-assets-install": "symlink"` to `"symfony-assets-install": ""`
-If you fail to do this you might receive:
-
-    [Symfony\Component\Filesystem\Exception\IOException]
-    Unable to create symlink due to error code 1314: 'A required privilege is not held by the client'. Do you have the required Administrator-rights?
-
 At the end of the installation you will be interactively asked several configuration
 questions. Note that by default you will end up with a configuration using
 SQLite and Doctrine DBAL for storage. If you want to adjust the configuration
