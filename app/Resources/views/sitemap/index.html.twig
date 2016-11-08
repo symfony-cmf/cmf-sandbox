@@ -3,10 +3,11 @@
 {% block content %}
     <h1>Sitemap</h1>
     <p>
-        The sitemap feature allows to display different lists of you content by their routes. Again the content document
-        classes decides whether to display on a sitemap or not. The sitemap of the symfony-cmf sandbox is relatively flat
-        cause the routes of the content is flat. But the you can indent your items by depth information of your route.<br />
-        Same information, that you can see well arranged for a human user, can be requested by a search engine in
+        The sitemap feature allows to give an overview of the content.
+        The content document decides whether it should be displayed on a sitemap or not.
+        The sitemap of the symfony-cmf sandbox is relatively flat because the content URL structure is flat.
+        If you have deeper nested content, the sitemap is organized along the nested structure.<br />
+        This information is arranged for human users. For search engines, the sitemap also exists in
         an <a href="{{ url('cmf_seo_sitemap', {_format: 'xml', sitemap: 'sitemap'}) }}">xml format</a>.
     </p>
     <ul class="cmf-sitemap">
