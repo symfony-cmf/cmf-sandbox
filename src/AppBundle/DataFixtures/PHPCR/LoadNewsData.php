@@ -48,7 +48,7 @@ class LoadNewsData implements ContainerAwareInterface, FixtureInterface, Ordered
 'This is a news item which demonstrates the routing auto bundle. The routing
 auto bundle automatically creates routes for documents which are persisted.
 
-See the routing auto <a href="https://github.com/symfony-cmf/cmf-sandbox/tree/1.2/src/AppBundle/Resources/config/cmf_routing_auto.yml">configuration file</a> to see how this works.
+See the routing auto <a href="https://github.com/symfony-cmf/cmf-sandbox/blob/master/src/AppBundle/Resources/config/cmf_routing_auto.yml">configuration file</a> to see how this works.
 EOT
     );
 
