@@ -117,15 +117,15 @@ cmf_seo:
          enable_parent_provider: true
          enable_sibling_provider: true
          templates:
-             html: ":error:index.html.twig"
+             html: ":error/index.html.twig"
          exclusion_rules:
              - { path: 'excluded' }
     sitemap:
          defaults:
              default_change_frequency: never
              templates:
-                 xml: ':sitemap:index.xml.twig'
-                 html: ':sitemap:index.html.twig'
+                 xml: ':sitemap/index.xml.twig'
+                 html: ':sitemap/index.html.twig'
          configurations:
              sitemap: ~
              frequent:

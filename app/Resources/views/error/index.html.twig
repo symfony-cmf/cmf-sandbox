@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block content %}
     <h1>Oops! An Error Occurred</h1>
@@ -18,7 +18,17 @@
     {{ exception.getMessage() }}
 
     <h3>Suggested pages</h3>
+    <div class="alert  alert-info  clearfix">
+        <p>
+            This page is rendered by the
+            <code>SuggestionProviderController</code>
+            of the CmfSeoBundle. This way, usefull suggestions can be shown to your users.
+        </p>
 
+        <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/error_pages.html">
+            <i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.
+        </a>
+    </div>
     {% for group, list in best_matches if list is not empty %}
         <h4>{{ group|capitalize }}</h4>
         <ul>
