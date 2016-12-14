@@ -127,6 +127,15 @@ cmf_resource_rest:
     enhancer_map:
         - { repository: default, enhancer: sonata_admin }
 
+cmf_sonata_admin_integration:
+  bundles:
+    seo: ~
+    menu: ~
+    core: ~
+    content: ~
+    block: ~
+    routing: ~
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -144,30 +153,30 @@ sonata_block:
 
 sonata_admin:
     extensions:
-        cmf_core.admin_extension.child:
+        cmf_sonata_admin_integration.core.extension.child:
             implements:
                 - Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface
-        cmf_core.admin_extension.publish_workflow.time_period:
+        cmf_sonata_admin_integration.core.extension.publish_workflow.time_period:
             implements:
                 - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface
-        cmf_core.admin_extension.publish_workflow.publishable:
+        cmf_sonata_admin_integration.core.extension.publish_workflow.publishable:
             implements:
                 - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface
-        cmf_menu.admin_extension.menu_node_referrers:
+        cmf_sonata_admin_integration.menu.extension.menu_node_referrers:
             implements:
                 - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
-        cmf_menu.admin_extension.menu_options:
+        cmf_sonata_admin_integration.menu.extension.menu_options:
             implements:
                 - Symfony\Cmf\Bundle\MenuBundle\Model\MenuOptionsInterface
-        cmf_routing.admin_extension.route_referrers:
+        cmf_sonata_admin_integration.routing.extension.route_referrers:
             implements:
                 - Symfony\Cmf\Component\Routing\RouteReferrersInterface
-        cmf_routing.admin_extension.frontend_link:
+        cmf_sonata_admin_integration.routing.extension.frontend_link:
             implements:
                 - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
             extends:
                 - Symfony\Component\Routing\Route
-        cmf_seo.admin_extension:
+        cmf_sonata_admin_integration.seo.admin_extension:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
@@ -183,23 +192,23 @@ sonata_admin:
                 label: Content
                 icon: '<i class="fa fa-file-text-o"></i>'
                 items:
-                    - cmf_content.admin
-                    - cmf_block.simple_admin
-                    - cmf_block.container_admin
-                    - cmf_block.reference_admin
-                    - cmf_block.action_admin
+                    - cmf_sonata_admin_integration.content.admin
+                    - cmf_sonata_admin_integration.block.simple_admin
+                    - cmf_sonata_admin_integration.block.container_admin
+                    - cmf_sonata_admin_integration.block.reference_admin
+                    - cmf_sonata_admin_integration.block.action_admin
             routing:
                 label: URLs
                 icon: '<i class="fa fa-link"></i>'
                 items:
-                    - cmf_routing.route_admin
-                    - cmf_routing.redirect_route_admin
+                    - cmf_sonata_admin_integration.routing.route_admin
+                    - cmf_sonata_admin_integration.routing.redirect_route_admin
             menu:
                 label: Menu
                 icon: '<i class="fa  fa-bars"></i>'
                 items:
-                    - cmf_menu.menu_admin
-                    - cmf_menu.node_admin
+                    - cmf_sonata_admin_integration.menu.menu_admin
+                    - cmf_sonata_admin_integration.menu.node_admin
 
 sonata_doctrine_phpcr_admin:
     templates:

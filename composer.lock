@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7a0794fbf71f355515bd916edc5be371",
-    "content-hash": "4d2bf5b7ac73b936a2c3a2164c6174b6",
+    "hash": "67a250e17d3c11b9944ff6e2679fe662",
+    "content-hash": "98f33e89bf605c6326a518236c35e71a",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3548,12 +3548,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/block-bundle.git",
-                "reference": "f17d98e228130a398cdffdf96d5c5515b351f621"
+                "reference": "cb1b3723e2e97ef0b22f387109f956270217209d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/block-bundle/zipball/f17d98e228130a398cdffdf96d5c5515b351f621",
-                "reference": "f17d98e228130a398cdffdf96d5c5515b351f621",
+                "url": "https://api.github.com/repos/symfony-cmf/block-bundle/zipball/cb1b3723e2e97ef0b22f387109f956270217209d",
+                "reference": "cb1b3723e2e97ef0b22f387109f956270217209d",
                 "shasum": ""
             },
             "require": {
@@ -3565,12 +3565,11 @@
                 "symfony/framework-bundle": "^2.8|^3.0"
             },
             "require-dev": {
-                "sonata-project/admin-bundle": "^2.3.7|^3.0",
                 "sonata-project/cache-bundle": "^2.1.3,<2.3",
                 "sonata-project/core-bundle": "^2.2.5|^3.0",
-                "sonata-project/doctrine-phpcr-admin-bundle": "^1.2.4|^2.0",
                 "symfony-cmf/menu-bundle": "^2.0",
                 "symfony-cmf/testing": "^1.3|^2.0",
+                "symfony/phpunit-bridge": "^3.2",
                 "twig/twig": "^1.14.2|^2.0"
             },
             "suggest": {
@@ -3587,7 +3586,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Cmf\\Bundle\\BlockBundle\\": ""
+                    "Symfony\\Cmf\\Bundle\\BlockBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3607,7 +3606,7 @@
                 "block",
                 "content fragments"
             ],
-            "time": "2016-08-02 06:11:00"
+            "time": "2016-12-12 10:48:18"
         },
         {
             "name": "symfony-cmf/content-bundle",
@@ -3615,12 +3614,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/content-bundle.git",
-                "reference": "0e257a206fd52d7f89d16a56f90996357576415b"
+                "reference": "3ac0ac02c2aa17dcea5554acbc00ab0e86d55efb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/content-bundle/zipball/0e257a206fd52d7f89d16a56f90996357576415b",
-                "reference": "0e257a206fd52d7f89d16a56f90996357576415b",
+                "url": "https://api.github.com/repos/symfony-cmf/content-bundle/zipball/3ac0ac02c2aa17dcea5554acbc00ab0e86d55efb",
+                "reference": "3ac0ac02c2aa17dcea5554acbc00ab0e86d55efb",
                 "shasum": ""
             },
             "require": {
@@ -3631,17 +3630,18 @@
                 "symfony/framework-bundle": "^2.8|^3.0"
             },
             "require-dev": {
-                "doctrine/phpcr-odm": "^2.0@dev",
-                "sonata-project/doctrine-phpcr-admin-bundle": "^2.0@dev",
-                "symfony-cmf/testing": "^2.0@dev",
-                "symfony/monolog-bundle": "^2.8|^3.0"
+                "doctrine/phpcr-odm": "^2.0",
+                "egeloen/ckeditor-bundle": "^4.0",
+                "symfony-cmf/testing": "^2.0",
+                "symfony-cmf/tree-browser-bundle": "^2.0",
+                "symfony/phpunit-bridge": "^3.2"
             },
             "suggest": {
                 "doctrine/phpcr-bundle": "To integrate PHPCR-ODM with Symfony",
                 "doctrine/phpcr-odm": "To persist content with the PHP content repository",
-                "egeloen/ckeditor-bundle": "to provide a CKEditor in the admin interface",
+                "egeloen/ckeditor-bundle": "to provide a CKEditor in the form type",
                 "friendsofsymfony/rest-bundle": "Improved handling for different output formats",
-                "sonata-project/doctrine-phpcr-admin-bundle": "To provide admin interfaces for the content (^1.1)"
+                "symfony-cmf/sonata-admin-integration-bundle": "To provide admin interfaces for the content"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -3651,7 +3651,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Cmf\\Bundle\\ContentBundle\\": ""
+                    "Symfony\\Cmf\\Bundle\\ContentBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3669,7 +3669,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2016-07-05 17:37:28"
+            "time": "2016-12-13 07:45:26"
         },
         {
             "name": "symfony-cmf/core-bundle",
@@ -3677,12 +3677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/core-bundle.git",
-                "reference": "95190fda161b5dbff78da4cfbdf0dccbbf5eadd9"
+                "reference": "8c7f94f8d24b5986219f477ce1242a49d0367674"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/core-bundle/zipball/95190fda161b5dbff78da4cfbdf0dccbbf5eadd9",
-                "reference": "95190fda161b5dbff78da4cfbdf0dccbbf5eadd9",
+                "url": "https://api.github.com/repos/symfony-cmf/core-bundle/zipball/8c7f94f8d24b5986219f477ce1242a49d0367674",
+                "reference": "8c7f94f8d24b5986219f477ce1242a49d0367674",
                 "shasum": ""
             },
             "require": {
@@ -3694,7 +3694,6 @@
                 "doctrine/dbal": "2.5.*",
                 "doctrine/phpcr-odm": "^1.0|^2.0",
                 "mockery/mockery": "^0.9.4",
-                "sonata-project/doctrine-phpcr-admin-bundle": "^1.2.3|^2.0",
                 "symfony-cmf/routing-bundle": "^1.2|^2.0",
                 "symfony-cmf/testing": "^1.3|^2.0",
                 "symfony/security-bundle": "^2.8|^3.0"
@@ -3702,10 +3701,9 @@
             "suggest": {
                 "doctrine/phpcr-bundle": "To be able to use the CMF twig extension (^1.0)",
                 "doctrine/phpcr-odm": "To be able to use the CMF twig extension (^1.0)",
-                "sonata-project/admin-bundle": "To be able to enable the publish_workflow_listener extension (^2.2)",
-                "sonata-project/translation-bundle": "To be able to edit translatable documents (^1.0)",
                 "symfony-cmf/routing": "To be able to use the CMF twig extension functions cmf_prev_linkable/cmf_next_linkable (^1.2)",
                 "symfony-cmf/routing-bundle": "To be able to enable the publish_workflow_listener (^1.2)",
+                "symfony-cmf/sonata-admin-integration-bundle": "To provide an admin interface for the PHPCR ODM documents.",
                 "symfony/security-bundle": "To be able to use the publish workflow system (^2.1)",
                 "symfony/twig-bundle": "To get access to the CMF twig extension (^2.1)"
             },
@@ -3735,7 +3733,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2016-08-03 11:55:07"
+            "time": "2016-12-12 11:10:31"
         },
         {
             "name": "symfony-cmf/menu-bundle",
@@ -3743,12 +3741,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/menu-bundle.git",
-                "reference": "0e97a6356849390b8b70a54a30ee2f9fbcb9a91f"
+                "reference": "a78896da22fdde57269f2814ebde127dc5f8f4e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/menu-bundle/zipball/0e97a6356849390b8b70a54a30ee2f9fbcb9a91f",
-                "reference": "0e97a6356849390b8b70a54a30ee2f9fbcb9a91f",
+                "url": "https://api.github.com/repos/symfony-cmf/menu-bundle/zipball/a78896da22fdde57269f2814ebde127dc5f8f4e6",
+                "reference": "a78896da22fdde57269f2814ebde127dc5f8f4e6",
                 "shasum": ""
             },
             "require": {
@@ -3761,18 +3759,13 @@
                 "symfony/framework-bundle": "^2.8|^3.0"
             },
             "require-dev": {
-                "sonata-project/admin-bundle": "^2.3.7|^3.0",
-                "sonata-project/block-bundle": "^2.2.8|^3.0",
-                "sonata-project/core-bundle": "^2.2.5|^3.0",
-                "sonata-project/doctrine-phpcr-admin-bundle": "^2.0",
                 "symfony-cmf/routing-bundle": "^1.4|^2.0",
                 "symfony-cmf/testing": "^2.0",
                 "symfony/monolog-bundle": "^2.3|^3.0",
                 "twig/twig": "^1.18|^2.0"
             },
             "suggest": {
-                "burgov/key-value-form-bundle": "if you want to edit the advanced options on the node with the menu options extension",
-                "sonata-project/doctrine-phpcr-admin-bundle": "if you want to have editing capabilities (^1.1)"
+                "burgov/key-value-form-bundle": "if you want to edit the advanced options on the node with the menu options extension"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -3782,7 +3775,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Cmf\\Bundle\\MenuBundle\\": ""
+                    "Symfony\\Cmf\\Bundle\\MenuBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3801,7 +3794,7 @@
                 "Symfony CMF",
                 "menu"
             ],
-            "time": "2016-07-18 07:54:39"
+            "time": "2016-12-13 07:43:31"
         },
         {
             "name": "symfony-cmf/resource",
@@ -4154,12 +4147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/routing-bundle.git",
-                "reference": "d1b42c0fea4531e7ddec5a146404f3e8bbf96eed"
+                "reference": "3b8b534a7c71d45fa95007de6069de76ef8338fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/routing-bundle/zipball/d1b42c0fea4531e7ddec5a146404f3e8bbf96eed",
-                "reference": "d1b42c0fea4531e7ddec5a146404f3e8bbf96eed",
+                "url": "https://api.github.com/repos/symfony-cmf/routing-bundle/zipball/3b8b534a7c71d45fa95007de6069de76ef8338fa",
+                "reference": "3b8b534a7c71d45fa95007de6069de76ef8338fa",
                 "shasum": ""
             },
             "require": {
@@ -4180,18 +4173,18 @@
                 "sonata-project/admin-bundle": "^2.3.7|^3.0",
                 "sonata-project/block-bundle": "^2.2.8|^3.0",
                 "sonata-project/core-bundle": "^2.2.5|^3.0",
-                "sonata-project/doctrine-phpcr-admin-bundle": "^1.2.4|^2.0",
                 "symfony-cmf/core-bundle": "^2.0",
                 "symfony-cmf/testing": "^2.0",
-                "symfony/monolog-bundle": "^2.3|^3.0"
+                "symfony/monolog-bundle": "^2.3|^3.0",
+                "symfony/phpunit-bridge": "^3.2"
             },
             "suggest": {
                 "doctrine/orm": "To enable support for the ORM entities (^2.3)",
                 "doctrine/phpcr-bundle": "To enable support for the PHPCR ODM documents",
                 "doctrine/phpcr-odm": "To enable support for the PHPCR ODM documents (^1.3)",
-                "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin interface for the PHPCR ODM documents (^1.1)",
                 "symfony-cmf/content-bundle": "To optionally use the configured value for 'content_basepath' from the CoreBundle",
-                "symfony-cmf/core-bundle": "To use the provided Doctrine\\Phpcr documents and for easier configuration (^1.1)"
+                "symfony-cmf/core-bundle": "To use the provided Doctrine\\Phpcr documents and for easier configuration (^1.1)",
+                "symfony-cmf/sonata-admin-integration": "To provide an admin interface for the PHPCR ODM documents (^1.1)"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4220,7 +4213,7 @@
                 "database",
                 "routing"
             ],
-            "time": "2016-07-12 06:16:59"
+            "time": "2016-12-04 22:16:26"
         },
         {
             "name": "symfony-cmf/seo-bundle",
@@ -4340,6 +4333,77 @@
                 "urlize"
             ],
             "time": "2016-03-31 08:06:29"
+        },
+        {
+            "name": "symfony-cmf/sonata-admin-integration-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony-cmf/sonata-admin-integration-bundle.git",
+                "reference": "c2e469f56eac66a80d3b8a50950e193223cb0b47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony-cmf/sonata-admin-integration-bundle/zipball/c2e469f56eac66a80d3b8a50950e193223cb0b47",
+                "reference": "c2e469f56eac66a80d3b8a50950e193223cb0b47",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.6|^7.0",
+                "sonata-project/admin-bundle": "^3.6.0",
+                "sonata-project/doctrine-phpcr-admin-bundle": "^2.0",
+                "symfony/framework-bundle": "^2.8|^3.0"
+            },
+            "require-dev": {
+                "burgov/key-value-form-bundle": "^1.0",
+                "doctrine/orm": "^2.4",
+                "doctrine/phpcr-odm": "^2.0",
+                "matthiasnoback/symfony-config-test": "^1.3.1",
+                "matthiasnoback/symfony-dependency-injection-test": "~0.6",
+                "symfony-cmf/block-bundle": "^2.0",
+                "symfony-cmf/core-bundle": "^2.0",
+                "symfony-cmf/menu-bundle": "^2.0",
+                "symfony-cmf/routing-bundle": "^2.0",
+                "symfony-cmf/seo-bundle": "^2.0",
+                "symfony-cmf/testing": "^2.0",
+                "symfony/phpunit-bridge": "^3.2"
+            },
+            "suggest": {
+                "doctrine/doctrine-bundle": "To persist the metadata in ORM entities",
+                "doctrine/orm": "To persist the metadata in ORM entities, ~2.4",
+                "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
+                "symfony-cmf/routing-bundle": "To make use of the alternate locale provider."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Cmf\\Bundle\\SonataAdminIntegrationBundle\\": "src/",
+                    "Symfony\\Cmf\\Bundle\\SonataAdminIntegrationBundle\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony CMF Community",
+                    "homepage": "https://github.com/symfony-cmf/sonata-admin-bundle/contributors"
+                }
+            ],
+            "description": "Symfony CMF sonata admin implementations",
+            "homepage": "http://cmf.symfony.com",
+            "keywords": [
+                "Symfony CMF",
+                "admin",
+                "sonata"
+            ],
+            "time": "2016-12-12 16:57:41"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
