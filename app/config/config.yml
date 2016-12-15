@@ -88,11 +88,6 @@ cmf_core:
         phpcr:
             enabled: true
 
-cmf_content:
-    persistence:
-        phpcr:
-            document_class: AppBundle\Document\DemoSeoContent
-
 cmf_routing:
     chain:
         routers_by_id:
