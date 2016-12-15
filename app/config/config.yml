@@ -128,13 +128,13 @@ cmf_resource_rest:
         - { repository: default, enhancer: sonata_admin }
 
 cmf_sonata_admin_integration:
-  bundles:
-    seo: ~
-    menu: ~
-    core: ~
-    content: ~
-    block: ~
-    routing: ~
+    bundles:
+        seo: ~
+        menu: ~
+        core: ~
+        content: ~
+        block: ~
+        routing: ~
 
 sonata_block:
     default_contexts: [cms]
