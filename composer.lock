@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "67a250e17d3c11b9944ff6e2679fe662",
-    "content-hash": "98f33e89bf605c6326a518236c35e71a",
+    "hash": "ba028b959bc8ce37df0891ada763088a",
+    "content-hash": "d8f6efb3082cb797f8fb42668068728c",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1959,7 +1959,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -2018,7 +2018,7 @@
                     "email": "stof@notk.org"
                 },
                 {
-                    "name": "KnpLabs",
+                    "name": "Knplabs",
                     "homepage": "http://knplabs.com"
                 },
                 {
@@ -2831,16 +2831,16 @@
         },
         {
             "name": "sonata-project/admin-bundle",
-            "version": "3.4.0",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "72d2b3f2af05df81f091cd40b295449ce6c5ce07"
+                "reference": "685f48a662df8ce3b5d00d338e1df79cb35c2357"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/72d2b3f2af05df81f091cd40b295449ce6c5ce07",
-                "reference": "72d2b3f2af05df81f091cd40b295449ce6c5ce07",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/685f48a662df8ce3b5d00d338e1df79cb35c2357",
+                "reference": "685f48a662df8ce3b5d00d338e1df79cb35c2357",
                 "shasum": ""
             },
             "require": {
@@ -2921,7 +2921,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2016-07-05 09:21:49"
+            "time": "2016-06-04 15:30:52"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -3206,12 +3206,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "2e2cd0ab80e3974059ba9873a5c9c746b8e05076"
+                "reference": "d6dc2964f0bd9d493cbe6a794421d30d3e4b0cdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/2e2cd0ab80e3974059ba9873a5c9c746b8e05076",
-                "reference": "2e2cd0ab80e3974059ba9873a5c9c746b8e05076",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/d6dc2964f0bd9d493cbe6a794421d30d3e4b0cdf",
+                "reference": "d6dc2964f0bd9d493cbe6a794421d30d3e4b0cdf",
                 "shasum": ""
             },
             "require": {
@@ -3275,7 +3275,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2016-07-16 01:55:05"
+            "time": "2016-11-25 01:02:23"
         },
         {
             "name": "sonata-project/exporter",
@@ -3420,17 +3420,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataTranslationBundle.git",
-                "reference": "43e1ce5d310680422cec40f3341dba7bfc7279b0"
+                "reference": "5dbf44d6cc431373ebd39c3e494197a2ba3c1cc0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataTranslationBundle/zipball/43e1ce5d310680422cec40f3341dba7bfc7279b0",
-                "reference": "43e1ce5d310680422cec40f3341dba7bfc7279b0",
+                "url": "https://api.github.com/repos/sonata-project/SonataTranslationBundle/zipball/5dbf44d6cc431373ebd39c3e494197a2ba3c1cc0",
+                "reference": "5dbf44d6cc431373ebd39c3e494197a2ba3c1cc0",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.4 || ^7.0",
-                "sonata-project/admin-bundle": "^3.0",
+                "sonata-project/admin-bundle": "^3.1",
                 "sonata-project/core-bundle": "^3.0",
                 "symfony/framework-bundle": "^2.3 || ^3.0",
                 "symfony/options-resolver": "^2.3 || ^3.0",
@@ -3487,7 +3487,7 @@
                 "i18n",
                 "translation"
             ],
-            "time": "2016-07-05 14:43:24"
+            "time": "2016-11-24 02:10:09"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3548,12 +3548,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/block-bundle.git",
-                "reference": "cb1b3723e2e97ef0b22f387109f956270217209d"
+                "reference": "069904c3ce7506ec0ff24a1a5daf0c3c61ee64e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/block-bundle/zipball/cb1b3723e2e97ef0b22f387109f956270217209d",
-                "reference": "cb1b3723e2e97ef0b22f387109f956270217209d",
+                "url": "https://api.github.com/repos/symfony-cmf/block-bundle/zipball/069904c3ce7506ec0ff24a1a5daf0c3c61ee64e9",
+                "reference": "069904c3ce7506ec0ff24a1a5daf0c3c61ee64e9",
                 "shasum": ""
             },
             "require": {
@@ -3606,7 +3606,7 @@
                 "block",
                 "content fragments"
             ],
-            "time": "2016-12-12 10:48:18"
+            "time": "2016-12-15 13:38:00"
         },
         {
             "name": "symfony-cmf/content-bundle",
@@ -3614,12 +3614,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/content-bundle.git",
-                "reference": "3ac0ac02c2aa17dcea5554acbc00ab0e86d55efb"
+                "reference": "e9204debfc4198bc3a7ba1c00eda178fa425b6ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/content-bundle/zipball/3ac0ac02c2aa17dcea5554acbc00ab0e86d55efb",
-                "reference": "3ac0ac02c2aa17dcea5554acbc00ab0e86d55efb",
+                "url": "https://api.github.com/repos/symfony-cmf/content-bundle/zipball/e9204debfc4198bc3a7ba1c00eda178fa425b6ca",
+                "reference": "e9204debfc4198bc3a7ba1c00eda178fa425b6ca",
                 "shasum": ""
             },
             "require": {
@@ -3669,7 +3669,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2016-12-13 07:45:26"
+            "time": "2016-12-15 07:42:06"
         },
         {
             "name": "symfony-cmf/core-bundle",
@@ -3677,12 +3677,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/core-bundle.git",
-                "reference": "8c7f94f8d24b5986219f477ce1242a49d0367674"
+                "reference": "3afa1424822ed88e818cff63534ebbba40d50dce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/core-bundle/zipball/8c7f94f8d24b5986219f477ce1242a49d0367674",
-                "reference": "8c7f94f8d24b5986219f477ce1242a49d0367674",
+                "url": "https://api.github.com/repos/symfony-cmf/core-bundle/zipball/3afa1424822ed88e818cff63534ebbba40d50dce",
+                "reference": "3afa1424822ed88e818cff63534ebbba40d50dce",
                 "shasum": ""
             },
             "require": {
@@ -3715,7 +3715,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Cmf\\Bundle\\CoreBundle\\": ""
+                    "Symfony\\Cmf\\Bundle\\CoreBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3733,7 +3733,7 @@
             "keywords": [
                 "Symfony CMF"
             ],
-            "time": "2016-12-12 11:10:31"
+            "time": "2016-12-14 07:32:13"
         },
         {
             "name": "symfony-cmf/menu-bundle",
@@ -3911,12 +3911,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/resource-rest-bundle.git",
-                "reference": "0d447c0ba411c656878b4f308ec74610b99a145f"
+                "reference": "bdde75b2425c762e94ea9b0b56d9459d319b2fbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/resource-rest-bundle/zipball/0d447c0ba411c656878b4f308ec74610b99a145f",
-                "reference": "0d447c0ba411c656878b4f308ec74610b99a145f",
+                "url": "https://api.github.com/repos/symfony-cmf/resource-rest-bundle/zipball/bdde75b2425c762e94ea9b0b56d9459d319b2fbc",
+                "reference": "bdde75b2425c762e94ea9b0b56d9459d319b2fbc",
                 "shasum": ""
             },
             "require": {
@@ -3962,7 +3962,7 @@
             ],
             "description": "Bundle which provides a REST API for resources",
             "homepage": "http://cmf.symfony.com",
-            "time": "2016-07-07 06:24:56"
+            "time": "2016-10-18 08:23:44"
         },
         {
             "name": "symfony-cmf/routing",
@@ -4011,7 +4011,7 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony CMF community",
+                    "name": "Symfony CMF Community",
                     "homepage": "https://github.com/symfony-cmf/Routing/contributors"
                 }
             ],
@@ -4029,12 +4029,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/routing-auto.git",
-                "reference": "54b53a10bb6949c0e916b9b2a14bb2090dda7e5c"
+                "reference": "5e4e1dab7e2da81fbd6174953ac02ea5d1cb2db8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/routing-auto/zipball/54b53a10bb6949c0e916b9b2a14bb2090dda7e5c",
-                "reference": "54b53a10bb6949c0e916b9b2a14bb2090dda7e5c",
+                "url": "https://api.github.com/repos/symfony-cmf/routing-auto/zipball/5e4e1dab7e2da81fbd6174953ac02ea5d1cb2db8",
+                "reference": "5e4e1dab7e2da81fbd6174953ac02ea5d1cb2db8",
                 "shasum": ""
             },
             "require": {
@@ -4078,7 +4078,7 @@
             ],
             "description": "Component for automatically creating and managing routes for persisted objects",
             "homepage": "http://cmf.symfony.com",
-            "time": "2016-05-02 08:08:04"
+            "time": "2016-10-26 14:19:37"
         },
         {
             "name": "symfony-cmf/routing-auto-bundle",
@@ -4147,12 +4147,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/routing-bundle.git",
-                "reference": "3b8b534a7c71d45fa95007de6069de76ef8338fa"
+                "reference": "1ed85ee87332d33f5bfde59cd8ea852bfc005df5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/routing-bundle/zipball/3b8b534a7c71d45fa95007de6069de76ef8338fa",
-                "reference": "3b8b534a7c71d45fa95007de6069de76ef8338fa",
+                "url": "https://api.github.com/repos/symfony-cmf/routing-bundle/zipball/1ed85ee87332d33f5bfde59cd8ea852bfc005df5",
+                "reference": "1ed85ee87332d33f5bfde59cd8ea852bfc005df5",
                 "shasum": ""
             },
             "require": {
@@ -4194,7 +4194,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Cmf\\Bundle\\RoutingBundle\\": ""
+                    "Symfony\\Cmf\\Bundle\\RoutingBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4213,7 +4213,7 @@
                 "database",
                 "routing"
             ],
-            "time": "2016-12-04 22:16:26"
+            "time": "2016-12-14 07:30:41"
         },
         {
             "name": "symfony-cmf/seo-bundle",
@@ -4221,12 +4221,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/seo-bundle.git",
-                "reference": "42b57a705be80b766df994e0fa841db191c0122b"
+                "reference": "ef6aca39d5c2ee48242d98ea9b9a8bf1da265a38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/seo-bundle/zipball/42b57a705be80b766df994e0fa841db191c0122b",
-                "reference": "42b57a705be80b766df994e0fa841db191c0122b",
+                "url": "https://api.github.com/repos/symfony-cmf/seo-bundle/zipball/ef6aca39d5c2ee48242d98ea9b9a8bf1da265a38",
+                "reference": "ef6aca39d5c2ee48242d98ea9b9a8bf1da265a38",
                 "shasum": ""
             },
             "require": {
@@ -4245,18 +4245,18 @@
                 "sonata-project/block-bundle": "^2.2.8|^3.0",
                 "sonata-project/core-bundle": "^2.2.5|^3.0",
                 "sonata-project/doctrine-phpcr-admin-bundle": "^1.2.3|^2.0",
-                "symfony-cmf/core-bundle": "^1.1|^2.0",
-                "symfony-cmf/routing-bundle": "^1.4|^2.0",
-                "symfony-cmf/testing": "^2.0"
+                "symfony-cmf/core-bundle": "^2.0",
+                "symfony-cmf/routing-bundle": "^1.4.0|^2.0",
+                "symfony-cmf/testing": "^2.0",
+                "symfony/phpunit-bridge": "^3.2"
             },
             "suggest": {
-                "burgov/key-value-form-bundle": "To edit the seo metadata 'extra' fields",
                 "doctrine/doctrine-bundle": "To persist the metadata in ORM entities",
                 "doctrine/orm": "To persist the metadata in ORM entities, ~2.4",
                 "doctrine/phpcr-bundle": "To persist the metadata in PHPCR ODM documents",
-                "sonata-project/doctrine-phpcr-admin-bundle": "To provide an admin extension for the seo metadata",
                 "symfony-cmf/core-bundle": "When using the provided PHPCR-ODM document",
-                "symfony-cmf/routing-bundle": "To make use of the alternate locale provider."
+                "symfony-cmf/routing-bundle": "To make use of the alternate locale provider.",
+                "symfony-cmf/sonata-admin-integration-bundle": "To provide an admin interface for the PHPCR ODM documents."
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4266,7 +4266,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Cmf\\Bundle\\SeoBundle\\": ""
+                    "Symfony\\Cmf\\Bundle\\SeoBundle\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -4285,7 +4285,7 @@
                 "Symfony CMF",
                 "seo"
             ],
-            "time": "2016-07-05 13:47:28"
+            "time": "2016-12-13 08:19:39"
         },
         {
             "name": "symfony-cmf/slugifier-api",
@@ -4361,6 +4361,7 @@
                 "matthiasnoback/symfony-config-test": "^1.3.1",
                 "matthiasnoback/symfony-dependency-injection-test": "~0.6",
                 "symfony-cmf/block-bundle": "^2.0",
+                "symfony-cmf/content-bundle": "^2.0",
                 "symfony-cmf/core-bundle": "^2.0",
                 "symfony-cmf/menu-bundle": "^2.0",
                 "symfony-cmf/routing-bundle": "^2.0",
@@ -4468,17 +4469,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/tree-browser-bundle.git",
-                "reference": "60a56ba3871fbce4cf7c502c57b021f97fb09029"
+                "reference": "c4329bed83da0ff2e91c4658deffdefd771e8ce7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/60a56ba3871fbce4cf7c502c57b021f97fb09029",
-                "reference": "60a56ba3871fbce4cf7c502c57b021f97fb09029",
+                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/c4329bed83da0ff2e91c4658deffdefd771e8ce7",
+                "reference": "c4329bed83da0ff2e91c4658deffdefd771e8ce7",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.3.3|^7.0",
                 "symfony-cmf/resource-rest-bundle": "~1.0"
+            },
+            "require-dev": {
+                "symfony/form": "^2.8|^3.0"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4508,7 +4512,7 @@
                 "phpcr",
                 "tree"
             ],
-            "time": "2016-06-04 14:45:05"
+            "time": "2016-08-31 15:33:34"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -6132,12 +6136,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/testing.git",
-                "reference": "3da72999b8ece673126c44e0af539cfa68e21c76"
+                "reference": "1f30195b8c6490e2e6e7a38c8e7dc7c70c410229"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/testing/zipball/3da72999b8ece673126c44e0af539cfa68e21c76",
-                "reference": "3da72999b8ece673126c44e0af539cfa68e21c76",
+                "url": "https://api.github.com/repos/symfony-cmf/testing/zipball/1f30195b8c6490e2e6e7a38c8e7dc7c70c410229",
+                "reference": "1f30195b8c6490e2e6e7a38c8e7dc7c70c410229",
                 "shasum": ""
             },
             "require": {
@@ -6176,7 +6180,7 @@
                 }
             ],
             "description": "Component providing tools for writing tests with Symfony.",
-            "time": "2016-07-18 11:14:03"
+            "time": "2016-12-04 19:51:52"
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -6234,7 +6238,14 @@
             "time": "2016-06-29 05:42:25"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "3.6",
+            "alias_normalized": "3.6.0.0",
+            "version": "3.2.0.0",
+            "package": "sonata-project/admin-bundle"
+        }
+    ],
     "minimum-stability": "dev",
     "stability-flags": [],
     "prefer-stable": true,
