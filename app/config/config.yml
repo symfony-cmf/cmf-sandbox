@@ -131,6 +131,7 @@ cmf_sonata_admin_integration:
         block: ~
         routing: ~
 
+
 sonata_block:
     default_contexts: [cms]
     blocks:
@@ -196,7 +197,7 @@ sonata_admin:
                 label: URLs
                 icon: '<i class="fa fa-link"></i>'
                 items:
-                    - cmf_sonata_admin_integration.routing.route_admin
+                    - cmf_sonata_admin_integration.route_admin
                     - cmf_sonata_admin_integration.routing.redirect_route_admin
             menu:
                 label: Menu
