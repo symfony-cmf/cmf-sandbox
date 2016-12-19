@@ -51,6 +51,7 @@ auto bundle automatically creates routes for documents which are persisted.
 See the routing auto <a href="https://github.com/symfony-cmf/cmf-sandbox/blob/master/src/AppBundle/Resources/config/cmf_routing_auto.yml">configuration file</a> to see how this works.
 EOT
     );
+        $news->setIsVisibleForSitemap(true);
 
         $manager->persist($news);
         $manager->flush();

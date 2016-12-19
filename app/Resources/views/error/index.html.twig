@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Oops! An Error Occurred</h1>
+    <h2>The server returned a "{{ status_code }} {{ status_text }}".</h2>
+    <p>If you see this page, it means your sandbox is not correctly set up.
+        Please see the README file in the sandbox root folder and if you can't figure out
+        what is wrong, ask us on freenode irc #symfonycmf or the mailinglist cmfusers@groups.google.com.
+    </p>
+
+    <p>If you are seeing this page as the result of an edit in the admin tool, please report what you were doing
+        to our <a href="https://github.com/symfony-cmf/cmf-sandbox/issues/new">ticket system</a>,
+        so that we can add means to prevent this issue in the future. But to get things working again
+        for now, please just <a href="{{ app.request.getSchemeAndHttpHost() }}/reloadfixtures.php">click here</a>
+        to reload the data fixtures.
+    </p><p style='color:red;'>
+    <strong>Detected the following problem</strong>:
+    {{ exception.getMessage() }}
+
+    <h3>Suggested pages</h3>
+    <div class="alert  alert-info  clearfix">
+        <p>
+            This page is rendered by the
+            <code>SuggestionProviderController</code>
+            of the CmfSeoBundle. This way, usefull suggestions can be shown to your users.
+        </p>
+
+        <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/error_pages.html">
+            <i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation.
+        </a>
+    </div>
+    {% for group, list in best_matches if list is not empty %}
+        <h4>{{ group|capitalize }}</h4>
+        <ul>
+            {% for match in list %}
+                <li><a href="{{ path(match.id) }}">{{ match.content.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h4>No suggestions found</h4>
+    {% endfor %}
+{% endblock %}

@@ -15,6 +15,7 @@ use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
 use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
 use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
+use Symfony\Cmf\Bundle\SeoBundle\SitemapAwareInterface;
 
 /**
  * That example class uses the extractors for the creation of the SeoMetadata.
@@ -23,7 +24,7 @@ use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
  *
  * @author Maximilian Berghoff <Maximilian.Berghoff@gmx.de>
  */
-class DemoSeoContent extends StaticContent implements SeoAwareInterface
+class DemoSeoContent extends StaticContent implements SeoAwareInterface, SitemapAwareInterface
 {
     /**
      * @var SeoMetadata
@@ -31,6 +32,13 @@ class DemoSeoContent extends StaticContent implements SeoAwareInterface
      * @PHPCRODM\Child
      */
     protected $seoMetadata;
+
+    /**
+     * @var bool
+     *
+     * @PHPCRODM\Field(type="boolean", property="visible_for_sitemap")
+     */
+    private $isVisibleForSitemap;
 
     public function __construct()
     {
@@ -52,5 +60,26 @@ class DemoSeoContent extends StaticContent implements SeoAwareInterface
     public function setSeoMetadata($seoMetadata)
     {
         $this->seoMetadata = $seoMetadata;
+    }
+
+    /**
+     * Decision whether a document should be visible
+     * in sitemap or not.
+     *
+     * @param $sitemap
+     *
+     * @return bool
+     */
+    public function isVisibleInSitemap($sitemap)
+    {
+        return $this->isVisibleForSitemap;
+    }
+
+    /**
+     * @param bool $isVisibleForSitemap
+     */
+    public function setIsVisibleForSitemap($isVisibleForSitemap)
+    {
+        $this->isVisibleForSitemap = $isVisibleForSitemap;
     }
 }

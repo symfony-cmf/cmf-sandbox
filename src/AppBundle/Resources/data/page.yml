@@ -236,3 +236,38 @@ static:
                 können einfach ausgelesen werden.
 
                 <a class="docref" href="http://symfony.com/doc/current/cmf/bundles/seo/extractors.html"><i class="glyphicon glyphicon-chevron-right"></i>Read about this feature in the CMF documentation (translation needed).</a>
+    -
+      name: seo-error-pages
+      title:
+          en: SEO error pages
+          de: SEO optimierte Fehlerseiten
+      body:
+          en: |
+              Error pages with stack traces are good for development, but very bad end user experience and
+              a security risk. The default Symfony error handling produces a decent but very unhelpful
+              error page.
+              <br />
+              With the CMF, we have the possibility to do better, particulary on not found pages.
+              The CmfSeoBundle defines the SuggestionProvider. Implementations provide possible alternatives
+              when content is not found. This could be pages with a parent path of the requested path
+              or other custom logic.
+              <br />
+              To see this in action, try to open the following pages:
+              <ul>
+                <li><a href="/demo/controlle">Error!!</a></li>
+                <li><a href="/en/company/mor">Error!!</a></li>
+              </ul>
+          de: |
+              Fehlerseiten mit Stack Traces von Exceptions sind gut zum entwickeln, aber schlecht für
+              die Benutzer der Seite und ein Sicherheitsproblem. Das Symfony Fehlerhandling produziert
+              vernünftige Fehlerseiten, die aber dem Benutzer nicht wirklich weiter helfen.<br />
+              Mit dem CMF haben wir bessere Möglichkeiten, insbesondere wenn etwas nicht gefunden wird.
+              Das CmfSeoBundle definiert SuggestionProvider. Implementationen dieses providers liefern
+              mögliche Alternativen wenn ein Inhalt nicht gefunden wird. Zum Beispiel Nachbarn oder Eltern
+              der gewünschten URL. <br />
+              Probiere es einfach aus, nimm Buchstaben aus der aktuellen URL oder klicke einen dieser Links:
+              <ul>
+                <li><a href="/demo/controller">Error!!</a></li>
+                <li><a href="/de/company/mor">Error!!</a></li>
+              </ul>
+

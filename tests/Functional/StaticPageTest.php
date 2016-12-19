@@ -47,6 +47,7 @@ class StaticPageTest extends WebTestCase
             array('/demo/class', 'Controller by class'),
             array('/hello', 'Hello World!'),
             array('/en/about', 'Some information about us'),
+            'sitemap' => array('/sitemaps/sitemap.html', 'Sitemap'),
         );
     }
 
@@ -64,5 +65,15 @@ class StaticPageTest extends WebTestCase
             $response->headers
         );
         $this->assertContains('"title":"The Team",', $response->getContent());
+    }
+
+    public function testErrorPage()
+    {
+        $client = $this->createClient();
+        $client->request('GET', '/en/company/tea');
+        $this->assertStatusCode(404, $client);
+
+        $response = $client->getResponse();
+        $this->assertContains('Oops! An Error Occurred', $response->getContent());
     }
 }
