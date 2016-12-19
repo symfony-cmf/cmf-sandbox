@@ -172,7 +172,7 @@ sonata_admin:
                 - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
             extends:
                 - Symfony\Component\Routing\Route
-        cmf_sonata_admin_integration.seo.admin_extension:
+        cmf_sonata_admin_integration.seo.extension.metadata:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
@@ -197,7 +197,7 @@ sonata_admin:
                 label: URLs
                 icon: '<i class="fa fa-link"></i>'
                 items:
-                    - cmf_sonata_admin_integration.route_admin
+                    - cmf_sonata_admin_integration.routing.route_admin
                     - cmf_sonata_admin_integration.routing.redirect_route_admin
             menu:
                 label: Menu
