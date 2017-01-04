@@ -29,6 +29,7 @@
         "symfony-cmf/symfony-cmf": "^2.0",
         "symfony-cmf/seo-bundle": "2.0.*",
         "symfony-cmf/routing-auto-bundle": "2.0.*",
+        "symfony-cmf/sonata-phpcr-admin-integration-bundle": "^1.0",
 
         "jackalope/jackalope-doctrine-dbal": "1.2.*",
         "jackalope/jackalope-jackrabbit": "1.2.*",
@@ -47,8 +48,7 @@
         "eko/feedbundle": "^1.2.7",
         "lunetics/locale-bundle": "^2.5",
         "burgov/key-value-form-bundle": "^1.4",
-        "egeloen/ckeditor-bundle": "^4.0",
-        "symfony-cmf/sonata-admin-integration-bundle": "^1.0"
+        "egeloen/ckeditor-bundle": "^4.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
