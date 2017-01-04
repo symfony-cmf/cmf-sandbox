@@ -128,7 +128,9 @@ cmf_sonata_phpcr_admin_integration:
         menu: ~
         core: ~
         content: ~
-        block: ~
+        block:
+          basepath: /cms/content
+          basepath: /cms/content
         routing: ~
 
 

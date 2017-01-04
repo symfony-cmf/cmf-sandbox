@@ -132,7 +132,7 @@ class AdminTest extends WebTestCase
             $this->client->request('GET', $url);
             $res = $this->client->getResponse();
 
-            $this->assertResponseSuccess($res);
+            $this->assertResponseSuccess($res, $url);
 
             $this->testedPatterns[] = $route->getPath();
         }
