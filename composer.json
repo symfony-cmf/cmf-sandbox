@@ -17,29 +17,34 @@
         "psr-4": { "Tests\\": "tests/" }
     },
     "require": {
-        "php": "^5.5.9|^7.0",
-        "symfony/symfony": "^3.0",
+        "php": "^5.6|^7.0",
+        "symfony/symfony": "^3.2",
         "symfony/assetic-bundle": "^2.8",
-        "symfony/swiftmailer-bundle": "^2.3",
-        "symfony/monolog-bundle": "^2.8",
+        "symfony/swiftmailer-bundle": "^2.3.10",
+        "symfony/monolog-bundle": "^3.0.2",
+        "symfony/polyfill-apcu": "^1.0",
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
 
-        "symfony-cmf/symfony-cmf": "^2.0",
-        "symfony-cmf/seo-bundle": "2.0.*",
-        "symfony-cmf/routing-auto-bundle": "2.0.*",
-        "symfony-cmf/sonata-phpcr-admin-integration-bundle": "^1.0",
+        "symfony-cmf/symfony-cmf": "^2.0@dev",
+        "symfony-cmf/seo-bundle": "^2.0",
+        "symfony-cmf/tree-browser-bundle": "^2.0@dev",
+        "symfony-cmf/content-bundle": "^2.0@dev",
+        "symfony-cmf/block-bundle": "^2.0@dev",
+        "symfony-cmf/routing-auto-bundle": "^2.0",
+        "symfony-cmf/sonata-phpcr-admin-integration-bundle": "^1.0@dev",
 
         "jackalope/jackalope-doctrine-dbal": "1.2.*",
         "jackalope/jackalope-jackrabbit": "1.2.*",
         "doctrine/doctrine-bundle": "^1.6",
         "doctrine/data-fixtures": "^1.0",
-        "doctrine/doctrine-cache-bundle": "^1.0",
-        "doctrine/phpcr-odm": "^2.0",
+        "doctrine/doctrine-cache-bundle": "^1.2",
+        "doctrine/phpcr-odm": "^1.4",
 
         "sonata-project/cache-bundle": "^2.1",
         "sonata-project/translation-bundle": "^2.0",
+        "sonata-project/doctrine-phpcr-admin-bundle": "^2.0@dev",
 
         "jms/serializer-bundle": "^1.1",
         "friendsofsymfony/rest-bundle": "~1.7",
@@ -53,7 +58,7 @@
         "liip/functional-test-bundle": "^1.3",
         "symfony-cmf/testing": "^2.0"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "RC",
     "prefer-stable": true,
     "scripts": {
         "post-install-cmd": [

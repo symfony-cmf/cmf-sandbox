@@ -15,3 +15,8 @@ services:
         arguments: ['@knp_menu.helper', '@knp_menu.matcher']
         tags:
             - { name: twig.extension }
+
+    app.resource_voter:
+        class: AppBundle\Security\ResourceVoter
+        tags:
+            - { name: security.voter }

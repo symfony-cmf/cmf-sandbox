@@ -114,13 +114,11 @@ cmf_menu:
         content_identity: ~
 
 cmf_resource:
+    description:
+        enhancers: [sonata_phpcr_admin]
     repositories:
         default:
-            type: doctrine_phpcr_odm
-
-cmf_resource_rest:
-    enhancer_map:
-        - { repository: default, enhancer: sonata_admin }
+            type: doctrine/phpcr-odm
 
 cmf_sonata_phpcr_admin_integration:
     bundles:
