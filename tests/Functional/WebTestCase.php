@@ -47,8 +47,10 @@ abstract class WebTestCase extends BaseWebTestCase
      * Method to assert a 200 response code.
      *
      * This code is taken from symfony-cmf/Testing.
+     * @param Response $response
+     * @param string $url
      */
-    protected function assertResponseSuccess(Response $response)
+    protected function assertResponseSuccess(Response $response, $url = '')
     {
         libxml_use_internal_errors(true);
 
@@ -62,6 +64,10 @@ abstract class WebTestCase extends BaseWebTestCase
             $exception = $result->item(0)->nodeValue;
         }
 
-        $this->assertEquals(200, $response->getStatusCode(), $exception ? 'Exception: "'.trim($exception).'"' : null);
+        $this->assertEquals(
+            200,
+            $response->getStatusCode(),
+            $exception ? 'Exception: "'.trim($exception).'" on url: '.$url : null
+        );
     }
 }

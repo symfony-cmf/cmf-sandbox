@@ -30,7 +30,7 @@ class DocumentClassPass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container)
     {
-        $adminServiceDefinition = $container->getDefinition('cmf_sonata_admin_integration.content.admin');
+        $adminServiceDefinition = $container->getDefinition('cmf_sonata_phpcr_admin_integration.content.admin');
         $adminServiceDefinition->replaceArgument(1, self::DOCUMENT_CLASS);
     }
 }

@@ -49,7 +49,7 @@ class LoadRoutingData implements ContainerAwareInterface, FixtureInterface, Orde
 
         $session = $manager->getPhpcrSession();
 
-        $basepath = $this->container->getParameter('cmf_sonata_admin_integration.routing.phpcr.basepath');
+        $basepath = $this->container->getParameter('cmf_sonata_phpcr_admin_integration.routing.basepath');
         if ($session->itemExists($basepath)) {
             $session->removeItem($basepath);
         }
