@@ -23,6 +23,8 @@ twig:
     debug:            '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
+    form_themes:
+        - '@CmfTreeBrowser/Form/fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -115,10 +117,19 @@ cmf_menu:
 
 cmf_resource:
     description:
-        enhancers: [sonata_phpcr_admin]
+        enhancers: [sonata_phpcr_admin, cmf_tree_icons]
     repositories:
         default:
             type: doctrine/phpcr-odm
+
+cmf_tree_browser:
+    icons:
+        AppBundle\Document\DemoSeoContent: 'fa fa-file-text-o'
+        Sonata\BlockBundle\Model\BlockInterface: 'fa fa-cube'
+        Symfony\Cmf\Bundle\SeoBundle\Model\SeoMetadata: 'fa fa-search'
+        Symfony\Cmf\Bundle\MenuBundle\Model\MenuNode: 'fa fa-share-square-o'
+        Symfony\Cmf\Bundle\RoutingBundle\Model\Route: 'fa fa-link'
+        Symfony\Cmf\Bundle\RoutingBundle\Model\RedirectRoute: 'fa fa-reply'
 
 cmf_sonata_phpcr_admin_integration:
     bundles:
@@ -130,7 +141,6 @@ cmf_sonata_phpcr_admin_integration:
             basepath: /cms/content
             menu_basepath: /cms/content
         routing: ~
-
 
 sonata_block:
     default_contexts: [cms]
