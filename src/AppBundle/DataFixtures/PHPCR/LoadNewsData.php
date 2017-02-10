@@ -11,14 +11,14 @@
 
 namespace AppBundle\DataFixtures\PHPCR;
 
+use AppBundle\Document\DemoNewsContent;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ODM\PHPCR\DocumentManager;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use PHPCR\Util\NodeHelper;
-use AppBundle\Document\DemoNewsContent;
+use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 
 class LoadNewsData implements ContainerAwareInterface, FixtureInterface, OrderedFixtureInterface
 {

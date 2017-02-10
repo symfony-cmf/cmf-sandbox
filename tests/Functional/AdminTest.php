@@ -3,7 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2015 Symfony CMF
+ * (c) 2011-2017 Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -18,7 +18,7 @@ class AdminTest extends WebTestCase
     protected $pool;
     protected $router;
 
-    protected $verifiablePatterns = array(
+    protected $verifiablePatterns = [
         '/app/demoseocontent/list',
         '/app/demoseocontent/create',
         '/app/demoseocontent/{id}/edit',
@@ -55,9 +55,9 @@ class AdminTest extends WebTestCase
         '/cmf/menu/menunode/create',
         '/cmf/menu/menunode/{id}/edit',
         '/cmf/menu/menunode/{id}/delete',
-    );
+    ];
 
-    protected $testedPatterns = array();
+    protected $testedPatterns = [];
 
     public function setUp()
     {
@@ -71,7 +71,7 @@ class AdminTest extends WebTestCase
     public function testAdmin()
     {
         $adminGroups = $this->pool->getAdminGroups();
-        $admins = array();
+        $admins = [];
 
         foreach (array_keys($adminGroups) as $adminName) {
             $admins = array_merge($admins, $this->pool->getAdminsByGroup($adminName));
@@ -89,7 +89,7 @@ class AdminTest extends WebTestCase
     {
         $routeCollection = $admin->getRoutes();
         $class = $admin->getClass();
-        $routeParams = array('_locale' => 'en');
+        $routeParams = ['_locale' => 'en'];
 
         foreach ($routeCollection->getElements() as $route) {
             $requirements = $route->getRequirements();

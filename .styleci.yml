@@ -1,6 +1,13 @@
 preset: symfony
 
-disabled: [phpdoc_to_comment, phpdoc_var_without_name]
+enabled:
+  - ordered_use
+  - short_array_syntax
+
+disabled:
+  - phpdoc_to_comment
+  - phpdoc_var_without_name
+  - single_line_class_definition
 
 finder:
     exclude: [var]
