@@ -11,9 +11,9 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Cmf\Bundle\ContentBundle\Controller\ContentController as BaseContentController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Special routes to demo the features of the Doctrine Router in the CmfRoutingBundle.
@@ -35,10 +35,10 @@ class ContentController extends BaseContentController
             throw new NotFoundHttpException('Content not found');
         }
 
-        $params = array(
+        $params = [
             'cmfMainContent' => $contentDocument,
             'info' => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was configured for this route type.',
-        );
+        ];
 
         return $this->renderResponse('demo/controller.html.twig', $params);
     }
@@ -58,10 +58,10 @@ class ContentController extends BaseContentController
             throw new NotFoundHttpException('Content not found');
         }
 
-        $params = array(
+        $params = [
             'cmfMainContent' => $contentDocument,
             'info' => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller will be called for content objects that are instances of <code>AppBundle\Document\DemoClassContent</code>.',
-        );
+        ];
 
         return $this->renderResponse('demo/controller.html.twig', $params);
     }
@@ -81,10 +81,10 @@ class ContentController extends BaseContentController
             throw new NotFoundHttpException('Content not found');
         }
 
-        $params = array(
+        $params = [
             'cmfMainContent' => $contentDocument,
             'info' => 'This page is rendered by <code>'.__METHOD__.'</code>. This controller was explicitely defined for the route by setting the <code>_controller</code> default.',
-        );
+        ];
 
         return $this->renderResponse('demo/controller.html.twig', $params);
     }

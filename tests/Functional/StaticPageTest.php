@@ -3,7 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2015 Symfony CMF
+ * (c) 2011-2017 Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -29,33 +29,33 @@ class StaticPageTest extends WebTestCase
 
     public function contentDataProvider()
     {
-        return array(
-            array('/en', 'Homepage'),
-            array('/fr', 'Page principale'),
-            array('/de', 'Startseite'),
-            array('/en/projects', 'The projects'),
-            array('/en/projects/cmf', 'Content Management Framework'),
-            array('/en/company', 'The Company'),
-            array('/en/company/team', 'The Team'),
-            array('/fr/company/team', 'The Team'),
-            array('/de/company/team', 'The Team'),
-            array('/en/company/more', 'More Information'),
-            array('/demo', 'Routing demo'),
-            array('/demo/controller', 'Explicit Controller'),
-            array('/demo/atemplate', 'Explicit template'),
-            array('/demo/type', 'Controller by type'),
-            array('/demo/class', 'Controller by class'),
-            array('/hello', 'Hello World!'),
-            array('/en/about', 'Some information about us'),
-        );
+        return [
+            ['/en', 'Homepage'],
+            ['/fr', 'Page principale'],
+            ['/de', 'Startseite'],
+            ['/en/projects', 'The projects'],
+            ['/en/projects/cmf', 'Content Management Framework'],
+            ['/en/company', 'The Company'],
+            ['/en/company/team', 'The Team'],
+            ['/fr/company/team', 'The Team'],
+            ['/de/company/team', 'The Team'],
+            ['/en/company/more', 'More Information'],
+            ['/demo', 'Routing demo'],
+            ['/demo/controller', 'Explicit Controller'],
+            ['/demo/atemplate', 'Explicit template'],
+            ['/demo/type', 'Controller by type'],
+            ['/demo/class', 'Controller by class'],
+            ['/hello', 'Hello World!'],
+            ['/en/about', 'Some information about us'],
+        ];
     }
 
     public function testJson()
     {
         $client = $this->createClient();
-        $client->request('GET', '/en/company/team', array(), array(), array(
+        $client->request('GET', '/en/company/team', [], [], [
                 'HTTP_ACCEPT' => 'application/json',
-            )
+            ]
         );
         $response = $client->getResponse();
         $this->assertResponseSuccess($response);
