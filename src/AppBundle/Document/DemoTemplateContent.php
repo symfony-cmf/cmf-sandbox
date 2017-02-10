@@ -12,8 +12,8 @@
 namespace AppBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
-use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Cmf\Component\Routing\RouteReferrersReadInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * A document that we map to a template to be used with the generic content

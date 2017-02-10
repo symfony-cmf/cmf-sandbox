@@ -13,8 +13,8 @@ namespace AppBundle\Document;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent;
-use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
 use Symfony\Cmf\Bundle\SeoBundle\Doctrine\Phpcr\SeoMetadata;
+use Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface;
 
 /**
  * That example class uses the extractors for the creation of the SeoMetadata.

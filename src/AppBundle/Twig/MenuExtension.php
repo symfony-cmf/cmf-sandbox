@@ -28,12 +28,12 @@ class MenuExtension extends \Twig_Extension
 
     public function getFunctions()
     {
-        return array(
-            new \Twig_SimpleFunction('app_get_current_menu_item', array($this, 'getCurrent')),
-        );
+        return [
+            new \Twig_SimpleFunction('app_get_current_menu_item', [$this, 'getCurrent']),
+        ];
     }
 
-    public function getCurrent($menu, array $path = array(), array $options = array())
+    public function getCurrent($menu, array $path = [], array $options = [])
     {
         return $this->doGetCurrent($this->helper->get($menu, $path, $options));
     }

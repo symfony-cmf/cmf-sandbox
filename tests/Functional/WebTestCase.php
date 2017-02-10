@@ -3,7 +3,7 @@
 /*
  * This file is part of the Symfony CMF package.
  *
- * (c) 2011-2015 Symfony CMF
+ * (c) 2011-2017 Symfony CMF
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,21 +24,21 @@ abstract class WebTestCase extends BaseWebTestCase
             return;
         }
 
-        $this->loadFixtures(array(
+        $this->loadFixtures([
             'AppBundle\DataFixtures\PHPCR\LoadStaticPageData',
             'AppBundle\DataFixtures\PHPCR\LoadMenuData',
             'AppBundle\DataFixtures\PHPCR\LoadRoutingData',
-        ), null, 'doctrine_phpcr');
+        ], null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;
     }
 
-    protected function createClientAuthenticated(array $options = array(), array $server = array())
+    protected function createClientAuthenticated(array $options = [], array $server = [])
     {
-        $server = array_merge($server, array(
+        $server = array_merge($server, [
             'PHP_AUTH_USER' => 'admin',
             'PHP_AUTH_PW' => 'admin',
-        ));
+        ]);
 
         return $this->createClient($options, $server);
     }
@@ -47,8 +47,9 @@ abstract class WebTestCase extends BaseWebTestCase
      * Method to assert a 200 response code.
      *
      * This code is taken from symfony-cmf/Testing.
+     *
      * @param Response $response
-     * @param string $url
+     * @param string   $url
      */
     protected function assertResponseSuccess(Response $response, $url = '')
     {

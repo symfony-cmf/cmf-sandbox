@@ -12,9 +12,9 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sonata\BlockBundle\Model\BlockInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
-use Sonata\BlockBundle\Model\BlockInterface;
 
 class DefaultController extends Controller
 {
@@ -27,9 +27,9 @@ class DefaultController extends Controller
      */
     public function blockAction($block)
     {
-        return $this->render('block/demo_action_block.html.twig', array(
+        return $this->render('block/demo_action_block.html.twig', [
             'block' => $block,
-        ));
+        ]);
     }
 
     /**

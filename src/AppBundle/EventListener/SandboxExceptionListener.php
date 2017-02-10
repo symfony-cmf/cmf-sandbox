@@ -12,13 +12,13 @@
 namespace AppBundle\EventListener;
 
 use PHPCR\RepositoryException;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
+use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * Exception listener that will handle not found exceptions and try to give the
@@ -75,8 +75,8 @@ class SandboxExceptionListener implements EventSubscriberInterface, ContainerAwa
 
     public static function getSubscribedEvents()
     {
-        return array(
-            KernelEvents::EXCEPTION => array('onKernelException', 0),
-        );
+        return [
+            KernelEvents::EXCEPTION => ['onKernelException', 0],
+        ];
     }
 }
