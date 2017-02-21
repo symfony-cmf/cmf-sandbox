@@ -188,10 +188,10 @@ static:
     -
         name: 'published_tomorrow'
         title: 'Published tomorrow'
-        publishStartDate: tomorrow
+        publishStartDate: '+1 month'
         publishEndDate: '+1 year'
         body: |
-            <p>At the date you installed the sandbox, you should see this only in the Admin GUI. From the next day on, it will be published</p>
+            <p>This page is marked as being published from in a month after loading the fixtures. If you look at the sandbox in production mode, you should see this page only in the Admin GUI. When in dev mode, no security is in place and you always see it.</p>
         blocks:
             additionalInfoBlock:
                 class: Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
