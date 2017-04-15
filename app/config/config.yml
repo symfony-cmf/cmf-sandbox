@@ -17,6 +17,7 @@ framework:
     session:
         name: symfony-cmf
     trusted_proxies: ~
+    fragments:       ~
 
 # Twig Configuration
 twig:
