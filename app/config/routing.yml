@@ -52,3 +52,7 @@ block_cache:
 cmf_resource:
     resource: '@CmfResourceRestBundle/Resources/config/routing.yml'
     prefix: /admin
+
+cmf_tree:
+    resource: '@SonataDoctrinePHPCRAdminBundle/Resources/config/routing/tree.xml'
+    prefix: /admin
