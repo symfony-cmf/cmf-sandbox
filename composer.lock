@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ece9e332941d4d1ded4c518a17488cc7",
-    "content-hash": "055575d699ea79226b054b9120c78ccf",
+    "hash": "81987d1809b39a199a0c0dd041dda6c5",
+    "content-hash": "3759c58dbdebfc84ffe5b111c3dedefc",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -4483,16 +4483,16 @@
         },
         {
             "name": "symfony-cmf/tree-browser-bundle",
-            "version": "2.0.0-RC2",
+            "version": "dev-fix_dnd",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/tree-browser-bundle.git",
-                "reference": "22284fd1e3d7b777dc5f10474848ebac7518b912"
+                "reference": "02afc2c44c982738c02d094d94fd0737f8a950f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/22284fd1e3d7b777dc5f10474848ebac7518b912",
-                "reference": "22284fd1e3d7b777dc5f10474848ebac7518b912",
+                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/02afc2c44c982738c02d094d94fd0737f8a950f6",
+                "reference": "02afc2c44c982738c02d094d94fd0737f8a950f6",
                 "shasum": ""
             },
             "require": {
@@ -4500,7 +4500,8 @@
                 "symfony-cmf/resource-rest-bundle": "1.0.*"
             },
             "require-dev": {
-                "symfony/form": "^2.8|^3.0"
+                "symfony/form": "^2.8|^3.0",
+                "symfony/phpunit-bridge": "^3.2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4530,7 +4531,7 @@
                 "phpcr",
                 "tree"
             ],
-            "time": "2017-02-09 12:54:18"
+            "time": "2017-04-27 20:09:57"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -6291,12 +6292,19 @@
             "alias_normalized": "2.0.0.0",
             "version": "dev-move_function",
             "package": "sonata-project/doctrine-phpcr-admin-bundle"
+        },
+        {
+            "alias": "2.0",
+            "alias_normalized": "2.0.0.0",
+            "version": "dev-fix_dnd",
+            "package": "symfony-cmf/tree-browser-bundle"
         }
     ],
     "minimum-stability": "RC",
     "stability-flags": {
         "symfony-cmf/sonata-phpcr-admin-integration-bundle": 20,
-        "sonata-project/doctrine-phpcr-admin-bundle": 20
+        "sonata-project/doctrine-phpcr-admin-bundle": 20,
+        "symfony-cmf/tree-browser-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
