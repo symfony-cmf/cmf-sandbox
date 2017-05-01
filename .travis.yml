@@ -41,7 +41,7 @@ before_script:
   - bin/console doctrine:phpcr:workspace:create sandbox_test -e=test
   - bin/console doctrine:phpcr:repository:init -e=test
 
-script: phpunit
+script: vendor/bin/simple-phpunit
 
 notifications:
   irc: "irc.freenode.org#symfony-cmf"

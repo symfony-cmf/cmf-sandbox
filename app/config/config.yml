@@ -136,7 +136,9 @@ cmf_sonata_phpcr_admin_integration:
         seo: ~
         menu: ~
         core: ~
-        content: ~
+        content:
+           ivory_ckeditor:
+              config_name: cmf_sonata_phpcr_admin_integration
         block:
             basepath: /cms/content
             menu_basepath: /cms/content
@@ -280,7 +282,7 @@ sonata_seo:
 
 ivory_ck_editor:
     configs:
-        cmf_content: { toolbar: standard }
+        cmf_sonata_phpcr_admin_integration: { toolbar: standard }
 
 sensio_framework_extra:
     router:  { annotations: true }
