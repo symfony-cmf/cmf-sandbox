@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a25ba9b7204cb01fd3cef6c01024c9a4",
-    "content-hash": "3750096c8549bf5bb36a7dacc3900af9",
+    "hash": "227e0398f75554f347284178d9ca6e58",
+    "content-hash": "8587906d094e967fe809696c01ed1852",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -4357,12 +4357,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/sonata-phpcr-admin-integration-bundle.git",
-                "reference": "6785354ab8526031788ffff0a684508cb318bd28"
+                "reference": "75ecf66846b624b1cc803d01c8e2c8fb2d9a132c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/6785354ab8526031788ffff0a684508cb318bd28",
-                "reference": "6785354ab8526031788ffff0a684508cb318bd28",
+                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/75ecf66846b624b1cc803d01c8e2c8fb2d9a132c",
+                "reference": "75ecf66846b624b1cc803d01c8e2c8fb2d9a132c",
                 "shasum": ""
             },
             "require": {
@@ -4425,7 +4425,7 @@
                 "admin",
                 "sonata"
             ],
-            "time": "2017-03-19 09:03:48"
+            "time": "2017-04-27 20:12:55"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
@@ -6229,20 +6229,23 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.2.4",
+            "version": "v3.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "996374975357b569ea319ec1c98c5ca0f7dda610"
+                "reference": "00916603c524b8048906de460b7ea0dfa1651281"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/996374975357b569ea319ec1c98c5ca0f7dda610",
-                "reference": "996374975357b569ea319ec1c98c5ca0f7dda610",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/00916603c524b8048906de460b7ea0dfa1651281",
+                "reference": "00916603c524b8048906de460b7ea0dfa1651281",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "conflict": {
+                "phpunit/phpunit": ">=6.0"
             },
             "suggest": {
                 "ext-zip": "Zip support is required when using bin/simple-phpunit",
@@ -6284,7 +6287,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-01-21 17:06:35"
+            "time": "2017-04-12 14:13:17"
         }
     ],
     "aliases": [],
