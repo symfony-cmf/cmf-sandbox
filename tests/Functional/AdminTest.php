@@ -104,6 +104,11 @@ class AdminTest extends WebTestCase
                 continue;
             }
 
+            // batch routes from new admin integration would need POST request
+            if (strpos($route->getPath(), 'batch')) {
+                continue;
+            }
+
             // do not test POST routes
             if (isset($requirements['_method'])) {
                 if ($requirements['_method'] != 'GET') {
