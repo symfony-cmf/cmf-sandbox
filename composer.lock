@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "227e0398f75554f347284178d9ca6e58",
-    "content-hash": "8587906d094e967fe809696c01ed1852",
+    "hash": "2174f5a77e99f2d8a351ac3ced2b0939",
+    "content-hash": "2bd0e172ac14fd02006637870c64fcfb",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3232,12 +3232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "e0c6f1a5f4e9bac3f9643eb2971f0b9c364b57ba"
+                "reference": "b0d2914bcd9318cd72c5fb4ca5ad13f4ae280aec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/e0c6f1a5f4e9bac3f9643eb2971f0b9c364b57ba",
-                "reference": "e0c6f1a5f4e9bac3f9643eb2971f0b9c364b57ba",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/b0d2914bcd9318cd72c5fb4ca5ad13f4ae280aec",
+                "reference": "b0d2914bcd9318cd72c5fb4ca5ad13f4ae280aec",
                 "shasum": ""
             },
             "require": {
@@ -3255,7 +3255,7 @@
                 "sonata-project/admin-bundle-persistency-layer": "1.0.0"
             },
             "require-dev": {
-                "dantleech/glob-finder": "@dev",
+                "dantleech/glob-finder": "1.*",
                 "jackalope/jackalope-jackrabbit": "^1.0",
                 "puli/repository": "@beta",
                 "sllh/php-cs-fixer-styleci-bridge": "^2.0",
@@ -3301,7 +3301,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-02-12 12:59:03"
+            "time": "2017-06-27 05:08:35"
         },
         {
             "name": "sonata-project/exporter",
@@ -4485,16 +4485,16 @@
         },
         {
             "name": "symfony-cmf/tree-browser-bundle",
-            "version": "2.0.0-RC2",
+            "version": "2.0.0-RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/tree-browser-bundle.git",
-                "reference": "22284fd1e3d7b777dc5f10474848ebac7518b912"
+                "reference": "27c3244caf0641af0d379972dc3c40b6fc0e479f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/22284fd1e3d7b777dc5f10474848ebac7518b912",
-                "reference": "22284fd1e3d7b777dc5f10474848ebac7518b912",
+                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/27c3244caf0641af0d379972dc3c40b6fc0e479f",
+                "reference": "27c3244caf0641af0d379972dc3c40b6fc0e479f",
                 "shasum": ""
             },
             "require": {
@@ -4502,7 +4502,8 @@
                 "symfony-cmf/resource-rest-bundle": "1.0.*"
             },
             "require-dev": {
-                "symfony/form": "^2.8|^3.0"
+                "symfony/form": "^2.8|^3.0",
+                "symfony/phpunit-bridge": "^3.2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4532,7 +4533,7 @@
                 "phpcr",
                 "tree"
             ],
-            "time": "2017-02-09 12:54:18"
+            "time": "2017-06-28 19:58:20"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -6294,7 +6295,8 @@
     "minimum-stability": "RC",
     "stability-flags": {
         "symfony-cmf/sonata-phpcr-admin-integration-bundle": 20,
-        "sonata-project/doctrine-phpcr-admin-bundle": 20
+        "sonata-project/doctrine-phpcr-admin-bundle": 20,
+        "symfony-cmf/tree-browser-bundle": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
