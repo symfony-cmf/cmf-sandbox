@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "227e0398f75554f347284178d9ca6e58",
-    "content-hash": "8587906d094e967fe809696c01ed1852",
+    "hash": "6bc59a5692735361f0252a4d08b98ee6",
+    "content-hash": "06d49d3138cb2c24f1aa0c49eb414bbd",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3232,12 +3232,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "e0c6f1a5f4e9bac3f9643eb2971f0b9c364b57ba"
+                "reference": "b0d2914bcd9318cd72c5fb4ca5ad13f4ae280aec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/e0c6f1a5f4e9bac3f9643eb2971f0b9c364b57ba",
-                "reference": "e0c6f1a5f4e9bac3f9643eb2971f0b9c364b57ba",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/b0d2914bcd9318cd72c5fb4ca5ad13f4ae280aec",
+                "reference": "b0d2914bcd9318cd72c5fb4ca5ad13f4ae280aec",
                 "shasum": ""
             },
             "require": {
@@ -3255,7 +3255,7 @@
                 "sonata-project/admin-bundle-persistency-layer": "1.0.0"
             },
             "require-dev": {
-                "dantleech/glob-finder": "@dev",
+                "dantleech/glob-finder": "1.*",
                 "jackalope/jackalope-jackrabbit": "^1.0",
                 "puli/repository": "@beta",
                 "sllh/php-cs-fixer-styleci-bridge": "^2.0",
@@ -3301,7 +3301,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-02-12 12:59:03"
+            "time": "2017-06-27 05:08:35"
         },
         {
             "name": "sonata-project/exporter",
@@ -4053,27 +4053,28 @@
         },
         {
             "name": "symfony-cmf/routing-auto",
-            "version": "2.0.0-RC1",
+            "version": "2.0.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/routing-auto.git",
-                "reference": "bce9075cb53f1123cc356fd42390e292fbb177df"
+                "reference": "a3a7cada5d5ce5e691a74b11d57e512380436d6a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/routing-auto/zipball/bce9075cb53f1123cc356fd42390e292fbb177df",
-                "reference": "bce9075cb53f1123cc356fd42390e292fbb177df",
+                "url": "https://api.github.com/repos/symfony-cmf/routing-auto/zipball/a3a7cada5d5ce5e691a74b11d57e512380436d6a",
+                "reference": "a3a7cada5d5ce5e691a74b11d57e512380436d6a",
                 "shasum": ""
             },
             "require": {
                 "jms/metadata": "1.5.*",
-                "php": "^5.5.9|^7.0",
+                "php": "^5.6|^7.0",
                 "symfony-cmf/routing": "^1.2|^2.0",
                 "symfony-cmf/slugifier-api": "^1.0|^2.0",
                 "symfony/config": "^2.8|^3.0",
                 "symfony/options-resolver": "^2.8|^3.0"
             },
             "require-dev": {
+                "phpunit/phpunit": "^5.7",
                 "symfony/dependency-injection": "^2.8|^3.0",
                 "symfony/event-dispatcher": "^2.8|^3.0",
                 "symfony/yaml": "^2.8|^3.0"
@@ -4106,31 +4107,31 @@
             ],
             "description": "Component for automatically creating and managing routes for persisted objects",
             "homepage": "http://cmf.symfony.com",
-            "time": "2017-01-05 20:50:43"
+            "time": "2017-06-18 08:37:49"
         },
         {
             "name": "symfony-cmf/routing-auto-bundle",
-            "version": "2.0.0-RC1",
+            "version": "2.0.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/routing-auto-bundle.git",
-                "reference": "9471908b77d35982441b08173d085b2e29959313"
+                "reference": "c30ce6897c7de4a24b69e9fe85da2438db582372"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/routing-auto-bundle/zipball/9471908b77d35982441b08173d085b2e29959313",
-                "reference": "9471908b77d35982441b08173d085b2e29959313",
+                "url": "https://api.github.com/repos/symfony-cmf/routing-auto-bundle/zipball/c30ce6897c7de4a24b69e9fe85da2438db582372",
+                "reference": "c30ce6897c7de4a24b69e9fe85da2438db582372",
                 "shasum": ""
             },
             "require": {
                 "aferrandini/urlizer": "1.0.*",
                 "php": "^5.6|^7.0",
-                "symfony-cmf/routing-auto": "^2.0",
+                "symfony-cmf/routing-auto": "^2.0.0-RC2",
                 "symfony-cmf/routing-bundle": "^1.2.0|^2.0",
                 "symfony/framework-bundle": "^2.8|^3.0"
             },
             "require-dev": {
-                "doctrine/phpcr-odm": "^1.3|^2.0",
+                "doctrine/phpcr-odm": "^1.3",
                 "matthiasnoback/symfony-config-test": "^1.3.1",
                 "matthiasnoback/symfony-dependency-injection-test": "~0.6",
                 "symfony-cmf/testing": "^1.3|^2.0",
@@ -4165,7 +4166,7 @@
             ],
             "description": "Bundle which automatically creates and manages routes for persisted objects",
             "homepage": "http://cmf.symfony.com",
-            "time": "2017-01-21 13:37:46"
+            "time": "2017-06-19 06:40:02"
         },
         {
             "name": "symfony-cmf/routing-bundle",
@@ -4485,16 +4486,16 @@
         },
         {
             "name": "symfony-cmf/tree-browser-bundle",
-            "version": "2.0.0-RC2",
+            "version": "2.0.0-RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/tree-browser-bundle.git",
-                "reference": "22284fd1e3d7b777dc5f10474848ebac7518b912"
+                "reference": "27c3244caf0641af0d379972dc3c40b6fc0e479f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/22284fd1e3d7b777dc5f10474848ebac7518b912",
-                "reference": "22284fd1e3d7b777dc5f10474848ebac7518b912",
+                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/27c3244caf0641af0d379972dc3c40b6fc0e479f",
+                "reference": "27c3244caf0641af0d379972dc3c40b6fc0e479f",
                 "shasum": ""
             },
             "require": {
@@ -4502,7 +4503,8 @@
                 "symfony-cmf/resource-rest-bundle": "1.0.*"
             },
             "require-dev": {
-                "symfony/form": "^2.8|^3.0"
+                "symfony/form": "^2.8|^3.0",
+                "symfony/phpunit-bridge": "^3.2"
             },
             "type": "symfony-bundle",
             "extra": {
@@ -4532,7 +4534,7 @@
                 "phpcr",
                 "tree"
             ],
-            "time": "2017-02-09 12:54:18"
+            "time": "2017-06-28 19:58:20"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -6293,6 +6295,7 @@
     "aliases": [],
     "minimum-stability": "RC",
     "stability-flags": {
+        "symfony-cmf/routing-auto-bundle": 5,
         "symfony-cmf/sonata-phpcr-admin-integration-bundle": 20,
         "sonata-project/doctrine-phpcr-admin-bundle": 20
     },
