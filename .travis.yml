@@ -4,7 +4,6 @@ php:
   - 5.6
   - 7.0
   # 7.1 is tested using composer install
-  #- hhvm does not work on travis anymore even with dist: trusty
 
 sudo: false
 
@@ -19,6 +18,8 @@ matrix:
       env: TRANSPORT=jackrabbit COMPOSER_INSTALL=1
     - php: 7.1
       env: TRANSPORT=doctrine_dbal COMPOSER_INSTALL=1
+    - php: hhvm
+      dist: trusty
 
 env:
   global:
