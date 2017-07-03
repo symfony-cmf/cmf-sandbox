@@ -30,6 +30,8 @@ env:
 
 before_install:
   - if [ "$TRAVIS_PHP_VERSION" != "hhvm" ]; then echo "memory_limit = -1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi
+    # hack to avoid segmentation fault because of https://bugs.php.net/bug.php?id=74843
+  - if [ "$TRAVIS_PHP_VERSION" == "7.0" ]; then echo "zend.enable_gc = 0" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini; fi
   - phpenv config-rm xdebug.ini || true
   - composer self-update
 
