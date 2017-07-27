@@ -222,51 +222,8 @@ sonata_doctrine_phpcr_admin:
     templates:
         form:
             - admin/form_admin_fields.html.twig
-    document_tree_defaults: [locale]
     document_tree:
-        Doctrine\ODM\PHPCR\Document\Generic:
-            valid_children:
-                - all
-        AppBundle\Document\DemoSeoContent:
-            valid_children:
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
-            valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
-            valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock:
-            valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock:
-            valid_children:
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ImagineBlock:
-            valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock:
-            valid_children: []
-        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock:
-            valid_children:
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
-        Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
-            valid_children:
-                - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
-                - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute
-        Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:
-            valid_children: []
-        Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\Menu:
-            valid_children:
-                - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
-        Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode:
-            valid_children:
-                - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
+        routing_defaults: [locale]
 
 sonata_translation:
     locales: '%locales%'
