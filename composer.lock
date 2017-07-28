@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "95f149d597e579514b6171622a01b056",
-    "content-hash": "9e7e718a8fae25c952e8ecef6adc756a",
+    "hash": "57695d4897f11155820b321c6781255f",
+    "content-hash": "c48d3cf6c97ff6ee857ed62de6050d9e",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3517,16 +3517,16 @@
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",
-            "version": "2.0.0-RC2",
+            "version": "2.0.0-RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "a333080f5078512e4c8869c81c91e2be07a9c669"
+                "reference": "4c26f1eefd026bbed4953135e01bae7c82d01367"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/a333080f5078512e4c8869c81c91e2be07a9c669",
-                "reference": "a333080f5078512e4c8869c81c91e2be07a9c669",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/4c26f1eefd026bbed4953135e01bae7c82d01367",
+                "reference": "4c26f1eefd026bbed4953135e01bae7c82d01367",
                 "shasum": ""
             },
             "require": {
@@ -3588,7 +3588,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-07-28 08:22:15"
+            "time": "2017-07-28 13:23:32"
         },
         {
             "name": "sonata-project/exporter",
@@ -4637,22 +4637,22 @@
         },
         {
             "name": "symfony-cmf/sonata-phpcr-admin-integration-bundle",
-            "version": "1.0.0-RC1",
+            "version": "1.0.0-RC2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/sonata-phpcr-admin-integration-bundle.git",
-                "reference": "be253a29936fc9542acc651e1a38ce79d483e260"
+                "reference": "d0d792010073c58f11859aa64d2252597bbd37cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/be253a29936fc9542acc651e1a38ce79d483e260",
-                "reference": "be253a29936fc9542acc651e1a38ce79d483e260",
+                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/d0d792010073c58f11859aa64d2252597bbd37cf",
+                "reference": "d0d792010073c58f11859aa64d2252597bbd37cf",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.6|^7.0",
                 "sonata-project/admin-bundle": "^3.6.0",
-                "sonata-project/doctrine-phpcr-admin-bundle": "2.0.0-RC2",
+                "sonata-project/doctrine-phpcr-admin-bundle": "2.0.0-RC3",
                 "symfony-cmf/tree-browser-bundle": "^2.0",
                 "symfony/framework-bundle": "^2.8|^3.0"
             },
@@ -4709,7 +4709,7 @@
                 "admin",
                 "sonata"
             ],
-            "time": "2017-07-28 08:55:22"
+            "time": "2017-07-28 13:11:31"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
