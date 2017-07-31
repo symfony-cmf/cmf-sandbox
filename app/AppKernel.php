@@ -70,6 +70,10 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
         ];
 
+        // Symfony 3.3 moved server:* commands to another bundle
+        if (class_exists(\Symfony\Bundle\WebServerBundle\WebServerBundle::class)) {
+            $bundles[] = new \Symfony\Bundle\WebServerBundle\WebServerBundle();
+        }
         if (in_array($this->getEnvironment(), ['dev', 'test'])) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
