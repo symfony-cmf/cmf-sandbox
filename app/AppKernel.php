@@ -75,6 +75,7 @@ class AppKernel extends Kernel
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
+            $bundles[] = new \Symfony\Bundle\WebServerBundle\WebServerBundle();
 
             // additional bundle for tests
             if ('test' === $this->getEnvironment()) {

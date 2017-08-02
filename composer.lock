@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "57695d4897f11155820b321c6781255f",
-    "content-hash": "c48d3cf6c97ff6ee857ed62de6050d9e",
+    "hash": "3589e80f6cd26e3b324908f8779ba365",
+    "content-hash": "a0e0a21682da3fcafbfa07cff4a5605e",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3022,16 +3022,16 @@
         },
         {
             "name": "sensiolabs/security-checker",
-            "version": "v4.0.5",
+            "version": "v4.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/security-checker.git",
-                "reference": "6a3b0c3b42e41c777b1ad75032d8177863fdc5e1"
+                "reference": "cf61ce9d9706ba35e60a894fe6f3584c6d0e5c9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/6a3b0c3b42e41c777b1ad75032d8177863fdc5e1",
-                "reference": "6a3b0c3b42e41c777b1ad75032d8177863fdc5e1",
+                "url": "https://api.github.com/repos/sensiolabs/security-checker/zipball/cf61ce9d9706ba35e60a894fe6f3584c6d0e5c9f",
+                "reference": "cf61ce9d9706ba35e60a894fe6f3584c6d0e5c9f",
                 "shasum": ""
             },
             "require": {
@@ -3044,7 +3044,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -3063,7 +3063,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2017-07-24 11:42:56"
+            "time": "2017-07-28 18:31:05"
         },
         {
             "name": "sonata-project/admin-bundle",
@@ -3517,16 +3517,16 @@
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",
-            "version": "2.0.0-RC3",
+            "version": "2.0.0-RC4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "4c26f1eefd026bbed4953135e01bae7c82d01367"
+                "reference": "ff6f36e426ac87f2e4706f71dd71e358b5090502"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/4c26f1eefd026bbed4953135e01bae7c82d01367",
-                "reference": "4c26f1eefd026bbed4953135e01bae7c82d01367",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/ff6f36e426ac87f2e4706f71dd71e358b5090502",
+                "reference": "ff6f36e426ac87f2e4706f71dd71e358b5090502",
                 "shasum": ""
             },
             "require": {
@@ -3588,7 +3588,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-07-28 13:23:32"
+            "time": "2017-07-31 15:29:22"
         },
         {
             "name": "sonata-project/exporter",
@@ -4637,22 +4637,22 @@
         },
         {
             "name": "symfony-cmf/sonata-phpcr-admin-integration-bundle",
-            "version": "1.0.0-RC2",
+            "version": "1.0.0-RC3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/sonata-phpcr-admin-integration-bundle.git",
-                "reference": "d0d792010073c58f11859aa64d2252597bbd37cf"
+                "reference": "8e9f953cbb71d77af0509397680971a0addce2ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/d0d792010073c58f11859aa64d2252597bbd37cf",
-                "reference": "d0d792010073c58f11859aa64d2252597bbd37cf",
+                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/8e9f953cbb71d77af0509397680971a0addce2ee",
+                "reference": "8e9f953cbb71d77af0509397680971a0addce2ee",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.6|^7.0",
                 "sonata-project/admin-bundle": "^3.6.0",
-                "sonata-project/doctrine-phpcr-admin-bundle": "2.0.0-RC3",
+                "sonata-project/doctrine-phpcr-admin-bundle": "^2.0.0-RC4",
                 "symfony-cmf/tree-browser-bundle": "^2.0",
                 "symfony/framework-bundle": "^2.8|^3.0"
             },
@@ -4709,7 +4709,7 @@
                 "admin",
                 "sonata"
             ],
-            "time": "2017-07-28 13:11:31"
+            "time": "2017-07-31 16:31:04"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
@@ -4769,16 +4769,16 @@
         },
         {
             "name": "symfony-cmf/tree-browser-bundle",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/tree-browser-bundle.git",
-                "reference": "0cdf15fd0e066bb09090167cebfbb1dd160e8d4e"
+                "reference": "c8e2688b279d68bf2bdfb35142eb31d0a02b703a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/0cdf15fd0e066bb09090167cebfbb1dd160e8d4e",
-                "reference": "0cdf15fd0e066bb09090167cebfbb1dd160e8d4e",
+                "url": "https://api.github.com/repos/symfony-cmf/tree-browser-bundle/zipball/c8e2688b279d68bf2bdfb35142eb31d0a02b703a",
+                "reference": "c8e2688b279d68bf2bdfb35142eb31d0a02b703a",
                 "shasum": ""
             },
             "require": {
@@ -4817,7 +4817,7 @@
                 "phpcr",
                 "tree"
             ],
-            "time": "2017-07-27 20:58:19"
+            "time": "2017-07-31 15:29:00"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -5408,16 +5408,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.3.5",
+            "version": "v3.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "b9a0d3d2393f683b28043e9dbf83b8bf6b347faa"
+                "reference": "6f80cbd2dd89c5308b14e03d806356fac72c263e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/b9a0d3d2393f683b28043e9dbf83b8bf6b347faa",
-                "reference": "b9a0d3d2393f683b28043e9dbf83b8bf6b347faa",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/6f80cbd2dd89c5308b14e03d806356fac72c263e",
+                "reference": "6f80cbd2dd89c5308b14e03d806356fac72c263e",
                 "shasum": ""
             },
             "require": {
@@ -5557,7 +5557,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-07-17 19:08:46"
+            "time": "2017-08-01 10:26:30"
         },
         {
             "name": "twig/extensions",
