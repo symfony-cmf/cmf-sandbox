@@ -70,16 +70,17 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
         ];
 
-        // Symfony 3.3 moved server:* commands to another bundle
-        if (class_exists(\Symfony\Bundle\WebServerBundle\WebServerBundle::class)) {
-            $bundles[] = new \Symfony\Bundle\WebServerBundle\WebServerBundle();
-        }
         if (in_array($this->getEnvironment(), ['dev', 'test'])) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Symfony\Bundle\DebugBundle\DebugBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
-            $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
+            $bundles[] = new \Symfony\Bundle\WebServerBundle\WebServerBundle();
+
+            // additional bundle for tests
+            if ('test' === $this->getEnvironment()) {
+                $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
+            }
         }
 
         return $bundles;
