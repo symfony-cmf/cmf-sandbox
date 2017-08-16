@@ -44,6 +44,7 @@ class LoadRoutingData implements ContainerAwareInterface, FixtureInterface, Orde
     {
         if (!$manager instanceof DocumentManager) {
             $class = get_class($manager);
+
             throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
         }
 
