@@ -38,6 +38,7 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
     {
         if (!$manager instanceof DocumentManager) {
             $class = get_class($manager);
+
             throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
         }
 
