@@ -57,8 +57,6 @@
         "symfony-cmf/testing": "^2.0",
         "symfony/phpunit-bridge": "^3.2"
     },
-    "minimum-stability": "RC",
-    "prefer-stable": true,
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
