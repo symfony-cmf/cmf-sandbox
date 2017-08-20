@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3589e80f6cd26e3b324908f8779ba365",
-    "content-hash": "a0e0a21682da3fcafbfa07cff4a5605e",
+    "hash": "a5d3366a45121a4e4dc9e9e43fceb38f",
+    "content-hash": "51ddea0cb2235ccc77e66d42f436c0b1",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3212,16 +3212,16 @@
         },
         {
             "name": "sonata-project/admin-bundle",
-            "version": "3.21.0",
+            "version": "3.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "f9efb1a88da25461196510ba7b7ec8df94ae97cb"
+                "reference": "77a5c250803fd1171eff88972f43529daa603ca5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/f9efb1a88da25461196510ba7b7ec8df94ae97cb",
-                "reference": "f9efb1a88da25461196510ba7b7ec8df94ae97cb",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/77a5c250803fd1171eff88972f43529daa603ca5",
+                "reference": "77a5c250803fd1171eff88972f43529daa603ca5",
                 "shasum": ""
             },
             "require": {
@@ -3307,7 +3307,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2017-08-14 08:42:47"
+            "time": "2017-08-19 14:18:22"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -3662,7 +3662,7 @@
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",
-            "version": "2.0.0-RC5",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
@@ -4486,7 +4486,7 @@
         },
         {
             "name": "symfony-cmf/routing-auto",
-            "version": "2.0.0-RC5",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/routing-auto.git",
@@ -4544,7 +4544,7 @@
         },
         {
             "name": "symfony-cmf/routing-auto-bundle",
-            "version": "2.0.0-RC3",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/routing-auto-bundle.git",
@@ -4784,16 +4784,16 @@
         },
         {
             "name": "symfony-cmf/sonata-phpcr-admin-integration-bundle",
-            "version": "1.0.0-RC3",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/sonata-phpcr-admin-integration-bundle.git",
-                "reference": "8e9f953cbb71d77af0509397680971a0addce2ee"
+                "reference": "b05954fa3f9bd532140e218ff7b34a3d074ec8cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/8e9f953cbb71d77af0509397680971a0addce2ee",
-                "reference": "8e9f953cbb71d77af0509397680971a0addce2ee",
+                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/b05954fa3f9bd532140e218ff7b34a3d074ec8cb",
+                "reference": "b05954fa3f9bd532140e218ff7b34a3d074ec8cb",
                 "shasum": ""
             },
             "require": {
@@ -4856,7 +4856,7 @@
                 "admin",
                 "sonata"
             ],
-            "time": "2017-07-31 16:31:04"
+            "time": "2017-08-10 14:46:49"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
@@ -6746,9 +6746,9 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "RC",
+    "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^5.6|^7.0"
