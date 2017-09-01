@@ -65,7 +65,7 @@ To disable the meta data and node cache for debugging comment the ``caches`` set
 Then, create the database and tables and set up the default workspace using:
 
     php bin/console doctrine:database:create
-    php bin/console doctrine:phpcr:init:dbal
+    php bin/console doctrine:phpcr:init:dbal --force
 
 ## Prepare the PHPCR repository
 
