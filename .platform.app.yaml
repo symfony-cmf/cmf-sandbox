@@ -42,11 +42,16 @@ web:
       # robots.txt.
       - /robots\.txt$
 
-crons:
-    reset:
-        # reset the demo every night to avoid overflowing disks and data leftovers
-        spec: 30 2 * * *
-        cmd: 'bin/console cache:clear --env=prod && bin/console doctrine:phpcr:init:dbal --drop --force -n && bin/console doctrine:phpcr:repository:init -n && bin/console doctrine:phpcr:fixtures:load -n && bin/console --env=prod cache:warmup -n --no-debug'
+cron:
+    symfony:
+        spec: '0 1 * * *'
+        cmd: |
+          # force clearing the cache
+          rm -rf app/cache/prod
+          bin/console --env=prod doctrine:phpcr:init:dbal --drop --force
+          bin/console --env=prod doctrine:phpcr:repository:init
+          bin/console --env=prod doctrine:phpcr:fixtures:load -n
+          bin/console --env=prod cache:warmup -n --no-debug
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
