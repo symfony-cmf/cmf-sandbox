@@ -79,7 +79,7 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
                 $page->setBody($overview['body']);
             }
 
-            if (isset($overview['publishable']) && $overview['publishable'] === false) {
+            if (isset($overview['publishable']) && false === $overview['publishable']) {
                 $page->setPublishable(false);
             }
 
@@ -180,13 +180,13 @@ EOH
             $manager->persist($document);
         }
 
-        if ($className == 'Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock') {
+        if ('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock' == $className) {
             $referencedBlock = $manager->find(null, $block['referencedBlock']);
             if (null === $referencedBlock) {
                 throw new \Exception('did not find '.$block['referencedBlock']);
             }
             $document->setReferencedBlock($referencedBlock);
-        } elseif ($className == 'Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock') {
+        } elseif ('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock' == $className) {
             $document->setActionName($block['actionName']);
         }
 
