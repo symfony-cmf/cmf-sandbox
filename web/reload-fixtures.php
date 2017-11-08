@@ -7,16 +7,18 @@ function runCommand($command, $shouldHaveOutput = true)
     echo "Running: $command\n";
     exec($command, $output, $return_var);
 
-    if ($shouldHaveOutput) {
-        if (empty($output) || !is_array($output)) {
-            echo 'Fixtures could not be loaded: '.var_export($return_var, true);
-            exit(1);
-        }
-        echo PHP_EOL;
-        echo "Output:\n";
-        foreach ($output as $line) {
-            echo $line."\n";
-        }
+    if (!$shouldHaveOutput) {
+        return;
+    }
+
+    if (empty($output) || !is_array($output)) {
+        echo 'Fixtures could not be loaded: '.var_export($return_var, true);
+        exit(1);
+    }
+    echo PHP_EOL;
+    echo "Output:\n";
+    foreach ($output as $line) {
+        echo $line."\n";
     }
 }
 
