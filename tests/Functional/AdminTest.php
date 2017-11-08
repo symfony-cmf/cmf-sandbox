@@ -111,7 +111,7 @@ class AdminTest extends WebTestCase
 
             // do not test POST routes
             if (isset($requirements['_method'])) {
-                if ($requirements['_method'] != 'GET') {
+                if ('GET' != $requirements['_method']) {
                     continue;
                 }
             }
