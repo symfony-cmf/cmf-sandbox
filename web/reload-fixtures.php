@@ -18,5 +18,8 @@ function runCommand($command)
     }
 }
 
-runCommand(__DIR__.'/../bin/console cache:clear -e=prod');
-runCommand(__DIR__.'/../bin/console -v doctrine:phpcr:fixtures:load -e=prod');
+runCommand('rm -rf app/cache/prod');
+runCommand(__DIR__.'/../bin/console --env=prod doctrine:phpcr:init:dbal --drop --force');
+runCommand(__DIR__.'/../bin/console --env=prod doctrine:phpcr:repository:init');
+runCommand(__DIR__.'/../bin/console -v --env=prod doctrine:phpcr:fixtures:load -n');
+runCommand(__DIR__.'/../bin/console --env=prod cache:warmup -n --no-debug');

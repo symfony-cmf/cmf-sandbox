@@ -44,7 +44,7 @@ web:
 
 cron:
     symfony:
-        spec: '0 1 * * *'
+        spec: '* */2 * * *'
         cmd: |
           # force clearing the cache
           rm -rf app/cache/prod
