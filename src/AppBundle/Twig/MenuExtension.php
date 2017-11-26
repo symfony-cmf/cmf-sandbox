@@ -18,6 +18,7 @@ use Knp\Menu\Twig\Helper;
 class MenuExtension extends \Twig_Extension
 {
     private $helper;
+
     private $matcher;
 
     public function __construct(Helper $helper, MatcherInterface $matcher)
