@@ -162,6 +162,7 @@ Functional tests are written with PHPUnit. Note that Bundles and Components are 
     php bin/console doctrine:phpcr:workspace:create sandbox_test
     phpunit -c app
 
+
 ## Remove demo configuration
 
 If you start a project from the sandbox, remove ```.sensiolabs.yml``` as its not a good example for production use.
