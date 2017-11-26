@@ -23,6 +23,7 @@ matrix:
 
 env:
   global:
+    - SYMFONY_PHPUNIT_DIR=.phpunit SYMFONY_PHPUNIT_REMOVE="symfony/yaml" SYMFONY_PHPUNIT_VERSION=5.7
     - SYMFONY_DEPRECATIONS_HELPER=weak
   matrix:
     - TRANSPORT=jackrabbit
