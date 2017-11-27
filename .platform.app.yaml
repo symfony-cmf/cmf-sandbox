@@ -47,7 +47,7 @@ cron:
         spec: '* */2 * * *'
         cmd: |
           # force clearing the cache
-          rm -rf app/cache/prod
+          rm -rf var/cache/prod
           bin/console --env=prod doctrine:phpcr:init:dbal --drop --force
           bin/console --env=prod doctrine:phpcr:repository:init
           bin/console --env=prod doctrine:phpcr:fixtures:load -n
@@ -71,10 +71,10 @@ hooks:
       bin/console --env=prod assetic:dump -n --no-debug
     deploy: |
       # force clearing the cache
-      rm -rf var/cache
-      bin/console doctrine:phpcr:init:dbal --drop --force -n
-      bin/console doctrine:phpcr:repository:init -n
-      bin/console doctrine:phpcr:fixtures:load -n
+      rm -rf var/cache/prod
+      bin/console --env=prod doctrine:phpcr:init:dbal --drop --force -n
+      bin/console --env=prod doctrine:phpcr:repository:init -n
+      bin/console --env=prod doctrine:phpcr:fixtures:load -n
       bin/console --env=prod cache:warmup -n --no-debug
 
 runtime:

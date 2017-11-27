@@ -22,7 +22,7 @@ function runCommand($command, $shouldHaveOutput = true)
     }
 }
 
-runCommand('rm -rf app/cache/prod', false);
+runCommand('rm -rf var/cache/prod', false);
 runCommand(__DIR__.'/../bin/console --env=prod doctrine:phpcr:init:dbal --drop --force');
 runCommand(__DIR__.'/../bin/console --env=prod doctrine:phpcr:repository:init');
 runCommand(__DIR__.'/../bin/console -v --env=prod doctrine:phpcr:fixtures:load -n');
