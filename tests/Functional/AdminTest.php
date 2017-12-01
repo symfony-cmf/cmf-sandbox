@@ -73,13 +73,13 @@ class AdminTest extends WebTestCase
     {
         $pool = $this->getContainer()->get('sonata.admin.pool');
         $adminGroups = $pool->getAdminGroups();
-        $admins = [];
+        $admins = function () use ($adminGroups, $pool) {
+            foreach (array_keys($adminGroups) as $adminName) {
+                yield $pool->getAdminsByGroup($adminName);
+            }
+        };
 
-        foreach (array_keys($adminGroups) as $adminName) {
-            $admins = array_merge($admins, $pool->getAdminsByGroup($adminName));
-        }
-
-        return $admins;
+        return $admins();
     }
 
     /**
@@ -91,12 +91,12 @@ class AdminTest extends WebTestCase
 
         $this->assertTrue(in_array($route, $this->verifiablePatterns));
 
-        $diffCountBefore= count(array_diff_assoc($this->verifiablePatterns, self::$testedPatterns));
+        $diffCountBefore = count(array_diff_assoc($this->verifiablePatterns, self::$testedPatterns));
         self::$testedPatterns[] = $route;
-        $diffCountAfter= count(array_diff_assoc($this->verifiablePatterns, self::$testedPatterns));
+        $diffCountAfter = count(array_diff_assoc($this->verifiablePatterns, self::$testedPatterns));
 
         // verify that at the end is nothing in diff
-        $this->assertEquals($diffCountBefore-1, $diffCountAfter, 'Each admin should be verified.');
+        $this->assertSame($diffCountBefore - 1, $diffCountAfter, 'Each admin should be verified.');
     }
 
     protected function doTestReachableAdminRoutes(AdminInterface $admin)
