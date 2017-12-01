@@ -11,6 +11,7 @@
 
 namespace Tests\Functional;
 
+use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
 
 class AdminTest extends WebTestCase
@@ -57,7 +58,7 @@ class AdminTest extends WebTestCase
         '/cmf/menu/menunode/{id}/delete',
     ];
 
-    protected $testedPatterns = [];
+    protected static $testedPatterns = [];
 
     public function setUp()
     {
@@ -68,27 +69,39 @@ class AdminTest extends WebTestCase
         $this->dm = $this->getContainer()->get('doctrine_phpcr.odm.default_document_manager');
     }
 
-    public function testAdmin()
+    public function getAdmin()
     {
-        $adminGroups = $this->pool->getAdminGroups();
+        $pool = $this->getContainer()->get('sonata.admin.pool');
+        $adminGroups = $pool->getAdminGroups();
         $admins = [];
 
         foreach (array_keys($adminGroups) as $adminName) {
-            $admins = array_merge($admins, $this->pool->getAdminsByGroup($adminName));
+            $admins = array_merge($admins, $pool->getAdminsByGroup($adminName));
         }
 
-        foreach ($admins as $admin) {
-            $this->doTestReachableAdminRoutes($admin);
-        }
-
-        // verify that we have tested everything we wanted to test.
-        $this->assertEquals($this->verifiablePatterns, $this->testedPatterns);
+        return $admins;
     }
 
-    protected function doTestReachableAdminRoutes($admin)
+    /**
+     * @dataProvider getAdmin
+     */
+    public function testAdmin(AdminInterface $admin)
+    {
+        $route = $this->doTestReachableAdminRoutes($admin);
+
+        $this->assertTrue(in_array($route, $this->verifiablePatterns));
+
+        $diffCountBefore= count(array_diff_assoc($this->verifiablePatterns, self::$testedPatterns));
+        self::$testedPatterns[] = $route;
+        $diffCountAfter= count(array_diff_assoc($this->verifiablePatterns, self::$testedPatterns));
+
+        // verify that at the end is nothing in diff
+        $this->assertEquals($diffCountBefore-1, $diffCountAfter, 'Each admin should be verified.');
+    }
+
+    protected function doTestReachableAdminRoutes(AdminInterface $admin)
     {
         $routeCollection = $admin->getRoutes();
-        $class = $admin->getClass();
         $routeParams = ['_locale' => 'en'];
 
         foreach ($routeCollection->getElements() as $route) {
@@ -139,7 +152,7 @@ class AdminTest extends WebTestCase
 
             $this->assertResponseSuccess($res, $url);
 
-            $this->testedPatterns[] = $route->getPath();
+            return $route->getPath();
         }
     }
 }
