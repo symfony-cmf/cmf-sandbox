@@ -45,13 +45,7 @@ web:
 cron:
     symfony:
         spec: '* */2 * * *'
-        cmd: |
-          # force clearing the cache
-          rm -rf var/cache/prod
-          bin/console --env=prod doctrine:phpcr:init:dbal --drop --force
-          bin/console --env=prod doctrine:phpcr:repository:init
-          bin/console --env=prod doctrine:phpcr:fixtures:load -n
-          bin/console --env=prod cache:warmup -n --no-debug
+        cmd: ./bin/reloadFixtures.sh $PWD
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
@@ -64,18 +58,16 @@ mounts:
 # The hooks that will be performed when the package is deployed.
 hooks:
     build: |
-      rm web/app_dev.php
+      if [ "$PLATFORM_BRANCH" = master ]; then
+        rm web/app_dev.php
+      else
+        echo "only remove app_dev.php on master"
+      fi
       # place sqlite file into /tmp so that we can write to it during deploy
       sed -i 's@%kernel.root_dir%/../var/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
       bin/console --env=prod assets:install -n --no-debug
       bin/console --env=prod assetic:dump -n --no-debug
-    deploy: |
-      # force clearing the cache
-      rm -rf var/cache/prod
-      bin/console --env=prod doctrine:phpcr:init:dbal --drop --force -n
-      bin/console --env=prod doctrine:phpcr:repository:init -n
-      bin/console --env=prod doctrine:phpcr:fixtures:load -n
-      bin/console --env=prod cache:warmup -n --no-debug
+    deploy: ./bin/reloadFixtures.sh $PWD
 
 runtime:
   extensions:
