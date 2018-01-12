@@ -1,29 +1,30 @@
-<pre>
 <?php
 
-function runCommand($command, $shouldHaveOutput = true)
+function outputNice($output)
 {
-    $output = $return_var = null;
-    echo "Running: $command\n";
-    exec($command, $output, $return_var);
-
-    if (!$shouldHaveOutput) {
-        return;
-    }
-
-    if (empty($output) || !is_array($output)) {
-        echo 'Fixtures could not be loaded: '.var_export($return_var, true);
-        exit(1);
-    }
-    echo PHP_EOL;
-    echo "Output:\n";
-    foreach ($output as $line) {
-        echo $line."\n";
+    if (is_array($output)) {
+        foreach ($output as $line) {
+            printf("<pre><code>%s</code>", $line);
+        }
+    } else {
+        printf("<pre><code>%s</code>", $output);
     }
 }
 
-runCommand('rm -rf var/cache/prod', false);
-runCommand(__DIR__.'/../bin/console --env=prod doctrine:phpcr:init:dbal --drop --force');
-runCommand(__DIR__.'/../bin/console --env=prod doctrine:phpcr:repository:init');
-runCommand(__DIR__.'/../bin/console -v --env=prod doctrine:phpcr:fixtures:load -n');
-runCommand(__DIR__.'/../bin/console --env=prod cache:warmup -n --no-debug');
+$commandFile = __DIR__.'/../bin/reloadFixtures.sh';
+if (!file_exists($commandFile)) {
+    outputNice('File not found at: '.$commandFile);
+}
+
+$returnValue = null;
+$output = [];
+exec($commandFile.' '.__DIR__.'/../', $output, $returnValue);
+
+if (0 !== (int) $returnValue) {
+    outputNice('Errors on Execution:');
+    outputNice($output);
+    exit($returnValue);
+} else {
+    outputNice($output);
+    outputNice('Success');
+}
