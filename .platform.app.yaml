@@ -45,7 +45,7 @@ web:
 cron:
     symfony:
         spec: '* */2 * * *'
-        cmd: ./bin/reloadFixtures.sh $PWD
+        cmd: ./bin/reloadFixtures.sh $PWD true
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
@@ -63,7 +63,7 @@ hooks:
       sed -i 's@%kernel.root_dir%/../var/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
       bin/console --env=prod assets:install -n --no-debug
       bin/console --env=prod assetic:dump -n --no-debug
-    deploy: ./bin/reloadFixtures.sh $PWD
+    deploy: ./bin/reloadFixtures.sh $PWD true
 
 runtime:
   extensions:
