@@ -22,7 +22,7 @@ run () {
 
 CACHE_DIR=${DIR}var/cache/prod
 #run  "Remove cache directory:" "rm -rf ${CACHE_DIR}"
-run "Drop and init dbal:" "${DIR}bin/console --env=prod doctrine:phpcr:init:dbal --drop --force -n"
-run "Init repositories:" "${DIR}bin/console --env=prod doctrine:phpcr:repository:init -n"
-run "Load date fixtures:" "${DIR}bin/console --env=prod doctrine:phpcr:fixtures:load -n"
-run "Warm up cache:" "${DIR}bin/console --env=prod cache:warmup -n --no-debug"
+run "Drop and init dbal:" "php ${DIR}bin/console --env=prod doctrine:phpcr:init:dbal --drop --force -n"
+run "Init repositories:" "php ${DIR}bin/console --env=prod doctrine:phpcr:repository:init -n"
+run "Load date fixtures:" "php ${DIR}bin/console --env=prod doctrine:phpcr:fixtures:load -n"
+run "Warm up cache:" "php ${DIR}bin/console --env=prod cache:warmup -n --no-debug"
