@@ -58,6 +58,11 @@ mounts:
 # The hooks that will be performed when the package is deployed.
 hooks:
     build: |
+      if [ "$PLATFORM_BRANCH" = master ]; then
+        rm web/app_dev.php
+      else
+        echo "only remove app_dev.php on master"
+      fi
       rm web/app_dev.php
       # place sqlite file into /tmp so that we can write to it during deploy
       sed -i 's@%kernel.root_dir%/../var/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
