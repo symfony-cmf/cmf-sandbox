@@ -6,16 +6,13 @@ run () {
     command=$2
     echo ${comment}
     echo "Command: "${command}
-    ${command} > output 2> error
+    ${command}
     OUT=$?
     if [ ${OUT} -eq 0 ];then
        echo "+++ DONE +++"
-       cat output
        echo
     else
        echo "+++ Errors +++"
-       cat output
-       cat error
        exit ${OUT}
     fi
 }
