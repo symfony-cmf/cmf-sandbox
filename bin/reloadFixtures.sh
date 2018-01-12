@@ -21,7 +21,11 @@ run () {
 }
 
 CACHE_DIR=${DIR}var/cache/prod
-#run  "Remove cache directory:" "rm -rf ${CACHE_DIR}"
+if [ -d "${CACHE_DIR}" ]; then
+    run  "Remove cache directory:" "rm -rf ${CACHE_DIR}"
+else
+    run  "Remove cache directory:" "rm -rf /var/cache/prod"
+fi
 run "Drop and init dbal:" "php ${DIR}bin/console --env=prod doctrine:phpcr:init:dbal --drop --force -n -vvv"
 run "Init repositories:" "php ${DIR}bin/console --env=prod doctrine:phpcr:repository:init -n -vvv"
 run "Load date fixtures:" "php ${DIR}bin/console --env=prod doctrine:phpcr:fixtures:load -n -vvv"
