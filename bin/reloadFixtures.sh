@@ -20,7 +20,8 @@ run () {
     fi
 }
 
-run  "Remove cache directory:" "rm -rf ${DIR}var/cache/prod"
+CACHE_DIR=${DIR}var/cache/prod
+#run  "Remove cache directory:" "rm -rf ${CACHE_DIR}"
 run "Drop and init dbal:" "${DIR}bin/console --env=prod doctrine:phpcr:init:dbal --drop --force -n"
 run "Init repositories:" "${DIR}bin/console --env=prod doctrine:phpcr:repository:init -n"
 run "Load date fixtures:" "${DIR}bin/console --env=prod doctrine:phpcr:fixtures:load -n"
