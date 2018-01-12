@@ -5,6 +5,7 @@ run () {
     comment="+++ "$1" +++"
     command=$2
     echo ${comment}
+    echo "Command: "${command}
     ${command} > output 2> error
     OUT=$?
     if [ ${OUT} -eq 0 ];then
