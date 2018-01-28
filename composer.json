@@ -16,9 +16,15 @@
     "autoload-dev": {
         "psr-4": { "Tests\\": "tests/" }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/symfony-cmf/grapesjs-bundle.git"
+        }
+    ],
     "require": {
-        "php": "^7.1",
-        "symfony/symfony": "^3.3",
+        "php": "^5.6|^7.0",
+        "symfony/symfony": "^3.4",
         "symfony/assetic-bundle": "^2.8",
         "symfony/swiftmailer-bundle": "^2.3.10",
         "symfony/monolog-bundle": "^3.0.2",
@@ -31,7 +37,7 @@
         "symfony-cmf/seo-bundle": "^2.0",
         "symfony-cmf/routing": "^2.0",
         "symfony-cmf/routing-auto-bundle": "^2.0",
-        "symfony-cmf/sonata-phpcr-admin-integration-bundle": "^1.0",
+        "symfony-cmf/sonata-phpcr-admin-integration-bundle": "dev-trygrapes",
 
         "jackalope/jackalope-doctrine-dbal": "1.2.*",
         "jackalope/jackalope-jackrabbit": "1.2.*",
@@ -42,14 +48,20 @@
 
         "sonata-project/cache-bundle": "^2.4",
         "sonata-project/translation-bundle": "2.1.0",
-        "sonata-project/doctrine-phpcr-admin-bundle": "^2.0",
 
         "jms/serializer-bundle": "^1.1",
         "friendsofsymfony/rest-bundle": "~1.7",
         "eko/feedbundle": "^1.2.7",
         "lunetics/locale-bundle": "^2.5",
         "burgov/key-value-form-bundle": "^1.4",
-        "egeloen/ckeditor-bundle": "^4.0"
+        "egeloen/ckeditor-bundle": "^4.0",
+        "sonata-project/core-bundle": "^3.6",
+        "sonata-project/admin-bundle": "^3.30",
+        "sonata-project/block-bundle": "^3.9",
+        "sonata-project/doctrine-phpcr-admin-bundle": "^2.1",
+        "symfony/polyfill-php70": "^1.6",
+        "twig/twig": "^1.35",
+        "symfony-cmf/grapesjs-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
@@ -92,6 +104,8 @@
         }
     },
     "conflict": {
-        "sonata-project/cache": "<1.1.1"
-    }
+      "sonata-project/cache": "<1.1.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
