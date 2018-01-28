@@ -117,7 +117,7 @@ cmf_menu:
 
 cmf_resource:
     description:
-        enhancers: [sonata_phpcr_admin, cmf_tree_icons, doctrine_phpcr_position]
+        enhancers: [doctrine_phpcr_position]
     repositories:
         default:
             type: doctrine/phpcr-odm
