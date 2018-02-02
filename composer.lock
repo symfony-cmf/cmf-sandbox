@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e5a98e702588e4aa9f4b837a9b6b6f84",
+    "content-hash": "a40e553873d1b8d272d5a101aace5c42",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -4197,18 +4197,29 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/grapesjs-bundle.git",
-                "reference": "28e1ba8d06126656a56b7240a607b766290b85e7"
+                "reference": "90cd3c6ae68e08dd9e198c98e99180c1d7204d73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/grapesjs-bundle/zipball/28e1ba8d06126656a56b7240a607b766290b85e7",
-                "reference": "28e1ba8d06126656a56b7240a607b766290b85e7",
+                "url": "https://api.github.com/repos/symfony-cmf/grapesjs-bundle/zipball/90cd3c6ae68e08dd9e198c98e99180c1d7204d73",
+                "reference": "90cd3c6ae68e08dd9e198c98e99180c1d7204d73",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
-                "symfony/form": "^2.8 || ^3.0 || ^4.0",
-                "symfony/framework-bundle": "^2.8 || ^3.0 || ^4.0"
+                "symfony/form": "^3.3 || ^4.0",
+                "symfony/framework-bundle": "^3.3 || ^4.0"
+            },
+            "require-dev": {
+                "symfony-cmf/testing": "^2.1",
+                "symfony/asset": "^4.0",
+                "symfony/dotenv": "^4.0",
+                "symfony/templating": "^4.0",
+                "symfony/translation": "^4.0",
+                "symfony/validator": "^4.0",
+                "symfony/web-server-bundle": "^4.0",
+                "symfony/yaml": "^4.0",
+                "twig/twig": "^2.4"
             },
             "type": "library",
             "extra": {
@@ -4221,11 +4232,7 @@
                     "Symfony\\Cmf\\Bundle\\GrapesjsBundle\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Symfony\\Cmf\\Bundle\\GrapesjsBundle\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4236,11 +4243,7 @@
                 }
             ],
             "description": "Bundle to enable grapesjs support as a Symfony form.",
-            "support": {
-                "source": "https://github.com/symfony-cmf/grapesjs-bundle/tree/master",
-                "issues": "https://github.com/symfony-cmf/grapesjs-bundle/issues"
-            },
-            "time": "2018-01-28T08:24:35+00:00"
+            "time": "2018-02-01T04:58:49+00:00"
         },
         {
             "name": "symfony-cmf/menu-bundle",
@@ -6819,7 +6822,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "symfony-cmf/sonata-phpcr-admin-integration-bundle": 20
+        "symfony-cmf/sonata-phpcr-admin-integration-bundle": 20,
+        "symfony-cmf/grapesjs-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

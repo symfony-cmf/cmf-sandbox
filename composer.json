@@ -16,12 +16,6 @@
     "autoload-dev": {
         "psr-4": { "Tests\\": "tests/" }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/symfony-cmf/grapesjs-bundle.git"
-        }
-    ],
     "require": {
         "php": "^5.6|^7.0",
         "symfony/symfony": "^3.4",
@@ -61,7 +55,7 @@
         "sonata-project/doctrine-phpcr-admin-bundle": "^2.1",
         "symfony/polyfill-php70": "^1.6",
         "twig/twig": "^1.35",
-        "symfony-cmf/grapesjs-bundle": "^1.0"
+        "symfony-cmf/grapesjs-bundle": "^1.0@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
