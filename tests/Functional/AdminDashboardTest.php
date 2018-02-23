@@ -9,7 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\Functional;
+namespace App\Tests\Functional;
+
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 class AdminDashboardTest extends WebTestCase
 {
@@ -19,7 +22,7 @@ class AdminDashboardTest extends WebTestCase
 
         $client->request('GET', '/admin');
 
-        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
 
         $client->followRedirect();
 
@@ -27,7 +30,7 @@ class AdminDashboardTest extends WebTestCase
 
         $client->request('GET', '/admin/dashboard');
 
-        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
 
         $client->followRedirect();
 

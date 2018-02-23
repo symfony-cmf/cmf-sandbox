@@ -9,8 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\Functional;
+namespace App\Tests\Functional;
 
+use App\Kernel;
 use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -25,9 +26,9 @@ abstract class WebTestCase extends BaseWebTestCase
         }
 
         $this->loadFixtures([
-            'AppBundle\DataFixtures\PHPCR\LoadStaticPageData',
-            'AppBundle\DataFixtures\PHPCR\LoadMenuData',
-            'AppBundle\DataFixtures\PHPCR\LoadRoutingData',
+            'App\DataFixtures\PHPCR\LoadStaticPageData',
+            'App\DataFixtures\PHPCR\LoadMenuData',
+            'App\DataFixtures\PHPCR\LoadRoutingData',
         ], null, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;
@@ -36,11 +37,11 @@ abstract class WebTestCase extends BaseWebTestCase
     protected function createClientAuthenticated(array $options = [], array $server = [])
     {
         $server = array_merge($server, [
-            'PHP_AUTH_USER' => 'admin',
-            'PHP_AUTH_PW' => 'admin',
+            'PHP_AUTH_USER' => 'username',
+            'PHP_AUTH_PW' => 'pa$$word',
         ]);
 
-        return $this->createClient($options, $server);
+        return self::createClient($options, $server);
     }
 
     /**
@@ -70,5 +71,10 @@ abstract class WebTestCase extends BaseWebTestCase
             $response->getStatusCode(),
             $exception ? 'Exception: "'.trim($exception).'" on url: '.$url : null
         );
+    }
+
+    protected static function getKernelClass()
+    {
+        return Kernel::class;
     }
 }

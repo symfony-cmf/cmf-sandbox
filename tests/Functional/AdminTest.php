@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\Functional;
+namespace App\Tests\Functional;
 
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;

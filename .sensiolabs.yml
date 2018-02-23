@@ -5,21 +5,17 @@
 
 global_exclude_dirs:
     - vendor
-    - web
-    - app/tests
+    - public
+    - tests
     - vagrant
     - bin
 
 pre_composer_script: |
     #!/bin/bash
 
-    cp app/config/parameters.yml.dist app/config/parameters.yml
-    cp app/config/phpcr_doctrine_dbal.yml.dist app/config/phpcr.yml
+    cp config/fixtures/parameters.yml.dist config/packages/parameters.yml
+    cp config/fixtures/phpcr_doctrine_dbal.yml.dist config/packages/phpcr.yml
 
-exclude_patterns:
-    - app/autoload.php
-    - app/check.php
-    - app/SymfonyRequirements.php
 
 rules:
     symfony.web_config_should_not_be_present:
