@@ -11,9 +11,6 @@
 
 namespace App\Tests\Functional;
 
-use Symfony\Component\HttpFoundation\Cookie;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-
 class AdminDashboardTest extends WebTestCase
 {
     public function testRedirectToDashboard()

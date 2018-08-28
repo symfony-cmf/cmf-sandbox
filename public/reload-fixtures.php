@@ -20,7 +20,7 @@ function outputNice($output)
     }
 }
 
-$commandFile = __DIR__ . '/../bin/reloadFixtures.sh';
+$commandFile = __DIR__.'/../bin/reloadFixtures.sh';
 if (!file_exists($commandFile)) {
     outputNice('File not found at: '.$commandFile);
 }

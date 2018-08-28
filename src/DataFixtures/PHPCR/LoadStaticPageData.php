@@ -50,7 +50,7 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
         $yaml = new Parser();
         $data = $yaml->parse(
             file_get_contents(
-                __DIR__ . '/../../Resources/data/page.yml'
+                __DIR__.'/../../Resources/data/page.yml'
             )
         );
 
