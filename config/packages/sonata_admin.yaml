@@ -41,7 +41,9 @@ sonata_admin:
         cmf_sonata_phpcr_admin_integration.seo.extension.metadata:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
-
+    assets:
+        extra_stylesheets:
+            - bundles/sonatatranslation/css/sonata-translation.css
     templates:
         layout:     admin/custom_layout.html.twig
         user_block: admin/user_block.html.twig
