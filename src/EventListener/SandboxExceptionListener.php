@@ -11,9 +11,9 @@
 
 namespace App\EventListener;
 
+use Doctrine\ODM\PHPCR\DocumentManager;
+use Doctrine\ODM\PHPCR\DocumentManagerInterface;
 use PHPCR\RepositoryException;
-use Symfony\Component\DependencyInjection\ContainerAwareInterface;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
@@ -24,31 +24,61 @@ use Symfony\Component\HttpKernel\KernelEvents;
  * Exception listener that will handle not found exceptions and try to give the
  * first time installer some clues what is wrong.
  */
-class SandboxExceptionListener implements EventSubscriberInterface, ContainerAwareInterface
+class SandboxExceptionListener implements EventSubscriberInterface
 {
-    use ContainerAwareTrait;
+    /**
+     * @var DocumentManager
+     */
+    private $documentManager;
+    /**
+     * @var string
+     */
+    private $menuBasePath;
 
-    public function onKernelException(GetResponseForExceptionEvent $event)
+    /**
+     * SandboxExceptionListener constructor.
+     *
+     * @param string $menuBasePath
+     */
+    public function __construct(string $menuBasePath)
+    {
+        $this->menuBasePath = $menuBasePath;
+    }
+
+    public function setDocumentManager(DocumentManagerInterface $documentManager): void
+    {
+        $this->documentManager = $documentManager;
+    }
+
+    public function onKernelException(GetResponseForExceptionEvent $event): void
     {
         if (!$event->getException() instanceof NotFoundHttpException) {
             return;
         }
 
-        if (!$this->container->has('doctrine_phpcr.odm.default_document_manager')) {
+        if (null !== $this->documentManager) {
             $error = 'Missing the service doctrine_phpcr.odm.default_document_manager.';
         } else {
             try {
-                $om = $this->container->get('doctrine_phpcr.odm.default_document_manager');
-                $doc = $om->find(null, $this->container->getParameter('cmf_menu.persistence.phpcr.menu_basepath'));
+                $doc = $this->documentManager->find(null, $this->menuBasePath);
                 if ($doc) {
-                    $error = 'Hm. No clue what goes wrong. Maybe this is a real 404?<pre>'.$event->getException()->__toString().'</pre>';
+                    $error = sprintf('Hm. No clue what goes wrong. Maybe this is a real 404?<pre>%s</pre>', $event->getException());
                 } else {
-                    $error = 'Did you load the fixtures? See README for how to load them. I found no node at menu_basepath: '.$this->container->getParameter('cmf_menu.persistence.phpcr.menu_basepath');
+                    $error = 'Did you load the fixtures? See README for how to load them. I found no node at menu_basepath: '.$this->menuBasePath;
                 }
             } catch (RepositoryException $e) {
-                $error = 'There was an exception loading the document manager: <strong>'.$e->getMessage().
-                    "</strong><br/>\n<em>Make sure you have a phpcr backend properly set up and running.</em><br/><pre>".
-                    $e->__toString().'</pre>';
+                $error = sprintf(
+                    'There was an exception loading the document manager:
+                            <strong>%s</strong>
+                            <br/>\n
+                            <em>
+                                Make sure you have a phpcr backend properly set up and running.
+                            </em>
+                            <br/>
+                            <pre>%s</pre>',
+                    $e->getMessage(),
+                    $e->__toString()
+                    );
             }
         }
         // do not even trust the templating system to work
@@ -73,7 +103,7 @@ class SandboxExceptionListener implements EventSubscriberInterface, ContainerAwa
         $event->setResponse($response);
     }
 
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             KernelEvents::EXCEPTION => ['onKernelException', 0],

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9ec1241b506acbc91bd96a365bae70aa",
+    "content-hash": "8b7cfe2f6659ec10c507e91b03a112db",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -1708,21 +1708,22 @@
         },
         {
             "name": "friendsofsymfony/ckeditor-bundle",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSCKEditorBundle.git",
-                "reference": "8f021fd3f2728f2b4286fdd7ca5f7e4d24c3c828"
+                "reference": "7d428b16154a7136e1dd4c11062573afa1bfb3df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSCKEditorBundle/zipball/8f021fd3f2728f2b4286fdd7ca5f7e4d24c3c828",
-                "reference": "8f021fd3f2728f2b4286fdd7ca5f7e4d24c3c828",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSCKEditorBundle/zipball/7d428b16154a7136e1dd4c11062573afa1bfb3df",
+                "reference": "7d428b16154a7136e1dd4c11062573afa1bfb3df",
                 "shasum": ""
             },
             "require": {
                 "ext-zip": "*",
                 "php": "^5.6 || ^7.0",
+                "symfony/asset": "^2.7 || ^3.0 || ^4.0",
                 "symfony/config": "^2.7 || ^3.0 || ^4.0",
                 "symfony/dependency-injection": "^2.7 || ^3.0 || ^4.0",
                 "symfony/expression-language": "^2.7 || ^3.0 || ^4.0",
@@ -1744,7 +1745,6 @@
                 "matthiasnoback/symfony-dependency-injection-test": "^1.0 || ^2.0",
                 "phpunit/phpunit": "^5.0 || ^6.0",
                 "sensio/distribution-bundle": "^3.0.12 || ^4.0 || ^5.0",
-                "symfony/asset": "^2.7 || ^3.0 || ^4.0",
                 "symfony/console": "^2.7 || ^3.0 || ^4.0",
                 "symfony/phpunit-bridge": "^4.0",
                 "symfony/templating": "^2.7 || ^3.0 || ^4.0",
@@ -1784,7 +1784,7 @@
             "keywords": [
                 "CKEditor"
             ],
-            "time": "2018-05-25T18:07:58+00:00"
+            "time": "2018-10-03T20:51:58+00:00"
         },
         {
             "name": "friendsofsymfony/rest-bundle",
@@ -2419,6 +2419,69 @@
             "time": "2017-12-08T19:49:08+00:00"
         },
         {
+            "name": "knplabs/knp-markdown-bundle",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpMarkdownBundle.git",
+                "reference": "c055def2e67fe0d3b3d2e993584f01ff222eff86"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpMarkdownBundle/zipball/c055def2e67fe0d3b3d2e993584f01ff222eff86",
+                "reference": "c055def2e67fe0d3b3d2e993584f01ff222eff86",
+                "shasum": ""
+            },
+            "require": {
+                "michelf/php-markdown": "~1.4",
+                "php": ">=5.5.9",
+                "symfony/dependency-injection": "~2.8|~3.0|^4.0",
+                "symfony/framework-bundle": "~2.8|~3.0|^4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5",
+                "symfony/templating": "~2.8|~3.0|^4.0"
+            },
+            "suggest": {
+                "ext-sundown": "to use optional support for php-sundown extension instead of php implementation",
+                "symfony/twig-bundle": "to use the Twig markdown filter"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Knp\\Bundle\\MarkdownBundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpMarkdownBundle/contributors"
+                }
+            ],
+            "description": "Knplabs markdown bundle transforms markdown into html",
+            "homepage": "http://github.com/KnpLabs/KnpMarkdownBundle",
+            "keywords": [
+                "bundle",
+                "knp",
+                "knplabs",
+                "markdown"
+            ],
+            "time": "2019-01-03T19:47:10+00:00"
+        },
+        {
             "name": "knplabs/knp-menu",
             "version": "2.3.0",
             "source": {
@@ -2610,6 +2673,52 @@
                 "router"
             ],
             "time": "2018-03-28T08:49:55+00:00"
+        },
+        {
+            "name": "michelf/php-markdown",
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "01ab082b355bf188d907b9929cd99b2923053495"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/01ab082b355bf188d907b9929cd99b2923053495",
+                "reference": "01ab082b355bf188d907b9929cd99b2923053495",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Michelf\\": "Michelf/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "https://michelf.ca/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "https://daringfireball.net/"
+                }
+            ],
+            "description": "PHP Markdown",
+            "homepage": "https://michelf.ca/projects/php-markdown/",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2018-01-15T00:49:33+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4138,6 +4247,92 @@
             "time": "2017-11-30T13:30:20+00:00"
         },
         {
+            "name": "sonata-project/formatter-bundle",
+            "version": "4.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataFormatterBundle.git",
+                "reference": "c3ef62497743a0d21082a31b38bf944b426e4439"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataFormatterBundle/zipball/c3ef62497743a0d21082a31b38bf944b426e4439",
+                "reference": "c3ef62497743a0d21082a31b38bf944b426e4439",
+                "shasum": ""
+            },
+            "require": {
+                "friendsofsymfony/ckeditor-bundle": "^1.0",
+                "knplabs/knp-markdown-bundle": "^1.7",
+                "php": "^7.1",
+                "psr/log": "^1.0",
+                "sonata-project/block-bundle": "^3.11",
+                "sonata-project/core-bundle": "^3.9",
+                "symfony/config": "^3.4 || ^4.0",
+                "symfony/dependency-injection": "^3.2 || ^4.0",
+                "symfony/event-dispatcher": "^3.2 || ^4.0",
+                "symfony/form": "^3.4 || ^4.0",
+                "symfony/framework-bundle": "^3.4 || ^4.0",
+                "symfony/http-foundation": "^3.4 || ^4.0",
+                "symfony/http-kernel": "^3.4 || ^4.0",
+                "symfony/options-resolver": "^3.4 || ^4.0",
+                "symfony/property-access": "^3.4 || ^4.0",
+                "symfony/translation": "^3.4 || ^4.0",
+                "symfony/twig-bridge": "^3.4 || ^4.0",
+                "symfony/validator": "^3.4 || ^4.0",
+                "twig/twig": "^2.4"
+            },
+            "conflict": {
+                "sonata-project/admin-bundle": "<3.27",
+                "sonata-project/media-bundle": "<3.0"
+            },
+            "require-dev": {
+                "matthiasnoback/symfony-dependency-injection-test": "^3.0",
+                "sonata-project/admin-bundle": "^3.31",
+                "sonata-project/media-bundle": "^3.10",
+                "symfony/phpunit-bridge": "^4.1"
+            },
+            "suggest": {
+                "sonata-project/admin-bundle": "For using the admin media browser.",
+                "sonata-project/media-bundle": "For using the admin media browser."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Sonata\\FormatterBundle\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataFormatterBundle/contributors"
+                },
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "https://sonata-project.org"
+                }
+            ],
+            "description": "Symfony SonataFormatterBundle",
+            "homepage": "https://sonata-project.org/bundles/formatter",
+            "keywords": [
+                "CKEditor",
+                "formatter",
+                "markdown",
+                "markitup",
+                "sonata"
+            ],
+            "time": "2018-10-08T20:53:21+00:00"
+        },
+        {
             "name": "sonata-project/seo-bundle",
             "version": "2.5.0",
             "source": {
@@ -5170,22 +5365,22 @@
         },
         {
             "name": "symfony-cmf/sonata-phpcr-admin-integration-bundle",
-            "version": "dev-master",
+            "version": "dev-use_fos_ckeditor",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony-cmf/sonata-phpcr-admin-integration-bundle.git",
-                "reference": "5fa9d85fbcf542e319c9a5ac07aac99cf9482eb6"
+                "reference": "2723fe7fad79132dfbbe3dc520566f8577141fe4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/5fa9d85fbcf542e319c9a5ac07aac99cf9482eb6",
-                "reference": "5fa9d85fbcf542e319c9a5ac07aac99cf9482eb6",
+                "url": "https://api.github.com/repos/symfony-cmf/sonata-phpcr-admin-integration-bundle/zipball/2723fe7fad79132dfbbe3dc520566f8577141fe4",
+                "reference": "2723fe7fad79132dfbbe3dc520566f8577141fe4",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
                 "sonata-project/admin-bundle": "^3.6.0",
-                "sonata-project/doctrine-phpcr-admin-bundle": "^2.1",
+                "sonata-project/doctrine-phpcr-admin-bundle": "dev-allow_Symfony_4 as 2.1",
                 "symfony-cmf/tree-browser-bundle": "^2.0",
                 "symfony/framework-bundle": "^2.8 || ^3.3 || ^4.0"
             },
@@ -5198,7 +5393,7 @@
                 "doctrine/doctrine-bundle": "^1.3",
                 "doctrine/orm": "^2.4",
                 "doctrine/phpcr-odm": "^1.4|^2.0",
-                "egeloen/ckeditor-bundle": "^4.0",
+                "friendsofsymfony/ckeditor-bundle": "^1.0",
                 "matthiasnoback/symfony-config-test": "^2.1",
                 "matthiasnoback/symfony-dependency-injection-test": "^1.1",
                 "symfony-cmf/block-bundle": "^2.1",
@@ -5248,7 +5443,7 @@
                 "admin",
                 "sonata"
             ],
-            "time": "2018-01-29T08:42:17+00:00"
+            "time": "2018-06-13T22:50:45+00:00"
         },
         {
             "name": "symfony-cmf/symfony-cmf",
@@ -8974,6 +9169,312 @@
             "time": "2018-02-03T00:03:06+00:00"
         },
         {
+            "name": "nikic/php-parser",
+            "version": "v4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "594bcae1fc0bccd3993d2f0d61a018e26ac2865a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/594bcae1fc0bccd3993d2f0d61a018e26ac2865a",
+                "reference": "594bcae1fc0bccd3993d2f0d61a018e26ac2865a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.5 || ^7.0"
+            },
+            "bin": [
+                "bin/php-parse"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpParser\\": "lib/PhpParser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "parser",
+                "php"
+            ],
+            "time": "2019-01-12T16:31:37+00:00"
+        },
+        {
+            "name": "nyholm/nsa",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nyholm/NSA.git",
+                "reference": "213a70dee2dd04433d31a187e24e92c8b59d1655"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nyholm/NSA/zipball/213a70dee2dd04433d31a187e24e92c8b59d1655",
+                "reference": "213a70dee2dd04433d31a187e24e92c8b59d1655",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3 || ^7.0",
+                "webmozart/assert": "^1.1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nyholm\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "See everything and do whatever you want. No privacy rule will stop us. Used in tests, debugging and fixtures to access properties and methods.",
+            "homepage": "http://tnyholm.se",
+            "keywords": [
+                "Fixture",
+                "debug",
+                "reflection",
+                "test"
+            ],
+            "time": "2017-04-13T17:21:01+00:00"
+        },
+        {
+            "name": "php-translation/common",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/common.git",
+                "reference": "ceac357a7ad0582d0a6be7b7f2db178c87f229fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/common/zipball/ceac357a7ad0582d0a6be7b7f2db178c87f229fd",
+                "reference": "ceac357a7ad0582d0a6be7b7f2db178c87f229fd",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.4 || ^7.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.4 || ^4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Translation\\Common\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "Common translation stuff",
+            "time": "2018-06-14T16:18:37+00:00"
+        },
+        {
+            "name": "php-translation/extractor",
+            "version": "1.7.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/extractor.git",
+                "reference": "82fc51a07fb626c0bfb31fb3f041baa88fee6acb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/extractor/zipball/82fc51a07fb626c0bfb31fb3f041baa88fee6acb",
+                "reference": "82fc51a07fb626c0bfb31fb3f041baa88fee6acb",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/annotations": "^1.2",
+                "nikic/php-parser": "^3.0 || ^4.0",
+                "php": "^5.5 || ^7.0",
+                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
+                "twig/twig": "^1.27 || ^2.0"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3.4 || ^4.0",
+                "symfony/translation": "^3.0 || ^4.0",
+                "symfony/twig-bridge": "^3.0 || ^4.0",
+                "symfony/validator": "^3.0 || ^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Translation\\Extractor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "Extract translations form the source code",
+            "time": "2018-07-09T17:05:17+00:00"
+        },
+        {
+            "name": "php-translation/symfony-bundle",
+            "version": "0.8.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/symfony-bundle.git",
+                "reference": "fe29aeff419c311672c7d3dc72d9423eefc3ca5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/symfony-bundle/zipball/fe29aeff419c311672c7d3dc72d9423eefc3ca5c",
+                "reference": "fe29aeff419c311672c7d3dc72d9423eefc3ca5c",
+                "shasum": ""
+            },
+            "require": {
+                "nyholm/nsa": "^1.1",
+                "php": "^5.5 || ^7.0",
+                "php-translation/common": "^1.0",
+                "php-translation/extractor": "^1.3",
+                "php-translation/symfony-storage": "^1.0",
+                "symfony/finder": "^2.7 || ^3.0 || ^4.0",
+                "symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0",
+                "symfony/intl": "^2.7 || ^3.0 || ^4.0",
+                "symfony/translation": "^2.7 || ^3.0 || ^4.0",
+                "symfony/twig-bundle": "^2.7 || ^3.0 || ^4.0",
+                "symfony/validator": "^2.7 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "guzzlehttp/psr7": "^1.4",
+                "matthiasnoback/symfony-config-test": "^2.2 || ^3.1",
+                "matthiasnoback/symfony-dependency-injection-test": "^1.2 || ^2.3",
+                "nyholm/symfony-bundle-test": "^1.2.3",
+                "php-http/curl-client": "^1.7",
+                "php-http/message": "^1.6",
+                "php-http/message-factory": "^1.0.2",
+                "php-translation/translator": "^1.0",
+                "symfony/asset": "^2.7 || ^3.0 || ^4.0",
+                "symfony/console": "^2.7 || ^3.0 || ^4.0",
+                "symfony/dependency-injection": "^2.7 || ^3.0 || ^4.0",
+                "symfony/phpunit-bridge": "^3.4 || ^4.0",
+                "symfony/templating": "^2.7 || ^3.0 || ^4.0",
+                "symfony/twig-bridge": "^2.7 || ^3.0 || ^4.0",
+                "symfony/web-profiler-bundle": "^2.7 || ^3.0 || ^4.0"
+            },
+            "suggest": {
+                "php-http/httplug-bundle": "To easier configure your httplug clients."
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Translation\\Bundle\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "time": "2018-10-02T10:05:24+00:00"
+        },
+        {
+            "name": "php-translation/symfony-storage",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-translation/symfony-storage.git",
+                "reference": "8d7b1ea6bf22bee0c7dc9b228cf9437312373a27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-translation/symfony-storage/zipball/8d7b1ea6bf22bee0c7dc9b228cf9437312373a27",
+                "reference": "8d7b1ea6bf22bee0c7dc9b228cf9437312373a27",
+                "shasum": ""
+            },
+            "require": {
+                "nyholm/nsa": "^1.1",
+                "php": "^5.5 || ^7.0",
+                "php-translation/common": "^1.0",
+                "symfony/translation": "^2.7 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "symfony/framework-bundle": "^2.7.39 || ^3.0 || ^4.0",
+                "symfony/phpunit-bridge": "^3.4 || ^4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Translation\\SymfonyStorage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                }
+            ],
+            "description": "A translation file storage using Symfony translation component.",
+            "time": "2018-07-10T10:32:01+00:00"
+        },
+        {
             "name": "symfony-cmf/testing",
             "version": "2.1.11",
             "source": {
@@ -9352,7 +9853,8 @@
     "stability-flags": {
         "lunetics/locale-bundle": 20,
         "sonata-project/cache-bundle": 20,
-        "sonata-project/doctrine-phpcr-admin-bundle": 20
+        "sonata-project/doctrine-phpcr-admin-bundle": 20,
+        "symfony-cmf/sonata-phpcr-admin-integration-bundle": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

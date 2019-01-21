@@ -2,7 +2,6 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 # This file is auto-generated during the composer install
 imports:
-    - { resource: more_services.yaml }
     - { resource: phpcr.yaml }
 
 parameters:
@@ -47,12 +46,26 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
     App\Twig\MenuExtension:
         arguments:
             $helper: '@knp_menu.helper'
             $matcher: '@knp_menu.matcher'
         tags:
             - { name: twig.extension }
+
     app.content_controller:
         alias: 'App\Controller\ContentController'
         public: true
+
+    App\EventListener\SandboxExceptionListener:
+        arguments:
+            - '%cmf_menu.persistence.phpcr.menu_basepath%'
+        calls:
+            - [setDocumentManager, ['@doctrine_phpcr.odm.default_document_manager']]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    App\Security\ResourceVoter:
+        tags:
+            - { name: security.voter }

@@ -42,7 +42,18 @@ sonata_admin:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
     assets:
+        extra_javascripts:
+            - bundles/fosckeditor/ckeditor.js
+            - bundles/sonataformatter/vendor/markitup-markitup/markitup/jquery.markitup.js
+            - bundles/sonataformatter/markitup/sets/markdown/set.js
+            - bundles/sonataformatter/markitup/sets/html/set.js
+            - bundles/sonataformatter/markitup/sets/textile/set.js
+
         extra_stylesheets:
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
             - bundles/sonatatranslation/css/sonata-translation.css
     templates:
         layout:     admin/custom_layout.html.twig
@@ -92,3 +103,48 @@ sonata_seo:
         metas:
             name:
                 keywords: 'CMF, Symfony, Routing, Content, PHPCR'
+
+
+sonata_formatter:
+    default_formatter: richhtml
+
+    ckeditor:
+        templates:
+            browser: '@SonataFormatter/Ckeditor/browser.html.twig'
+            upload: '@SonataFormatter/Ckeditor/upload.html.twig'
+    formatters:
+        markdown:
+            service: sonata.formatter.text.markdown
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig #keep this commented unless you are using media bundle.
+
+
+        text:
+            service: sonata.formatter.text.text
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        rawhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        richhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        twig:
+            service: sonata.formatter.text.twigengine
+            extensions: [] # Twig formatter cannot have extensions

@@ -38,12 +38,13 @@ cmf_sonata_phpcr_admin_integration:
         menu: ~
         core: ~
         content:
-           ivory_ckeditor:
-              config_name: cmf_sonata_phpcr_admin_integration
+            fos_ck_editor:
+                config_name: cmf_sonata_phpcr_admin_integration
         block:
             basepath: /cms/content
             menu_basepath: /cms/content
         routing: ~
+
 cmf_routing:
     chain:
         routers_by_id:
@@ -56,7 +57,6 @@ cmf_routing:
         controllers_by_class:
             App\Document\DemoClassContent: app.content_controller:classAction
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
-
         templates_by_class:
             Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: static_content/index.html.twig
 

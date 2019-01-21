@@ -1,15 +1,2 @@
 services:
-    App\Controller\ContentController: '@app.content_controller'
 
-    app.content_controller:
-        parent: cmf_content.controller
-
-    App\EventListener\SandboxExceptionListener:
-#        calls:
-#            - [setContainer, ['@service_container']
-        tags:
-            - { name: kernel.event_subscriber }
-
-    App\Security\ResourceVoter:
-        tags:
-            - { name: security.voter }

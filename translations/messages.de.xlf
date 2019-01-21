@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="de" trgLang="de">
+  <file id="messages.de">
+    <unit id="g9r8rfb" name="cmf.action_block.title">
+      <segment>
+        <source>cmf.action_block.title</source>
+        <target>Demo Aktions-Block</target>
+      </segment>
+    </unit>
+    <unit id="1dhb1N4" name="cmf.action_block.body">
+      <segment>
+        <source>cmf.action_block.body</source>
+        <target>Dieser Inhalt wurde durch eine Symfony2 Controller Action gerendert. Er kann nicht inline editiert werden.</target>
+      </segment>
+    </unit>
+    <unit id="1pISB9p" name="cmf.raw_data">
+      <segment>
+        <source>cmf.raw_data</source>
+        <target>Dieses Fenster zeigt, wie Inhalt mit einem Accept Header im xml bzw json Format abgefragt werden kann.
+Damit dies geht, muss das Format erlabut sein in fos_rest.format_listener.rules und braucht es Konfiguration
+für den jms serializer für das Dokument in config.yml.
+</target>
+      </segment>
+    </unit>
+    <unit id="XOTWOEp" name="cmf.raw_data_hint">
+      <segment>
+        <source>cmf.raw_data_hint</source>
+        <target>Rohdaten dieser Seite anzeigen.</target>
+      </segment>
+    </unit>
+  </file>
+</xliff>
