@@ -275,6 +275,9 @@
     "sonata-project/datagrid-bundle": {
         "version": "2.3.1"
     },
+    "sonata-project/doctrine-extensions": {
+        "version": "1.1.5"
+    },
     "sonata-project/doctrine-orm-admin-bundle": {
         "version": "3.4.2"
     },
@@ -382,6 +385,9 @@
             "version": "3.3",
             "ref": "c646e4b71af082e94b5014daca36ef6812bad076"
         }
+    },
+    "symfony/contracts": {
+        "version": "v1.0.2"
     },
     "symfony/css-selector": {
         "version": "v4.0.4"
@@ -533,6 +539,18 @@
             "ref": "f8a63faa0d9521526499c0a8f403c9964ecb0527"
         }
     },
+    "symfony/security-core": {
+        "version": "v4.2.4"
+    },
+    "symfony/security-csrf": {
+        "version": "v4.2.4"
+    },
+    "symfony/security-guard": {
+        "version": "v4.2.4"
+    },
+    "symfony/security-http": {
+        "version": "v4.2.4"
+    },
     "symfony/serializer": {
         "version": "v4.0.4"
     },
@@ -577,6 +595,9 @@
     },
     "symfony/var-dumper": {
         "version": "v4.0.4"
+    },
+    "symfony/var-exporter": {
+        "version": "v4.2.4"
     },
     "symfony/web-profiler-bundle": {
         "version": "3.3",
