@@ -38,7 +38,7 @@ cmf_sonata_phpcr_admin_integration:
         menu: ~
         core: ~
         content:
-            fos_ck_editor:
+            fos_ckeditor:
                 config_name: cmf_sonata_phpcr_admin_integration
         block:
             basepath: /cms/content
