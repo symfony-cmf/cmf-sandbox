@@ -16,11 +16,13 @@ matrix:
       env: TRANSPORT=jackrabbit COMPOSER_INSTALL=1
     - php: 7.1
       env: TRANSPORT=doctrine_dbal COMPOSER_INSTALL=1
+    - env: TARGET=lint
 
 env:
   global:
-    - SYMFONY_PHPUNIT_DIR=.phpunit SYMFONY_PHPUNIT_REMOVE="symfony/yaml" SYMFONY_PHPUNIT_VERSION=5.7
-    - SYMFONY_DEPRECATIONS_HELPER=weak
+    - SYMFONY_DEPRECATIONS_HELPER="/.*each.*/"
+    - SYMFONY_PHPUNIT_DIR=.phpunit SYMFONY_PHPUNIT_REMOVE="symfony/yaml"
+    - TARGET=test
   matrix:
     - TRANSPORT=jackrabbit
     - TRANSPORT=doctrine_dbal
@@ -32,18 +34,12 @@ before_install:
   - composer self-update
 
 install:
-  - phpenv config-add travis.php.ini
-  - php -ini | grep memory_limit
-  - if [ "$COMPOSER_INSTALL" != "1" ]; then composer update --no-scripts --prefer-dist; else composer install --no-scripts --prefer-dist; fi
+  - if [ -x .travis/install_${TARGET}.sh ]; then .travis/install_${TARGET}.sh; fi;
 
 before_script:
-  - cp config/fixtures/phpcr_${TRANSPORT}.yaml.dist config/phpcr.yaml
-  - composer run-script post-update-cmd
-  - ./tests/travis_${TRANSPORT}.sh
-  - bin/console doctrine:phpcr:workspace:create sandbox_test -e test
-  - bin/console doctrine:phpcr:repository:init -e test
+  - if [ -x .travis/install_${TARGET}.sh ]; then .travis/before_${TARGET}.sh; fi;
 
-script: php vendor/bin/simple-phpunit --debug
+script: make target
 
 notifications:
   email: "symfony-cmf-devs@googlegroups.com"
