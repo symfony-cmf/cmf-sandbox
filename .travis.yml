@@ -40,8 +40,8 @@ before_script:
   - cp config/fixtures/phpcr_${TRANSPORT}.yaml.dist config/phpcr.yaml
   - composer run-script post-update-cmd
   - ./tests/travis_${TRANSPORT}.sh
-  - bin/console doctrine:phpcr:workspace:create sandbox_test -e=test
-  - bin/console doctrine:phpcr:repository:init -e=test
+  - bin/console doctrine:phpcr:workspace:create sandbox_test -e test
+  - bin/console doctrine:phpcr:repository:init -e test
 
 script: php vendor/bin/simple-phpunit --debug
 
