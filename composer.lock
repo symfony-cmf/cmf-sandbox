@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02a35c98a9a02434d24e36e78e86dbd7",
+    "content-hash": "7363a16ce67c737a33c731e8e618088d",
     "packages": [
         {
             "name": "aferrandini/urlizer",
@@ -3830,16 +3830,16 @@
         },
         {
             "name": "sonata-project/cache-bundle",
-            "version": "2.x-dev",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCacheBundle.git",
-                "reference": "91cb66be11c4b70314288ac36554ec3cc6145641"
+                "reference": "359f9afcc909e61b3766e66700e112528c699b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCacheBundle/zipball/91cb66be11c4b70314288ac36554ec3cc6145641",
-                "reference": "91cb66be11c4b70314288ac36554ec3cc6145641",
+                "url": "https://api.github.com/repos/sonata-project/SonataCacheBundle/zipball/359f9afcc909e61b3766e66700e112528c699b8a",
+                "reference": "359f9afcc909e61b3766e66700e112528c699b8a",
                 "shasum": ""
             },
             "require": {
@@ -3905,7 +3905,7 @@
             "keywords": [
                 "cache block"
             ],
-            "time": "2018-09-12T02:20:06+00:00"
+            "time": "2018-03-12T10:12:36+00:00"
         },
         {
             "name": "sonata-project/core-bundle",

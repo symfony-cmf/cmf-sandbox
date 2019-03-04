@@ -41,7 +41,7 @@
         "jms/serializer-bundle": "^2.3",
         "lunetics/locale-bundle": "2.6.*",
         "sensio/framework-extra-bundle": "5.1.*",
-        "sonata-project/cache-bundle": "^2.5",
+        "sonata-project/cache-bundle": "2.4.*",
         "sonata-project/doctrine-phpcr-admin-bundle": "2.2.*",
         "symfony-cmf/resource": "1.1.*",
         "symfony-cmf/resource-rest-bundle": "1.1.*",
@@ -111,7 +111,5 @@
     "conflict": {
         "sonata-project/cache": "<1.1.1",
         "symfony/symfony": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }
