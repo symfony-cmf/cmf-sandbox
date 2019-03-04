@@ -34,7 +34,7 @@ before_install:
 install:
   - phpenv config-add travis.php.ini
   - php -ini | grep memory_limit
-  - if [ "$COMPOSER_INSTALL" != "1" ]; then composer update --no-scripts --prefer-dist -vvv; else composer install --no-scripts --prefer-dist -vvv; fi
+  - if [ "$COMPOSER_INSTALL" != "1" ]; then composer update --no-scripts --prefer-dist; else composer install --no-scripts --prefer-dist -vvv; fi
 
 before_script:
   - cp config/fixtures/phpcr_${TRANSPORT}.yaml.dist config/phpcr.yaml
@@ -46,5 +46,4 @@ before_script:
 script: php vendor/bin/simple-phpunit --debug
 
 notifications:
-  irc: "irc.freenode.org#symfony-cmf"
   email: "symfony-cmf-devs@googlegroups.com"
