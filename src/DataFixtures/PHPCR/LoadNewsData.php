@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -32,7 +34,7 @@ class LoadNewsData implements ContainerAwareInterface, FixtureInterface, Ordered
     public function load(ObjectManager $manager)
     {
         if (!$manager instanceof DocumentManager) {
-            $class = get_class($manager);
+            $class = \get_class($manager);
 
             throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
         }

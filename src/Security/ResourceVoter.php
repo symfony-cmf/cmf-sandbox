@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -18,7 +20,7 @@ class ResourceVoter implements VoterInterface
 {
     public function vote(TokenInterface $token, $subject, array $attributes)
     {
-        if (!is_array($subject) || !isset($subject['repository_name'])) {
+        if (!\is_array($subject) || !isset($subject['repository_name'])) {
             return;
         }
 

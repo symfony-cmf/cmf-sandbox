@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -33,7 +35,6 @@ if (0 !== (int) $returnValue) {
     outputNice('Errors on Execution:');
     outputNice($output);
     exit($returnValue);
-} else {
+}
     outputNice($output);
     outputNice('Success');
-}

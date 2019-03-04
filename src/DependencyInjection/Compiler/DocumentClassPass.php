@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -21,7 +23,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
  */
 class DocumentClassPass implements CompilerPassInterface
 {
-    const DOCUMENT_CLASS = 'App\Document\DemoSeoContent';
+    public const DOCUMENT_CLASS = 'App\Document\DemoSeoContent';
 
     /**
      * You can modify the container here before it is dumped to PHP code.

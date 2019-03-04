@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -39,6 +41,11 @@ class MenuExtension extends \Twig_Extension
         return $this->doGetCurrent($this->helper->get($menu, $path, $options));
     }
 
+    public function getName()
+    {
+        return 'app_menu';
+    }
+
     private function doGetCurrent(ItemInterface $item)
     {
         if ($this->matcher->isCurrent($item)) {
@@ -51,10 +58,5 @@ class MenuExtension extends \Twig_Extension
                 return $result;
             }
         }
-    }
-
-    public function getName()
-    {
-        return 'app_menu';
     }
 }

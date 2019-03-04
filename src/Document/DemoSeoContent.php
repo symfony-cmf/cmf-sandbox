@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -39,6 +41,14 @@ class DemoSeoContent extends StaticContent implements SeoAwareInterface
     }
 
     /**
+     * @return string
+     */
+    public function __toString(): string
+    {
+        return $this->id;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function getSeoMetadata()
@@ -52,13 +62,5 @@ class DemoSeoContent extends StaticContent implements SeoAwareInterface
     public function setSeoMetadata($seoMetadata)
     {
         $this->seoMetadata = $seoMetadata;
-    }
-
-    /**
-     * @return string
-     */
-    public function __toString(): string
-    {
-        return $this->id;
     }
 }

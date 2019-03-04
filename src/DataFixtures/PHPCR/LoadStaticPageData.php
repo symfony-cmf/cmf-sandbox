@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -37,7 +39,7 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
     public function load(ObjectManager $manager)
     {
         if (!$manager instanceof DocumentManager) {
-            $class = get_class($manager);
+            $class = \get_class($manager);
 
             throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
         }
@@ -59,7 +61,7 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
             $path = $basepath.'/'.$overview['name'];
             $page = $manager->find(null, $path);
             if (!$page) {
-                $class = isset($overview['class']) ? $overview['class'] : 'App\\Document\\DemoSeoContent';
+                $class = $overview['class'] ?? 'App\\Document\\DemoSeoContent';
                 /** @var $page DemoSeoContent */
                 $page = new $class();
                 $page->setName($overview['name']);
@@ -67,7 +69,7 @@ class LoadStaticPageData implements ContainerAwareInterface, FixtureInterface, O
                 $manager->persist($page);
             }
 
-            if (is_array($overview['title'])) {
+            if (\is_array($overview['title'])) {
                 foreach ($overview['title'] as $locale => $title) {
                     $page->setTitle($title);
                     $page->setBody($overview['body'][$locale]);
@@ -167,7 +169,7 @@ EOH
         $className = $block['class'];
         $document = $manager->find(null, $this->getIdentifier($manager, $parent).'/'.$name);
         $class = $manager->getClassMetadata($className);
-        if ($document && get_class($document) != $className) {
+        if ($document && \get_class($document) !== $className) {
             $manager->remove($document);
             $document = null;
         }
@@ -180,13 +182,13 @@ EOH
             $manager->persist($document);
         }
 
-        if ('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock' == $className) {
+        if ('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock' === $className) {
             $referencedBlock = $manager->find(null, $block['referencedBlock']);
             if (null === $referencedBlock) {
                 throw new \Exception('did not find '.$block['referencedBlock']);
             }
             $document->setReferencedBlock($referencedBlock);
-        } elseif ('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock' == $className) {
+        } elseif ('Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock' === $className) {
             $document->setActionName($block['actionName']);
         }
 
@@ -206,7 +208,7 @@ EOH
 
     private function getIdentifier($manager, $document)
     {
-        $class = $manager->getClassMetadata(get_class($document));
+        $class = $manager->getClassMetadata(\get_class($document));
 
         return $class->getIdentifierValue($document);
     }

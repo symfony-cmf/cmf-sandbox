@@ -41,7 +41,7 @@ install:
 before_script:
   - if [ -x .travis/install_${TARGET}.sh ]; then .travis/before_${TARGET}.sh; fi;
 
-script: make target
+script: make $TARGET
 
 notifications:
   email: "symfony-cmf-devs@googlegroups.com"

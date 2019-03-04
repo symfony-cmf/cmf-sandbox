@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -23,13 +25,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class DemoTemplateContent implements RouteReferrersReadInterface
 {
-    /**
-     * to create the document at the specified location. read only for existing documents.
-     *
-     * @PHPCRODM\Id
-     */
-    protected $path;
-
     /**
      * @PHPCRODM\Node
      */
@@ -57,6 +52,12 @@ class DemoTemplateContent implements RouteReferrersReadInterface
      * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route", referencedBy="content")
      */
     public $routes;
+    /**
+     * to create the document at the specified location. read only for existing documents.
+     *
+     * @PHPCRODM\Id
+     */
+    protected $path;
 
     /**
      * Set repository path of this navigation item for creation.

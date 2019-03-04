@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -36,7 +38,7 @@ class LoadMenuData implements ContainerAwareInterface, FixtureInterface, Ordered
     public function load(ObjectManager $manager)
     {
         if (!$manager instanceof DocumentManager) {
-            $class = get_class($manager);
+            $class = \get_class($manager);
 
             throw new \RuntimeException("Fixture requires a PHPCR ODM DocumentManager instance, instance of '$class' given.");
         }
@@ -116,7 +118,7 @@ class LoadMenuData implements ContainerAwareInterface, FixtureInterface, Ordered
             $menuNode->setRoute($route);
         }
 
-        if (is_array($label)) {
+        if (\is_array($label)) {
             foreach ($label as $locale => $l) {
                 $menuNode->setLabel($l);
                 $manager->bindTranslation($menuNode, $locale);

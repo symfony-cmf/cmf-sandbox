@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -25,7 +27,7 @@ class Kernel extends BaseKernel
 {
     use MicroKernelTrait;
 
-    const CONFIG_EXTS = '.{php,xml,yaml,yml}';
+    public const CONFIG_EXTS = '.{php,xml,yaml,yml}';
 
     public function getCacheDir()
     {
@@ -83,8 +85,8 @@ class Kernel extends BaseKernel
         if (class_exists('Doctrine\Bundle\PHPCRBundle\DependencyInjection\Compiler\DoctrinePhpcrMappingsPass')) {
             $container->addCompilerPass(
                 DoctrinePhpcrMappingsPass::createAnnotationMappingDriver(
-                    [realpath(__DIR__ . '/Document') => 'App\Document'],
-                    [realpath(__DIR__ . '/Document')]
+                    [realpath(__DIR__.'/Document') => 'App\Document'],
+                    [realpath(__DIR__.'/Document')]
                 )
             );
         }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -19,13 +21,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Image
 {
-    /**
-     * to create the document at the specified location. read only for existing documents.
-     *
-     * @PHPCRODM\Id
-     */
-    protected $path;
-
     /**
      * @PHPCRODM\Node
      */
@@ -50,6 +45,12 @@ class Image
      * @PHPCRODM\Field(type="string", multivalue=true)
      */
     public $tags;
+    /**
+     * to create the document at the specified location. read only for existing documents.
+     *
+     * @PHPCRODM\Id
+     */
+    protected $path;
 
     /**
      * Set repository path of this navigation item for creation.

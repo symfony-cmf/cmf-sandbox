@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -24,11 +26,7 @@ use Symfony\Cmf\Bundle\SeoBundle\Extractor\TitleReadInterface;
  *
  * @author Maximilian Berghoff <Maximilian.Berghoff@gmx.de>
  */
-class DemoSeoExtractor extends DemoSeoContent implements
-    TitleReadInterface,
-    DescriptionReadInterface,
-    OriginalUrlReadInterface,
-    KeywordsReadInterface
+class DemoSeoExtractor extends DemoSeoContent implements TitleReadInterface, DescriptionReadInterface, OriginalUrlReadInterface, KeywordsReadInterface
 {
     /**
      * {@inheritdoc}

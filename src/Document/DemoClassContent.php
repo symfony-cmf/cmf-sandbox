@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -23,13 +25,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 class DemoClassContent implements RouteReferrersReadInterface
 {
     /**
-     * to create the document at the specified location. read only for existing documents.
-     *
-     * @PHPCRODM\Id
-     */
-    protected $path;
-
-    /**
      * @PHPCRODM\Node
      */
     public $node;
@@ -38,6 +33,17 @@ class DemoClassContent implements RouteReferrersReadInterface
      * @PHPCRODM\ParentDocument()
      */
     public $parentDocument;
+
+    /**
+     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route", referencedBy="content")
+     */
+    public $routes;
+    /**
+     * to create the document at the specified location. read only for existing documents.
+     *
+     * @PHPCRODM\Id
+     */
+    protected $path;
 
     /**
      * @Assert\NotBlank
@@ -56,11 +62,6 @@ class DemoClassContent implements RouteReferrersReadInterface
      * @PHPCRODM\Field(type="string")
      */
     protected $body;
-
-    /**
-     * @PHPCRODM\Referrers(referringDocument="Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route", referencedBy="content")
-     */
-    public $routes;
 
     public function getName()
     {
