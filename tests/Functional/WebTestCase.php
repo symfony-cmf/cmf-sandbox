@@ -29,7 +29,7 @@ abstract class WebTestCase extends BaseWebTestCase
             'App\DataFixtures\PHPCR\LoadStaticPageData',
             'App\DataFixtures\PHPCR\LoadMenuData',
             'App\DataFixtures\PHPCR\LoadRoutingData',
-        ], null, 'doctrine_phpcr');
+        ], false, 'doctrine_phpcr');
 
         self::$fixturesLoaded = true;
     }
