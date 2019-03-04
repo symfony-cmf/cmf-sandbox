@@ -23,6 +23,8 @@ env:
     - SYMFONY_DEPRECATIONS_HELPER="/.*each.*/"
     - SYMFONY_PHPUNIT_DIR=.phpunit SYMFONY_PHPUNIT_REMOVE="symfony/yaml"
     - TARGET=test
+    - SYMFONY_PHPUNIT_VERSION=5.7
+    - PHPUNIT_VERSION=5.7.26
   matrix:
     - TRANSPORT=jackrabbit
     - TRANSPORT=doctrine_dbal
