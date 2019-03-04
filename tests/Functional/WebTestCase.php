@@ -27,21 +27,28 @@ abstract class WebTestCase extends BaseWebTestCase
             return;
         }
 
-        $this->loadFixtures([
-            'App\DataFixtures\PHPCR\LoadStaticPageData',
-            'App\DataFixtures\PHPCR\LoadMenuData',
-            'App\DataFixtures\PHPCR\LoadRoutingData',
-        ], false, 'doctrine_phpcr');
+        $this->loadFixtures(
+            [
+                'App\DataFixtures\PHPCR\LoadStaticPageData',
+                'App\DataFixtures\PHPCR\LoadMenuData',
+                'App\DataFixtures\PHPCR\LoadRoutingData',
+            ],
+            false,
+            'doctrine_phpcr'
+        );
 
         self::$fixturesLoaded = true;
     }
 
     protected function createClientAuthenticated(array $options = [], array $server = [])
     {
-        $server = array_merge($server, [
-            'PHP_AUTH_USER' => 'username',
-            'PHP_AUTH_PW' => 'pa$$word',
-        ]);
+        $server = array_merge(
+            $server,
+            [
+                'PHP_AUTH_USER' => 'username',
+                'PHP_AUTH_PW' => 'pa$$word',
+            ]
+        );
 
         return self::createClient($options, $server);
     }
@@ -52,7 +59,7 @@ abstract class WebTestCase extends BaseWebTestCase
      * This code is taken from symfony-cmf/Testing.
      *
      * @param Response $response
-     * @param string   $url
+     * @param string $url
      */
     protected function assertResponseSuccess(Response $response, $url = '')
     {
@@ -71,7 +78,7 @@ abstract class WebTestCase extends BaseWebTestCase
         $this->assertEquals(
             200,
             $response->getStatusCode(),
-            $exception ? 'Exception: "'.trim($exception).'" on url: '.$url : null
+            $exception ? 'Exception: "' . trim($exception) . '" on url: ' . $url : null
         );
     }
 
