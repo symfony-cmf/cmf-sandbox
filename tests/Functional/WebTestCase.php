@@ -28,8 +28,6 @@ abstract class WebTestCase extends BaseTestCase
             return;
         }
 
-        parent::setUp();
-
         (new PHPCRPurger($this->getDbManager('PHPCR')->getOm()))->purge();
         $this->db('PHPCR')->loadFixtures([
                 'App\DataFixtures\PHPCR\LoadStaticPageData',
@@ -38,6 +36,7 @@ abstract class WebTestCase extends BaseTestCase
         ]);
 
         self::$fixturesLoaded = true;
+        parent::setUp();
     }
 
     /**

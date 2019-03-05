@@ -5,7 +5,7 @@
     xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
     backupGlobals="false"
     colors="true"
-    bootstrap="vendor/autoload.php"
+     bootstrap="vendor/symfony-cmf/testing/bootstrap/bootstrap.php"
     convertErrorsToExceptions="true"
     convertNoticesToExceptions="true"
     convertWarningsToExceptions="true"
@@ -48,6 +48,7 @@
         <!-- Configure your db driver and server_version in config/packages/doctrine.yaml -->
         <env name="DATABASE_URL" value="mysql://db_user:db_password@127.0.0.1:3306/db_name"/>
         <!-- ###- doctrine/doctrine-bundle ### -->
+        <env name="KERNEL_CLASS" value="App\Kernel" />
     </php>
 
     <filter>
