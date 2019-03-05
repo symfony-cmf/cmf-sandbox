@@ -1,0 +1,14 @@
+framework:
+    #esi:             ~
+    translator:      { fallback: en }
+    secret:          '%secret%'
+    form:            true
+    csrf_protection: true
+    validation:      { enable_annotations: true }
+    templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
+    session:
+        name: symfony-cmf
+
+sensio_framework_extra:
+    router:  { annotations: true }
+    request: { converters: true }

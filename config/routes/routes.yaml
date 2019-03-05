@@ -1,0 +1,23 @@
+_app:
+    resource: App\Controller\ContentController
+    type: annotation
+
+home_redirect:
+    path: /
+    defaults:
+        _controller: lunetics_locale.switcher_controller:switchAction
+        route: '/cms/routes/%locale%'
+        statusCode: 301
+        useReferrer: false
+
+block_cache:
+    resource: '@CmfBlockBundle/Resources/config/routing/cache.xml'
+    prefix: /
+
+cmf_resource:
+    resource: '@CmfResourceRestBundle/Resources/config/routing.yml'
+    prefix: /admin
+
+sonata_phpcr_admin_tree:
+    resource: '@SonataDoctrinePHPCRAdminBundle/Resources/config/routing/tree.xml'
+    prefix: /admin

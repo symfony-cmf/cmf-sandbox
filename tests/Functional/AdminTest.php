@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -9,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\Functional;
+namespace App\Tests\Functional;
 
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Symfony\Component\Routing\Exception\MissingMandatoryParametersException;
@@ -90,11 +92,11 @@ class AdminTest extends WebTestCase
     {
         $route = $this->doTestReachableAdminRoutes($admin);
 
-        $this->assertTrue(in_array($route, $this->verifiablePatterns));
+        $this->assertTrue(\in_array($route, $this->verifiablePatterns, true));
 
-        $diffCountBefore = count(array_diff($this->verifiablePatterns, self::$testedPatterns));
+        $diffCountBefore = \count(array_diff($this->verifiablePatterns, self::$testedPatterns));
         self::$testedPatterns[] = $route;
-        $diffCountAfter = count(array_diff($this->verifiablePatterns, self::$testedPatterns));
+        $diffCountAfter = \count(array_diff($this->verifiablePatterns, self::$testedPatterns));
 
         // verify that at the end is nothing in diff
         $this->assertSame($diffCountBefore - 1, $diffCountAfter, 'Each admin should be verified.');
@@ -125,7 +127,7 @@ class AdminTest extends WebTestCase
 
             // do not test POST routes
             if (isset($requirements['_method'])) {
-                if ('GET' != $requirements['_method']) {
+                if ('GET' !== $requirements['_method']) {
                     continue;
                 }
             }
@@ -136,9 +138,8 @@ class AdminTest extends WebTestCase
                 if ($document) {
                     $node = $this->dm->getNodeForDocument($document);
                     $routeParams['id'] = $node->getPath();
-                } else {
-                    // we should throw an exception here maybe and fix the missing fixtures
                 }
+                // we should throw an exception here maybe and fix the missing fixtures
             }
 
             try {

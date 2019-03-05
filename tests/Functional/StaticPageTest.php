@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -9,14 +11,17 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\Functional;
+namespace App\Tests\Functional;
 
 class StaticPageTest extends WebTestCase
 {
     /**
      * @dataProvider contentDataProvider
+     *
+     * @param string $url
+     * @param string $title
      */
-    public function testContent($url, $title)
+    public function testContent(string $url, string $title)
     {
         $client = $this->createClient();
 

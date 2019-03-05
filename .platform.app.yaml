@@ -19,9 +19,9 @@ build:
 # The configuration of app when it is exposed to the web.
 web:
     # The public directory of the app, relative to its root.
-    document_root: "/web"
+    document_root: "/public"
     # The front-controller script to send non-static requests to.
-    passthru: "/app.php"
+    passthru: "/index.php"
     whitelist:
       # slides
       - ^/slides/.*\.html$
@@ -58,9 +58,8 @@ mounts:
 # The hooks that will be performed when the package is deployed.
 hooks:
     build: |
-      rm web/app_dev.php
       # place sqlite file into /tmp so that we can write to it during deploy
-      sed -i 's@%kernel.root_dir%/../var/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
+      sed -i 's@%kernel.project_dir%/var/app.sqlite@/tmp/app.sqlite@' app/config/parameters.yml
       bin/console --env=prod assets:install -n --no-debug
       bin/console --env=prod assetic:dump -n --no-debug
     deploy: ./bin/reloadFixtures.sh $PWD true

@@ -1,0 +1,150 @@
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+        sonata.admin.block.search_result:
+            contexts:   [admin]
+        sonata_admin_doctrine_phpcr.tree_block:
+            settings:
+                id: '/cms'
+            contexts:   [admin]
+    blocks_by_class:
+        Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock:
+            cache: cmf.block.cache.js_async
+
+sonata_admin:
+    extensions:
+        cmf_sonata_phpcr_admin_integration.core.extension.child:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\Model\ChildInterface
+        cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.time_period:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishTimePeriodInterface
+        cmf_sonata_phpcr_admin_integration.core.extension.publish_workflow.publishable:
+            implements:
+                - Symfony\Cmf\Bundle\CoreBundle\PublishWorkflow\PublishableInterface
+        cmf_sonata_phpcr_admin_integration.menu.extension.menu_node_referrers:
+            implements:
+                - Symfony\Cmf\Bundle\MenuBundle\Model\MenuNodeReferrersInterface
+        cmf_sonata_phpcr_admin_integration.menu.extension.menu_options:
+            implements:
+                - Symfony\Cmf\Bundle\MenuBundle\Model\MenuOptionsInterface
+        cmf_sonata_phpcr_admin_integration.routing.extension.route_referrers:
+            implements:
+                - Symfony\Cmf\Component\Routing\RouteReferrersInterface
+        cmf_sonata_phpcr_admin_integration.routing.extension.frontend_link:
+            implements:
+                - Symfony\Cmf\Component\Routing\RouteReferrersReadInterface
+            extends:
+                - Symfony\Component\Routing\Route
+        cmf_sonata_phpcr_admin_integration.seo.extension.metadata:
+            implements:
+                - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
+    assets:
+        extra_javascripts:
+            - bundles/fosckeditor/ckeditor.js
+            - bundles/sonataformatter/vendor/markitup-markitup/markitup/jquery.markitup.js
+            - bundles/sonataformatter/markitup/sets/markdown/set.js
+            - bundles/sonataformatter/markitup/sets/html/set.js
+            - bundles/sonataformatter/markitup/sets/textile/set.js
+
+        extra_stylesheets:
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
+            - bundles/sonatatranslation/css/sonata-translation.css
+    templates:
+        layout:     admin/custom_layout.html.twig
+        user_block: admin/user_block.html.twig
+    dashboard:
+        blocks:
+            - { position: right, type: sonata.admin.block.admin_list }
+            - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
+        groups:
+            content:
+                label: Content
+                icon: '<i class="fa fa-file-text-o"></i>'
+                items:
+                    - cmf_sonata_phpcr_admin_integration.content.admin
+                    - cmf_sonata_phpcr_admin_integration.block.simple_admin
+                    - cmf_sonata_phpcr_admin_integration.block.container_admin
+                    - cmf_sonata_phpcr_admin_integration.block.reference_admin
+                    - cmf_sonata_phpcr_admin_integration.block.action_admin
+            routing:
+                label: URLs
+                icon: '<i class="fa fa-link"></i>'
+                items:
+                    - cmf_sonata_phpcr_admin_integration.routing.route_admin
+                    - cmf_sonata_phpcr_admin_integration.routing.redirect_route_admin
+            menu:
+                label: Menu
+                icon: '<i class="fa  fa-bars"></i>'
+                items:
+                    - cmf_sonata_phpcr_admin_integration.menu.menu_admin
+                    - cmf_sonata_phpcr_admin_integration.menu.node_admin
+
+sonata_doctrine_phpcr_admin:
+    templates:
+        form:
+            - admin/form_admin_fields.html.twig
+    document_tree:
+        routing_defaults: [locale]
+
+sonata_translation:
+    locales: '%locales%'
+    default_locale: '%locale%'
+    phpcr: true
+
+sonata_seo:
+    page:
+        title: CMF Sandbox
+        metas:
+            name:
+                keywords: 'CMF, Symfony, Routing, Content, PHPCR'
+
+
+sonata_formatter:
+    default_formatter: richhtml
+
+    ckeditor:
+        templates:
+            browser: '@SonataFormatter/Ckeditor/browser.html.twig'
+            upload: '@SonataFormatter/Ckeditor/upload.html.twig'
+    formatters:
+        markdown:
+            service: sonata.formatter.text.markdown
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig #keep this commented unless you are using media bundle.
+
+
+        text:
+            service: sonata.formatter.text.text
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        rawhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        richhtml:
+            service: sonata.formatter.text.raw
+            extensions:
+                - sonata.formatter.twig.control_flow
+                - sonata.formatter.twig.gist
+        #        - sonata.media.formatter.twig
+
+
+        twig:
+            service: sonata.formatter.text.twigengine
+            extensions: [] # Twig formatter cannot have extensions
