@@ -41,6 +41,14 @@ abstract class WebTestCase extends BaseTestCase
     }
 
     /**
+     * @return string
+     */
+    public static function getKernelClass(): string
+    {
+        return Kernel::class;
+    }
+
+    /**
      * @param array $options
      * @param array $server
      *
@@ -65,7 +73,7 @@ abstract class WebTestCase extends BaseTestCase
      * This code is taken from symfony-cmf/Testing.
      *
      * @param Response $response
-     * @param string $url
+     * @param string   $url
      */
     protected function assertResponseSuccess(Response $response, $url = '')
     {
@@ -84,15 +92,7 @@ abstract class WebTestCase extends BaseTestCase
         $this->assertEquals(
             200,
             $response->getStatusCode(),
-            $exception ? 'Exception: "' . trim($exception) . '" on url: ' . $url : null
+            $exception ? 'Exception: "'.trim($exception).'" on url: '.$url : null
         );
-    }
-
-    /**
-     * @return string
-     */
-    public static function getKernelClass(): string
-    {
-        return Kernel::class;
     }
 }
