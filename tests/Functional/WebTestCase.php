@@ -14,10 +14,11 @@ declare(strict_types=1);
 namespace App\Tests\Functional;
 
 use App\Kernel;
-use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
+use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
+use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
-abstract class WebTestCase extends BaseWebTestCase
+abstract class WebTestCase extends BaseTestCase
 {
     protected static $fixturesLoaded = false;
 
@@ -27,19 +28,24 @@ abstract class WebTestCase extends BaseWebTestCase
             return;
         }
 
-        $this->loadFixtures(
-            [
+        parent::setUp();
+
+        (new PHPCRPurger($this->getDbManager('PHPCR')->getOm()))->purge();
+        $this->db('PHPCR')->loadFixtures([
                 'App\DataFixtures\PHPCR\LoadStaticPageData',
                 'App\DataFixtures\PHPCR\LoadMenuData',
                 'App\DataFixtures\PHPCR\LoadRoutingData',
-            ],
-            false,
-            'doctrine_phpcr'
-        );
+        ]);
 
         self::$fixturesLoaded = true;
     }
 
+    /**
+     * @param array $options
+     * @param array $server
+     *
+     * @return \Symfony\Bundle\FrameworkBundle\Client
+     */
     protected function createClientAuthenticated(array $options = [], array $server = [])
     {
         $server = array_merge(
@@ -82,7 +88,10 @@ abstract class WebTestCase extends BaseWebTestCase
         );
     }
 
-    protected static function getKernelClass()
+    /**
+     * @return string
+     */
+    public static function getKernelClass(): string
     {
         return Kernel::class;
     }

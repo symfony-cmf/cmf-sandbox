@@ -17,8 +17,11 @@ class StaticPageTest extends WebTestCase
 {
     /**
      * @dataProvider contentDataProvider
+     *
+     * @param string $url
+     * @param string $title
      */
-    public function testContent($url, $title)
+    public function testContent(string $url, string $title)
     {
         $client = $this->createClient();
 
