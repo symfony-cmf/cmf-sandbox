@@ -92,14 +92,12 @@
     "require-dev": {
         "symfony-cmf/testing": "^2.1.11",
         "symfony/dotenv": "4.1.*",
-        "symfony/dom-crawler": "4.1.*",
-        "symfony/css-selector": "4.1.*",
         "symfony/debug": "4.1.*",
-        "symfony/browser-kit": "4.1.*",
         "symfony/phpunit-bridge": "^3.3",
         "symfony/profiler-pack": "1.0.*",
         "php-translation/symfony-bundle": "^0.8.1",
-        "php-translation/symfony-storage": "^1.0"
+        "php-translation/symfony-storage": "^1.0",
+        "symfony/test-pack": "^1.0"
     },
     "extra": {
         "branch-alias": {

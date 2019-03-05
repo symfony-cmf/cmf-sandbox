@@ -39,9 +39,11 @@ install:
   - if [ -x .travis/install_${TARGET}.sh ]; then .travis/install_${TARGET}.sh; fi;
 
 before_script:
-  - if [ -x .travis/install_${TARGET}.sh ]; then .travis/before_${TARGET}.sh; fi;
+  - if [ -x .travis/before_${TARGET}.sh ]; then .travis/before_${TARGET}.sh; fi;
 
 script: make $TARGET
 
+after_success:
+  - if [ -x .travis/after_${TARGET}.sh ]; then .travis/after_${TARGET}.sh; fi;
 notifications:
   email: "symfony-cmf-devs@googlegroups.com"
