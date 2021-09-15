@@ -1,3 +1,10 @@
+# This repository is no longer maintained
+
+Due to lack of interest, we had to decide to discontinue this repository. 
+The CMF project will focus on the [Routing component](https://github.com/symfony-cmf/routing) and [RoutingBundle](https://github.com/symfony-cmf/routing-bundle) which is the only part that is actively used.
+
+This repository will no longer be upgraded and marked as abandoned, but will be kept available for legacy projects or if somebody wants to experiment with the CMF.
+
 # Symfony Content Management Framework Sandbox  
 
 [![Build Status](https://travis-ci.org/symfony-cmf/cmf-sandbox.svg?branch=master)](https://travis-ci.org/symfony-cmf/cmf-sandbox)
