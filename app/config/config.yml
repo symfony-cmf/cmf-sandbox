@@ -25,6 +25,7 @@ twig:
     exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
     form_themes:
         - '@CmfTreeBrowser/Form/fields.html.twig'
+        - '@CmfGrapesjs/Form/fields.html.twig'
 
 # Assetic Configuration
 assetic:
