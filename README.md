@@ -5,6 +5,8 @@ The CMF project focusses on the [Routing component](https://github.com/symfony-c
 
 This repository will no longer be upgraded and marked as abandoned, but will be kept available for legacy projects or if somebody wants to experiment with the CMF.
 
+You can contact us in the #symfony_cmf channel of the [Symfony devs slack](https://symfony.com/slack).
+
 # Symfony Content Management Framework Sandbox  
 
 [![Build Status](https://travis-ci.org/symfony-cmf/cmf-sandbox.svg?branch=master)](https://travis-ci.org/symfony-cmf/cmf-sandbox)
