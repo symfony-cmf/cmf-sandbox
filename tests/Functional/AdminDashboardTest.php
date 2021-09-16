@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -9,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\Functional;
+namespace App\Tests\Functional;
 
 class AdminDashboardTest extends WebTestCase
 {
@@ -19,7 +21,7 @@ class AdminDashboardTest extends WebTestCase
 
         $client->request('GET', '/admin');
 
-        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
 
         $client->followRedirect();
 
@@ -27,7 +29,7 @@ class AdminDashboardTest extends WebTestCase
 
         $client->request('GET', '/admin/dashboard');
 
-        $this->assertEquals(301, $client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
 
         $client->followRedirect();
 

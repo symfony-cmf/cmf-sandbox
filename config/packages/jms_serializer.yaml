@@ -1,0 +1,8 @@
+
+jms_serializer:
+    metadata:
+        auto_detection: true
+        directories:
+            CmfContentBundle:
+                namespace_prefix: 'Symfony\Cmf\Bundle\ContentBundle'
+                path: '%kernel.project_dir%/src/Resources/config/serializer/cmf'

@@ -27,7 +27,11 @@ if [ "${PROD}" ]; then
 else
     run  "Remove cache directory:" "rm -rf ${DIR}var/cache/prod"
 fi
-run "Drop and init dbal:" "php ${DIR}bin/console --env=prod doctrine:phpcr:init:dbal --drop --force -n -vvv"
-run "Init repositories:" "php ${DIR}bin/console --env=prod doctrine:phpcr:repository:init -n -vvv"
-run "Load date fixtures:" "php ${DIR}bin/console --env=prod doctrine:phpcr:fixtures:load -n -vvv"
-run "Warm up cache:" "php ${DIR}bin/console --env=prod cache:warmup -n --no-debug -vvv"
+OPTION=''
+if [ "${PROD}" ]; then
+    OPTION=" --env=prod"
+fi
+run "Drop and init dbal:" "php ${DIR}bin/console${OPTION} doctrine:phpcr:init:dbal --drop --force -n -vvv"
+run "Init repositories:" "php ${DIR}bin/console${OPTION} doctrine:phpcr:repository:init -n -vvv"
+run "Load date fixtures:" "php ${DIR}bin/console${OPTION} doctrine:phpcr:fixtures:load -n -vvv"
+run "Warm up cache:" "php ${DIR}bin/console${OPTION} cache:warmup -n --no-debug -vvv"

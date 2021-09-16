@@ -27,7 +27,7 @@ You can run the sandbox on your system, or in a virtualbox VM using Vagrant. For
 
 ### You will need:
 
-  * PHP 5.3.9+ (with intl extension)
+  * PHP 7.1+ (with intl extension)
   * PHPUnit 3.6+ (optional)
   * Composer
 
@@ -52,11 +52,11 @@ implementation.
 Once you have that, copy the default jackalope-jackrabbit configuration file,
 adjust it as needed and install the dependencies with composer:
 
-    cp app/config/phpcr_jackrabbit.yml.dist app/config/phpcr.yml
+    cp config/fixtures/phpcr_jackrabbit.yml.dist config/packages/phpcr.yml
 
 The last command will fetch the main project and all its dependencies (CMF
 Bundles, Symfony, Doctrine\PHPCR, Jackalope ... ). You might want to have a look
-at the ``app/config/parameters.yml`` and adjust as needed.
+at the ``config/packages/phpcr.yml`` and adjust as needed.
 
 ### Install the Doctrine DBAL provider (optional)
 
@@ -65,7 +65,7 @@ files and create the database accordingly. If you have the PHP sqlite extension
 available, this is the simplest to quickly try out the CMF. Copy the file
 and then install the dependencies:
 
-    cp app/config/phpcr_doctrine_dbal.yml.dist app/config/phpcr.yml
+    cp config/fixtures/phpcr_doctrine_dbal.yml.dist config/packages/phpcr.yml
 
 The Doctrine DBAL implementation is installed by default already along side the Jackrabbit implementation.
 
@@ -119,7 +119,7 @@ Create an apache virtual host entry along the lines of:
 
     <Virtualhost *:80>
         Servername cmf.lo
-        DocumentRoot /path/to/symfony-cmf/cmf-sandbox/web
+        DocumentRoot /path/to/symfony-cmf/cmf-sandbox/public
         <Directory /path/to/symfony-cmf/cmf-sandbox>
             AllowOverride All
         </Directory>

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the Symfony CMF package.
  *
@@ -9,12 +11,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Tests\Functional;
+namespace App\Tests\Functional;
 
-use Liip\FunctionalTestBundle\Test\WebTestCase as BaseWebTestCase;
+use App\Kernel;
+use Doctrine\Common\DataFixtures\Purger\PHPCRPurger;
+use Symfony\Cmf\Component\Testing\Functional\BaseTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
-abstract class WebTestCase extends BaseWebTestCase
+abstract class WebTestCase extends BaseTestCase
 {
     protected static $fixturesLoaded = false;
 
@@ -24,23 +28,42 @@ abstract class WebTestCase extends BaseWebTestCase
             return;
         }
 
-        $this->loadFixtures([
-            'AppBundle\DataFixtures\PHPCR\LoadStaticPageData',
-            'AppBundle\DataFixtures\PHPCR\LoadMenuData',
-            'AppBundle\DataFixtures\PHPCR\LoadRoutingData',
-        ], null, 'doctrine_phpcr');
-
-        self::$fixturesLoaded = true;
-    }
-
-    protected function createClientAuthenticated(array $options = [], array $server = [])
-    {
-        $server = array_merge($server, [
-            'PHP_AUTH_USER' => 'admin',
-            'PHP_AUTH_PW' => 'admin',
+        (new PHPCRPurger($this->getDbManager('PHPCR')->getOm()))->purge();
+        $this->db('PHPCR')->loadFixtures([
+                'App\DataFixtures\PHPCR\LoadStaticPageData',
+                'App\DataFixtures\PHPCR\LoadMenuData',
+                'App\DataFixtures\PHPCR\LoadRoutingData',
         ]);
 
-        return $this->createClient($options, $server);
+        self::$fixturesLoaded = true;
+        parent::setUp();
+    }
+
+    /**
+     * @return string
+     */
+    public static function getKernelClass(): string
+    {
+        return Kernel::class;
+    }
+
+    /**
+     * @param array $options
+     * @param array $server
+     *
+     * @return \Symfony\Bundle\FrameworkBundle\Client
+     */
+    protected function createClientAuthenticated(array $options = [], array $server = [])
+    {
+        $server = array_merge(
+            $server,
+            [
+                'PHP_AUTH_USER' => 'username',
+                'PHP_AUTH_PW' => 'pa$$word',
+            ]
+        );
+
+        return self::createClient($options, $server);
     }
 
     /**

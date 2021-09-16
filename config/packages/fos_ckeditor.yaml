@@ -1,0 +1,10 @@
+fos_ck_editor:
+  default_config: cmf_sonata_phpcr_admin_integration
+  configs:
+    cmf_sonata_phpcr_admin_integration:
+      height: 80rem
+      width: 100%
+      toolbar: full
+      removeButtons: 'Combo,Language,CreateDiv,Flash,Smiley,Iframe,Save,Preview,Print,Form,Checkbox,Radio,TextField,HiddenField,Textarea,Select,ImageButton,Button,NewPage,Templates'
+      format_tags: 'p;h1;h2;h3;h4;h5;h6;pre;address;div'
+      menu_groups: clipboard,table,anchor,link,image,format,heading
